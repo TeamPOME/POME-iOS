@@ -36,6 +36,10 @@
 		77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F31F2874B7E500D2F6C0 /* MypageTVC.swift */; };
 		77E8F3222874B7F000D2F6C0 /* MypageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3212874B7F000D2F6C0 /* MypageCVC.swift */; };
 		77E8F3242874B80A00D2F6C0 /* MypageXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3232874B80A00D2F6C0 /* MypageXib.swift */; };
+		77E8F32628756D8200D2F6C0 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F32528756D8200D2F6C0 /* Pretendard-Bold.otf */; };
+		77E8F32828756D9700D2F6C0 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F32728756D9700D2F6C0 /* Pretendard-SemiBold.otf */; };
+		77E8F32A28756DA100D2F6C0 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F32928756DA100D2F6C0 /* Pretendard-Regular.otf */; };
+		77E8F32C28756DAE00D2F6C0 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F32B28756DAE00D2F6C0 /* Pretendard-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +75,10 @@
 		77E8F31F2874B7E500D2F6C0 /* MypageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTVC.swift; sourceTree = "<group>"; };
 		77E8F3212874B7F000D2F6C0 /* MypageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageCVC.swift; sourceTree = "<group>"; };
 		77E8F3232874B80A00D2F6C0 /* MypageXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageXib.swift; sourceTree = "<group>"; };
+		77E8F32528756D8200D2F6C0 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Bold.otf"; path = "../../../../../../../../Downloads/Pretendard-1/public/static/Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		77E8F32728756D9700D2F6C0 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.otf"; path = "../../../../../../../../Downloads/Pretendard-1/public/static/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		77E8F32928756DA100D2F6C0 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Regular.otf"; path = "../../../../../../../../Downloads/Pretendard-1/public/static/Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		77E8F32B28756DAE00D2F6C0 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Medium.otf"; path = "../../../../../../../../Downloads/Pretendard-1/public/static/Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		804C6365DDEE189DFF7ED4ED /* Pods-POME-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.release.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +232,10 @@
 		77E8F2D92874AC7E00D2F6C0 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				77E8F32528756D8200D2F6C0 /* Pretendard-Bold.otf */,
+				77E8F32728756D9700D2F6C0 /* Pretendard-SemiBold.otf */,
+				77E8F32B28756DAE00D2F6C0 /* Pretendard-Medium.otf */,
+				77E8F32928756DA100D2F6C0 /* Pretendard-Regular.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -568,7 +580,11 @@
 				77E8F2E42874AEB900D2F6C0 /* WriteSB.storyboard in Resources */,
 				77E8F2F82874B15A00D2F6C0 /* RemindSB.storyboard in Resources */,
 				77E8F30E2874B4DD00D2F6C0 /* MateSB.storyboard in Resources */,
+				77E8F32828756D9700D2F6C0 /* Pretendard-SemiBold.otf in Resources */,
+				77E8F32A28756DA100D2F6C0 /* Pretendard-Regular.otf in Resources */,
+				77E8F32628756D8200D2F6C0 /* Pretendard-Bold.otf in Resources */,
 				77E8F2C02874A23700D2F6C0 /* Main.storyboard in Resources */,
+				77E8F32C28756DAE00D2F6C0 /* Pretendard-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,7 +806,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 397WA8BG8W;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "POME-iOS/Info.plist";
+				INFOPLIST_FILE = "POME-iOS/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -819,7 +835,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 397WA8BG8W;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "POME-iOS/Info.plist";
+				INFOPLIST_FILE = "POME-iOS/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
