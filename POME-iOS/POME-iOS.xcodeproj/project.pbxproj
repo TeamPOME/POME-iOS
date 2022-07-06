@@ -54,6 +54,8 @@
 		77E8F3462875EE0A00D2F6C0 /* UITabBar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3452875EE0A00D2F6C0 /* UITabBar+.swift */; };
 		77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F34D2875F45600D2F6C0 /* BaseVC.swift */; };
 		77E8F3502875F50200D2F6C0 /* BaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F34F2875F50200D2F6C0 /* BaseNC.swift */; };
+		77E8F3522875F54000D2F6C0 /* CVRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3512875F54000D2F6C0 /* CVRegisterable.swift */; };
+		77E8F3542875F56000D2F6C0 /* TVRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3532875F56000D2F6C0 /* TVRegisterable.swift */; };
 		77E8F3562875F5A400D2F6C0 /* BaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3552875F5A400D2F6C0 /* BaseTVC.swift */; };
 		77E8F3582875F5EA00D2F6C0 /* BaseCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3572875F5EA00D2F6C0 /* BaseCVC.swift */; };
 		77E8F35A2875F6BE00D2F6C0 /* CodeBaseCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3592875F6BE00D2F6C0 /* CodeBaseCVC.swift */; };
@@ -109,8 +111,12 @@
 		77E8F3412875EBD500D2F6C0 /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		77E8F3432875ECAE00D2F6C0 /* UITextView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+.swift"; sourceTree = "<group>"; };
 		77E8F3452875EE0A00D2F6C0 /* UITabBar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+.swift"; sourceTree = "<group>"; };
+		77E8F3472875F25000D2F6C0 /* TypeOfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfViewController.swift; sourceTree = "<group>"; };
+		77E8F3492875F2C900D2F6C0 /* StoryboardRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardRepresentation.swift; sourceTree = "<group>"; };
 		77E8F34D2875F45600D2F6C0 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		77E8F34F2875F50200D2F6C0 /* BaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNC.swift; sourceTree = "<group>"; };
+		77E8F3512875F54000D2F6C0 /* CVRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVRegisterable.swift; sourceTree = "<group>"; };
+		77E8F3532875F56000D2F6C0 /* TVRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVRegisterable.swift; sourceTree = "<group>"; };
 		77E8F3552875F5A400D2F6C0 /* BaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTVC.swift; sourceTree = "<group>"; };
 		77E8F3572875F5EA00D2F6C0 /* BaseCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCVC.swift; sourceTree = "<group>"; };
 		77E8F3592875F6BE00D2F6C0 /* CodeBaseCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBaseCVC.swift; sourceTree = "<group>"; };
@@ -253,6 +259,8 @@
 		77E8F2D62874AC3A00D2F6C0 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				77E8F3512875F54000D2F6C0 /* CVRegisterable.swift */,
+				77E8F3532875F56000D2F6C0 /* TVRegisterable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -702,6 +710,7 @@
 				77E8F2FE2874B1A100D2F6C0 /* RemindCVC.swift in Sources */,
 				77E8F3362875754E00D2F6C0 /* UIButton+.swift in Sources */,
 				77E8F3222874B7F000D2F6C0 /* MypageCVC.swift in Sources */,
+				77E8F3542875F56000D2F6C0 /* TVRegisterable.swift in Sources */,
 				77E8F3582875F5EA00D2F6C0 /* BaseCVC.swift in Sources */,
 				77E8F3322875729000D2F6C0 /* UIView+.swift in Sources */,
 				77E8F3042874B1D400D2F6C0 /* RemindXib.swift in Sources */,
@@ -716,6 +725,7 @@
 				77E8F3502875F50200D2F6C0 /* BaseNC.swift in Sources */,
 				77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */,
 				77E8F2FC2874B19400D2F6C0 /* RemindTVC.swift in Sources */,
+				77E8F3522875F54000D2F6C0 /* CVRegisterable.swift in Sources */,
 				77E8F330287571C400D2F6C0 /* UIViewController+.swift in Sources */,
 				77E8F3402875EB3900D2F6C0 /* UserDefaults+.swift in Sources */,
 				77E8F2EA2874AF1C00D2F6C0 /* WriteCVC.swift in Sources */,
