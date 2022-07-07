@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct APIConstants {
+    
+    // MARK: Base URL
+    static let baseURL = ""
+}
