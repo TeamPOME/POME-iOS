@@ -75,6 +75,8 @@
 		77E8F379287693AA00D2F6C0 /* WriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F378287693AA00D2F6C0 /* WriteService.swift */; };
 		77E8F37B2876943800D2F6C0 /* WriteResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F37A2876943800D2F6C0 /* WriteResModel.swift */; };
 		77E8F37D2876944B00D2F6C0 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F37C2876944B00D2F6C0 /* BaseAPI.swift */; };
+		77E8F3812876AB2300D2F6C0 /* PomeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3802876AB2300D2F6C0 /* PomeBtn.swift */; };
+		77E8F3832876F25400D2F6C0 /* xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3822876F25400D2F6C0 /* xib.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +151,8 @@
 		77E8F378287693AA00D2F6C0 /* WriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteService.swift; sourceTree = "<group>"; };
 		77E8F37A2876943800D2F6C0 /* WriteResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteResModel.swift; sourceTree = "<group>"; };
 		77E8F37C2876944B00D2F6C0 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		77E8F3802876AB2300D2F6C0 /* PomeBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeBtn.swift; sourceTree = "<group>"; };
+		77E8F3822876F25400D2F6C0 /* xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xib.swift; sourceTree = "<group>"; };
 		804C6365DDEE189DFF7ED4ED /* Pods-POME-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.release.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -304,6 +308,8 @@
 		77E8F2D72874AC5300D2F6C0 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				77E8F37F2876A9FC00D2F6C0 /* Xib */,
+				77E8F37E2876A9F400D2F6C0 /* Class */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -649,6 +655,22 @@
 			path = APIManagers;
 			sourceTree = "<group>";
 		};
+		77E8F37E2876A9F400D2F6C0 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				77E8F3802876AB2300D2F6C0 /* PomeBtn.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		77E8F37F2876A9FC00D2F6C0 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				77E8F3822876F25400D2F6C0 /* xib.swift */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
 		82DC5D6096D99590892489F7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -797,6 +819,7 @@
 				77E8F37D2876944B00D2F6C0 /* BaseAPI.swift in Sources */,
 				77E8F2FE2874B1A100D2F6C0 /* RemindCVC.swift in Sources */,
 				77E8F3362875754E00D2F6C0 /* UIButton+.swift in Sources */,
+				77E8F3812876AB2300D2F6C0 /* PomeBtn.swift in Sources */,
 				77E8F36228765FD200D2F6C0 /* MateNC.swift in Sources */,
 				77E8F3222874B7F000D2F6C0 /* MypageCVC.swift in Sources */,
 				77E8F34A2875F2C900D2F6C0 /* StoryboardRepresentation.swift in Sources */,
@@ -823,6 +846,7 @@
 				77E8F3402875EB3900D2F6C0 /* UserDefaults+.swift in Sources */,
 				77E8F2EA2874AF1C00D2F6C0 /* WriteCVC.swift in Sources */,
 				77E8F35E28765F7C00D2F6C0 /* WriteNC.swift in Sources */,
+				77E8F3832876F25400D2F6C0 /* xib.swift in Sources */,
 				77E8F33E2875EA6B00D2F6C0 /* Adjusted+.swift in Sources */,
 				77E8F3482875F25000D2F6C0 /* TypeOfViewController.swift in Sources */,
 				77E8F3442875ECAE00D2F6C0 /* UITextView+.swift in Sources */,
