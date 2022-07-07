@@ -20,6 +20,7 @@ class PomeTBC: UITabBarController {
 
 // MARK: - UI
 extension PomeTBC {
+    
     /// 탭바 아이템 생성하는 메서드
     func makeTabVC(vcType: TypeOfViewController, tabBarTitle: String, tabBarImg: String, tabBarSelectedImg: String) -> UIViewController {
         
