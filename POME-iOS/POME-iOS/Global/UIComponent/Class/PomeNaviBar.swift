@@ -28,7 +28,7 @@ enum NaviState {
  
  - configureTitleLabel: titleLabel 텍스트 변경
  - configureRightCustomBtn: 우측 커스텀 버튼 이미지 변경
- - setUpNaviStyle: NaviState를 지정해 해당 스타일로 네비바를 구성
+ - setNaviStyle: NaviState를 지정해 해당 스타일로 네비바를 구성
  */
 class PomeNaviBar: UIView {
     
