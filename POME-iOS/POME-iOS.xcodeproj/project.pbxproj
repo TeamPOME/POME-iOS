@@ -109,10 +109,10 @@
 		77E8F31F2874B7E500D2F6C0 /* MypageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTVC.swift; sourceTree = "<group>"; };
 		77E8F3212874B7F000D2F6C0 /* MypageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageCVC.swift; sourceTree = "<group>"; };
 		77E8F3232874B80A00D2F6C0 /* MypageXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageXib.swift; sourceTree = "<group>"; };
-		77E8F32528756D8200D2F6C0 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Bold.otf"; path = "../../../../../../../../Downloads/Pretendard-1/public/static/Pretendard-Bold.otf"; sourceTree = "<group>"; };
-		77E8F32728756D9700D2F6C0 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-SemiBold.otf"; path = "../../../../../../../../Downloads/Pretendard-1/public/static/Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
-		77E8F32928756DA100D2F6C0 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Regular.otf"; path = "../../../../../../../../Downloads/Pretendard-1/public/static/Pretendard-Regular.otf"; sourceTree = "<group>"; };
-		77E8F32B28756DAE00D2F6C0 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pretendard-Medium.otf"; path = "../../../../../../../../Downloads/Pretendard-1/public/static/Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		77E8F32528756D8200D2F6C0 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		77E8F32728756D9700D2F6C0 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		77E8F32928756DA100D2F6C0 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		77E8F32B28756DAE00D2F6C0 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		77E8F32F287571C400D2F6C0 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		77E8F3312875729000D2F6C0 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		77E8F333287574AF00D2F6C0 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
