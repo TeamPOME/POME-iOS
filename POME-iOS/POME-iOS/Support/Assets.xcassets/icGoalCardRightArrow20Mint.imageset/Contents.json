@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "scale" : "1x",
+      "idiom" : "universal",
+      "filename" : "icGoalCardRightArrow20Mint.png"
+    },
+    {
+      "filename" : "icGoalCardRightArrow20Mint@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "filename" : "icGoalCardRightArrow20Mint@3x.png"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
