@@ -14,6 +14,7 @@ class PomeTBC: UITabBarController {
         super.viewDidLoad()
         configureTabBarItemStyle()
         configureTabBar()
+        applyShadowTabBar()
     }
 }
 
@@ -50,5 +51,13 @@ extension PomeTBC {
         
         // VC에 루트로 설정
         self.setViewControllers(tabs, animated: false)
+    }
+    
+    /// 탭바에 그림자 적용하는 메서드
+    func applyShadowTabBar() {
+        
+        UITabBar.clearShadow()
+        tabBar.layer.applyShadow(color: UIColor.shadowDefault, alpha: 1, x: 0, y: -40, blur: 18)
+
     }
 }
