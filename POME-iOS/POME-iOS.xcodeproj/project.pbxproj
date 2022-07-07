@@ -67,6 +67,7 @@
 		77E8F36228765FD200D2F6C0 /* MateNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F36128765FD200D2F6C0 /* MateNC.swift */; };
 		77E8F36428765FFF00D2F6C0 /* MypageNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F36328765FFF00D2F6C0 /* MypageNC.swift */; };
 		77E8F3662876606D00D2F6C0 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3652876606D00D2F6C0 /* ViewControllerFactory.swift */; };
+		77E8F368287665C300D2F6C0 /* network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F367287665C300D2F6C0 /* network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +134,7 @@
 		77E8F36128765FD200D2F6C0 /* MateNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateNC.swift; sourceTree = "<group>"; };
 		77E8F36328765FFF00D2F6C0 /* MypageNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageNC.swift; sourceTree = "<group>"; };
 		77E8F3652876606D00D2F6C0 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		77E8F367287665C300D2F6C0 /* network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = network.swift; sourceTree = "<group>"; };
 		804C6365DDEE189DFF7ED4ED /* Pods-POME-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.release.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +206,7 @@
 		77E8F2CF2874AB8800D2F6C0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				77E8F367287665C300D2F6C0 /* network.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				77E8F35A2875F6BE00D2F6C0 /* CodeBaseCVC.swift in Sources */,
 				77E8F2EC2874AF2A00D2F6C0 /* WriteTVC.swift in Sources */,
 				77E8F34C2875F37500D2F6C0 /* Identifiers.swift in Sources */,
+				77E8F368287665C300D2F6C0 /* network.swift in Sources */,
 				77E8F338287575E500D2F6C0 /* UIColor+.swift in Sources */,
 				77E8F3502875F50200D2F6C0 /* BaseNC.swift in Sources */,
 				77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */,
