@@ -78,9 +78,9 @@
 		77E8F37D2876944B00D2F6C0 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F37C2876944B00D2F6C0 /* BaseAPI.swift */; };
 		77E8F3812876AB2300D2F6C0 /* PomeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3802876AB2300D2F6C0 /* PomeBtn.swift */; };
 		77E8F3832876F25400D2F6C0 /* xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3822876F25400D2F6C0 /* xib.swift */; };
+		77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3842877452400D2F6C0 /* PomeNaviBar.swift */; };
 		8432C9B228773A42001C643F /* SpendCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9B028773A42001C643F /* SpendCVC.swift */; };
 		8432C9B328773A42001C643F /* SpendCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9B128773A42001C643F /* SpendCVC.xib */; };
-		77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3842877452400D2F6C0 /* PomeNaviBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -458,6 +458,7 @@
 		77E8F2EF2874B0DE00D2F6C0 /* AppModel */ = {
 			isa = PBXGroup;
 			children = (
+				1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */,
 				77E8F2F02874B0EC00D2F6C0 /* model.swift */,
 			);
 			path = AppModel;
@@ -618,7 +619,6 @@
 			children = (
 				77E8F31F2874B7E500D2F6C0 /* MypageTVC.swift */,
 				1A10C2552877349E00489CA1 /* GoalStorageTVC.swift */,
-				1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
