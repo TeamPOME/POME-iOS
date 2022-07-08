@@ -20,7 +20,7 @@ class GoalCategoryCVC: BaseCVC {
     override var isSelected: Bool {
         didSet{
             goalLabel.textColor = isSelected ? .white : .grey_5
-            self.backgroundColor = isSelected ? .main : .clear
+            backgroundColor = isSelected ? .main : .clear
         }
     }
 }

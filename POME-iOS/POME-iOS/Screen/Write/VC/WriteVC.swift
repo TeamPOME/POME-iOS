@@ -70,6 +70,12 @@ extension WriteVC: UICollectionViewDataSource {
             goalCategoryCVC.goalLabel.textColor = .grey_5
             
             cvc = goalCategoryCVC
+            
+            /// 첫 목표 카테고리 default 설정
+            if indexPath.item == 1 {
+              cvc.isSelected = true
+              goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .left)
+            }
         }
         else {
             guard let goalCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: GoalCardCVC.className, for: indexPath) as? GoalCardCVC else { return UICollectionViewCell() }
@@ -170,6 +176,5 @@ extension WriteVC {
         goalCategoryCV.delegate = self
         goalCategoryCV.dataSource = self
         GoalCategoryCVC.register(target: goalCategoryCV)
-        goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: true, scrollPosition: .left)
     }
 }
