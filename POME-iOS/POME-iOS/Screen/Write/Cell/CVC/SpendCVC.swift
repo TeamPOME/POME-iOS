@@ -9,9 +9,15 @@ import UIKit
 
 class SpendCVC: UICollectionViewCell {
 
+    // MARK: IBOutlet
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var leftEmojiImageView: UIImageView!
+    @IBOutlet weak var rightEmojiImageView: UIImageView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    
     // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
 }
