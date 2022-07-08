@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +23,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Gvh-0O-iLp"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="foo-DX-afE">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="foo-DX-afE">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -32,7 +31,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1A3-MU-wbP">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="-43" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9P4-V8-zeL">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -53,7 +52,7 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Btg-DO-8q4" customClass="PomeNaviBar" customModule="POME_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="grey_0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="s0u-2T-abt"/>
                                 </constraints>
@@ -109,7 +108,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="tg4-Zy-Ih7"/>
                     <connections>
-                        <outlet property="goalCV" destination="zsx-4j-blm" id="0G9-6T-awa"/>
+                        <outlet property="goalCategoryCV" destination="zsx-4j-blm" id="FLm-gI-jAv"/>
                         <outlet property="writeHomeNaviBar" destination="Btg-DO-8q4" id="QB9-tY-rN4"/>
                         <outlet property="writeMainCV" destination="wNH-qz-TOz" id="eoR-Be-qaS"/>
                     </connections>
@@ -142,8 +141,5 @@
         <namedColor name="grey_0">
             <color red="0.97254901960784312" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

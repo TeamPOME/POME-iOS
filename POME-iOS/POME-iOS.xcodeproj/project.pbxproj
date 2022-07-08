@@ -77,6 +77,8 @@
 		77E8F3812876AB2300D2F6C0 /* PomeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3802876AB2300D2F6C0 /* PomeBtn.swift */; };
 		77E8F3832876F25400D2F6C0 /* xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3822876F25400D2F6C0 /* xib.swift */; };
 		77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3842877452400D2F6C0 /* PomeNaviBar.swift */; };
+		84309C822878ACF50017F8BF /* GoalCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */; };
+		84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */; };
 		8432C9B228773A42001C643F /* SpendCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9B028773A42001C643F /* SpendCVC.swift */; };
 		8432C9B328773A42001C643F /* SpendCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9B128773A42001C643F /* SpendCVC.xib */; };
 		8432C9BB28784533001C643F /* GoalCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BA28784533001C643F /* GoalCardCVC.xib */; };
@@ -160,6 +162,8 @@
 		77E8F3822876F25400D2F6C0 /* xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xib.swift; sourceTree = "<group>"; };
 		77E8F3842877452400D2F6C0 /* PomeNaviBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeNaviBar.swift; sourceTree = "<group>"; };
 		804C6365DDEE189DFF7ED4ED /* Pods-POME-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.release.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCategoryCVC.swift; sourceTree = "<group>"; };
+		84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCategoryCVC.xib; sourceTree = "<group>"; };
 		8432C9B028773A42001C643F /* SpendCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendCVC.swift; sourceTree = "<group>"; };
 		8432C9B128773A42001C643F /* SpendCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendCVC.xib; sourceTree = "<group>"; };
 		8432C9BA28784533001C643F /* GoalCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCardCVC.xib; sourceTree = "<group>"; };
@@ -459,6 +463,8 @@
 				8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */,
 				8432C9B128773A42001C643F /* SpendCVC.xib */,
 				8432C9B028773A42001C643F /* SpendCVC.swift */,
+				84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */,
+				84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */,
 			);
 			path = CVC;
 			sourceTree = "<group>";
@@ -758,6 +764,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */,
 				8432C9BB28784533001C643F /* GoalCardCVC.xib in Resources */,
 				77E8F2CD2874A38600D2F6C0 /* Colorsets.xcassets in Resources */,
 				77E8F2C52874A23800D2F6C0 /* LaunchScreen.storyboard in Resources */,
@@ -825,6 +832,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77E8F3752876936B00D2F6C0 /* NetworkConstants.swift in Sources */,
+				84309C822878ACF50017F8BF /* GoalCategoryCVC.swift in Sources */,
 				77E8F33C2875A08200D2F6C0 /* UILabel+.swift in Sources */,
 				77E8F33A28759FCF00D2F6C0 /* UIFont+.swift in Sources */,
 				77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */,
