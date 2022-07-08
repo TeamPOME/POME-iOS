@@ -79,9 +79,6 @@
 		8432C9B228773A42001C643F /* SpendCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9B028773A42001C643F /* SpendCVC.swift */; };
 		8432C9B328773A42001C643F /* SpendCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9B128773A42001C643F /* SpendCVC.xib */; };
 		77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3842877452400D2F6C0 /* PomeNaviBar.swift */; };
-		8407B9EB2878860C00AA9329 /* GoalCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407B9EA2878860C00AA9329 /* GoalCardCVC.swift */; };
-		8432C9B228773A42001C643F /* SpendCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9B028773A42001C643F /* SpendCVC.swift */; };
-		8432C9B328773A42001C643F /* SpendCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9B128773A42001C643F /* SpendCVC.xib */; };
 		8432C9BB28784533001C643F /* GoalCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BA28784533001C643F /* GoalCardCVC.xib */; };
 		8432C9BD28784751001C643F /* FeelingCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BC28784751001C643F /* FeelingCardCVC.xib */; };
 		8432C9BF28787F9A001C643F /* FeelingCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */; };
@@ -697,16 +694,6 @@
 				804C6365DDEE189DFF7ED4ED /* Pods-POME-iOS.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		84F3B3392878905F007E3AFB /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				8407B9EA2878860C00AA9329 /* GoalCardCVC.swift */,
-				8432C9B028773A42001C643F /* SpendCVC.swift */,
-				8432C9B128773A42001C643F /* SpendCVC.xib */,
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
