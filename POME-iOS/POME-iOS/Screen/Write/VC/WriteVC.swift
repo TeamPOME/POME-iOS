@@ -18,7 +18,7 @@ class WriteVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setMainCV()
+        setWriteMainCV()
         configureUI()
     }
 }
@@ -78,7 +78,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
         case 1:
             return CGSize(width: 343.adjusted, height: 118)
         default:
-            return CGSize(width: 166, height: 188)
+            return CGSize(width: 166.adjusted, height: 188)
         }
     }
     
@@ -117,7 +117,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
 
 // MARK: - Custom Methods
 extension WriteVC {
-    private func setMainCV() {
+    private func setWriteMainCV() {
         writeMainCV.delegate = self
         writeMainCV.dataSource = self
         FeelingCardCVC.register(target: writeMainCV)
