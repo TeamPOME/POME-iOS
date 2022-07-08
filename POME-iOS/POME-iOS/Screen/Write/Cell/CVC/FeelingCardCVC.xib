@@ -61,12 +61,21 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icGoalCardRightArrow20Mint" translatesAutoresizingMaskIntoConstraints="NO" id="nGv-eA-qEa">
+                                <rect key="frame" x="307" y="21" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="NC4-GL-nsl"/>
+                                    <constraint firstAttribute="height" constant="20" id="f8a-SZ-hwP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" name="light_mint"/>
                         <constraints>
                             <constraint firstItem="AlX-JU-3Mz" firstAttribute="centerY" secondItem="izk-mN-RFs" secondAttribute="centerY" id="0Ob-P6-SxT"/>
                             <constraint firstItem="AlX-JU-3Mz" firstAttribute="leading" secondItem="X3G-dR-fjv" secondAttribute="trailing" constant="16" id="EWr-Y4-euq"/>
+                            <constraint firstItem="nGv-eA-qEa" firstAttribute="top" secondItem="AlX-JU-3Mz" secondAttribute="top" id="IAZ-dC-Wea"/>
                             <constraint firstItem="X3G-dR-fjv" firstAttribute="centerY" secondItem="izk-mN-RFs" secondAttribute="centerY" id="WBZ-1I-Idz"/>
+                            <constraint firstAttribute="trailing" secondItem="nGv-eA-qEa" secondAttribute="trailing" constant="16" id="pQ3-Mq-w72"/>
                             <constraint firstItem="X3G-dR-fjv" firstAttribute="leading" secondItem="izk-mN-RFs" secondAttribute="leading" constant="16" id="qUO-Bq-AsM"/>
                         </constraints>
                     </view>
@@ -88,6 +97,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="icGoalCardRightArrow20Mint" width="20" height="20"/>
         <image name="icLookBack44" width="44" height="44"/>
         <namedColor name="grey_6">
             <color red="0.53333333333333333" green="0.55294117647058827" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
