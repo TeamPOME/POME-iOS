@@ -69,6 +69,7 @@ class GoalStorageTVC: CodeBaseTVC {
     override func setViews() {
         configureUI()
     }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -161,17 +162,17 @@ extension GoalStorageTVC {
         completion()
     }
     
-    // 처음에 viewDidLoad의 값이 아닌 변경된 값을 보여줌
+    /// 처음에 viewDidLoad의 값이 아닌 변경된 값을 보여줌
     private func updateProgressView() {
         updateProgress { [weak self] in
             self?.progressView.snp.remakeConstraints {
                 $0.left.bottom.top.trailing.equalToSuperview()
-                $0.width.equalToSuperview().multipliedBy((self?.progress ?? 100) / 100)
+                $0.width.equalToSuperview().multipliedBy((self?.progress ?? 10) / 100)
             }
         }
     }
     
-    // progressbar의 값이 들어오면 초과, 퍼센트 판별
+    /// progressbar의 값이 들어오면 초과, 퍼센트 판별
     private func setProgress(goal: Double) {
         if goal > 100 {
             progress = 100
@@ -185,7 +186,8 @@ extension GoalStorageTVC {
             percentageContainerView.backgroundColor = .main
             progressPercentageLabel.text = String(format: "%.f", progress) + "%"
         }
-        // 데이터에 따라 progressView를 다시
+        
+       /// 데이터에 따라 progressView를 다시
         updateProgressView()
     }
 }
@@ -193,7 +195,7 @@ extension GoalStorageTVC {
 // MARK: - Network
 extension GoalStorageTVC {
     
-    //setData에서 값주기
+    ///setData에서 값주기
     func setData(_ goalData: GoalDataModel) {
         goalTitleLabel.text = goalData.goalTitle
         ifSuccessLabel.text = goalData.ifSuccessOrNotLabelText
