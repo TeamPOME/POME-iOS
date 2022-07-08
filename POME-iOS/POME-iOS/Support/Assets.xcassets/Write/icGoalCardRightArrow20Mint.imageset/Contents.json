@@ -1,9 +1,9 @@
 {
   "images" : [
     {
-      "scale" : "1x",
+      "filename" : "icGoalCardRightArrow20Mint.png",
       "idiom" : "universal",
-      "filename" : "icGoalCardRightArrow20Mint.png"
+      "scale" : "1x"
     },
     {
       "filename" : "icGoalCardRightArrow20Mint@2x.png",
@@ -11,13 +11,13 @@
       "scale" : "2x"
     },
     {
+      "filename" : "icGoalCardRightArrow20Mint@3x.png",
       "idiom" : "universal",
-      "scale" : "3x",
-      "filename" : "icGoalCardRightArrow20Mint@3x.png"
+      "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
