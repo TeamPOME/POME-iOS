@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SpendCVC: UICollectionViewCell {
+class SpendCVC: BaseCVC {
 
     // MARK: IBOutlet
     @IBOutlet weak var dateLabel: UILabel!
