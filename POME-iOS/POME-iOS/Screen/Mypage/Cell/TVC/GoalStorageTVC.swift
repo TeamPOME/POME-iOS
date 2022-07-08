@@ -11,7 +11,7 @@ import Then
 
 class GoalStorageTVC: CodeBaseTVC {
     
-    var progress = 1.0
+    private var progress = 1.0
     
     private let ifSuccessLabelContainerView = UIView().then {
         $0.makeRounded(cornerRadius: 8)
@@ -73,7 +73,6 @@ class GoalStorageTVC: CodeBaseTVC {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
 }
 
 // MARK: - UI
@@ -81,7 +80,7 @@ extension GoalStorageTVC {
     
     private func configureUI() {
         
-        self.contentView.addSubviews([goalTitleLabel, ifSuccessLabelContainerView, menuBtn, spentMoneyTitleLabel, moneyGoalLabel, realSpentMoneyLabel,privateImageView, progressContainerView,ifSuccessLabelContainerView,percentageContainerView])
+        self.contentView.addSubviews([goalTitleLabel,  ifSuccessLabelContainerView, menuBtn, spentMoneyTitleLabel, moneyGoalLabel, realSpentMoneyLabel, privateImageView, progressContainerView, ifSuccessLabelContainerView, percentageContainerView])
         
         ifSuccessLabelContainerView.addSubview(ifSuccessLabel)
         percentageContainerView.addSubview(progressPercentageLabel)
@@ -174,6 +173,8 @@ extension GoalStorageTVC {
     
     /// progressbar의 값이 들어오면 초과, 퍼센트 판별
     private func setProgress(goal: Double) {
+        
+        
         if goal > 100 {
             progress = 100
             progressView.backgroundColor = .red
