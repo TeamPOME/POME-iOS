@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icQuestion24.png",
+      "filename" : "btnEmojiPlus38.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icQuestion24@2x.png",
+      "filename" : "btnEmojiPlus38@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icQuestion24@3x.png",
+      "filename" : "btnEmojiPlus38@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
