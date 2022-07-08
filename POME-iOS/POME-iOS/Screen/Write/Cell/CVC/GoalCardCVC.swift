@@ -9,4 +9,8 @@ import UIKit
 
 class GoalCardCVC: BaseCVC {
     
+    // MARK: Life Cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
 }

@@ -11,6 +11,11 @@ class FeelingCardCVC: BaseCVC {
     
     // MARK: IBOutlet
     @IBOutlet weak var remindNumLabel: UILabel!
+    
+    // MARK: Life Cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
 }
 
 // MARK: - Network
