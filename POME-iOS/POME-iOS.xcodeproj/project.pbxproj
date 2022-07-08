@@ -15,7 +15,6 @@
 		77E8F2CD2874A38600D2F6C0 /* Colorsets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2CC2874A38600D2F6C0 /* Colorsets.xcassets */; };
 		77E8F2E42874AEB900D2F6C0 /* WriteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2E32874AEB900D2F6C0 /* WriteSB.storyboard */; };
 		77E8F2E62874AEDB00D2F6C0 /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2E52874AEDB00D2F6C0 /* WriteVC.swift */; };
-		77E8F2EA2874AF1C00D2F6C0 /* WriteCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2E92874AF1C00D2F6C0 /* WriteCVC.swift */; };
 		77E8F2EC2874AF2A00D2F6C0 /* WriteTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2EB2874AF2A00D2F6C0 /* WriteTVC.swift */; };
 		77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2ED2874AF6300D2F6C0 /* PomeTBC.swift */; };
 		77E8F2F12874B0EC00D2F6C0 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2F02874B0EC00D2F6C0 /* model.swift */; };
@@ -78,8 +77,11 @@
 		77E8F3812876AB2300D2F6C0 /* PomeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3802876AB2300D2F6C0 /* PomeBtn.swift */; };
 		77E8F3832876F25400D2F6C0 /* xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3822876F25400D2F6C0 /* xib.swift */; };
 		77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3842877452400D2F6C0 /* PomeNaviBar.swift */; };
-		8432C9BB28784533001C643F /* GoalCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BA28784533001C643F /* GoalCard.xib */; };
-		8432C9BD28784751001C643F /* FeelingCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BC28784751001C643F /* FeelingCard.xib */; };
+		8407B9EB2878860C00AA9329 /* GoalCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407B9EA2878860C00AA9329 /* GoalCardCVC.swift */; };
+		8432C9B228773A42001C643F /* SpendCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9B028773A42001C643F /* SpendCVC.swift */; };
+		8432C9B328773A42001C643F /* SpendCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9B128773A42001C643F /* SpendCVC.xib */; };
+		8432C9BB28784533001C643F /* GoalCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BA28784533001C643F /* GoalCardCVC.xib */; };
+		8432C9BD28784751001C643F /* FeelingCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BC28784751001C643F /* FeelingCardCVC.xib */; };
 		8432C9BF28787F9A001C643F /* FeelingCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,7 +97,6 @@
 		77E8F2CC2874A38600D2F6C0 /* Colorsets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colorsets.xcassets; sourceTree = "<group>"; };
 		77E8F2E32874AEB900D2F6C0 /* WriteSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteSB.storyboard; sourceTree = "<group>"; };
 		77E8F2E52874AEDB00D2F6C0 /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
-		77E8F2E92874AF1C00D2F6C0 /* WriteCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCVC.swift; sourceTree = "<group>"; };
 		77E8F2EB2874AF2A00D2F6C0 /* WriteTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTVC.swift; sourceTree = "<group>"; };
 		77E8F2ED2874AF6300D2F6C0 /* PomeTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeTBC.swift; sourceTree = "<group>"; };
 		77E8F2F02874B0EC00D2F6C0 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
@@ -159,8 +160,11 @@
 		77E8F3822876F25400D2F6C0 /* xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xib.swift; sourceTree = "<group>"; };
 		77E8F3842877452400D2F6C0 /* PomeNaviBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeNaviBar.swift; sourceTree = "<group>"; };
 		804C6365DDEE189DFF7ED4ED /* Pods-POME-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.release.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		8432C9BA28784533001C643F /* GoalCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCard.xib; sourceTree = "<group>"; };
-		8432C9BC28784751001C643F /* FeelingCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeelingCard.xib; sourceTree = "<group>"; };
+		8407B9EA2878860C00AA9329 /* GoalCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCardCVC.swift; sourceTree = "<group>"; };
+		8432C9B028773A42001C643F /* SpendCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendCVC.swift; sourceTree = "<group>"; };
+		8432C9B128773A42001C643F /* SpendCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendCVC.xib; sourceTree = "<group>"; };
+		8432C9BA28784533001C643F /* GoalCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCardCVC.xib; sourceTree = "<group>"; };
+		8432C9BC28784751001C643F /* FeelingCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeelingCardCVC.xib; sourceTree = "<group>"; };
 		8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingCardCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +195,7 @@
 				77E8F2B62874A23700D2F6C0 /* Products */,
 				82DC5D6096D99590892489F7 /* Pods */,
 				23F6B433406699E39B3C571D /* Frameworks */,
+				84F3B3392878905F007E3AFB /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -449,9 +454,8 @@
 		77E8F2E82874AF0600D2F6C0 /* CVC */ = {
 			isa = PBXGroup;
 			children = (
-				77E8F2E92874AF1C00D2F6C0 /* WriteCVC.swift */,
-				8432C9BA28784533001C643F /* GoalCard.xib */,
-				8432C9BC28784751001C643F /* FeelingCard.xib */,
+				8432C9BA28784533001C643F /* GoalCardCVC.xib */,
+				8432C9BC28784751001C643F /* FeelingCardCVC.xib */,
 				8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */,
 			);
 			path = CVC;
@@ -692,6 +696,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		84F3B3392878905F007E3AFB /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				8407B9EA2878860C00AA9329 /* GoalCardCVC.swift */,
+				8432C9B028773A42001C643F /* SpendCVC.swift */,
+				8432C9B128773A42001C643F /* SpendCVC.xib */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -752,12 +766,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8432C9BB28784533001C643F /* GoalCard.xib in Resources */,
+				8432C9BB28784533001C643F /* GoalCardCVC.xib in Resources */,
 				77E8F2CD2874A38600D2F6C0 /* Colorsets.xcassets in Resources */,
 				77E8F2C52874A23800D2F6C0 /* LaunchScreen.storyboard in Resources */,
 				77E8F31C2874B7B700D2F6C0 /* MypageSB.storyboard in Resources */,
 				77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */,
-				8432C9BD28784751001C643F /* FeelingCard.xib in Resources */,
+				8432C9BD28784751001C643F /* FeelingCardCVC.xib in Resources */,
 				77E8F2E42874AEB900D2F6C0 /* WriteSB.storyboard in Resources */,
 				77E8F2F82874B15A00D2F6C0 /* RemindSB.storyboard in Resources */,
 				77E8F30E2874B4DD00D2F6C0 /* MateSB.storyboard in Resources */,
@@ -765,6 +779,7 @@
 				77E8F32A28756DA100D2F6C0 /* Pretendard-Regular.otf in Resources */,
 				77E8F32628756D8200D2F6C0 /* Pretendard-Bold.otf in Resources */,
 				77E8F32C28756DAE00D2F6C0 /* Pretendard-Medium.otf in Resources */,
+				8432C9B328773A42001C643F /* SpendCVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,6 +836,7 @@
 				77E8F33C2875A08200D2F6C0 /* UILabel+.swift in Sources */,
 				77E8F33A28759FCF00D2F6C0 /* UIFont+.swift in Sources */,
 				77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */,
+				8407B9EB2878860C00AA9329 /* GoalCardCVC.swift in Sources */,
 				77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */,
 				77E8F36028765FA600D2F6C0 /* RemindNC.swift in Sources */,
 				77E8F31E2874B7CE00D2F6C0 /* MypageVC.swift in Sources */,
@@ -842,6 +858,7 @@
 				77E8F3322875729000D2F6C0 /* UIView+.swift in Sources */,
 				77E8F3042874B1D400D2F6C0 /* RemindXib.swift in Sources */,
 				77E8F35C2875F71700D2F6C0 /* CodeBaseTVC.swift in Sources */,
+				8432C9B228773A42001C643F /* SpendCVC.swift in Sources */,
 				77E8F3422875EBD500D2F6C0 /* CALayer+.swift in Sources */,
 				77E8F3712876931D00D2F6C0 /* NetworkResult.swift in Sources */,
 				77E8F3562875F5A400D2F6C0 /* BaseTVC.swift in Sources */,
@@ -859,7 +876,6 @@
 				77E8F3522875F54000D2F6C0 /* CVRegisterable.swift in Sources */,
 				77E8F330287571C400D2F6C0 /* UIViewController+.swift in Sources */,
 				77E8F3402875EB3900D2F6C0 /* UserDefaults+.swift in Sources */,
-				77E8F2EA2874AF1C00D2F6C0 /* WriteCVC.swift in Sources */,
 				77E8F35E28765F7C00D2F6C0 /* WriteNC.swift in Sources */,
 				77E8F3832876F25400D2F6C0 /* xib.swift in Sources */,
 				77E8F33E2875EA6B00D2F6C0 /* Adjusted+.swift in Sources */,
@@ -1016,7 +1032,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 397WA8BG8W;
+				DEVELOPMENT_TEAM = 83B9Y749K7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "POME-iOS/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1044,7 +1060,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 397WA8BG8W;
+				DEVELOPMENT_TEAM = 83B9Y749K7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "POME-iOS/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
