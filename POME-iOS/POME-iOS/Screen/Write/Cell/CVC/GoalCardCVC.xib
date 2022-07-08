@@ -70,6 +70,11 @@
                             <constraint firstItem="yGx-TL-lfC" firstAttribute="centerY" secondItem="3nW-ax-0lz" secondAttribute="centerY" id="y2J-y0-KUb"/>
                             <constraint firstItem="yGx-TL-lfC" firstAttribute="leading" secondItem="3nW-ax-0lz" secondAttribute="leading" constant="20" id="zUk-tC-Ddu"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>

@@ -93,6 +93,11 @@
                             <constraint firstItem="GKu-1c-aQc" firstAttribute="top" secondItem="Hed-t1-V0l" secondAttribute="bottom" constant="7" id="quG-vv-S2T"/>
                             <constraint firstItem="GKu-1c-aQc" firstAttribute="leading" secondItem="hi0-tR-4z6" secondAttribute="leading" constant="16" id="s8b-hI-mGW"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
