@@ -19,7 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hwk-9G-FgW">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GoalCardCVC" id="hwk-9G-FgW">
             <rect key="frame" x="0.0" y="0.0" width="343" height="157"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fk7-U6-8N3">
@@ -80,7 +80,7 @@
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="380" height="181"/>
-            <point key="canvasLocation" x="263" y="-283"/>
+            <point key="canvasLocation" x="261.59420289855075" y="-283.59375"/>
         </collectionViewCell>
     </objects>
     <resources>
