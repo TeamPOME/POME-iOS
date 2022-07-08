@@ -50,9 +50,11 @@ extension WriteVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let goalCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: GoalCardCVC.className, for: indexPath) as? GoalCardCVC else { return UICollectionViewCell() }
+        goalCardCVC.makeRounded(cornerRadius: 10)
         guard let feelingCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: FeelingCardCVC.className, for: indexPath) as? FeelingCardCVC else {
                     return UICollectionViewCell() }
         guard let spendCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: SpendCVC.className, for: indexPath) as? SpendCVC else { return UICollectionViewCell() }
+        spendCVC.makeRounded(cornerRadius: 10)
         
         switch indexPath.section {
         case 0:
@@ -76,7 +78,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
         case 1:
             return CGSize(width: 343.adjusted, height: 118)
         default:
-            return CGSize(width: 166.adjusted, height: 188)
+            return CGSize(width: 166, height: 188)
         }
     }
     

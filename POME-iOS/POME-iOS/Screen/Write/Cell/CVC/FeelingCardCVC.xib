@@ -78,6 +78,11 @@
                             <constraint firstAttribute="trailing" secondItem="nGv-eA-qEa" secondAttribute="trailing" constant="16" id="pQ3-Mq-w72"/>
                             <constraint firstItem="X3G-dR-fjv" firstAttribute="leading" secondItem="izk-mN-RFs" secondAttribute="leading" constant="16" id="qUO-Bq-AsM"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
