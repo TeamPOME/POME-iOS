@@ -83,10 +83,10 @@
 		84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */; };
 		8432C9B228773A42001C643F /* SpendCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9B028773A42001C643F /* SpendCVC.swift */; };
 		8432C9B328773A42001C643F /* SpendCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9B128773A42001C643F /* SpendCVC.xib */; };
-		8432C9BB28784533001C643F /* GoalCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BA28784533001C643F /* GoalCardCVC.xib */; };
+		8432C9BB28784533001C643F /* EmptyGoalCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BA28784533001C643F /* EmptyGoalCardCVC.xib */; };
 		8432C9BD28784751001C643F /* FeelingCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BC28784751001C643F /* FeelingCardCVC.xib */; };
 		8432C9BF28787F9A001C643F /* FeelingCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */; };
-		84ACED852878989E00AA408D /* GoalCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACED842878989E00AA408D /* GoalCardCVC.swift */; };
+		84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACED842878989E00AA408D /* EmptyGoalCardCVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,10 +170,10 @@
 		84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCategoryCVC.xib; sourceTree = "<group>"; };
 		8432C9B028773A42001C643F /* SpendCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendCVC.swift; sourceTree = "<group>"; };
 		8432C9B128773A42001C643F /* SpendCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendCVC.xib; sourceTree = "<group>"; };
-		8432C9BA28784533001C643F /* GoalCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCardCVC.xib; sourceTree = "<group>"; };
+		8432C9BA28784533001C643F /* EmptyGoalCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyGoalCardCVC.xib; sourceTree = "<group>"; };
 		8432C9BC28784751001C643F /* FeelingCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeelingCardCVC.xib; sourceTree = "<group>"; };
 		8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingCardCVC.swift; sourceTree = "<group>"; };
-		84ACED842878989E00AA408D /* GoalCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCardCVC.swift; sourceTree = "<group>"; };
+		84ACED842878989E00AA408D /* EmptyGoalCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyGoalCardCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,8 +461,8 @@
 		77E8F2E82874AF0600D2F6C0 /* CVC */ = {
 			isa = PBXGroup;
 			children = (
-				8432C9BA28784533001C643F /* GoalCardCVC.xib */,
-				84ACED842878989E00AA408D /* GoalCardCVC.swift */,
+				8432C9BA28784533001C643F /* EmptyGoalCardCVC.xib */,
+				84ACED842878989E00AA408D /* EmptyGoalCardCVC.swift */,
 				8432C9BC28784751001C643F /* FeelingCardCVC.xib */,
 				8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */,
 				8432C9B128773A42001C643F /* SpendCVC.xib */,
@@ -771,7 +771,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */,
-				8432C9BB28784533001C643F /* GoalCardCVC.xib in Resources */,
+				8432C9BB28784533001C643F /* EmptyGoalCardCVC.xib in Resources */,
 				77E8F2CD2874A38600D2F6C0 /* Colorsets.xcassets in Resources */,
 				77E8F2C52874A23800D2F6C0 /* LaunchScreen.storyboard in Resources */,
 				77E8F31C2874B7B700D2F6C0 /* MypageSB.storyboard in Resources */,
@@ -842,7 +842,7 @@
 				77E8F33C2875A08200D2F6C0 /* UILabel+.swift in Sources */,
 				77E8F33A28759FCF00D2F6C0 /* UIFont+.swift in Sources */,
 				77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */,
-				84ACED852878989E00AA408D /* GoalCardCVC.swift in Sources */,
+				84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */,
 				77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */,
 				77E8F36028765FA600D2F6C0 /* RemindNC.swift in Sources */,
 				77E8F31E2874B7CE00D2F6C0 /* MypageVC.swift in Sources */,
