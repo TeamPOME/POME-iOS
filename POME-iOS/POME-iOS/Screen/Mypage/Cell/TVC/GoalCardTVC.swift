@@ -14,6 +14,10 @@ class GoalCardTVC: CodeBaseTVC {
     // MARK: Properties
     private var progress = 1.0
     
+    private let allContainerView = UIView().then {
+        $0.backgroundColor = .white
+    }
+    
     private let ifSuccessLabelContainerView = UIView().then {
         $0.makeRounded(cornerRadius: 8)
         $0.backgroundColor = .grey_5
@@ -81,10 +85,21 @@ class GoalCardTVC: CodeBaseTVC {
 extension GoalCardTVC {
     
     private func configureUI() {
-        self.contentView.addSubviews([goalTitleLabel,  ifSuccessLabelContainerView, menuBtn, spentMoneyTitleLabel, moneyGoalLabel, realSpentMoneyLabel, privateImageView, progressContainerView, ifSuccessLabelContainerView, percentageContainerView])
+        contentView.addSubview(allContainerView)
+        
+        self.allContainerView.addSubviews([goalTitleLabel,  ifSuccessLabelContainerView, menuBtn, spentMoneyTitleLabel, moneyGoalLabel, realSpentMoneyLabel, privateImageView, progressContainerView, ifSuccessLabelContainerView, percentageContainerView])
         ifSuccessLabelContainerView.addSubview(ifSuccessLabel)
         percentageContainerView.addSubview(progressPercentageLabel)
         progressContainerView.addSubview(progressView)
+        
+        contentView.backgroundColor = .grey_0
+        
+        allContainerView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(6.adjustedH)
+            $0.bottom.equalToSuperview().inset(6.adjustedH)
+            $0.leading.equalToSuperview().offset(16.adjusted)
+            $0.trailing.equalToSuperview().inset(16.adjusted)
+        }
         
         privateImageView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(15.adjustedH)
