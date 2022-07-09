@@ -16,10 +16,14 @@ class GoalCardTVC: CodeBaseTVC {
     
     private let allContainerView = UIView().then {
         $0.backgroundColor = .white
+        $0.clipsToBounds = true
+        $0.makeRounded(cornerRadius: 6.adjusted)
+        $0.layer.borderWidth = 1.adjusted
+        $0.layer.borderColor = UIColor.grey_0.cgColor
     }
     
     private let ifSuccessLabelContainerView = UIView().then {
-        $0.makeRounded(cornerRadius: 8)
+        $0.makeRounded(cornerRadius: 8.adjusted)
         $0.backgroundColor = .grey_5
         $0.clipsToBounds = true
     }
@@ -68,7 +72,7 @@ class GoalCardTVC: CodeBaseTVC {
     }
     
     private let percentageContainerView = UIView().then {
-        $0.makeRounded(cornerRadius: 10)
+        $0.makeRounded(cornerRadius: 10.adjusted)
         $0.clipsToBounds = true
     }
     
@@ -83,13 +87,6 @@ class GoalCardTVC: CodeBaseTVC {
 
 // MARK: - UI
 extension GoalCardTVC {
-    
-    private func configureCellUI() {
-        contentView.clipsToBounds = true
-        contentView.layer.cornerRadius = 6
-        contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor.grey_0.cgColor
-    }
     
     private func configureUI() {
         contentView.addSubview(allContainerView)
@@ -176,7 +173,6 @@ extension GoalCardTVC {
             $0.centerX.equalTo(ifSuccessLabelContainerView)
             $0.centerY.equalTo(ifSuccessLabelContainerView)
         }
-        configureCellUI()
     }
     
     /// progress 값 변경이 밖에서 가능하게 해주는 함수
