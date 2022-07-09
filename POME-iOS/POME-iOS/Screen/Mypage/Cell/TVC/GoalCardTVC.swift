@@ -82,7 +82,6 @@ extension GoalCardTVC {
     
     private func configureUI() {
         self.contentView.addSubviews([goalTitleLabel,  ifSuccessLabelContainerView, menuBtn, spentMoneyTitleLabel, moneyGoalLabel, realSpentMoneyLabel, privateImageView, progressContainerView, ifSuccessLabelContainerView, percentageContainerView])
-        
         ifSuccessLabelContainerView.addSubview(ifSuccessLabel)
         percentageContainerView.addSubview(progressPercentageLabel)
         progressContainerView.addSubview(progressView)
@@ -182,15 +181,13 @@ extension GoalCardTVC {
                 view in view.backgroundColor = .red
             }
             progressPercentageLabel.text = "초과"
-        }
-        else {
+        } else {
             progress = goal
             [progressView, percentageContainerView].forEach {
                 view in view.backgroundColor = .main
             }
             progressPercentageLabel.text = String(format: "%.f", progress) + "%"
         }
-        
         updateProgressView()
     }
 }
