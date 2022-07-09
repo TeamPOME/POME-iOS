@@ -11,10 +11,7 @@ extension UITextField {
     
     /// UITextField의 상태를 리턴함
     var isEmpty: Bool {
-        if text?.isEmpty ?? true {
-            return true
-        }
-        return false
+        return text?.isEmpty ?? true
     }
     
     /// UITextField 왼쪽에 여백 주는 메서드
