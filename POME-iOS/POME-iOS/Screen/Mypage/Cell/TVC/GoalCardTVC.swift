@@ -84,6 +84,13 @@ class GoalCardTVC: CodeBaseTVC {
 // MARK: - UI
 extension GoalCardTVC {
     
+    private func configureCellUI() {
+        contentView.clipsToBounds = true
+        contentView.layer.cornerRadius = 6
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor.grey_0.cgColor
+    }
+    
     private func configureUI() {
         contentView.addSubview(allContainerView)
         
@@ -95,14 +102,12 @@ extension GoalCardTVC {
         contentView.backgroundColor = .grey_0
         
         allContainerView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(6.adjustedH)
-            $0.bottom.equalToSuperview().inset(6.adjustedH)
-            $0.leading.equalToSuperview().offset(16.adjusted)
-            $0.trailing.equalToSuperview().inset(16.adjusted)
+            $0.top.bottom.equalToSuperview().inset(6.adjustedH)
+            $0.leading.trailing.equalToSuperview().inset(16.adjusted)
         }
         
         privateImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(15.adjustedH)
+            $0.top.equalToSuperview().inset(15.adjustedH)
             $0.leading.equalToSuperview().inset(16.adjusted)
             $0.height.equalTo(24.adjustedH)
             $0.width.equalTo(24.adjusted)
@@ -146,7 +151,7 @@ extension GoalCardTVC {
             $0.trailing.equalToSuperview().inset(16.adjusted)
             $0.leading.equalTo(privateImageView)
             $0.top.equalTo(realSpentMoneyLabel.snp.bottom).offset(20.adjustedH)
-            $0.bottom.equalTo(contentView).inset(18.adjustedH)
+            $0.bottom.equalTo(contentView).inset(27.adjustedH)
             $0.height.equalTo(6.adjustedH)
         }
         
@@ -171,6 +176,7 @@ extension GoalCardTVC {
             $0.centerX.equalTo(ifSuccessLabelContainerView)
             $0.centerY.equalTo(ifSuccessLabelContainerView)
         }
+        configureCellUI()
     }
     
     /// progress 값 변경이 밖에서 가능하게 해주는 함수
