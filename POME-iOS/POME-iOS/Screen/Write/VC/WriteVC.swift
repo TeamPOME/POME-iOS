@@ -24,9 +24,6 @@ class WriteVC: BaseVC {
         setGoalCategoryCV()
         setWriteMainCV()
         configureNaviBar()
-        
-        /// test code
-        category.insert("+", at: 0)
     }
 }
 
@@ -64,21 +61,25 @@ extension WriteVC: UICollectionViewDataSource {
         var cvc = UICollectionViewCell()
         if collectionView == goalCategoryCV {
             guard let goalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: GoalCategoryCVC.className, for: indexPath) as? GoalCategoryCVC else { return UICollectionViewCell() }
-            
-            /// 셀 작업, + 분기처리 필요
-            /// 네트워크 통신 후, 5개 미만이라면 category 변수 맨 앞에 +를 추가한다.
-            goalCategoryCVC.goalLabel.text = category[indexPath.row]
-            if category[indexPath.row] == "+" {
-                goalCategoryCVC.backgroundColor = .grey_4
-                goalCategoryCVC.goalLabel.textColor = .white
+        
+            /// plus 버튼 추가
+            if category.count < 5 {
+                let editButton = UIButton(frame: CGRect(x: 16, y: 21 - 29 / 2, width: 52, height:29))
+                editButton.setImage(UIImage(named: "btnGoalCategory"), for: UIControl.State.normal)
+    //            editButton.addTarget(self, action: <#Selector#>, for: UIControl.Event.touchUpInside)
+
+                goalCategoryCV.addSubview(editButton)
             }
+            
+            /// 셀 작업
+            goalCategoryCVC.goalLabel.text = category[indexPath.row]
             
             cvc = goalCategoryCVC
             
-            /// 첫 목표 카테고리 default 설정
+            /// 목표 카테고리의 첫 아이템 디폴트 설정
             if indexPath.item == 1 {
               cvc.isSelected = true
-              goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .left)
+                goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
             }
         }
         else {
@@ -127,7 +128,11 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         var inset = UIEdgeInsets()
         if collectionView == goalCategoryCV {
-            inset = UIEdgeInsets(top: 7, left: 16, bottom: 6, right: 0)
+            if category.count < 5 {
+                inset = UIEdgeInsets(top: 7, left: 76, bottom: 6, right: 0)
+            } else {
+                inset = UIEdgeInsets(top: 7, left: 16, bottom: 6, right: 0)
+            }
         } else {
             switch section {
             case 0:
