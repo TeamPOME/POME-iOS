@@ -29,6 +29,7 @@ class WriteVC: BaseVC {
 
 // MARK: - UI
 extension WriteVC {
+    
     private func configureNaviBar() {
         writeHomeNaviBar.setNaviStyle(state: .greyWithRightBtn)
     }
@@ -40,6 +41,7 @@ extension WriteVC: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDataSource
 extension WriteVC: UICollectionViewDataSource {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         let num = (collectionView == goalCategoryCV) ? 1 : 3
         return num
@@ -60,15 +62,15 @@ extension WriteVC: UICollectionViewDataSource {
         var cvc = UICollectionViewCell()
         if collectionView == goalCategoryCV {
             guard let goalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: GoalCategoryCVC.className, for: indexPath) as? GoalCategoryCVC else { return UICollectionViewCell() }
-        
+            
             /// plus 버튼 추가
             if category.count < 5 {
                 let editButton = UIButton(frame: CGRect(x: 16, y: (42 / 2) - (29 / 2), width: 52, height:29))
                 editButton.setImage(UIImage(named: "btnGoalCategory"), for: UIControl.State.normal)
                 
                 // TODO: - 카테고리 추가로 이동
-    //            editButton.addTarget(self, action: <#Selector#>, for: UIControl.Event.touchUpInside)
-
+                //            editButton.addTarget(self, action: <#Selector#>, for: UIControl.Event.touchUpInside)
+                
                 goalCategoryCV.addSubview(editButton)
             }
             
@@ -79,11 +81,10 @@ extension WriteVC: UICollectionViewDataSource {
             
             /// 목표 카테고리의 첫 아이템 디폴트 설정
             if indexPath.item == 1 {
-              cvc.isSelected = true
+                cvc.isSelected = true
                 goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .right)
             }
-        }
-        else {
+        } else {
             guard let goalCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: GoalCardCVC.className, for: indexPath) as? GoalCardCVC else { return UICollectionViewCell() }
             guard let feelingCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: FeelingCardCVC.className, for: indexPath) as? FeelingCardCVC else {
                 return UICollectionViewCell() }
@@ -150,9 +151,9 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         switch section {
         case 0, 1:
-             return 0
+            return 0
         default:
-             return 12
+            return 12
         }
     }
     
@@ -174,6 +175,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
 
 // MARK: - Custom Methods
 extension WriteVC {
+    
     private func setWriteMainCV() {
         writeMainCV.delegate = self
         writeMainCV.dataSource = self

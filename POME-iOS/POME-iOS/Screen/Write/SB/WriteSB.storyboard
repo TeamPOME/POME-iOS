@@ -78,7 +78,7 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMY-oy-SiQ">
-                                <rect key="frame" x="307" y="661" width="52" height="52"/>
+                                <rect key="frame" x="307" y="710" width="52" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="D5n-EC-GQV"/>
                                     <constraint firstAttribute="height" constant="52" id="e6T-ab-7FY"/>
@@ -101,7 +101,7 @@
                             <constraint firstItem="wNH-qz-TOz" firstAttribute="top" secondItem="zsx-4j-blm" secondAttribute="bottom" constant="12" id="HCq-7d-rke"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Btg-DO-8q4" secondAttribute="trailing" id="W6E-49-HVJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rMY-oy-SiQ" secondAttribute="trailing" constant="16" id="c82-GD-qma"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rMY-oy-SiQ" secondAttribute="bottom" constant="65" id="lEY-Rn-PlE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rMY-oy-SiQ" secondAttribute="bottom" constant="16" id="lEY-Rn-PlE"/>
                             <constraint firstItem="wNH-qz-TOz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="pRC-Rp-407"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nIS-eo-UGR" secondAttribute="trailing" id="t1w-Ue-ieJ"/>
                         </constraints>
