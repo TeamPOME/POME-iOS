@@ -81,7 +81,6 @@ class GoalCardTVC: CodeBaseTVC {
 extension GoalCardTVC {
     
     private func configureUI() {
-        
         self.contentView.addSubviews([goalTitleLabel,  ifSuccessLabelContainerView, menuBtn, spentMoneyTitleLabel, moneyGoalLabel, realSpentMoneyLabel, privateImageView, progressContainerView, ifSuccessLabelContainerView, percentageContainerView])
         
         ifSuccessLabelContainerView.addSubview(ifSuccessLabel)
