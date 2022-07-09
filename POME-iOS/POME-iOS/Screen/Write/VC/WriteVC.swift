@@ -15,7 +15,7 @@ class WriteVC: BaseVC {
     @IBOutlet weak var writeMainCV: UICollectionView!
     
     // MARK: Properties
-    private var category = ["목표 선택", "목표 설정", "목표 진행", "목표 완료"]
+    private var category = ["목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료"]
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -50,7 +50,6 @@ extension WriteVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var num = 0
         if collectionView == goalCategoryCV {
-            
             num = category.count
         } else {
             num = (section == 0 || section == 1) ? 1 : 10
@@ -64,22 +63,19 @@ extension WriteVC: UICollectionViewDataSource {
             guard let goalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: GoalCategoryCVC.className, for: indexPath) as? GoalCategoryCVC else { return UICollectionViewCell() }
             
             /// plus 버튼 추가
-            if category.count < 5 {
-                let editButton = UIButton(frame: CGRect(x: 16, y: (42 / 2) - (29 / 2), width: 52, height:29))
-                editButton.setImage(UIImage(named: "btnGoalCategory"), for: UIControl.State.normal)
-                
-                // TODO: - 카테고리 추가로 이동
-                //            editButton.addTarget(self, action: <#Selector#>, for: UIControl.Event.touchUpInside)
-                
-                goalCategoryCV.addSubview(editButton)
-            }
+            let editButton = UIButton(frame: CGRect(x: 16, y: (42 / 2) - (29 / 2), width: 52, height:29))
+            editButton.setImage(UIImage(named: "btnGoalCategory"), for: UIControl.State.normal)
             
-            /// 셀 작업
+            // TODO: - 클릭 시 카테고리 추가로 이동
+            //            editButton.addTarget(self, action: <#Selector#>, for: UIControl.Event.touchUpInside)
+            
+            goalCategoryCV.addSubview(editButton)
+            
+            /// 셀 텍스트 변경
             goalCategoryCVC.goalLabel.text = category[indexPath.row]
-            
             cvc = goalCategoryCVC
             
-            /// 목표 카테고리의 첫 아이템 디폴트 설정
+            /// 목표 카테고리의 첫 아이템을 디폴트로 설정
             if indexPath.item == 1 {
                 cvc.isSelected = true
                 goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .right)
@@ -92,7 +88,11 @@ extension WriteVC: UICollectionViewDataSource {
             
             switch indexPath.section {
             case 0:
-                cvc = goalCardCVC
+                if category.count == 0 {
+                    cvc = goalCardCVC
+                } else {
+                    cvc = goalCardCVC
+                }
             case 1:
                 cvc = feelingCardCVC
             default:
@@ -130,11 +130,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         var inset = UIEdgeInsets()
         if collectionView == goalCategoryCV {
-            if category.count < 5 {
-                inset = UIEdgeInsets(top: 7, left: 76, bottom: 6, right: 0)
-            } else {
-                inset = UIEdgeInsets(top: 7, left: 16, bottom: 6, right: 0)
-            }
+            inset = UIEdgeInsets(top: 7, left: 76, bottom: 6, right: 0)
         } else {
             switch section {
             case 0:

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zsx-4j-blm">
-                                <rect key="frame" x="0.0" y="88" width="334" height="42"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="42"/>
                                 <color key="backgroundColor" name="grey_0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Gvh-0O-iLp"/>
@@ -40,16 +40,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIS-eo-UGR">
-                                <rect key="frame" x="334" y="88" width="41" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="41" id="PMW-cF-xuc"/>
-                                    <constraint firstAttribute="height" constant="42" id="hYl-zm-I6J"/>
-                                </constraints>
-                                <inset key="contentEdgeInsets" minX="1" minY="8" maxX="16" maxY="8"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="" image="icFolder24"/>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Btg-DO-8q4" customClass="PomeNaviBar" customModule="POME_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <color key="backgroundColor" name="grey_0"/>
@@ -96,14 +86,12 @@
                             <constraint firstItem="Btg-DO-8q4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="3OK-c2-sme"/>
                             <constraint firstItem="wNH-qz-TOz" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ACX-fh-Pge"/>
                             <constraint firstItem="wNH-qz-TOz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-16" id="BE3-JR-NOq"/>
-                            <constraint firstItem="nIS-eo-UGR" firstAttribute="leading" secondItem="zsx-4j-blm" secondAttribute="trailing" id="D1a-E3-cKq"/>
-                            <constraint firstItem="nIS-eo-UGR" firstAttribute="centerY" secondItem="zsx-4j-blm" secondAttribute="centerY" id="Dtg-G2-oxE"/>
                             <constraint firstItem="wNH-qz-TOz" firstAttribute="top" secondItem="zsx-4j-blm" secondAttribute="bottom" constant="12" id="HCq-7d-rke"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Btg-DO-8q4" secondAttribute="trailing" id="W6E-49-HVJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rMY-oy-SiQ" secondAttribute="trailing" constant="16" id="c82-GD-qma"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zsx-4j-blm" secondAttribute="trailing" id="hEj-eE-hg5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rMY-oy-SiQ" secondAttribute="bottom" constant="16" id="lEY-Rn-PlE"/>
                             <constraint firstItem="wNH-qz-TOz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="pRC-Rp-407"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nIS-eo-UGR" secondAttribute="trailing" id="t1w-Ue-ieJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tg4-Zy-Ih7"/>
@@ -137,7 +125,6 @@
     </scenes>
     <resources>
         <image name="btn_writing" width="84" height="84"/>
-        <image name="icFolder24" width="24" height="24"/>
         <namedColor name="grey_0">
             <color red="0.97254901960784312" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
