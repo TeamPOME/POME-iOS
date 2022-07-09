@@ -32,16 +32,13 @@ class GoalStorageVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        setTV()
         setDelegate()
     }
 }
 
 // MARK: - UI
 extension GoalStorageVC {
-    
-    private func setTV(){
-        GoalCardTVC.register(target: goalStoarageTV)
-    }
     
     private func configureView() {
         view.backgroundColor = .grey_0
@@ -69,13 +66,20 @@ extension GoalStorageVC {
             $0.top.equalTo(naviBar.snp.bottom)
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
-        setTV()
-        configureView()
+    }
+}
+
+// MARK: - Custom Methods
+extension GoalStorageVC {
+    
+    private func setTV(){
+        GoalCardTVC.register(target: goalStoarageTV)
     }
 }
 
 // MARK: - Delegate
 extension GoalStorageVC {
+    
     private func setDelegate() {
         goalStoarageTV.delegate = self
         goalStoarageTV.dataSource = self
@@ -84,8 +88,8 @@ extension GoalStorageVC {
 
 // MARK: - UITableViewDelegate
 extension GoalStorageVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.GoalCardTVC, for: indexPath) as? GoalCardTVC else { return UITableViewCell() }
         cell.clipsToBounds = true
         cell.layer.cornerRadius = 10
@@ -102,6 +106,7 @@ extension GoalStorageVC: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 extension GoalStorageVC: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return GoalDataModel.sampleData.count
     }
