@@ -14,6 +14,7 @@ class GoalStorageVC: BaseVC {
         $0.backgroundColor = .grey_0
         $0.showsVerticalScrollIndicator = false
         $0.showsHorizontalScrollIndicator = false
+        $0.separatorStyle = .none
     }
     
     private let naviBar = PomeNaviBar().then {
@@ -75,10 +76,6 @@ extension GoalStorageVC {
     private func setTV(){
         GoalCardTVC.register(target: goalStoarageTV)
     }
-}
-
-// MARK: - Delegate
-extension GoalStorageVC {
     
     private func setDelegate() {
         goalStoarageTV.delegate = self
@@ -91,16 +88,12 @@ extension GoalStorageVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.GoalCardTVC, for: indexPath) as? GoalCardTVC else { return UITableViewCell() }
-        cell.clipsToBounds = true
-        cell.layer.cornerRadius = 10
-        cell.layer.borderWidth = 1
-        cell.layer.borderColor = UIColor.grey_0.cgColor
         cell.setData(GoalDataModel.sampleData[indexPath.row])
         return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 157.adjustedH
     }
 }
 
