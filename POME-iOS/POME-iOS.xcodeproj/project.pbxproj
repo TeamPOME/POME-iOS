@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0DC225BE62C2B307EDEA55E4 /* Pods_POME_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1232F317EC5CF269A755DD4C /* Pods_POME_iOS.framework */; };
+		1A10C2562877349E00489CA1 /* GoalCardTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10C2552877349E00489CA1 /* GoalCardTVC.swift */; };
+		1A10C2582877367100489CA1 /* GoalStorageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */; };
 		77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */; };
 		77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */; };
 		77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2C12874A23800D2F6C0 /* Assets.xcassets */; };
@@ -89,6 +91,8 @@
 
 /* Begin PBXFileReference section */
 		1232F317EC5CF269A755DD4C /* Pods_POME_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POME_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A10C2552877349E00489CA1 /* GoalCardTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCardTVC.swift; sourceTree = "<group>"; };
+		1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageDataModel.swift; sourceTree = "<group>"; };
 		6F6FAF66B7C4C46AE47E904C /* Pods-POME-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.debug.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		77E8F2B52874A23700D2F6C0 /* POME-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POME-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -472,6 +476,7 @@
 		77E8F2EF2874B0DE00D2F6C0 /* AppModel */ = {
 			isa = PBXGroup;
 			children = (
+				1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */,
 				77E8F2F02874B0EC00D2F6C0 /* model.swift */,
 			);
 			path = AppModel;
@@ -631,6 +636,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F31F2874B7E500D2F6C0 /* MypageTVC.swift */,
+				1A10C2552877349E00489CA1 /* GoalCardTVC.swift */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -845,6 +851,7 @@
 				77E8F3772876938800D2F6C0 /* GenericResponse.swift in Sources */,
 				77E8F2FA2874B17800D2F6C0 /* RemindVC.swift in Sources */,
 				77E8F3242874B80A00D2F6C0 /* MypageXib.swift in Sources */,
+				1A10C2582877367100489CA1 /* GoalStorageDataModel.swift in Sources */,
 				77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */,
 				77E8F37D2876944B00D2F6C0 /* BaseAPI.swift in Sources */,
 				77E8F2FE2874B1A100D2F6C0 /* RemindCVC.swift in Sources */,
@@ -862,6 +869,7 @@
 				77E8F3422875EBD500D2F6C0 /* CALayer+.swift in Sources */,
 				77E8F3712876931D00D2F6C0 /* NetworkResult.swift in Sources */,
 				77E8F3562875F5A400D2F6C0 /* BaseTVC.swift in Sources */,
+				1A10C2562877349E00489CA1 /* GoalCardTVC.swift in Sources */,
 				77E8F3182874B72F00D2F6C0 /* MateXib.swift in Sources */,
 				77E8F3142874B56B00D2F6C0 /* MateTVC.swift in Sources */,
 				77E8F35A2875F6BE00D2F6C0 /* CodeBaseCVC.swift in Sources */,
