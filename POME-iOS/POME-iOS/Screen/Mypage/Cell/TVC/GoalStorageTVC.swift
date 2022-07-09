@@ -27,20 +27,21 @@ class GoalStorageTVC: CodeBaseTVC {
     private let privateImageView = UIImageView().then {
         $0.image = UIImage(named: "icLockAll")
     }
+    
     private let goalTitleLabel = UILabel().then {
-        $0.setLabel(text: "", color: .black, size: 20, weight: .bold)
+        $0.setLabel(text: "건강을위해줄이자", color: .grey_9, size: 20, weight: .bold)
     }
     
     private let spentMoneyTitleLabel = UILabel().then {
-        $0.setLabel(text: "사용금액", color: .grey_7, size: 12, weight: .semiBold)
+        $0.setLabel(text: "남은 예산", color: .grey_6, size: 12, weight: .semiBold)
     }
     
     private var moneyGoalLabel = UILabel().then {
-        $0.setLabel(text: "", color: .grey_5, size: 14, weight: .semiBold)
+        $0.setLabel(text: "110000", color: .grey_5, size: 14, weight: .semiBold)
     }
     
     private let realSpentMoneyLabel = UILabel().then {
-        $0.setLabel(text: "", color: .black, size: 18, weight: .bold)
+        $0.setLabel(text: "10000", color: .grey_9, size: 18, weight: .bold)
     }
     
     private let menuBtn = UIButton().then {
@@ -58,7 +59,7 @@ class GoalStorageTVC: CodeBaseTVC {
     }
     
     private let progressPercentageLabel = UILabel().then {
-        $0.setLabel(text: "", color: .white, size: 12, weight: .semiBold)
+        $0.setLabel(text: "", color: .white, size: 12, weight: .bold)
     }
     
     private let percentageContainerView = UIView().then {
@@ -68,8 +69,11 @@ class GoalStorageTVC: CodeBaseTVC {
     
     override func setViews() {
         configureUI()
+        cellColor()
     }
-    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -77,6 +81,12 @@ class GoalStorageTVC: CodeBaseTVC {
 
 // MARK: - UI
 extension GoalStorageTVC {
+    
+    func cellColor() {
+        contentView.layer.cornerRadius = 8
+        contentView.superview?.backgroundColor = .grey_0
+        contentView.backgroundColor = .white
+    }
     
     private func configureUI() {
         
@@ -87,8 +97,10 @@ extension GoalStorageTVC {
         progressContainerView.addSubview(progressView)
         
         privateImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(24.adjustedH)
+            $0.top.equalToSuperview().offset(15.adjustedH)
             $0.leading.equalToSuperview().inset(16.adjusted)
+            $0.height.equalTo(24.adjustedH)
+            $0.width.equalTo(24.adjusted)
         }
         
         goalTitleLabel.snp.makeConstraints {
@@ -128,13 +140,13 @@ extension GoalStorageTVC {
         progressContainerView.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(16.adjusted)
             $0.leading.equalTo(privateImageView)
-            $0.top.equalTo(moneyGoalLabel.snp.bottom).offset(18.adjustedH)
-            $0.bottom.equalToSuperview().inset(25.adjustedH)
+            $0.top.equalTo(realSpentMoneyLabel.snp.bottom).offset(20.adjustedH)
+            $0.bottom.equalTo(contentView).inset(18.adjustedH)
             $0.height.equalTo(6.adjustedH)
         }
         
         progressView.snp.makeConstraints {
-            $0.left.bottom.top.trailing.equalToSuperview()
+            $0.centerY.centerX.equalToSuperview()
             $0.width.equalToSuperview().multipliedBy(progress / 100)
         }
         
@@ -156,11 +168,15 @@ extension GoalStorageTVC {
         }
     }
     
+    ///@escaping 선언이 있어야 구문 밖에서 해당 클로저를 사용할 수 있다!
+    ///탈출 클로저를 이용하면 함수밖에서 사용가능함
+    ///데이터를 받아올때, 함수호출을 하고, constraints를 데이터가 바뀔때마다 밖에서 값을 바꿔줘야하기 때문에 escaping을 사용해야한다!
     private func updateProgress(completion: @escaping () -> Void) {
         completion()
     }
     
-    /// 처음에 viewDidLoad의 값이 아닌 변경된 값을 보여줌
+    /// snapkit의 remakeConstraints : 기존에 입력되었던 constraints를 삭제하고 다시 constriants를 설정하는 메소드
+    ///이스케이핑 클로저 안에서 지연할당의 가능성이 있는 경우( 타이머, 비동기 데이터 처리 등) weakself를 써야한다고 함
     private func updateProgressView() {
         updateProgress { [weak self] in
             self?.progressView.snp.remakeConstraints {
@@ -175,18 +191,19 @@ extension GoalStorageTVC {
         
         if goal > 100 {
             progress = 100
-            progressView.backgroundColor = .red
-            percentageContainerView.backgroundColor = .red
+            [progressView, percentageContainerView].forEach {
+                view in view.backgroundColor = .red
+            }
             progressPercentageLabel.text = "초과"
         }
         else {
             progress = goal
-            progressView.backgroundColor = .main
-            percentageContainerView.backgroundColor = .main
+            [progressView, percentageContainerView].forEach {
+                view in view.backgroundColor = .main
+            }
             progressPercentageLabel.text = String(format: "%.f", progress) + "%"
         }
         
-       /// 데이터에 따라 progressView를 다시
         updateProgressView()
     }
 }
