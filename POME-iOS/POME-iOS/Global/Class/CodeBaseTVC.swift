@@ -9,7 +9,7 @@ import UIKit
 
 class CodeBaseTVC: UITableViewCell {
 
-    // MARK: - init
+    // MARK: init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setViews()
@@ -30,7 +30,7 @@ extension CodeBaseTVC: TVRegisterable {
     
     static var isFromNib: Bool {
         get {
-            return true
+            return false
         }
     }
 }
