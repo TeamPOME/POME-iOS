@@ -14,8 +14,16 @@ class GoalCardTVC: CodeBaseTVC {
     // MARK: Properties
     private var progress = 1.0
     
+    private let allContainerView = UIView().then {
+        $0.backgroundColor = .white
+        $0.clipsToBounds = true
+        $0.makeRounded(cornerRadius: 6.adjusted)
+        $0.layer.borderWidth = 1.adjusted
+        $0.layer.borderColor = UIColor.grey_0.cgColor
+    }
+    
     private let ifSuccessLabelContainerView = UIView().then {
-        $0.makeRounded(cornerRadius: 8)
+        $0.makeRounded(cornerRadius: 8.adjusted)
         $0.backgroundColor = .grey_5
         $0.clipsToBounds = true
     }
@@ -64,7 +72,7 @@ class GoalCardTVC: CodeBaseTVC {
     }
     
     private let percentageContainerView = UIView().then {
-        $0.makeRounded(cornerRadius: 10)
+        $0.makeRounded(cornerRadius: 10.adjusted)
         $0.clipsToBounds = true
     }
     
@@ -81,13 +89,22 @@ class GoalCardTVC: CodeBaseTVC {
 extension GoalCardTVC {
     
     private func configureUI() {
-        self.contentView.addSubviews([goalTitleLabel,  ifSuccessLabelContainerView, menuBtn, spentMoneyTitleLabel, moneyGoalLabel, realSpentMoneyLabel, privateImageView, progressContainerView, ifSuccessLabelContainerView, percentageContainerView])
+        contentView.addSubview(allContainerView)
+        
+        self.allContainerView.addSubviews([goalTitleLabel,  ifSuccessLabelContainerView, menuBtn, spentMoneyTitleLabel, moneyGoalLabel, realSpentMoneyLabel, privateImageView, progressContainerView, ifSuccessLabelContainerView, percentageContainerView])
         ifSuccessLabelContainerView.addSubview(ifSuccessLabel)
         percentageContainerView.addSubview(progressPercentageLabel)
         progressContainerView.addSubview(progressView)
         
+        contentView.backgroundColor = .grey_0
+        
+        allContainerView.snp.makeConstraints {
+            $0.top.bottom.equalToSuperview().inset(6.adjustedH)
+            $0.leading.trailing.equalToSuperview().inset(16.adjusted)
+        }
+        
         privateImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(15.adjustedH)
+            $0.top.equalToSuperview().inset(15.adjustedH)
             $0.leading.equalToSuperview().inset(16.adjusted)
             $0.height.equalTo(24.adjustedH)
             $0.width.equalTo(24.adjusted)
@@ -114,11 +131,11 @@ extension GoalCardTVC {
         
         spentMoneyTitleLabel.snp.makeConstraints {
             $0.top.equalTo(privateImageView.snp.bottom).offset(18.adjustedH)
-            $0.leading.equalTo(privateImageView)
+            $0.leading.equalTo(privateImageView.snp.leading)
         }
         
         realSpentMoneyLabel.snp.makeConstraints {
-            $0.leading.equalTo(privateImageView)
+            $0.leading.equalTo(privateImageView.snp.leading)
             $0.top.equalTo(spentMoneyTitleLabel.snp.bottom).offset(4.adjustedH)
         }
         
@@ -129,9 +146,9 @@ extension GoalCardTVC {
         
         progressContainerView.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(16.adjusted)
-            $0.leading.equalTo(privateImageView)
+            $0.leading.equalTo(privateImageView.snp.leading)
             $0.top.equalTo(realSpentMoneyLabel.snp.bottom).offset(20.adjustedH)
-            $0.bottom.equalTo(contentView).inset(18.adjustedH)
+            $0.bottom.equalTo(contentView).inset(27.adjustedH)
             $0.height.equalTo(6.adjustedH)
         }
         
