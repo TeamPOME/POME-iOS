@@ -176,7 +176,6 @@ extension GoalCardTVC {
     
     /// progress 값에 따라 퍼센트Label 과 progress bar UI 변경해주는 함수
     private func setProgress(goal: Double) {
-        
         if goal > 100 {
             progress = 100
             [progressView, percentageContainerView].forEach {
