@@ -126,7 +126,7 @@ extension GoalStorageTVC {
         }
         
         progressContainerView.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(17.adjusted)
+            $0.trailing.equalToSuperview().inset(16.adjusted)
             $0.leading.equalTo(privateImageView)
             $0.top.equalTo(moneyGoalLabel.snp.bottom).offset(18.adjustedH)
             $0.bottom.equalToSuperview().inset(25.adjustedH)
@@ -139,7 +139,7 @@ extension GoalStorageTVC {
         }
         
         percentageContainerView.snp.makeConstraints {
-            $0.centerX.equalTo(progressView.snp.trailing)
+            $0.centerX.equalTo(progressView.snp.trailing).inset(16.adjusted)
             $0.width.equalTo(36.adjusted)
             $0.height.equalTo(20.adjustedH)
             $0.centerY.equalTo(progressView)
@@ -151,7 +151,6 @@ extension GoalStorageTVC {
         }
         
         ifSuccessLabel.snp.makeConstraints {
-            $0.leading.trailing.equalTo(ifSuccessLabelContainerView).inset(4)
             $0.centerX.equalTo(ifSuccessLabelContainerView)
             $0.centerY.equalTo(ifSuccessLabelContainerView)
         }
@@ -173,7 +172,6 @@ extension GoalStorageTVC {
     
     /// progressbar의 값이 들어오면 초과, 퍼센트 판별
     private func setProgress(goal: Double) {
-        
         
         if goal > 100 {
             progress = 100
