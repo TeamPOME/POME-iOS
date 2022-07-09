@@ -131,11 +131,11 @@ extension GoalCardTVC {
         
         spentMoneyTitleLabel.snp.makeConstraints {
             $0.top.equalTo(privateImageView.snp.bottom).offset(18.adjustedH)
-            $0.leading.equalTo(privateImageView)
+            $0.leading.equalTo(privateImageView.snp.leading)
         }
         
         realSpentMoneyLabel.snp.makeConstraints {
-            $0.leading.equalTo(privateImageView)
+            $0.leading.equalTo(privateImageView.snp.leading)
             $0.top.equalTo(spentMoneyTitleLabel.snp.bottom).offset(4.adjustedH)
         }
         
@@ -146,7 +146,7 @@ extension GoalCardTVC {
         
         progressContainerView.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(16.adjusted)
-            $0.leading.equalTo(privateImageView)
+            $0.leading.equalTo(privateImageView.snp.leading)
             $0.top.equalTo(realSpentMoneyLabel.snp.bottom).offset(20.adjustedH)
             $0.bottom.equalTo(contentView).inset(27.adjustedH)
             $0.height.equalTo(6.adjustedH)
