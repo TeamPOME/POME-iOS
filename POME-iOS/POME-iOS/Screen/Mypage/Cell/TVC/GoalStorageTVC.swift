@@ -71,9 +71,7 @@ class GoalStorageTVC: CodeBaseTVC {
         configureUI()
         cellColor()
     }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -81,12 +79,6 @@ class GoalStorageTVC: CodeBaseTVC {
 
 // MARK: - UI
 extension GoalStorageTVC {
-    
-    func cellColor() {
-        contentView.layer.cornerRadius = 8
-        contentView.superview?.backgroundColor = .grey_0
-        contentView.backgroundColor = .white
-    }
     
     private func configureUI() {
         
@@ -168,15 +160,12 @@ extension GoalStorageTVC {
         }
     }
     
-    ///@escaping 선언이 있어야 구문 밖에서 해당 클로저를 사용할 수 있다!
-    ///탈출 클로저를 이용하면 함수밖에서 사용가능함
-    ///데이터를 받아올때, 함수호출을 하고, constraints를 데이터가 바뀔때마다 밖에서 값을 바꿔줘야하기 때문에 escaping을 사용해야한다!
+    /// progress 값 변경이 밖에서 가능하게 해주는 함수
     private func updateProgress(completion: @escaping () -> Void) {
         completion()
     }
     
-    /// snapkit의 remakeConstraints : 기존에 입력되었던 constraints를 삭제하고 다시 constriants를 설정하는 메소드
-    ///이스케이핑 클로저 안에서 지연할당의 가능성이 있는 경우( 타이머, 비동기 데이터 처리 등) weakself를 써야한다고 함
+    /// progressBar 값 UI  수정이 필요할때 호출하는 함수
     private func updateProgressView() {
         updateProgress { [weak self] in
             self?.progressView.snp.remakeConstraints {
@@ -186,7 +175,7 @@ extension GoalStorageTVC {
         }
     }
     
-    /// progressbar의 값이 들어오면 초과, 퍼센트 판별
+    /// progress 값에 따라 퍼센트Label 과 progress bar UI 변경해주는 함수
     private func setProgress(goal: Double) {
         
         if goal > 100 {
@@ -211,7 +200,6 @@ extension GoalStorageTVC {
 // MARK: - Network
 extension GoalStorageTVC {
     
-    ///setData에서 값주기
     func setData(_ goalData: GoalDataModel) {
         goalTitleLabel.text = goalData.goalTitle
         ifSuccessLabel.text = goalData.ifSuccessOrNotLabelText
