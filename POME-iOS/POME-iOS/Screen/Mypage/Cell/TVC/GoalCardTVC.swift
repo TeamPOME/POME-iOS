@@ -9,8 +9,9 @@ import UIKit
 import SnapKit
 import Then
 
-class GoalStorageTVC: CodeBaseTVC {
+class GoalCardTVC: CodeBaseTVC {
     
+    // MARK: Properties
     private var progress = 1.0
     
     private let ifSuccessLabelContainerView = UIView().then {
@@ -69,7 +70,6 @@ class GoalStorageTVC: CodeBaseTVC {
     
     override func setViews() {
         configureUI()
-        cellColor()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -78,7 +78,7 @@ class GoalStorageTVC: CodeBaseTVC {
 }
 
 // MARK: - UI
-extension GoalStorageTVC {
+extension GoalCardTVC {
     
     private func configureUI() {
         
@@ -198,7 +198,7 @@ extension GoalStorageTVC {
 }
 
 // MARK: - Network
-extension GoalStorageTVC {
+extension GoalCardTVC {
     
     func setData(_ goalData: GoalDataModel) {
         goalTitleLabel.text = goalData.goalTitle

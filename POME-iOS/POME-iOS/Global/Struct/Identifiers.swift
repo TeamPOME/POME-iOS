@@ -12,5 +12,5 @@ struct Identifiers {
     static let RemindSB = "RemindSB"
     static let MateSB = "MateSB"
     static let MypageSB = "MypageSB"
-    static let GoalStorageTVC = "GoalStorageTVC"
+    static let GoalCardTVC = "GoalCardTVC"
 }
