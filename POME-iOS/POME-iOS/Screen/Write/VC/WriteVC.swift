@@ -15,7 +15,7 @@ class WriteVC: BaseVC {
     @IBOutlet weak var writeMainCV: UICollectionView!
     
     // MARK: Properties
-    private var category = ["플러스 어카냐", "목표 설정", "술", "담배"]
+    private var category = ["목표 선택", "목표 설정", "목표 진행", "목표 완료"]
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -36,20 +36,19 @@ extension WriteVC {
 
 // MARK: - UICollectionViewDelegate
 extension WriteVC: UICollectionViewDelegate {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        let num = (collectionView == goalCategoryCV) ? 1 : 3
-        return num
-    }
 }
 
 // MARK: - UICollectionViewDataSource
 extension WriteVC: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        let num = (collectionView == goalCategoryCV) ? 1 : 3
+        return num
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var num = 0
         if collectionView == goalCategoryCV {
             
-            /// 5개 미만인 경우 가장 앞에 + 버튼 있음
-//            num = (category.count < 5) ? category.count + 1 : category.count
             num = category.count
         } else {
             num = (section == 0 || section == 1) ? 1 : 10
@@ -64,8 +63,10 @@ extension WriteVC: UICollectionViewDataSource {
         
             /// plus 버튼 추가
             if category.count < 5 {
-                let editButton = UIButton(frame: CGRect(x: 16, y: 21 - 29 / 2, width: 52, height:29))
+                let editButton = UIButton(frame: CGRect(x: 16, y: (42 / 2) - (29 / 2), width: 52, height:29))
                 editButton.setImage(UIImage(named: "btnGoalCategory"), for: UIControl.State.normal)
+                
+                // TODO: - 카테고리 추가로 이동
     //            editButton.addTarget(self, action: <#Selector#>, for: UIControl.Event.touchUpInside)
 
                 goalCategoryCV.addSubview(editButton)
@@ -79,7 +80,7 @@ extension WriteVC: UICollectionViewDataSource {
             /// 목표 카테고리의 첫 아이템 디폴트 설정
             if indexPath.item == 1 {
               cvc.isSelected = true
-                goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
+                goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .right)
             }
         }
         else {
