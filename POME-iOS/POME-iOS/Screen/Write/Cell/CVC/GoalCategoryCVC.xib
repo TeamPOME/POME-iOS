@@ -54,6 +54,11 @@
                 <constraint firstAttribute="bottom" secondItem="Ugx-Bi-wBk" secondAttribute="bottom" id="oYS-Rt-E7f"/>
             </constraints>
             <size key="customSize" width="260" height="151"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <real key="value" value="15.5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="backgroundView" destination="Ugx-Bi-wBk" id="VJh-I7-QOz"/>
                 <outlet property="goalLabel" destination="9ij-xJ-pNf" id="Ihx-ns-Zd7"/>

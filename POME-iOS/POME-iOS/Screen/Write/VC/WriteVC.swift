@@ -15,7 +15,7 @@ class WriteVC: BaseVC {
     @IBOutlet weak var writeMainCV: UICollectionView!
     
     // MARK: Properties
-    let category = ["+", "플러스 어카냐", "목표 설정", "술", "담배"]
+    private var category = ["플러스 어카냐", "목표 설정", "술", "담배"]
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -23,13 +23,16 @@ class WriteVC: BaseVC {
         
         setGoalCategoryCV()
         setWriteMainCV()
-        configureUI()
+        configureNaviBar()
+        
+        /// test code
+        category.insert("+", at: 0)
     }
 }
 
 // MARK: - UI
 extension WriteVC {
-    private func configureUI() {
+    private func configureNaviBar() {
         writeHomeNaviBar.setNaviStyle(state: .greyWithRightBtn)
     }
 }
@@ -50,7 +53,7 @@ extension WriteVC: UICollectionViewDataSource {
             
             /// 5개 미만인 경우 가장 앞에 + 버튼 있음
 //            num = (category.count < 5) ? category.count + 1 : category.count
-            num = (category.count < 5) ? category.count : category.count
+            num = category.count
         } else {
             num = (section == 0 || section == 1) ? 1 : 10
         }
@@ -62,12 +65,13 @@ extension WriteVC: UICollectionViewDataSource {
         if collectionView == goalCategoryCV {
             guard let goalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: GoalCategoryCVC.className, for: indexPath) as? GoalCategoryCVC else { return UICollectionViewCell() }
             
-            goalCategoryCVC.makeRounded(cornerRadius: 15.5)
-            
-            // TODO: - 플러스 버튼 분기처리 필요
+            /// 셀 작업, + 분기처리 필요
+            /// 네트워크 통신 후, 5개 미만이라면 category 변수 맨 앞에 +를 추가한다.
             goalCategoryCVC.goalLabel.text = category[indexPath.row]
-//            goalCategoryCVC.backgroundColor = .clear
-            goalCategoryCVC.goalLabel.textColor = .grey_5
+            if category[indexPath.row] == "+" {
+                goalCategoryCVC.backgroundColor = .grey_4
+                goalCategoryCVC.goalLabel.textColor = .white
+            }
             
             cvc = goalCategoryCVC
             
