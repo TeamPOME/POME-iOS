@@ -30,7 +30,7 @@ extension CodeBaseCVC: CVRegisterable {
     
     static var isFromNib: Bool {
         get {
-            return true
+            return false
         }
     }
 }
