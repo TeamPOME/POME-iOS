@@ -81,7 +81,7 @@ extension WriteVC: UICollectionViewDataSource {
                 goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .right)
             }
         } else {
-            guard let goalCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: EmptyGoalCardCVC.className, for: indexPath) as? EmptyGoalCardCVC else { return UICollectionViewCell() }
+            guard let EmptyGoalCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: EmptyGoalCardCVC.className, for: indexPath) as? EmptyGoalCardCVC else { return UICollectionViewCell() }
             guard let feelingCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: FeelingCardCVC.className, for: indexPath) as? FeelingCardCVC else {
                 return UICollectionViewCell() }
             guard let spendCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: SpendCVC.className, for: indexPath) as? SpendCVC else { return UICollectionViewCell() }
@@ -89,9 +89,9 @@ extension WriteVC: UICollectionViewDataSource {
             switch indexPath.section {
             case 0:
                 if category.count == 0 {
-                    cvc = goalCardCVC
+                    cvc = EmptyGoalCardCVC
                 } else {
-                    cvc = goalCardCVC
+                    cvc = EmptyGoalCardCVC
                 }
             case 1:
                 cvc = feelingCardCVC
