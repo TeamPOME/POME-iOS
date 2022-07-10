@@ -7,7 +7,7 @@
 
 import UIKit
 
-class haveNoMateTVC: CodeBaseTVC {
+class HaveNoMateTVC: CodeBaseTVC {
 
     // MARK: Properties
     private let allContainerView = UIView().then {
@@ -32,7 +32,7 @@ class haveNoMateTVC: CodeBaseTVC {
 }
 
 // MARK: - UI
-extension haveNoMateTVC {
+extension HaveNoMateTVC {
     
     private func configureUI() {
         contentView.addSubview(allContainerView)
