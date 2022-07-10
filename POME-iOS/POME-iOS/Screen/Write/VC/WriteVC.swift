@@ -74,8 +74,6 @@ extension WriteVC: UICollectionViewDataSource {
 
         
         if collectionView == goalCategoryCV {
-            
-            /// goalCategoryCVC의셀 텍스트 변경
             goalCategoryCVC.goalLabel.text = category[indexPath.row]
             
             /// 목표 카테고리의 첫 아이템을 디폴트로 설정
@@ -88,15 +86,18 @@ extension WriteVC: UICollectionViewDataSource {
             switch indexPath.section {
             case 0:
                 if category.count == 0 {
+                    EmptyGoalCardCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
                     return EmptyGoalCardCVC
                 } else {
                     
                     // TODO: - GoalCardCVC로 변경 필요
+                    EmptyGoalCardCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
                     return EmptyGoalCardCVC
                 }
             case 1:
                 return feelingCardCVC
             default:
+                spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
                 return spendCVC
             }
         }
@@ -134,11 +135,11 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
         } else {
             switch section {
             case 0:
-                inset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
+                inset = UIEdgeInsets(top: 13, left: 16, bottom: 16, right: 16)
             case 1:
-                inset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
+                inset = UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
             default:
-                inset = UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
+                inset = UIEdgeInsets(top: 12, left: 16, bottom: 0, right: 16)
             }
         }
         return inset
