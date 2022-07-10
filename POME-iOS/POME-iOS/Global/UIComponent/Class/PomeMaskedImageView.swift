@@ -23,7 +23,6 @@ class PomeMaskedImageView: UIImageView {
     override func layoutSubviews() {
         super.layoutSubviews()
         updateImageView()
-        
     }
     
     /// mask가 적용된 이미지로 적용해주는 메서드
