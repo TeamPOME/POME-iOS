@@ -91,6 +91,8 @@
 		84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACED842878989E00AA408D /* EmptyGoalCardCVC.swift */; };
 		84B77272287B369200E1EDFC /* LookbackCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B77270287B369200E1EDFC /* LookbackCVC.swift */; };
 		84B77273287B369200E1EDFC /* LookbackCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B77271287B369200E1EDFC /* LookbackCVC.xib */; };
+		84B77275287B3E3A00E1EDFC /* LookbackSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B77274287B3E3A00E1EDFC /* LookbackSB.storyboard */; };
+		84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B77276287B3E4B00E1EDFC /* LookbackVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +184,8 @@
 		84ACED842878989E00AA408D /* EmptyGoalCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyGoalCardCVC.swift; sourceTree = "<group>"; };
 		84B77270287B369200E1EDFC /* LookbackCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackCVC.swift; sourceTree = "<group>"; };
 		84B77271287B369200E1EDFC /* LookbackCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LookbackCVC.xib; sourceTree = "<group>"; };
+		84B77274287B3E3A00E1EDFC /* LookbackSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LookbackSB.storyboard; sourceTree = "<group>"; };
+		84B77276287B3E4B00E1EDFC /* LookbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F2E32874AEB900D2F6C0 /* WriteSB.storyboard */,
+				84B77274287B3E3A00E1EDFC /* LookbackSB.storyboard */,
 			);
 			path = SB;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 			children = (
 				77E8F2E52874AEDB00D2F6C0 /* WriteVC.swift */,
 				77E8F35D28765F7C00D2F6C0 /* WriteNC.swift */,
+				84B77276287B3E4B00E1EDFC /* LookbackVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -788,6 +794,7 @@
 				77E8F32828756D9700D2F6C0 /* Pretendard-SemiBold.otf in Resources */,
 				77E8F32A28756DA100D2F6C0 /* Pretendard-Regular.otf in Resources */,
 				77E8F32628756D8200D2F6C0 /* Pretendard-Bold.otf in Resources */,
+				84B77275287B3E3A00E1EDFC /* LookbackSB.storyboard in Resources */,
 				77E8F32C28756DAE00D2F6C0 /* Pretendard-Medium.otf in Resources */,
 				8432C9B328773A42001C643F /* SpendCVC.xib in Resources */,
 			);
@@ -900,6 +907,7 @@
 				77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */,
 				77E8F37B2876943800D2F6C0 /* WriteResModel.swift in Sources */,
 				77E8F3162874B57700D2F6C0 /* MateCVC.swift in Sources */,
+				84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */,
 				77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */,
 				77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */,
 				77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */,

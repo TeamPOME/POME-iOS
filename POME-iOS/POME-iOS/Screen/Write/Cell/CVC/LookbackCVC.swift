@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LookbackCVC: UICollectionViewCell {
+class LookbackCVC: BaseCVC {
     
     // MARK: IBOutlet
     @IBOutlet weak var goalBgView: UIView!
@@ -18,14 +18,6 @@ class LookbackCVC: UICollectionViewCell {
     // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-}
-
-// MARK: - UI
-extension LookbackCVC {
-    
-    private func configureUI() {
-        lockImageView.makeRounded(cornerRadius: 6.adjusted)
     }
 }
 
