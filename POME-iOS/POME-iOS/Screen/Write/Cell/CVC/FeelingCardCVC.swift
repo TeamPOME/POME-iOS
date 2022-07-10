@@ -21,7 +21,7 @@ class FeelingCardCVC: BaseCVC {
 // MARK: - Custom Methods
 extension FeelingCardCVC {
     
-    func setData(_ num: Int) {
-        remindNumLabel.text = "다시 돌아볼 씀씀이가 \(num)0건 있어요"
+    func setData(num: Int) {
+        remindNumLabel.text = "다시 돌아볼 씀씀이가 \(num)건 있어요"
     }
 }

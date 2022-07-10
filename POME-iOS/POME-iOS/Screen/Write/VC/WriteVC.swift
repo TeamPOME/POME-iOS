@@ -16,13 +16,13 @@ class WriteVC: BaseVC {
     
     // MARK: Properties
     private var category = ["목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료"]
-    private var spend = ["spend1", "spend2","spend3", "spend4"]
+    private var spend = ["spend1", "spend2", "spend3", "spend4"]
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setGoalCategoryCV()
-        setWriteMainCV()
+        setDelegate()
+        registerCV()
         configureNaviBar()
         configureCategoryCV()
     }
@@ -48,17 +48,15 @@ extension WriteVC {
     }
 }
 
-// MARK: - UICollectionViewDelegate
-extension WriteVC: UICollectionViewDelegate {
-}
-
 // MARK: - UICollectionViewDataSource
 extension WriteVC: UICollectionViewDataSource {
     
+    /// 섹션 개수 지정
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return (collectionView == goalCategoryCV) ? 1 : 3
     }
     
+    /// 섹션 별 셀 개수 지정
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == goalCategoryCV {
             return category.count
@@ -67,6 +65,7 @@ extension WriteVC: UICollectionViewDataSource {
         }
     }
     
+    // CV, 섹션 별 셀 지정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let EmptyGoalCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: EmptyGoalCardCVC.className, for: indexPath) as? EmptyGoalCardCVC,
         let feelingCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: FeelingCardCVC.className, for: indexPath) as? FeelingCardCVC,
@@ -75,6 +74,7 @@ extension WriteVC: UICollectionViewDataSource {
 
         
         if collectionView == goalCategoryCV {
+            
             /// goalCategoryCVC의셀 텍스트 변경
             goalCategoryCVC.goalLabel.text = category[indexPath.row]
             
@@ -130,7 +130,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         var inset = UIEdgeInsets()
         if collectionView == goalCategoryCV {
-            inset = UIEdgeInsets(top: 7, left: 76, bottom: 6, right: 0)
+            inset = UIEdgeInsets(top: 7, left: 76, bottom: 6, right: 16)
         } else {
             switch section {
             case 0:
@@ -144,6 +144,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
         return inset
     }
     
+    /// 섹션 별 셀 위아래 간격 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         switch section {
         case 0, 1:
@@ -153,6 +154,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
         }
     }
     
+    /// CV, 섹션 별 셀 좌우 간격 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == goalCategoryCV {
             return 8
@@ -170,20 +172,20 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
 // MARK: - Custom Methods
 extension WriteVC {
     
-    private func setWriteMainCV() {
+    private func setDelegate() {
         writeMainCV.delegate = self
         writeMainCV.dataSource = self
+        goalCategoryCV.delegate = self
+        goalCategoryCV.dataSource = self
+    }
+    
+    private func registerCV() {
         FeelingCardCVC.register(target: writeMainCV)
         EmptyGoalCardCVC.register(target: writeMainCV)
         SpendCVC.register(target: writeMainCV)
         
         // TODO: - GoalCardCVC 등록 필요
         // GoalCardCVC.register(target: writeMainCV)
-    }
-    
-    private func setGoalCategoryCV() {
-        goalCategoryCV.delegate = self
-        goalCategoryCV.dataSource = self
         GoalCategoryCVC.register(target: goalCategoryCV)
     }
 }
