@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "btnAllViewProfile52.png",
+      "filename" : "btnAllViewProfileClicked.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "btnAllViewProfile52@2x.png",
+      "filename" : "btnAllViewProfileClicked@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "btnAllViewProfile52@3x.png",
+      "filename" : "btnAllViewProfileClicked@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
