@@ -18,7 +18,7 @@ class FeelingCardCVC: BaseCVC {
     }
 }
 
-// MARK: - Network
+// MARK: - Custom Methods
 extension FeelingCardCVC {
     
     func setData(_ num: Int) {
