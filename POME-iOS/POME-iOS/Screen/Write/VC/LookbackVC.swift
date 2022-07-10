@@ -8,10 +8,13 @@
 import UIKit
 
 class LookbackVC: BaseVC {
-
+    
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
     @IBOutlet weak var lookbackMainCV: UICollectionView!
+    
+    // MARK: Properties
+    private var spend = ["spend1", "spend2", "spend3", "spend4"]
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -40,11 +43,13 @@ extension LookbackVC: UICollectionViewDataSource {
     
     /// 섹션 당 셀 개수 지정
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (section == 0) ? 1 : 10
+        return (section == 0) ? 1 : spend.count
     }
     
     /// 섹션 별 셀 지정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        // TODO: - emptyCVC 추가 필요
         guard let lookbackCVC = lookbackMainCV.dequeueReusableCell(withReuseIdentifier: LookbackCVC.className, for: indexPath) as? LookbackCVC,
               let spendCVC = lookbackMainCV.dequeueReusableCell(withReuseIdentifier: SpendCVC.className, for: indexPath) as? SpendCVC else { return UICollectionViewCell() }
         
@@ -54,11 +59,17 @@ extension LookbackVC: UICollectionViewDataSource {
             lookbackCVC.goalBgView.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
             return lookbackCVC
         } else {
-            
-            // TODO: - 서버에서 받은 이모지 정보가 있을 경우 해당 이모지로 변경, 이 뷰에서 오른쪽 이모지 default는 btnEmojiPlus38
-            spendCVC.rightEmojiImageView.image = UIImage(named: "btnEmojiPlus38")
-            spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
-            return spendCVC
+            if spend.count > 0 {
+                
+                // TODO: - 서버에서 받은 이모지 정보가 있을 경우 해당 이모지로 변경, 이 뷰에서 오른쪽 이모지 default는 btnEmojiPlus38
+                spendCVC.rightEmojiImageView.image = UIImage(named: "btnEmojiPlus38")
+                spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
+                return spendCVC
+            } else {
+                
+                // TODO: - emptyCVC로 변경 필요
+                return spendCVC
+            }
         }
     }
 }
