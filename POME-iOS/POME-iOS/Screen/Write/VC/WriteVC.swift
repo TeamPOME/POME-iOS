@@ -16,14 +16,15 @@ class WriteVC: BaseVC {
     
     // MARK: Properties
     private var category = ["목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료"]
+    private var spend = ["spend1", "spend2","spend3", "spend4"]
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setGoalCategoryCV()
         setWriteMainCV()
         configureNaviBar()
+        configureCategoryCV()
     }
 }
 
@@ -32,6 +33,18 @@ extension WriteVC {
     
     private func configureNaviBar() {
         writeHomeNaviBar.setNaviStyle(state: .greyWithRightBtn)
+    }
+    
+    private func configureCategoryCV() {
+        
+        /// plus 버튼 추가
+        let plusBtn = UIButton(frame: CGRect(x: 16, y: (42 / 2) - (29 / 2), width: 52.adjusted, height:29))
+        plusBtn.setImage(UIImage(named: "btnGoalCategory"), for: UIControl.State.normal)
+        
+        // TODO: - 클릭 시 카테고리 추가로 이동
+        // plusBtn.addTarget(self, action: <#Selector#>, for: UIControl.Event.touchUpInside)
+        
+        goalCategoryCV.addSubview(plusBtn)
     }
 }
 
@@ -43,63 +56,50 @@ extension WriteVC: UICollectionViewDelegate {
 extension WriteVC: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        let num = (collectionView == goalCategoryCV) ? 1 : 3
-        return num
+        return (collectionView == goalCategoryCV) ? 1 : 3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var num = 0
         if collectionView == goalCategoryCV {
-            num = category.count
+            return category.count
         } else {
-            num = (section == 0 || section == 1) ? 1 : 10
+            return (section == 2) ? spend.count : 1
         }
-        return num
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cvc = UICollectionViewCell()
+        guard let EmptyGoalCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: EmptyGoalCardCVC.className, for: indexPath) as? EmptyGoalCardCVC,
+        let feelingCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: FeelingCardCVC.className, for: indexPath) as? FeelingCardCVC,
+        let spendCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: SpendCVC.className, for: indexPath) as? SpendCVC,
+        let goalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: GoalCategoryCVC.className, for: indexPath) as? GoalCategoryCVC else { return UICollectionViewCell() }
+
+        
         if collectionView == goalCategoryCV {
-            guard let goalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: GoalCategoryCVC.className, for: indexPath) as? GoalCategoryCVC else { return UICollectionViewCell() }
-            
-            /// plus 버튼 추가
-            let editButton = UIButton(frame: CGRect(x: 16, y: (42 / 2) - (29 / 2), width: 52, height:29))
-            editButton.setImage(UIImage(named: "btnGoalCategory"), for: UIControl.State.normal)
-            
-            // TODO: - 클릭 시 카테고리 추가로 이동
-            //            editButton.addTarget(self, action: <#Selector#>, for: UIControl.Event.touchUpInside)
-            
-            goalCategoryCV.addSubview(editButton)
-            
-            /// 셀 텍스트 변경
+            /// goalCategoryCVC의셀 텍스트 변경
             goalCategoryCVC.goalLabel.text = category[indexPath.row]
-            cvc = goalCategoryCVC
             
             /// 목표 카테고리의 첫 아이템을 디폴트로 설정
-            if indexPath.item == 1 {
-                cvc.isSelected = true
+            if indexPath.item == 0 {
+                goalCategoryCVC.isSelected = true
                 goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .right)
             }
+            return goalCategoryCVC
         } else {
-            guard let EmptyGoalCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: EmptyGoalCardCVC.className, for: indexPath) as? EmptyGoalCardCVC else { return UICollectionViewCell() }
-            guard let feelingCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: FeelingCardCVC.className, for: indexPath) as? FeelingCardCVC else {
-                return UICollectionViewCell() }
-            guard let spendCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: SpendCVC.className, for: indexPath) as? SpendCVC else { return UICollectionViewCell() }
-            
             switch indexPath.section {
             case 0:
                 if category.count == 0 {
-                    cvc = EmptyGoalCardCVC
+                    return EmptyGoalCardCVC
                 } else {
-                    cvc = EmptyGoalCardCVC
+                    
+                    // TODO: - GoalCardCVC로 변경 필요
+                    return EmptyGoalCardCVC
                 }
             case 1:
-                cvc = feelingCardCVC
+                return feelingCardCVC
             default:
-                cvc = spendCVC
+                return spendCVC
             }
         }
-        return cvc
     }
 }
 
@@ -154,18 +154,16 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        var spacing = 0
         if collectionView == goalCategoryCV {
-            spacing = 8
+            return 8
         } else {
             switch section {
             case 0, 1:
-                spacing = 0
+                return 0
             default:
-                spacing = 11
+                return 11
             }
         }
-        return CGFloat(spacing)
     }
 }
 
@@ -178,6 +176,9 @@ extension WriteVC {
         FeelingCardCVC.register(target: writeMainCV)
         EmptyGoalCardCVC.register(target: writeMainCV)
         SpendCVC.register(target: writeMainCV)
+        
+        // TODO: - GoalCardCVC 등록 필요
+        // GoalCardCVC.register(target: writeMainCV)
     }
     
     private func setGoalCategoryCV() {
