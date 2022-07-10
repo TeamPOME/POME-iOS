@@ -9,11 +9,14 @@ import UIKit
 import SnapKit
 import Then
 
-class haveMateTVC: CodeBaseTVC {
+class HaveMateTVC: BaseTVC {
     
     // MARK: Properties
-    @IBOutlet weak var BiggestContainerView: UIView!
-    @IBOutlet weak var ContainerView: UIView!
+    private var mateCount = 0
+    
+    // MARK: IBOutlet
+    @IBOutlet weak var biggestContainerView: UIView!
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var spentMoneyLabel: UILabel!
@@ -30,12 +33,19 @@ class haveMateTVC: CodeBaseTVC {
     @IBOutlet weak var thirdEmojiContainerBtn: UIButton!
     @IBOutlet weak var countMateLabel: UILabel!
     
+    // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureUI()
     }
 }
 
 // MARK: - UI
-extension haveMateTVC {
+extension HaveMateTVC {
     
+    private func configureUI() {
+        sadEmojiContainerView.makeRounded(cornerRadius: sadEmojiContainerView.frame.width / 2)
+        smileEmojiContainerView.makeRounded(cornerRadius: smileEmojiContainerView.frame.width / 2)
+        goalLabelContainerView.makeRounded(cornerRadius: 4.adjusted)
+    }
 }

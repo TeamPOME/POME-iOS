@@ -164,7 +164,9 @@
                                     <constraint firstAttribute="width" constant="28" id="wCc-IZ-yp6"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="btnEmojiPlus38"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="btnEmojiNor28"/>
+                                </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1L-vf-bXg" userLabel="SecondBtn">
                                 <rect key="frame" x="276" y="113" width="28" height="28"/>
@@ -174,9 +176,11 @@
                                     <constraint firstAttribute="width" constant="28" id="eDQ-mE-DAe"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="btnEmojiPlus38" title=""/>
+                                <buttonConfiguration key="configuration" style="plain" title="">
+                                    <backgroundConfiguration key="background" image="btnEmojiNor28"/>
+                                </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBW-2i-9Ni" userLabel="ThirdBtn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBW-2i-9Ni" userLabel="ThirdBtn">
                                 <rect key="frame" x="298" y="113" width="28" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="Bsc-Yh-4FD"/>
@@ -184,7 +188,9 @@
                                     <constraint firstAttribute="width" secondItem="ZBW-2i-9Ni" secondAttribute="height" multiplier="1:1" id="oTb-Rz-tnc"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="btnEmojiPlus38"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="btnEmojiNor28"/>
+                                </buttonConfiguration>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kX6-WA-zxk" userLabel="+mateLabel">
                                 <rect key="frame" x="307.5" y="121" width="11.5" height="12"/>
@@ -234,8 +240,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="BiggestContainerView" destination="H2p-sc-9uM" id="N5M-yo-n8r"/>
-                <outlet property="ContainerView" destination="Pmv-8r-1MC" id="7mI-pW-XSJ"/>
+                <outlet property="biggestContainerView" destination="H2p-sc-9uM" id="sNR-3p-OIT"/>
+                <outlet property="containerView" destination="Pmv-8r-1MC" id="bdu-Td-Job"/>
                 <outlet property="contentLabel" destination="HDs-lj-40J" id="DPm-9H-cqN"/>
                 <outlet property="countMateLabel" destination="kX6-WA-zxk" id="W8E-0k-ycM"/>
                 <outlet property="firstEmojiContainerBtn" destination="17D-Ri-dyM" id="7se-Z9-yXZ"/>
@@ -256,7 +262,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="btnEmojiPlus38" width="56" height="56"/>
+        <image name="btnEmojiNor28" width="28" height="28"/>
         <image name="emojiMint34" width="34" height="34"/>
         <image name="emojiPink34" width="34" height="34"/>
         <image name="userProfileFill32" width="32" height="32"/>
