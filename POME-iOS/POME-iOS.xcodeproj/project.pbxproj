@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0DC225BE62C2B307EDEA55E4 /* Pods_POME_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1232F317EC5CF269A755DD4C /* Pods_POME_iOS.framework */; };
-		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
 		1A10C2562877349E00489CA1 /* GoalCardTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10C2552877349E00489CA1 /* GoalCardTVC.swift */; };
 		1A10C2582877367100489CA1 /* GoalStorageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */; };
 		1A10C25A287736BE00489CA1 /* GoalStorageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10C259287736BE00489CA1 /* GoalStorageVC.swift */; };
+		1A1AEFD7287A4CB600DD5F7E /* haveNoMateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD6287A4CB600DD5F7E /* haveNoMateTVC.swift */; };
+		1A1AEFDA287A4D5B00DD5F7E /* haveMateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD8287A4D5B00DD5F7E /* haveMateTVC.swift */; };
+		1A1AEFDB287A4D5B00DD5F7E /* haveMateTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD9287A4D5B00DD5F7E /* haveMateTVC.xib */; };
+		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
 		77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */; };
 		77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */; };
 		77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2C12874A23800D2F6C0 /* Assets.xcassets */; };
@@ -90,6 +93,9 @@
 		1A10C2552877349E00489CA1 /* GoalCardTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCardTVC.swift; sourceTree = "<group>"; };
 		1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageDataModel.swift; sourceTree = "<group>"; };
 		1A10C259287736BE00489CA1 /* GoalStorageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageVC.swift; sourceTree = "<group>"; };
+		1A1AEFD6287A4CB600DD5F7E /* haveNoMateTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = haveNoMateTVC.swift; sourceTree = "<group>"; };
+		1A1AEFD8287A4D5B00DD5F7E /* haveMateTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = haveMateTVC.swift; sourceTree = "<group>"; };
+		1A1AEFD9287A4D5B00DD5F7E /* haveMateTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = haveMateTVC.xib; sourceTree = "<group>"; };
 		6F6FAF66B7C4C46AE47E904C /* Pods-POME-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.debug.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		778E0F422879624700BEEEA5 /* PomeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeTextField.swift; sourceTree = "<group>"; };
 		77E8F2B52874A23700D2F6C0 /* POME-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POME-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -530,6 +536,8 @@
 			isa = PBXGroup;
 			children = (
 				77E8F3172874B72F00D2F6C0 /* MateXib.swift */,
+				1A1AEFD8287A4D5B00DD5F7E /* haveMateTVC.swift */,
+				1A1AEFD9287A4D5B00DD5F7E /* haveMateTVC.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -607,6 +615,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F3132874B56B00D2F6C0 /* MateTVC.swift */,
+				1A1AEFD6287A4CB600DD5F7E /* haveNoMateTVC.swift */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -766,6 +775,7 @@
 				77E8F2F82874B15A00D2F6C0 /* RemindSB.storyboard in Resources */,
 				77E8F30E2874B4DD00D2F6C0 /* MateSB.storyboard in Resources */,
 				77E8F32828756D9700D2F6C0 /* Pretendard-SemiBold.otf in Resources */,
+				1A1AEFDB287A4D5B00DD5F7E /* haveMateTVC.xib in Resources */,
 				77E8F32A28756DA100D2F6C0 /* Pretendard-Regular.otf in Resources */,
 				77E8F32628756D8200D2F6C0 /* Pretendard-Bold.otf in Resources */,
 				77E8F32C28756DAE00D2F6C0 /* Pretendard-Medium.otf in Resources */,
@@ -829,6 +839,7 @@
 				77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */,
 				77E8F36028765FA600D2F6C0 /* RemindNC.swift in Sources */,
 				77E8F31E2874B7CE00D2F6C0 /* MypageVC.swift in Sources */,
+				1A1AEFDA287A4D5B00DD5F7E /* haveMateTVC.swift in Sources */,
 				77E8F36428765FFF00D2F6C0 /* MypageNC.swift in Sources */,
 				77E8F2E62874AEDB00D2F6C0 /* WriteVC.swift in Sources */,
 				77E8F3772876938800D2F6C0 /* GenericResponse.swift in Sources */,
@@ -883,6 +894,7 @@
 				77E8F2F12874B0EC00D2F6C0 /* model.swift in Sources */,
 				77E8F3662876606D00D2F6C0 /* ViewControllerFactory.swift in Sources */,
 				77E8F379287693AA00D2F6C0 /* WriteService.swift in Sources */,
+				1A1AEFD7287A4CB600DD5F7E /* haveNoMateTVC.swift in Sources */,
 				77E8F3012874B1BB00D2F6C0 /* WriteXib.swift in Sources */,
 				77E8F3462875EE0A00D2F6C0 /* UITabBar+.swift in Sources */,
 			);

@@ -13,4 +13,6 @@ struct Identifiers {
     static let MateSB = "MateSB"
     static let MypageSB = "MypageSB"
     static let GoalCardTVC = "GoalCardTVC"
+    static let haveMateTVC = "haveMateTVC"
+    static let haveNoMateTVC = "haveNoMateTVC"
 }
