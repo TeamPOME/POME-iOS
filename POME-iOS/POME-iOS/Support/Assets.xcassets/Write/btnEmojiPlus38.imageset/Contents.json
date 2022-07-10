@@ -1,8 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "btnEmojiPlus38.png",
       "idiom" : "universal",
+      "filename" : "btnEmojiPlus38.png",
       "scale" : "1x"
     },
     {
@@ -11,13 +11,13 @@
       "scale" : "2x"
     },
     {
-      "filename" : "btnEmojiPlus38@3x.png",
+      "scale" : "3x",
       "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "btnEmojiPlus38@3x.png"
     }
   ],
   "info" : {
-    "author" : "xcode",
-    "version" : 1
+    "version" : 1,
+    "author" : "xcode"
   }
 }

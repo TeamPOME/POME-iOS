@@ -54,6 +54,9 @@ extension LookbackVC: UICollectionViewDataSource {
             lookbackCVC.goalBgView.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
             return lookbackCVC
         } else {
+            
+            // TODO: - 서버에서 받은 이모지 정보가 있을 경우 해당 이모지로 변경, 이 뷰에서 오른쪽 이모지 default는 btnEmojiPlus38
+            spendCVC.rightEmojiImageView.image = UIImage(named: "btnEmojiPlus38")
             spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
             return spendCVC
         }
