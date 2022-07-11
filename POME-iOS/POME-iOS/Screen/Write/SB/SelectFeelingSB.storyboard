@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Select FeelingVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SelectFeelingVC" id="Y6W-OH-hqX" customClass="SelectFeelingVC" customModule="POME_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ouj-Ic-fV0" customClass="PomeNaviBar" customModule="POME_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="JZF-u7-VJa"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="gg4-ZD-8ex"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ln-pl-r5g">
+                                <rect key="frame" x="16" y="100" width="200" height="48"/>
+                                <string key="text">일주일이 지난 오늘의
+솔직한 감정을 남겨주세요</string>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                <color key="textColor" name="grey_9"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hL3-eJ-bMK">
+                                <rect key="frame" x="16" y="160" width="186.5" height="33.5"/>
+                                <string key="text">포미는 순간의 감정에 집중해
+한번 기록된 감정은 바꿀 수 없어요</string>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="grey_5"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="H7t-k0-E6M">
+                                <rect key="frame" x="114.5" y="239.5" width="185.5" height="406"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bUx-ml-Kqi">
+                                        <rect key="frame" x="0.0" y="0.0" width="185.5" height="110"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoJ-Wz-F6J">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="110" id="B2r-e5-48N"/>
+                                                    <constraint firstAttribute="width" constant="110" id="UpJ-EG-Wun"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="component4"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eau-00-Yue">
+                                                <rect key="frame" x="125" y="46.5" width="60.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                                <color key="textColor" name="grey_7"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IFm-mQ-FvL">
+                                        <rect key="frame" x="0.0" y="148" width="185.5" height="110"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcR-k1-Gvx">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="110" id="amj-F9-Xgd"/>
+                                                    <constraint firstAttribute="width" constant="110" id="jRy-Eu-Jpj"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="btnEmojiWhatPink110Nor"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모르겠어요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fe8-tG-kGP">
+                                                <rect key="frame" x="125" y="46.5" width="60.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                                <color key="textColor" name="grey_7"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="I1M-gD-SNR">
+                                        <rect key="frame" x="0.0" y="296" width="185.5" height="110"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvP-p9-uhS">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="110" id="Thb-6x-30g"/>
+                                                    <constraint firstAttribute="width" constant="110" id="nek-Ea-e2C"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="component3"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="후회해요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRl-Wq-0re">
+                                                <rect key="frame" x="125" y="46.5" width="60.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                                <color key="textColor" name="grey_7"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdR-X8-yB8" customClass="PomeBtn" customModule="POME_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="812" width="382" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="tsS-qq-xiw"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="white"/>
+                        <constraints>
+                            <constraint firstItem="hL3-eJ-bMK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="02Z-69-p1s"/>
+                            <constraint firstItem="1Ln-pl-r5g" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="3g1-b1-Rvx"/>
+                            <constraint firstItem="hL3-eJ-bMK" firstAttribute="top" secondItem="1Ln-pl-r5g" secondAttribute="bottom" constant="12" id="7Is-qa-cMe"/>
+                            <constraint firstItem="ouj-Ic-fV0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="7SZ-zH-wkT"/>
+                            <constraint firstItem="H7t-k0-E6M" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Jc2-Vi-GY0"/>
+                            <constraint firstItem="rdR-X8-yB8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Joq-NA-eOC"/>
+                            <constraint firstItem="ouj-Ic-fV0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="USe-Da-EA2"/>
+                            <constraint firstItem="1Ln-pl-r5g" firstAttribute="top" secondItem="ouj-Ic-fV0" secondAttribute="bottom" constant="12" id="Ubj-4U-Mh5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rdR-X8-yB8" secondAttribute="trailing" constant="16" id="VT4-9Y-3Za"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rdR-X8-yB8" secondAttribute="bottom" id="ew1-v9-O1f"/>
+                            <constraint firstItem="H7t-k0-E6M" firstAttribute="top" secondItem="hL3-eJ-bMK" secondAttribute="bottom" constant="46" id="f1F-gV-zhY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ouj-Ic-fV0" secondAttribute="trailing" id="qI2-WM-NAl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="naviBar" destination="ouj-Ic-fV0" id="hyC-VT-H4m"/>
+                        <outlet property="saveEmojiBtn" destination="rdR-X8-yB8" id="t3T-vF-7VA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26.086956521739133" y="81.696428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btnEmojiWhatPink110Nor" width="110" height="110"/>
+        <image name="component3" width="110" height="110"/>
+        <image name="component4" width="110" height="110"/>
+        <namedColor name="grey_5">
+            <color red="0.66666666666666663" green="0.68627450980392157" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_7">
+            <color red="0.30588235294117649" green="0.32156862745098042" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_9">
+            <color red="0.16078431372549021" green="0.16470588235294117" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
