@@ -1,5 +1,5 @@
 //
-//  SelectFeelingVC.swift
+//  LookbackSelectVC.swift
 //  POME-iOS
 //
 //  Created by Juhyeon Byun on 2022/07/11.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectFeelingVC: BaseVC {
+class LookbackSelectVC: BaseVC {
     
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
@@ -46,7 +46,7 @@ class SelectFeelingVC: BaseVC {
 }
 
 // MARK: - UI
-extension SelectFeelingVC {
+extension LookbackSelectVC {
     
     private func configureUI() {
         naviBar.setNaviStyle(state: .whiteBackDefault)
