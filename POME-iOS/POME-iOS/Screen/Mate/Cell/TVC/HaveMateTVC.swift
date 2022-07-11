@@ -11,11 +11,7 @@ import Then
 
 class HaveMateTVC: BaseTVC {
     
-    // MARK: Properties
-    private var mateCount = 0
-    
     // MARK: IBOutlet
-    @IBOutlet weak var biggestContainerView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -32,11 +28,13 @@ class HaveMateTVC: BaseTVC {
     @IBOutlet weak var secondEmojiContainerBtn: UIButton!
     @IBOutlet weak var thirdEmojiContainerBtn: UIButton!
     @IBOutlet weak var countMateLabel: UILabel!
+    @IBOutlet weak var contentLabelHeight: NSLayoutConstraint!
     
     // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
+        setLabelLine()
     }
 }
 
@@ -47,5 +45,15 @@ extension HaveMateTVC {
         sadEmojiContainerView.makeRounded(cornerRadius: sadEmojiContainerView.frame.width / 2)
         smileEmojiContainerView.makeRounded(cornerRadius: smileEmojiContainerView.frame.width / 2)
         goalLabelContainerView.makeRounded(cornerRadius: 4.adjusted)
+        contentLabelHeight.constant = 37.adjustedH
+    }
+}
+
+// MARK: - Custom Method
+extension HaveMateTVC {
+ 
+    private func setLabelLine() {
+        contentLabel.sizeToFit()
+        contentLabel.numberOfLines = 2
     }
 }
