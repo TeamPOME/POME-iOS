@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -21,18 +21,18 @@
             <objects>
                 <viewController storyboardIdentifier="SelectFeelingVC" id="Y6W-OH-hqX" customClass="SelectFeelingVC" customModule="POME_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ouj-Ic-fV0" customClass="PomeNaviBar" customModule="POME_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="JZF-u7-VJa"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="gg4-ZD-8ex"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ln-pl-r5g">
-                                <rect key="frame" x="16" y="100" width="200" height="48"/>
+                                <rect key="frame" x="16" y="100" width="199.66666666666666" height="48"/>
                                 <string key="text">일주일이 지난 오늘의
 솔직한 감정을 남겨주세요</string>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
@@ -40,18 +40,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hL3-eJ-bMK">
-                                <rect key="frame" x="16" y="160" width="186.5" height="33.5"/>
+                                <rect key="frame" x="16" y="160" width="186.66666666666666" height="33.666666666666657"/>
                                 <string key="text">포미는 순간의 감정에 집중해
 한번 기록된 감정은 바꿀 수 없어요</string>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
                                 <color key="textColor" name="grey_5"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="H7t-k0-E6M">
-                                <rect key="frame" x="114.5" y="239.5" width="185.5" height="406"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="H7t-k0-E6M">
+                                <rect key="frame" x="94.666666666666671" y="239.66666666666663" width="185.66666666666663" height="406"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="bUx-ml-Kqi">
-                                        <rect key="frame" x="0.0" y="0.0" width="185.5" height="110"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="185.66666666666666" height="110"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoJ-Wz-F6J">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
@@ -61,9 +61,12 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="component4"/>
+                                                <connections>
+                                                    <action selector="tapHappyBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HQK-8C-0fH"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eau-00-Yue">
-                                                <rect key="frame" x="125" y="46.5" width="60.5" height="17"/>
+                                                <rect key="frame" x="124.99999999999999" y="46.666666666666657" width="60.666666666666671" height="17"/>
                                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
                                                 <color key="textColor" name="grey_7"/>
                                                 <nil key="highlightedColor"/>
@@ -71,7 +74,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IFm-mQ-FvL">
-                                        <rect key="frame" x="0.0" y="148" width="185.5" height="110"/>
+                                        <rect key="frame" x="0.0" y="148.00000000000003" width="185.66666666666666" height="109.99999999999997"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcR-k1-Gvx">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
@@ -81,9 +84,12 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="btnEmojiWhatPink110Nor"/>
+                                                <connections>
+                                                    <action selector="tapDontKnowBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="C2Q-JD-uvv"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모르겠어요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fe8-tG-kGP">
-                                                <rect key="frame" x="125" y="46.5" width="60.5" height="17"/>
+                                                <rect key="frame" x="124.99999999999999" y="46.666666666666629" width="60.666666666666671" height="17"/>
                                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
                                                 <color key="textColor" name="grey_7"/>
                                                 <nil key="highlightedColor"/>
@@ -91,7 +97,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="I1M-gD-SNR">
-                                        <rect key="frame" x="0.0" y="296" width="185.5" height="110"/>
+                                        <rect key="frame" x="0.0" y="296" width="185.66666666666666" height="110"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvP-p9-uhS">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
@@ -101,9 +107,12 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="component3"/>
+                                                <connections>
+                                                    <action selector="tapRegretBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OfD-ms-c5f"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="후회해요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRl-Wq-0re">
-                                                <rect key="frame" x="125" y="46.5" width="60.5" height="17"/>
+                                                <rect key="frame" x="124.99999999999999" y="46.666666666666742" width="60.666666666666671" height="17"/>
                                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
                                                 <color key="textColor" name="grey_7"/>
                                                 <nil key="highlightedColor"/>
@@ -113,7 +122,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdR-X8-yB8" customClass="PomeBtn" customModule="POME_iOS" customModuleProvider="target">
-                                <rect key="frame" x="16" y="812" width="382" height="50"/>
+                                <rect key="frame" x="16" y="728" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="tsS-qq-xiw"/>
                                 </constraints>
@@ -139,7 +148,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dontKnowBtn" destination="pcR-k1-Gvx" id="A9P-vd-0mc"/>
+                        <outlet property="happyBtn" destination="HoJ-Wz-F6J" id="Ckc-Ok-eu1"/>
                         <outlet property="naviBar" destination="ouj-Ic-fV0" id="hyC-VT-H4m"/>
+                        <outlet property="regretBtn" destination="LvP-p9-uhS" id="ff6-SH-WFG"/>
                         <outlet property="saveEmojiBtn" destination="rdR-X8-yB8" id="t3T-vF-7VA"/>
                     </connections>
                 </viewController>
