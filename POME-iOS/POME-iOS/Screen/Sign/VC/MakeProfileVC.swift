@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class MakeProfileVC: UIViewController {
+class MakeProfileVC: BaseVC {
     
     // MARK: Properties
     private let titleLabel = UILabel().then {
@@ -34,6 +34,8 @@ class MakeProfileVC: UIViewController {
     
     private let nicknameTextField = PomeTextField().then {
         $0.setTextFieldStyle(state: .withClearBtn)
+        $0.returnKeyType = .done
+        
         $0.configurePlaceholder(placeholder: "영어, 한국어 최대 10자 이내 입력")
     }
     
@@ -56,7 +58,7 @@ class MakeProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        setDelegate()
+        setTextField()
     }
     
 }
@@ -115,13 +117,31 @@ extension MakeProfileVC {
 // MARK: - Custom Methods
 extension MakeProfileVC {
     
-    private func setDelegate() {
+    /// textField 설정 메서드
+    private func setTextField() {
         nicknameTextField.delegate = self
+        nicknameTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+    }
+}
+
+// MARK: @objc
+extension MakeProfileVC {
+    
+    @objc
+    func textFieldDidChange(_ sender: Any?) {
+        confirmBtn.isDisabled = nicknameTextField.isEmpty
     }
 }
 
 // MARK: - UITextFieldDelegate
 extension MakeProfileVC: UITextFieldDelegate {
+    
+    /// done 키 터치 시 키보드 내려가도록
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nicknameTextField.resignFirstResponder()
+        
+        return true
+    }
     
     /// 글자수 10자로 제한 하는 메서드
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
