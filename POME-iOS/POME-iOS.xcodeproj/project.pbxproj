@@ -82,6 +82,8 @@
 		77E8F3812876AB2300D2F6C0 /* PomeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3802876AB2300D2F6C0 /* PomeBtn.swift */; };
 		77E8F3832876F25400D2F6C0 /* xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3822876F25400D2F6C0 /* xib.swift */; };
 		77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3842877452400D2F6C0 /* PomeNaviBar.swift */; };
+		8400A406287C1782004F2D49 /* LookbackCompleteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8400A405287C1782004F2D49 /* LookbackCompleteSB.storyboard */; };
+		8400A408287C17C5004F2D49 /* LookbackCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400A407287C17C5004F2D49 /* LookbackCompleteVC.swift */; };
 		84309C822878ACF50017F8BF /* GoalCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */; };
 		84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */; };
 		8432C9B228773A42001C643F /* SpendCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9B028773A42001C643F /* SpendCVC.swift */; };
@@ -94,8 +96,8 @@
 		84B77273287B369200E1EDFC /* LookbackCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B77271287B369200E1EDFC /* LookbackCVC.xib */; };
 		84B77275287B3E3A00E1EDFC /* LookbackSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B77274287B3E3A00E1EDFC /* LookbackSB.storyboard */; };
 		84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B77276287B3E4B00E1EDFC /* LookbackVC.swift */; };
-		84B7727B287BD82000E1EDFC /* SelectFeelingSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B7727A287BD82000E1EDFC /* SelectFeelingSB.storyboard */; };
-		84B7727D287BD83D00E1EDFC /* SelectFeelingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7727C287BD83D00E1EDFC /* SelectFeelingVC.swift */; };
+		84B7727B287BD82000E1EDFC /* LookbackSelectSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B7727A287BD82000E1EDFC /* LookbackSelectSB.storyboard */; };
+		84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7727C287BD83D00E1EDFC /* LookbackSelectVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -178,6 +180,8 @@
 		77E8F3822876F25400D2F6C0 /* xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xib.swift; sourceTree = "<group>"; };
 		77E8F3842877452400D2F6C0 /* PomeNaviBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeNaviBar.swift; sourceTree = "<group>"; };
 		804C6365DDEE189DFF7ED4ED /* Pods-POME-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.release.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		8400A405287C1782004F2D49 /* LookbackCompleteSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LookbackCompleteSB.storyboard; sourceTree = "<group>"; };
+		8400A407287C17C5004F2D49 /* LookbackCompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackCompleteVC.swift; sourceTree = "<group>"; };
 		84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCategoryCVC.swift; sourceTree = "<group>"; };
 		84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCategoryCVC.xib; sourceTree = "<group>"; };
 		8432C9B028773A42001C643F /* SpendCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendCVC.swift; sourceTree = "<group>"; };
@@ -190,8 +194,8 @@
 		84B77271287B369200E1EDFC /* LookbackCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LookbackCVC.xib; sourceTree = "<group>"; };
 		84B77274287B3E3A00E1EDFC /* LookbackSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LookbackSB.storyboard; sourceTree = "<group>"; };
 		84B77276287B3E4B00E1EDFC /* LookbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackVC.swift; sourceTree = "<group>"; };
-		84B7727A287BD82000E1EDFC /* SelectFeelingSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectFeelingSB.storyboard; sourceTree = "<group>"; };
-		84B7727C287BD83D00E1EDFC /* SelectFeelingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeelingVC.swift; sourceTree = "<group>"; };
+		84B7727A287BD82000E1EDFC /* LookbackSelectSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LookbackSelectSB.storyboard; sourceTree = "<group>"; };
+		84B7727C287BD83D00E1EDFC /* LookbackSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackSelectVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -473,7 +477,8 @@
 			children = (
 				77E8F2E32874AEB900D2F6C0 /* WriteSB.storyboard */,
 				84B77274287B3E3A00E1EDFC /* LookbackSB.storyboard */,
-				84B7727A287BD82000E1EDFC /* SelectFeelingSB.storyboard */,
+				84B7727A287BD82000E1EDFC /* LookbackSelectSB.storyboard */,
+				8400A405287C1782004F2D49 /* LookbackCompleteSB.storyboard */,
 			);
 			path = SB;
 			sourceTree = "<group>";
@@ -484,7 +489,8 @@
 				77E8F2E52874AEDB00D2F6C0 /* WriteVC.swift */,
 				77E8F35D28765F7C00D2F6C0 /* WriteNC.swift */,
 				84B77276287B3E4B00E1EDFC /* LookbackVC.swift */,
-				84B7727C287BD83D00E1EDFC /* SelectFeelingVC.swift */,
+				84B7727C287BD83D00E1EDFC /* LookbackSelectVC.swift */,
+				8400A407287C17C5004F2D49 /* LookbackCompleteVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -813,7 +819,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B7727B287BD82000E1EDFC /* SelectFeelingSB.storyboard in Resources */,
+				84B7727B287BD82000E1EDFC /* LookbackSelectSB.storyboard in Resources */,
 				84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */,
 				8432C9BB28784533001C643F /* EmptyGoalCardCVC.xib in Resources */,
 				84B77273287B369200E1EDFC /* LookbackCVC.xib in Resources */,
@@ -830,6 +836,7 @@
 				77E8F32A28756DA100D2F6C0 /* Pretendard-Regular.otf in Resources */,
 				77E8F32628756D8200D2F6C0 /* Pretendard-Bold.otf in Resources */,
 				84B77275287B3E3A00E1EDFC /* LookbackSB.storyboard in Resources */,
+				8400A406287C1782004F2D49 /* LookbackCompleteSB.storyboard in Resources */,
 				77E8F32C28756DAE00D2F6C0 /* Pretendard-Medium.otf in Resources */,
 				8432C9B328773A42001C643F /* SpendCVC.xib in Resources */,
 			);
@@ -917,6 +924,7 @@
 				77E8F3042874B1D400D2F6C0 /* RemindXib.swift in Sources */,
 				77E8F35C2875F71700D2F6C0 /* CodeBaseTVC.swift in Sources */,
 				8432C9B228773A42001C643F /* SpendCVC.swift in Sources */,
+				8400A408287C17C5004F2D49 /* LookbackCompleteVC.swift in Sources */,
 				77E8F3422875EBD500D2F6C0 /* CALayer+.swift in Sources */,
 				77E8F3712876931D00D2F6C0 /* NetworkResult.swift in Sources */,
 				778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */,
@@ -948,8 +956,7 @@
 				77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */,
 				77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */,
 				77E8F334287574B000D2F6C0 /* UITextField+.swift in Sources */,
-				84B7727D287BD83D00E1EDFC /* SelectFeelingVC.swift in Sources */,
-				77E8F2F12874B0EC00D2F6C0 /* model.swift in Sources */,
+				84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */,
 				77E8F3662876606D00D2F6C0 /* ViewControllerFactory.swift in Sources */,
 				77E8F379287693AA00D2F6C0 /* WriteService.swift in Sources */,
 				77E8F3012874B1BB00D2F6C0 /* WriteXib.swift in Sources */,
