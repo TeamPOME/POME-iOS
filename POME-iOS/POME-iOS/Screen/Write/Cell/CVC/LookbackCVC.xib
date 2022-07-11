@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Bold.otf">
+            <string>Pretendard-Bold</string>
+        </array>
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LookbackCVC" id="gTV-IL-0wX" customClass="LookbackCVC" customModule="POME_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="293"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="293"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3DPenMint120" translatesAutoresizingMaskIntoConstraints="NO" id="oSG-iJ-8dM">
+                        <rect key="frame" x="127.5" y="0.0" width="120" height="120"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="blL-M2-fcC"/>
+                            <constraint firstAttribute="width" constant="120" id="khq-13-nNd"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1P2-rt-5Av">
+                        <rect key="frame" x="56" y="132" width="263" height="44.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감정을 남겨주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNO-Vf-U2K">
+                                <rect key="frame" x="74.5" y="0.0" width="114.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="16"/>
+                                <color key="textColor" name="grey_7"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일주일이 지난 오늘, 그때의 씀씀이를 돌아보세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTZ-iT-cwt">
+                                <rect key="frame" x="0.0" y="27.5" width="263" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="grey_6"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iPQ-1U-G9X">
+                        <rect key="frame" x="16" y="196.5" width="343" height="55.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icLockAll" translatesAutoresizingMaskIntoConstraints="NO" id="Xji-Jm-ZcC">
+                                <rect key="frame" x="16" y="16" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="xH9-q3-TI9"/>
+                                    <constraint firstAttribute="height" constant="24" id="y24-nG-s4I"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="술은 한달에 적당히 먹자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5y-La-fva">
+                                <rect key="frame" x="44" y="17" width="168.5" height="21.5"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="18"/>
+                                <color key="textColor" name="grey_8"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="R5y-La-fva" firstAttribute="centerY" secondItem="iPQ-1U-G9X" secondAttribute="centerY" id="41l-yO-vxt"/>
+                            <constraint firstItem="Xji-Jm-ZcC" firstAttribute="leading" secondItem="iPQ-1U-G9X" secondAttribute="leading" constant="16" id="7Ud-2P-fYc"/>
+                            <constraint firstItem="R5y-La-fva" firstAttribute="leading" secondItem="Xji-Jm-ZcC" secondAttribute="trailing" constant="4" id="GeD-AF-ecF"/>
+                            <constraint firstItem="Xji-Jm-ZcC" firstAttribute="centerY" secondItem="iPQ-1U-G9X" secondAttribute="centerY" id="VZw-bs-Yck"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체 0건" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soo-0T-d1I">
+                        <rect key="frame" x="16" y="276" width="48.5" height="17"/>
+                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                        <color key="textColor" name="grey_5"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="iPQ-1U-G9X" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="6b1-7C-aO4"/>
+                <constraint firstItem="iPQ-1U-G9X" firstAttribute="top" secondItem="1P2-rt-5Av" secondAttribute="bottom" constant="20" id="MGG-DM-6TX"/>
+                <constraint firstItem="oSG-iJ-8dM" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="POu-32-cNe"/>
+                <constraint firstItem="1P2-rt-5Av" firstAttribute="top" secondItem="oSG-iJ-8dM" secondAttribute="bottom" constant="12" id="RVp-pi-gnJ"/>
+                <constraint firstItem="Soo-0T-d1I" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="WTv-86-IeS"/>
+                <constraint firstAttribute="trailing" secondItem="iPQ-1U-G9X" secondAttribute="trailing" constant="16" id="dCh-oS-DJH"/>
+                <constraint firstItem="1P2-rt-5Av" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="efE-Oy-9KR"/>
+                <constraint firstItem="oSG-iJ-8dM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fz6-kG-GTC"/>
+                <constraint firstItem="Soo-0T-d1I" firstAttribute="top" secondItem="iPQ-1U-G9X" secondAttribute="bottom" constant="24" id="io7-Me-7La"/>
+                <constraint firstAttribute="bottom" secondItem="Soo-0T-d1I" secondAttribute="bottom" id="qvQ-9q-u7z"/>
+            </constraints>
+            <connections>
+                <outlet property="goalBgView" destination="iPQ-1U-G9X" id="ToC-JI-Htk"/>
+                <outlet property="goalLabel" destination="R5y-La-fva" id="nXe-21-Mez"/>
+                <outlet property="lockImageView" destination="Xji-Jm-ZcC" id="ckO-2b-p20"/>
+                <outlet property="spendCountLabel" destination="Soo-0T-d1I" id="Zmg-r2-YM4"/>
+            </connections>
+            <point key="canvasLocation" x="136.95652173913044" y="96.09375"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="3DPenMint120" width="120" height="120"/>
+        <image name="icLockAll" width="24" height="24"/>
+        <namedColor name="grey_5">
+            <color red="0.66666666666666663" green="0.68627450980392157" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_6">
+            <color red="0.53333333333333333" green="0.55294117647058827" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_7">
+            <color red="0.30588235294117649" green="0.32156862745098042" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_8">
+            <color red="0.21568627450980393" green="0.22745098039215686" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
