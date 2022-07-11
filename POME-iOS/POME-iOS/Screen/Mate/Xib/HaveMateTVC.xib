@@ -155,15 +155,15 @@
                                     <constraint firstItem="tOU-tc-cjf" firstAttribute="centerX" secondItem="Dno-5d-o9C" secondAttribute="centerX" id="riZ-RU-zGr"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17D-Ri-dyM" userLabel="FirstBtn">
-                                <rect key="frame" x="254" y="113" width="28" height="28"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBW-2i-9Ni" userLabel="ThirdBtn">
+                                <rect key="frame" x="298" y="113" width="28" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="8eq-qw-dCM"/>
-                                    <constraint firstAttribute="width" secondItem="17D-Ri-dyM" secondAttribute="height" multiplier="1:1" id="gnS-Ko-71t"/>
-                                    <constraint firstAttribute="width" constant="28" id="wCc-IZ-yp6"/>
+                                    <constraint firstAttribute="height" constant="28" id="Bsc-Yh-4FD"/>
+                                    <constraint firstAttribute="width" constant="28" id="J5k-Dq-AaG"/>
+                                    <constraint firstAttribute="width" secondItem="ZBW-2i-9Ni" secondAttribute="height" multiplier="1:1" id="oTb-Rz-tnc"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
+                                <buttonConfiguration key="configuration" style="plain" image="emojiMint28">
                                     <backgroundConfiguration key="background" image="btnEmojiNor28"/>
                                 </buttonConfiguration>
                             </button>
@@ -179,15 +179,15 @@
                                     <backgroundConfiguration key="background" image="btnEmojiNor28"/>
                                 </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBW-2i-9Ni" userLabel="ThirdBtn">
-                                <rect key="frame" x="298" y="113" width="28" height="28"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17D-Ri-dyM" userLabel="FirstBtn">
+                                <rect key="frame" x="254" y="113" width="28" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="Bsc-Yh-4FD"/>
-                                    <constraint firstAttribute="width" constant="28" id="J5k-Dq-AaG"/>
-                                    <constraint firstAttribute="width" secondItem="ZBW-2i-9Ni" secondAttribute="height" multiplier="1:1" id="oTb-Rz-tnc"/>
+                                    <constraint firstAttribute="height" constant="28" id="8eq-qw-dCM"/>
+                                    <constraint firstAttribute="width" secondItem="17D-Ri-dyM" secondAttribute="height" multiplier="1:1" id="gnS-Ko-71t"/>
+                                    <constraint firstAttribute="width" constant="28" id="wCc-IZ-yp6"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="emojiMint28">
+                                <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="btnEmojiNor28"/>
                                 </buttonConfiguration>
                             </button>
@@ -203,19 +203,19 @@
                             <constraint firstItem="euK-rR-cFF" firstAttribute="leading" secondItem="foa-cq-S1S" secondAttribute="trailing" constant="8" id="1lx-6z-xdA"/>
                             <constraint firstItem="kX6-WA-zxk" firstAttribute="centerY" secondItem="ZBW-2i-9Ni" secondAttribute="centerY" id="3HF-rc-QAj"/>
                             <constraint firstItem="17D-Ri-dyM" firstAttribute="centerY" secondItem="ZBW-2i-9Ni" secondAttribute="centerY" id="3Z6-Iv-6gD"/>
-                            <constraint firstItem="ZBW-2i-9Ni" firstAttribute="leading" secondItem="k1L-vf-bXg" secondAttribute="trailing" constant="-6" id="7nh-4J-BuE"/>
                             <constraint firstItem="Dno-5d-o9C" firstAttribute="leading" secondItem="euK-rR-cFF" secondAttribute="leading" id="AgB-cW-lD3"/>
+                            <constraint firstItem="k1L-vf-bXg" firstAttribute="leading" secondItem="17D-Ri-dyM" secondAttribute="trailing" constant="-6" id="D9d-BB-hgO"/>
                             <constraint firstAttribute="trailing" secondItem="kX6-WA-zxk" secondAttribute="trailing" constant="23" id="HWX-ks-WQi"/>
                             <constraint firstAttribute="trailing" secondItem="MW8-IA-ptH" secondAttribute="trailing" constant="16" id="Ipa-Bu-kqA"/>
                             <constraint firstItem="17D-Ri-dyM" firstAttribute="width" secondItem="17D-Ri-dyM" secondAttribute="height" multiplier="1:1" id="Mhp-hd-JfE"/>
                             <constraint firstItem="k1L-vf-bXg" firstAttribute="centerY" secondItem="ZBW-2i-9Ni" secondAttribute="centerY" id="O97-U9-eAC"/>
                             <constraint firstItem="foa-cq-S1S" firstAttribute="leading" secondItem="Pmv-8r-1MC" secondAttribute="leading" constant="16" id="PIw-8O-vvE"/>
                             <constraint firstItem="Mcg-tC-nx3" firstAttribute="trailing" secondItem="MW8-IA-ptH" secondAttribute="trailing" id="QEc-ob-IYB"/>
+                            <constraint firstItem="ZBW-2i-9Ni" firstAttribute="leading" secondItem="k1L-vf-bXg" secondAttribute="trailing" constant="-6" id="Red-bH-dT4"/>
                             <constraint firstItem="HDs-lj-40J" firstAttribute="leading" secondItem="euK-rR-cFF" secondAttribute="leading" id="U3P-KE-s1J"/>
                             <constraint firstItem="Mcg-tC-nx3" firstAttribute="top" secondItem="MW8-IA-ptH" secondAttribute="bottom" constant="14" id="cEr-NT-PIk"/>
                             <constraint firstItem="Dno-5d-o9C" firstAttribute="top" secondItem="HDs-lj-40J" secondAttribute="bottom" constant="8" id="cqH-zC-yhh"/>
                             <constraint firstItem="HDs-lj-40J" firstAttribute="top" secondItem="iMm-mr-AQp" secondAttribute="bottom" constant="5" id="fjv-WK-pz9"/>
-                            <constraint firstItem="k1L-vf-bXg" firstAttribute="leading" secondItem="17D-Ri-dyM" secondAttribute="trailing" constant="-6" id="h6w-Th-Xif"/>
                             <constraint firstItem="euK-rR-cFF" firstAttribute="top" secondItem="Pmv-8r-1MC" secondAttribute="top" constant="20" id="hCL-W4-xrR"/>
                             <constraint firstItem="iMm-mr-AQp" firstAttribute="top" secondItem="euK-rR-cFF" secondAttribute="bottom" constant="10" id="hdd-o7-7nC"/>
                             <constraint firstItem="iMm-mr-AQp" firstAttribute="leading" secondItem="euK-rR-cFF" secondAttribute="leading" id="l3D-4O-Za5"/>
