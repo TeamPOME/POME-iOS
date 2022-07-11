@@ -67,7 +67,6 @@ class MakeProfileVC: BaseVC {
         configureUI()
         setTextField()
     }
-    
 }
 
 // MARK: - UI
