@@ -17,6 +17,10 @@
 		1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */; };
 		1A76CACF287B1B3300B29500 /* MateHeaderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */; };
 		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
+		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
+		778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */; };
+		778E0F50287B273900BEEEA5 /* SignSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778E0F4F287B273900BEEEA5 /* SignSB.storyboard */; };
+		778E0F52287B27AB00BEEEA5 /* MakeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */; };
 		77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */; };
 		77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */; };
 		77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2C12874A23800D2F6C0 /* Assets.xcassets */; };
@@ -24,9 +28,7 @@
 		77E8F2CD2874A38600D2F6C0 /* Colorsets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2CC2874A38600D2F6C0 /* Colorsets.xcassets */; };
 		77E8F2E42874AEB900D2F6C0 /* WriteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2E32874AEB900D2F6C0 /* WriteSB.storyboard */; };
 		77E8F2E62874AEDB00D2F6C0 /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2E52874AEDB00D2F6C0 /* WriteVC.swift */; };
-		77E8F2EC2874AF2A00D2F6C0 /* WriteTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2EB2874AF2A00D2F6C0 /* WriteTVC.swift */; };
 		77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2ED2874AF6300D2F6C0 /* PomeTBC.swift */; };
-		77E8F2F12874B0EC00D2F6C0 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2F02874B0EC00D2F6C0 /* model.swift */; };
 		77E8F2F82874B15A00D2F6C0 /* RemindSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2F72874B15A00D2F6C0 /* RemindSB.storyboard */; };
 		77E8F2FA2874B17800D2F6C0 /* RemindVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2F92874B17800D2F6C0 /* RemindVC.swift */; };
 		77E8F2FC2874B19400D2F6C0 /* RemindTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2FB2874B19400D2F6C0 /* RemindTVC.swift */; };
@@ -86,8 +88,20 @@
 		77E8F3812876AB2300D2F6C0 /* PomeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3802876AB2300D2F6C0 /* PomeBtn.swift */; };
 		77E8F3832876F25400D2F6C0 /* xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3822876F25400D2F6C0 /* xib.swift */; };
 		77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3842877452400D2F6C0 /* PomeNaviBar.swift */; };
+		84309C822878ACF50017F8BF /* GoalCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */; };
+		84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */; };
 		8432C9B228773A42001C643F /* SpendCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9B028773A42001C643F /* SpendCVC.swift */; };
 		8432C9B328773A42001C643F /* SpendCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9B128773A42001C643F /* SpendCVC.xib */; };
+		8432C9BB28784533001C643F /* EmptyGoalCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BA28784533001C643F /* EmptyGoalCardCVC.xib */; };
+		8432C9BD28784751001C643F /* FeelingCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BC28784751001C643F /* FeelingCardCVC.xib */; };
+		8432C9BF28787F9A001C643F /* FeelingCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */; };
+		84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACED842878989E00AA408D /* EmptyGoalCardCVC.swift */; };
+		84B77272287B369200E1EDFC /* LookbackCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B77270287B369200E1EDFC /* LookbackCVC.swift */; };
+		84B77273287B369200E1EDFC /* LookbackCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B77271287B369200E1EDFC /* LookbackCVC.xib */; };
+		84B77275287B3E3A00E1EDFC /* LookbackSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B77274287B3E3A00E1EDFC /* LookbackSB.storyboard */; };
+		84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B77276287B3E4B00E1EDFC /* LookbackVC.swift */; };
+		84B7727B287BD82000E1EDFC /* SelectFeelingSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B7727A287BD82000E1EDFC /* SelectFeelingSB.storyboard */; };
+		84B7727D287BD83D00E1EDFC /* SelectFeelingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7727C287BD83D00E1EDFC /* SelectFeelingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +116,9 @@
 		1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateHeaderCVC.xib; sourceTree = "<group>"; };
 		6F6FAF66B7C4C46AE47E904C /* Pods-POME-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.debug.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		778E0F422879624700BEEEA5 /* PomeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeTextField.swift; sourceTree = "<group>"; };
+		778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeMaskedImageView.swift; sourceTree = "<group>"; };
+		778E0F4F287B273900BEEEA5 /* SignSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignSB.storyboard; sourceTree = "<group>"; };
+		778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeProfileVC.swift; sourceTree = "<group>"; };
 		77E8F2B52874A23700D2F6C0 /* POME-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POME-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,9 +128,7 @@
 		77E8F2CC2874A38600D2F6C0 /* Colorsets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colorsets.xcassets; sourceTree = "<group>"; };
 		77E8F2E32874AEB900D2F6C0 /* WriteSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteSB.storyboard; sourceTree = "<group>"; };
 		77E8F2E52874AEDB00D2F6C0 /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
-		77E8F2EB2874AF2A00D2F6C0 /* WriteTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTVC.swift; sourceTree = "<group>"; };
 		77E8F2ED2874AF6300D2F6C0 /* PomeTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeTBC.swift; sourceTree = "<group>"; };
-		77E8F2F02874B0EC00D2F6C0 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		77E8F2F72874B15A00D2F6C0 /* RemindSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RemindSB.storyboard; sourceTree = "<group>"; };
 		77E8F2F92874B17800D2F6C0 /* RemindVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindVC.swift; sourceTree = "<group>"; };
 		77E8F2FB2874B19400D2F6C0 /* RemindTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindTVC.swift; sourceTree = "<group>"; };
@@ -174,8 +189,20 @@
 		77E8F3822876F25400D2F6C0 /* xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xib.swift; sourceTree = "<group>"; };
 		77E8F3842877452400D2F6C0 /* PomeNaviBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeNaviBar.swift; sourceTree = "<group>"; };
 		804C6365DDEE189DFF7ED4ED /* Pods-POME-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.release.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCategoryCVC.swift; sourceTree = "<group>"; };
+		84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCategoryCVC.xib; sourceTree = "<group>"; };
 		8432C9B028773A42001C643F /* SpendCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendCVC.swift; sourceTree = "<group>"; };
 		8432C9B128773A42001C643F /* SpendCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendCVC.xib; sourceTree = "<group>"; };
+		8432C9BA28784533001C643F /* EmptyGoalCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyGoalCardCVC.xib; sourceTree = "<group>"; };
+		8432C9BC28784751001C643F /* FeelingCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeelingCardCVC.xib; sourceTree = "<group>"; };
+		8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingCardCVC.swift; sourceTree = "<group>"; };
+		84ACED842878989E00AA408D /* EmptyGoalCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyGoalCardCVC.swift; sourceTree = "<group>"; };
+		84B77270287B369200E1EDFC /* LookbackCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackCVC.swift; sourceTree = "<group>"; };
+		84B77271287B369200E1EDFC /* LookbackCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LookbackCVC.xib; sourceTree = "<group>"; };
+		84B77274287B3E3A00E1EDFC /* LookbackSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LookbackSB.storyboard; sourceTree = "<group>"; };
+		84B77276287B3E4B00E1EDFC /* LookbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackVC.swift; sourceTree = "<group>"; };
+		84B7727A287BD82000E1EDFC /* SelectFeelingSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectFeelingSB.storyboard; sourceTree = "<group>"; };
+		84B7727C287BD83D00E1EDFC /* SelectFeelingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeelingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +223,31 @@
 				1232F317EC5CF269A755DD4C /* Pods_POME_iOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		778E0F4C287B26E500BEEEA5 /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				778E0F4D287B26FE00BEEEA5 /* SB */,
+				778E0F4E287B270500BEEEA5 /* VC */,
+			);
+			path = Sign;
+			sourceTree = "<group>";
+		};
+		778E0F4D287B26FE00BEEEA5 /* SB */ = {
+			isa = PBXGroup;
+			children = (
+				778E0F4F287B273900BEEEA5 /* SignSB.storyboard */,
+			);
+			path = SB;
+			sourceTree = "<group>";
+		};
+		778E0F4E287B270500BEEEA5 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		77E8F2AC2874A23700D2F6C0 = {
@@ -259,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F2DA2874AD7100D2F6C0 /* TabBar */,
+				778E0F4C287B26E500BEEEA5 /* Sign */,
 				77E8F2DB2874AD8100D2F6C0 /* Write */,
 				77E8F2DC2874AD8800D2F6C0 /* Remind */,
 				77E8F2DD2874ADAA00D2F6C0 /* Mate */,
@@ -430,6 +483,8 @@
 			isa = PBXGroup;
 			children = (
 				77E8F2E32874AEB900D2F6C0 /* WriteSB.storyboard */,
+				84B77274287B3E3A00E1EDFC /* LookbackSB.storyboard */,
+				84B7727A287BD82000E1EDFC /* SelectFeelingSB.storyboard */,
 			);
 			path = SB;
 			sourceTree = "<group>";
@@ -439,6 +494,8 @@
 			children = (
 				77E8F2E52874AEDB00D2F6C0 /* WriteVC.swift */,
 				77E8F35D28765F7C00D2F6C0 /* WriteNC.swift */,
+				84B77276287B3E4B00E1EDFC /* LookbackVC.swift */,
+				84B7727C287BD83D00E1EDFC /* SelectFeelingVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -446,25 +503,24 @@
 		77E8F2E22874AE4000D2F6C0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				77E8F2E72874AF0000D2F6C0 /* TVC */,
 				77E8F2E82874AF0600D2F6C0 /* CVC */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		77E8F2E72874AF0000D2F6C0 /* TVC */ = {
-			isa = PBXGroup;
-			children = (
-				77E8F2EB2874AF2A00D2F6C0 /* WriteTVC.swift */,
-			);
-			path = TVC;
-			sourceTree = "<group>";
-		};
 		77E8F2E82874AF0600D2F6C0 /* CVC */ = {
 			isa = PBXGroup;
 			children = (
+				84ACED842878989E00AA408D /* EmptyGoalCardCVC.swift */,
+				8432C9BA28784533001C643F /* EmptyGoalCardCVC.xib */,
+				8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */,
+				8432C9BC28784751001C643F /* FeelingCardCVC.xib */,
 				8432C9B028773A42001C643F /* SpendCVC.swift */,
 				8432C9B128773A42001C643F /* SpendCVC.xib */,
+				84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */,
+				84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */,
+				84B77270287B369200E1EDFC /* LookbackCVC.swift */,
+				84B77271287B369200E1EDFC /* LookbackCVC.xib */,
 			);
 			path = CVC;
 			sourceTree = "<group>";
@@ -473,7 +529,6 @@
 			isa = PBXGroup;
 			children = (
 				1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */,
-				77E8F2F02874B0EC00D2F6C0 /* model.swift */,
 			);
 			path = AppModel;
 			sourceTree = "<group>";
@@ -692,6 +747,7 @@
 				77E8F3802876AB2300D2F6C0 /* PomeBtn.swift */,
 				77E8F3842877452400D2F6C0 /* PomeNaviBar.swift */,
 				778E0F422879624700BEEEA5 /* PomeTextField.swift */,
+				778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -773,10 +829,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B7727B287BD82000E1EDFC /* SelectFeelingSB.storyboard in Resources */,
+				84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */,
+				8432C9BB28784533001C643F /* EmptyGoalCardCVC.xib in Resources */,
+				84B77273287B369200E1EDFC /* LookbackCVC.xib in Resources */,
 				77E8F2CD2874A38600D2F6C0 /* Colorsets.xcassets in Resources */,
 				77E8F2C52874A23800D2F6C0 /* LaunchScreen.storyboard in Resources */,
+				778E0F50287B273900BEEEA5 /* SignSB.storyboard in Resources */,
 				77E8F31C2874B7B700D2F6C0 /* MypageSB.storyboard in Resources */,
 				77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */,
+				8432C9BD28784751001C643F /* FeelingCardCVC.xib in Resources */,
 				77E8F2E42874AEB900D2F6C0 /* WriteSB.storyboard in Resources */,
 				77E8F2F82874B15A00D2F6C0 /* RemindSB.storyboard in Resources */,
 				77E8F30E2874B4DD00D2F6C0 /* MateSB.storyboard in Resources */,
@@ -785,6 +847,7 @@
 				1A1AEFDB287A4D5B00DD5F7E /* HaveMateTVC.xib in Resources */,
 				77E8F32A28756DA100D2F6C0 /* Pretendard-Regular.otf in Resources */,
 				77E8F32628756D8200D2F6C0 /* Pretendard-Bold.otf in Resources */,
+				84B77275287B3E3A00E1EDFC /* LookbackSB.storyboard in Resources */,
 				77E8F32C28756DAE00D2F6C0 /* Pretendard-Medium.otf in Resources */,
 				8432C9B328773A42001C643F /* SpendCVC.xib in Resources */,
 			);
@@ -840,9 +903,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				77E8F3752876936B00D2F6C0 /* NetworkConstants.swift in Sources */,
+				84309C822878ACF50017F8BF /* GoalCategoryCVC.swift in Sources */,
 				77E8F33C2875A08200D2F6C0 /* UILabel+.swift in Sources */,
 				77E8F33A28759FCF00D2F6C0 /* UIFont+.swift in Sources */,
 				77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */,
+				84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */,
 				77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */,
 				77E8F36028765FA600D2F6C0 /* RemindNC.swift in Sources */,
 				77E8F31E2874B7CE00D2F6C0 /* MypageVC.swift in Sources */,
@@ -862,8 +927,11 @@
 				77E8F36228765FD200D2F6C0 /* MateNC.swift in Sources */,
 				77E8F3222874B7F000D2F6C0 /* MypageCVC.swift in Sources */,
 				77E8F34A2875F2C900D2F6C0 /* StoryboardRepresentation.swift in Sources */,
+				778E0F52287B27AB00BEEEA5 /* MakeProfileVC.swift in Sources */,
 				77E8F3542875F56000D2F6C0 /* TVRegisterable.swift in Sources */,
+				84B77272287B369200E1EDFC /* LookbackCVC.swift in Sources */,
 				77E8F3582875F5EA00D2F6C0 /* BaseCVC.swift in Sources */,
+				778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */,
 				77E8F3322875729000D2F6C0 /* UIView+.swift in Sources */,
 				77E8F3042874B1D400D2F6C0 /* RemindXib.swift in Sources */,
 				77E8F35C2875F71700D2F6C0 /* CodeBaseTVC.swift in Sources */,
@@ -876,7 +944,7 @@
 				77E8F3182874B72F00D2F6C0 /* MateXib.swift in Sources */,
 				77E8F3142874B56B00D2F6C0 /* MateTVC.swift in Sources */,
 				77E8F35A2875F6BE00D2F6C0 /* CodeBaseCVC.swift in Sources */,
-				77E8F2EC2874AF2A00D2F6C0 /* WriteTVC.swift in Sources */,
+				8432C9BF28787F9A001C643F /* FeelingCardCVC.swift in Sources */,
 				77E8F34C2875F37500D2F6C0 /* Identifiers.swift in Sources */,
 				77E8F368287665C300D2F6C0 /* TargetType.swift in Sources */,
 				77E8F338287575E500D2F6C0 /* UIColor+.swift in Sources */,
@@ -895,10 +963,12 @@
 				77E8F37B2876943800D2F6C0 /* WriteResModel.swift in Sources */,
 				77E8F3162874B57700D2F6C0 /* MateCVC.swift in Sources */,
 				1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */,
+				84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */,
 				77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */,
 				77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */,
 				77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */,
 				77E8F334287574B000D2F6C0 /* UITextField+.swift in Sources */,
+				84B7727D287BD83D00E1EDFC /* SelectFeelingVC.swift in Sources */,
 				77E8F2F12874B0EC00D2F6C0 /* model.swift in Sources */,
 				77E8F3662876606D00D2F6C0 /* ViewControllerFactory.swift in Sources */,
 				77E8F379287693AA00D2F6C0 /* WriteService.swift in Sources */,
@@ -1044,7 +1114,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 397WA8BG8W;
+				DEVELOPMENT_TEAM = 83B9Y749K7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "POME-iOS/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1072,7 +1142,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 397WA8BG8W;
+				DEVELOPMENT_TEAM = 83B9Y749K7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "POME-iOS/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

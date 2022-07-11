@@ -3,8 +3,9 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,10 +16,90 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zsx-4j-blm">
+                                <rect key="frame" x="0.0" y="88" width="375" height="42"/>
+                                <color key="backgroundColor" name="grey_0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Gvh-0O-iLp"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="foo-DX-afE">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1A3-MU-wbP">
+                                        <rect key="frame" x="0.0" y="-43" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9P4-V8-zeL">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Btg-DO-8q4" customClass="PomeNaviBar" customModule="POME_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <color key="backgroundColor" name="grey_0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="s0u-2T-abt"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wNH-qz-TOz">
+                                <rect key="frame" x="0.0" y="130" width="375" height="648"/>
+                                <color key="backgroundColor" name="grey_0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KNo-cj-mKi">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KhW-8L-f7S">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YCn-Rz-52R">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMY-oy-SiQ">
+                                <rect key="frame" x="307" y="710" width="52" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="D5n-EC-GQV"/>
+                                    <constraint firstAttribute="height" constant="52" id="e6T-ab-7FY"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="btn_writing"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="grey_0"/>
+                        <constraints>
+                            <constraint firstItem="zsx-4j-blm" firstAttribute="top" secondItem="Btg-DO-8q4" secondAttribute="bottom" id="01v-t8-Efy"/>
+                            <constraint firstItem="Btg-DO-8q4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0NU-eS-u4Y"/>
+                            <constraint firstItem="zsx-4j-blm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0cI-xM-e4p"/>
+                            <constraint firstItem="Btg-DO-8q4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="3OK-c2-sme"/>
+                            <constraint firstItem="wNH-qz-TOz" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ACX-fh-Pge"/>
+                            <constraint firstItem="wNH-qz-TOz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="BE3-JR-NOq"/>
+                            <constraint firstItem="wNH-qz-TOz" firstAttribute="top" secondItem="zsx-4j-blm" secondAttribute="bottom" id="HCq-7d-rke"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Btg-DO-8q4" secondAttribute="trailing" id="W6E-49-HVJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rMY-oy-SiQ" secondAttribute="trailing" constant="16" id="c82-GD-qma"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zsx-4j-blm" secondAttribute="trailing" id="hEj-eE-hg5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rMY-oy-SiQ" secondAttribute="bottom" constant="16" id="lEY-Rn-PlE"/>
+                            <constraint firstItem="wNH-qz-TOz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pRC-Rp-407"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tg4-Zy-Ih7"/>
+                    <connections>
+                        <outlet property="goalCategoryCV" destination="zsx-4j-blm" id="FLm-gI-jAv"/>
+                        <outlet property="writeHomeNaviBar" destination="Btg-DO-8q4" id="QB9-tY-rN4"/>
+                        <outlet property="writeMainCV" destination="wNH-qz-TOz" id="eoR-Be-qaS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,8 +124,9 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="btn_writing" width="84" height="84"/>
+        <namedColor name="grey_0">
+            <color red="0.97254901960784312" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

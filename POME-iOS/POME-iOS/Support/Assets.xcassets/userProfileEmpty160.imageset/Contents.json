@@ -2,18 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "btnEmojiPlus38.png",
+      "filename" : "userProfileEmpty160.png",
       "scale" : "1x"
     },
     {
-      "filename" : "btnEmojiPlus38@2x.png",
+      "scale" : "2x",
       "idiom" : "universal",
-      "scale" : "2x"
+      "filename" : "userProfileEmpty160@2x.png"
     },
     {
-      "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "btnEmojiPlus38@3x.png"
+      "scale" : "3x",
+      "filename" : "userProfileEmpty160@3x.png"
     }
   ],
   "info" : {

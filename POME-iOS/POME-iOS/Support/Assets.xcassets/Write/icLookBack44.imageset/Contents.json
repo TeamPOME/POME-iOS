@@ -1,23 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "icLookBack44.png",
       "idiom" : "universal",
-      "filename" : "btnEmojiPlus38.png",
       "scale" : "1x"
     },
     {
-      "filename" : "btnEmojiPlus38@2x.png",
+      "filename" : "icLookBack44@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "scale" : "3x",
+      "filename" : "icLookBack44@3x.png",
       "idiom" : "universal",
-      "filename" : "btnEmojiPlus38@3x.png"
+      "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
