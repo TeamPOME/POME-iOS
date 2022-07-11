@@ -169,7 +169,7 @@ extension MakeProfileVC {
     
     /// 카메라 불러오는 메소드
     private func openCamera() {
-        if (UIImagePickerController .isSourceTypeAvailable(.camera)) {
+        if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
             imagePicker.sourceType = .camera
             imagePicker.allowsEditing = true
             present(imagePicker, animated: false, completion: nil)
