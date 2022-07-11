@@ -22,7 +22,6 @@ class SelectFeelingVC: BaseVC {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNaviBar()
         configureUI()
     }
     
@@ -49,11 +48,8 @@ class SelectFeelingVC: BaseVC {
 // MARK: - UI
 extension SelectFeelingVC {
     
-    private func configureNaviBar() {
-        naviBar.setNaviStyle(state: .whiteBackDefault)
-    }
-    
     private func configureUI() {
+        naviBar.setNaviStyle(state: .whiteBackDefault)
         saveEmojiBtn.setTitle("남겼어요", for: .normal)
         saveEmojiBtn.isDisabled = true
     }
