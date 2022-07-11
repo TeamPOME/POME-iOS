@@ -62,6 +62,8 @@ class MakeProfileVC: BaseVC {
     }
     
     private let imagePicker = UIImagePickerController()
+    
+    private var isPicked = false
 
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -141,11 +143,20 @@ extension MakeProfileVC {
     /// 프로필 버튼 tap Action 설정 메서드
     private func setTapChooseImageBtn() {
         chooseImageBtn.press { [weak self] in
-            self?.makeTwoAlertWithCancel(okTitle: "사진앨범", secondOkTitle: "카메라", okAction: { _ in
-                self?.openAlbum()
-            }, secondOkAction: { _ in
-                self?.openCamera()
-            })
+            if !(self?.isPicked ?? false) {
+                self?.makeTwoAlertWithCancel(okTitle: "사진앨범", secondOkTitle: "카메라", okAction: { _ in
+                    self?.openAlbum()
+                }, secondOkAction: { _ in
+                    self?.openCamera()
+                })
+            } else {
+                self?.makeTwoAlertWithCancel(okTitle: "수정", secondOkTitle: "삭제", okAction: { _ in
+                    self?.openAlbum()
+                }, secondOkAction: { _ in
+                    self?.profileImageView.image = UIImage(named: "userProfileEmpty160")
+                    self?.isPicked = false
+                })
+            }
         }
     }
     
@@ -217,6 +228,7 @@ extension MakeProfileVC: UIImagePickerControllerDelegate {
         }
         
         profileImageView.image = image
+        isPicked = true
         dismiss(animated: true, completion: nil)
     }
 }
