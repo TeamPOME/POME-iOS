@@ -17,12 +17,4 @@ class MateHeaderCVC: BaseCVC {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    override var isSelected: Bool {
-        didSet {
-            nameLabel.textColor = isSelected ? .grey_9 : .grey_5
-            nameLabel.font = isSelected ? UIFont.PretendardSB(size: 12) : UIFont.PretendardM(size: 12)
-        }
-    }
-
 }
