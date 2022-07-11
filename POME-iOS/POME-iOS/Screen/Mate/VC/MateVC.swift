@@ -26,8 +26,6 @@ class MateVC: BaseVC {
     private let mateTV = UITableView(frame: .zero, style: .plain).then {
         $0.backgroundColor = .grey_0
         $0.showsVerticalScrollIndicator = false
-        $0.showsHorizontalScrollIndicator = false
-        $0.separatorStyle = .none
         $0.sectionHeaderTopPadding = 0;
     }
     
@@ -44,8 +42,9 @@ class MateVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        setTV()
+        registerCell()
         setDelegate()
+        setTVScroll()
     }
 }
 
@@ -54,6 +53,7 @@ extension MateVC {
     
     private func configureUI() {
         view.backgroundColor = .grey_0
+        mateTV.separatorStyle = .none
         view.addSubviews([addMateNaviBar, mateTV, mateProfileCV, titleHeaderLabel])
     
         addMateNaviBar.snp.makeConstraints {
@@ -83,7 +83,7 @@ extension MateVC {
 // MARK: - Custom Methods
 extension MateVC {
     
-    private func setTV(){
+    private func registerCell(){
         HaveNoMateTVC.register(target: mateTV)
         HaveMateTVC.register(target: mateTV)
         MateHeaderCVC.register(target: mateProfileCV)
@@ -94,6 +94,11 @@ extension MateVC {
         mateTV.dataSource = self
         mateProfileCV.delegate = self
         mateProfileCV.dataSource = self
+    }
+    
+    /// 친구가 없을때는 cell이 한개이므로 스크롤을 하지 않도록 막아둔다.
+    private func setTVScroll() {
+        mateTV.isScrollEnabled = (mateNum == 0) ? false : true
     }
 }
 
@@ -111,10 +116,12 @@ extension MateVC: UITableViewDelegate {
         }
         else {
             guard let haveMateTVC = mateTV.dequeueReusableCell(withIdentifier: Identifiers.HaveMateTVC, for: indexPath) as? HaveMateTVC else { return UITableViewCell() }
+            haveMateTVC.containerView.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 8)
             return haveMateTVC
         }
     }
     
+    /// CollectionView에서 전체보기 셀 1개 포함되어 있어서 + 1을 해주었습니다. 친구가 없을 경우 전체보기 셀 1개만 보이게 됩니다.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (mateNum == 0) ? 1 : mateNum + 1
     }
@@ -145,27 +152,18 @@ extension MateVC: UICollectionViewDelegate {
         }
         
         /// 셀이 선택되었을때, 글씨체 설정
-        if indexPath.row == selectedIndex {
-            cell.nameLabel.textColor = .grey_9
-            cell.nameLabel.font = UIFont.PretendardSB(size: 12)
-        }
-        else {
-            cell.nameLabel.textColor = .grey_5
-            cell.nameLabel.font = UIFont.PretendardM(size: 12)
-        }
+        cell.nameLabel.textColor = (indexPath.row == selectedIndex) ? .grey_9 : .grey_5
+        cell.nameLabel.font = (indexPath.row == selectedIndex) ? UIFont.PretendardSB(size: 12) : UIFont.PretendardM(size: 12)
         
         /// 전체보기 버튼 이미지 설정
-        if indexPath.row == 0 {
-            if selectedIndex == 0 {
-                cell.profileImageView.image = UIImage(named: "btnAllViewProfileClicked")
-            } else {
-                cell.profileImageView.image = UIImage(named: "btnAllViewProfileNotClicked")
-            }
-        }
-        else {
+        if indexPath.row == 0 && selectedIndex == 0 {
+            cell.profileImageView.image = UIImage(named: "btnAllViewProfileClicked")
+        } else if indexPath.row == 0 && selectedIndex != 0 {
+            cell.profileImageView.image = UIImage(named: "btnAllViewProfileNotClicked")
+        } else {
             cell.profileImageView.image = UIImage(named: "userProfileFill32")
         }
-        
+
         return cell
     }
     
@@ -187,7 +185,7 @@ extension MateVC: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 18
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 18.adjusted
     }
 }

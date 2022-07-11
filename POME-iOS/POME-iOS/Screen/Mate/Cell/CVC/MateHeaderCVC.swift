@@ -20,6 +20,7 @@ class MateHeaderCVC: BaseCVC {
     }
 }
 
+// MARK: - UI
 extension MateHeaderCVC {
     
     func configureUI() {

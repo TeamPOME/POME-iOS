@@ -10,7 +10,7 @@ import UIKit
 class HaveNoMateTVC: CodeBaseTVC {
 
     // MARK: Properties
-    private let allContainerView = UIView().then {
+    private let containerView = UIView().then {
         $0.backgroundColor = .grey_0
     }
     
@@ -22,6 +22,7 @@ class HaveNoMateTVC: CodeBaseTVC {
         $0.setLabel(text: "아직 추가한 친구가 없어요", color: .grey_5, size: 14, weight: .semiBold)
     }
     
+    // MARK: - Life Cycle
     override func setViews() {
         configureUI()
     }
@@ -35,10 +36,10 @@ class HaveNoMateTVC: CodeBaseTVC {
 extension HaveNoMateTVC {
     
     private func configureUI() {
-        contentView.addSubview(allContainerView)
-        self.allContainerView.addSubviews([blankImageView, descriptionLabel])
+        contentView.addSubview(containerView)
+        self.containerView.addSubviews([blankImageView, descriptionLabel])
         
-        allContainerView.snp.makeConstraints {
+        containerView.snp.makeConstraints {
             $0.top.bottom.leading.trailing.equalToSuperview()
         }
         
