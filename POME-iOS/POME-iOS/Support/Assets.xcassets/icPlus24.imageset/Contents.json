@@ -1,19 +1,19 @@
 {
   "images" : [
     {
+      "scale" : "1x",
       "idiom" : "universal",
-      "filename" : "btnEmojiPlus38.png",
-      "scale" : "1x"
+      "filename" : "icPlus24.png"
     },
     {
-      "filename" : "btnEmojiPlus38@2x.png",
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "icPlus24@2x.png"
     },
     {
-      "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "btnEmojiPlus38@3x.png"
+      "filename" : "icPlus24@3x.png",
+      "scale" : "3x"
     }
   ],
   "info" : {

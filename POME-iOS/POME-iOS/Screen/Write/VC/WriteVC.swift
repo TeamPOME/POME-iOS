@@ -109,40 +109,36 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
     
     /// 섹션에 따라 셀 크기 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var size = CGSize()
         if collectionView == goalCategoryCV {
             
             /// 글씨 길이에 따라 너비 동적 조절
-            size = CGSize(width: category[indexPath.row].size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
+            return CGSize(width: category[indexPath.row].size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
         } else {
             switch indexPath.section {
             case 0:
-                size = CGSize(width: 343.adjusted, height: 157)
+                return CGSize(width: 343.adjusted, height: 157)
             case 1:
-                size = CGSize(width: 343.adjusted, height: 118)
+                return CGSize(width: 343.adjusted, height: 118)
             default:
-                size = CGSize(width: 166.adjusted, height: 188)
+                return CGSize(width: 166.adjusted, height: 188)
             }
         }
-        return size
     }
     
     /// 섹션에 인셋 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        var inset = UIEdgeInsets()
         if collectionView == goalCategoryCV {
-            inset = UIEdgeInsets(top: 7, left: 76, bottom: 6, right: 16)
+            return UIEdgeInsets(top: 7, left: 76, bottom: 6, right: 16)
         } else {
             switch section {
             case 0:
-                inset = UIEdgeInsets(top: 13, left: 16, bottom: 16, right: 16)
+                return UIEdgeInsets(top: 13, left: 16, bottom: 16, right: 16)
             case 1:
-                inset = UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
+                return UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
             default:
-                inset = UIEdgeInsets(top: 12, left: 16, bottom: 0, right: 16)
+                return UIEdgeInsets(top: 12, left: 16, bottom: 0, right: 16)
             }
         }
-        return inset
     }
     
     /// 섹션 별 셀 위아래 간격 설정
