@@ -222,6 +222,7 @@ extension MakeProfileVC: UINavigationControllerDelegate {
 // MARK: - UIImagePickerControllerDelegate
 extension MakeProfileVC: UIImagePickerControllerDelegate {
     
+    /// 이미지 선택하는 함수
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
             return
