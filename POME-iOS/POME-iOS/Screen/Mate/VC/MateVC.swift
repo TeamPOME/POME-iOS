@@ -26,8 +26,6 @@ class MateVC: BaseVC {
     private let mateTV = UITableView(frame: .zero, style: .plain).then {
         $0.backgroundColor = .grey_0
         $0.showsVerticalScrollIndicator = false
-        $0.showsHorizontalScrollIndicator = false
-        $0.separatorStyle = .none
         $0.sectionHeaderTopPadding = 0;
     }
     
@@ -54,6 +52,7 @@ extension MateVC {
     
     private func configureUI() {
         view.backgroundColor = .grey_0
+        mateTV.separatorStyle = .none
         view.addSubviews([addMateNaviBar, mateTV, mateProfileCV, titleHeaderLabel])
     
         addMateNaviBar.snp.makeConstraints {
@@ -111,6 +110,7 @@ extension MateVC: UITableViewDelegate {
         }
         else {
             guard let haveMateTVC = mateTV.dequeueReusableCell(withIdentifier: Identifiers.HaveMateTVC, for: indexPath) as? HaveMateTVC else { return UITableViewCell() }
+            haveMateTVC.containerView.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 8)
             return haveMateTVC
         }
     }
@@ -187,7 +187,7 @@ extension MateVC: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 18
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 18.adjusted
     }
 }
