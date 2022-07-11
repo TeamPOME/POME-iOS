@@ -59,10 +59,11 @@
                                                     <constraint firstAttribute="height" constant="110" id="B2r-e5-48N"/>
                                                     <constraint firstAttribute="width" constant="110" id="UpJ-EG-Wun"/>
                                                 </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="component4"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="btnEmojiHappyPink110Nor"/>
                                                 <connections>
-                                                    <action selector="tapHappyBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HQK-8C-0fH"/>
+                                                    <action selector="tapEmojiBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cuL-b1-wvF"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eau-00-Yue">
@@ -82,10 +83,11 @@
                                                     <constraint firstAttribute="height" constant="110" id="amj-F9-Xgd"/>
                                                     <constraint firstAttribute="width" constant="110" id="jRy-Eu-Jpj"/>
                                                 </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="btnEmojiWhatPink110Nor"/>
                                                 <connections>
-                                                    <action selector="tapDontKnowBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="C2Q-JD-uvv"/>
+                                                    <action selector="tapEmojiBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RNd-bU-euI"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모르겠어요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fe8-tG-kGP">
@@ -105,10 +107,11 @@
                                                     <constraint firstAttribute="height" constant="110" id="Thb-6x-30g"/>
                                                     <constraint firstAttribute="width" constant="110" id="nek-Ea-e2C"/>
                                                 </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="component3"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="btnEmojiSadPink110Nor"/>
                                                 <connections>
-                                                    <action selector="tapRegretBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OfD-ms-c5f"/>
+                                                    <action selector="tapEmojiBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ruO-cN-f5c"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="후회해요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRl-Wq-0re">
@@ -149,9 +152,12 @@
                     </view>
                     <connections>
                         <outlet property="dontKnowBtn" destination="pcR-k1-Gvx" id="A9P-vd-0mc"/>
+                        <outlet property="dontKnowLabel" destination="Fe8-tG-kGP" id="BQf-BH-V2Y"/>
                         <outlet property="happyBtn" destination="HoJ-Wz-F6J" id="Ckc-Ok-eu1"/>
+                        <outlet property="happyLabel" destination="eau-00-Yue" id="OO5-j6-Dm1"/>
                         <outlet property="naviBar" destination="ouj-Ic-fV0" id="hyC-VT-H4m"/>
                         <outlet property="regretBtn" destination="LvP-p9-uhS" id="ff6-SH-WFG"/>
+                        <outlet property="regretLabel" destination="bRl-Wq-0re" id="f9f-Ca-obA"/>
                         <outlet property="saveEmojiBtn" destination="rdR-X8-yB8" id="t3T-vF-7VA"/>
                     </connections>
                 </viewController>
@@ -161,9 +167,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btnEmojiHappyPink110Nor" width="110" height="110"/>
+        <image name="btnEmojiSadPink110Nor" width="110" height="110"/>
         <image name="btnEmojiWhatPink110Nor" width="110" height="110"/>
-        <image name="component3" width="110" height="110"/>
-        <image name="component4" width="110" height="110"/>
         <namedColor name="grey_5">
             <color red="0.66666666666666663" green="0.68627450980392157" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
