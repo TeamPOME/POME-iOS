@@ -36,10 +36,6 @@ class MateVC: BaseVC {
         $0.configureRightCustomBtn(imgName: "icFriendAdd24")
     }
     
-    private let headerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 375.adjusted, height: 33.adjustedH)).then {
-        $0.backgroundColor = .grey_0
-    }
-    
     private let titleHeaderLabel = UILabel().then {
         $0.setLabel(text: "친구 응원하기", color: .grey_9, size: 18, weight: .bold)
     }
@@ -57,27 +53,21 @@ class MateVC: BaseVC {
 extension MateVC {
     
     private func configureUI() {
-        view.addSubviews([addMateNaviBar,mateTV,mateProfileCV,headerView])
-        headerView.addSubview(titleHeaderLabel)
-        
+        view.backgroundColor = .grey_0
+        view.addSubviews([addMateNaviBar, mateTV, mateProfileCV, titleHeaderLabel])
+    
         addMateNaviBar.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(44.adjustedH)
         }
         
         titleHeaderLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(16.adjusted)
-            $0.centerY.equalToSuperview()
-        }
-        
-        headerView.snp.makeConstraints {
-            $0.height.equalTo(33.adjustedH)
-            $0.top.equalTo(addMateNaviBar.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(addMateNaviBar.snp.bottom).offset(4.adjustedH)
+            $0.leading.equalTo(16.adjusted)
         }
         
         mateProfileCV.snp.makeConstraints {
-            $0.top.equalTo(headerView.snp.bottom)
+            $0.top.equalTo(titleHeaderLabel.snp.bottom).offset(8.adjustedH)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(96)
         }
