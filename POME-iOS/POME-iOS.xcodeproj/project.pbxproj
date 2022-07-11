@@ -540,9 +540,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F3172874B72F00D2F6C0 /* MateXib.swift */,
-				1A1AEFD8287A4D5B00DD5F7E /* HaveMateTVC.swift */,
 				1A1AEFD9287A4D5B00DD5F7E /* HaveMateTVC.xib */,
-				1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */,
 				1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */,
 			);
 			path = Xib;
@@ -612,6 +610,7 @@
 		77E8F3112874B54600D2F6C0 /* CVC */ = {
 			isa = PBXGroup;
 			children = (
+				1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */,
 				77E8F3152874B57700D2F6C0 /* MateCVC.swift */,
 			);
 			path = CVC;
@@ -621,6 +620,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F3132874B56B00D2F6C0 /* MateTVC.swift */,
+				1A1AEFD8287A4D5B00DD5F7E /* HaveMateTVC.swift */,
 				1A1AEFD6287A4CB600DD5F7E /* HaveNoMateTVC.swift */,
 			);
 			path = TVC;
