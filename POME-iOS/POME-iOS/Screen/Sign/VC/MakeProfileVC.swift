@@ -60,12 +60,16 @@ class MakeProfileVC: BaseVC {
         $0.isDisabled = true
         $0.setTitle("만들었어요", for: .normal)
     }
+    
+    private let imagePicker = UIImagePickerController()
 
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         setTextField()
+        setTapChooseImageBtn()
+        setImagePickerDelegate()
     }
 }
 
@@ -133,6 +137,35 @@ extension MakeProfileVC {
         nicknameTextField.delegate = self
         nicknameTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
     }
+    
+    /// 프로필 버튼 tap Action 설정 메서드
+    private func setTapChooseImageBtn() {
+        chooseImageBtn.press { [weak self] in
+            self?.makeTwoAlertWithCancel(okTitle: "사진앨범", secondOkTitle: "카메라", okAction: { _ in
+                self?.openAlbum()
+            }, secondOkAction: { _ in
+                self?.openCamera()
+            })
+        }
+    }
+    
+    /// 사진앨범 불러오는 메소드
+    private func openAlbum() {
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: false, completion: nil)
+    }
+    
+    /// 카메라 불러오는 메소드
+    private func openCamera() {
+        if (UIImagePickerController .isSourceTypeAvailable(.camera)) {
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = true
+            present(imagePicker, animated: false, completion: nil)
+        } else {
+            print("Camera not available")
+        }
+    }
 }
 
 // MARK: @objc
@@ -163,5 +196,27 @@ extension MakeProfileVC: UITextFieldDelegate {
         let changedText = currentText.replacingCharacters(in: stringRange, with: string)
         
         return changedText.count < 11
+    }
+}
+
+// MARK: - UINavigationControllerDelegate
+extension MakeProfileVC: UINavigationControllerDelegate {
+    
+    /// 대리자 위임 메서드
+    private func setImagePickerDelegate() {
+        imagePicker.delegate = self
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension MakeProfileVC: UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+        
+        profileImageView.image = image
+        dismiss(animated: true, completion: nil)
     }
 }
