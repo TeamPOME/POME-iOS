@@ -10,9 +10,9 @@ import UIKit
 class LookbackCompleteVC: BaseVC {
     
     // MARK: Properties
-    private let price = 35200
-    private let firstFeeling = 1
-    private let secondFeeling = 3
+    private let price: String = "35,200"
+    private let firstFeeling: Int = 1
+    private let secondFeeling: Int = 3
 
     // MARK: IBOutlet
     @IBOutlet weak var completeBtn: PomeBtn!
@@ -51,7 +51,9 @@ extension LookbackCompleteVC {
 extension LookbackCompleteVC {
     
     private func setData() {
-        priceLabel.text = "\(price)원을 사용했어요"
+        
+        // TODO: - 서버 통신 할 때 데이터 형식 Int or String 인지 확인하기
+        priceLabel.text = price + "원을 사용했어요"
         
         switch firstFeeling {
         case 1:
