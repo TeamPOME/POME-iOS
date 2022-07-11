@@ -40,6 +40,10 @@ class MakeProfileVC: BaseVC {
     }
     
     private let nicknameCheckLabel = UILabel().then {
+        $0.textColor = .main
+        $0.font = .PretendardM(size: 14)
+        $0.text = "멋진 닉네임이네요!"
+        $0.isHidden = true
     }
     
     private let explainLabel = UILabel().then {
@@ -70,7 +74,7 @@ class MakeProfileVC: BaseVC {
 extension MakeProfileVC {
     
     private func configureUI() {
-        view.addSubviews([titleLabel, profileImageView, plusImageView, chooseImageBtn, nicknameTextField, confirmBtn, explainLabel])
+        view.addSubviews([titleLabel, profileImageView, plusImageView, chooseImageBtn, nicknameCheckLabel, nicknameTextField, confirmBtn, explainLabel])
         
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(56)
@@ -103,6 +107,11 @@ extension MakeProfileVC {
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
             $0.height.equalTo(50)
         }
+        
+        nicknameCheckLabel.snp.makeConstraints {
+            $0.top.equalTo(nicknameTextField.snp.bottom).offset(10)
+            $0.leading.equalTo(nicknameTextField.snp.leading)
+        }
 
         confirmBtn.snp.makeConstraints {
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
@@ -133,6 +142,7 @@ extension MakeProfileVC {
     @objc
     func textFieldDidChange(_ sender: Any?) {
         confirmBtn.isDisabled = nicknameTextField.isEmpty
+        nicknameCheckLabel.isHidden = nicknameTextField.isEmpty
     }
 }
 
