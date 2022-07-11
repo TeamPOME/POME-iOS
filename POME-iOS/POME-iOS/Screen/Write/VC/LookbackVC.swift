@@ -14,7 +14,7 @@ class LookbackVC: BaseVC {
     @IBOutlet weak var lookbackMainCV: UICollectionView!
     
     // MARK: Properties
-    private var spend = ["spend1", "spend2", "spend3", "spend4"]
+    private var spend: [String] = ["spend1", "spend2", "spend3", "spend4"]
     
     // MARK: Life Cycle
     override func viewDidLoad() {
