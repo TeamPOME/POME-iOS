@@ -56,6 +56,7 @@ class MakeProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        setDelegate()
     }
     
 }
@@ -108,5 +109,27 @@ extension MakeProfileVC {
             $0.bottom.equalTo(confirmBtn.snp.top).offset(-32)
             $0.centerX.equalToSuperview()
         }
+    }
+}
+
+// MARK: - Custom Methods
+extension MakeProfileVC {
+    
+    private func setDelegate() {
+        nicknameTextField.delegate = self
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension MakeProfileVC: UITextFieldDelegate {
+    
+    /// 글자수 10자로 제한 하는 메서드
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = nicknameTextField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        
+        let changedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        return changedText.count < 11
     }
 }
