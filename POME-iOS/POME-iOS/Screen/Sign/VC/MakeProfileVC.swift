@@ -35,8 +35,11 @@ class MakeProfileVC: BaseVC {
     private let nicknameTextField = PomeTextField().then {
         $0.setTextFieldStyle(state: .withClearBtn)
         $0.returnKeyType = .done
-        
-        $0.configurePlaceholder(placeholder: "영어, 한국어 최대 10자 이내 입력")
+        $0.keyboardType = .namePhonePad
+        $0.configurePlaceholder(placeholder: "한글, 영어, 숫자 사용가능, 최대 10자")
+    }
+    
+    private let nicknameCheckLabel = UILabel().then {
     }
     
     private let explainLabel = UILabel().then {
