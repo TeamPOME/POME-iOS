@@ -22,7 +22,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="52" height="76"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfileEmpty52" translatesAutoresizingMaskIntoConstraints="NO" id="Kxe-lQ-aWS">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfileEmpty52" translatesAutoresizingMaskIntoConstraints="NO" id="Kxe-lQ-aWS" customClass="PomeMaskedImageView" customModule="POME_iOS" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="52" id="6kH-OI-21o"/>

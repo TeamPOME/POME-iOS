@@ -13,7 +13,7 @@ class HaveMateTVC: BaseTVC {
     
     // MARK: IBOutlet
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileImageView: PomeMaskedImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var spentMoneyLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
@@ -42,6 +42,7 @@ class HaveMateTVC: BaseTVC {
 extension HaveMateTVC {
     
     private func configureUI() {
+        profileImageView.maskImage = UIImage(named: "userProfileFill32")
         sadEmojiContainerView.makeRounded(cornerRadius: sadEmojiContainerView.frame.width / 2)
         smileEmojiContainerView.makeRounded(cornerRadius: smileEmojiContainerView.frame.width / 2)
         goalLabelContainerView.makeRounded(cornerRadius: 4.adjusted)
