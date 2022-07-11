@@ -13,6 +13,8 @@
 		1A10C25A287736BE00489CA1 /* GoalStorageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10C259287736BE00489CA1 /* GoalStorageVC.swift */; };
 		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
 		778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */; };
+		778E0F50287B273900BEEEA5 /* SignSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778E0F4F287B273900BEEEA5 /* SignSB.storyboard */; };
+		778E0F52287B27AB00BEEEA5 /* MakeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */; };
 		77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */; };
 		77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */; };
 		77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2C12874A23800D2F6C0 /* Assets.xcassets */; };
@@ -21,7 +23,6 @@
 		77E8F2E42874AEB900D2F6C0 /* WriteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2E32874AEB900D2F6C0 /* WriteSB.storyboard */; };
 		77E8F2E62874AEDB00D2F6C0 /* WriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2E52874AEDB00D2F6C0 /* WriteVC.swift */; };
 		77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2ED2874AF6300D2F6C0 /* PomeTBC.swift */; };
-		77E8F2F12874B0EC00D2F6C0 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2F02874B0EC00D2F6C0 /* model.swift */; };
 		77E8F2F82874B15A00D2F6C0 /* RemindSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2F72874B15A00D2F6C0 /* RemindSB.storyboard */; };
 		77E8F2FA2874B17800D2F6C0 /* RemindVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2F92874B17800D2F6C0 /* RemindVC.swift */; };
 		77E8F2FC2874B19400D2F6C0 /* RemindTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2FB2874B19400D2F6C0 /* RemindTVC.swift */; };
@@ -103,6 +104,8 @@
 		6F6FAF66B7C4C46AE47E904C /* Pods-POME-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.debug.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		778E0F422879624700BEEEA5 /* PomeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeTextField.swift; sourceTree = "<group>"; };
 		778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeMaskedImageView.swift; sourceTree = "<group>"; };
+		778E0F4F287B273900BEEEA5 /* SignSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignSB.storyboard; sourceTree = "<group>"; };
+		778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeProfileVC.swift; sourceTree = "<group>"; };
 		77E8F2B52874A23700D2F6C0 /* POME-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POME-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +116,6 @@
 		77E8F2E32874AEB900D2F6C0 /* WriteSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteSB.storyboard; sourceTree = "<group>"; };
 		77E8F2E52874AEDB00D2F6C0 /* WriteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteVC.swift; sourceTree = "<group>"; };
 		77E8F2ED2874AF6300D2F6C0 /* PomeTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeTBC.swift; sourceTree = "<group>"; };
-		77E8F2F02874B0EC00D2F6C0 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		77E8F2F72874B15A00D2F6C0 /* RemindSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RemindSB.storyboard; sourceTree = "<group>"; };
 		77E8F2F92874B17800D2F6C0 /* RemindVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindVC.swift; sourceTree = "<group>"; };
 		77E8F2FB2874B19400D2F6C0 /* RemindTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindTVC.swift; sourceTree = "<group>"; };
@@ -208,6 +210,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		778E0F4C287B26E500BEEEA5 /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				778E0F4D287B26FE00BEEEA5 /* SB */,
+				778E0F4E287B270500BEEEA5 /* VC */,
+			);
+			path = Sign;
+			sourceTree = "<group>";
+		};
+		778E0F4D287B26FE00BEEEA5 /* SB */ = {
+			isa = PBXGroup;
+			children = (
+				778E0F4F287B273900BEEEA5 /* SignSB.storyboard */,
+			);
+			path = SB;
+			sourceTree = "<group>";
+		};
+		778E0F4E287B270500BEEEA5 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
 		77E8F2AC2874A23700D2F6C0 = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F2DA2874AD7100D2F6C0 /* TabBar */,
+				778E0F4C287B26E500BEEEA5 /* Sign */,
 				77E8F2DB2874AD8100D2F6C0 /* Write */,
 				77E8F2DC2874AD8800D2F6C0 /* Remind */,
 				77E8F2DD2874ADAA00D2F6C0 /* Mate */,
@@ -484,7 +512,6 @@
 			isa = PBXGroup;
 			children = (
 				1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */,
-				77E8F2F02874B0EC00D2F6C0 /* model.swift */,
 			);
 			path = AppModel;
 			sourceTree = "<group>";
@@ -785,6 +812,7 @@
 				84B77273287B369200E1EDFC /* LookbackCVC.xib in Resources */,
 				77E8F2CD2874A38600D2F6C0 /* Colorsets.xcassets in Resources */,
 				77E8F2C52874A23800D2F6C0 /* LaunchScreen.storyboard in Resources */,
+				778E0F50287B273900BEEEA5 /* SignSB.storyboard in Resources */,
 				77E8F31C2874B7B700D2F6C0 /* MypageSB.storyboard in Resources */,
 				77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */,
 				8432C9BD28784751001C643F /* FeelingCardCVC.xib in Resources */,
@@ -873,6 +901,7 @@
 				77E8F36228765FD200D2F6C0 /* MateNC.swift in Sources */,
 				77E8F3222874B7F000D2F6C0 /* MypageCVC.swift in Sources */,
 				77E8F34A2875F2C900D2F6C0 /* StoryboardRepresentation.swift in Sources */,
+				778E0F52287B27AB00BEEEA5 /* MakeProfileVC.swift in Sources */,
 				77E8F3542875F56000D2F6C0 /* TVRegisterable.swift in Sources */,
 				84B77272287B369200E1EDFC /* LookbackCVC.swift in Sources */,
 				77E8F3582875F5EA00D2F6C0 /* BaseCVC.swift in Sources */,
@@ -912,7 +941,6 @@
 				77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */,
 				77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */,
 				77E8F334287574B000D2F6C0 /* UITextField+.swift in Sources */,
-				77E8F2F12874B0EC00D2F6C0 /* model.swift in Sources */,
 				77E8F3662876606D00D2F6C0 /* ViewControllerFactory.swift in Sources */,
 				77E8F379287693AA00D2F6C0 /* WriteService.swift in Sources */,
 				77E8F3012874B1BB00D2F6C0 /* WriteXib.swift in Sources */,
