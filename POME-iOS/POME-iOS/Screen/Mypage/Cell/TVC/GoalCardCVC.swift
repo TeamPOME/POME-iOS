@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class GoalCardTVC: CodeBaseTVC {
+class GoalCardCVC: CodeBaseCVC {
     
     // MARK: Properties
     private var progress = 1.0
@@ -79,14 +79,10 @@ class GoalCardTVC: CodeBaseTVC {
     override func setViews() {
         configureUI()
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
 }
 
 // MARK: - UI
-extension GoalCardTVC {
+extension GoalCardCVC {
     
     private func configureUI() {
         contentView.addSubview(allContainerView)
@@ -99,12 +95,12 @@ extension GoalCardTVC {
         contentView.backgroundColor = .grey_0
         
         allContainerView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview().inset(6.adjustedH)
-            $0.leading.trailing.equalToSuperview().inset(16.adjusted)
+            $0.top.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
         }
         
         privateImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(15.adjustedH)
+            $0.top.equalToSuperview().inset(24.adjustedH)
             $0.leading.equalToSuperview().inset(16.adjusted)
             $0.height.equalTo(24.adjustedH)
             $0.width.equalTo(24.adjusted)
@@ -130,7 +126,7 @@ extension GoalCardTVC {
         }
         
         spentMoneyTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(privateImageView.snp.bottom).offset(18.adjustedH)
+            $0.top.equalTo(privateImageView.snp.bottom).offset(20.adjustedH)
             $0.leading.equalTo(privateImageView.snp.leading)
         }
         
@@ -141,13 +137,13 @@ extension GoalCardTVC {
         
         moneyGoalLabel.snp.makeConstraints {
             $0.centerY.equalTo(realSpentMoneyLabel)
-            $0.leading.equalTo(realSpentMoneyLabel.snp.trailing).offset(8.adjusted)
+            $0.leading.equalTo(realSpentMoneyLabel.snp.trailing).offset(4.adjusted)
         }
         
         progressContainerView.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(16.adjusted)
             $0.leading.equalTo(privateImageView.snp.leading)
-            $0.top.equalTo(realSpentMoneyLabel.snp.bottom).offset(20.adjustedH)
+            $0.top.equalTo(realSpentMoneyLabel.snp.bottom).offset(19.adjustedH)
             $0.bottom.equalTo(contentView).inset(27.adjustedH)
             $0.height.equalTo(6.adjustedH)
         }
@@ -210,7 +206,7 @@ extension GoalCardTVC {
 }
 
 // MARK: - Network
-extension GoalCardTVC {
+extension GoalCardCVC {
     
     func setData(_ goalData: GoalDataModel) {
         goalTitleLabel.text = goalData.goalTitle
