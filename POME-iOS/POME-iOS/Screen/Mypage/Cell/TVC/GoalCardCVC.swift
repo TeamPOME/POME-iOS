@@ -87,7 +87,7 @@ extension GoalCardCVC {
         
         privateImageView.snp.makeConstraints {
             $0.top.equalTo(contentView).inset(24)
-            $0.leading.equalTo(contentView).inset(16.adjusted)
+            $0.leading.equalTo(contentView).inset(16)
             $0.width.height.equalTo(24)
         }
         
@@ -103,13 +103,13 @@ extension GoalCardCVC {
         
         menuBtn.snp.makeConstraints {
             $0.centerY.equalTo(ifSuccessLabelContainerView)
-            $0.trailing.equalTo(contentView).offset(-16)
+            $0.trailing.equalTo(contentView).inset(16)
             $0.height.width.equalTo(24)
         }
         
         spentMoneyTitleLabel.snp.makeConstraints {
             $0.top.equalTo(privateImageView.snp.bottom).offset(20)
-            $0.leading.equalTo(contentView).inset(16.adjusted)
+            $0.leading.equalTo(contentView).inset(16)
         }
         
         realSpentMoneyLabel.snp.makeConstraints {
@@ -135,7 +135,7 @@ extension GoalCardCVC {
         }
         
         percentageContainerView.snp.makeConstraints {
-            $0.centerX.equalTo(progressView.snp.trailing).inset(16)
+            $0.centerX.equalTo(progressView.snp.trailing)
             $0.centerY.equalTo(progressView)
         }
         
@@ -170,16 +170,43 @@ extension GoalCardCVC {
     
     /// progress 값에 따라 퍼센트Label 과 progress bar UI 변경해주는 함수
     private func setProgress(goal: Double) {
+        
+        /// 초과 여부에 따른 UI 수정
         if goal > 100 {
+            
+            /// 100이 초과될때 라벨값과 progress trailing값을 맞추기 위해서 100으로 지정
             progress = 100
             [progressView, percentageContainerView].forEach {
                 view in view.backgroundColor = .red
+            }
+            percentageContainerView.snp.remakeConstraints {
+                $0.trailing.equalTo(progressView.snp.trailing)
+                $0.centerY.equalTo(progressView)
             }
             progressPercentageLabel.text = "초과"
         } else {
             progress = goal
             [progressView, percentageContainerView].forEach {
                 view in view.backgroundColor = .main
+            }
+            
+            /// goal이 없을 경우와 100인 경우의 UI 수정
+            switch goal {
+            case 0:
+                percentageContainerView.snp.remakeConstraints {
+                    $0.leading.equalTo(progressView.snp.leading)
+                    $0.centerY.equalTo(progressView)
+                }
+            case 100:
+                percentageContainerView.snp.remakeConstraints {
+                    $0.trailing.equalTo(progressView.snp.trailing)
+                    $0.centerY.equalTo(progressView)
+                }
+            default:
+                percentageContainerView.snp.remakeConstraints {
+                    $0.centerX.equalTo(progressView.snp.trailing)
+                    $0.centerY.equalTo(progressView)
+                }
             }
             progressPercentageLabel.text = String(format: "%.f", progress) + "%"
         }
