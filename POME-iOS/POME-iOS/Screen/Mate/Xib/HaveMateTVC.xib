@@ -240,7 +240,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="containerView" destination="Pmv-8r-1MC" id="bdu-Td-Job"/>
+                <outlet property="containerView" destination="Pmv-8r-1MC" id="80Z-hH-W1B"/>
                 <outlet property="contentLabel" destination="HDs-lj-40J" id="ldG-tb-z8R"/>
                 <outlet property="contentLabelHeight" destination="LNM-Iu-ZwU" id="Iak-p1-Ct2"/>
                 <outlet property="countMateLabel" destination="kX6-WA-zxk" id="W8E-0k-ycM"/>

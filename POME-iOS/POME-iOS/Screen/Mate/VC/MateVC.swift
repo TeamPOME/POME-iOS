@@ -113,10 +113,8 @@ extension MateVC: UITableViewDelegate {
         if mateNum == 0 {
             guard let haveNoMateTVC = mateTV.dequeueReusableCell(withIdentifier: Identifiers.HaveNoMateTVC, for: indexPath) as? HaveNoMateTVC else { return UITableViewCell() }
             return haveNoMateTVC
-        }
-        else {
+        } else {
             guard let haveMateTVC = mateTV.dequeueReusableCell(withIdentifier: Identifiers.HaveMateTVC, for: indexPath) as? HaveMateTVC else { return UITableViewCell() }
-            haveMateTVC.containerView.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 8)
             return haveMateTVC
         }
     }
@@ -178,7 +176,6 @@ extension MateVC: UICollectionViewDelegate {
 extension MateVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         return CGSize(width: 52, height: 76)
     }
     
