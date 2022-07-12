@@ -83,6 +83,7 @@ extension GoalCardCVC {
         percentageContainerView.addSubview(progressPercentageLabel)
         progressContainerView.addSubview(progressView)
         contentView.backgroundColor = .white
+        contentView.makeRounded(cornerRadius: 6.adjusted)
         
         privateImageView.snp.makeConstraints {
             $0.top.equalTo(contentView).inset(24)
