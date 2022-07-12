@@ -105,10 +105,12 @@ extension MateVC {
 // MARK: - UITableViewDelegate
 extension MateVC: UITableViewDelegate {
     
+    /// 친구 유무에 따른 셀별 높이 지정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return (mateNum == 0) ? 516.adjustedH : 175.adjustedH
     }
     
+    /// 친구 유무에 따른 셀 지정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if mateNum == 0 {
             guard let haveNoMateTVC = mateTV.dequeueReusableCell(withIdentifier: Identifiers.HaveNoMateTVC, for: indexPath) as? HaveNoMateTVC else { return UITableViewCell() }
@@ -136,6 +138,7 @@ extension MateVC: UITableViewDataSource {
 // MARK: - UICollectionViewDataSource
 extension MateVC: UICollectionViewDataSource {
     
+    /// 전체보기 셀 포함 친구 셀 개수 지정
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (mateNum == 0) ? 1 : mateNum + 1
     }
@@ -183,7 +186,8 @@ extension MateVC: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
     }
     
+    /// 셀별 사이 간격 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 18.adjusted
+        return 18
     }
 }
