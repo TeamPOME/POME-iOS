@@ -181,6 +181,7 @@ extension MateVC: UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: 52, height: 76)
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
     }

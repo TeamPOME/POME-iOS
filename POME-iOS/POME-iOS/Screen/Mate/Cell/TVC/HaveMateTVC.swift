@@ -34,6 +34,7 @@ class HaveMateTVC: BaseTVC {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
+        configureRoundedCorner()
     }
 }
 
@@ -41,32 +42,17 @@ class HaveMateTVC: BaseTVC {
 extension HaveMateTVC {
     
     private func configureUI() {
-        
-        configureLabelLine()
-        configureRoundedCorner()
-        configureMask()
-        configureHeight()
-    }
-    
-    /// 이미지에 마스크 씌우기
-    private func configureMask() {
         profileImageView.maskImage = UIImage(named: "userProfileFill32")
-    }
-    
-    /// content내용의 셀이 비율에 맞게 설정되게 함
-    private func configureHeight() {
         contentLabelHeight.constant = 37.adjustedH
+        
+        /// 글자가 layout에서 벗어나면 두줄로 보일 수 있도록 함
+        contentLabel.sizeToFit()
+        contentLabel.numberOfLines = 2
     }
     
     private func configureRoundedCorner() {
         sadEmojiContainerView.makeRounded(cornerRadius: sadEmojiContainerView.frame.width / 2)
         smileEmojiContainerView.makeRounded(cornerRadius: smileEmojiContainerView.frame.width / 2)
         goalLabelContainerView.makeRounded(cornerRadius: 4.adjusted)
-    }
-    
-    /// 글자가 layout에서 벗어나면 두줄로 보일 수 있도록 함
-    private func configureLabelLine() {
-        contentLabel.sizeToFit()
-        contentLabel.numberOfLines = 2
     }
 }
