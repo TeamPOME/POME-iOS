@@ -71,6 +71,7 @@ class MakeProfileVC: BaseVC {
         configureUI()
         setTextField()
         setTapChooseImageBtn()
+        setTapConfirmBtn()
         setImagePickerDelegate()
     }
 }
@@ -155,6 +156,15 @@ extension MakeProfileVC {
                     self?.isPicked = false
                 })
             }
+        }
+    }
+    
+    /// 만들었어요 버튼 tap Action 설정 메서드
+    private func setTapConfirmBtn() {
+        confirmBtn.press { [weak self] in
+            guard let nextVC = self?.storyboard?.instantiateViewController(withIdentifier: CompleteSignUpVC.className) as? CompleteSignUpVC else { return }
+            
+            self?.navigationController?.pushViewController(nextVC, animated: true)
         }
     }
     
