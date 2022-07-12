@@ -15,8 +15,8 @@ class WriteVC: BaseVC {
     @IBOutlet weak var writeMainCV: UICollectionView!
     
     // MARK: Properties
-    private var category = ["목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료"]
-    private var spend = ["spend1", "spend2", "spend3", "spend4"]
+    private var category: [String] = ["목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료"]
+    private var spend: [String] = ["spend1", "spend2", "spend3", "spend4"]
     
     // MARK: Life Cycle
     override func viewDidLoad() {

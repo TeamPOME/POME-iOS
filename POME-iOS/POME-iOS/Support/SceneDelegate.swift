@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // rootVC를 tabBar로 지정
 //            window.rootViewController = PomeTBC()
             
-            window.rootViewController = UIStoryboard.init(name: "SignSB", bundle: nil).instantiateViewController(withIdentifier: MakeProfileVC.className) as? MakeProfileVC
+            window.rootViewController = UIStoryboard.init(name: Identifiers.LookbackSelectSB, bundle: nil).instantiateViewController(withIdentifier: LookbackSelectVC.className) as? LookbackSelectVC
             
             self.window = window
             window.makeKeyAndVisible()
