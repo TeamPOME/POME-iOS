@@ -149,7 +149,8 @@ extension MateVC: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 extension MateVC: UICollectionViewDelegate {
-    
+
+    /// 셀 지정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = mateProfileCV.dequeueReusableCell(withReuseIdentifier: Identifiers.MateHeaderCVC, for: indexPath) as? MateHeaderCVC else {
             return UICollectionViewCell()
