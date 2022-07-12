@@ -9,18 +9,10 @@ import UIKit
 import SnapKit
 import Then
 
-class GoalCardTVC: CodeBaseTVC {
+class GoalCardCVC: CodeBaseCVC {
     
     // MARK: Properties
     private var progress = 1.0
-    
-    private let allContainerView = UIView().then {
-        $0.backgroundColor = .white
-        $0.clipsToBounds = true
-        $0.makeRounded(cornerRadius: 6.adjusted)
-        $0.layer.borderWidth = 1.adjusted
-        $0.layer.borderColor = UIColor.grey_0.cgColor
-    }
     
     private let ifSuccessLabelContainerView = UIView().then {
         $0.makeRounded(cornerRadius: 8.adjusted)
@@ -76,80 +68,65 @@ class GoalCardTVC: CodeBaseTVC {
         $0.clipsToBounds = true
     }
     
+    // MARK: Life Cycle
     override func setViews() {
         configureUI()
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
 }
 
 // MARK: - UI
-extension GoalCardTVC {
+extension GoalCardCVC {
     
     private func configureUI() {
-        contentView.addSubview(allContainerView)
-        
-        self.allContainerView.addSubviews([goalTitleLabel,  ifSuccessLabelContainerView, menuBtn, spentMoneyTitleLabel, moneyGoalLabel, realSpentMoneyLabel, privateImageView, progressContainerView, ifSuccessLabelContainerView, percentageContainerView])
+        contentView.addSubviews([goalTitleLabel,  ifSuccessLabelContainerView, menuBtn, spentMoneyTitleLabel, moneyGoalLabel, realSpentMoneyLabel, privateImageView, progressContainerView, ifSuccessLabelContainerView, percentageContainerView])
         ifSuccessLabelContainerView.addSubview(ifSuccessLabel)
         percentageContainerView.addSubview(progressPercentageLabel)
         progressContainerView.addSubview(progressView)
-        
-        contentView.backgroundColor = .grey_0
-        
-        allContainerView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview().inset(6.adjustedH)
-            $0.leading.trailing.equalToSuperview().inset(16.adjusted)
-        }
+        contentView.backgroundColor = .white
+        contentView.makeRounded(cornerRadius: 6.adjusted)
         
         privateImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(15.adjustedH)
-            $0.leading.equalToSuperview().inset(16.adjusted)
-            $0.height.equalTo(24.adjustedH)
-            $0.width.equalTo(24.adjusted)
+            $0.top.equalTo(contentView).inset(24)
+            $0.leading.equalTo(contentView).inset(16)
+            $0.width.height.equalTo(24)
         }
         
         goalTitleLabel.snp.makeConstraints {
-            $0.leading.equalTo(privateImageView.snp.trailing).offset(4.adjusted)
+            $0.leading.equalTo(privateImageView.snp.trailing).offset(4)
             $0.centerY.equalTo(privateImageView)
         }
         
         ifSuccessLabelContainerView.snp.makeConstraints {
             $0.centerY.equalTo(privateImageView)
-            $0.width.equalTo(31.adjusted)
-            $0.height.equalTo(16.adjustedH)
-            $0.leading.equalTo(goalTitleLabel.snp.trailing).offset(6.adjusted)
+            $0.leading.equalTo(goalTitleLabel.snp.trailing).offset(6)
         }
         
         menuBtn.snp.makeConstraints {
             $0.centerY.equalTo(ifSuccessLabelContainerView)
-            $0.trailing.equalToSuperview().inset(16.adjusted)
-            $0.height.equalTo(24.adjustedH)
-            $0.width.equalTo(24.adjusted)
+            $0.trailing.equalTo(contentView).inset(16)
+            $0.height.width.equalTo(24)
         }
         
         spentMoneyTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(privateImageView.snp.bottom).offset(18.adjustedH)
-            $0.leading.equalTo(privateImageView.snp.leading)
+            $0.top.equalTo(privateImageView.snp.bottom).offset(20)
+            $0.leading.equalTo(contentView).inset(16)
         }
         
         realSpentMoneyLabel.snp.makeConstraints {
             $0.leading.equalTo(privateImageView.snp.leading)
-            $0.top.equalTo(spentMoneyTitleLabel.snp.bottom).offset(4.adjustedH)
+            $0.top.equalTo(spentMoneyTitleLabel.snp.bottom).offset(2)
         }
         
         moneyGoalLabel.snp.makeConstraints {
             $0.centerY.equalTo(realSpentMoneyLabel)
-            $0.leading.equalTo(realSpentMoneyLabel.snp.trailing).offset(8.adjusted)
+            $0.leading.equalTo(realSpentMoneyLabel.snp.trailing).offset(4)
         }
         
         progressContainerView.snp.makeConstraints {
-            $0.trailing.equalToSuperview().inset(16.adjusted)
-            $0.leading.equalTo(privateImageView.snp.leading)
-            $0.top.equalTo(realSpentMoneyLabel.snp.bottom).offset(20.adjustedH)
-            $0.bottom.equalTo(contentView).inset(27.adjustedH)
-            $0.height.equalTo(6.adjustedH)
+            $0.leading.trailing.equalTo(contentView).inset(16)
+            $0.top.equalTo(realSpentMoneyLabel.snp.bottom).offset(18)
+            $0.bottom.equalTo(contentView).inset(27)
+            $0.height.equalTo(6)
         }
         
         progressView.snp.makeConstraints {
@@ -158,20 +135,21 @@ extension GoalCardTVC {
         }
         
         percentageContainerView.snp.makeConstraints {
-            $0.centerX.equalTo(progressView.snp.trailing).inset(16.adjusted)
-            $0.width.equalTo(36.adjusted)
-            $0.height.equalTo(20.adjustedH)
+            $0.centerX.equalTo(progressView.snp.trailing)
             $0.centerY.equalTo(progressView)
         }
         
         progressPercentageLabel.snp.makeConstraints {
-            $0.centerY.equalTo(percentageContainerView)
-            $0.centerX.equalTo(percentageContainerView)
+            $0.centerX.centerY.equalTo(percentageContainerView)
+            $0.leading.trailing.equalTo(percentageContainerView).inset(5)
+            $0.top.bottom.equalTo(percentageContainerView).inset(3)
         }
         
         ifSuccessLabel.snp.makeConstraints {
             $0.centerX.equalTo(ifSuccessLabelContainerView)
             $0.centerY.equalTo(ifSuccessLabelContainerView)
+            $0.leading.trailing.equalTo(ifSuccessLabelContainerView).inset(4)
+            $0.top.bottom.equalTo(ifSuccessLabelContainerView).inset(2)
         }
     }
     
@@ -184,7 +162,7 @@ extension GoalCardTVC {
     private func updateProgressView() {
         updateProgress { [weak self] in
             self?.progressView.snp.remakeConstraints {
-                $0.left.bottom.top.trailing.equalToSuperview()
+                $0.leading.bottom.top.equalToSuperview()
                 $0.width.equalToSuperview().multipliedBy((self?.progress ?? 10) / 100)
             }
         }
@@ -192,16 +170,43 @@ extension GoalCardTVC {
     
     /// progress 값에 따라 퍼센트Label 과 progress bar UI 변경해주는 함수
     private func setProgress(goal: Double) {
+        
+        /// 초과 여부에 따른 UI 수정
         if goal > 100 {
+            
+            /// 100이 초과될때 라벨값과 progress trailing값을 맞추기 위해서 100으로 지정
             progress = 100
             [progressView, percentageContainerView].forEach {
                 view in view.backgroundColor = .red
+            }
+            percentageContainerView.snp.remakeConstraints {
+                $0.trailing.equalTo(progressView.snp.trailing)
+                $0.centerY.equalTo(progressView)
             }
             progressPercentageLabel.text = "초과"
         } else {
             progress = goal
             [progressView, percentageContainerView].forEach {
                 view in view.backgroundColor = .main
+            }
+            
+            /// goal이 없을 경우와 100인 경우의 UI 수정
+            switch goal {
+            case 0:
+                percentageContainerView.snp.remakeConstraints {
+                    $0.leading.equalTo(progressView.snp.leading)
+                    $0.centerY.equalTo(progressView)
+                }
+            case 100:
+                percentageContainerView.snp.remakeConstraints {
+                    $0.trailing.equalTo(progressView.snp.trailing)
+                    $0.centerY.equalTo(progressView)
+                }
+            default:
+                percentageContainerView.snp.remakeConstraints {
+                    $0.centerX.equalTo(progressView.snp.trailing)
+                    $0.centerY.equalTo(progressView)
+                }
             }
             progressPercentageLabel.text = String(format: "%.f", progress) + "%"
         }
@@ -210,7 +215,7 @@ extension GoalCardTVC {
 }
 
 // MARK: - Network
-extension GoalCardTVC {
+extension GoalCardCVC {
     
     func setData(_ goalData: GoalDataModel) {
         goalTitleLabel.text = goalData.goalTitle

@@ -8,15 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0DC225BE62C2B307EDEA55E4 /* Pods_POME_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1232F317EC5CF269A755DD4C /* Pods_POME_iOS.framework */; };
-		1A10C2562877349E00489CA1 /* GoalCardTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10C2552877349E00489CA1 /* GoalCardTVC.swift */; };
+		1A10C2562877349E00489CA1 /* GoalCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10C2552877349E00489CA1 /* GoalCardCVC.swift */; };
 		1A10C2582877367100489CA1 /* GoalStorageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */; };
-		1A10C25A287736BE00489CA1 /* GoalStorageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10C259287736BE00489CA1 /* GoalStorageVC.swift */; };
 		1A1AEFD7287A4CB600DD5F7E /* HaveNoMateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD6287A4CB600DD5F7E /* HaveNoMateTVC.swift */; };
 		1A1AEFDA287A4D5B00DD5F7E /* HaveMateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD8287A4D5B00DD5F7E /* HaveMateTVC.swift */; };
 		1A1AEFDB287A4D5B00DD5F7E /* HaveMateTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD9287A4D5B00DD5F7E /* HaveMateTVC.xib */; };
 		1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */; };
 		1A76CACF287B1B3300B29500 /* MateHeaderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */; };
-		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
 		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
 		778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */; };
 		778E0F50287B273900BEEEA5 /* SignSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778E0F4F287B273900BEEEA5 /* SignSB.storyboard */; };
@@ -109,9 +107,8 @@
 
 /* Begin PBXFileReference section */
 		1232F317EC5CF269A755DD4C /* Pods_POME_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POME_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A10C2552877349E00489CA1 /* GoalCardTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCardTVC.swift; sourceTree = "<group>"; };
+		1A10C2552877349E00489CA1 /* GoalCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCardCVC.swift; sourceTree = "<group>"; };
 		1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageDataModel.swift; sourceTree = "<group>"; };
-		1A10C259287736BE00489CA1 /* GoalStorageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageVC.swift; sourceTree = "<group>"; };
 		1A1AEFD6287A4CB600DD5F7E /* HaveNoMateTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveNoMateTVC.swift; sourceTree = "<group>"; };
 		1A1AEFD8287A4D5B00DD5F7E /* HaveMateTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveMateTVC.swift; sourceTree = "<group>"; };
 		1A1AEFD9287A4D5B00DD5F7E /* HaveMateTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveMateTVC.xib; sourceTree = "<group>"; };
@@ -657,7 +654,6 @@
 			children = (
 				77E8F31D2874B7CE00D2F6C0 /* MypageVC.swift */,
 				77E8F36328765FFF00D2F6C0 /* MypageNC.swift */,
-				1A10C259287736BE00489CA1 /* GoalStorageVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -701,7 +697,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F31F2874B7E500D2F6C0 /* MypageTVC.swift */,
-				1A10C2552877349E00489CA1 /* GoalCardTVC.swift */,
+				1A10C2552877349E00489CA1 /* GoalCardCVC.swift */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -926,7 +922,6 @@
 				77E8F2E62874AEDB00D2F6C0 /* WriteVC.swift in Sources */,
 				77E8F3772876938800D2F6C0 /* GenericResponse.swift in Sources */,
 				77E8F2FA2874B17800D2F6C0 /* RemindVC.swift in Sources */,
-				1A10C25A287736BE00489CA1 /* GoalStorageVC.swift in Sources */,
 				77E8F3242874B80A00D2F6C0 /* MypageXib.swift in Sources */,
 				1A10C2582877367100489CA1 /* GoalStorageDataModel.swift in Sources */,
 				77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */,
@@ -952,7 +947,7 @@
 				77E8F3712876931D00D2F6C0 /* NetworkResult.swift in Sources */,
 				778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */,
 				77E8F3562875F5A400D2F6C0 /* BaseTVC.swift in Sources */,
-				1A10C2562877349E00489CA1 /* GoalCardTVC.swift in Sources */,
+				1A10C2562877349E00489CA1 /* GoalCardCVC.swift in Sources */,
 				77E8F3182874B72F00D2F6C0 /* MateXib.swift in Sources */,
 				77E8F3142874B56B00D2F6C0 /* MateTVC.swift in Sources */,
 				77E8F35A2875F6BE00D2F6C0 /* CodeBaseCVC.swift in Sources */,
@@ -980,7 +975,7 @@
 				77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */,
 				77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */,
 				77E8F334287574B000D2F6C0 /* UITextField+.swift in Sources */,
-				84B7727D287BD83D00E1EDFC /* SelectFeelingVC.swift in Sources */,
+				84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */,
 				84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */,
 				77E8F3662876606D00D2F6C0 /* ViewControllerFactory.swift in Sources */,
 				77E8F379287693AA00D2F6C0 /* WriteService.swift in Sources */,
