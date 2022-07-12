@@ -50,6 +50,8 @@ extension HaveMateTVC {
         /// 글자가 layout에서 벗어나면 두줄로 보일 수 있도록 함
         contentLabel.sizeToFit()
         contentLabel.numberOfLines = 2
+        
+        /// 전체 셀 안의 containerView에 그림자와 radius 값 지정
         containerView.makeRounded(cornerRadius: 8)
         containerView.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 4)
     }

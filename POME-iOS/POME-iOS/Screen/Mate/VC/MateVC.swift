@@ -53,6 +53,8 @@ extension MateVC {
     
     private func configureUI() {
         view.backgroundColor = .grey_0
+        mateTV.backgroundColor = .grey_0
+        mateProfileCV.backgroundColor = .grey_0
         mateTV.separatorStyle = .none
         view.addSubviews([addMateNaviBar, mateTV, mateProfileCV, titleHeaderLabel])
     
@@ -130,6 +132,7 @@ extension MateVC: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension MateVC: UITableViewDataSource {
     
+    /// tableview section 개수 설정
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -178,10 +181,12 @@ extension MateVC: UICollectionViewDelegate {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension MateVC: UICollectionViewDelegateFlowLayout {
     
+    /// collectionviewCell 사이즈 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 52, height: 76)
     }
     
+    /// collectionview의 inset 값 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
     }
