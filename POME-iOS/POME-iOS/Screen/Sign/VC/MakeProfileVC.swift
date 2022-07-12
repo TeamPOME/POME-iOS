@@ -93,8 +93,6 @@ extension MakeProfileVC {
         }
         
         plusImageView.snp.makeConstraints {
-            $0.top.equalTo(profileImageView.snp.top).inset(123)
-            $0.leading.equalTo(profileImageView.snp.leading).inset(131)
             $0.trailing.equalTo(profileImageView.snp.trailing)
             $0.bottom.equalTo(profileImageView.snp.bottom).inset(13)
             $0.width.height.equalTo(24)
