@@ -18,7 +18,7 @@
 		1A76CACF287B1B3300B29500 /* MateHeaderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */; };
 		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
 		778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */; };
-		778E0F50287B273900BEEEA5 /* SignSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778E0F4F287B273900BEEEA5 /* SignSB.storyboard */; };
+		778E0F50287B273900BEEEA5 /* SignUpSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778E0F4F287B273900BEEEA5 /* SignUpSB.storyboard */; };
 		778E0F52287B27AB00BEEEA5 /* MakeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */; };
 		778E0F54287C43D300BEEEA5 /* PomeAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F53287C43D300BEEEA5 /* PomeAlertVC.swift */; };
 		77B5719B287D458500C9CC27 /* CompleteSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B5719A287D458500C9CC27 /* CompleteSignUpVC.swift */; };
@@ -120,7 +120,7 @@
 		6F6FAF66B7C4C46AE47E904C /* Pods-POME-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.debug.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		778E0F422879624700BEEEA5 /* PomeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeTextField.swift; sourceTree = "<group>"; };
 		778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeMaskedImageView.swift; sourceTree = "<group>"; };
-		778E0F4F287B273900BEEEA5 /* SignSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignSB.storyboard; sourceTree = "<group>"; };
+		778E0F4F287B273900BEEEA5 /* SignUpSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpSB.storyboard; sourceTree = "<group>"; };
 		778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeProfileVC.swift; sourceTree = "<group>"; };
 		778E0F53287C43D300BEEEA5 /* PomeAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeAlertVC.swift; sourceTree = "<group>"; };
 		77B5719A287D458500C9CC27 /* CompleteSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpVC.swift; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 		778E0F4D287B26FE00BEEEA5 /* SB */ = {
 			isa = PBXGroup;
 			children = (
-				778E0F4F287B273900BEEEA5 /* SignSB.storyboard */,
+				778E0F4F287B273900BEEEA5 /* SignUpSB.storyboard */,
 			);
 			path = SB;
 			sourceTree = "<group>";
@@ -846,7 +846,7 @@
 				84B77273287B369200E1EDFC /* LookbackCVC.xib in Resources */,
 				77E8F2CD2874A38600D2F6C0 /* Colorsets.xcassets in Resources */,
 				77E8F2C52874A23800D2F6C0 /* LaunchScreen.storyboard in Resources */,
-				778E0F50287B273900BEEEA5 /* SignSB.storyboard in Resources */,
+				778E0F50287B273900BEEEA5 /* SignUpSB.storyboard in Resources */,
 				77E8F31C2874B7B700D2F6C0 /* MypageSB.storyboard in Resources */,
 				77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */,
 				8432C9BD28784751001C643F /* FeelingCardCVC.xib in Resources */,
