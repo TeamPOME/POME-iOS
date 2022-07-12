@@ -22,6 +22,7 @@
 		778E0F52287B27AB00BEEEA5 /* MakeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */; };
 		778E0F54287C43D300BEEEA5 /* PomeAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F53287C43D300BEEEA5 /* PomeAlertVC.swift */; };
 		77B5719B287D458500C9CC27 /* CompleteSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B5719A287D458500C9CC27 /* CompleteSignUpVC.swift */; };
+		77B5719D287D68E300C9CC27 /* SignUpNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B5719C287D68E300C9CC27 /* SignUpNC.swift */; };
 		77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */; };
 		77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */; };
 		77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2C12874A23800D2F6C0 /* Assets.xcassets */; };
@@ -124,6 +125,7 @@
 		778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeProfileVC.swift; sourceTree = "<group>"; };
 		778E0F53287C43D300BEEEA5 /* PomeAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeAlertVC.swift; sourceTree = "<group>"; };
 		77B5719A287D458500C9CC27 /* CompleteSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpVC.swift; sourceTree = "<group>"; };
+		77B5719C287D68E300C9CC27 /* SignUpNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNC.swift; sourceTree = "<group>"; };
 		77E8F2B52874A23700D2F6C0 /* POME-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POME-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */,
 				77B5719A287D458500C9CC27 /* CompleteSignUpVC.swift */,
+				77B5719C287D68E300C9CC27 /* SignUpNC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -927,6 +930,7 @@
 				1A1AEFDA287A4D5B00DD5F7E /* HaveMateTVC.swift in Sources */,
 				77E8F36428765FFF00D2F6C0 /* MypageNC.swift in Sources */,
 				77E8F2E62874AEDB00D2F6C0 /* WriteVC.swift in Sources */,
+				77B5719D287D68E300C9CC27 /* SignUpNC.swift in Sources */,
 				77E8F3772876938800D2F6C0 /* GenericResponse.swift in Sources */,
 				77E8F2FA2874B17800D2F6C0 /* RemindVC.swift in Sources */,
 				1A10C25A287736BE00489CA1 /* GoalStorageVC.swift in Sources */,
