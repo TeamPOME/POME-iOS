@@ -76,6 +76,7 @@ class GoalCardCVC: CodeBaseCVC {
         $0.clipsToBounds = true
     }
     
+    // MARK: Life Cycle
     override func setViews() {
         configureUI()
     }
@@ -86,12 +87,10 @@ extension GoalCardCVC {
     
     private func configureUI() {
         contentView.addSubview(allContainerView)
-        
         self.allContainerView.addSubviews([goalTitleLabel,  ifSuccessLabelContainerView, menuBtn, spentMoneyTitleLabel, moneyGoalLabel, realSpentMoneyLabel, privateImageView, progressContainerView, ifSuccessLabelContainerView, percentageContainerView])
         ifSuccessLabelContainerView.addSubview(ifSuccessLabel)
         percentageContainerView.addSubview(progressPercentageLabel)
         progressContainerView.addSubview(progressView)
-        
         contentView.backgroundColor = .grey_0
         
         allContainerView.snp.makeConstraints {
