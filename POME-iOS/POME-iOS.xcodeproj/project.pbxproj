@@ -15,6 +15,7 @@
 		778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */; };
 		778E0F50287B273900BEEEA5 /* SignSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778E0F4F287B273900BEEEA5 /* SignSB.storyboard */; };
 		778E0F52287B27AB00BEEEA5 /* MakeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */; };
+		778E0F54287C43D300BEEEA5 /* PomeAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F53287C43D300BEEEA5 /* PomeAlertVC.swift */; };
 		77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */; };
 		77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */; };
 		77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2C12874A23800D2F6C0 /* Assets.xcassets */; };
@@ -108,6 +109,7 @@
 		778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeMaskedImageView.swift; sourceTree = "<group>"; };
 		778E0F4F287B273900BEEEA5 /* SignSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignSB.storyboard; sourceTree = "<group>"; };
 		778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeProfileVC.swift; sourceTree = "<group>"; };
+		778E0F53287C43D300BEEEA5 /* PomeAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeAlertVC.swift; sourceTree = "<group>"; };
 		77E8F2B52874A23700D2F6C0 /* POME-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POME-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -732,6 +734,7 @@
 				77E8F3842877452400D2F6C0 /* PomeNaviBar.swift */,
 				778E0F422879624700BEEEA5 /* PomeTextField.swift */,
 				778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */,
+				778E0F53287C43D300BEEEA5 /* PomeAlertVC.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -912,6 +915,7 @@
 				77E8F3542875F56000D2F6C0 /* TVRegisterable.swift in Sources */,
 				84B77272287B369200E1EDFC /* LookbackCVC.swift in Sources */,
 				77E8F3582875F5EA00D2F6C0 /* BaseCVC.swift in Sources */,
+				778E0F54287C43D300BEEEA5 /* PomeAlertVC.swift in Sources */,
 				778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */,
 				77E8F3322875729000D2F6C0 /* UIView+.swift in Sources */,
 				77E8F3042874B1D400D2F6C0 /* RemindXib.swift in Sources */,
@@ -949,7 +953,6 @@
 				77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */,
 				77E8F334287574B000D2F6C0 /* UITextField+.swift in Sources */,
 				84B7727D287BD83D00E1EDFC /* SelectFeelingVC.swift in Sources */,
-				77E8F2F12874B0EC00D2F6C0 /* model.swift in Sources */,
 				77E8F3662876606D00D2F6C0 /* ViewControllerFactory.swift in Sources */,
 				77E8F379287693AA00D2F6C0 /* WriteService.swift in Sources */,
 				77E8F3012874B1BB00D2F6C0 /* WriteXib.swift in Sources */,
