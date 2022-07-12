@@ -26,7 +26,7 @@ class GoalStorageVC: BaseVC {
     }
     
     private let titleHeaderLabel = UILabel().then {
-        $0.setLabel(text: "완료한 목표", color: .black, size: 18, weight: .bold)
+        $0.setLabel(text: "완료한 목표", color: .pomeBlack, size: 18, weight: .bold)
     }
     
     // MARK: Life Cycle
