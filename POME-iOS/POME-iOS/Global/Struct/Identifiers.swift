@@ -16,4 +16,7 @@ struct Identifiers {
     static let LookbackSelectSB = "LookbackSelectSB"
     static let LookbackCompleteSB = "LookbackCompleteSB"
     static let GoalCardTVC = "GoalCardTVC"
+    static let HaveNoMateTVC = "HaveNoMateTVC"
+    static let MateHeaderCVC = "MateHeaderCVC"
+    static let HaveMateTVC = "HaveMateTVC"
 }
