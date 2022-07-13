@@ -35,7 +35,7 @@ class PomeHalfModalVC: UIPresentationController {
         self.backView.alpha = 0
         self.containerView?.addSubview(backView)
         self.presentedViewController.transitionCoordinator?.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) in
-            self.backView.alpha = 0.5
+            self.backView.alpha = 0.45
         }, completion: { (UIViewControllerTransitionCoordinatorContext) in })
     }
     
