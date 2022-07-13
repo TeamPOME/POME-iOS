@@ -303,3 +303,22 @@
 - 마이페이지: 메인, 완료한 목표
 - 공통 컴포넌트: GoalCardCVC
 ```
+
+## 🛠 Development Environment
+<p align="left">
+<img src ="https://img.shields.io/badge/Swift-5.0-ff69b4">
+<img src ="https://img.shields.io/badge/Xcode-13.3-blue">
+<img src ="https://img.shields.io/badge/iOS-15.0-blue">
+
+<br>
+<br>
+
+## 📚 Library
+| 라이브러리(Library) | 목적(Purpose) | 버전(Version) |
+|:---|:----------|----|
+| Alamofire | 네트워크 통신 | 5.6.1 |
+| SnapKit | autolayout 표현 | 5.0.0 |
+| Then | 클로저를 이용한 인스턴스 생성 | 3.0.0 |
+| FSCalendar | 캘린더 구현 | 2.8.4 |
+| KingFisher | 이미지 불러오기 | 7.3.0 |
+| Lottie | 애니메이션 구현 | 3.4.0 |
