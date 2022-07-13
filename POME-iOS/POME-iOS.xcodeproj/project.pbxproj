@@ -17,7 +17,6 @@
 		1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */; };
 		1A76CACF287B1B3300B29500 /* MateHeaderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */; };
 		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
-		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
 		778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */; };
 		778E0F50287B273900BEEEA5 /* SignSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778E0F4F287B273900BEEEA5 /* SignSB.storyboard */; };
 		778E0F52287B27AB00BEEEA5 /* MakeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */; };
@@ -98,6 +97,7 @@
 		8432C9BB28784533001C643F /* EmptyGoalCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BA28784533001C643F /* EmptyGoalCardCVC.xib */; };
 		8432C9BD28784751001C643F /* FeelingCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BC28784751001C643F /* FeelingCardCVC.xib */; };
 		8432C9BF28787F9A001C643F /* FeelingCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */; };
+		84A6E883287D518200CD5843 /* PomeHalfModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6E882287D518200CD5843 /* PomeHalfModalVC.swift */; };
 		84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACED842878989E00AA408D /* EmptyGoalCardCVC.swift */; };
 		84B77272287B369200E1EDFC /* LookbackCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B77270287B369200E1EDFC /* LookbackCVC.swift */; };
 		84B77273287B369200E1EDFC /* LookbackCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B77271287B369200E1EDFC /* LookbackCVC.xib */; };
@@ -202,6 +202,7 @@
 		8432C9BA28784533001C643F /* EmptyGoalCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyGoalCardCVC.xib; sourceTree = "<group>"; };
 		8432C9BC28784751001C643F /* FeelingCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeelingCardCVC.xib; sourceTree = "<group>"; };
 		8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingCardCVC.swift; sourceTree = "<group>"; };
+		84A6E882287D518200CD5843 /* PomeHalfModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeHalfModalVC.swift; sourceTree = "<group>"; };
 		84ACED842878989E00AA408D /* EmptyGoalCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyGoalCardCVC.swift; sourceTree = "<group>"; };
 		84B77270287B369200E1EDFC /* LookbackCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackCVC.swift; sourceTree = "<group>"; };
 		84B77271287B369200E1EDFC /* LookbackCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LookbackCVC.xib; sourceTree = "<group>"; };
@@ -757,6 +758,7 @@
 				778E0F422879624700BEEEA5 /* PomeTextField.swift */,
 				778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */,
 				778E0F53287C43D300BEEEA5 /* PomeAlertVC.swift */,
+				84A6E882287D518200CD5843 /* PomeHalfModalVC.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -918,6 +920,7 @@
 				77E8F33A28759FCF00D2F6C0 /* UIFont+.swift in Sources */,
 				77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */,
 				84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */,
+				84A6E883287D518200CD5843 /* PomeHalfModalVC.swift in Sources */,
 				77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */,
 				77E8F36028765FA600D2F6C0 /* RemindNC.swift in Sources */,
 				77E8F31E2874B7CE00D2F6C0 /* MypageVC.swift in Sources */,
@@ -980,7 +983,7 @@
 				77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */,
 				77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */,
 				77E8F334287574B000D2F6C0 /* UITextField+.swift in Sources */,
-				84B7727D287BD83D00E1EDFC /* SelectFeelingVC.swift in Sources */,
+				84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */,
 				84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */,
 				77E8F3662876606D00D2F6C0 /* ViewControllerFactory.swift in Sources */,
 				77E8F379287693AA00D2F6C0 /* WriteService.swift in Sources */,
