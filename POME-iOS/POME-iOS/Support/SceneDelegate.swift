@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // rootVC를 tabBar로 지정
 //            window.rootViewController = PomeTBC()
             
-            window.rootViewController = UIStoryboard.init(name: "SignSB", bundle: nil).instantiateViewController(withIdentifier: MakeProfileVC.className) as? MakeProfileVC
+            window.rootViewController = UIStoryboard.init(name: Identifiers.SignUpSB, bundle: nil).instantiateViewController(withIdentifier: SignUpNC.className) as? SignUpNC
             
             self.window = window
             window.makeKeyAndVisible()
