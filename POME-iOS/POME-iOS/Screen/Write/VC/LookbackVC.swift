@@ -48,8 +48,8 @@ extension LookbackVC {
     }
     
     private func setTapBackBtn() {
-        naviBar.backBtn.press {
-            self.navigationController?.popViewController(animated: true)
+        naviBar.backBtn.press { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
         }
     }
 }
