@@ -48,6 +48,27 @@ extension WriteVC {
     }
 }
 
+// MARK: - Custom Methods
+extension WriteVC {
+    
+    private func setDelegate() {
+        writeMainCV.delegate = self
+        writeMainCV.dataSource = self
+        goalCategoryCV.delegate = self
+        goalCategoryCV.dataSource = self
+    }
+    
+    private func registerCV() {
+        FeelingCardCVC.register(target: writeMainCV)
+        EmptyGoalCardCVC.register(target: writeMainCV)
+        SpendCVC.register(target: writeMainCV)
+        
+        // TODO: - GoalCardCVC 등록 필요
+        // GoalCardCVC.register(target: writeMainCV)
+        GoalCategoryCVC.register(target: goalCategoryCV)
+    }
+}
+
 // MARK: - UICollectionViewDataSource
 extension WriteVC: UICollectionViewDataSource {
     
@@ -163,26 +184,5 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
                 return 11
             }
         }
-    }
-}
-
-// MARK: - Custom Methods
-extension WriteVC {
-    
-    private func setDelegate() {
-        writeMainCV.delegate = self
-        writeMainCV.dataSource = self
-        goalCategoryCV.delegate = self
-        goalCategoryCV.dataSource = self
-    }
-    
-    private func registerCV() {
-        FeelingCardCVC.register(target: writeMainCV)
-        EmptyGoalCardCVC.register(target: writeMainCV)
-        SpendCVC.register(target: writeMainCV)
-        
-        // TODO: - GoalCardCVC 등록 필요
-        // GoalCardCVC.register(target: writeMainCV)
-        GoalCategoryCVC.register(target: goalCategoryCV)
     }
 }
