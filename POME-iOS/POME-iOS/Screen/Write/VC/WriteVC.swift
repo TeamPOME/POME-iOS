@@ -85,7 +85,7 @@ extension WriteVC: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDataSource
 extension WriteVC: UICollectionViewDataSource {
-
+    
     /// 섹션 개수 지정
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return (collectionView == goalCategoryCV) ? 1 : 3
@@ -129,7 +129,21 @@ extension WriteVC: UICollectionViewDataSource {
                     /// 셀의 more 버튼을 누를 경우 action sheet를 띄운다.
                     GoalCardCVC.tapMoreBtn = {
                         self.makeOneAlertWithCancel(okTitle: "삭제하기", okAction: { _ in
-                            print("삭제하기를 눌렀습니다.")
+                            let alert = PomeAlertVC()
+                            alert.showPomeAlertVC(vc: self, title: "목표를 삭제하시겠어요?", subTitle: "해당 목표에서 작성한 기록도 모두 삭제돼요", cancelBtnTitle: "아니요", confirmBtnTitle: "삭제할게요")
+                            
+                            /// 알럿창의 취소버튼(왼쪽 버튼) 누르는 경우 alert dismiss
+                            alert.cancelBtn.press { [weak self] in
+                                self?.dismiss(animated: true)
+                            }
+                            
+                            /// 알럿창의 확인버튼(오른쪽 버튼) 누르는 경우 삭제 서버 통신
+                            alert.confirmBtn.press { [weak self] in
+                                
+                                // TODO: - 삭제 서버 통신 필요
+                                print("목표카드 삭제합니다.")
+                                self?.dismiss(animated: true)
+                            }
                         })
                     }
                     return GoalCardCVC
