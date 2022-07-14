@@ -19,14 +19,14 @@ class FeelingCardCVC: BaseCVC {
     // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        setTapEvent()
+        setTapCardEvent()
     }
 }
 
 // MARK: - Custom Methods
 extension FeelingCardCVC {
     
-    private func setTapEvent() {
+    private func setTapCardEvent() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapCard))
         cardView.addGestureRecognizer(tapGesture)
     }
