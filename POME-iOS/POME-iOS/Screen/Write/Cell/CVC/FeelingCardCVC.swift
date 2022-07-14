@@ -9,6 +9,9 @@ import UIKit
 
 class FeelingCardCVC: BaseCVC {
     
+    // MARK: Properties
+    var tapLookbackView: (() -> ())?
+    
     // MARK: IBOutlet
     @IBOutlet weak var remindNumLabel: UILabel!
     @IBOutlet weak var cardView: UIView!
@@ -36,8 +39,8 @@ extension FeelingCardCVC {
 // MARK: - @objc
 extension FeelingCardCVC {
     
-    /// 카드를 탭 한 경우 처리
+    /// 카드를 탭 한 경우 화면 전환을 하기 위한 처리
     @objc func tapCard() {
-        
+        tapLookbackView?()
     }
 }

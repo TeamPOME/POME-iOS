@@ -128,6 +128,10 @@ extension WriteVC: UICollectionViewDataSource {
                     return GoalCardCVC
                 }
             case 1:
+                feelingCardCVC.tapLookbackView = {
+                    guard let lookbackVC = UIStoryboard.init(name: Identifiers.LookbackSB, bundle: nil).instantiateViewController(withIdentifier: LookbackVC.className) as? LookbackVC else { return }
+                    self.navigationController?.pushViewController(lookbackVC, animated: true)
+                }
                 return feelingCardCVC
             default:
                 spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
