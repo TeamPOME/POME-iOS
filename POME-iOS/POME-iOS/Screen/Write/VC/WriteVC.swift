@@ -58,9 +58,7 @@ extension WriteVC {
         FeelingCardCVC.register(target: writeMainCV)
         EmptyGoalCardCVC.register(target: writeMainCV)
         SpendCVC.register(target: writeMainCV)
-        
-        // TODO: - GoalCardCVC 등록 필요
-        // GoalCardCVC.register(target: writeMainCV)
+        GoalCardCVC.register(target: writeMainCV)
         GoalCategoryCVC.register(target: goalCategoryCV)
         PlusCVC.register(target: goalCategoryCV)
     }
@@ -86,6 +84,7 @@ extension WriteVC: UICollectionViewDataSource {
     // CV, 섹션 별 셀 지정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let EmptyGoalCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: EmptyGoalCardCVC.className, for: indexPath) as? EmptyGoalCardCVC,
+              let GoalCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: GoalCardCVC.className, for: indexPath) as? GoalCardCVC,
               let feelingCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: FeelingCardCVC.className, for: indexPath) as? FeelingCardCVC,
               let spendCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: SpendCVC.className, for: indexPath) as? SpendCVC,
               let goalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: GoalCategoryCVC.className, for: indexPath) as? GoalCategoryCVC,
@@ -105,10 +104,9 @@ extension WriteVC: UICollectionViewDataSource {
                     EmptyGoalCardCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
                     return EmptyGoalCardCVC
                 } else {
-                    
-                    // TODO: - GoalCardCVC로 변경 필요
-                    EmptyGoalCardCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
-                    return EmptyGoalCardCVC
+                    GoalCardCVC.setData(GoalDataModel.sampleData[indexPath.row])
+                    GoalCardCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
+                    return GoalCardCVC
                 }
             case 1:
                 return feelingCardCVC
