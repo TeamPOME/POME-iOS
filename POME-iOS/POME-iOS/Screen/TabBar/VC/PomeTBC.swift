@@ -58,7 +58,7 @@ extension PomeTBC {
     func applyShadowTabBar() {
         
         UITabBar.clearShadow()
-        tabBar.layer.applyShadow(color: UIColor.shadowDefault, alpha: 1, x: 0, y: -40, blur: 18)
+        tabBar.layer.applyShadow(color: UIColor.shadowDefault, alpha: 0.6, x: 0, y: -10, blur: 14)
 
     }
 }

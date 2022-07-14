@@ -25,7 +25,7 @@ class PomeMaskedImageView: UIImageView {
         updateImageView()
     }
     
-    /// mask가 적용된 이미지로 적용해주는 메서드
+    /// 원본 이미지에 mask를 적용해주는 메서드
     private func updateImageView() {
         if maskImageView.image != nil {
             maskImageView.frame = bounds

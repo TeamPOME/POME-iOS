@@ -100,11 +100,12 @@ extension PomeAlertVC {
 extension PomeAlertVC {
     
     /// 알럿 보여주는 메서드
-    func showPomeAlertVC(vc: UIViewController, title: String, subTitle: String, cancelBtnTitle: String, confirmBtnTitle: String) {
+    func showPomeAlertVC(vc: UIViewController, title: String, subTitle: String, cancelBtnTitle: String, confirmBtnTitle: String, iconImage: UIImage? = UIImage(named: "3DTrashCanMint100")) {
         titleLabel.text = title
         subTitleLabel.text = subTitle
         cancelBtn.setTitle(cancelBtnTitle, for: .normal)
         confirmBtn.setTitle(confirmBtnTitle, for: .normal)
+        iconImageView.image = iconImage
         
         self.modalPresentationStyle = .overFullScreen
         self.modalTransitionStyle = .crossDissolve
