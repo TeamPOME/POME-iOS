@@ -25,7 +25,7 @@ class RemindVC: BaseVC {
     private let remindTV = UITableView(frame: .zero, style: .plain).then {
         $0.backgroundColor = .grey_0
         $0.showsVerticalScrollIndicator = false
-        $0.sectionHeaderTopPadding = 0
+        $0.sectionHeaderTopPadding = 1
     }
     
     private let remindHomeNaviBar = PomeNaviBar().then {
@@ -55,6 +55,7 @@ extension RemindVC {
         remindTV.backgroundColor = .grey_0
         goalCategoryCV.backgroundColor = .grey_0
         remindTV.separatorStyle = .none
+        remindTV.separatorColor = .grey_0
         view.addSubviews([goalCategoryCV,remindTV,remindHomeNaviBar])
         
         remindHomeNaviBar.snp.makeConstraints {
@@ -64,13 +65,13 @@ extension RemindVC {
         
         goalCategoryCV.snp.makeConstraints {
             $0.top.equalTo(remindHomeNaviBar.snp.bottom)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).offset(10.adjusted)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(10.adjusted)
             $0.height.equalTo(41.adjustedH)
         }
         
         remindTV.snp.makeConstraints {
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            $0.top.equalTo(goalCategoryCV.snp.bottom).offset(20)
+            $0.top.equalTo(goalCategoryCV.snp.bottom)
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
@@ -113,9 +114,9 @@ extension RemindVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 56.adjustedH
+            return 96.adjustedH
         case 1:
-            return 103.adjustedH
+            return 84.adjustedH
         default:
             return (goalCount == 0) ? 430.adjustedH : 157.adjustedH
         }

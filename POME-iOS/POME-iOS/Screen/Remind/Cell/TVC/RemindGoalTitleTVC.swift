@@ -24,13 +24,16 @@ class RemindGoalTitleTVC: BaseTVC{
         super.setSelected(selected, animated: false)
     }
     
+    override func layoutSubviews() {
+      super.layoutSubviews()
+    }
 }
 
 // MARK: - UI
 extension RemindGoalTitleTVC {
     
     private func configureUI() {
-        containerView.makeRounded(cornerRadius: 6)
-        containerView.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 6)
+        containerView.makeRounded(cornerRadius: 6.adjusted)
+        containerView.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15.adjusted)
     }
 }
