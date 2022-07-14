@@ -126,7 +126,7 @@ extension WriteVC: UICollectionViewDataSource {
                     GoalCardCVC.setData(GoalDataModel.sampleData[indexPath.row])
                     GoalCardCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
                     
-                    /// 셀의 more 버튼을 누를 경우 action sheet를 띄운다.
+                    /// 목표 카드의 more 버튼을 누를 경우 action sheet를 띄운다.
                     GoalCardCVC.tapMoreBtn = {
                         self.makeOneAlertWithCancel(okTitle: "삭제하기", okAction: { _ in
                             let alert = PomeAlertVC()
@@ -157,7 +157,7 @@ extension WriteVC: UICollectionViewDataSource {
             default:
                 spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
                 
-                /// 셀의 more 버튼을 누를 경우 action sheet를 띄운다.
+                /// 씀씀이 셀의 more 버튼을 누를 경우 action sheet를 띄운다.
                 spendCVC.tapMoreBtn = {
                     self.makeTwoAlertWithCancel(okTitle: "수정하기", secondOkTitle: "삭제하기", okAction: { _ in
                         
@@ -165,7 +165,7 @@ extension WriteVC: UICollectionViewDataSource {
                         print("씀씀이 수정합니다.")
                     }, secondOkAction: { _ in
                         let alert = PomeAlertVC()
-                        alert.showPomeAlertVC(vc: self, title: "목표를 삭제하시겠어요?", subTitle: "해당 목표에서 작성한 기록도 모두 삭제돼요", cancelBtnTitle: "아니요", confirmBtnTitle: "삭제할게요")
+                        alert.showPomeAlertVC(vc: self, title: "기록을 삭제하시겠어요?", subTitle: "삭제한 내용은 다시 되돌릴 수 없어요", cancelBtnTitle: "아니요", confirmBtnTitle: "삭제할게요")
                         
                         /// 알럿창의 취소버튼(왼쪽 버튼) 누르는 경우 alert dismiss
                         alert.cancelBtn.press { [weak self] in
