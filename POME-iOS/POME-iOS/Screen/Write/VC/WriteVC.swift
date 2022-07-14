@@ -24,11 +24,10 @@ class WriteVC: BaseVC {
         setDelegate()
         registerCV()
         configureNaviBar()
-        configureCategoryCV()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setDefaultSelectedCell()
+        setGoalCategoryCV()
     }
 }
 
@@ -39,21 +38,9 @@ extension WriteVC {
         writeHomeNaviBar.setNaviStyle(state: .greyWithRightBtn)
     }
     
-    private func configureCategoryCV() {
-        
-        /// plus 버튼 추가
-        let plusBtn = UIButton(frame: CGRect(x: 16, y: (42 / 2) - (29 / 2), width: 52.adjusted, height:29))
-        plusBtn.setImage(UIImage(named: "btnGoalCategory"), for: UIControl.State.normal)
-        
-        // TODO: - 클릭 시 카테고리 추가로 이동
-        // plusBtn.addTarget(self, action: <#Selector#>, for: UIControl.Event.touchUpInside)
-        
-        goalCategoryCV.addSubview(plusBtn)
-    }
-    
     /// 목표 카테고리의 첫 아이템을 디폴트로 설정
-    private func setDefaultSelectedCell() {
-        self.goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
+    private func setGoalCategoryCV() {
+        self.goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .left)
     }
 }
 
@@ -75,6 +62,7 @@ extension WriteVC {
         // TODO: - GoalCardCVC 등록 필요
         // GoalCardCVC.register(target: writeMainCV)
         GoalCategoryCVC.register(target: goalCategoryCV)
+        PlusCVC.register(target: goalCategoryCV)
     }
 }
 
@@ -98,14 +86,18 @@ extension WriteVC: UICollectionViewDataSource {
     // CV, 섹션 별 셀 지정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let EmptyGoalCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: EmptyGoalCardCVC.className, for: indexPath) as? EmptyGoalCardCVC,
-        let feelingCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: FeelingCardCVC.className, for: indexPath) as? FeelingCardCVC,
-        let spendCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: SpendCVC.className, for: indexPath) as? SpendCVC,
-        let goalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: GoalCategoryCVC.className, for: indexPath) as? GoalCategoryCVC else { return UICollectionViewCell() }
-
+              let feelingCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: FeelingCardCVC.className, for: indexPath) as? FeelingCardCVC,
+              let spendCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: SpendCVC.className, for: indexPath) as? SpendCVC,
+              let goalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: GoalCategoryCVC.className, for: indexPath) as? GoalCategoryCVC,
+              let plusCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: PlusCVC.className, for: indexPath) as? PlusCVC else { return UICollectionViewCell() }
         
         if collectionView == goalCategoryCV {
-            goalCategoryCVC.goalLabel.text = category[indexPath.row]
-            return goalCategoryCVC
+            if indexPath.row == 0 {
+                return plusCVC
+            } else {
+                goalCategoryCVC.goalLabel.text = category[indexPath.row]
+                return goalCategoryCVC
+            }
         } else {
             switch indexPath.section {
             case 0:
@@ -134,9 +126,13 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
     /// 섹션에 따라 셀 크기 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == goalCategoryCV {
-            
-            /// 글씨 길이에 따라 너비 동적 조절
-            return CGSize(width: category[indexPath.row].size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
+            if indexPath.row == 0 {
+                return CGSize(width: 52, height: 29)
+            } else {
+                
+                /// 글씨 길이에 따라 너비 동적 조절
+                return CGSize(width: category[indexPath.row].size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
+            }
         } else {
             switch indexPath.section {
             case 0:
@@ -152,7 +148,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
     /// 섹션에 인셋 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == goalCategoryCV {
-            return UIEdgeInsets(top: 7, left: 76, bottom: 6, right: 16)
+            return UIEdgeInsets(top: 7, left: 0, bottom: 6, right: 16)
         } else {
             switch section {
             case 0:
@@ -160,7 +156,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
             case 1:
                 return UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
             default:
-                return UIEdgeInsets(top: 12, left: 16, bottom: 0, right: 16)
+                return UIEdgeInsets(top: 12, left: 16, bottom: 16, right: 16)
             }
         }
     }
