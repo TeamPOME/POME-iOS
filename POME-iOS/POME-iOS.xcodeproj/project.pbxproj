@@ -26,6 +26,7 @@
 		77B571A1287FF58300C9CC27 /* AddFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571A0287FF58300C9CC27 /* AddFriendVC.swift */; };
 		77B571A6287FF6C400C9CC27 /* FriendProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571A4287FF6C400C9CC27 /* FriendProfileTVC.swift */; };
 		77B571A928805C3100C9CC27 /* FriendListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571A828805C3100C9CC27 /* FriendListDataModel.swift */; };
+		77B571B32880BD8D00C9CC27 /* ProfileCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571B22880BD8D00C9CC27 /* ProfileCellDelegate.swift */; };
 		77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */; };
 		77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */; };
 		77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2C12874A23800D2F6C0 /* Assets.xcassets */; };
@@ -132,6 +133,7 @@
 		77B571A0287FF58300C9CC27 /* AddFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendVC.swift; sourceTree = "<group>"; };
 		77B571A4287FF6C400C9CC27 /* FriendProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileTVC.swift; sourceTree = "<group>"; };
 		77B571A828805C3100C9CC27 /* FriendListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListDataModel.swift; sourceTree = "<group>"; };
+		77B571B22880BD8D00C9CC27 /* ProfileCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellDelegate.swift; sourceTree = "<group>"; };
 		77E8F2B52874A23700D2F6C0 /* POME-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POME-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 			children = (
 				77E8F3512875F54000D2F6C0 /* CVRegisterable.swift */,
 				77E8F3532875F56000D2F6C0 /* TVRegisterable.swift */,
+				77B571B22880BD8D00C9CC27 /* ProfileCellDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -959,6 +962,7 @@
 				77B5719D287D68E300C9CC27 /* SignUpNC.swift in Sources */,
 				77E8F3772876938800D2F6C0 /* GenericResponse.swift in Sources */,
 				77E8F2FA2874B17800D2F6C0 /* RemindVC.swift in Sources */,
+				77B571B32880BD8D00C9CC27 /* ProfileCellDelegate.swift in Sources */,
 				77E8F3242874B80A00D2F6C0 /* MypageXib.swift in Sources */,
 				1A10C2582877367100489CA1 /* GoalStorageDataModel.swift in Sources */,
 				77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */,
