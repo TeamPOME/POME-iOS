@@ -125,6 +125,13 @@ extension WriteVC: UICollectionViewDataSource {
                 } else {
                     GoalCardCVC.setData(GoalDataModel.sampleData[indexPath.row])
                     GoalCardCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
+                    
+                    /// 셀의 more 버튼을 누를 경우 action sheet를 띄운다.
+                    GoalCardCVC.tapMoreBtn = {
+                        self.makeOneAlertWithCancel(okTitle: "삭제하기", okAction: { _ in
+                            print("삭제하기를 눌렀습니다.")
+                        })
+                    }
                     return GoalCardCVC
                 }
             case 1:

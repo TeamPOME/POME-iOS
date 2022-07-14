@@ -68,9 +68,13 @@ class GoalCardCVC: CodeBaseCVC {
         $0.clipsToBounds = true
     }
     
+    /// 액션 시트를 띄우기 위한 클로저 선언
+    var tapMoreBtn: (() -> ())?
+    
     // MARK: Life Cycle
     override func setViews() {
         configureUI()
+        setTapMoreBtnEvent()
     }
 }
 
@@ -150,6 +154,17 @@ extension GoalCardCVC {
             $0.centerY.equalTo(ifSuccessLabelContainerView)
             $0.leading.trailing.equalTo(ifSuccessLabelContainerView).inset(4)
             $0.top.bottom.equalTo(ifSuccessLabelContainerView).inset(2)
+        }
+    }
+}
+
+// MARK: - Custom Methods
+extension GoalCardCVC {
+    
+    /// more 버튼 tap Action 설정 메서드
+    private func setTapMoreBtnEvent() {
+        menuBtn.press { [weak self] in
+            self?.tapMoreBtn?()
         }
     }
     
