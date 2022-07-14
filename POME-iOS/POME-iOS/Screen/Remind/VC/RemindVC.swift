@@ -11,8 +11,8 @@ class RemindVC: BaseVC {
     
     // MARK: Properties
     private var goalCount: Int = 10
-    private var categoryIsSelectedArray = [Bool](repeating: false, count: 10)
     private var category: [String] = ["목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료", "목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료"]
+    private var categoryIsSelectedArray = [Bool](repeating: false, count: 10)
     
     private lazy var goalCategoryCV = UICollectionView( frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout()).then {
         let layout = UICollectionViewFlowLayout()
@@ -41,6 +41,10 @@ class RemindVC: BaseVC {
         setDelegate()
         setTVScroll()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setDefaultSelectedCell()
+    }
 }
 
 // MARK: - UI
@@ -52,7 +56,7 @@ extension RemindVC {
         goalCategoryCV.backgroundColor = .grey_0
         remindTV.separatorStyle = .none
         view.addSubviews([goalCategoryCV,remindTV,remindHomeNaviBar])
-    
+        
         remindHomeNaviBar.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(44.adjustedH)
@@ -70,7 +74,6 @@ extension RemindVC {
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
-    
 }
 
 // MARK: - Custom Methods
@@ -96,6 +99,11 @@ extension RemindVC {
     private func setTVScroll() {
         remindTV.isScrollEnabled = (goalCount == 0) ? false : true
     }
+    
+    /// 목표 카테고리의 첫 아이템을 디폴트로 설정
+    private func setDefaultSelectedCell() {
+        self.goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left)
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -115,26 +123,29 @@ extension RemindVC: UITableViewDelegate {
     
     /// 셀 지정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let remindGoalTitleTVC = remindTV.dequeueReusableCell(withIdentifier: Identifiers.RemindGoalTitleTVC) as? RemindGoalTitleTVC,
+              let remindFilterTVC = remindTV.dequeueReusableCell(withIdentifier: Identifiers.RemindFilterTVC) as? RemindFilterTVC,
+            let remindNoGoalTVC = remindTV.dequeueReusableCell(withIdentifier: Identifiers.RemindHaveNoGoalTVC) as? RemindHaveNoGoalTVC,
+              let remindGoalTVC = remindTV.dequeueReusableCell(withIdentifier: Identifiers.RemindGoalTVC) as? RemindGoalTVC else { return UITableViewCell() }
+
         switch indexPath.section {
         case 0:
-            guard let remindGoalTitleTVC = remindTV.dequeueReusableCell(withIdentifier: Identifiers.RemindGoalTitleTVC, for: indexPath) as? RemindGoalTitleTVC else { return UITableViewCell() }
             if goalCount == 0 {
                 remindGoalTitleTVC.isPrivateImageView.image = UIImage(named: "icEmptyGoal")
                 remindGoalTitleTVC.goalTitleLabel.setLabel(text: "아직 추가한 목표가 없어요", color: .grey_5, size: 18, weight: .bold)
             }
             return remindGoalTitleTVC
         case 1:
-            guard let remindFilterTVC = remindTV.dequeueReusableCell(withIdentifier: Identifiers.RemindFilterTVC, for: indexPath) as? RemindFilterTVC else { return UITableViewCell() }
             return remindFilterTVC
-        default:
+        case 2:
             if goalCount == 0 {
-                guard let remindNoGoalTVC = remindTV.dequeueReusableCell(withIdentifier: Identifiers.RemindHaveNoGoalTVC, for: indexPath) as? RemindHaveNoGoalTVC else { return UITableViewCell() }
                 return remindNoGoalTVC
             } else {
-                guard let remindGoalTVC = remindTV.dequeueReusableCell(withIdentifier: Identifiers.RemindGoalTVC, for: indexPath) as? RemindGoalTVC else { return UITableViewCell() }
                 remindGoalTVC.setData(RemindGoalDataModel.sampleData[indexPath.row])
                 return remindGoalTVC
             }
+        default:
+            return UITableViewCell()
         }
     }
     
@@ -149,8 +160,8 @@ extension RemindVC: UITableViewDelegate {
             return goalCount == 0 ? 1 : RemindGoalDataModel.sampleData.count
         }
     }
+    
 }
-
 // MARK: - UITableViewDataSource
 extension RemindVC: UITableViewDataSource {
     
@@ -177,15 +188,9 @@ extension RemindVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let remindGoalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: Identifiers.RemindGoalCategoryCVC, for: indexPath) as? RemindGoalCategoryCVC else { return UICollectionViewCell() }
         if goalCount == 0 {
-            remindGoalCategoryCVC.goalLabel.text = "-"
+            remindGoalCategoryCVC.goalLabel.text = " - "
         } else{
             remindGoalCategoryCVC.goalLabel.text = category[indexPath.row]
-        }
-        
-        /// 목표 카테고리의 첫 아이템을 디폴트로 설정
-        if indexPath.item == 0 {
-            remindGoalCategoryCVC.isSelected = true
-            goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .right)
         }
         return remindGoalCategoryCVC
     }
@@ -217,10 +222,6 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
     /// CV, 섹션 별 셀 좌우 간격 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 8.adjusted
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        self.categoryIsSelectedArray[indexPath.item].toggle()
     }
 }
 
