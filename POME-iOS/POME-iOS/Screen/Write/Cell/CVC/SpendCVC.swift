@@ -8,6 +8,11 @@
 import UIKit
 
 class SpendCVC: BaseCVC {
+    
+    // MARK: Properties
+    
+    /// 액션 시트를 띄우기 위한 클로저 선언
+    var tapMoreBtn: (() -> ())?
 
     // MARK: IBOutlet
     @IBOutlet weak var dateLabel: UILabel!
@@ -19,5 +24,10 @@ class SpendCVC: BaseCVC {
     // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    // MARK: IBAction
+    @IBAction func tapMoreBtn(_ sender: Any) {
+        tapMoreBtn?()
     }
 }

@@ -156,6 +156,31 @@ extension WriteVC: UICollectionViewDataSource {
                 return feelingCardCVC
             default:
                 spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
+                
+                /// 셀의 more 버튼을 누를 경우 action sheet를 띄운다.
+                spendCVC.tapMoreBtn = {
+                    self.makeTwoAlertWithCancel(okTitle: "수정하기", secondOkTitle: "삭제하기", okAction: { _ in
+                        
+                        // TODO: - 수정 뷰로 화면 전환
+                        print("씀씀이 수정합니다.")
+                    }, secondOkAction: { _ in
+                        let alert = PomeAlertVC()
+                        alert.showPomeAlertVC(vc: self, title: "목표를 삭제하시겠어요?", subTitle: "해당 목표에서 작성한 기록도 모두 삭제돼요", cancelBtnTitle: "아니요", confirmBtnTitle: "삭제할게요")
+                        
+                        /// 알럿창의 취소버튼(왼쪽 버튼) 누르는 경우 alert dismiss
+                        alert.cancelBtn.press { [weak self] in
+                            self?.dismiss(animated: true)
+                        }
+                        
+                        /// 알럿창의 확인버튼(오른쪽 버튼) 누르는 경우 삭제 서버 통신
+                        alert.confirmBtn.press { [weak self] in
+                            
+                            // TODO: - 삭제 서버 통신 필요
+                            print("씀씀이 삭제합니다.")
+                            self?.dismiss(animated: true)
+                        }
+                    })
+                }
                 return spendCVC
             }
         }

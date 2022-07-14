@@ -43,6 +43,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="icMore2020"/>
+                                <connections>
+                                    <action selector="tapMoreBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ssr-M5-DAg"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icEmojiBackground" translatesAutoresizingMaskIntoConstraints="NO" id="d2w-qe-Yxc">
                                 <rect key="frame" x="30" y="44" width="106" height="56"/>
