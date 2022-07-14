@@ -33,6 +33,20 @@ extension LookbackVC {
     }
 }
 
+// MARK: - Custom Methods
+extension LookbackVC {
+    
+    private func setDelegate() {
+        lookbackMainCV.delegate = self
+        lookbackMainCV.dataSource = self
+    }
+    
+    private func registerCV() {
+        LookbackCVC.register(target: lookbackMainCV)
+        SpendCVC.register(target: lookbackMainCV)
+    }
+}
+
 // MARK: - UICollectionViewDataSource
 extension LookbackVC: UICollectionViewDataSource {
     
@@ -104,18 +118,4 @@ extension LookbackVC: UICollectionViewDelegateFlowLayout {
     /// CV, 섹션 별 셀 좌우 간격 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return (section == 0) ? 0 : 11
-}
-
-// MARK: - Custom Methods
-extension LookbackVC {
-    
-    private func setDelegate() {
-        lookbackMainCV.delegate = self
-        lookbackMainCV.dataSource = self
-    }
-    
-    private func registerCV() {
-        LookbackCVC.register(target: lookbackMainCV)
-        SpendCVC.register(target: lookbackMainCV)
-    }
 }
