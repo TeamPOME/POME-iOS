@@ -64,9 +64,28 @@ extension WriteVC {
     }
 }
 
+// MARK: - UICollectionViewDelegate
+extension WriteVC: UICollectionViewDelegate {
+    
+    /// 셀이 선택되었을 때의 처리
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == goalCategoryCV {
+            
+            /// 플러스 버튼 눌렀을 때
+            if indexPath.row == 0 {
+                
+                // TODO: - 목표 추가 뷰로 이동
+            } else {
+                
+                // TODO: - 서버 통신 (setData 필요)
+            }
+        }
+    }
+}
+
 // MARK: - UICollectionViewDataSource
 extension WriteVC: UICollectionViewDataSource {
-    
+
     /// 섹션 개수 지정
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return (collectionView == goalCategoryCV) ? 1 : 3
