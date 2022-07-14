@@ -40,7 +40,7 @@ extension WriteVC {
     
     /// 목표 카테고리의 첫 아이템을 디폴트로 설정
     private func setGoalCategoryCV() {
-        self.goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .left)
+        self.goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .right)
     }
 }
 
