@@ -17,9 +17,10 @@ class AddFriendVC: BaseVC {
         $0.configureTitleLabel(title: "친구 추가")
     }
     
-    private let searchBarView = PomeTextField().then {
+    private let searchBarTextField = PomeTextField().then {
         $0.setTextFieldStyle(state: .withRightBtn)
         $0.configurePlaceholder(placeholder: "친구의 닉네임을 검색해보세요")
+        $0.returnKeyType = .done
     }
     
     private let profileTV = UITableView()
@@ -29,7 +30,7 @@ class AddFriendVC: BaseVC {
     }
     
     private var profileList: [FriendListData] = []
-
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,7 @@ class AddFriendVC: BaseVC {
 extension AddFriendVC {
     
     private func configureUI() {
-        view.addSubviews([naviBar, searchBarView, profileTV, completeBtn])
+        view.addSubviews([naviBar, searchBarTextField, profileTV, completeBtn])
         profileTV.isHidden = true
         profileTV.separatorStyle = .none
         
@@ -57,14 +58,14 @@ extension AddFriendVC {
             $0.height.equalTo(44)
         }
         
-        searchBarView.snp.makeConstraints {
+        searchBarTextField.snp.makeConstraints {
             $0.top.equalTo(naviBar.snp.bottom).offset(12)
             $0.leading.trailing.equalToSuperview().inset(16)
             $0.height.equalTo(54)
         }
         
         profileTV.snp.makeConstraints {
-            $0.top.equalTo(searchBarView.snp.bottom).offset(10)
+            $0.top.equalTo(searchBarTextField.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview()
         }
         
@@ -82,7 +83,7 @@ extension AddFriendVC {
     
     /// 검색하기 버튼 tap Action 설정 메서드
     private func setTapSearchBtn() {
-        searchBarView.rightBtn.press { [weak self] in
+        searchBarTextField.rightBtn.press { [weak self] in
             self?.dismissKeyboard()
             self?.profileTV.isHidden = false
         }
@@ -95,22 +96,38 @@ extension AddFriendVC {
     
     /// 대리자 위임 메서드
     private func setDelegate() {
+        searchBarTextField.delegate = self
         profileTV.delegate = self
         profileTV.dataSource = self
     }
     
+    /// 데이터 삽입 메서드
     private func initProfileList() {
         profileList.append(contentsOf: [
-            FriendListData(nickname: "은주", profileImageName: "sampleProfile"),
-            FriendListData(nickname: "주현", profileImageName: "sampleProfile"),
-            FriendListData(nickname: "유진", profileImageName: "sampleProfile"),
-            FriendListData(nickname: "지영", profileImageName: "sampleProfile"),
-            FriendListData(nickname: "희빈", profileImageName: "sampleProfile"),
-            FriendListData(nickname: "세훈", profileImageName: "sampleProfile"),
-            FriendListData(nickname: "효진", profileImageName: "sampleProfile"),
-            FriendListData(nickname: "연진", profileImageName: "sampleProfile"),
-            FriendListData(nickname: "포미포미", profileImageName: "sampleProfile")
+            FriendListData(nickname: "은주", profileImageName: "sampleProfile", isFollowing: false),
+            FriendListData(nickname: "주현", profileImageName: "sampleProfile", isFollowing: false),
+            FriendListData(nickname: "유진", profileImageName: "sampleProfile", isFollowing: false),
+            FriendListData(nickname: "지영", profileImageName: "sampleProfile", isFollowing: false),
+            FriendListData(nickname: "희빈", profileImageName: "sampleProfile", isFollowing: false),
+            FriendListData(nickname: "세훈", profileImageName: "sampleProfile", isFollowing: false),
+            FriendListData(nickname: "효진", profileImageName: "sampleProfile", isFollowing: false),
+            FriendListData(nickname: "연진", profileImageName: "sampleProfile", isFollowing: false),
+            FriendListData(nickname: "포미포미", profileImageName: "sampleProfile", isFollowing: false),
+            FriendListData(nickname: "포미", profileImageName: "sampleProfile", isFollowing: false),
+            FriendListData(nickname: "POME", profileImageName: "sampleProfile", isFollowing: false),
+            FriendListData(nickname: "하이", profileImageName: "sampleProfile", isFollowing: false)
         ])
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension AddFriendVC: UITextFieldDelegate {
+    
+    /// done 키 터치 시 키보드 내려가도록
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchBarTextField.resignFirstResponder()
+        
+        return true
     }
 }
 
