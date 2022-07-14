@@ -38,25 +38,25 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-Yj-QYU">
-                                <rect key="frame" x="136" y="45.5" width="163.5" height="66.5"/>
+                                <rect key="frame" x="136" y="46" width="166" height="65.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표가 있어야 씀씀이를 기록할 수 있어요" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rJ-ve-ZHX">
-                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="38.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="166" height="37.5"/>
                                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
                                         <color key="textColor" name="grey_8"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="InK-Xy-5Fg">
-                                        <rect key="frame" x="0.0" y="46.5" width="86" height="20"/>
+                                        <rect key="frame" x="0.0" y="45.5" width="86.5" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표 만들기" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkf-v4-Dm4">
-                                                <rect key="frame" x="0.0" y="0.0" width="64" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="64.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
                                                 <color key="textColor" name="main"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icGoalCardRightArrow20Mint" translatesAutoresizingMaskIntoConstraints="NO" id="0wd-eZ-FAt">
-                                                <rect key="frame" x="66" y="0.0" width="20" height="20"/>
+                                                <rect key="frame" x="66.5" y="0.0" width="20" height="20"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
