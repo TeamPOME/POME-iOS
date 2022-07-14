@@ -98,15 +98,10 @@ extension FriendProfileTVC {
         profileImageView.image = data.makeProfileImage()
         nicknameLabel.text = data.nickname
         
-        if data.isFollowing {
-            followingState = true
-            plusBtn.isHidden = true
-            completeLabel.isHidden = false
-        } else {
-            followingState = false
-            plusBtn.isHidden = false
-            completeLabel.isHidden = true
-        }
+        followingState = data.isFollowing
+        plusBtn.isHidden = data.isFollowing
+        completeLabel.isHidden = !data.isFollowing
+        
         self.indexPath = indexPath
     }
     
