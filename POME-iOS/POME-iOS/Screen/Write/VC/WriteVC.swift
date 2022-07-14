@@ -94,7 +94,7 @@ extension WriteVC: UICollectionViewDataSource {
     /// 섹션 별 셀 개수 지정
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == goalCategoryCV {
-            return category.count
+            return category.count + 1
         } else {
             return (section == 2) ? spend.count : 1
         }
@@ -113,7 +113,7 @@ extension WriteVC: UICollectionViewDataSource {
             if indexPath.row == 0 {
                 return plusCVC
             } else {
-                goalCategoryCVC.goalLabel.text = category[indexPath.row]
+                goalCategoryCVC.goalLabel.text = category[indexPath.row - 1]
                 return goalCategoryCVC
             }
         } else {
@@ -198,7 +198,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
             } else {
                 
                 /// 글씨 길이에 따라 너비 동적 조절
-                return CGSize(width: category[indexPath.row].size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
+                return CGSize(width: category[indexPath.row - 1].size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
             }
         } else {
             switch indexPath.section {
