@@ -60,15 +60,14 @@ extension RemindGoalTVC {
         goalLabel.text = remindGoalData.goalTitle
         spentMoneyLabel.text = remindGoalData.spentMoneyLabel
         contentLabel.text = remindGoalData.content
-        
         if remindGoalData.countMate == 0 {
-            firstEmojiContainerBtn.isHidden = true
-            secondEmojiContainerBtn.isHidden = true
-            thirdEmojiContainerBtn.isHidden = true
+            [firstEmojiContainerBtn, secondEmojiContainerBtn, thirdEmojiContainerBtn].forEach {
+                $0.isHidden = true
+            }
         } else {
-            firstEmojiContainerBtn.isHidden = false
-            secondEmojiContainerBtn.isHidden = false
-            thirdEmojiContainerBtn.isHidden = false
+            [firstEmojiContainerBtn, secondEmojiContainerBtn, thirdEmojiContainerBtn].forEach {
+                $0.isHidden = false
+            }
             countMateLabel.text = "\(remindGoalData.countMate)+"
         }
     }

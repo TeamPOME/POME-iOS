@@ -178,7 +178,7 @@ extension RemindVC: UICollectionViewDataSource {
         
         /// 목표 카테고리의 첫 아이템을 디폴트로 설정
         if indexPath.item == 0 {
-//            remindGoalCategoryCVC.isSelected = true
+            remindGoalCategoryCVC.isSelected = true
             goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .right)
         }
         return remindGoalCategoryCVC

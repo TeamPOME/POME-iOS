@@ -10,9 +10,9 @@ import UIKit
 class RemindFilterTVC: BaseTVC {
 
     // MARK: IBOutlet
-    @IBOutlet weak var previousFeelingButton: UIButton!
-    @IBOutlet weak var laterFeelingButton: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var previousFeelingBtn: UIButton!
+    @IBOutlet weak var laterFeelingBtn: UIButton!
+    @IBOutlet weak var resetBtn: UIButton!
     
     // MARK: Life Cycle
     override func awakeFromNib() {
@@ -29,10 +29,10 @@ class RemindFilterTVC: BaseTVC {
 extension RemindFilterTVC {
     
     private func configureUI() {
-        [previousFeelingButton, resetButton, laterFeelingButton].forEach {
+        [previousFeelingBtn, resetBtn, laterFeelingBtn].forEach {
             $0?.backgroundColor = .grey_2
             $0?.makeRounded(cornerRadius: 4)
         }
-        resetButton.backgroundColor = .grey_0
+        resetBtn.backgroundColor = .grey_0
     }
 }

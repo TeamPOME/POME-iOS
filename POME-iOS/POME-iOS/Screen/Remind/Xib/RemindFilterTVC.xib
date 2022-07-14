@@ -84,9 +84,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="laterFeelingButton" destination="Ncn-wb-Ij0" id="Pux-Dw-6So"/>
-                <outlet property="previousFeelingButton" destination="eL5-fX-JlO" id="asW-4z-dv0"/>
-                <outlet property="resetButton" destination="PMY-ok-2BT" id="YQp-fl-Nwz"/>
+                <outlet property="laterFeelingBtn" destination="Ncn-wb-Ij0" id="Pux-Dw-6So"/>
+                <outlet property="previousFeelingBtn" destination="eL5-fX-JlO" id="asW-4z-dv0"/>
+                <outlet property="resetBtn" destination="PMY-ok-2BT" id="YQp-fl-Nwz"/>
             </connections>
             <point key="canvasLocation" x="138.40579710144928" y="143.63839285714286"/>
         </tableViewCell>
