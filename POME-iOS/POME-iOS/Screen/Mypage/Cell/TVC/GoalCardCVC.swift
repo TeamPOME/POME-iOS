@@ -74,7 +74,7 @@ class GoalCardCVC: CodeBaseCVC {
     // MARK: Life Cycle
     override func setViews() {
         configureUI()
-        setTapMoreBtnAction()
+        setTapMoreBtn()
     }
 }
 
@@ -162,7 +162,7 @@ extension GoalCardCVC {
 extension GoalCardCVC {
     
     /// more 버튼 tap Action 설정 메서드
-    private func setTapMoreBtnAction() {
+    private func setTapMoreBtn() {
         menuBtn.press { [weak self] in
             self?.tapMoreBtn?()
         }
