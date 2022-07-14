@@ -53,7 +53,7 @@ extension RemindGoalTVC {
     }
 }
 
-// MARK: - Network
+// MARK: - Custom Method
 extension RemindGoalTVC {
     
     func setData(_ remindGoalData: RemindGoalDataModel) {

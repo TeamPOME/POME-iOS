@@ -10,7 +10,8 @@ import UIKit
 class RemindVC: BaseVC {
     
     // MARK: Properties
-    private var goalCount = 10
+    private var goalCount: Int = 10
+    private var categoryIsSelectedArray = [Bool](repeating: false, count: 10)
     private var category: [String] = ["목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료", "목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료"]
     
     private lazy var goalCategoryCV = UICollectionView( frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout()).then {
@@ -24,7 +25,7 @@ class RemindVC: BaseVC {
     private let remindTV = UITableView(frame: .zero, style: .plain).then {
         $0.backgroundColor = .grey_0
         $0.showsVerticalScrollIndicator = false
-        $0.sectionHeaderTopPadding = 0;
+        $0.sectionHeaderTopPadding = 0
     }
     
     private let remindHomeNaviBar = PomeNaviBar().then {
@@ -103,9 +104,12 @@ extension RemindVC: UITableViewDelegate {
     /// 셀별 높이 지정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
-        case 0: return 56.adjustedH
-        case 1: return 103.adjustedH
-        default: return (goalCount == 0) ? 430.adjustedH : 157.adjustedH
+        case 0:
+            return 56.adjustedH
+        case 1:
+            return 103.adjustedH
+        default:
+            return (goalCount == 0) ? 430.adjustedH : 157.adjustedH
         }
     }
     
@@ -137,9 +141,12 @@ extension RemindVC: UITableViewDelegate {
     /// 각 섹션 안의 셀 개수 지정
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0: return 1
-        case 1: return 1
-        default: return goalCount == 0 ? 1 : RemindGoalDataModel.sampleData.count
+        case 0:
+            return 1
+        case 1:
+            return 1
+        default:
+            return goalCount == 0 ? 1 : RemindGoalDataModel.sampleData.count
         }
     }
 }
@@ -152,7 +159,6 @@ extension RemindVC: UITableViewDataSource {
         return 3
     }
 }
-
 
 // MARK: - UICollectionViewDataSource
 extension RemindVC: UICollectionViewDataSource {
@@ -211,6 +217,10 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
     /// CV, 섹션 별 셀 좌우 간격 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 8.adjusted
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        self.categoryIsSelectedArray[indexPath.item].toggle()
     }
 }
 
