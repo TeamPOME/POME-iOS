@@ -22,6 +22,7 @@ class LookbackVC: BaseVC {
         configureNaviBar()
         setDelegate()
         registerCV()
+        setTapBackBtn()
     }
 }
 
@@ -44,6 +45,12 @@ extension LookbackVC {
     private func registerCV() {
         LookbackCVC.register(target: lookbackMainCV)
         SpendCVC.register(target: lookbackMainCV)
+    }
+    
+    private func setTapBackBtn() {
+        naviBar.backBtn.press {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
 
