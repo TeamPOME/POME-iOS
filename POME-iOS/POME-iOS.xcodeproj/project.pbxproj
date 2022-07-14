@@ -22,6 +22,8 @@
 		778E0F54287C43D300BEEEA5 /* PomeAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F53287C43D300BEEEA5 /* PomeAlertVC.swift */; };
 		77B5719B287D458500C9CC27 /* CompleteSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B5719A287D458500C9CC27 /* CompleteSignUpVC.swift */; };
 		77B5719D287D68E300C9CC27 /* SignUpNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B5719C287D68E300C9CC27 /* SignUpNC.swift */; };
+		77B5719F287FF54900C9CC27 /* AddFriendSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B5719E287FF54900C9CC27 /* AddFriendSB.storyboard */; };
+		77B571A1287FF58300C9CC27 /* AddFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571A0287FF58300C9CC27 /* AddFriendVC.swift */; };
 		77B571A6287FF6C400C9CC27 /* FriendProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571A4287FF6C400C9CC27 /* FriendProfileTVC.swift */; };
 		77B571A928805C3100C9CC27 /* FriendListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571A828805C3100C9CC27 /* FriendListDataModel.swift */; };
 		77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */; };
@@ -126,6 +128,8 @@
 		778E0F53287C43D300BEEEA5 /* PomeAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeAlertVC.swift; sourceTree = "<group>"; };
 		77B5719A287D458500C9CC27 /* CompleteSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpVC.swift; sourceTree = "<group>"; };
 		77B5719C287D68E300C9CC27 /* SignUpNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNC.swift; sourceTree = "<group>"; };
+		77B5719E287FF54900C9CC27 /* AddFriendSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddFriendSB.storyboard; sourceTree = "<group>"; };
+		77B571A0287FF58300C9CC27 /* AddFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendVC.swift; sourceTree = "<group>"; };
 		77B571A4287FF6C400C9CC27 /* FriendProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileTVC.swift; sourceTree = "<group>"; };
 		77B571A828805C3100C9CC27 /* FriendListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListDataModel.swift; sourceTree = "<group>"; };
 		77E8F2B52874A23700D2F6C0 /* POME-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POME-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,7 +244,10 @@
 			isa = PBXGroup;
 			children = (
 				778E0F4D287B26FE00BEEEA5 /* SB */,
+				778E0F4F287B273900BEEEA5 /* SignUpSB.storyboard */,
+				77B5719E287FF54900C9CC27 /* AddFriendSB.storyboard */,
 				778E0F4E287B270500BEEEA5 /* VC */,
+				77B571A2287FF5A500C9CC27 /* Cell */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -248,7 +255,6 @@
 		778E0F4D287B26FE00BEEEA5 /* SB */ = {
 			isa = PBXGroup;
 			children = (
-				778E0F4F287B273900BEEEA5 /* SignUpSB.storyboard */,
 			);
 			path = SB;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 				778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */,
 				77B5719A287D458500C9CC27 /* CompleteSignUpVC.swift */,
 				77B5719C287D68E300C9CC27 /* SignUpNC.swift */,
+				77B571A0287FF58300C9CC27 /* AddFriendVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -880,6 +887,7 @@
 				77E8F32A28756DA100D2F6C0 /* Pretendard-Regular.otf in Resources */,
 				77E8F32628756D8200D2F6C0 /* Pretendard-Bold.otf in Resources */,
 				84B77275287B3E3A00E1EDFC /* LookbackSB.storyboard in Resources */,
+				77B5719F287FF54900C9CC27 /* AddFriendSB.storyboard in Resources */,
 				8400A406287C1782004F2D49 /* LookbackCompleteSB.storyboard in Resources */,
 				77E8F32C28756DAE00D2F6C0 /* Pretendard-Medium.otf in Resources */,
 				8432C9B328773A42001C643F /* SpendCVC.xib in Resources */,
@@ -994,8 +1002,10 @@
 				77E8F35E28765F7C00D2F6C0 /* WriteNC.swift in Sources */,
 				77E8F3832876F25400D2F6C0 /* xib.swift in Sources */,
 				77E8F33E2875EA6B00D2F6C0 /* Adjusted+.swift in Sources */,
+				77B571A928805C3100C9CC27 /* FriendListDataModel.swift in Sources */,
 				77E8F3482875F25000D2F6C0 /* TypeOfViewController.swift in Sources */,
 				77E8F3442875ECAE00D2F6C0 /* UITextView+.swift in Sources */,
+				77B571A1287FF58300C9CC27 /* AddFriendVC.swift in Sources */,
 				77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */,
 				77E8F37B2876943800D2F6C0 /* WriteResModel.swift in Sources */,
 				77E8F3162874B57700D2F6C0 /* MateCVC.swift in Sources */,
