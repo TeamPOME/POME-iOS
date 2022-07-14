@@ -51,7 +51,9 @@ class PomeHalfModalVC: UIPresentationController {
     /// 하프 모달 뷰 radius 설정
     override func containerViewWillLayoutSubviews() {
         super.containerViewWillLayoutSubviews()
-        presentedView!.makeRounded(cornerRadius: 16.adjusted)
+        presentedView?.clipsToBounds = true
+        presentedView?.layer.cornerRadius = 16.adjusted
+        presentedView?.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
     }
     
     /// 하위뷰 배치가 마쳤음을 알림 이후 VC 변경됨
