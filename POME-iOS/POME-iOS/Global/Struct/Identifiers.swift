@@ -20,4 +20,9 @@ struct Identifiers {
     static let HaveNoMateTVC = "HaveNoMateTVC"
     static let MateHeaderCVC = "MateHeaderCVC"
     static let HaveMateTVC = "HaveMateTVC"
+    static let RemindGoalTitleTVC = "RemindGoalTitleTVC"
+    static let RemindFilterTVC = "RemindFilterTVC"
+    static let RemindGoalTVC = "RemindGoalTVC"
+    static let RemindHaveNoGoalTVC = "RemindHaveNoGoalTVC"
+    static let RemindGoalCategoryCVC = "RemindGoalCategoryCVC"
 }

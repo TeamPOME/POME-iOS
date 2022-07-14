@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HaveNoGoalTVC: CodeBaseTVC {
+class RemindHaveNoGoalTVC: CodeBaseTVC {
 
     // MARK: Properties
     private let containerView = UIView().then {
@@ -33,7 +33,7 @@ class HaveNoGoalTVC: CodeBaseTVC {
 }
 
 // MARK: - UI
-extension HaveNoGoalTVC {
+extension RemindHaveNoGoalTVC {
     
     private func configureUI() {
         contentView.addSubview(containerView)

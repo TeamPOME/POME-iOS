@@ -7,17 +7,32 @@
 
 import UIKit
 
-class RemindFilterTVC: UITableViewCell {
+class RemindFilterTVC: BaseTVC {
 
+    // MARK: IBOutlet
+    @IBOutlet weak var previousFeelingButton: UIButton!
+    @IBOutlet weak var laterFeelingButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
+    
+    // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configureUI()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        super.setSelected(selected, animated: false)
     }
+}
+
+// MARK: - UI
+extension RemindFilterTVC {
     
+    private func configureUI() {
+        [previousFeelingButton, resetButton, laterFeelingButton].forEach {
+            $0?.backgroundColor = .grey_2
+            $0?.makeRounded(cornerRadius: 4)
+        }
+        resetButton.backgroundColor = .grey_0
+    }
 }
