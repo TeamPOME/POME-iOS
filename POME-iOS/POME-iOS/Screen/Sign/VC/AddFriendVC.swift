@@ -134,11 +134,7 @@ extension AddFriendVC: UITextFieldDelegate {
 // MARK: - ProfileCellDelegate
 extension AddFriendVC: ProfileCellDelegate {
     func sendFollowingState(indexPath: IndexPath, followingState: Bool) {
-        if followingState {
-            profileList[indexPath.row].isFollowing = true
-        } else {
-            profileList[indexPath.row].isFollowing = false
-        }
+        profileList[indexPath.row].isFollowing = followingState
     }
 }
 
