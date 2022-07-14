@@ -27,22 +27,42 @@ class FriendProfileTVC: CodeBaseTVC {
         $0.setImage(UIImage(named: "icPlus20"), for: .normal)
     }
     
+    private lazy var completeLabel = UILabel().then {
+        $0.text = "추가 완료"
+        $0.textColor = .grey_5
+        $0.textAlignment = .center
+        $0.font = .PretendardSB(size: 12)
+        $0.backgroundColor = .grey_1
+        $0.makeRounded(cornerRadius: 6.adjusted)
+    }
+    
+    weak var sendBtnStatusDelegate: ProfileCellDelegate?
+    private var followingState: Bool = false
+    private var indexPath: IndexPath?
+    
     // MARK: Life Cycle
     override func setViews() {
         configureUI()
+        setTapPlusBtn()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
+    /// TableViewCell 재사용 문제 해결을 위한 초기화
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        followingState = false
+    }
 }
 
 // MARK: - UI
 extension FriendProfileTVC {
     
     private func configureUI() {
-        contentView.addSubviews([profileImageView, nicknameLabel, plusBtn])
+        contentView.addSubviews([profileImageView, nicknameLabel, plusBtn, completeLabel])
+        completeLabel.isHidden = true
         
         profileImageView.snp.makeConstraints {
             $0.top.bottom.equalToSuperview().inset(13)
@@ -60,6 +80,13 @@ extension FriendProfileTVC {
             $0.trailing.equalToSuperview().inset(20)
             $0.width.equalTo(plusBtn.snp.height).multipliedBy(1.0 / 1.0)
         }
+        
+        completeLabel.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(32)
+            $0.centerY.equalToSuperview()
+            $0.width.equalTo(55)
+            $0.height.equalTo(22)
+        }
     }
 }
 
@@ -67,9 +94,31 @@ extension FriendProfileTVC {
 extension FriendProfileTVC {
     
     /// 데이터 세팅 함수
-    func setData(data: FriendListData) {
+    func setData(data: FriendListData, indexPath: IndexPath) {
         profileImageView.image = data.makeProfileImage()
         nicknameLabel.text = data.nickname
+        
+        if data.isFollowing {
+            followingState = true
+            plusBtn.isHidden = true
+            completeLabel.isHidden = false
+        } else {
+            followingState = false
+            plusBtn.isHidden = false
+            completeLabel.isHidden = true
+        }
+        self.indexPath = indexPath
+    }
+    
+    /// +버튼 tap Action 설정 메서드
+    func setTapPlusBtn() {
+        plusBtn.press { [weak self] in
+            guard let self = self else { return }
+            
+            self.plusBtn.isHidden = true
+            self.completeLabel.isHidden = false
+            self.sendBtnStatusDelegate?.sendFollowingState(indexPath: self.indexPath ?? IndexPath(item: 0, section: 0), followingState: true)
+        }
     }
 }
 

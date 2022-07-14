@@ -131,6 +131,17 @@ extension AddFriendVC: UITextFieldDelegate {
     }
 }
 
+// MARK: - ProfileCellDelegate
+extension AddFriendVC: ProfileCellDelegate {
+    func sendFollowingState(indexPath: IndexPath, followingState: Bool) {
+        if followingState {
+            profileList[indexPath.row].isFollowing = true
+        } else {
+            profileList[indexPath.row].isFollowing = false
+        }
+    }
+}
+
 // MARK: - UITableViewDelegate
 extension AddFriendVC: UITableViewDelegate {
     
@@ -152,11 +163,10 @@ extension AddFriendVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FriendProfileTVC.className) as? FriendProfileTVC else { return UITableViewCell() }
         
-        cell.setData(data: profileList[indexPath.row])
+        cell.setData(data: profileList[indexPath.row], indexPath: indexPath)
+        cell.sendBtnStatusDelegate = self
+        
         return cell
     }
-    
-    
 }
-
 
