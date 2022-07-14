@@ -15,6 +15,7 @@
 		1A1AEFDB287A4D5B00DD5F7E /* HaveMateTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD9287A4D5B00DD5F7E /* HaveMateTVC.xib */; };
 		1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */; };
 		1A76CACF287B1B3300B29500 /* MateHeaderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */; };
+		1ABDED79287F23E000F85F9C /* RemindHaveNoGoalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDED78287F23E000F85F9C /* RemindHaveNoGoalTVC.swift */; };
 		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
 		778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */; };
 		778E0F50287B273900BEEEA5 /* SignSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778E0F4F287B273900BEEEA5 /* SignSB.storyboard */; };
@@ -114,6 +115,7 @@
 		1A1AEFD9287A4D5B00DD5F7E /* HaveMateTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveMateTVC.xib; sourceTree = "<group>"; };
 		1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateHeaderCVC.swift; sourceTree = "<group>"; };
 		1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateHeaderCVC.xib; sourceTree = "<group>"; };
+		1ABDED78287F23E000F85F9C /* RemindHaveNoGoalTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindHaveNoGoalTVC.swift; sourceTree = "<group>"; };
 		6F6FAF66B7C4C46AE47E904C /* Pods-POME-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.debug.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		778E0F422879624700BEEEA5 /* PomeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeTextField.swift; sourceTree = "<group>"; };
 		778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeMaskedImageView.swift; sourceTree = "<group>"; };
@@ -568,6 +570,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F2FB2874B19400D2F6C0 /* RemindTVC.swift */,
+				1ABDED78287F23E000F85F9C /* RemindHaveNoGoalTVC.swift */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -911,6 +914,7 @@
 				77E8F3752876936B00D2F6C0 /* NetworkConstants.swift in Sources */,
 				84309C822878ACF50017F8BF /* GoalCategoryCVC.swift in Sources */,
 				77E8F33C2875A08200D2F6C0 /* UILabel+.swift in Sources */,
+				1ABDED79287F23E000F85F9C /* RemindHaveNoGoalTVC.swift in Sources */,
 				77E8F33A28759FCF00D2F6C0 /* UIFont+.swift in Sources */,
 				77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */,
 				84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */,
