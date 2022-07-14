@@ -588,8 +588,11 @@
 		77E8F2F52874B13700D2F6C0 /* TVC */ = {
 			isa = PBXGroup;
 			children = (
+				1A4BB61A287DF5B7007C8FC1 /* RemindGoalTVC.swift */,
 				77E8F2FB2874B19400D2F6C0 /* RemindTVC.swift */,
 				1ABDED78287F23E000F85F9C /* RemindHaveNoGoalTVC.swift */,
+				1ABDED74287E716E00F85F9C /* RemindFilterTVC.swift */,
+				1A4BB61E287E0395007C8FC1 /* RemindGoalTitleTVC.swift */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F2FD2874B1A100D2F6C0 /* RemindCVC.swift */,
+				1ABDED80287F9B4E00F85F9C /* RemindGoalCategoryCVC.swift */,
 			);
 			path = CVC;
 			sourceTree = "<group>";
@@ -614,13 +618,9 @@
 			isa = PBXGroup;
 			children = (
 				77E8F3032874B1D400D2F6C0 /* RemindXib.swift */,
-				1A4BB61A287DF5B7007C8FC1 /* RemindGoalTVC.swift */,
 				1A4BB61B287DF5B7007C8FC1 /* RemindGoalTVC.xib */,
-				1A4BB61E287E0395007C8FC1 /* RemindGoalTitleTVC.swift */,
 				1A4BB61F287E0395007C8FC1 /* RemindGoalTitleTVC.xib */,
-				1ABDED74287E716E00F85F9C /* RemindFilterTVC.swift */,
 				1ABDED75287E716E00F85F9C /* RemindFilterTVC.xib */,
-				1ABDED80287F9B4E00F85F9C /* RemindGoalCategoryCVC.swift */,
 				1ABDED81287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib */,
 			);
 			path = Xib;
