@@ -31,7 +31,7 @@ extension RemindFilterTVC {
     private func configureUI() {
         [previousFeelingBtn, resetBtn, laterFeelingBtn].forEach {
             $0?.backgroundColor = .grey_2
-            $0?.makeRounded(cornerRadius: 4)
+            $0?.makeRounded(cornerRadius: 4.adjusted)
         }
         resetBtn.backgroundColor = .grey_0
     }

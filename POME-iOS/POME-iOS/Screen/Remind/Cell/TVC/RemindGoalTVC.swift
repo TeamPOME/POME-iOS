@@ -48,7 +48,7 @@ extension RemindGoalTVC {
         contentLabel.numberOfLines = 2
         
         /// 전체 셀 안의 containerView에 그림자와 radius 값 지정
-        containerView.makeRounded(cornerRadius: 8)
+        containerView.makeRounded(cornerRadius: 8.adjusted)
         containerView.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 4)
     }
 }
