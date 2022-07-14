@@ -15,7 +15,7 @@ class WriteVC: BaseVC {
     @IBOutlet weak var writeMainCV: UICollectionView!
     
     // MARK: Properties
-    private var category: [String] = ["목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료"]
+    private var category: [String] = ["목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료", "목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료"]
     private var spend: [String] = ["spend1", "spend2", "spend3", "spend4"]
     
     // MARK: Life Cycle
@@ -25,6 +25,10 @@ class WriteVC: BaseVC {
         registerCV()
         configureNaviBar()
         configureCategoryCV()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setDefaultSelectedCell()
     }
 }
 
@@ -45,6 +49,11 @@ extension WriteVC {
         // plusBtn.addTarget(self, action: <#Selector#>, for: UIControl.Event.touchUpInside)
         
         goalCategoryCV.addSubview(plusBtn)
+    }
+    
+    /// 목표 카테고리의 첫 아이템을 디폴트로 설정
+    private func setDefaultSelectedCell() {
+        self.goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
     }
 }
 
@@ -96,12 +105,6 @@ extension WriteVC: UICollectionViewDataSource {
         
         if collectionView == goalCategoryCV {
             goalCategoryCVC.goalLabel.text = category[indexPath.row]
-            
-            /// 목표 카테고리의 첫 아이템을 디폴트로 설정
-            if indexPath.item == 0 {
-                goalCategoryCVC.isSelected = true
-                goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .right)
-            }
             return goalCategoryCVC
         } else {
             switch indexPath.section {
