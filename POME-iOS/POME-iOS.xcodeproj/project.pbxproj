@@ -22,6 +22,7 @@
 		778E0F54287C43D300BEEEA5 /* PomeAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F53287C43D300BEEEA5 /* PomeAlertVC.swift */; };
 		77B5719B287D458500C9CC27 /* CompleteSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B5719A287D458500C9CC27 /* CompleteSignUpVC.swift */; };
 		77B5719D287D68E300C9CC27 /* SignUpNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B5719C287D68E300C9CC27 /* SignUpNC.swift */; };
+		77B571A6287FF6C400C9CC27 /* FriendProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571A4287FF6C400C9CC27 /* FriendProfileTVC.swift */; };
 		77B571A928805C3100C9CC27 /* FriendListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571A828805C3100C9CC27 /* FriendListDataModel.swift */; };
 		77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */; };
 		77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */; };
@@ -125,6 +126,7 @@
 		778E0F53287C43D300BEEEA5 /* PomeAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeAlertVC.swift; sourceTree = "<group>"; };
 		77B5719A287D458500C9CC27 /* CompleteSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpVC.swift; sourceTree = "<group>"; };
 		77B5719C287D68E300C9CC27 /* SignUpNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNC.swift; sourceTree = "<group>"; };
+		77B571A4287FF6C400C9CC27 /* FriendProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileTVC.swift; sourceTree = "<group>"; };
 		77B571A828805C3100C9CC27 /* FriendListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListDataModel.swift; sourceTree = "<group>"; };
 		77E8F2B52874A23700D2F6C0 /* POME-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POME-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +261,22 @@
 				77B5719C287D68E300C9CC27 /* SignUpNC.swift */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		77B571A2287FF5A500C9CC27 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				77B571A3287FF5B300C9CC27 /* TVC */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		77B571A3287FF5B300C9CC27 /* TVC */ = {
+			isa = PBXGroup;
+			children = (
+				77B571A4287FF6C400C9CC27 /* FriendProfileTVC.swift */,
+			);
+			path = TVC;
 			sourceTree = "<group>";
 		};
 		77E8F2AC2874A23700D2F6C0 = {
@@ -956,6 +974,7 @@
 				8400A408287C17C5004F2D49 /* LookbackCompleteVC.swift in Sources */,
 				77E8F3422875EBD500D2F6C0 /* CALayer+.swift in Sources */,
 				77E8F3712876931D00D2F6C0 /* NetworkResult.swift in Sources */,
+				77B571A6287FF6C400C9CC27 /* FriendProfileTVC.swift in Sources */,
 				778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */,
 				77E8F3562875F5A400D2F6C0 /* BaseTVC.swift in Sources */,
 				1A10C2562877349E00489CA1 /* GoalCardCVC.swift in Sources */,
