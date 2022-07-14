@@ -134,7 +134,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
         } else {
             switch indexPath.section {
             case 0:
-                return CGSize(width: 343.adjusted, height: 157)
+                return CGSize(width: 343.adjusted, height: 157.adjustedH)
             case 1:
                 return CGSize(width: 343.adjusted, height: 118)
             default:
