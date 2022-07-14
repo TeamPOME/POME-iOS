@@ -42,6 +42,7 @@ class RemindVC: BaseVC {
         setTVScroll()
     }
     
+    /// 첫 아이템이 처음 로딩 되었을때만 설정. 그 뒤의 선택에 영향가지 않게 하였다
     override func viewWillAppear(_ animated: Bool) {
         setDefaultSelectedCell()
     }
@@ -161,7 +162,6 @@ extension RemindVC: UITableViewDelegate {
             return goalCount == 0 ? 1 : RemindGoalDataModel.sampleData.count
         }
     }
-    
 }
 // MARK: - UITableViewDataSource
 extension RemindVC: UITableViewDataSource {
