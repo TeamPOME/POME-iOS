@@ -32,6 +32,8 @@
 		778E0F54287C43D300BEEEA5 /* PomeAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F53287C43D300BEEEA5 /* PomeAlertVC.swift */; };
 		77B5719B287D458500C9CC27 /* CompleteSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B5719A287D458500C9CC27 /* CompleteSignUpVC.swift */; };
 		77B5719D287D68E300C9CC27 /* SignUpNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B5719C287D68E300C9CC27 /* SignUpNC.swift */; };
+		77B571B528811E5900C9CC27 /* SignInSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B571B428811E5900C9CC27 /* SignInSB.storyboard */; };
+		77B571B728811E7200C9CC27 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571B628811E7200C9CC27 /* SignInVC.swift */; };
 		77B5719F287FF54900C9CC27 /* AddFriendSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B5719E287FF54900C9CC27 /* AddFriendSB.storyboard */; };
 		77B571A1287FF58300C9CC27 /* AddFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571A0287FF58300C9CC27 /* AddFriendVC.swift */; };
 		77B571A6287FF6C400C9CC27 /* FriendProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571A4287FF6C400C9CC27 /* FriendProfileTVC.swift */; };
@@ -157,6 +159,8 @@
 		77B571A4287FF6C400C9CC27 /* FriendProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileTVC.swift; sourceTree = "<group>"; };
 		77B571A828805C3100C9CC27 /* FriendListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListDataModel.swift; sourceTree = "<group>"; };
 		77B571B22880BD8D00C9CC27 /* ProfileCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellDelegate.swift; sourceTree = "<group>"; };
+		77B571B428811E5900C9CC27 /* SignInSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSB.storyboard; sourceTree = "<group>"; };
+		77B571B628811E7200C9CC27 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		77E8F2B52874A23700D2F6C0 /* POME-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POME-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 		778E0F4D287B26FE00BEEEA5 /* SB */ = {
 			isa = PBXGroup;
 			children = (
+				778E0F4F287B273900BEEEA5 /* SignUpSB.storyboard */,
+				77B571B428811E5900C9CC27 /* SignInSB.storyboard */,
 			);
 			path = SB;
 			sourceTree = "<group>";
@@ -293,6 +299,7 @@
 				778E0F51287B27AB00BEEEA5 /* MakeProfileVC.swift */,
 				77B5719A287D458500C9CC27 /* CompleteSignUpVC.swift */,
 				77B5719C287D68E300C9CC27 /* SignUpNC.swift */,
+				77B571B628811E7200C9CC27 /* SignInVC.swift */,
 				77B571A0287FF58300C9CC27 /* AddFriendVC.swift */,
 			);
 			path = VC;
@@ -927,6 +934,7 @@
 				77E8F2E42874AEB900D2F6C0 /* WriteSB.storyboard in Resources */,
 				77E8F2F82874B15A00D2F6C0 /* RemindSB.storyboard in Resources */,
 				77E8F30E2874B4DD00D2F6C0 /* MateSB.storyboard in Resources */,
+				77B571B528811E5900C9CC27 /* SignInSB.storyboard in Resources */,
 				77E8F32828756D9700D2F6C0 /* Pretendard-SemiBold.otf in Resources */,
 				1A76CACF287B1B3300B29500 /* MateHeaderCVC.xib in Resources */,
 				1A4BB621287E0395007C8FC1 /* RemindGoalTitleTVC.xib in Resources */,
@@ -1069,6 +1077,7 @@
 				77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */,
 				77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */,
 				77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */,
+				77B571B728811E7200C9CC27 /* SignInVC.swift in Sources */,
 				1A4BB61C287DF5B7007C8FC1 /* RemindGoalTVC.swift in Sources */,
 				77E8F334287574B000D2F6C0 /* UITextField+.swift in Sources */,
 				84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */,
