@@ -30,12 +30,12 @@ extension CGFloat {
 extension Double {
     var adjusted: Double {
         let ratio: Double = Double(UIScreen.main.bounds.width / 375)
-        return self * ratio
+        return floor(self * ratio)
     }
     
     var adjustedH: Double {
         let ratio: Double = Double(UIScreen.main.bounds.height / 812)
-        return self * ratio
+        return floor(self * ratio)
     }
 }
 

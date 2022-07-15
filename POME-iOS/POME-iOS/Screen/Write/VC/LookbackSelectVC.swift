@@ -11,6 +11,8 @@ class LookbackSelectVC: BaseVC {
     
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subLabel: UILabel!
     @IBOutlet weak var saveEmojiBtn: PomeBtn!
     @IBOutlet weak var happyBtn: UIButton!
     @IBOutlet weak var happyLabel: UILabel!
@@ -23,6 +25,7 @@ class LookbackSelectVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        setTapBackBtn()
     }
     
     // MARK: IBAction
@@ -43,6 +46,10 @@ class LookbackSelectVC: BaseVC {
         saveEmojiBtn.isDisabled = !(happyBtn.isSelected || dontKnowBtn.isSelected || regretBtn.isSelected)
     }
     
+    @IBAction func tapConfirmBtn(_ sender: UIButton) {
+        guard let lookbackCompleteVC = UIStoryboard.init(name: Identifiers.LookbackCompleteSB, bundle: nil).instantiateViewController(withIdentifier: LookbackCompleteVC.className) as? LookbackCompleteVC else { return }
+        navigationController?.pushViewController(lookbackCompleteVC, animated: true)
+    }
 }
 
 // MARK: - UI
@@ -52,6 +59,10 @@ extension LookbackSelectVC {
         naviBar.setNaviStyle(state: .whiteBackDefault)
         saveEmojiBtn.setTitle("남겼어요", for: .normal)
         saveEmojiBtn.isDisabled = true
+        titleLabel.setLineSpacing(lineSpacing: 4)
+        titleLabel.textAlignment = .left
+        subLabel.setLineSpacing(lineSpacing: 4)
+        subLabel.textAlignment = .left
     }
     
     /// 행복해요 버튼 선택에 따른 이미지와 레이블 색 설정 메서드
@@ -70,5 +81,15 @@ extension LookbackSelectVC {
     private func configureRegretUI() {
         regretBtn.setImgByName(name: "btnEmojiSadPink110Nor", selectedName: "btnEmojiSadPink110Sel")
         regretLabel.textColor = regretBtn.isSelected ? .sub : .grey_7
+    }
+}
+
+// MARK: - Custom Methods
+extension LookbackSelectVC {
+    
+    private func setTapBackBtn() {
+        naviBar.backBtn.press { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
     }
 }
