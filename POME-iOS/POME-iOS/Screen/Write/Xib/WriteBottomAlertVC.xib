@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WriteBottomAlertVC" customModule="POME_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="imageHeight" destination="Tk8-Yc-6V1" id="co8-FM-kEG"/>
+                <outlet property="mainImageView" destination="47M-vG-pq6" id="cVa-ze-RJs"/>
+                <outlet property="subLabel" destination="hU1-te-Ili" id="g12-uS-Ewa"/>
+                <outlet property="titleLabel" destination="AeS-I4-ALG" id="YRu-lA-IJs"/>
+                <outlet property="topConstraint" destination="OE5-Ov-F44" id="5AT-2u-JbX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="266"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3DPenPink110" translatesAutoresizingMaskIntoConstraints="NO" id="47M-vG-pq6">
+                    <rect key="frame" x="132.66666666666666" y="24" width="110" height="110"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="Tk8-Yc-6V1"/>
+                        <constraint firstAttribute="width" secondItem="47M-vG-pq6" secondAttribute="height" multiplier="1:1" id="cc2-jf-Ndv"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금은 씀씀이를 기록할 수 없어요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeS-I4-ALG">
+                    <rect key="frame" x="70" y="146" width="235" height="21.666666666666657"/>
+                    <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                    <color key="textColor" name="grey_9"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hU1-te-Ili">
+                    <rect key="frame" x="108" y="175.66666666666666" width="159" height="33.666666666666657"/>
+                    <string key="text">나만의 소비 목표를 설정하고 
+기록을 시작해보세요!</string>
+                    <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                    <color key="textColor" name="grey_6"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fg9-iK-rBX">
+                    <rect key="frame" x="335" y="16" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="9nM-Pe-a39"/>
+                        <constraint firstAttribute="width" constant="24" id="bUs-8x-ecw"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="icCancel24Grey4" title=""/>
+                    <connections>
+                        <action selector="tapCloseBtn:" destination="-1" eventType="touchUpInside" id="lE1-oW-qk6"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="47M-vG-pq6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0D1-OQ-c6t"/>
+                <constraint firstItem="AeS-I4-ALG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3y3-UF-Vvn"/>
+                <constraint firstItem="hU1-te-Ili" firstAttribute="top" secondItem="AeS-I4-ALG" secondAttribute="bottom" constant="8" id="7kC-eI-n4Z"/>
+                <constraint firstItem="fg9-iK-rBX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="16" id="9RB-o5-cer"/>
+                <constraint firstItem="47M-vG-pq6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="24" id="OE5-Ov-F44"/>
+                <constraint firstItem="hU1-te-Ili" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Vub-uE-e8b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fg9-iK-rBX" secondAttribute="trailing" constant="16" id="gY6-uP-CYD"/>
+                <constraint firstItem="AeS-I4-ALG" firstAttribute="top" secondItem="47M-vG-pq6" secondAttribute="bottom" constant="12" id="tiL-Z5-wh7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="139" y="121"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="3DPenPink110" width="110" height="110"/>
+        <image name="icCancel24Grey4" width="24" height="24"/>
+        <namedColor name="grey_6">
+            <color red="0.53333333333333333" green="0.55294117647058827" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_9">
+            <color red="0.16078431372549021" green="0.16470588235294117" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

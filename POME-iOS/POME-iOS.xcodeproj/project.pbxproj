@@ -51,7 +51,6 @@
 		77E8F2FA2874B17800D2F6C0 /* RemindVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2F92874B17800D2F6C0 /* RemindVC.swift */; };
 		77E8F2FC2874B19400D2F6C0 /* RemindTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2FB2874B19400D2F6C0 /* RemindTVC.swift */; };
 		77E8F2FE2874B1A100D2F6C0 /* RemindCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2FD2874B1A100D2F6C0 /* RemindCVC.swift */; };
-		77E8F3012874B1BB00D2F6C0 /* WriteXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3002874B1BB00D2F6C0 /* WriteXib.swift */; };
 		77E8F3042874B1D400D2F6C0 /* RemindXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3032874B1D400D2F6C0 /* RemindXib.swift */; };
 		77E8F30E2874B4DD00D2F6C0 /* MateSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F30D2874B4DD00D2F6C0 /* MateSB.storyboard */; };
 		77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F30F2874B50500D2F6C0 /* MateVC.swift */; };
@@ -108,6 +107,8 @@
 		77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3842877452400D2F6C0 /* PomeNaviBar.swift */; };
 		8400A406287C1782004F2D49 /* LookbackCompleteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8400A405287C1782004F2D49 /* LookbackCompleteSB.storyboard */; };
 		8400A408287C17C5004F2D49 /* LookbackCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400A407287C17C5004F2D49 /* LookbackCompleteVC.swift */; };
+		84051AEF28815A0A007CF7EF /* WriteBottomAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051AED28815A0A007CF7EF /* WriteBottomAlertVC.swift */; };
+		84051AF028815A0A007CF7EF /* WriteBottomAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84051AEE28815A0A007CF7EF /* WriteBottomAlertVC.xib */; };
 		84309C822878ACF50017F8BF /* GoalCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */; };
 		84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */; };
 		8432C9B228773A42001C643F /* SpendCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9B028773A42001C643F /* SpendCVC.swift */; };
@@ -175,7 +176,6 @@
 		77E8F2F92874B17800D2F6C0 /* RemindVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindVC.swift; sourceTree = "<group>"; };
 		77E8F2FB2874B19400D2F6C0 /* RemindTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindTVC.swift; sourceTree = "<group>"; };
 		77E8F2FD2874B1A100D2F6C0 /* RemindCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindCVC.swift; sourceTree = "<group>"; };
-		77E8F3002874B1BB00D2F6C0 /* WriteXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteXib.swift; sourceTree = "<group>"; };
 		77E8F3032874B1D400D2F6C0 /* RemindXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindXib.swift; sourceTree = "<group>"; };
 		77E8F30D2874B4DD00D2F6C0 /* MateSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MateSB.storyboard; sourceTree = "<group>"; };
 		77E8F30F2874B50500D2F6C0 /* MateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateVC.swift; sourceTree = "<group>"; };
@@ -233,6 +233,8 @@
 		804C6365DDEE189DFF7ED4ED /* Pods-POME-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.release.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		8400A405287C1782004F2D49 /* LookbackCompleteSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LookbackCompleteSB.storyboard; sourceTree = "<group>"; };
 		8400A407287C17C5004F2D49 /* LookbackCompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackCompleteVC.swift; sourceTree = "<group>"; };
+		84051AED28815A0A007CF7EF /* WriteBottomAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteBottomAlertVC.swift; sourceTree = "<group>"; };
+		84051AEE28815A0A007CF7EF /* WriteBottomAlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteBottomAlertVC.xib; sourceTree = "<group>"; };
 		84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCategoryCVC.swift; sourceTree = "<group>"; };
 		84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCategoryCVC.xib; sourceTree = "<group>"; };
 		8432C9B028773A42001C643F /* SpendCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendCVC.swift; sourceTree = "<group>"; };
@@ -660,7 +662,8 @@
 		77E8F2FF2874B1AA00D2F6C0 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
-				77E8F3002874B1BB00D2F6C0 /* WriteXib.swift */,
+				84051AED28815A0A007CF7EF /* WriteBottomAlertVC.swift */,
+				84051AEE28815A0A007CF7EF /* WriteBottomAlertVC.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -942,6 +945,7 @@
 				77E8F32628756D8200D2F6C0 /* Pretendard-Bold.otf in Resources */,
 				84B77275287B3E3A00E1EDFC /* LookbackSB.storyboard in Resources */,
 				77B5719F287FF54900C9CC27 /* AddFriendSB.storyboard in Resources */,
+				84051AF028815A0A007CF7EF /* WriteBottomAlertVC.xib in Resources */,
 				8400A406287C1782004F2D49 /* LookbackCompleteSB.storyboard in Resources */,
 				77E8F32C28756DAE00D2F6C0 /* Pretendard-Medium.otf in Resources */,
 				8432C9B328773A42001C643F /* SpendCVC.xib in Resources */,
@@ -1033,6 +1037,7 @@
 				778E0F52287B27AB00BEEEA5 /* MakeProfileVC.swift in Sources */,
 				77E8F3542875F56000D2F6C0 /* TVRegisterable.swift in Sources */,
 				84B77272287B369200E1EDFC /* LookbackCVC.swift in Sources */,
+				84051AEF28815A0A007CF7EF /* WriteBottomAlertVC.swift in Sources */,
 				77E8F3582875F5EA00D2F6C0 /* BaseCVC.swift in Sources */,
 				778E0F54287C43D300BEEEA5 /* PomeAlertVC.swift in Sources */,
 				778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */,
@@ -1084,7 +1089,6 @@
 				77E8F3662876606D00D2F6C0 /* ViewControllerFactory.swift in Sources */,
 				77E8F379287693AA00D2F6C0 /* WriteService.swift in Sources */,
 				1A1AEFD7287A4CB600DD5F7E /* HaveNoMateTVC.swift in Sources */,
-				77E8F3012874B1BB00D2F6C0 /* WriteXib.swift in Sources */,
 				77E8F3462875EE0A00D2F6C0 /* UITabBar+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
