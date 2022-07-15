@@ -20,6 +20,7 @@ class AddGoalDateVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        setTapBackBtn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,5 +48,11 @@ extension AddGoalDateVC {
         titleLabel.setLineSpacing(lineSpacing: 4)
         titleLabel.textAlignment = .left
         confirmBtn.setTitle("선택했어요", for: .normal)
+    }
+    
+    private func setTapBackBtn() {
+        naviBar.backBtn.press { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
     }
 }
