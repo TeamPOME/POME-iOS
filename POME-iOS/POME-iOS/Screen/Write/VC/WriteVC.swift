@@ -15,7 +15,7 @@ class WriteVC: BaseVC {
     @IBOutlet weak var writeMainCV: UICollectionView!
     
     // MARK: Properties
-    private var category: [String] = ["목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료", "목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료"]
+    private var category: [String] = []
     private var spend: [String] = ["spend1", "spend2", "spend3", "spend4"]
     
     // MARK: Life Cycle
@@ -41,7 +41,9 @@ extension WriteVC {
     
     /// 목표 카테고리의 첫 아이템을 디폴트로 설정
     private func setGoalCategoryCV() {
-        self.goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .right)
+        if category.count > 0 {
+            goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .right)
+        }
     }
 }
 
