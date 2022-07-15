@@ -27,7 +27,12 @@ class WriteVC: BaseVC {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        showTabbar()
         setGoalCategoryCV()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        hideTabbar()
     }
 }
 

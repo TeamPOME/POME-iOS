@@ -23,6 +23,7 @@ class LookbackSelectVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        setTapBackBtn()
     }
     
     // MARK: IBAction
@@ -70,5 +71,15 @@ extension LookbackSelectVC {
     private func configureRegretUI() {
         regretBtn.setImgByName(name: "btnEmojiSadPink110Nor", selectedName: "btnEmojiSadPink110Sel")
         regretLabel.textColor = regretBtn.isSelected ? .sub : .grey_7
+    }
+}
+
+// MARK: - Custom Methods
+extension LookbackSelectVC {
+    
+    private func setTapBackBtn() {
+        naviBar.backBtn.press { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
     }
 }
