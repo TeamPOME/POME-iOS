@@ -24,6 +24,10 @@ class LookbackVC: BaseVC {
         registerCV()
         setTapBackBtn()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        hideTabbar()
+    }
 }
 
 // MARK: - UI
