@@ -15,7 +15,7 @@ class WriteVC: BaseVC {
     @IBOutlet weak var writeMainCV: UICollectionView!
     
     // MARK: Properties
-    private var category: [String] = ["목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료", "목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료"]
+    private var category: [String] = ["category1", "category2", "category3", "category4", "category5", "category6", "category7", "category8"]
     private var spend: [String] = ["spend1", "spend2", "spend3", "spend4"]
     
     // MARK: Life Cycle
@@ -41,7 +41,9 @@ extension WriteVC {
     
     /// 목표 카테고리의 첫 아이템을 디폴트로 설정
     private func setGoalCategoryCV() {
-        self.goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .right)
+        if category.count > 0 {
+            goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .right)
+        }
     }
 }
 
@@ -65,6 +67,45 @@ extension WriteVC {
     }
 }
 
+// MARK: - @objc
+extension WriteVC {
+    
+    /// 만들어 둔 HalfModalVC 보여주는 함수
+    @objc func showHalfModalVC(content: String) {
+        let halfModalVC = WriteBottomAlertVC()
+        halfModalVC.modalPresentationStyle = .custom
+        halfModalVC.transitioningDelegate = self
+        halfModalVC.configureContent(type: content)
+        
+        /// dismiss 될 경우 다시 첫번 째 목표를 선택한다.
+        halfModalVC.reselectFirstItem = {
+            DispatchQueue.main.async {
+                self.setGoalCategoryCV()
+            }
+        }
+        self.present(halfModalVC, animated: true, completion: nil)
+    }
+}
+
+// MARK: - UIViewControllerTransitioningDelegate
+extension WriteVC: UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        let halfModalVC = PomeHalfModalVC(presentedViewController: presented, presenting: presenting)
+        
+        /// dismiss 될 경우 다시 첫번 째 목표를 선택한다.
+        halfModalVC.reselectFirstItem = {
+            DispatchQueue.main.async {
+                self.setGoalCategoryCV()
+            }
+        }
+        
+        /// HalfModalView의 높이 지정
+        halfModalVC.modalHeight = 266
+        return halfModalVC
+    }
+}
+
 // MARK: - UICollectionViewDelegate
 extension WriteVC: UICollectionViewDelegate {
     
@@ -74,8 +115,13 @@ extension WriteVC: UICollectionViewDelegate {
             
             /// 플러스 버튼 눌렀을 때
             if indexPath.row == 0 {
-                
-                // TODO: - 목표 추가 뷰로 이동
+                if category.count >= 5 {
+                    showHalfModalVC(content: "goal")
+                } else {
+                    
+                    // TODO: - 목표 추가 뷰로 이동
+                    print("목표 추가 뷰로 이동합니다.")
+                }
             } else {
                 
                 // TODO: - 서버 통신 (setData 필요)
