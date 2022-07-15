@@ -117,7 +117,6 @@
 		8432C9BD28784751001C643F /* FeelingCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BC28784751001C643F /* FeelingCardCVC.xib */; };
 		8432C9BF28787F9A001C643F /* FeelingCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */; };
 		845EFFC02881A9730029E3EF /* AddGoalDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EFFBF2881A9730029E3EF /* AddGoalDateVC.swift */; };
-		845EFFC22881A97C0029E3EF /* AddGoalDateSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845EFFC12881A97C0029E3EF /* AddGoalDateSB.storyboard */; };
 		84A6E883287D518200CD5843 /* PomeHalfModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6E882287D518200CD5843 /* PomeHalfModalVC.swift */; };
 		84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACED842878989E00AA408D /* EmptyGoalCardCVC.swift */; };
 		84B77272287B369200E1EDFC /* LookbackCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B77270287B369200E1EDFC /* LookbackCVC.swift */; };
@@ -128,6 +127,7 @@
 		84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7727C287BD83D00E1EDFC /* LookbackSelectVC.swift */; };
 		84DC1ADA2880788C0057C55D /* PlusCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC1AD82880788C0057C55D /* PlusCVC.swift */; };
 		84DC1ADB2880788C0057C55D /* PlusCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DC1AD92880788C0057C55D /* PlusCVC.xib */; };
+		84F7C29F2881BF300095ECF4 /* AddGoalDateSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845EFFC12881A97C0029E3EF /* AddGoalDateSB.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -932,6 +932,7 @@
 				1ABDED83287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib in Resources */,
 				84DC1ADB2880788C0057C55D /* PlusCVC.xib in Resources */,
 				77E8F2CD2874A38600D2F6C0 /* Colorsets.xcassets in Resources */,
+				84F7C29F2881BF300095ECF4 /* AddGoalDateSB.storyboard in Resources */,
 				1A4BB61D287DF5B7007C8FC1 /* RemindGoalTVC.xib in Resources */,
 				77E8F2C52874A23800D2F6C0 /* LaunchScreen.storyboard in Resources */,
 				1ABDED77287E716E00F85F9C /* RemindFilterTVC.xib in Resources */,

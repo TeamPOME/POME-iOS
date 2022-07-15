@@ -15,7 +15,7 @@ class WriteVC: BaseVC {
     @IBOutlet weak var writeMainCV: UICollectionView!
     
     // MARK: Properties
-    private var category: [String] = ["category1", "category2", "category3", "category4", "category5", "category6", "category7", "category8", "category9", "category10"]
+    private var category: [String] = ["category1", "category2", "category3", "category4", "category5", "category6", "category7", "category8", "category9"]
     private var spend: [String] = ["spend1", "spend2", "spend3", "spend4"]
     
     // MARK: Life Cycle
@@ -118,8 +118,8 @@ extension WriteVC: UICollectionViewDelegate {
                 if category.count >= 10 {
                     showHalfModalVC(content: "goal")
                 } else {
-                    guard let addGoalVC = UIStoryboard.init(name: Identifiers.AddGoalDateSB, bundle: nil).instantiateViewController(withIdentifier: AddGoalDateVC.className) as? AddGoalDateVC else { return }
-                    navigationController?.pushViewController(addGoalVC, animated: true)
+                    guard let addGoalDateVC = UIStoryboard.init(name: Identifiers.AddGoalDateSB, bundle: nil).instantiateViewController(withIdentifier: AddGoalDateVC.className) as? AddGoalDateVC else { return }
+                    navigationController?.pushViewController(addGoalDateVC, animated: true)
                 }
             } else {
                 
