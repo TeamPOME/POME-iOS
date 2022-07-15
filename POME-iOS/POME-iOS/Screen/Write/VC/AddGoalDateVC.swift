@@ -22,6 +22,10 @@ class AddGoalDateVC: BaseVC {
         configureUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        hideTabbar()
+    }
+    
     // MARK: IBAction
     @IBAction func tapStartCalendar(_ sender: UIButton) {
         print("첫번째")
