@@ -76,6 +76,13 @@ extension WriteVC {
         halfModalVC.modalPresentationStyle = .custom
         halfModalVC.transitioningDelegate = self
         halfModalVC.configureContent(type: content)
+        
+        /// dismiss 될 경우 다시 첫번 째 목표를 선택한다.
+        halfModalVC.reselectFirstItem = {
+            DispatchQueue.main.async {
+                self.setGoalCategoryCV()
+            }
+        }
         self.present(halfModalVC, animated: true, completion: nil)
     }
 }
@@ -85,6 +92,13 @@ extension WriteVC: UIViewControllerTransitioningDelegate {
     
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         let halfModalVC = PomeHalfModalVC(presentedViewController: presented, presenting: presenting)
+        
+        /// dismiss 될 경우 다시 첫번 째 목표를 선택한다.
+        halfModalVC.reselectFirstItem = {
+            DispatchQueue.main.async {
+                self.setGoalCategoryCV()
+            }
+        }
         
         /// HalfModalView의 높이 지정
         halfModalVC.modalHeight = 266

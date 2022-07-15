@@ -15,6 +15,7 @@ class WriteBottomAlertVC: UIViewController {
     @IBOutlet weak var subLabel: UILabel!
     @IBOutlet weak var imageHeight: NSLayoutConstraint!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    var reselectFirstItem: (() -> ())?
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class WriteBottomAlertVC: UIViewController {
     
     // MARK: IBAction
     @IBAction func tapCloseBtn(_ sender: UIButton) {
+        reselectFirstItem?()
         self.dismiss(animated: true)
     }
 }

@@ -14,6 +14,9 @@ class PomeHalfModalVC: UIPresentationController {
     var tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
     var modalHeight: CGFloat = 0
     
+    /// dismiss 될 때 알려주기 위한 클로저
+    var reselectFirstItem: (() -> ())?
+    
     /// 배경 (반투명 검정)에 대한 처리
     override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         backView.backgroundColor = UIColor.black
@@ -41,6 +44,7 @@ class PomeHalfModalVC: UIPresentationController {
     
     /// dismiss 시작될 때
     override func dismissalTransitionWillBegin() {
+        reselectFirstItem?()
         self.presentedViewController.transitionCoordinator?.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) in
             self.backView.alpha = 0
         }, completion: { (UIViewControllerTransitionCoordinatorContext) in
