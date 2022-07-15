@@ -19,6 +19,8 @@
 		1A4BB621287E0395007C8FC1 /* RemindGoalTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4BB61F287E0395007C8FC1 /* RemindGoalTitleTVC.xib */; };
 		1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */; };
 		1A76CACF287B1B3300B29500 /* MateHeaderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */; };
+		1AB882662881386600157820 /* RemindSelectFeelingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB882642881386600157820 /* RemindSelectFeelingVC.swift */; };
+		1AB882672881386600157820 /* RemindSelectFeelingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB882652881386600157820 /* RemindSelectFeelingVC.xib */; };
 		1ABDED76287E716E00F85F9C /* RemindFilterTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDED74287E716E00F85F9C /* RemindFilterTVC.swift */; };
 		1ABDED77287E716E00F85F9C /* RemindFilterTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDED75287E716E00F85F9C /* RemindFilterTVC.xib */; };
 		1ABDED79287F23E000F85F9C /* RemindHaveNoGoalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDED78287F23E000F85F9C /* RemindHaveNoGoalTVC.swift */; };
@@ -131,6 +133,8 @@
 		1A4BB61F287E0395007C8FC1 /* RemindGoalTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindGoalTitleTVC.xib; sourceTree = "<group>"; };
 		1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateHeaderCVC.swift; sourceTree = "<group>"; };
 		1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateHeaderCVC.xib; sourceTree = "<group>"; };
+		1AB882642881386600157820 /* RemindSelectFeelingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindSelectFeelingVC.swift; sourceTree = "<group>"; };
+		1AB882652881386600157820 /* RemindSelectFeelingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindSelectFeelingVC.xib; sourceTree = "<group>"; };
 		1ABDED74287E716E00F85F9C /* RemindFilterTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindFilterTVC.swift; sourceTree = "<group>"; };
 		1ABDED75287E716E00F85F9C /* RemindFilterTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindFilterTVC.xib; sourceTree = "<group>"; };
 		1ABDED78287F23E000F85F9C /* RemindHaveNoGoalTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindHaveNoGoalTVC.swift; sourceTree = "<group>"; };
@@ -581,6 +585,8 @@
 			children = (
 				77E8F2F92874B17800D2F6C0 /* RemindVC.swift */,
 				77E8F35F28765FA600D2F6C0 /* RemindNC.swift */,
+				1AB882642881386600157820 /* RemindSelectFeelingVC.swift */,
+				1AB882652881386600157820 /* RemindSelectFeelingVC.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -899,6 +905,7 @@
 				8400A406287C1782004F2D49 /* LookbackCompleteSB.storyboard in Resources */,
 				77E8F32C28756DAE00D2F6C0 /* Pretendard-Medium.otf in Resources */,
 				8432C9B328773A42001C643F /* SpendCVC.xib in Resources */,
+				1AB882672881386600157820 /* RemindSelectFeelingVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1024,6 +1031,7 @@
 				84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */,
 				77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */,
 				77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */,
+				1AB882662881386600157820 /* RemindSelectFeelingVC.swift in Sources */,
 				77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */,
 				1A4BB61C287DF5B7007C8FC1 /* RemindGoalTVC.swift in Sources */,
 				77E8F334287574B000D2F6C0 /* UITextField+.swift in Sources */,
@@ -1173,7 +1181,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 397WA8BG8W;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "POME-iOS/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1201,7 +1209,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 397WA8BG8W;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "POME-iOS/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -104,7 +104,41 @@ extension RemindVC {
     
     /// 목표 카테고리의 첫 아이템을 디폴트로 설정
     private func setDefaultSelectedCell() {
-        self.goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .left)
+        self.goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .right)
+    }
+}
+
+// MARK: - @objc
+extension RemindVC {
+
+    /// 만들어 둔 HalfModalVC 보여주는 함수
+    @objc func showHalfModalVC(_ index: Int) {
+        let halfModalVC = RemindSelectFeelingVC()
+//        halfModalVC.closure = { index in
+//            if index == 0 :
+//
+//
+//        }
+        halfModalVC.modalPresentationStyle = .custom
+        halfModalVC.transitioningDelegate = self
+        if index == 0 {
+            halfModalVC.isFirstEmotion = true
+        } else {
+            halfModalVC.isFirstEmotion = false
+        }
+        self.present(halfModalVC, animated: true, completion: nil)
+    }
+}
+
+// MARK: - UIViewControllerTransitioningDelegate
+extension RemindVC: UIViewControllerTransitioningDelegate {
+
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        let halfModalVC = PomeHalfModalVC(presentedViewController: presented, presenting: presenting)
+        
+        /// HalfModalView의 높이 지정
+        halfModalVC.modalHeight = 235.adjustedH
+        return halfModalVC
     }
 }
 
@@ -127,9 +161,9 @@ extension RemindVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let remindGoalTitleTVC = remindTV.dequeueReusableCell(withIdentifier: Identifiers.RemindGoalTitleTVC) as? RemindGoalTitleTVC,
               let remindFilterTVC = remindTV.dequeueReusableCell(withIdentifier: Identifiers.RemindFilterTVC) as? RemindFilterTVC,
-            let remindNoGoalTVC = remindTV.dequeueReusableCell(withIdentifier: Identifiers.RemindHaveNoGoalTVC) as? RemindHaveNoGoalTVC,
+              let remindNoGoalTVC = remindTV.dequeueReusableCell(withIdentifier: Identifiers.RemindHaveNoGoalTVC) as? RemindHaveNoGoalTVC,
               let remindGoalTVC = remindTV.dequeueReusableCell(withIdentifier: Identifiers.RemindGoalTVC) as? RemindGoalTVC else { return UITableViewCell() }
-
+        
         switch indexPath.section {
         case 0:
             if goalCount == 0 {
@@ -138,6 +172,13 @@ extension RemindVC: UITableViewDelegate {
             }
             return remindGoalTitleTVC
         case 1:
+            remindFilterTVC.tapFirstEmotionAction = {
+                self.showHalfModalVC(0)
+            }
+            remindFilterTVC.tapLaterEmotionAction = {
+                self.showHalfModalVC(1)
+            }
+
             return remindFilterTVC
         case 2:
             if goalCount == 0 {
