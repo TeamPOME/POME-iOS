@@ -57,13 +57,13 @@ extension WriteBottomAlertVC {
         default:
             DispatchQueue.main.async {
                 self.mainImageView.image = UIImage(named: "3DPenPink110")
-                self.titleLabel.text = "목표는 5개까지만 만들 수 있어요"
+                self.titleLabel.text = "목표는 10개까지만 만들 수 있어요"
                 self.subLabel.text = "포미는 사용자가 무리하지 않고 즐겁게 목표를\n달성할 수 있도록 응원하고 있어요"
                 
                 /// "5개" 글자만 색상을 변경한다.
                 guard let titleText = self.titleLabel.text else { return }
                 let attributeString = NSMutableAttributedString(string: titleText)
-                attributeString.addAttribute(.foregroundColor, value: UIColor.sub, range: (titleText as NSString).range(of: "5개"))
+                attributeString.addAttribute(.foregroundColor, value: UIColor.sub, range: (titleText as NSString).range(of: "10개"))
                 self.titleLabel.attributedText = attributeString
             }
         }
