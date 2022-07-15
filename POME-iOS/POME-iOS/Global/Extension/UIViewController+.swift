@@ -36,6 +36,30 @@ extension UIViewController {
     /**
      - Description: Alert
      */
+    /// 확인 버튼 1개, 취소 버튼 1개 ActionSheet 메서드
+    func makeOneAlertWithCancel(okTitle: String, okStyle: UIAlertAction.Style = .default,
+                                cancelTitle: String = "취소",
+                                okAction : ((UIAlertAction) -> Void)?, cancelAction : ((UIAlertAction) -> Void)? = nil,
+                                completion : (() -> Void)? = nil) {
+        
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+        
+        let alertViewController = UIAlertController(title: nil, message: nil,
+                                                    preferredStyle: .actionSheet)
+        
+        let okAction = UIAlertAction(title: okTitle, style: okStyle, handler: okAction)
+        alertViewController.addAction(okAction)
+        
+        let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel, handler: cancelAction)
+        alertViewController.addAction(cancelAction)
+        
+        self.present(alertViewController, animated: true, completion: completion)
+    }
+    
+    /**
+     - Description: Alert
+     */
     /// 확인 버튼 2개, 취소 버튼 1개 ActionSheet 메서드
     func makeTwoAlertWithCancel(okTitle: String, okStyle: UIAlertAction.Style = .default,
                                 secondOkTitle: String, secondOkStyle: UIAlertAction.Style = .default,

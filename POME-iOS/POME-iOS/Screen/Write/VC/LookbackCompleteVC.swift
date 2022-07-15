@@ -33,6 +33,11 @@ class LookbackCompleteVC: BaseVC {
         configureUI()
         setData()
     }
+    
+    // MARK: IBAction
+    @IBAction func tapCompleteBtn(_ sender: UIButton) {
+        navigationController?.popToRootViewController(animated: true)
+    }
 }
 
 // MARK: - UI
