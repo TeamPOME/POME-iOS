@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WriteBottomAlertVC: UIViewController {
+class WriteBottomAlertVC: BaseVC {
     
     // MARK: IBOutlet
     @IBOutlet weak var mainImageView: UIImageView!
