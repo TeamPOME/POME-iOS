@@ -89,7 +89,7 @@ extension UIColor {
       return UIColor(red: 226.0 / 255.0, green: 252.0 / 255.0, blue: 231.0 / 255.0, alpha: 1.0)
     }
     
-    @nonobjc class var kakaoYello: UIColor {
+    @nonobjc class var kakaoYellow: UIColor {
         return UIColor(red: 254.0 / 255.0, green: 229.0 / 255.0, blue: 0.0 / 255.0, alpha: 1.0)
     }
 }

@@ -29,7 +29,7 @@ class SignInVC: BaseVC {
     
     private let kakaoBtn = UIButton().then {
         $0.makeRounded(cornerRadius: 6.adjusted)
-        $0.backgroundColor = .kakaoYello
+        $0.backgroundColor = .kakaoYellow
         $0.setTitle("카카오로 시작하기", for: .normal)
         $0.titleEdgeInsets = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 0)
         $0.titleLabel?.font = .systemFont(ofSize: 15, weight: .medium)
