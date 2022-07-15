@@ -20,6 +20,7 @@ struct Identifiers {
     static let LookbackCompleteSB = "LookbackCompleteSB"
     static let LookbackSelectSB = "LookbackSelectSB"
     static let SelectFeelingSB = "SelectFeelingSB"
+    static let AddGoalDateSB = "AddGoalDateSB"
     static let GoalCardCVC = "GoalCardCVC"
     static let HaveNoMateTVC = "HaveNoMateTVC"
     static let MateHeaderCVC = "MateHeaderCVC"
