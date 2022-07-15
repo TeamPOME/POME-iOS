@@ -15,7 +15,7 @@ class WriteVC: BaseVC {
     @IBOutlet weak var writeMainCV: UICollectionView!
     
     // MARK: Properties
-    private var category: [String] = ["목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료"]
+    private var category: [String] = ["목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료", "목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료"]
     private var spend: [String] = ["spend1", "spend2", "spend3", "spend4"]
     
     // MARK: Life Cycle
@@ -24,7 +24,11 @@ class WriteVC: BaseVC {
         setDelegate()
         registerCV()
         configureNaviBar()
-        configureCategoryCV()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        showTabbar()
+        setGoalCategoryCV()
     }
 }
 
@@ -35,16 +39,9 @@ extension WriteVC {
         writeHomeNaviBar.setNaviStyle(state: .greyWithRightBtn)
     }
     
-    private func configureCategoryCV() {
-        
-        /// plus 버튼 추가
-        let plusBtn = UIButton(frame: CGRect(x: 16, y: (42 / 2) - (29 / 2), width: 52.adjusted, height:29))
-        plusBtn.setImage(UIImage(named: "btnGoalCategory"), for: UIControl.State.normal)
-        
-        // TODO: - 클릭 시 카테고리 추가로 이동
-        // plusBtn.addTarget(self, action: <#Selector#>, for: UIControl.Event.touchUpInside)
-        
-        goalCategoryCV.addSubview(plusBtn)
+    /// 목표 카테고리의 첫 아이템을 디폴트로 설정
+    private func setGoalCategoryCV() {
+        self.goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .right)
     }
 }
 
@@ -62,10 +59,28 @@ extension WriteVC {
         FeelingCardCVC.register(target: writeMainCV)
         EmptyGoalCardCVC.register(target: writeMainCV)
         SpendCVC.register(target: writeMainCV)
-        
-        // TODO: - GoalCardCVC 등록 필요
-        // GoalCardCVC.register(target: writeMainCV)
+        GoalCardCVC.register(target: writeMainCV)
         GoalCategoryCVC.register(target: goalCategoryCV)
+        PlusCVC.register(target: goalCategoryCV)
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension WriteVC: UICollectionViewDelegate {
+    
+    /// 셀이 선택되었을 때의 처리
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == goalCategoryCV {
+            
+            /// 플러스 버튼 눌렀을 때
+            if indexPath.row == 0 {
+                
+                // TODO: - 목표 추가 뷰로 이동
+            } else {
+                
+                // TODO: - 서버 통신 (setData 필요)
+            }
+        }
     }
 }
 
@@ -80,7 +95,7 @@ extension WriteVC: UICollectionViewDataSource {
     /// 섹션 별 셀 개수 지정
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == goalCategoryCV {
-            return category.count
+            return category.count + 1
         } else {
             return (section == 2) ? spend.count : 1
         }
@@ -89,20 +104,19 @@ extension WriteVC: UICollectionViewDataSource {
     // CV, 섹션 별 셀 지정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let EmptyGoalCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: EmptyGoalCardCVC.className, for: indexPath) as? EmptyGoalCardCVC,
-        let feelingCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: FeelingCardCVC.className, for: indexPath) as? FeelingCardCVC,
-        let spendCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: SpendCVC.className, for: indexPath) as? SpendCVC,
-        let goalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: GoalCategoryCVC.className, for: indexPath) as? GoalCategoryCVC else { return UICollectionViewCell() }
-
+              let GoalCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: GoalCardCVC.className, for: indexPath) as? GoalCardCVC,
+              let feelingCardCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: FeelingCardCVC.className, for: indexPath) as? FeelingCardCVC,
+              let spendCVC = writeMainCV.dequeueReusableCell(withReuseIdentifier: SpendCVC.className, for: indexPath) as? SpendCVC,
+              let goalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: GoalCategoryCVC.className, for: indexPath) as? GoalCategoryCVC,
+              let plusCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: PlusCVC.className, for: indexPath) as? PlusCVC else { return UICollectionViewCell() }
         
         if collectionView == goalCategoryCV {
-            goalCategoryCVC.goalLabel.text = category[indexPath.row]
-            
-            /// 목표 카테고리의 첫 아이템을 디폴트로 설정
-            if indexPath.item == 0 {
-                goalCategoryCVC.isSelected = true
-                goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .right)
+            if indexPath.row == 0 {
+                return plusCVC
+            } else {
+                goalCategoryCVC.goalLabel.text = category[indexPath.row - 1]
+                return goalCategoryCVC
             }
-            return goalCategoryCVC
         } else {
             switch indexPath.section {
             case 0:
@@ -110,15 +124,64 @@ extension WriteVC: UICollectionViewDataSource {
                     EmptyGoalCardCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
                     return EmptyGoalCardCVC
                 } else {
+                    GoalCardCVC.setData(GoalDataModel.sampleData[indexPath.row])
+                    GoalCardCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
                     
-                    // TODO: - GoalCardCVC로 변경 필요
-                    EmptyGoalCardCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
-                    return EmptyGoalCardCVC
+                    /// 목표 카드의 more 버튼을 누를 경우 action sheet를 띄운다.
+                    GoalCardCVC.tapMoreBtn = {
+                        self.makeOneAlertWithCancel(okTitle: "삭제하기", okAction: { _ in
+                            let alert = PomeAlertVC()
+                            alert.showPomeAlertVC(vc: self, title: "목표를 삭제하시겠어요?", subTitle: "해당 목표에서 작성한 기록도 모두 삭제돼요", cancelBtnTitle: "아니요", confirmBtnTitle: "삭제할게요")
+                            
+                            /// 알럿창의 취소버튼(왼쪽 버튼) 누르는 경우 alert dismiss
+                            alert.cancelBtn.press { [weak self] in
+                                self?.dismiss(animated: true)
+                            }
+                            
+                            /// 알럿창의 확인버튼(오른쪽 버튼) 누르는 경우 삭제 서버 통신
+                            alert.confirmBtn.press { [weak self] in
+                                
+                                // TODO: - 삭제 서버 통신 필요
+                                print("목표카드 삭제합니다.")
+                                self?.dismiss(animated: true)
+                            }
+                        })
+                    }
+                    return GoalCardCVC
                 }
             case 1:
+                feelingCardCVC.tapLookbackView = {
+                    guard let lookbackVC = UIStoryboard.init(name: Identifiers.LookbackSB, bundle: nil).instantiateViewController(withIdentifier: LookbackVC.className) as? LookbackVC else { return }
+                    self.navigationController?.pushViewController(lookbackVC, animated: true)
+                }
                 return feelingCardCVC
             default:
                 spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
+                
+                /// 씀씀이 셀의 more 버튼을 누를 경우 action sheet를 띄운다.
+                spendCVC.tapMoreBtn = {
+                    self.makeTwoAlertWithCancel(okTitle: "수정하기", secondOkTitle: "삭제하기", okAction: { _ in
+                        
+                        // TODO: - 수정 뷰로 화면 전환
+                        print("씀씀이 수정합니다.")
+                    }, secondOkAction: { _ in
+                        let alert = PomeAlertVC()
+                        alert.showPomeAlertVC(vc: self, title: "기록을 삭제하시겠어요?", subTitle: "삭제한 내용은 다시 되돌릴 수 없어요", cancelBtnTitle: "아니요", confirmBtnTitle: "삭제할게요")
+                        
+                        /// 알럿창의 취소버튼(왼쪽 버튼) 누르는 경우 alert dismiss
+                        alert.cancelBtn.press { [weak self] in
+                            self?.dismiss(animated: true)
+                        }
+                        
+                        /// 알럿창의 확인버튼(오른쪽 버튼) 누르는 경우 삭제 서버 통신
+                        alert.confirmBtn.press { [weak self] in
+                            
+                            // TODO: - 삭제 서버 통신 필요
+                            print("씀씀이 삭제합니다.")
+                            self?.dismiss(animated: true)
+                        }
+                    })
+                }
                 return spendCVC
             }
         }
@@ -131,13 +194,17 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
     /// 섹션에 따라 셀 크기 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == goalCategoryCV {
-            
-            /// 글씨 길이에 따라 너비 동적 조절
-            return CGSize(width: category[indexPath.row].size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
+            if indexPath.row == 0 {
+                return CGSize(width: 52, height: 29)
+            } else {
+                
+                /// 글씨 길이에 따라 너비 동적 조절
+                return CGSize(width: category[indexPath.row - 1].size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
+            }
         } else {
             switch indexPath.section {
             case 0:
-                return CGSize(width: 343.adjusted, height: 157)
+                return CGSize(width: 343.adjusted, height: 157.adjustedH)
             case 1:
                 return CGSize(width: 343.adjusted, height: 118)
             default:
@@ -149,7 +216,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
     /// 섹션에 인셋 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == goalCategoryCV {
-            return UIEdgeInsets(top: 7, left: 76, bottom: 6, right: 16)
+            return UIEdgeInsets(top: 7, left: 0, bottom: 6, right: 16)
         } else {
             switch section {
             case 0:
@@ -157,7 +224,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
             case 1:
                 return UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16)
             default:
-                return UIEdgeInsets(top: 12, left: 16, bottom: 0, right: 16)
+                return UIEdgeInsets(top: 12, left: 16, bottom: 16, right: 16)
             }
         }
     }

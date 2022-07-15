@@ -96,6 +96,7 @@
             </collectionViewCellContentView>
             <size key="customSize" width="405" height="203"/>
             <connections>
+                <outlet property="cardView" destination="izk-mN-RFs" id="Xc2-nx-yxB"/>
                 <outlet property="remindNumLabel" destination="nMK-Pl-1r8" id="S00-M9-qHY"/>
             </connections>
             <point key="canvasLocation" x="209.42028985507247" y="69.642857142857139"/>

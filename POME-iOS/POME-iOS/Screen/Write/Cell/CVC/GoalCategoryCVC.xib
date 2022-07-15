@@ -25,7 +25,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ugx-Bi-wBk">
                         <rect key="frame" x="0.0" y="0.0" width="52" height="29"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ij-xJ-pNf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ij-xJ-pNf">
                                 <rect key="frame" x="16" y="6" width="20" height="17"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
                                 <color key="textColor" name="grey_5"/>
@@ -33,10 +33,10 @@
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="9ij-xJ-pNf" secondAttribute="trailing" constant="16" id="59T-OM-l94"/>
-                            <constraint firstItem="9ij-xJ-pNf" firstAttribute="top" secondItem="Ugx-Bi-wBk" secondAttribute="top" constant="6" id="AzR-ro-VLK"/>
-                            <constraint firstItem="9ij-xJ-pNf" firstAttribute="leading" secondItem="Ugx-Bi-wBk" secondAttribute="leading" constant="16" id="Grp-Bw-t3G"/>
-                            <constraint firstAttribute="bottom" secondItem="9ij-xJ-pNf" secondAttribute="bottom" constant="6" id="Y3g-dy-3RK"/>
+                            <constraint firstAttribute="bottom" secondItem="9ij-xJ-pNf" secondAttribute="bottom" constant="6" id="Rii-VW-zM6"/>
+                            <constraint firstAttribute="trailing" secondItem="9ij-xJ-pNf" secondAttribute="trailing" constant="16" id="Uus-uR-nKq"/>
+                            <constraint firstItem="9ij-xJ-pNf" firstAttribute="leading" secondItem="Ugx-Bi-wBk" secondAttribute="leading" constant="16" id="mVz-Bu-yto"/>
+                            <constraint firstItem="9ij-xJ-pNf" firstAttribute="top" secondItem="Ugx-Bi-wBk" secondAttribute="top" constant="6" id="w0K-U3-dIF"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -48,10 +48,10 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Ugx-Bi-wBk" secondAttribute="trailing" id="7OD-Wk-qfD"/>
-                <constraint firstItem="Ugx-Bi-wBk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Gfk-Zx-FRp"/>
-                <constraint firstItem="Ugx-Bi-wBk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="hc1-hc-rJB"/>
-                <constraint firstAttribute="bottom" secondItem="Ugx-Bi-wBk" secondAttribute="bottom" id="oYS-Rt-E7f"/>
+                <constraint firstAttribute="trailing" secondItem="Ugx-Bi-wBk" secondAttribute="trailing" id="8uF-qQ-P6m"/>
+                <constraint firstItem="Ugx-Bi-wBk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wd2-C6-GIK"/>
+                <constraint firstAttribute="bottom" secondItem="Ugx-Bi-wBk" secondAttribute="bottom" id="cof-iI-RFD"/>
+                <constraint firstItem="Ugx-Bi-wBk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="f2n-OV-qa8"/>
             </constraints>
             <size key="customSize" width="260" height="151"/>
             <userDefinedRuntimeAttributes>

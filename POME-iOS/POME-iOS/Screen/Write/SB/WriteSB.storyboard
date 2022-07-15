@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zsx-4j-blm">
-                                <rect key="frame" x="0.0" y="88" width="375" height="42"/>
+                                <rect key="frame" x="16" y="88" width="359" height="42"/>
                                 <color key="backgroundColor" name="grey_0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Gvh-0O-iLp"/>
@@ -29,16 +28,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1A3-MU-wbP">
-                                        <rect key="frame" x="0.0" y="-43" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9P4-V8-zeL">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Btg-DO-8q4" customClass="PomeNaviBar" customModule="POME_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -56,16 +46,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KhW-8L-f7S">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YCn-Rz-52R">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMY-oy-SiQ">
                                 <rect key="frame" x="307" y="710" width="52" height="52"/>
@@ -82,7 +63,7 @@
                         <constraints>
                             <constraint firstItem="zsx-4j-blm" firstAttribute="top" secondItem="Btg-DO-8q4" secondAttribute="bottom" id="01v-t8-Efy"/>
                             <constraint firstItem="Btg-DO-8q4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0NU-eS-u4Y"/>
-                            <constraint firstItem="zsx-4j-blm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0cI-xM-e4p"/>
+                            <constraint firstItem="zsx-4j-blm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="0cI-xM-e4p"/>
                             <constraint firstItem="Btg-DO-8q4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="3OK-c2-sme"/>
                             <constraint firstItem="wNH-qz-TOz" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ACX-fh-Pge"/>
                             <constraint firstItem="wNH-qz-TOz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="BE3-JR-NOq"/>

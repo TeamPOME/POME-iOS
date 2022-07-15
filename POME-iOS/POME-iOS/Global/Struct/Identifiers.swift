@@ -14,6 +14,7 @@ struct Identifiers {
     static let MypageSB = "MypageSB"
     static let SignUpSB = "SignUpSB"
     static let SignInSB = "SignInSB"
+    static let AddFriendSB = "AddFriendSB"
     static let SignUpNC = "SignUpNC"
     static let LookbackSB = "LookbackSB"
     static let LookbackCompleteSB = "LookbackCompleteSB"

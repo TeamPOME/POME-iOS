@@ -34,6 +34,11 @@
 		77B5719D287D68E300C9CC27 /* SignUpNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B5719C287D68E300C9CC27 /* SignUpNC.swift */; };
 		77B571B528811E5900C9CC27 /* SignInSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B571B428811E5900C9CC27 /* SignInSB.storyboard */; };
 		77B571B728811E7200C9CC27 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571B628811E7200C9CC27 /* SignInVC.swift */; };
+		77B5719F287FF54900C9CC27 /* AddFriendSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B5719E287FF54900C9CC27 /* AddFriendSB.storyboard */; };
+		77B571A1287FF58300C9CC27 /* AddFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571A0287FF58300C9CC27 /* AddFriendVC.swift */; };
+		77B571A6287FF6C400C9CC27 /* FriendProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571A4287FF6C400C9CC27 /* FriendProfileTVC.swift */; };
+		77B571A928805C3100C9CC27 /* FriendListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571A828805C3100C9CC27 /* FriendListDataModel.swift */; };
+		77B571B32880BD8D00C9CC27 /* ProfileCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571B22880BD8D00C9CC27 /* ProfileCellDelegate.swift */; };
 		77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */; };
 		77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */; };
 		77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2C12874A23800D2F6C0 /* Assets.xcassets */; };
@@ -118,6 +123,8 @@
 		84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B77276287B3E4B00E1EDFC /* LookbackVC.swift */; };
 		84B7727B287BD82000E1EDFC /* LookbackSelectSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B7727A287BD82000E1EDFC /* LookbackSelectSB.storyboard */; };
 		84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7727C287BD83D00E1EDFC /* LookbackSelectVC.swift */; };
+		84DC1ADA2880788C0057C55D /* PlusCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC1AD82880788C0057C55D /* PlusCVC.swift */; };
+		84DC1ADB2880788C0057C55D /* PlusCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DC1AD92880788C0057C55D /* PlusCVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,6 +154,11 @@
 		778E0F53287C43D300BEEEA5 /* PomeAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeAlertVC.swift; sourceTree = "<group>"; };
 		77B5719A287D458500C9CC27 /* CompleteSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpVC.swift; sourceTree = "<group>"; };
 		77B5719C287D68E300C9CC27 /* SignUpNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNC.swift; sourceTree = "<group>"; };
+		77B5719E287FF54900C9CC27 /* AddFriendSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddFriendSB.storyboard; sourceTree = "<group>"; };
+		77B571A0287FF58300C9CC27 /* AddFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendVC.swift; sourceTree = "<group>"; };
+		77B571A4287FF6C400C9CC27 /* FriendProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileTVC.swift; sourceTree = "<group>"; };
+		77B571A828805C3100C9CC27 /* FriendListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListDataModel.swift; sourceTree = "<group>"; };
+		77B571B22880BD8D00C9CC27 /* ProfileCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellDelegate.swift; sourceTree = "<group>"; };
 		77B571B428811E5900C9CC27 /* SignInSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSB.storyboard; sourceTree = "<group>"; };
 		77B571B628811E7200C9CC27 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		77E8F2B52874A23700D2F6C0 /* POME-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POME-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,6 +248,8 @@
 		84B77276287B3E4B00E1EDFC /* LookbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackVC.swift; sourceTree = "<group>"; };
 		84B7727A287BD82000E1EDFC /* LookbackSelectSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LookbackSelectSB.storyboard; sourceTree = "<group>"; };
 		84B7727C287BD83D00E1EDFC /* LookbackSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackSelectVC.swift; sourceTree = "<group>"; };
+		84DC1AD82880788C0057C55D /* PlusCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusCVC.swift; sourceTree = "<group>"; };
+		84DC1AD92880788C0057C55D /* PlusCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlusCVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,7 +276,10 @@
 			isa = PBXGroup;
 			children = (
 				778E0F4D287B26FE00BEEEA5 /* SB */,
+				778E0F4F287B273900BEEEA5 /* SignUpSB.storyboard */,
+				77B5719E287FF54900C9CC27 /* AddFriendSB.storyboard */,
 				778E0F4E287B270500BEEEA5 /* VC */,
+				77B571A2287FF5A500C9CC27 /* Cell */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -283,8 +300,25 @@
 				77B5719A287D458500C9CC27 /* CompleteSignUpVC.swift */,
 				77B5719C287D68E300C9CC27 /* SignUpNC.swift */,
 				77B571B628811E7200C9CC27 /* SignInVC.swift */,
+				77B571A0287FF58300C9CC27 /* AddFriendVC.swift */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		77B571A2287FF5A500C9CC27 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				77B571A3287FF5B300C9CC27 /* TVC */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		77B571A3287FF5B300C9CC27 /* TVC */ = {
+			isa = PBXGroup;
+			children = (
+				77B571A4287FF6C400C9CC27 /* FriendProfileTVC.swift */,
+			);
+			path = TVC;
 			sourceTree = "<group>";
 		};
 		77E8F2AC2874A23700D2F6C0 = {
@@ -413,6 +447,7 @@
 			children = (
 				77E8F3512875F54000D2F6C0 /* CVRegisterable.swift */,
 				77E8F3532875F56000D2F6C0 /* TVRegisterable.swift */,
+				77B571B22880BD8D00C9CC27 /* ProfileCellDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -560,6 +595,8 @@
 				84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */,
 				84B77270287B369200E1EDFC /* LookbackCVC.swift */,
 				84B77271287B369200E1EDFC /* LookbackCVC.xib */,
+				84DC1AD82880788C0057C55D /* PlusCVC.swift */,
+				84DC1AD92880788C0057C55D /* PlusCVC.xib */,
 			);
 			path = CVC;
 			sourceTree = "<group>";
@@ -569,6 +606,7 @@
 			children = (
 				1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */,
 				1ABDED7A287F250600F85F9C /* RemindGoalDataModel.swift */,
+				77B571A828805C3100C9CC27 /* FriendListDataModel.swift */,
 			);
 			path = AppModel;
 			sourceTree = "<group>";
@@ -884,6 +922,7 @@
 				8432C9BB28784533001C643F /* EmptyGoalCardCVC.xib in Resources */,
 				84B77273287B369200E1EDFC /* LookbackCVC.xib in Resources */,
 				1ABDED83287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib in Resources */,
+				84DC1ADB2880788C0057C55D /* PlusCVC.xib in Resources */,
 				77E8F2CD2874A38600D2F6C0 /* Colorsets.xcassets in Resources */,
 				1A4BB61D287DF5B7007C8FC1 /* RemindGoalTVC.xib in Resources */,
 				77E8F2C52874A23800D2F6C0 /* LaunchScreen.storyboard in Resources */,
@@ -903,6 +942,7 @@
 				77E8F32A28756DA100D2F6C0 /* Pretendard-Regular.otf in Resources */,
 				77E8F32628756D8200D2F6C0 /* Pretendard-Bold.otf in Resources */,
 				84B77275287B3E3A00E1EDFC /* LookbackSB.storyboard in Resources */,
+				77B5719F287FF54900C9CC27 /* AddFriendSB.storyboard in Resources */,
 				8400A406287C1782004F2D49 /* LookbackCompleteSB.storyboard in Resources */,
 				77E8F32C28756DAE00D2F6C0 /* Pretendard-Medium.otf in Resources */,
 				8432C9B328773A42001C643F /* SpendCVC.xib in Resources */,
@@ -979,9 +1019,11 @@
 				77B5719D287D68E300C9CC27 /* SignUpNC.swift in Sources */,
 				77E8F3772876938800D2F6C0 /* GenericResponse.swift in Sources */,
 				77E8F2FA2874B17800D2F6C0 /* RemindVC.swift in Sources */,
+				77B571B32880BD8D00C9CC27 /* ProfileCellDelegate.swift in Sources */,
 				77E8F3242874B80A00D2F6C0 /* MypageXib.swift in Sources */,
 				1A10C2582877367100489CA1 /* GoalStorageDataModel.swift in Sources */,
 				77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */,
+				84DC1ADA2880788C0057C55D /* PlusCVC.swift in Sources */,
 				77E8F37D2876944B00D2F6C0 /* BaseAPI.swift in Sources */,
 				77E8F2FE2874B1A100D2F6C0 /* RemindCVC.swift in Sources */,
 				77E8F3362875754E00D2F6C0 /* UIButton+.swift in Sources */,
@@ -1002,6 +1044,7 @@
 				8400A408287C17C5004F2D49 /* LookbackCompleteVC.swift in Sources */,
 				77E8F3422875EBD500D2F6C0 /* CALayer+.swift in Sources */,
 				77E8F3712876931D00D2F6C0 /* NetworkResult.swift in Sources */,
+				77B571A6287FF6C400C9CC27 /* FriendProfileTVC.swift in Sources */,
 				778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */,
 				77E8F3562875F5A400D2F6C0 /* BaseTVC.swift in Sources */,
 				1A10C2562877349E00489CA1 /* GoalCardCVC.swift in Sources */,
@@ -1022,8 +1065,10 @@
 				77E8F3832876F25400D2F6C0 /* xib.swift in Sources */,
 				1ABDED76287E716E00F85F9C /* RemindFilterTVC.swift in Sources */,
 				77E8F33E2875EA6B00D2F6C0 /* Adjusted+.swift in Sources */,
+				77B571A928805C3100C9CC27 /* FriendListDataModel.swift in Sources */,
 				77E8F3482875F25000D2F6C0 /* TypeOfViewController.swift in Sources */,
 				77E8F3442875ECAE00D2F6C0 /* UITextView+.swift in Sources */,
+				77B571A1287FF58300C9CC27 /* AddFriendVC.swift in Sources */,
 				77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */,
 				77E8F37B2876943800D2F6C0 /* WriteResModel.swift in Sources */,
 				77E8F3162874B57700D2F6C0 /* MateCVC.swift in Sources */,
