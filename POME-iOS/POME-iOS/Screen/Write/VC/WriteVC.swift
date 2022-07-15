@@ -15,7 +15,7 @@ class WriteVC: BaseVC {
     @IBOutlet weak var writeMainCV: UICollectionView!
     
     // MARK: Properties
-    private var category: [String] = []
+    private var category: [String] = ["category1", "category2", "category3", "category4", "category5", "category6", "category7", "category8"]
     private var spend: [String] = ["spend1", "spend2", "spend3", "spend4"]
     
     // MARK: Life Cycle
@@ -67,6 +67,31 @@ extension WriteVC {
     }
 }
 
+// MARK: - @objc
+extension WriteVC {
+    
+    /// 만들어 둔 HalfModalVC 보여주는 함수
+    @objc func showHalfModalVC(content: String) {
+        let halfModalVC = WriteBottomAlertVC()
+        halfModalVC.modalPresentationStyle = .custom
+        halfModalVC.transitioningDelegate = self
+        halfModalVC.configureContent(type: content)
+        self.present(halfModalVC, animated: true, completion: nil)
+    }
+}
+
+// MARK: - UIViewControllerTransitioningDelegate
+extension WriteVC: UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        let halfModalVC = PomeHalfModalVC(presentedViewController: presented, presenting: presenting)
+        
+        /// HalfModalView의 높이 지정
+        halfModalVC.modalHeight = 266
+        return halfModalVC
+    }
+}
+
 // MARK: - UICollectionViewDelegate
 extension WriteVC: UICollectionViewDelegate {
     
@@ -76,8 +101,13 @@ extension WriteVC: UICollectionViewDelegate {
             
             /// 플러스 버튼 눌렀을 때
             if indexPath.row == 0 {
-                
-                // TODO: - 목표 추가 뷰로 이동
+                if category.count >= 5 {
+                    showHalfModalVC(content: "goal")
+                } else {
+                    
+                    // TODO: - 목표 추가 뷰로 이동
+                    print("목표 추가 뷰로 이동합니다.")
+                }
             } else {
                 
                 // TODO: - 서버 통신 (setData 필요)
