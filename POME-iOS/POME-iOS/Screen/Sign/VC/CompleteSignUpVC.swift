@@ -37,7 +37,7 @@ class CompleteSignUpVC: BaseVC {
     
     private let cancelBtn = PomeBtn().then {
         $0.makeSubBtn()
-        $0.isDisabled = true
+        $0.isDisabled = false
         $0.setTitle("다음에 할래요", for: .normal)
     }
     
@@ -49,6 +49,8 @@ class CompleteSignUpVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        setTapCancelBtn()
+        setTapConfirmBtn()
     }
 }
 
@@ -86,6 +88,31 @@ extension CompleteSignUpVC {
             $0.bottom.equalTo(confirmBtn.snp.top).offset(-12)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
             $0.height.equalTo(50)
+        }
+    }
+}
+
+// MARK: - Custom Methods
+extension CompleteSignUpVC {
+    
+    /// 다음에 할래요 버튼 tap Action 설정 메서드
+    private func setTapCancelBtn() {
+        cancelBtn.press { [weak self] in
+            guard let self = self else { return }
+            
+            let pomeTBC = PomeTBC()
+            pomeTBC.modalPresentationStyle = .fullScreen
+            self.present(pomeTBC, animated: true, completion: nil)
+        }
+    }
+    
+    /// 추가할래요 버튼 tap Action 설정 메서드
+    private func setTapConfirmBtn() {
+        confirmBtn.press { [weak self] in
+            guard let self = self else { return }
+            guard let nextVC = UIStoryboard.init(name: Identifiers.AddFriendSB, bundle: nil).instantiateViewController(withIdentifier: AddFriendVC.className) as? AddFriendVC else { return }
+            
+            self.navigationController?.pushViewController(nextVC, animated: true)
         }
     }
 }

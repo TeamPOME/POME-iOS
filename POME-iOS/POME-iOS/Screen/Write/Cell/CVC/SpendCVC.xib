@@ -43,6 +43,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="icMore2020"/>
+                                <connections>
+                                    <action selector="tapMoreBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ssr-M5-DAg"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icEmojiBackground" translatesAutoresizingMaskIntoConstraints="NO" id="d2w-qe-Yxc">
                                 <rect key="frame" x="30" y="44" width="106" height="56"/>
@@ -60,32 +63,32 @@
                                     <constraint firstAttribute="height" constant="56" id="ozy-Rh-XCI"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnEmojiQuestion38" translatesAutoresizingMaskIntoConstraints="NO" id="bOl-ay-uWA">
-                                <rect key="frame" x="80" y="44" width="56" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="56" id="XhV-b4-TAV"/>
-                                    <constraint firstAttribute="height" constant="56" id="b14-fL-jFL"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100,000,000원" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hed-t1-V0l">
                                 <rect key="frame" x="16" y="114" width="134" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="18"/>
                                 <color key="textColor" name="grey_8"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itc-DW-GTb">
+                                <rect key="frame" x="80" y="44" width="56" height="56"/>
+                                <state key="normal" image="btnEmojiQuestion38"/>
+                                <connections>
+                                    <action selector="tapPlusBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="0Go-tu-9dI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Vux-17-HjT" firstAttribute="leading" secondItem="hi0-tR-4z6" secondAttribute="leading" constant="16" id="2Oi-EQ-haZ"/>
-                            <constraint firstItem="d2w-qe-Yxc" firstAttribute="trailing" secondItem="bOl-ay-uWA" secondAttribute="trailing" id="98k-Mf-KTw"/>
                             <constraint firstItem="WYM-Bq-PBA" firstAttribute="leading" secondItem="d2w-qe-Yxc" secondAttribute="leading" id="9oe-n9-SNT"/>
                             <constraint firstAttribute="trailing" secondItem="GKu-1c-aQc" secondAttribute="trailing" constant="16" id="EMc-bA-vME"/>
                             <constraint firstItem="Hed-t1-V0l" firstAttribute="top" secondItem="d2w-qe-Yxc" secondAttribute="bottom" constant="14" id="Erd-wQ-L98"/>
                             <constraint firstItem="Vux-17-HjT" firstAttribute="top" secondItem="hi0-tR-4z6" secondAttribute="top" constant="16" id="H2b-h9-lfN"/>
+                            <constraint firstItem="itc-DW-GTb" firstAttribute="centerY" secondItem="d2w-qe-Yxc" secondAttribute="centerY" id="I8c-kv-hUz"/>
                             <constraint firstAttribute="trailing" secondItem="JhF-jO-VB2" secondAttribute="trailing" constant="12" id="TDr-wY-0KU"/>
                             <constraint firstItem="Hed-t1-V0l" firstAttribute="leading" secondItem="hi0-tR-4z6" secondAttribute="leading" constant="16" id="Xsx-Ev-gtV"/>
                             <constraint firstAttribute="trailing" secondItem="Hed-t1-V0l" secondAttribute="trailing" constant="16" id="aV6-au-SXL"/>
-                            <constraint firstItem="bOl-ay-uWA" firstAttribute="centerY" secondItem="d2w-qe-Yxc" secondAttribute="centerY" id="drW-rd-7lI"/>
+                            <constraint firstItem="d2w-qe-Yxc" firstAttribute="trailing" secondItem="itc-DW-GTb" secondAttribute="trailing" id="gW7-Sf-nik"/>
                             <constraint firstItem="WYM-Bq-PBA" firstAttribute="centerY" secondItem="d2w-qe-Yxc" secondAttribute="centerY" id="hn9-bU-JCn"/>
                             <constraint firstItem="JhF-jO-VB2" firstAttribute="top" secondItem="hi0-tR-4z6" secondAttribute="top" constant="16" id="maj-M5-cJG"/>
                             <constraint firstItem="d2w-qe-Yxc" firstAttribute="top" secondItem="hi0-tR-4z6" secondAttribute="top" constant="44" id="nAO-Jo-YTz"/>
@@ -112,9 +115,9 @@
             <connections>
                 <outlet property="contentLabel" destination="GKu-1c-aQc" id="VfO-cv-qt9"/>
                 <outlet property="dateLabel" destination="Vux-17-HjT" id="3dA-BE-MK0"/>
-                <outlet property="leftEmojiImageView" destination="WYM-Bq-PBA" id="UCK-EX-qLZ"/>
+                <outlet property="leftEmojiImageView" destination="WYM-Bq-PBA" id="0ai-gf-N6s"/>
                 <outlet property="priceLabel" destination="Hed-t1-V0l" id="i1p-lM-V6m"/>
-                <outlet property="rightEmojiImageView" destination="bOl-ay-uWA" id="6p1-lO-3hM"/>
+                <outlet property="rightEmojiBtn" destination="itc-DW-GTb" id="Hn6-0X-Ua2"/>
             </connections>
             <point key="canvasLocation" x="269.56521739130437" y="163.39285714285714"/>
         </collectionViewCell>

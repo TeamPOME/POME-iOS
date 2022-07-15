@@ -46,7 +46,7 @@ class PomeNaviBar: UIView {
         $0.contentMode = .scaleAspectFit
     }
     
-    private (set) lazy var rightCustomBtn = UIButton().then {
+    lazy var rightCustomBtn = UIButton().then {
         $0.setImgByName(name: "icAlarmAll", selectedName: nil)
         $0.contentMode = .scaleAspectFit
     }
@@ -122,7 +122,7 @@ extension PomeNaviBar {
         }
         
         titleLabel.snp.makeConstraints {
-            $0.centerX.centerX.equalToSuperview()
+            $0.centerX.centerY.equalToSuperview()
         }
     }
     

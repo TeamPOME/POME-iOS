@@ -22,6 +22,11 @@ class LookbackVC: BaseVC {
         configureNaviBar()
         setDelegate()
         registerCV()
+        setTapBackBtn()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        hideTabbar()
     }
 }
 
@@ -44,6 +49,12 @@ extension LookbackVC {
     private func registerCV() {
         LookbackCVC.register(target: lookbackMainCV)
         SpendCVC.register(target: lookbackMainCV)
+    }
+    
+    private func setTapBackBtn() {
+        naviBar.backBtn.press { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
     }
 }
 
@@ -76,8 +87,38 @@ extension LookbackVC: UICollectionViewDataSource {
             if spend.count > 0 {
                 
                 // TODO: - 서버에서 받은 이모지 정보가 있을 경우 해당 이모지로 변경, 이 뷰에서 오른쪽 이모지 default는 btnEmojiPlus38
-                spendCVC.rightEmojiImageView.image = UIImage(named: "btnEmojiPlus38")
+                spendCVC.rightEmojiBtn.imageView?.image = UIImage(named: "btnEmojiPlus38")
                 spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
+                
+                /// 씀씀이 셀의 more 버튼을 누를 경우 action sheet를 띄운다.
+                spendCVC.tapMoreBtn = {
+                    self.makeTwoAlertWithCancel(okTitle: "수정하기", secondOkTitle: "삭제하기", okAction: { _ in
+                        
+                        // TODO: - 수정 뷰로 화면 전환
+                        print("씀씀이 수정합니다.")
+                    }, secondOkAction: { _ in
+                        let alert = PomeAlertVC()
+                        alert.showPomeAlertVC(vc: self, title: "기록을 삭제하시겠어요?", subTitle: "삭제한 내용은 다시 되돌릴 수 없어요", cancelBtnTitle: "아니요", confirmBtnTitle: "삭제할게요")
+                        
+                        /// 알럿창의 취소버튼(왼쪽 버튼) 누르는 경우 alert dismiss
+                        alert.cancelBtn.press { [weak self] in
+                            self?.dismiss(animated: true)
+                        }
+                        
+                        /// 알럿창의 확인버튼(오른쪽 버튼) 누르는 경우 삭제 서버 통신
+                        alert.confirmBtn.press { [weak self] in
+                            
+                            // TODO: - 삭제 서버 통신 필요
+                            print("씀씀이 삭제합니다.")
+                            self?.dismiss(animated: true)
+                        }
+                    })
+                }
+                
+                spendCVC.tapPlusBtn = {
+                    guard let lookbackSelectVC = UIStoryboard.init(name: Identifiers.LookbackSelectSB, bundle: nil).instantiateViewController(withIdentifier: LookbackSelectVC.className) as? LookbackSelectVC else { return }
+                    self.navigationController?.pushViewController(lookbackSelectVC, animated: true)
+                }
                 return spendCVC
             } else {
                 
