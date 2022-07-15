@@ -44,6 +44,10 @@ class LookbackSelectVC: BaseVC {
         saveEmojiBtn.isDisabled = !(happyBtn.isSelected || dontKnowBtn.isSelected || regretBtn.isSelected)
     }
     
+    @IBAction func tapLeaveBtn(_ sender: UIButton) {
+        guard let lookbackCompleteVC = UIStoryboard.init(name: Identifiers.LookbackCompleteSB, bundle: nil).instantiateViewController(withIdentifier: LookbackCompleteVC.className) as? LookbackCompleteVC else { return }
+        navigationController?.pushViewController(lookbackCompleteVC, animated: true)
+    }
 }
 
 // MARK: - UI
