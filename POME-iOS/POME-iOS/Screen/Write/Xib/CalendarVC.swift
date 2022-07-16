@@ -20,7 +20,7 @@ class CalendarVC: BaseVC {
     var endDate: Date = Date()
     
     /// delegate 선언
-    var delegate: DeliveryDateProtocol?
+    var delegate: DeliveryDateDelegate?
     
     // MARK: IBOutlet
     @IBOutlet weak var calendar: FSCalendar!

@@ -12,7 +12,7 @@ class AddGoalDateVC: BaseVC {
     // MARK: Properties
     var startDate: Date = Date()
     var endDate: Date = Date()
-    
+
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
     @IBOutlet weak var titleLabel: UILabel!
@@ -77,15 +77,17 @@ extension AddGoalDateVC {
     }
 }
 
-// MARK: - DeliveryDateProtocol
-extension AddGoalDateVC: DeliveryDateProtocol{
+// MARK: - DeliveryDateDelegate
+extension AddGoalDateVC: DeliveryDateDelegate{
     
     /// 받아온 데이터로 날짜 레이블 변경
     func deliveryDate(date: Date, isStartDate: Bool) {
         if isStartDate {
+            startDate = date
             startDateLabel.text = self.getSelectedDate(date: date)
             startDateLabel.textColor = .grey_9
         } else {
+            endDate = date
             endDateLabel.text = self.getSelectedDate(date: date)
             endDateLabel.textColor = .grey_9
         }

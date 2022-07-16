@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol DeliveryDateProtocol {
+protocol DeliveryDateDelegate {
     func deliveryDate(date: Date, isStartDate: Bool)
 }
