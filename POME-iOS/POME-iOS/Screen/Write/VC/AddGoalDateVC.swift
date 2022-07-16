@@ -10,9 +10,6 @@ import UIKit
 class AddGoalDateVC: BaseVC {
     
     // MARK: Properties
-    
-    /// delegate 선언
-    var delegate: DeliveryDateProtocol?
     var startDate: Date = Date()
     var endDate: Date = Date()
     
@@ -36,12 +33,10 @@ class AddGoalDateVC: BaseVC {
     
     // MARK: IBAction
     @IBAction func tapStartCalendar(_ sender: UIButton) {
-        delegate?.deliveryDate(date: startDate, isStartDate: true)
         showHalfModalVC()
     }
 
     @IBAction func tapEndCalendar(_ sender: UIButton) {
-        delegate?.deliveryDate(date: endDate, isStartDate: false)
         showHalfModalVC()
     }
     
@@ -85,6 +80,7 @@ extension AddGoalDateVC {
 // MARK: - DeliveryDateProtocol
 extension AddGoalDateVC: DeliveryDateProtocol{
     
+    /// 받아온 데이터로 날짜 레이블 변경
     func deliveryDate(date: Date, isStartDate: Bool) {
         if isStartDate {
             startDateLabel.text = self.getSelectedDate(date: date)

@@ -12,11 +12,12 @@ class CalendarVC: BaseVC {
     
     // MARK: Properties
     private var currentPage: Date?
-    private lazy var startDay: Date = {
-        return Date()
-    }()
     var selectedDate: Date = Date()
     var isStartDate: Bool = true
+    
+    /// 목표 추가 메인뷰에서 받아 올 시작 날짜와 종료 날짜
+    var startDate: Date = Date()
+    var endDate: Date = Date()
     
     /// delegate 선언
     var delegate: DeliveryDateProtocol?
@@ -92,7 +93,6 @@ extension CalendarVC {
 extension CalendarVC {
 
     private func setDelegate() {
-        AddGoalDateVC().delegate = self
         calendar.delegate = self
         calendar.dataSource = self
     }
@@ -103,17 +103,8 @@ extension CalendarVC {
         var dateComponents = DateComponents()
         dateComponents.month = isPrev ? -1 : 1
         
-        self.currentPage = cal.date(byAdding: dateComponents, to: self.currentPage ?? self.startDay)
+        self.currentPage = cal.date(byAdding: dateComponents, to: self.currentPage ?? self.startDate)
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
-    }
-}
-
-// MARK: - DeliveryDateProtocol
-extension CalendarVC: DeliveryDateProtocol {
-    
-    internal func deliveryDate(date: Date, isStartDate: Bool) {
-        self.selectedDate = date
-        self.isStartDate = isStartDate
     }
 }
 
@@ -123,7 +114,6 @@ extension CalendarVC: FSCalendarDelegate {
     /// 날짜 선택 시 콜백 메소드
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         selectedDate = date
-        selectBtn.isDisabled = false
     }
     
     /// 현재 페이지가 startDate 달이면 < 버튼 비활성화, 다음 달이면 > 비활성화
@@ -141,13 +131,13 @@ extension CalendarVC: FSCalendarDataSource {
     func minimumDate(for calendar: FSCalendar) -> Date {
         
         /// 시작날짜를 default로 설정
-        calendar.select(startDay)
-        return startDay
+        calendar.select(startDate)
+        return startDate
     }
     
-    /// 한 달 까지만 설정 가능
+    /// 한 달 까지만 설정 가능 or 목표 종료 날짜보다 전까지만 설정 가능
     func maximumDate(for calendar: FSCalendar) -> Date {
-        guard let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: startDay) else { return Date() }
+        guard let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: startDate) else { return Date() }
         return nextMonth
     }
 }
