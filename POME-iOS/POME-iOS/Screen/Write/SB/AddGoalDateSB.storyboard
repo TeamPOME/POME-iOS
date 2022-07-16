@@ -76,14 +76,15 @@
                                         <color key="textColor" name="grey_5"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jam-IQ-Zdm">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jam-IQ-Zdm">
                                         <rect key="frame" x="303" y="15" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="IXp-A3-Fob"/>
                                             <constraint firstAttribute="height" constant="24" id="WVL-nt-HzQ"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="icCalendar24Mono"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="" image="icCalendar24MonoSel"/>
+                                        <state key="disabled" image="icCalendar24Mono"/>
                                         <connections>
                                             <action selector="tapStartCalendar:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oHg-23-cG6"/>
                                         </connections>
@@ -107,14 +108,15 @@
                                         <color key="textColor" name="grey_5"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFe-V1-qhm">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFe-V1-qhm">
                                         <rect key="frame" x="303" y="15" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="1GT-yN-qUf"/>
                                             <constraint firstAttribute="width" constant="24" id="dFm-9b-4Li"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="icCalendar24Mono"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="icCalendar24MonoSel"/>
+                                        <state key="disabled" image="icCalendar24Mono"/>
                                         <connections>
                                             <action selector="tapEndCalendar:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Nbo-Dj-lou"/>
                                         </connections>
@@ -157,8 +159,10 @@
                     </view>
                     <connections>
                         <outlet property="confirmBtn" destination="oCd-1V-a2W" id="ukF-8O-Kv5"/>
+                        <outlet property="endCalendarBtn" destination="RFe-V1-qhm" id="s4a-FT-YQD"/>
                         <outlet property="endDateLabel" destination="5tq-DI-Q70" id="plS-jz-xEL"/>
                         <outlet property="naviBar" destination="Ofo-hR-h8D" id="Z7v-hL-PmT"/>
+                        <outlet property="startCalendarBtn" destination="jam-IQ-Zdm" id="qvD-tW-zsA"/>
                         <outlet property="startDateLabel" destination="iXJ-0x-Iga" id="9fg-Nd-rV8"/>
                         <outlet property="titleLabel" destination="q4d-PM-Ly7" id="GHm-Ae-Eto"/>
                     </connections>
@@ -170,6 +174,7 @@
     </scenes>
     <resources>
         <image name="icCalendar24Mono" width="24" height="24"/>
+        <image name="icCalendar24MonoSel" width="24" height="24"/>
         <namedColor name="grey_0">
             <color red="0.97254901960784312" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

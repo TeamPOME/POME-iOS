@@ -13,13 +13,13 @@ class CalendarVC: BaseVC {
     // MARK: Properties
     private var currentPage: Date?
     var selectedDate: Date = Date()
-    var isStartDate: Bool = true
+    var isStartCalendar: Bool = true
     
     /// 목표 추가 메인뷰에서 받아 올 시작 날짜와 종료 날짜
     var startDate: Date = Date()
     var endDate: Date = Date()
     
-    /// delegate 선언
+    /// delegate 및 클로저 선언
     var delegate: DeliveryDateDelegate?
     
     // MARK: IBOutlet
@@ -46,24 +46,24 @@ class CalendarVC: BaseVC {
     }
     
     @IBAction func tapSelectBtn(_ sender: UIButton) {
-        delegate?.deliveryDate(date: selectedDate, isStartDate: isStartDate)
+        delegate?.deliveryDate(date: selectedDate, isStartDate: isStartCalendar)
         self.dismiss(animated: true)
     }
 }
 
 // MARK: - UI
 extension CalendarVC {
-
+    
     private func configureUI() {
         
         selectBtn.setTitle("선택했어요", for: .normal)
         
         /// 현재 달이기 때문에 이전 달로는 못감
-        toLeftBtn.isEnabled = true
-        toRightBtn.isEnabled = false
+        toLeftBtn.isEnabled = false
+        toRightBtn.isEnabled = true
         
-        /// 현재 보이는 달로 레이블 설정
-        calendarCurrentPageDidChange(calendar)
+        /// 시작 달로 페이지 설정
+        headerLabel.text = self.getMonthDate(date: startDate)
         
         /// 스크롤 안되게
         calendar.scrollEnabled = false
@@ -82,8 +82,8 @@ extension CalendarVC {
         
         /// 오늘 배경, 글씨 색상 변경
         calendar.appearance.todayColor = .clear
-        calendar.appearance.titleTodayColor = .grey_9
-
+        calendar.appearance.titleTodayColor = (isStartCalendar) ? .grey_9 : .grey_5
+        
         /// 이전, 이후 달 날짜 제거
         calendar.placeholderType = .none
     }
@@ -91,7 +91,7 @@ extension CalendarVC {
 
 // MARK: - Custom Methods
 extension CalendarVC {
-
+    
     private func setDelegate() {
         calendar.delegate = self
         calendar.dataSource = self
@@ -130,21 +130,32 @@ extension CalendarVC: FSCalendarDataSource {
     /// 오늘 이전은 선택 불가능
     func minimumDate(for calendar: FSCalendar) -> Date {
         
-        /// 시작날짜를 default로 설정
-        calendar.select(startDate)
-        return startDate
+        if isStartCalendar {
+            calendar.select(startDate)
+            return Date()
+        } else {
+            guard let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: startDate) else { return Date() }
+            calendar.select(tomorrow)
+            return tomorrow
+        }
     }
     
-    /// 한 달 까지만 설정 가능 or 목표 종료 날짜보다 전까지만 설정 가능
+    /// 한 달 까지만 설정 가능
     func maximumDate(for calendar: FSCalendar) -> Date {
-        guard let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: startDate) else { return Date() }
-        return nextMonth
+        
+        if isStartCalendar {
+            guard let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: Date()) else { return Date() }
+            return nextMonth
+        } else {
+            guard let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: startDate) else { return Date() }
+            return nextMonth
+        }
     }
 }
 
 // MARK: - FSCalendarDelegateAppearance
 extension CalendarVC: FSCalendarDelegateAppearance {
-
+    
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
         return .sub
     }
