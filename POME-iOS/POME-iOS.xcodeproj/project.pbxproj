@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0DC225BE62C2B307EDEA55E4 /* Pods_POME_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1232F317EC5CF269A755DD4C /* Pods_POME_iOS.framework */; };
+		1A01FB822882CB1F00F4174F /* SelectFeelingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A01FB812882CB1F00F4174F /* SelectFeelingDelegate.swift */; };
 		1A10C2562877349E00489CA1 /* GoalCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10C2552877349E00489CA1 /* GoalCardCVC.swift */; };
 		1A10C2582877367100489CA1 /* GoalStorageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */; };
 		1A1AEFD7287A4CB600DD5F7E /* HaveNoMateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD6287A4CB600DD5F7E /* HaveNoMateTVC.swift */; };
@@ -131,6 +132,7 @@
 
 /* Begin PBXFileReference section */
 		1232F317EC5CF269A755DD4C /* Pods_POME_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POME_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A01FB812882CB1F00F4174F /* SelectFeelingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeelingDelegate.swift; sourceTree = "<group>"; };
 		1A10C2552877349E00489CA1 /* GoalCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCardCVC.swift; sourceTree = "<group>"; };
 		1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageDataModel.swift; sourceTree = "<group>"; };
 		1A1AEFD6287A4CB600DD5F7E /* HaveNoMateTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveNoMateTVC.swift; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 				77E8F3512875F54000D2F6C0 /* CVRegisterable.swift */,
 				77E8F3532875F56000D2F6C0 /* TVRegisterable.swift */,
 				77B571B22880BD8D00C9CC27 /* ProfileCellDelegate.swift */,
+				1A01FB812882CB1F00F4174F /* SelectFeelingDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1023,6 +1026,7 @@
 				77E8F36428765FFF00D2F6C0 /* MypageNC.swift in Sources */,
 				77E8F2E62874AEDB00D2F6C0 /* WriteVC.swift in Sources */,
 				77B5719D287D68E300C9CC27 /* SignUpNC.swift in Sources */,
+				1A01FB822882CB1F00F4174F /* SelectFeelingDelegate.swift in Sources */,
 				77E8F3772876938800D2F6C0 /* GenericResponse.swift in Sources */,
 				77E8F2FA2874B17800D2F6C0 /* RemindVC.swift in Sources */,
 				77B571B32880BD8D00C9CC27 /* ProfileCellDelegate.swift in Sources */,

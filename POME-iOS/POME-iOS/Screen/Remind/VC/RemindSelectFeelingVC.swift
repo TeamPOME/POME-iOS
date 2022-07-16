@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol SelectFeelingDelegate {
-    func selectPreviousEmoji(previousEmoji: String)
-    func selectLatestEmoji(latestEmoji: String)
-}
-
 class RemindSelectFeelingVC: BaseVC {
 
     // MARK: Properties
@@ -19,6 +14,7 @@ class RemindSelectFeelingVC: BaseVC {
     var isFirstEmotion: Bool = true
     var isButtonSelected: Bool = false
     
+    // MARK: IBOutlet
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             if isFirstEmotion {
