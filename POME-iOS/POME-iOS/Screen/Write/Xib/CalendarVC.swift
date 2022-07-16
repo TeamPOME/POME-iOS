@@ -33,7 +33,6 @@ class CalendarVC: BaseVC {
         super.viewDidLoad()
         configureUI()
         setDelegate()
-        print(startDate, endDate)
     }
     
     // MARK: IBAction
@@ -86,6 +85,9 @@ extension CalendarVC {
         
         /// 이전, 이후 달 날짜 제거
         calendar.placeholderType = .none
+        
+        // 달력의 요일 글자 바꾸기
+        calendar.locale = Locale(identifier: "ko_KR")
     }
 }
 
