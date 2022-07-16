@@ -119,7 +119,9 @@ extension MateVC {
         }
         
         emojiSelectView.snp.makeConstraints {
-            self.emojiViewTopConstraint = $0.top.equalTo(175 + 205.adjustedH).constraint
+            
+            /// 첫번째 셀의 버튼 클릭 시 나타나야할 포지션을 디폴트로 설정 해둠
+            self.emojiViewTopConstraint = $0.top.equalTo(390).constraint
             $0.trailing.equalToSuperview().inset(16)
             $0.width.equalTo(330)
             $0.height.equalTo(54)
@@ -211,7 +213,7 @@ extension MateVC: UITableViewDelegate {
                 let cell = tableView.cellForRow(at: indexPath)
                 let frame = cell?.layer.frame
                 
-                self.cellFrame = (frame?.maxY ?? 0) + 205.adjustedH
+                self.cellFrame = (frame?.maxY ?? 0) + 205
                 self.emojiViewTopConstraint?.update(offset: self.cellFrame - self.scrollPosition)
                 self.view.layoutIfNeeded()
                 
