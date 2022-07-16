@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0DC225BE62C2B307EDEA55E4 /* Pods_POME_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1232F317EC5CF269A755DD4C /* Pods_POME_iOS.framework */; };
+		1A01FB822882CB1F00F4174F /* SelectFeelingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A01FB812882CB1F00F4174F /* SelectFeelingDelegate.swift */; };
 		1A10C2562877349E00489CA1 /* GoalCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10C2552877349E00489CA1 /* GoalCardCVC.swift */; };
 		1A10C2582877367100489CA1 /* GoalStorageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */; };
 		1A1AEFD7287A4CB600DD5F7E /* HaveNoMateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD6287A4CB600DD5F7E /* HaveNoMateTVC.swift */; };
@@ -19,6 +20,8 @@
 		1A4BB621287E0395007C8FC1 /* RemindGoalTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4BB61F287E0395007C8FC1 /* RemindGoalTitleTVC.xib */; };
 		1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */; };
 		1A76CACF287B1B3300B29500 /* MateHeaderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */; };
+		1AB882662881386600157820 /* RemindSelectFeelingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB882642881386600157820 /* RemindSelectFeelingVC.swift */; };
+		1AB882672881386600157820 /* RemindSelectFeelingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB882652881386600157820 /* RemindSelectFeelingVC.xib */; };
 		1ABDED76287E716E00F85F9C /* RemindFilterTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDED74287E716E00F85F9C /* RemindFilterTVC.swift */; };
 		1ABDED77287E716E00F85F9C /* RemindFilterTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDED75287E716E00F85F9C /* RemindFilterTVC.xib */; };
 		1ABDED79287F23E000F85F9C /* RemindHaveNoGoalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDED78287F23E000F85F9C /* RemindHaveNoGoalTVC.swift */; };
@@ -130,6 +133,7 @@
 
 /* Begin PBXFileReference section */
 		1232F317EC5CF269A755DD4C /* Pods_POME_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_POME_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A01FB812882CB1F00F4174F /* SelectFeelingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeelingDelegate.swift; sourceTree = "<group>"; };
 		1A10C2552877349E00489CA1 /* GoalCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCardCVC.swift; sourceTree = "<group>"; };
 		1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageDataModel.swift; sourceTree = "<group>"; };
 		1A1AEFD6287A4CB600DD5F7E /* HaveNoMateTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveNoMateTVC.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 		1A4BB61F287E0395007C8FC1 /* RemindGoalTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindGoalTitleTVC.xib; sourceTree = "<group>"; };
 		1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateHeaderCVC.swift; sourceTree = "<group>"; };
 		1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateHeaderCVC.xib; sourceTree = "<group>"; };
+		1AB882642881386600157820 /* RemindSelectFeelingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindSelectFeelingVC.swift; sourceTree = "<group>"; };
+		1AB882652881386600157820 /* RemindSelectFeelingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindSelectFeelingVC.xib; sourceTree = "<group>"; };
 		1ABDED74287E716E00F85F9C /* RemindFilterTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindFilterTVC.swift; sourceTree = "<group>"; };
 		1ABDED75287E716E00F85F9C /* RemindFilterTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindFilterTVC.xib; sourceTree = "<group>"; };
 		1ABDED78287F23E000F85F9C /* RemindHaveNoGoalTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindHaveNoGoalTVC.swift; sourceTree = "<group>"; };
@@ -449,6 +455,7 @@
 				77E8F3512875F54000D2F6C0 /* CVRegisterable.swift */,
 				77E8F3532875F56000D2F6C0 /* TVRegisterable.swift */,
 				77B571B22880BD8D00C9CC27 /* ProfileCellDelegate.swift */,
+				1A01FB812882CB1F00F4174F /* SelectFeelingDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -626,6 +633,8 @@
 			children = (
 				77E8F2F92874B17800D2F6C0 /* RemindVC.swift */,
 				77E8F35F28765FA600D2F6C0 /* RemindNC.swift */,
+				1AB882642881386600157820 /* RemindSelectFeelingVC.swift */,
+				1AB882652881386600157820 /* RemindSelectFeelingVC.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -949,6 +958,7 @@
 				8400A406287C1782004F2D49 /* LookbackCompleteSB.storyboard in Resources */,
 				77E8F32C28756DAE00D2F6C0 /* Pretendard-Medium.otf in Resources */,
 				8432C9B328773A42001C643F /* SpendCVC.xib in Resources */,
+				1AB882672881386600157820 /* RemindSelectFeelingVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1020,6 +1030,7 @@
 				77E8F36428765FFF00D2F6C0 /* MypageNC.swift in Sources */,
 				77E8F2E62874AEDB00D2F6C0 /* WriteVC.swift in Sources */,
 				77B5719D287D68E300C9CC27 /* SignUpNC.swift in Sources */,
+				1A01FB822882CB1F00F4174F /* SelectFeelingDelegate.swift in Sources */,
 				77E8F3772876938800D2F6C0 /* GenericResponse.swift in Sources */,
 				77E8F2FA2874B17800D2F6C0 /* RemindVC.swift in Sources */,
 				77B571B32880BD8D00C9CC27 /* ProfileCellDelegate.swift in Sources */,
@@ -1080,6 +1091,7 @@
 				84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */,
 				77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */,
 				77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */,
+				1AB882662881386600157820 /* RemindSelectFeelingVC.swift in Sources */,
 				77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */,
 				77B571B728811E7200C9CC27 /* SignInVC.swift in Sources */,
 				1A4BB61C287DF5B7007C8FC1 /* RemindGoalTVC.swift in Sources */,
@@ -1230,7 +1242,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 397WA8BG8W;
+				DEVELOPMENT_TEAM = NWRXL84Y2X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "POME-iOS/Support/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -1262,7 +1274,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 397WA8BG8W;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "POME-iOS/Support/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
