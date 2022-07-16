@@ -12,17 +12,6 @@ class AddGoalDateVC: BaseVC {
     // MARK: Properties
     var isFirstCalendar: Bool = true
     
-    /// 초기값은 오늘
-    private lazy var startDate: Date = {
-        return Date()
-    }()
-    
-    /// 초기값은 한 달 뒤
-    private lazy var endDate: Date = {
-        guard let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: startDate) else { return Date() }
-        return nextMonth
-    }()
-
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
     @IBOutlet weak var titleLabel: UILabel!
@@ -31,7 +20,7 @@ class AddGoalDateVC: BaseVC {
     @IBOutlet weak var startCalendarBtn: UIButton!
     @IBOutlet weak var endCalendarBtn: UIButton!
     @IBOutlet weak var confirmBtn: PomeBtn!
-
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +37,7 @@ class AddGoalDateVC: BaseVC {
         isFirstCalendar = true
         showHalfModalVC()
     }
-
+    
     @IBAction func tapEndCalendar(_ sender: UIButton) {
         isFirstCalendar = false
         showHalfModalVC()
@@ -86,7 +75,22 @@ extension AddGoalDateVC {
     @objc func showHalfModalVC() {
         let halfModalVC = CalendarVC()
         halfModalVC.delegate = self
-        halfModalVC.startDate = self.startDate
+        
+        /// 선택된 값 유무에 따라 시작 날짜 전달 선택하지 않았으면 오늘 날짜 전달
+        if startDateLabel.textColor == .grey_9 {
+            halfModalVC.startDate = self.getStringToDate(string: startDateLabel.text!)
+        } else {
+            halfModalVC.startDate = Date()
+        }
+        
+        /// 선택된 값 유무에 따라 종료 날짜 전달 선택하지 않았으면 시작 날짜의 다음 날짜 전달
+        if endDateLabel.textColor == .grey_9 {
+            halfModalVC.endDate = self.getStringToDate(string: endDateLabel.text!)
+        } else {
+            guard let nextDay = Calendar.current.date(byAdding: .day, value: 1, to: self.getStringToDate(string: startDateLabel.text!)) else { return }
+            halfModalVC.endDate = nextDay
+        }
+        
         halfModalVC.isStartCalendar = isFirstCalendar
         halfModalVC.modalPresentationStyle = .custom
         halfModalVC.transitioningDelegate = self
@@ -98,10 +102,9 @@ extension AddGoalDateVC {
 extension AddGoalDateVC: DeliveryDateDelegate{
     
     /// 받아온 데이터로 날짜 레이블 변경
-    func deliveryDate(date: Date, isStartDate: Bool) {
+    func deliveryDate(startDate: Date, endDate: Date, isStartDate: Bool) {
         if isStartDate {
-            startDate = date
-            startDateLabel.text = self.getSelectedDate(date: date)
+            startDateLabel.text = self.getSelectedDate(date: startDate)
             startDateLabel.textColor = .grey_9
             endCalendarBtn.isEnabled = true
             
@@ -111,11 +114,9 @@ extension AddGoalDateVC: DeliveryDateDelegate{
                 endDateLabel.textColor = .grey_5
             }
         } else {
-            endDate = date
-            endDateLabel.text = self.getSelectedDate(date: date)
+            endDateLabel.text = self.getSelectedDate(date: endDate)
             endDateLabel.textColor = .grey_9
         }
-        
         confirmBtn.isDisabled = !(startDateLabel.textColor == .grey_9 && endDateLabel.textColor == .grey_9)
     }
 }

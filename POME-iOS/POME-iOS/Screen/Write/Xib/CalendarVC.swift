@@ -12,7 +12,6 @@ class CalendarVC: BaseVC {
     
     // MARK: Properties
     private var currentPage: Date?
-    var selectedDate: Date = Date()
     var isStartCalendar: Bool = true
     
     /// 목표 추가 메인뷰에서 받아 올 시작 날짜와 종료 날짜
@@ -34,6 +33,7 @@ class CalendarVC: BaseVC {
         super.viewDidLoad()
         configureUI()
         setDelegate()
+        print(startDate, endDate)
     }
     
     // MARK: IBAction
@@ -46,7 +46,7 @@ class CalendarVC: BaseVC {
     }
     
     @IBAction func tapSelectBtn(_ sender: UIButton) {
-        delegate?.deliveryDate(date: selectedDate, isStartDate: isStartCalendar)
+        delegate?.deliveryDate(startDate: startDate, endDate: endDate, isStartDate: isStartCalendar)
         self.dismiss(animated: true)
     }
 }
@@ -58,12 +58,12 @@ extension CalendarVC {
         
         selectBtn.setTitle("선택했어요", for: .normal)
         
-        /// 현재 달이기 때문에 이전 달로는 못감
-        toLeftBtn.isEnabled = false
-        toRightBtn.isEnabled = true
-        
         /// 시작 달로 페이지 설정
-        headerLabel.text = self.getMonthDate(date: startDate)
+        if isStartCalendar {
+            headerLabel.text = self.getMonthDate(date: startDate)
+        } else {
+            headerLabel.text = self.getMonthDate(date: endDate)
+        }
         
         /// 스크롤 안되게
         calendar.scrollEnabled = false
@@ -113,34 +113,35 @@ extension CalendarVC: FSCalendarDelegate {
     
     /// 날짜 선택 시 콜백 메소드
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        selectedDate = date
+        if isStartCalendar {
+            startDate = date
+        } else {
+            endDate = date
+        }
     }
     
-    /// 현재 페이지가 startDate 달이면 < 버튼 비활성화, 다음 달이면 > 비활성화
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         headerLabel.text = self.getMonthDate(date: calendar.currentPage)
-        toRightBtn.isEnabled.toggle()
-        toLeftBtn.isEnabled.toggle()
     }
 }
 
 // MARK: - FSCalendarDataSource
 extension CalendarVC: FSCalendarDataSource {
     
-    /// 오늘 이전은 선택 불가능
+    /// 오늘 이전 or 시작 날짜 이전은 선택 불가능
     func minimumDate(for calendar: FSCalendar) -> Date {
         
         if isStartCalendar {
             calendar.select(startDate)
             return Date()
         } else {
+            calendar.select(endDate)
             guard let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: startDate) else { return Date() }
-            calendar.select(tomorrow)
             return tomorrow
         }
     }
     
-    /// 한 달 까지만 설정 가능
+    /// 오늘 or 시작 날짜로부터 한 달 까지만 설정 가능
     func maximumDate(for calendar: FSCalendar) -> Date {
         
         if isStartCalendar {
