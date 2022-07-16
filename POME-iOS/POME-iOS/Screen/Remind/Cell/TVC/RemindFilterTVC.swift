@@ -10,7 +10,7 @@ import UIKit
 class RemindFilterTVC: BaseTVC {
 
     // MARK: Properties
-    var selectBottomSheetClosure: ((Int) -> ())?
+    var selectFilterAction: ((Int) -> ())?
     var selectResetBtnClosure: ((Bool) -> ())?
     
     // MARK: IBOutlet
@@ -29,13 +29,13 @@ class RemindFilterTVC: BaseTVC {
     }
     
     // MARK: IBAction
-    @IBAction func tapFirstEmotionAction(_ sender: Any) {
-        selectBottomSheetClosure?(0)
+    @IBAction func tapPreviousEmotionBtn(_ sender: Any) {
+        selectFilterAction?(0)
     }
-    @IBAction func tapLaterEmotionAction(_ sender: Any) {
-        selectBottomSheetClosure?(1)
+    @IBAction func tapLaterEmotionBtn(_ sender: Any) {
+        selectFilterAction?(1)
     }
-    @IBAction func tapResetButton(_ sender: Any) {
+    @IBAction func tapResetBtn(_ sender: Any) {
         [previousFeelingBtn, laterFeelingBtn].forEach {
             $0?.backgroundColor = .grey_2
             $0?.setTitleColor(.grey_5, for: .normal)

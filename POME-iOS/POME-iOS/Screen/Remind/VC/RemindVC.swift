@@ -46,7 +46,7 @@ class RemindVC: BaseVC {
         setTVScroll()
     }
     
-    /// 첫 아이템이 처음 로딩 되었을때만 설정되도록 하였다.
+    /// 탭바가 왔다갔다 할 경우 첫 셀이 default가 되게끔 처리하였다.
     override func viewWillAppear(_ animated: Bool) {
         setDefaultSelectedCell()
     }
@@ -125,12 +125,7 @@ extension RemindVC {
         
         /// 바텀시트 선택값이 넘어오는 델리게이트를 채택함
         halfModalVC.selectFeelingDelegate = self
-        
-        if index == 0 {
-            halfModalVC.isFirstEmotion = true
-        } else {
-            halfModalVC.isFirstEmotion = false
-        }
+        halfModalVC.isFirstEmotion = (index == 0)
         self.present(halfModalVC, animated: true, completion: nil)
     }
 }
@@ -165,7 +160,7 @@ extension RemindVC: UIViewControllerTransitioningDelegate {
         let halfModalVC = PomeHalfModalVC(presentedViewController: presented, presenting: presenting)
         
         /// HalfModalView의 높이 지정
-        halfModalVC.modalHeight = 235.adjustedH
+        halfModalVC.modalHeight = 235
         return halfModalVC
     }
 }
@@ -203,25 +198,22 @@ extension RemindVC: UITableViewDelegate {
             
             /// bottomsheet를 띄어야할때 클로저를 사용한 코드이다 ( 첫 감정 = 0 , 후 감정 = 1)
             /// 바텀시트를 선택하지 않고 띄우기만 한 경우는 selected를 false로 처리해주었다.
-            remindFilterTVC.selectBottomSheetClosure = {
+            remindFilterTVC.selectFilterAction = {
                 num in
                 switch num {
                 case 0:
                     self.showHalfModalVC(index: 0)
                     self.selectedPreviousEmoji = false
-                case 1:
+                default:
                     self.showHalfModalVC(index: 1)
                     self.selectedLatestEmoji = false
-                default:
-                    self.showHalfModalVC(index: 0)
-                    self.selectedPreviousEmoji = false
                 }
             }
             
             /// 초기화버튼 처리 해주는 클로저
             remindFilterTVC.selectResetBtnClosure = {
             check in
-                if check == true{
+                if check == true {
                     self.getPreviousEmoji = ""
                     self.getLatestEmoji = ""
                     self.selectedResetBtn = check
@@ -245,7 +237,7 @@ extension RemindVC: UITableViewDelegate {
                 remindFilterTVC.laterFeelingBtn.setImage(UIImage(named: "icArrowDown17Pink"), for: .normal)
             }
             
-            //초기화버튼이 눌렸을때의 UI처리
+            /// 초기화버튼이 눌렸을때의 UI처리
             if selectedResetBtn == true {
                 [remindFilterTVC.previousFeelingBtn, remindFilterTVC.laterFeelingBtn].forEach {
                     $0?.backgroundColor = .grey_2
@@ -306,7 +298,7 @@ extension RemindVC: UICollectionViewDataSource {
         return goalCount == 0 ? 1 : category.count
     }
     
-    // CV, 섹션 별 셀 지정
+    /// CV, 섹션 별 셀 지정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let remindGoalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: Identifiers.RemindGoalCategoryCVC, for: indexPath) as? RemindGoalCategoryCVC else { return UICollectionViewCell() }
         if goalCount == 0 {
@@ -325,7 +317,8 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if goalCount == 0 {
             return CGSize(width: " - ".size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
-        } else{
+        } else {
+            
             /// 글씨 길이에 따라 너비 동적 조절
             return CGSize(width: category[indexPath.row].size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
         }

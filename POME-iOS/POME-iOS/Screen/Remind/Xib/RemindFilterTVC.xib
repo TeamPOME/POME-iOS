@@ -26,13 +26,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="씀씀이 돌아보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aee-aV-FUT">
-                        <rect key="frame" x="16" y="8" width="114" height="22"/>
+                        <rect key="frame" x="16" y="8" width="114" height="21"/>
                         <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="18"/>
                         <color key="textColor" name="pomeBlack"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eL5-fX-JlO">
-                        <rect key="frame" x="16" y="42" width="64" height="33"/>
+                        <rect key="frame" x="16" y="41" width="64" height="33"/>
                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
                         <inset key="contentEdgeInsets" minX="6" minY="8" maxX="6" maxY="8"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -40,21 +40,21 @@
                             <color key="titleColor" name="grey_5"/>
                         </state>
                         <connections>
-                            <action selector="tapFirstEmotionAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5gW-7u-XpZ"/>
+                            <action selector="tapPreviousEmotionBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RzN-9Y-SWI"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncn-wb-Ij0">
-                        <rect key="frame" x="86" y="42" width="76" height="33"/>
+                        <rect key="frame" x="86" y="41" width="76" height="33"/>
                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
                         <inset key="contentEdgeInsets" minX="6" minY="8" maxX="6" maxY="8"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title="돌아본 감정"/>
                         <connections>
-                            <action selector="tapLaterEmotionAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gMV-Bw-37c"/>
+                            <action selector="tapLaterEmotionBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3ic-Q3-qF1"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PMY-ok-2BT">
-                        <rect key="frame" x="283" y="43" width="76" height="31"/>
+                        <rect key="frame" x="283" y="42" width="76" height="31"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title="Button" image="iconRefreshMono">
                             <attributedString key="attributedTitle">
@@ -67,7 +67,7 @@
                             <color key="baseBackgroundColor" name="grey_0"/>
                         </buttonConfiguration>
                         <connections>
-                            <action selector="tapResetButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xft-JV-6NK"/>
+                            <action selector="tapResetBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ycI-Ur-J9l"/>
                         </connections>
                     </button>
                 </subviews>
