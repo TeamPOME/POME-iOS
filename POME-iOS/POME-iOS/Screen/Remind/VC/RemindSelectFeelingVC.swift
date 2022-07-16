@@ -62,6 +62,7 @@ class RemindSelectFeelingVC: BaseVC {
         isButtonSelected = true
         self.dismiss(animated: true)
     }
+    
     @IBAction func dontKnowBtnTap(_ sender: Any) {
         if isFirstEmotion {
             selectFeelingDelegate?.selectPreviousEmoji(previousEmoji: "모르겠어요")
@@ -71,6 +72,7 @@ class RemindSelectFeelingVC: BaseVC {
         isButtonSelected = true
         self.dismiss(animated: true)
     }
+    
     @IBAction func regretBtnTap(_ sender: Any) {
         if isFirstEmotion {
             selectFeelingDelegate?.selectPreviousEmoji(previousEmoji: "후회해요")
@@ -84,9 +86,5 @@ class RemindSelectFeelingVC: BaseVC {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        isButtonSelected = false
     }
 }

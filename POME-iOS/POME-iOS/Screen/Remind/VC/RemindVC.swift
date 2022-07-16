@@ -198,21 +198,18 @@ extension RemindVC: UITableViewDelegate {
             
             /// bottomsheet를 띄어야할때 클로저를 사용한 코드이다 ( 첫 감정 = 0 , 후 감정 = 1)
             /// 바텀시트를 선택하지 않고 띄우기만 한 경우는 selected를 false로 처리해주었다.
-            remindFilterTVC.selectFilterAction = {
-                num in
-                switch num {
-                case 0:
+            remindFilterTVC.selectFilterAction = { num in
+                if num == 0 {
                     self.showHalfModalVC(index: 0)
                     self.selectedPreviousEmoji = false
-                default:
+                } else {
                     self.showHalfModalVC(index: 1)
                     self.selectedLatestEmoji = false
                 }
             }
             
             /// 초기화버튼 처리 해주는 클로저
-            remindFilterTVC.selectResetBtnClosure = {
-            check in
+            remindFilterTVC.selectResetBtnClosure = { check in
                 if check == true {
                     self.getPreviousEmoji = ""
                     self.getLatestEmoji = ""

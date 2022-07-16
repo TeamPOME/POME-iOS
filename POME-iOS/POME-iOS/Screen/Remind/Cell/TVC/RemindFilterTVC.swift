@@ -32,9 +32,11 @@ class RemindFilterTVC: BaseTVC {
     @IBAction func tapPreviousEmotionBtn(_ sender: Any) {
         selectFilterAction?(0)
     }
+    
     @IBAction func tapLaterEmotionBtn(_ sender: Any) {
         selectFilterAction?(1)
     }
+    
     @IBAction func tapResetBtn(_ sender: Any) {
         [previousFeelingBtn, laterFeelingBtn].forEach {
             $0?.backgroundColor = .grey_2
@@ -60,6 +62,7 @@ extension RemindFilterTVC {
             $0?.tintColor = .grey_5
             $0?.makeRounded(cornerRadius: 4.adjusted)
         }
+        
         [previousFeelingBtn, laterFeelingBtn].forEach {
             $0?.setImage(UIImage(named: "icArrowDown17"), for: .normal)
             $0?.semanticContentAttribute = .forceRightToLeft
