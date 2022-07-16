@@ -209,7 +209,7 @@ extension RemindVC: UITableViewDelegate {
             }
             
             /// 초기화버튼 처리 해주는 클로저
-            remindFilterTVC.selectResetBtnClosure = { check in
+            remindFilterTVC.selectResetBtnAction = { check in
                 if check == true {
                     self.getPreviousEmoji = ""
                     self.getLatestEmoji = ""

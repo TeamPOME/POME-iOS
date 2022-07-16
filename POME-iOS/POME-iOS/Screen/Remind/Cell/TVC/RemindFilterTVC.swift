@@ -11,7 +11,7 @@ class RemindFilterTVC: BaseTVC {
 
     // MARK: Properties
     var selectFilterAction: ((Int) -> ())?
-    var selectResetBtnClosure: ((Bool) -> ())?
+    var selectResetBtnAction: ((Bool) -> ())?
     
     // MARK: IBOutlet
     @IBOutlet weak var previousFeelingBtn: UIButton!
@@ -48,7 +48,7 @@ class RemindFilterTVC: BaseTVC {
         }
         previousFeelingBtn.setTitle("처음 감정", for: .normal)
         laterFeelingBtn.setTitle("돌아본 감정", for: .normal)
-        selectResetBtnClosure?(true)
+        selectResetBtnAction?(true)
     }
 }
 
