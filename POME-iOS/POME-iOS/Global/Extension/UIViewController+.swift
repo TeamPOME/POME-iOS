@@ -98,4 +98,24 @@ extension UIViewController {
         let generator = UIImpactFeedbackGenerator(style: degree)
         generator.impactOccurred()
     }
+    
+    /**
+     - Description:
+    날짜를 포멧 형태에 따라 변경해주는 메서드입니다.
+     */
+    
+    /// 년, 월 형식으로 리턴하는 함수
+      func getMonthDate(date: Date) -> String {
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "yyyy년 M월"
+        return df.string(from: date)
+      }
+
+      /// yyyy.MM.dd 형식으로 리턴하는 함수
+      func getSelectedDate(date: Date) -> String {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy.MM.dd"
+        return df.string(from: date)
+      }
 }
