@@ -1,23 +1,23 @@
 {
   "images" : [
     {
-      "scale" : "1x",
+      "filename" : "icGoalKeep24.png",
       "idiom" : "universal",
-      "filename" : "icArrowDown17.png"
+      "scale" : "1x"
     },
     {
-      "filename" : "icArrowDown17@2x.png",
+      "filename" : "icGoalKeep24@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icArrowDown17@3x.png",
+      "filename" : "icGoalKeep24@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

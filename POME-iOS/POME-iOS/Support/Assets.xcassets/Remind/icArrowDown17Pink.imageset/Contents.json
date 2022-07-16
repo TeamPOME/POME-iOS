@@ -1,23 +1,23 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
       "filename" : "icArrowDown17Pink.png",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "scale" : "2x",
+      "filename" : "icArrowDown17Pink@2x.png",
       "idiom" : "universal",
-      "filename" : "icArrowDown17Pink@2x.png"
+      "scale" : "2x"
     },
     {
       "filename" : "icArrowDown17Pink@3x.png",
-      "scale" : "3x",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
