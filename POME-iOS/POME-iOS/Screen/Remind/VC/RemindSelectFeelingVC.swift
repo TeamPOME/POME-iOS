@@ -53,7 +53,7 @@ class RemindSelectFeelingVC: BaseVC {
     }
     
     // MARK: IBAction
-    @IBAction func happyBtnTap(_ sender: Any) {
+    @IBAction func tapHappyBtn(_ sender: Any) {
         if isFirstEmotion {
             selectFeelingDelegate?.selectPreviousEmoji(previousEmoji: "행복해요")
         } else {
@@ -63,7 +63,7 @@ class RemindSelectFeelingVC: BaseVC {
         self.dismiss(animated: true)
     }
     
-    @IBAction func dontKnowBtnTap(_ sender: Any) {
+    @IBAction func tapDontKnowBtn(_ sender: Any) {
         if isFirstEmotion {
             selectFeelingDelegate?.selectPreviousEmoji(previousEmoji: "모르겠어요")
         } else {
@@ -73,7 +73,7 @@ class RemindSelectFeelingVC: BaseVC {
         self.dismiss(animated: true)
     }
     
-    @IBAction func regretBtnTap(_ sender: Any) {
+    @IBAction func tapRegretBtn(_ sender: Any) {
         if isFirstEmotion {
             selectFeelingDelegate?.selectPreviousEmoji(previousEmoji: "후회해요")
         } else {

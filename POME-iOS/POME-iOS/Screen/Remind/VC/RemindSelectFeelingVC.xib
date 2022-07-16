@@ -19,9 +19,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RemindSelectFeelingVC" customModule="POME_iOS" customModuleProvider="target">
             <connections>
-                <outlet property="dontKnowBtn" destination="rmq-5F-fkK" id="hyc-CC-Uea"/>
-                <outlet property="happyBtn" destination="3qs-Lj-2s8" id="z2G-Kl-LBj"/>
-                <outlet property="regretBtn" destination="pxQ-98-7xu" id="GEQ-eZ-8uo"/>
+                <outlet property="dontKnowBtn" destination="rmq-5F-fkK" id="8TB-Bc-bjU"/>
+                <outlet property="happyBtn" destination="3qs-Lj-2s8" id="plR-zm-Q5u"/>
+                <outlet property="regretBtn" destination="pxQ-98-7xu" id="cuW-xw-8pH"/>
                 <outlet property="titleLabel" destination="3vV-1h-Hfb" id="GH4-ZX-gc5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -55,7 +55,7 @@
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="emojiMintHappyFiter54"/>
                                     <connections>
-                                        <action selector="happyBtnTap:" destination="-1" eventType="touchUpInside" id="V0F-gs-6jv"/>
+                                        <action selector="tapHappyBtn:" destination="-1" eventType="touchUpInside" id="BMI-rM-pGO"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebZ-gq-NIP">
@@ -77,7 +77,7 @@
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="emojiMintNotSureFiter54"/>
                                     <connections>
-                                        <action selector="dontKnowBtnTap:" destination="-1" eventType="touchUpInside" id="kml-Wl-5Jn"/>
+                                        <action selector="tapDontKnowBtn:" destination="-1" eventType="touchUpInside" id="blf-79-OAV"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모르겠어요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpi-sA-bfE">
@@ -104,7 +104,7 @@
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="emojiMintRegretFiter54" title=""/>
                                     <connections>
-                                        <action selector="regretBtnTap:" destination="-1" eventType="touchUpInside" id="9Jk-sw-8KW"/>
+                                        <action selector="tapRegretBtn:" destination="-1" eventType="touchUpInside" id="AvB-yv-jxe"/>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="후회해요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPR-YX-mgN">
