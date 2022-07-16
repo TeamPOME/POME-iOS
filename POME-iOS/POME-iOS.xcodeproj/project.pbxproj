@@ -20,6 +20,9 @@
 		1A4BB621287E0395007C8FC1 /* RemindGoalTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4BB61F287E0395007C8FC1 /* RemindGoalTitleTVC.xib */; };
 		1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */; };
 		1A76CACF287B1B3300B29500 /* MateHeaderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */; };
+		1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89417C2883066D00606A68 /* MarshmellowCVC.swift */; };
+		1A89417F2883066D00606A68 /* MarshmellowCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A89417D2883066D00606A68 /* MarshmellowCVC.xib */; };
+		1A9D1A68288331FB006D65C2 /* MarshmellowDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */; };
 		1AB882662881386600157820 /* RemindSelectFeelingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB882642881386600157820 /* RemindSelectFeelingVC.swift */; };
 		1AB882672881386600157820 /* RemindSelectFeelingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB882652881386600157820 /* RemindSelectFeelingVC.xib */; };
 		1ABDED76287E716E00F85F9C /* RemindFilterTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDED74287E716E00F85F9C /* RemindFilterTVC.swift */; };
@@ -145,6 +148,9 @@
 		1A4BB61F287E0395007C8FC1 /* RemindGoalTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindGoalTitleTVC.xib; sourceTree = "<group>"; };
 		1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateHeaderCVC.swift; sourceTree = "<group>"; };
 		1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateHeaderCVC.xib; sourceTree = "<group>"; };
+		1A89417C2883066D00606A68 /* MarshmellowCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshmellowCVC.swift; sourceTree = "<group>"; };
+		1A89417D2883066D00606A68 /* MarshmellowCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarshmellowCVC.xib; sourceTree = "<group>"; };
+		1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshmellowDataModel.swift; sourceTree = "<group>"; };
 		1AB882642881386600157820 /* RemindSelectFeelingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindSelectFeelingVC.swift; sourceTree = "<group>"; };
 		1AB882652881386600157820 /* RemindSelectFeelingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindSelectFeelingVC.xib; sourceTree = "<group>"; };
 		1ABDED74287E716E00F85F9C /* RemindFilterTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindFilterTVC.swift; sourceTree = "<group>"; };
@@ -615,6 +621,7 @@
 				1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */,
 				1ABDED7A287F250600F85F9C /* RemindGoalDataModel.swift */,
 				77B571A828805C3100C9CC27 /* FriendListDataModel.swift */,
+				1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */,
 			);
 			path = AppModel;
 			sourceTree = "<group>";
@@ -729,6 +736,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F3232874B80A00D2F6C0 /* MypageXib.swift */,
+				1A89417D2883066D00606A68 /* MarshmellowCVC.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -781,6 +789,7 @@
 		77E8F3192874B73600D2F6C0 /* CVC */ = {
 			isa = PBXGroup;
 			children = (
+				1A89417C2883066D00606A68 /* MarshmellowCVC.swift */,
 				77E8F3212874B7F000D2F6C0 /* MypageCVC.swift */,
 			);
 			path = CVC;
@@ -938,6 +947,7 @@
 				1A4BB61D287DF5B7007C8FC1 /* RemindGoalTVC.xib in Resources */,
 				77E8F2C52874A23800D2F6C0 /* LaunchScreen.storyboard in Resources */,
 				1ABDED77287E716E00F85F9C /* RemindFilterTVC.xib in Resources */,
+				1A89417F2883066D00606A68 /* MarshmellowCVC.xib in Resources */,
 				778E0F50287B273900BEEEA5 /* SignUpSB.storyboard in Resources */,
 				77E8F31C2874B7B700D2F6C0 /* MypageSB.storyboard in Resources */,
 				77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */,
@@ -1018,6 +1028,7 @@
 				77E8F33C2875A08200D2F6C0 /* UILabel+.swift in Sources */,
 				1ABDED79287F23E000F85F9C /* RemindHaveNoGoalTVC.swift in Sources */,
 				77E8F33A28759FCF00D2F6C0 /* UIFont+.swift in Sources */,
+				1A9D1A68288331FB006D65C2 /* MarshmellowDataModel.swift in Sources */,
 				1A4BB620287E0395007C8FC1 /* RemindGoalTitleTVC.swift in Sources */,
 				77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */,
 				84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */,
@@ -1085,6 +1096,7 @@
 				77E8F3442875ECAE00D2F6C0 /* UITextView+.swift in Sources */,
 				77B571A1287FF58300C9CC27 /* AddFriendVC.swift in Sources */,
 				77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */,
+				1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */,
 				77E8F37B2876943800D2F6C0 /* WriteResModel.swift in Sources */,
 				77E8F3162874B57700D2F6C0 /* MateCVC.swift in Sources */,
 				1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */,
