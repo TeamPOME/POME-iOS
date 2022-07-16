@@ -9,13 +9,20 @@ import UIKit
 
 class AddGoalDateVC: BaseVC {
     
+    // MARK: Properties
+    
+    /// delegate 선언
+    var delegate: DeliveryDateProtocol?
+    var startDate: Date = Date()
+    var endDate: Date = Date()
+    
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var confirmBtn: PomeBtn!
-    
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +36,18 @@ class AddGoalDateVC: BaseVC {
     
     // MARK: IBAction
     @IBAction func tapStartCalendar(_ sender: UIButton) {
-        print("첫번째")
+        delegate?.deliveryDate(date: startDate, isStartDate: true)
+        showHalfModalVC()
     }
 
     @IBAction func tapEndCalendar(_ sender: UIButton) {
-        print("두번째")
+        delegate?.deliveryDate(date: endDate, isStartDate: false)
+        showHalfModalVC()
     }
     
     @IBAction func tapConfirmBtn(_ sender: UIButton) {
+        
+        // TODO: - 서버 통신 필요
     }
 }
 
@@ -48,11 +59,53 @@ extension AddGoalDateVC {
         titleLabel.setLineSpacing(lineSpacing: 4)
         titleLabel.textAlignment = .left
         confirmBtn.setTitle("선택했어요", for: .normal)
+        confirmBtn.isDisabled = true
     }
     
     private func setTapBackBtn() {
         naviBar.backBtn.press { [weak self] in
             self?.navigationController?.popViewController(animated: true)
         }
+    }
+}
+
+// MARK: - @objc
+extension AddGoalDateVC {
+    
+    /// 만들어 둔 HalfModalVC 보여주는 함수
+    @objc func showHalfModalVC() {
+        let halfModalVC = CalendarVC()
+        halfModalVC.delegate = self
+        halfModalVC.modalPresentationStyle = .custom
+        halfModalVC.transitioningDelegate = self
+        self.present(halfModalVC, animated: true, completion: nil)
+    }
+}
+
+// MARK: - DeliveryDateProtocol
+extension AddGoalDateVC: DeliveryDateProtocol{
+    
+    func deliveryDate(date: Date, isStartDate: Bool) {
+        if isStartDate {
+            startDateLabel.text = self.getSelectedDate(date: date)
+            startDateLabel.textColor = .grey_9
+        } else {
+            endDateLabel.text = self.getSelectedDate(date: date)
+            endDateLabel.textColor = .grey_9
+        }
+        
+        confirmBtn.isDisabled = !(startDateLabel.textColor == .grey_9 && endDateLabel.textColor == .grey_9)
+    }
+}
+
+// MARK: - UIViewControllerTransitioningDelegate
+extension AddGoalDateVC: UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        let halfModalVC = PomeHalfModalVC(presentedViewController: presented, presenting: presenting)
+        
+        /// HalfModalView의 높이 지정
+        halfModalVC.modalHeight = 448
+        return halfModalVC
     }
 }
