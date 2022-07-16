@@ -10,9 +10,8 @@ import UIKit
 class RemindFilterTVC: BaseTVC {
 
     // MARK: Properties
-    var closure: ((Int) -> ())?
-    var tapFirstEmotionAction: ((Int) -> ())?
-    var tapLaterEmotionAction: ((Int) -> ())?
+    var selectBottomSheetClosure: ((Int) -> ())?
+    var selectResetBtnClosure: ((Bool) -> ())?
     
     // MARK: IBOutlet
     @IBOutlet weak var previousFeelingBtn: UIButton!
@@ -28,14 +27,26 @@ class RemindFilterTVC: BaseTVC {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: false)
     }
+    
+    // MARK: IBAction
     @IBAction func tapFirstEmotionAction(_ sender: Any) {
-        self.closure?(0)
+        selectBottomSheetClosure?(0)
     }
     @IBAction func tapLaterEmotionAction(_ sender: Any) {
-        closure?(1)
+        selectBottomSheetClosure?(1)
     }
     @IBAction func tapResetButton(_ sender: Any) {
-        
+        [previousFeelingBtn, laterFeelingBtn].forEach {
+            $0?.backgroundColor = .grey_2
+            $0?.setTitleColor(.grey_5, for: .normal)
+            $0?.tintColor = .grey_5
+            $0?.makeRounded(cornerRadius: 4.adjusted)
+            $0?.setImage(UIImage(named: "icArrowDown17"), for: .normal)
+            $0?.semanticContentAttribute = .forceRightToLeft
+        }
+        previousFeelingBtn.setTitle("처음 감정", for: .normal)
+        laterFeelingBtn.setTitle("돌아본 감정", for: .normal)
+        selectResetBtnClosure?(true)
     }
 }
 
@@ -45,7 +56,13 @@ extension RemindFilterTVC {
     private func configureUI() {
         [previousFeelingBtn, resetBtn, laterFeelingBtn].forEach {
             $0?.backgroundColor = .grey_2
+            $0?.setTitleColor(.grey_5, for: .normal)
+            $0?.tintColor = .grey_5
             $0?.makeRounded(cornerRadius: 4.adjusted)
+        }
+        [previousFeelingBtn, laterFeelingBtn].forEach {
+            $0?.setImage(UIImage(named: "icArrowDown17"), for: .normal)
+            $0?.semanticContentAttribute = .forceRightToLeft
         }
         resetBtn.backgroundColor = .grey_0
     }

@@ -7,16 +7,17 @@
 
 import UIKit
 
-protocol TVCellDelegate {
-    func selectendEmojiBtn(_ index : Int)
+protocol SelectFeelingDelegate {
+    func selectPreviousEmoji(previousEmoji: String)
+    func selectLatestEmoji(latestEmoji: String)
 }
 
 class RemindSelectFeelingVC: BaseVC {
 
     // MARK: Properties
-    var delegate: TVCellDelegate?
+    var selectFeelingDelegate: SelectFeelingDelegate?
     var isFirstEmotion: Bool = true
-    var closure: ((Int) -> ())?
+    var isButtonSelected: Bool = false
     
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
@@ -57,17 +58,39 @@ class RemindSelectFeelingVC: BaseVC {
     
     // MARK: IBAction
     @IBAction func happyBtnTap(_ sender: Any) {
-        closure?(0)
+        if isFirstEmotion {
+            selectFeelingDelegate?.selectPreviousEmoji(previousEmoji: "행복해요")
+        } else {
+            selectFeelingDelegate?.selectLatestEmoji(latestEmoji: "행복해요")
+        }
+        isButtonSelected = true
+        self.dismiss(animated: true)
     }
     @IBAction func dontKnowBtnTap(_ sender: Any) {
-        closure?(1)
+        if isFirstEmotion {
+            selectFeelingDelegate?.selectPreviousEmoji(previousEmoji: "모르겠어요")
+        } else {
+            selectFeelingDelegate?.selectLatestEmoji(latestEmoji: "모르겠어요")
+        }
+        isButtonSelected = true
+        self.dismiss(animated: true)
     }
     @IBAction func regretBtnTap(_ sender: Any) {
-        closure?(2)
+        if isFirstEmotion {
+            selectFeelingDelegate?.selectPreviousEmoji(previousEmoji: "후회해요")
+        } else {
+            selectFeelingDelegate?.selectLatestEmoji(latestEmoji: "후회해요")
+        }
+        isButtonSelected = true
+        self.dismiss(animated: true)
     }
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        isButtonSelected = false
     }
 }
