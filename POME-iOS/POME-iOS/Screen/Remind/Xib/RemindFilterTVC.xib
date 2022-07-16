@@ -42,6 +42,9 @@
                             <color key="baseForegroundColor" name="grey_5"/>
                             <color key="baseBackgroundColor" name="grey_2"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="tapFirstEmotionAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5gW-7u-XpZ"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncn-wb-Ij0">
                         <rect key="frame" x="115" y="42" width="105" height="31"/>
@@ -54,6 +57,9 @@
                             <color key="baseForegroundColor" name="grey_5"/>
                             <color key="baseBackgroundColor" name="grey_2"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="tapLaterEmotionAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gMV-Bw-37c"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PMY-ok-2BT">
                         <rect key="frame" x="283" y="42" width="76" height="31"/>
@@ -68,6 +74,9 @@
                             <color key="baseForegroundColor" name="grey_5"/>
                             <color key="baseBackgroundColor" name="grey_0"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="tapResetButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Xft-JV-6NK"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" name="grey_0"/>

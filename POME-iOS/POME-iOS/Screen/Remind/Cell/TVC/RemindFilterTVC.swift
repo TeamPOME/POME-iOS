@@ -9,6 +9,11 @@ import UIKit
 
 class RemindFilterTVC: BaseTVC {
 
+    // MARK: Properties
+    var closure: ((Int) -> ())?
+    var tapFirstEmotionAction: ((Int) -> ())?
+    var tapLaterEmotionAction: ((Int) -> ())?
+    
     // MARK: IBOutlet
     @IBOutlet weak var previousFeelingBtn: UIButton!
     @IBOutlet weak var laterFeelingBtn: UIButton!
@@ -22,6 +27,15 @@ class RemindFilterTVC: BaseTVC {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: false)
+    }
+    @IBAction func tapFirstEmotionAction(_ sender: Any) {
+        self.closure?(0)
+    }
+    @IBAction func tapLaterEmotionAction(_ sender: Any) {
+        closure?(1)
+    }
+    @IBAction func tapResetButton(_ sender: Any) {
+        
     }
 }
 

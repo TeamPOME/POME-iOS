@@ -114,11 +114,6 @@ extension RemindVC {
     /// 만들어 둔 HalfModalVC 보여주는 함수
     @objc func showHalfModalVC(_ index: Int) {
         let halfModalVC = RemindSelectFeelingVC()
-//        halfModalVC.closure = { index in
-//            if index == 0 :
-//
-//
-//        }
         halfModalVC.modalPresentationStyle = .custom
         halfModalVC.transitioningDelegate = self
         if index == 0 {
@@ -172,13 +167,16 @@ extension RemindVC: UITableViewDelegate {
             }
             return remindGoalTitleTVC
         case 1:
-            remindFilterTVC.tapFirstEmotionAction = {
-                self.showHalfModalVC(0)
+            remindFilterTVC.closure = { num in
+                switch num {
+                case 0 :
+                    self.showHalfModalVC(0)
+                case 1:
+                    self.showHalfModalVC(1)
+                default:
+                    self.showHalfModalVC(0)
+                }
             }
-            remindFilterTVC.tapLaterEmotionAction = {
-                self.showHalfModalVC(1)
-            }
-
             return remindFilterTVC
         case 2:
             if goalCount == 0 {
