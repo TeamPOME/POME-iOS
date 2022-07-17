@@ -13,6 +13,7 @@ class MypageVC: BaseVC {
     @IBOutlet weak var profileImage: PomeMaskedImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var myPageNaviBar: PomeNaviBar!
+    @IBOutlet weak var checkView: UIView!
     @IBOutlet weak var profileImageView: PomeMaskedImageView!
     @IBOutlet weak var goalStoarageLabel: UILabel!
     @IBOutlet weak var goalStorageBtnView: UIView!
@@ -36,6 +37,7 @@ extension MypageVC {
         myPageNaviBar.setNaviStyle(state: .greyWithRightBtn)
         myPageNaviBar.rightCustomBtn.setImage(UIImage(named: "icSetting24Mono"), for: .normal)
         marshmellowCV.isScrollEnabled = false
+        checkView.makeRounded(cornerRadius: checkView.frame.width / 2)
         goalStorageBtnView.makeRounded(cornerRadius: 6)
     }
 }

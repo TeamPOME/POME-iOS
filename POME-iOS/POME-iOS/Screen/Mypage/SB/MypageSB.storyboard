@@ -153,6 +153,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="K1F-jK-3JL"/>
                     <connections>
+                        <outlet property="checkView" destination="rm3-Mt-2at" id="pWd-Mg-9NC"/>
                         <outlet property="goalStoarageLabel" destination="wv0-RD-sDT" id="vM0-1F-MtQ"/>
                         <outlet property="goalStorageBtnView" destination="6EL-1q-3n7" id="0Ma-zX-Tj9"/>
                         <outlet property="marshmellowCV" destination="8zz-9i-CIJ" id="gwZ-rx-M4K"/>

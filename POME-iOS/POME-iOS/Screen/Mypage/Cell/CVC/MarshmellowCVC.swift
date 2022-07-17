@@ -9,17 +9,18 @@ import UIKit
 
 class MarshmellowCVC: BaseCVC {
 
+    // MARK: IBOutlet
     @IBOutlet weak var labelLevelContainerView: UIView!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var levelBadgeContainerView: UIView!
     @IBOutlet weak var levelBadgeLabel: UILabel!
     @IBOutlet weak var marshmellowImageView: UIImageView!
     
+    // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
     }
-
 }
 
 // MARK: - UI
