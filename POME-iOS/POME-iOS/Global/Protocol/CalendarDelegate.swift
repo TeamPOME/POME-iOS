@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DeliveryDateDelegate {
-    func deliveryDate(startDate: Date, endDate: Date, isStartDate: Bool)
+    func deliveryDate(selectedDate: Date, isStartDate: Bool)
 }

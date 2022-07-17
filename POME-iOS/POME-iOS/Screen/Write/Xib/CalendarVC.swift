@@ -45,7 +45,11 @@ class CalendarVC: BaseVC {
     }
     
     @IBAction func tapSelectBtn(_ sender: UIButton) {
-        delegate?.deliveryDate(startDate: startDate, endDate: endDate, isStartDate: isStartCalendar)
+        if isStartCalendar {
+            delegate?.deliveryDate(selectedDate: startDate, isStartDate: isStartCalendar)
+        } else {
+            delegate?.deliveryDate(selectedDate: endDate, isStartDate: isStartCalendar)
+        }
         self.dismiss(animated: true)
     }
 }

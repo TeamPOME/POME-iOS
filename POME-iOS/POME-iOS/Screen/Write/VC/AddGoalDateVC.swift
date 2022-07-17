@@ -102,9 +102,9 @@ extension AddGoalDateVC {
 extension AddGoalDateVC: DeliveryDateDelegate{
     
     /// 받아온 데이터로 날짜 레이블 변경
-    func deliveryDate(startDate: Date, endDate: Date, isStartDate: Bool) {
+    func deliveryDate(selectedDate: Date, isStartDate: Bool) {
         if isStartDate {
-            startDateLabel.text = self.getSelectedDate(date: startDate)
+            startDateLabel.text = self.getSelectedDate(date: selectedDate)
             startDateLabel.textColor = .grey_9
             endCalendarBtn.isEnabled = true
             
@@ -114,7 +114,7 @@ extension AddGoalDateVC: DeliveryDateDelegate{
                 endDateLabel.textColor = .grey_5
             }
         } else {
-            endDateLabel.text = self.getSelectedDate(date: endDate)
+            endDateLabel.text = self.getSelectedDate(date: selectedDate)
             endDateLabel.textColor = .grey_9
         }
         
