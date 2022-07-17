@@ -44,7 +44,7 @@ extension WriteBottomAlertVC {
         switch type {
         case "spend":
             DispatchQueue.main.async {
-                self.mainImageView.image = UIImage(named: "3DPenPink110")
+                self.mainImageView.image = UIImage(named: "writingWarningAlert3DComponent")
                 self.titleLabel.text = "지금은 씀씀이를 기록할 수 없어요"
                 self.subLabel.text = "나만의 소비 목표를 설정하고\n기록을 시작해보세요!"
             }
@@ -56,7 +56,7 @@ extension WriteBottomAlertVC {
             }
         default:
             DispatchQueue.main.async {
-                self.mainImageView.image = UIImage(named: "3DPenPink110")
+                self.mainImageView.image = UIImage(named: "3D10WarningSheet")
                 self.titleLabel.text = "목표는 10개까지만 만들 수 있어요"
                 self.subLabel.text = "포미는 사용자가 무리하지 않고 즐겁게 목표를\n달성할 수 있도록 응원하고 있어요"
                 
