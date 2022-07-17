@@ -24,8 +24,8 @@ class MypageVC: BaseVC {
         super.viewDidLoad()
         configureUI()
         setDelegate()
-        setCVC()
-        setViewTapBtn()
+        setViewTapAction()
+        registerCVC()
         setData(dataModel: MypageDataModel.sampleData[0])
     }
 }
@@ -52,14 +52,14 @@ extension MypageVC {
     }
     
     /// 목표보관함 전체 ContainerView의 클릭 이벤트를 가져옵니다.
-    private func setViewTapBtn() {
-        let settingTap = UITapGestureRecognizer(target: self, action: #selector(tapGoToGoalPage))
+    private func setViewTapAction() {
+        let settingTap = UITapGestureRecognizer(target: self, action: #selector(goToGoalStorage))
         goalStorageBtnView.isUserInteractionEnabled = true
         goalStorageBtnView.addGestureRecognizer(settingTap)
     }
     
     /// 마시멜로 모으기 셀 등록
-    private func setCVC() {
+    private func registerCVC() {
         MarshmellowCVC.register(target: marshmellowCV)
     }
     
@@ -75,7 +75,7 @@ extension MypageVC {
 extension MypageVC {
     
     /// 클릭되었을때 Mypage로 이동
-    @objc func tapGoToGoalPage() {
+    @objc func goToGoalStorage() {
       
         // TODO: 목표보관함 CV로 변경하고 연결
     }

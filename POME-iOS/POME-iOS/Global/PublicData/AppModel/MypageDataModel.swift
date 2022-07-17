@@ -21,8 +21,6 @@ struct MypageDataModel {
 }
 
 extension MypageDataModel {
-    static let sampleData: [MypageDataModel] =
-    [
-        MypageDataModel(endGoalNum: 11, mypageName: "포포", mypageImageName: "userProfileFill32")
-    ]
+    static let sampleData: [MypageDataModel] = [
+        MypageDataModel(endGoalNum: 11, mypageName: "포포", mypageImageName: "userProfileFill32") ]
 }
