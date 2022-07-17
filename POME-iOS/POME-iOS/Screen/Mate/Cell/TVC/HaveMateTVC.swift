@@ -11,6 +11,9 @@ import Then
 
 class HaveMateTVC: BaseTVC {
     
+    // MARK: Properties
+    var tapPlusBtnAction: (() -> ())?
+    
     // MARK: IBOutlet
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var profileImageView: PomeMaskedImageView!
@@ -34,6 +37,10 @@ class HaveMateTVC: BaseTVC {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
+    }
+    
+    @IBAction func tapPlusBtn(_ sender: UIButton) {
+        tapPlusBtnAction?()
     }
 }
 

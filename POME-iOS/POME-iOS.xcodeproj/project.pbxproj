@@ -61,9 +61,6 @@
 		77E8F3042874B1D400D2F6C0 /* RemindXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3032874B1D400D2F6C0 /* RemindXib.swift */; };
 		77E8F30E2874B4DD00D2F6C0 /* MateSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F30D2874B4DD00D2F6C0 /* MateSB.storyboard */; };
 		77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F30F2874B50500D2F6C0 /* MateVC.swift */; };
-		77E8F3142874B56B00D2F6C0 /* MateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3132874B56B00D2F6C0 /* MateTVC.swift */; };
-		77E8F3162874B57700D2F6C0 /* MateCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3152874B57700D2F6C0 /* MateCVC.swift */; };
-		77E8F3182874B72F00D2F6C0 /* MateXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3172874B72F00D2F6C0 /* MateXib.swift */; };
 		77E8F31C2874B7B700D2F6C0 /* MypageSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F31B2874B7B700D2F6C0 /* MypageSB.storyboard */; };
 		77E8F31E2874B7CE00D2F6C0 /* MypageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F31D2874B7CE00D2F6C0 /* MypageVC.swift */; };
 		77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F31F2874B7E500D2F6C0 /* MypageTVC.swift */; };
@@ -193,9 +190,6 @@
 		77E8F3032874B1D400D2F6C0 /* RemindXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindXib.swift; sourceTree = "<group>"; };
 		77E8F30D2874B4DD00D2F6C0 /* MateSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MateSB.storyboard; sourceTree = "<group>"; };
 		77E8F30F2874B50500D2F6C0 /* MateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateVC.swift; sourceTree = "<group>"; };
-		77E8F3132874B56B00D2F6C0 /* MateTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateTVC.swift; sourceTree = "<group>"; };
-		77E8F3152874B57700D2F6C0 /* MateCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateCVC.swift; sourceTree = "<group>"; };
-		77E8F3172874B72F00D2F6C0 /* MateXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateXib.swift; sourceTree = "<group>"; };
 		77E8F31B2874B7B700D2F6C0 /* MypageSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MypageSB.storyboard; sourceTree = "<group>"; };
 		77E8F31D2874B7CE00D2F6C0 /* MypageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVC.swift; sourceTree = "<group>"; };
 		77E8F31F2874B7E500D2F6C0 /* MypageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTVC.swift; sourceTree = "<group>"; };
@@ -702,7 +696,6 @@
 		77E8F3052874B1E100D2F6C0 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
-				77E8F3172874B72F00D2F6C0 /* MateXib.swift */,
 				1A1AEFD9287A4D5B00DD5F7E /* HaveMateTVC.xib */,
 				1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */,
 			);
@@ -774,7 +767,6 @@
 			isa = PBXGroup;
 			children = (
 				1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */,
-				77E8F3152874B57700D2F6C0 /* MateCVC.swift */,
 			);
 			path = CVC;
 			sourceTree = "<group>";
@@ -782,7 +774,6 @@
 		77E8F3122874B54C00D2F6C0 /* TVC */ = {
 			isa = PBXGroup;
 			children = (
-				77E8F3132874B56B00D2F6C0 /* MateTVC.swift */,
 				1A1AEFD8287A4D5B00DD5F7E /* HaveMateTVC.swift */,
 				1A1AEFD6287A4CB600DD5F7E /* HaveNoMateTVC.swift */,
 			);
@@ -1078,8 +1069,6 @@
 				778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */,
 				77E8F3562875F5A400D2F6C0 /* BaseTVC.swift in Sources */,
 				1A10C2562877349E00489CA1 /* GoalCardCVC.swift in Sources */,
-				77E8F3182874B72F00D2F6C0 /* MateXib.swift in Sources */,
-				77E8F3142874B56B00D2F6C0 /* MateTVC.swift in Sources */,
 				77E8F35A2875F6BE00D2F6C0 /* CodeBaseCVC.swift in Sources */,
 				8432C9BF28787F9A001C643F /* FeelingCardCVC.swift in Sources */,
 				77E8F34C2875F37500D2F6C0 /* Identifiers.swift in Sources */,
@@ -1102,7 +1091,6 @@
 				77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */,
 				1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */,
 				77E8F37B2876943800D2F6C0 /* WriteResModel.swift in Sources */,
-				77E8F3162874B57700D2F6C0 /* MateCVC.swift in Sources */,
 				1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */,
 				84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */,
 				77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */,
