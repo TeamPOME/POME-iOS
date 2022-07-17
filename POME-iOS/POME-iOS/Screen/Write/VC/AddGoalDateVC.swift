@@ -45,7 +45,7 @@ class AddGoalDateVC: BaseVC {
     
     @IBAction func tapConfirmBtn(_ sender: UIButton) {
         
-        // TODO: - 화면 전환 필요
+        // TODO: - 화면 전환 및 데이터 전달 필요
     }
 }
 
@@ -117,6 +117,8 @@ extension AddGoalDateVC: DeliveryDateDelegate{
             endDateLabel.text = self.getSelectedDate(date: endDate)
             endDateLabel.textColor = .grey_9
         }
+        
+        /// 날짜 두 개 다 선택한 경우 다음으로 넘어가는 버튼 활성화
         confirmBtn.isDisabled = !(startDateLabel.textColor == .grey_9 && endDateLabel.textColor == .grey_9)
     }
 }
