@@ -142,6 +142,7 @@ extension CalendarVC: FSCalendarDelegate {
         }
     }
     
+    /// 캘린더 달이 바뀌면 해당 yyyy월 m월로 헤더 변경
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         headerLabel.text = self.getMonthDate(date: calendar.currentPage)
     }
@@ -152,7 +153,6 @@ extension CalendarVC: FSCalendarDataSource {
     
     /// 오늘 이전 or 시작 날짜 이전은 선택 불가능
     func minimumDate(for calendar: FSCalendar) -> Date {
-        
         if isStartCalendar {
             calendar.select(startDate)
             return Date()
@@ -165,7 +165,6 @@ extension CalendarVC: FSCalendarDataSource {
     
     /// 오늘 or 시작 날짜로부터 한 달 까지만 설정 가능
     func maximumDate(for calendar: FSCalendar) -> Date {
-        
         if isStartCalendar {
             guard let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: Date()) else { return Date() }
             return nextMonth
