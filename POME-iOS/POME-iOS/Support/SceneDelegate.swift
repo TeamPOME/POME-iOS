@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KakaoSDKAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -24,6 +25,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             self.window = window
             window.makeKeyAndVisible()
+        }
+    }
+    
+    /// 카카오 로그인에 필요한 설정
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url = URLContexts.first?.url {
+            if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                _ = AuthController.handleOpenUrl(url: url)
+            }
         }
     }
     
