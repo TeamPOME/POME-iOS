@@ -120,6 +120,7 @@ extension UIViewController {
         return df.string(from: date)
     }
     
+    /// yyyy.MM.dd 형식의 날짜를 Date형으로 바꿔주는 함수
     func getStringToDate(string: String) -> Date {
         let df = DateFormatter()
         df.locale = Locale(identifier: "ko_KR")
