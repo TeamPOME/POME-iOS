@@ -44,8 +44,12 @@ class AddGoalDateVC: BaseVC {
     }
     
     @IBAction func tapConfirmBtn(_ sender: UIButton) {
+        guard let addGoalContentVC = UIStoryboard.init(name: Identifiers.AddGoalContentSB, bundle: nil).instantiateViewController(withIdentifier: AddGoalContentVC.className) as? AddGoalContentVC else { return }
         
-        // TODO: - 화면 전환 및 데이터 전달 필요
+        /// 다음 화면에 시작날짜와 종료날짜 전달
+        addGoalContentVC.startDate = startDateLabel.text ?? ""
+        addGoalContentVC.endDate = endDateLabel.text ?? ""
+        navigationController?.pushViewController(addGoalContentVC, animated: true)
     }
 }
 

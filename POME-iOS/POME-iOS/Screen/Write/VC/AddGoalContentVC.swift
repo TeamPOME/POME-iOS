@@ -10,8 +10,8 @@ import UIKit
 class AddGoalContentVC: BaseVC {
     
     // MARK: Properties
-    var startDate: Date = Date()
-    var endDate: Date = Date()
+    var startDate: String = ""
+    var endDate: String = ""
     
     /// 서버 통신 시 콤마가 없는 상태의 금액 저장을 위함
     var price: Int = 0
@@ -31,6 +31,7 @@ class AddGoalContentVC: BaseVC {
         super.viewDidLoad()
         configureUI()
         setDelegate()
+        setTapBackBtn()
     }
     
     // MARK: IBAction
@@ -81,6 +82,12 @@ extension AddGoalContentVC {
         categoryTextField.delegate = self
         promiseTextField.delegate = self
         priceTextField.delegate = self
+    }
+    
+    private func setTapBackBtn() {
+        naviBar.backBtn.press { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
     }
     
     /// 글자수 제한 함수
