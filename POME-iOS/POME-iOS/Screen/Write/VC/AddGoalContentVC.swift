@@ -13,6 +13,9 @@ class AddGoalContentVC: BaseVC {
     var startDate: Date = Date()
     var endDate: Date = Date()
     
+    /// 서버 통신 시 콤마가 없는 상태의 금액 저장을 위함
+    var price: Int = 0
+    
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
     @IBOutlet weak var titleLabel: UILabel!
@@ -46,6 +49,12 @@ class AddGoalContentVC: BaseVC {
     @IBAction func tapOpenSwitch(_ sender: UISwitch) {
         switchBackView.backgroundColor = sender.isOn ? .pomeLightPink : .grey_0
     }
+    
+    @IBAction func tapConfirmBtn(_ sender: UIButton) {
+        
+        // TODO: - 서버 통신 필요
+        navigationController?.popToRootViewController(animated: true)
+    }
 }
 
 // MARK: - UI
@@ -74,11 +83,19 @@ extension AddGoalContentVC {
         priceTextField.delegate = self
     }
     
-    /// 글자수 제한
+    /// 글자수 제한 함수
     private func checkMaxLength(textField: UITextField!, maxLength: Int) {
         if (textField.text?.count ?? 0 > maxLength) {
             textField.deleteBackward()
         }
+    }
+    
+    /// 세 자리마다 콤마를 넣음
+    func numberFormatter(number: Int) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        return numberFormatter.string(from: NSNumber(value: number))!
     }
 }
 
@@ -107,6 +124,21 @@ extension AddGoalContentVC: UITextFieldDelegate {
             confirmBtn.isDisabled = false
         } else {
             confirmBtn.isDisabled = true
+        }
+        
+        /// 금액 세 자리마다 콤마 넣음
+        if let currentNum = priceTextField.text, let price = Int(currentNum) {
+            
+            /// 서버 통신을 위한 콤마 없는 int값 저장
+            self.price = price
+            priceTextField.text = numberFormatter(number: price)
+        }
+    }
+    
+    /// 목표 금액은 textField를 누르면 초기화 (콤마 넣기 위함)
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == priceTextField {
+            priceTextField.text = ""
         }
     }
 }

@@ -173,6 +173,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapConfirmBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Yw5-lc-zbT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLW-ju-e9l">
                                 <rect key="frame" x="322" y="60" width="30" height="32"/>
@@ -248,7 +251,7 @@
             <color red="0.16078431372549021" green="0.16470588235294117" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="light_pink">
-            <color red="1" green="0.95686274509803915" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.9570000171661377" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="sub">
             <color red="1" green="0.56470588235294117" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
