@@ -53,7 +53,7 @@ extension MypageVC {
     
     /// 목표보관함 전체 ContainerView의 클릭 이벤트를 가져옵니다.
     private func setViewTapAction() {
-        let settingTap = UITapGestureRecognizer(target: self, action: #selector(goToGoalStorage))
+        let settingTap = UITapGestureRecognizer(target: self, action: #selector(presentGoalStorage))
         goalStorageBtnView.isUserInteractionEnabled = true
         goalStorageBtnView.addGestureRecognizer(settingTap)
     }
@@ -75,7 +75,7 @@ extension MypageVC {
 extension MypageVC {
     
     /// 클릭되었을때 Mypage로 이동
-    @objc func goToGoalStorage() {
+    @objc func presentGoalStorage() {
       
         // TODO: 목표보관함 CV로 변경하고 연결
     }
