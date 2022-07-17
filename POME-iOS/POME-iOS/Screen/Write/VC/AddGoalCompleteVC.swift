@@ -17,6 +17,7 @@ class AddGoalCompleteVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        setNaviBar()
     }
     
     // MARK: IBAction
@@ -32,5 +33,14 @@ extension AddGoalCompleteVC {
         titleLabel.setLineSpacing(lineSpacing: 4)
         confirmBtn.setTitle("확인했어요", for: .normal)
         confirmBtn.isDisabled = false
+    }
+}
+
+// MARK: - Custom Methods
+extension AddGoalCompleteVC {
+    
+    /// 오른쪽으로 swipe시 뒤로가기 막음
+    private func setNaviBar() {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
 }
