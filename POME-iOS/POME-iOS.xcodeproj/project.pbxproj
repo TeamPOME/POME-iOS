@@ -129,6 +129,8 @@
 		84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B77276287B3E4B00E1EDFC /* LookbackVC.swift */; };
 		84B7727B287BD82000E1EDFC /* LookbackSelectSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B7727A287BD82000E1EDFC /* LookbackSelectSB.storyboard */; };
 		84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7727C287BD83D00E1EDFC /* LookbackSelectVC.swift */; };
+		84D4096D2884796700A09D1D /* AddGoalCompleteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D4096C2884796700A09D1D /* AddGoalCompleteSB.storyboard */; };
+		84D4096F2884797500A09D1D /* AddGoalCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4096E2884797500A09D1D /* AddGoalCompleteVC.swift */; };
 		84DC1ADA2880788C0057C55D /* PlusCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC1AD82880788C0057C55D /* PlusCVC.swift */; };
 		84DC1ADB2880788C0057C55D /* PlusCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DC1AD92880788C0057C55D /* PlusCVC.xib */; };
 		84F0186E288425FB00CD6C59 /* AddGoalContentSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F0186D288425FB00CD6C59 /* AddGoalContentSB.storyboard */; };
@@ -267,6 +269,8 @@
 		84B77276287B3E4B00E1EDFC /* LookbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackVC.swift; sourceTree = "<group>"; };
 		84B7727A287BD82000E1EDFC /* LookbackSelectSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LookbackSelectSB.storyboard; sourceTree = "<group>"; };
 		84B7727C287BD83D00E1EDFC /* LookbackSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackSelectVC.swift; sourceTree = "<group>"; };
+		84D4096C2884796700A09D1D /* AddGoalCompleteSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddGoalCompleteSB.storyboard; sourceTree = "<group>"; };
+		84D4096E2884797500A09D1D /* AddGoalCompleteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalCompleteVC.swift; sourceTree = "<group>"; };
 		84DC1AD82880788C0057C55D /* PlusCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusCVC.swift; sourceTree = "<group>"; };
 		84DC1AD92880788C0057C55D /* PlusCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlusCVC.xib; sourceTree = "<group>"; };
 		84F0186D288425FB00CD6C59 /* AddGoalContentSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddGoalContentSB.storyboard; sourceTree = "<group>"; };
@@ -585,6 +589,7 @@
 				8400A405287C1782004F2D49 /* LookbackCompleteSB.storyboard */,
 				845EFFC12881A97C0029E3EF /* AddGoalDateSB.storyboard */,
 				84F0186D288425FB00CD6C59 /* AddGoalContentSB.storyboard */,
+				84D4096C2884796700A09D1D /* AddGoalCompleteSB.storyboard */,
 			);
 			path = SB;
 			sourceTree = "<group>";
@@ -599,6 +604,7 @@
 				8400A407287C17C5004F2D49 /* LookbackCompleteVC.swift */,
 				845EFFBF2881A9730029E3EF /* AddGoalDateVC.swift */,
 				84F0186F2884260600CD6C59 /* AddGoalContentVC.swift */,
+				84D4096E2884797500A09D1D /* AddGoalCompleteVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -961,6 +967,7 @@
 				84DC1ADB2880788C0057C55D /* PlusCVC.xib in Resources */,
 				77E8F2CD2874A38600D2F6C0 /* Colorsets.xcassets in Resources */,
 				84F7C29F2881BF300095ECF4 /* AddGoalDateSB.storyboard in Resources */,
+				84D4096D2884796700A09D1D /* AddGoalCompleteSB.storyboard in Resources */,
 				1A4BB61D287DF5B7007C8FC1 /* RemindGoalTVC.xib in Resources */,
 				77E8F2C52874A23800D2F6C0 /* LaunchScreen.storyboard in Resources */,
 				1ABDED77287E716E00F85F9C /* RemindFilterTVC.xib in Resources */,
@@ -1055,6 +1062,7 @@
 				77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */,
 				77E8F36028765FA600D2F6C0 /* RemindNC.swift in Sources */,
 				1A3051202883D27E00F56808 /* MypageDataModel.swift in Sources */,
+				84D4096F2884797500A09D1D /* AddGoalCompleteVC.swift in Sources */,
 				77E8F31E2874B7CE00D2F6C0 /* MypageVC.swift in Sources */,
 				77B5719B287D458500C9CC27 /* CompleteSignUpVC.swift in Sources */,
 				1A1AEFDA287A4D5B00DD5F7E /* HaveMateTVC.swift in Sources */,
