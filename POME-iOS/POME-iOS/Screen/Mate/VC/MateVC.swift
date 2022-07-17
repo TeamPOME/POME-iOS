@@ -12,7 +12,7 @@ import Then
 class MateVC: BaseVC {
     
     // MARK: Properties
-    private var emojiViewTopConstraint: Constraint?
+    private var emojiSelectViewTopConstraint: Constraint?
     
     // TODO: - 서버 통신 할 때 친구 수로 넘겨받는지 확인
     private var mateNum = 10
@@ -121,7 +121,7 @@ extension MateVC {
         emojiSelectView.snp.makeConstraints {
             
             /// 첫번째 셀의 버튼 클릭 시 나타나야할 포지션을 디폴트로 설정 해둠
-            self.emojiViewTopConstraint = $0.top.equalTo(390).constraint
+            self.emojiSelectViewTopConstraint = $0.top.equalTo(390).constraint
             $0.trailing.equalToSuperview().inset(16)
             $0.width.equalTo(330)
             $0.height.equalTo(54)
@@ -189,7 +189,7 @@ extension MateVC {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.scrollPosition = scrollView.contentOffset.y
-        print("스크롤포지션", scrollPosition)
+        emojiSelectView.isHidden = true
     }
 }
 
@@ -214,12 +214,9 @@ extension MateVC: UITableViewDelegate {
                 let frame = cell?.layer.frame
                 
                 self.cellFrame = (frame?.maxY ?? 0) + 205
-                self.emojiViewTopConstraint?.update(offset: self.cellFrame - self.scrollPosition)
+                self.emojiSelectViewTopConstraint?.update(offset: self.cellFrame - self.scrollPosition)
                 self.view.layoutIfNeeded()
-                
-                print(self.cellFrame)
                 self.emojiSelectView.isHidden = false
-                
             }
             return haveMateTVC
         }
