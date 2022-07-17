@@ -14,6 +14,7 @@
 		1A1AEFD7287A4CB600DD5F7E /* HaveNoMateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD6287A4CB600DD5F7E /* HaveNoMateTVC.swift */; };
 		1A1AEFDA287A4D5B00DD5F7E /* HaveMateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD8287A4D5B00DD5F7E /* HaveMateTVC.swift */; };
 		1A1AEFDB287A4D5B00DD5F7E /* HaveMateTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD9287A4D5B00DD5F7E /* HaveMateTVC.xib */; };
+		1A3051202883D27E00F56808 /* MypageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A30511F2883D27E00F56808 /* MypageDataModel.swift */; };
 		1A4BB61C287DF5B7007C8FC1 /* RemindGoalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4BB61A287DF5B7007C8FC1 /* RemindGoalTVC.swift */; };
 		1A4BB61D287DF5B7007C8FC1 /* RemindGoalTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4BB61B287DF5B7007C8FC1 /* RemindGoalTVC.xib */; };
 		1A4BB620287E0395007C8FC1 /* RemindGoalTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4BB61E287E0395007C8FC1 /* RemindGoalTitleTVC.swift */; };
@@ -142,6 +143,7 @@
 		1A1AEFD6287A4CB600DD5F7E /* HaveNoMateTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveNoMateTVC.swift; sourceTree = "<group>"; };
 		1A1AEFD8287A4D5B00DD5F7E /* HaveMateTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveMateTVC.swift; sourceTree = "<group>"; };
 		1A1AEFD9287A4D5B00DD5F7E /* HaveMateTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveMateTVC.xib; sourceTree = "<group>"; };
+		1A30511F2883D27E00F56808 /* MypageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageDataModel.swift; sourceTree = "<group>"; };
 		1A4BB61A287DF5B7007C8FC1 /* RemindGoalTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindGoalTVC.swift; sourceTree = "<group>"; };
 		1A4BB61B287DF5B7007C8FC1 /* RemindGoalTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindGoalTVC.xib; sourceTree = "<group>"; };
 		1A4BB61E287E0395007C8FC1 /* RemindGoalTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindGoalTitleTVC.swift; sourceTree = "<group>"; };
@@ -622,6 +624,7 @@
 				1ABDED7A287F250600F85F9C /* RemindGoalDataModel.swift */,
 				77B571A828805C3100C9CC27 /* FriendListDataModel.swift */,
 				1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */,
+				1A30511F2883D27E00F56808 /* MypageDataModel.swift */,
 			);
 			path = AppModel;
 			sourceTree = "<group>";
@@ -1035,6 +1038,7 @@
 				84A6E883287D518200CD5843 /* PomeHalfModalVC.swift in Sources */,
 				77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */,
 				77E8F36028765FA600D2F6C0 /* RemindNC.swift in Sources */,
+				1A3051202883D27E00F56808 /* MypageDataModel.swift in Sources */,
 				77E8F31E2874B7CE00D2F6C0 /* MypageVC.swift in Sources */,
 				77B5719B287D458500C9CC27 /* CompleteSignUpVC.swift in Sources */,
 				1A1AEFDA287A4D5B00DD5F7E /* HaveMateTVC.swift in Sources */,
