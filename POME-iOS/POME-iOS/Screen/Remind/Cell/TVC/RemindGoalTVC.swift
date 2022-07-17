@@ -9,9 +9,6 @@ import UIKit
 
 class RemindGoalTVC: BaseTVC {
     
-    // MARK: Properties
-    let isPrivate = false
-    
     // MARK: IBOutlet
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var spentMoneyLabel: UILabel!
@@ -60,7 +57,7 @@ extension RemindGoalTVC {
         goalLabel.text = remindGoalData.goalTitle
         spentMoneyLabel.text = remindGoalData.spentMoneyLabel
         contentLabel.text = remindGoalData.content
-        if remindGoalData.countMate == 0 {
+        if remindGoalData.countMate == 0 || remindGoalData.privateGoal {
             [firstEmojiContainerBtn, secondEmojiContainerBtn, thirdEmojiContainerBtn].forEach {
                 $0.isHidden = true
             }
