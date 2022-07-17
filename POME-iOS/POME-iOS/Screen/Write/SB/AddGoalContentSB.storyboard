@@ -27,23 +27,8 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCa-Nf-QCV" customClass="PomeNaviBar" customModule="POME_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLW-ju-e9l">
-                                        <rect key="frame" x="322" y="6" width="30" height="32"/>
-                                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="닫기">
-                                            <color key="titleColor" name="grey_7"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tapCloseBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fiU-Rn-uRl"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <constraints>
-                                    <constraint firstItem="YLW-ju-e9l" firstAttribute="centerY" secondItem="RCa-Nf-QCV" secondAttribute="centerY" id="BfN-g4-hVs"/>
                                     <constraint firstAttribute="height" constant="44" id="JlA-T3-tAZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="YLW-ju-e9l" secondAttribute="trailing" constant="23" id="qOY-K8-BPB"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeO-y1-q8t">
@@ -76,6 +61,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="editCategoryTextField:" destination="Y6W-OH-hqX" eventType="editingChanged" id="R1s-ss-IkS"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -99,6 +87,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="editPromiseTextField:" destination="Y6W-OH-hqX" eventType="editingChanged" id="K7i-Y0-2Nw"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -139,6 +130,9 @@
                                             <constraint firstAttribute="width" constant="48" id="ofY-dW-KPF"/>
                                         </constraints>
                                         <color key="onTintColor" name="sub"/>
+                                        <connections>
+                                            <action selector="tapOpenSwitch:" destination="Y6W-OH-hqX" eventType="valueChanged" id="UNQ-HW-rTS"/>
+                                        </connections>
                                     </switch>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="79r-nM-dcR">
                                         <rect key="frame" x="16" y="16.000000000000004" width="160" height="36.333333333333343"/>
@@ -180,6 +174,17 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLW-ju-e9l">
+                                <rect key="frame" x="322" y="60" width="30" height="32"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="닫기">
+                                    <color key="titleColor" name="grey_7"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapCloseBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fiU-Rn-uRl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -191,10 +196,12 @@
                             <constraint firstItem="oPc-mT-l9f" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Hk4-LA-iG4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="okf-kz-Vcr" secondAttribute="bottom" id="Jb5-ZS-0zi"/>
                             <constraint firstItem="RCa-Nf-QCV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Lal-Qd-clL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YLW-ju-e9l" secondAttribute="trailing" constant="23" id="MZq-au-Wwl"/>
                             <constraint firstItem="eeO-y1-q8t" firstAttribute="top" secondItem="RCa-Nf-QCV" secondAttribute="bottom" constant="12" id="TVV-Sg-pu0"/>
                             <constraint firstItem="HlO-BE-fOi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="YC3-Et-bU9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gif-th-PNX" secondAttribute="trailing" constant="16" id="YgR-NW-F6M"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="RCa-Nf-QCV" secondAttribute="trailing" id="Yhf-Ve-kgs"/>
+                            <constraint firstItem="YLW-ju-e9l" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="a06-Ar-8Bj"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="okf-kz-Vcr" secondAttribute="trailing" constant="16" id="dPt-YB-UPa"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oPc-mT-l9f" secondAttribute="trailing" constant="16" id="fVz-te-1Tc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HlO-BE-fOi" secondAttribute="trailing" constant="16" id="gqY-ax-u3w"/>
@@ -215,6 +222,7 @@
                         <outlet property="openSwitch" destination="MQx-KM-YbL" id="Vta-9E-8r7"/>
                         <outlet property="priceTextField" destination="IMG-oU-m5y" id="Ix2-Wb-9qk"/>
                         <outlet property="promiseTextField" destination="0bb-yi-fGJ" id="cLq-ac-tiu"/>
+                        <outlet property="switchBackView" destination="oPc-mT-l9f" id="m6B-Ma-zmG"/>
                         <outlet property="titleLabel" destination="eeO-y1-q8t" id="Iqm-Ye-kQY"/>
                     </connections>
                 </viewController>
