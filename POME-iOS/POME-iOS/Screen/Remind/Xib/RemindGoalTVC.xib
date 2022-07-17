@@ -139,14 +139,14 @@
                                     <constraint firstAttribute="width" constant="28" id="acj-Tl-mVe"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
+                                <buttonConfiguration key="configuration" style="plain" image="emojiMint28">
                                     <backgroundConfiguration key="background" image="btnEmojiNor28"/>
                                 </buttonConfiguration>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpv-kq-KSR" userLabel="+mateLabel">
                                 <rect key="frame" x="309" y="121" width="13" height="12"/>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="10"/>
-                                <color key="textColor" name="white"/>
+                                <color key="textColor" name="pomeBlack"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSK-KF-tHr">

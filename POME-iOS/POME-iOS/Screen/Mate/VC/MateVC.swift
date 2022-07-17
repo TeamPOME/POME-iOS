@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class MateVC: BaseVC {
     
     // MARK: Properties
+    private var emojiSelectViewTopConstraint: Constraint?
     
     // TODO: - 서버 통신 할 때 친구 수로 넘겨받는지 확인
     private var mateNum = 10
     private var selectedIndex: Int = 0
+    private var cellFrame: CGFloat = 0
+    private var scrollPosition: CGFloat = 0
     
     private lazy var mateProfileCV = UICollectionView(frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout()).then {
         let layout = UICollectionViewFlowLayout()
@@ -38,6 +43,36 @@ class MateVC: BaseVC {
         $0.setLabel(text: "친구 응원하기", color: .grey_9, size: 18, weight: .bold)
     }
     
+    private let emojiSelectView = UIView().then {
+        $0.backgroundColor = .white
+        $0.makeRounded(cornerRadius: 25.adjusted)
+        $0.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 4)
+    }
+
+    private let firstEmoji = UIButton().then {
+        $0.setImage(UIImage(named: "emojiMintHappyFiter54"), for: .normal)
+    }
+    
+    private let secondEmoji = UIButton().then {
+        $0.setImage(UIImage(named: "emojiMint38"), for: .normal)
+    }
+    
+    private let thirdEmoji = UIButton().then {
+        $0.setImage(UIImage(named: "emojiMint3"), for: .normal)
+    }
+    
+    private let fourthEmoji = UIButton().then {
+        $0.setImage(UIImage(named: "emojiMint4"), for: .normal)
+    }
+    
+    private let fifthEmoji = UIButton().then {
+        $0.setImage(UIImage(named: "emojiMintNotSureFiter54"), for: .normal)
+    }
+    
+    private let sixthEmoji = UIButton().then {
+        $0.setImage(UIImage(named: "emojiMintRegretFiter54"), for: .normal)
+    }
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +87,14 @@ class MateVC: BaseVC {
 extension MateVC {
     
     private func configureUI() {
+        emojiSelectView.isHidden = true
         view.backgroundColor = .grey_0
         mateTV.backgroundColor = .grey_0
         mateProfileCV.backgroundColor = .grey_0
         mateTV.separatorStyle = .none
-        view.addSubviews([addMateNaviBar, mateTV, mateProfileCV, titleHeaderLabel])
+        
+        view.addSubviews([addMateNaviBar, mateTV, mateProfileCV, titleHeaderLabel, emojiSelectView])
+        emojiSelectView.addSubviews([firstEmoji, secondEmoji, thirdEmoji, fourthEmoji, fifthEmoji, sixthEmoji])
     
         addMateNaviBar.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
@@ -78,6 +116,52 @@ extension MateVC {
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.top.equalTo(mateProfileCV.snp.bottom)
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        emojiSelectView.snp.makeConstraints {
+            
+            /// 첫번째 셀의 버튼 클릭 시 나타나야할 포지션을 디폴트로 설정 해둠
+            self.emojiSelectViewTopConstraint = $0.top.equalTo(390).constraint
+            $0.trailing.equalToSuperview().inset(16)
+            $0.width.equalTo(330)
+            $0.height.equalTo(54)
+        }
+        
+        firstEmoji.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(16)
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(38)
+        }
+        
+        secondEmoji.snp.makeConstraints {
+            $0.leading.equalTo(firstEmoji.snp.trailing).offset(14)
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(38)
+        }
+        
+        thirdEmoji.snp.makeConstraints {
+            $0.leading.equalTo(secondEmoji.snp.trailing).offset(14)
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(38)
+        }
+        
+        fourthEmoji.snp.makeConstraints {
+            $0.leading.equalTo(thirdEmoji.snp.trailing).offset(14)
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(38)
+        }
+        
+        fifthEmoji.snp.makeConstraints {
+            $0.leading.equalTo(fourthEmoji.snp.trailing).offset(14)
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(38)
+        }
+        
+        sixthEmoji.snp.makeConstraints {
+            $0.leading.equalTo(fifthEmoji.snp.trailing).offset(14)
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(38)
+            $0.trailing.equalToSuperview().inset(16)
         }
     }
 }
@@ -102,6 +186,11 @@ extension MateVC {
     private func setTVScroll() {
         mateTV.isScrollEnabled = (mateNum == 0) ? false : true
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.scrollPosition = scrollView.contentOffset.y
+        emojiSelectView.isHidden = true
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -114,11 +203,21 @@ extension MateVC: UITableViewDelegate {
     
     /// 친구 유무에 따른 셀 지정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let haveNoMateTVC = mateTV.dequeueReusableCell(withIdentifier: Identifiers.HaveNoMateTVC) as? HaveNoMateTVC,
+              let haveMateTVC = mateTV.dequeueReusableCell(withIdentifier: Identifiers.HaveMateTVC) as? HaveMateTVC else { return UITableViewCell() }
+              
         if mateNum == 0 {
-            guard let haveNoMateTVC = mateTV.dequeueReusableCell(withIdentifier: Identifiers.HaveNoMateTVC, for: indexPath) as? HaveNoMateTVC else { return UITableViewCell() }
             return haveNoMateTVC
         } else {
-            guard let haveMateTVC = mateTV.dequeueReusableCell(withIdentifier: Identifiers.HaveMateTVC, for: indexPath) as? HaveMateTVC else { return UITableViewCell() }
+            haveMateTVC.tapPlusBtnAction = {
+                let cell = tableView.cellForRow(at: indexPath)
+                let frame = cell?.layer.frame
+                
+                self.cellFrame = (frame?.maxY ?? 0) + 205
+                self.emojiSelectViewTopConstraint?.update(offset: self.cellFrame - self.scrollPosition)
+                self.view.layoutIfNeeded()
+                self.emojiSelectView.isHidden = false
+            }
             return haveMateTVC
         }
     }

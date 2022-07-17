@@ -39,6 +39,7 @@ class AddFriendVC: BaseVC {
         registerTVC()
         setDelegate()
         initProfileList()
+        setTapCompleteBtn()
     }
 }
 
@@ -117,6 +118,17 @@ extension AddFriendVC {
             FriendListData(nickname: "POME", profileImageName: "sampleProfile", isFollowing: false),
             FriendListData(nickname: "하이", profileImageName: "sampleProfile", isFollowing: false)
         ])
+    }
+    
+    /// 완료했어요 버튼 tap Action 설정 메서드
+    private func setTapCompleteBtn() {
+        completeBtn.press { [weak self] in
+            guard let self = self else { return }
+            
+            let pomeTBC = PomeTBC()
+            pomeTBC.modalPresentationStyle = .fullScreen
+            self.present(pomeTBC, animated: true, completion: nil)
+        }
     }
 }
 

@@ -14,12 +14,16 @@
 		1A1AEFD7287A4CB600DD5F7E /* HaveNoMateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD6287A4CB600DD5F7E /* HaveNoMateTVC.swift */; };
 		1A1AEFDA287A4D5B00DD5F7E /* HaveMateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD8287A4D5B00DD5F7E /* HaveMateTVC.swift */; };
 		1A1AEFDB287A4D5B00DD5F7E /* HaveMateTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1AEFD9287A4D5B00DD5F7E /* HaveMateTVC.xib */; };
+		1A3051202883D27E00F56808 /* MypageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A30511F2883D27E00F56808 /* MypageDataModel.swift */; };
 		1A4BB61C287DF5B7007C8FC1 /* RemindGoalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4BB61A287DF5B7007C8FC1 /* RemindGoalTVC.swift */; };
 		1A4BB61D287DF5B7007C8FC1 /* RemindGoalTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4BB61B287DF5B7007C8FC1 /* RemindGoalTVC.xib */; };
 		1A4BB620287E0395007C8FC1 /* RemindGoalTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4BB61E287E0395007C8FC1 /* RemindGoalTitleTVC.swift */; };
 		1A4BB621287E0395007C8FC1 /* RemindGoalTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4BB61F287E0395007C8FC1 /* RemindGoalTitleTVC.xib */; };
 		1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */; };
 		1A76CACF287B1B3300B29500 /* MateHeaderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */; };
+		1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89417C2883066D00606A68 /* MarshmellowCVC.swift */; };
+		1A89417F2883066D00606A68 /* MarshmellowCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A89417D2883066D00606A68 /* MarshmellowCVC.xib */; };
+		1A9D1A68288331FB006D65C2 /* MarshmellowDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */; };
 		1AB882662881386600157820 /* RemindSelectFeelingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB882642881386600157820 /* RemindSelectFeelingVC.swift */; };
 		1AB882672881386600157820 /* RemindSelectFeelingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB882652881386600157820 /* RemindSelectFeelingVC.xib */; };
 		1ABDED76287E716E00F85F9C /* RemindFilterTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDED74287E716E00F85F9C /* RemindFilterTVC.swift */; };
@@ -57,9 +61,6 @@
 		77E8F3042874B1D400D2F6C0 /* RemindXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3032874B1D400D2F6C0 /* RemindXib.swift */; };
 		77E8F30E2874B4DD00D2F6C0 /* MateSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F30D2874B4DD00D2F6C0 /* MateSB.storyboard */; };
 		77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F30F2874B50500D2F6C0 /* MateVC.swift */; };
-		77E8F3142874B56B00D2F6C0 /* MateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3132874B56B00D2F6C0 /* MateTVC.swift */; };
-		77E8F3162874B57700D2F6C0 /* MateCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3152874B57700D2F6C0 /* MateCVC.swift */; };
-		77E8F3182874B72F00D2F6C0 /* MateXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3172874B72F00D2F6C0 /* MateXib.swift */; };
 		77E8F31C2874B7B700D2F6C0 /* MypageSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F31B2874B7B700D2F6C0 /* MypageSB.storyboard */; };
 		77E8F31E2874B7CE00D2F6C0 /* MypageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F31D2874B7CE00D2F6C0 /* MypageVC.swift */; };
 		77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F31F2874B7E500D2F6C0 /* MypageTVC.swift */; };
@@ -146,12 +147,16 @@
 		1A1AEFD6287A4CB600DD5F7E /* HaveNoMateTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveNoMateTVC.swift; sourceTree = "<group>"; };
 		1A1AEFD8287A4D5B00DD5F7E /* HaveMateTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveMateTVC.swift; sourceTree = "<group>"; };
 		1A1AEFD9287A4D5B00DD5F7E /* HaveMateTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveMateTVC.xib; sourceTree = "<group>"; };
+		1A30511F2883D27E00F56808 /* MypageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageDataModel.swift; sourceTree = "<group>"; };
 		1A4BB61A287DF5B7007C8FC1 /* RemindGoalTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindGoalTVC.swift; sourceTree = "<group>"; };
 		1A4BB61B287DF5B7007C8FC1 /* RemindGoalTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindGoalTVC.xib; sourceTree = "<group>"; };
 		1A4BB61E287E0395007C8FC1 /* RemindGoalTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindGoalTitleTVC.swift; sourceTree = "<group>"; };
 		1A4BB61F287E0395007C8FC1 /* RemindGoalTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindGoalTitleTVC.xib; sourceTree = "<group>"; };
 		1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateHeaderCVC.swift; sourceTree = "<group>"; };
 		1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateHeaderCVC.xib; sourceTree = "<group>"; };
+		1A89417C2883066D00606A68 /* MarshmellowCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshmellowCVC.swift; sourceTree = "<group>"; };
+		1A89417D2883066D00606A68 /* MarshmellowCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarshmellowCVC.xib; sourceTree = "<group>"; };
+		1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshmellowDataModel.swift; sourceTree = "<group>"; };
 		1AB882642881386600157820 /* RemindSelectFeelingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindSelectFeelingVC.swift; sourceTree = "<group>"; };
 		1AB882652881386600157820 /* RemindSelectFeelingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindSelectFeelingVC.xib; sourceTree = "<group>"; };
 		1ABDED74287E716E00F85F9C /* RemindFilterTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindFilterTVC.swift; sourceTree = "<group>"; };
@@ -192,9 +197,6 @@
 		77E8F3032874B1D400D2F6C0 /* RemindXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindXib.swift; sourceTree = "<group>"; };
 		77E8F30D2874B4DD00D2F6C0 /* MateSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MateSB.storyboard; sourceTree = "<group>"; };
 		77E8F30F2874B50500D2F6C0 /* MateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateVC.swift; sourceTree = "<group>"; };
-		77E8F3132874B56B00D2F6C0 /* MateTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateTVC.swift; sourceTree = "<group>"; };
-		77E8F3152874B57700D2F6C0 /* MateCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateCVC.swift; sourceTree = "<group>"; };
-		77E8F3172874B72F00D2F6C0 /* MateXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateXib.swift; sourceTree = "<group>"; };
 		77E8F31B2874B7B700D2F6C0 /* MypageSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MypageSB.storyboard; sourceTree = "<group>"; };
 		77E8F31D2874B7CE00D2F6C0 /* MypageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVC.swift; sourceTree = "<group>"; };
 		77E8F31F2874B7E500D2F6C0 /* MypageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageTVC.swift; sourceTree = "<group>"; };
@@ -634,6 +636,8 @@
 				1A10C2572877367100489CA1 /* GoalStorageDataModel.swift */,
 				1ABDED7A287F250600F85F9C /* RemindGoalDataModel.swift */,
 				77B571A828805C3100C9CC27 /* FriendListDataModel.swift */,
+				1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */,
+				1A30511F2883D27E00F56808 /* MypageDataModel.swift */,
 			);
 			path = AppModel;
 			sourceTree = "<group>";
@@ -713,7 +717,6 @@
 		77E8F3052874B1E100D2F6C0 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
-				77E8F3172874B72F00D2F6C0 /* MateXib.swift */,
 				1A1AEFD9287A4D5B00DD5F7E /* HaveMateTVC.xib */,
 				1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */,
 			);
@@ -750,6 +753,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F3232874B80A00D2F6C0 /* MypageXib.swift */,
+				1A89417D2883066D00606A68 /* MarshmellowCVC.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -784,7 +788,6 @@
 			isa = PBXGroup;
 			children = (
 				1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */,
-				77E8F3152874B57700D2F6C0 /* MateCVC.swift */,
 			);
 			path = CVC;
 			sourceTree = "<group>";
@@ -792,7 +795,6 @@
 		77E8F3122874B54C00D2F6C0 /* TVC */ = {
 			isa = PBXGroup;
 			children = (
-				77E8F3132874B56B00D2F6C0 /* MateTVC.swift */,
 				1A1AEFD8287A4D5B00DD5F7E /* HaveMateTVC.swift */,
 				1A1AEFD6287A4CB600DD5F7E /* HaveNoMateTVC.swift */,
 			);
@@ -802,6 +804,7 @@
 		77E8F3192874B73600D2F6C0 /* CVC */ = {
 			isa = PBXGroup;
 			children = (
+				1A89417C2883066D00606A68 /* MarshmellowCVC.swift */,
 				77E8F3212874B7F000D2F6C0 /* MypageCVC.swift */,
 			);
 			path = CVC;
@@ -961,6 +964,7 @@
 				1A4BB61D287DF5B7007C8FC1 /* RemindGoalTVC.xib in Resources */,
 				77E8F2C52874A23800D2F6C0 /* LaunchScreen.storyboard in Resources */,
 				1ABDED77287E716E00F85F9C /* RemindFilterTVC.xib in Resources */,
+				1A89417F2883066D00606A68 /* MarshmellowCVC.xib in Resources */,
 				778E0F50287B273900BEEEA5 /* SignUpSB.storyboard in Resources */,
 				77E8F31C2874B7B700D2F6C0 /* MypageSB.storyboard in Resources */,
 				77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */,
@@ -1043,12 +1047,14 @@
 				1ABDED79287F23E000F85F9C /* RemindHaveNoGoalTVC.swift in Sources */,
 				84F7C2A52882B8490095ECF4 /* CalendarDelegate.swift in Sources */,
 				77E8F33A28759FCF00D2F6C0 /* UIFont+.swift in Sources */,
+				1A9D1A68288331FB006D65C2 /* MarshmellowDataModel.swift in Sources */,
 				1A4BB620287E0395007C8FC1 /* RemindGoalTitleTVC.swift in Sources */,
 				77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */,
 				84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */,
 				84A6E883287D518200CD5843 /* PomeHalfModalVC.swift in Sources */,
 				77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */,
 				77E8F36028765FA600D2F6C0 /* RemindNC.swift in Sources */,
+				1A3051202883D27E00F56808 /* MypageDataModel.swift in Sources */,
 				77E8F31E2874B7CE00D2F6C0 /* MypageVC.swift in Sources */,
 				77B5719B287D458500C9CC27 /* CompleteSignUpVC.swift in Sources */,
 				1A1AEFDA287A4D5B00DD5F7E /* HaveMateTVC.swift in Sources */,
@@ -1089,8 +1095,6 @@
 				778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */,
 				77E8F3562875F5A400D2F6C0 /* BaseTVC.swift in Sources */,
 				1A10C2562877349E00489CA1 /* GoalCardCVC.swift in Sources */,
-				77E8F3182874B72F00D2F6C0 /* MateXib.swift in Sources */,
-				77E8F3142874B56B00D2F6C0 /* MateTVC.swift in Sources */,
 				77E8F35A2875F6BE00D2F6C0 /* CodeBaseCVC.swift in Sources */,
 				8432C9BF28787F9A001C643F /* FeelingCardCVC.swift in Sources */,
 				77E8F34C2875F37500D2F6C0 /* Identifiers.swift in Sources */,
@@ -1111,8 +1115,8 @@
 				77E8F3442875ECAE00D2F6C0 /* UITextView+.swift in Sources */,
 				77B571A1287FF58300C9CC27 /* AddFriendVC.swift in Sources */,
 				77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */,
+				1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */,
 				77E8F37B2876943800D2F6C0 /* WriteResModel.swift in Sources */,
-				77E8F3162874B57700D2F6C0 /* MateCVC.swift in Sources */,
 				1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */,
 				84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */,
 				77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */,
