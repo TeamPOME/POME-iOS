@@ -178,7 +178,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLW-ju-e9l">
-                                <rect key="frame" x="322" y="60" width="30" height="32"/>
+                                <rect key="frame" x="322" y="50" width="30" height="32"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="닫기">
@@ -204,7 +204,7 @@
                             <constraint firstItem="HlO-BE-fOi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="YC3-Et-bU9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gif-th-PNX" secondAttribute="trailing" constant="16" id="YgR-NW-F6M"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="RCa-Nf-QCV" secondAttribute="trailing" id="Yhf-Ve-kgs"/>
-                            <constraint firstItem="YLW-ju-e9l" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="a06-Ar-8Bj"/>
+                            <constraint firstItem="YLW-ju-e9l" firstAttribute="centerY" secondItem="RCa-Nf-QCV" secondAttribute="centerY" id="bKv-TL-DAk"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="okf-kz-Vcr" secondAttribute="trailing" constant="16" id="dPt-YB-UPa"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oPc-mT-l9f" secondAttribute="trailing" constant="16" id="fVz-te-1Tc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HlO-BE-fOi" secondAttribute="trailing" constant="16" id="gqY-ax-u3w"/>
