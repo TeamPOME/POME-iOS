@@ -57,7 +57,7 @@ extension CalendarVC {
         
         selectBtn.setTitle("선택했어요", for: .normal)
         
-        /// 시작 달로 페이지 설정
+        /// 시작 달로 헤더 레이블 설정
         if isStartCalendar {
             headerLabel.text = self.getMonthDate(date: startDate)
         } else {
@@ -105,7 +105,7 @@ extension CalendarVC {
         var dateComponents = DateComponents()
         dateComponents.month = isPrev ? -1 : 1
         
-        self.currentPage = cal.date(byAdding: dateComponents, to: self.currentPage ?? self.startDate)
+        self.currentPage = isStartCalendar ? cal.date(byAdding: dateComponents, to: self.currentPage ?? self.startDate) : cal.date(byAdding: dateComponents, to: self.currentPage ?? self.endDate)
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
     }
 }
