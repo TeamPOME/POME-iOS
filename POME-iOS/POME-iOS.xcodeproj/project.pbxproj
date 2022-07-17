@@ -130,6 +130,8 @@
 		84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7727C287BD83D00E1EDFC /* LookbackSelectVC.swift */; };
 		84DC1ADA2880788C0057C55D /* PlusCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC1AD82880788C0057C55D /* PlusCVC.swift */; };
 		84DC1ADB2880788C0057C55D /* PlusCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DC1AD92880788C0057C55D /* PlusCVC.xib */; };
+		84F0186E288425FB00CD6C59 /* AddGoalContentSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F0186D288425FB00CD6C59 /* AddGoalContentSB.storyboard */; };
+		84F018702884260600CD6C59 /* AddGoalContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F0186F2884260600CD6C59 /* AddGoalContentVC.swift */; };
 		84F7C29F2881BF300095ECF4 /* AddGoalDateSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845EFFC12881A97C0029E3EF /* AddGoalDateSB.storyboard */; };
 		84F7C2A22881C0B10095ECF4 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7C2A02881C0B10095ECF4 /* CalendarVC.swift */; };
 		84F7C2A32881C0B10095ECF4 /* CalendarVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F7C2A12881C0B10095ECF4 /* CalendarVC.xib */; };
@@ -265,6 +267,8 @@
 		84B7727C287BD83D00E1EDFC /* LookbackSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackSelectVC.swift; sourceTree = "<group>"; };
 		84DC1AD82880788C0057C55D /* PlusCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusCVC.swift; sourceTree = "<group>"; };
 		84DC1AD92880788C0057C55D /* PlusCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlusCVC.xib; sourceTree = "<group>"; };
+		84F0186D288425FB00CD6C59 /* AddGoalContentSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddGoalContentSB.storyboard; sourceTree = "<group>"; };
+		84F0186F2884260600CD6C59 /* AddGoalContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalContentVC.swift; sourceTree = "<group>"; };
 		84F7C2A02881C0B10095ECF4 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		84F7C2A12881C0B10095ECF4 /* CalendarVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarVC.xib; sourceTree = "<group>"; };
 		84F7C2A42882B8490095ECF4 /* CalendarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDelegate.swift; sourceTree = "<group>"; };
@@ -578,6 +582,7 @@
 				84B7727A287BD82000E1EDFC /* LookbackSelectSB.storyboard */,
 				8400A405287C1782004F2D49 /* LookbackCompleteSB.storyboard */,
 				845EFFC12881A97C0029E3EF /* AddGoalDateSB.storyboard */,
+				84F0186D288425FB00CD6C59 /* AddGoalContentSB.storyboard */,
 			);
 			path = SB;
 			sourceTree = "<group>";
@@ -591,6 +596,7 @@
 				84B7727C287BD83D00E1EDFC /* LookbackSelectVC.swift */,
 				8400A407287C17C5004F2D49 /* LookbackCompleteVC.swift */,
 				845EFFBF2881A9730029E3EF /* AddGoalDateVC.swift */,
+				84F0186F2884260600CD6C59 /* AddGoalContentVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -944,6 +950,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B7727B287BD82000E1EDFC /* LookbackSelectSB.storyboard in Resources */,
+				84F0186E288425FB00CD6C59 /* AddGoalContentSB.storyboard in Resources */,
 				84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */,
 				8432C9BB28784533001C643F /* EmptyGoalCardCVC.xib in Resources */,
 				84B77273287B369200E1EDFC /* LookbackCVC.xib in Resources */,
@@ -1069,6 +1076,7 @@
 				84051AEF28815A0A007CF7EF /* WriteBottomAlertVC.swift in Sources */,
 				77E8F3582875F5EA00D2F6C0 /* BaseCVC.swift in Sources */,
 				778E0F54287C43D300BEEEA5 /* PomeAlertVC.swift in Sources */,
+				84F018702884260600CD6C59 /* AddGoalContentVC.swift in Sources */,
 				778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */,
 				77E8F3322875729000D2F6C0 /* UIView+.swift in Sources */,
 				77E8F3042874B1D400D2F6C0 /* RemindXib.swift in Sources */,
