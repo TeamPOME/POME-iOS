@@ -14,7 +14,7 @@ class AddGoalContentVC: BaseVC {
     var endDate: String = ""
     
     /// 서버 통신 시 콤마가 없는 상태의 금액 저장을 위함
-    var price: Int = 0
+    private var price: Int = 0
     
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
@@ -54,7 +54,8 @@ class AddGoalContentVC: BaseVC {
     @IBAction func tapConfirmBtn(_ sender: UIButton) {
         
         // TODO: - 서버 통신 필요
-        navigationController?.popToRootViewController(animated: true)
+        guard let addGoalCompleteVC = UIStoryboard.init(name: Identifiers.AddGoalCompleteSB, bundle: nil).instantiateViewController(withIdentifier: AddGoalCompleteVC.className) as? AddGoalCompleteVC else { return }
+        navigationController?.pushViewController(addGoalCompleteVC, animated: true)
     }
 }
 
@@ -98,7 +99,7 @@ extension AddGoalContentVC {
     }
     
     /// 세 자리마다 콤마를 넣음
-    func numberFormatter(number: Int) -> String {
+    private func numberFormatter(number: Int) -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         

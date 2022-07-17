@@ -10,7 +10,7 @@ import UIKit
 class AddGoalDateVC: BaseVC {
     
     // MARK: Properties
-    var isStartCalendar: Bool = true
+    private var isStartCalendar: Bool = true
     
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
