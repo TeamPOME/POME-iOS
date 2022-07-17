@@ -9,19 +9,23 @@ import UIKit
 
 class MypageVC: BaseVC {
 
-    // MARK: Properties
+    // MARK: IBOutlet
     @IBOutlet weak var profileImage: PomeMaskedImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var myPageNaviBar: PomeNaviBar!
     @IBOutlet weak var profileImageView: PomeMaskedImageView!
+    @IBOutlet weak var goalStoarageLabel: UILabel!
     @IBOutlet weak var goalStorageBtnView: UIView!
     @IBOutlet weak var marshmellowCV: UICollectionView!
     
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         setDelegate()
         setCVC()
+        setViewTapBtn()
+        setData(dataModel: MypageDataModel.sampleData[0])
     }
 }
 
@@ -32,40 +36,50 @@ extension MypageVC {
         myPageNaviBar.setNaviStyle(state: .greyWithRightBtn)
         myPageNaviBar.rightCustomBtn.setImage(UIImage(named: "icSetting24Mono"), for: .normal)
         marshmellowCV.isScrollEnabled = false
+        goalStorageBtnView.makeRounded(cornerRadius: 6)
     }
 }
 
 // MARK: - Custom Method
 extension MypageVC {
     
+    /// 델리게이트 지정
     private func setDelegate() {
         marshmellowCV.delegate = self
         marshmellowCV.dataSource = self
     }
     
+    /// 목표보관함 전체 ContainerView의 클릭 이벤트를 가져옵니다.
     private func setViewTapBtn() {
-        let settingTap = UITapGestureRecognizer(target: self, action: #selector(settingTapped))
+        let settingTap = UITapGestureRecognizer(target: self, action: #selector(tapGoToGoalPage))
         goalStorageBtnView.isUserInteractionEnabled = true
         goalStorageBtnView.addGestureRecognizer(settingTap)
     }
     
+    /// 마시멜로 모으기 셀 등록
     private func setCVC() {
         MarshmellowCVC.register(target: marshmellowCV)
+    }
+    
+    /// 사용자 개인정보 데이터 등록
+    func setData(dataModel: MypageDataModel) {
+        nameLabel.text = dataModel.mypageName
+        profileImageView.maskImage = dataModel.mypageImage
+        goalStoarageLabel.text = dataModel.content
     }
 }
 
 // MARK: - objc
 extension MypageVC {
     
-    @objc func settingTapped() {
-      print("클릭입니다.")
+    /// 클릭되었을때 Mypage로 이동
+    @objc func tapGoToGoalPage() {
+      
+        // TODO: 목표보관함 CV로 변경하고 연결
     }
 }
 
-extension MypageVC: UICollectionViewDelegate {
-    
-}
-
+// MARK: - UICollectionViewDataSource
 extension MypageVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = marshmellowCV.dequeueReusableCell(withReuseIdentifier: Identifiers.MarshmellowCVC, for: indexPath) as? MarshmellowCVC else { return UICollectionViewCell() }
@@ -80,6 +94,7 @@ extension MypageVC: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension MypageVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 166.adjusted, height: 180.adjustedH)
