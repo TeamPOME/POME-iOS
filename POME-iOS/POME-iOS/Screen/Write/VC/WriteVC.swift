@@ -261,7 +261,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
     /// 섹션에 인셋 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == goalCategoryCV {
-            return UIEdgeInsets(top: 7, left: 0, bottom: 6, right: 16)
+            return UIEdgeInsets(top: 7, left: 16, bottom: 6, right: 16)
         } else {
             switch section {
             case 0:
