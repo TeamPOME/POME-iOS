@@ -15,7 +15,7 @@ class MypageVC: BaseVC {
     @IBOutlet weak var myPageNaviBar: PomeNaviBar!
     @IBOutlet weak var checkView: UIView!
     @IBOutlet weak var profileImageView: PomeMaskedImageView!
-    @IBOutlet weak var goalStoarageLabel: UILabel!
+    @IBOutlet weak var goalStorageLabel: UILabel!
     @IBOutlet weak var goalStorageBtnView: UIView!
     @IBOutlet weak var marshmellowCV: UICollectionView!
     
@@ -38,7 +38,7 @@ extension MypageVC {
         myPageNaviBar.rightCustomBtn.setImage(UIImage(named: "icSetting24Mono"), for: .normal)
         marshmellowCV.isScrollEnabled = false
         checkView.makeRounded(cornerRadius: checkView.frame.width / 2)
-        goalStorageBtnView.makeRounded(cornerRadius: 6)
+        goalStorageBtnView.makeRounded(cornerRadius: 6.adjusted)
     }
 }
 
@@ -67,7 +67,7 @@ extension MypageVC {
     func setData(dataModel: MypageDataModel) {
         nameLabel.text = dataModel.mypageName
         profileImageView.maskImage = dataModel.mypageImage
-        goalStoarageLabel.text = dataModel.content
+        goalStorageLabel.text = dataModel.content
     }
 }
 
@@ -83,10 +83,11 @@ extension MypageVC {
 
 // MARK: - UICollectionViewDataSource
 extension MypageVC: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = marshmellowCV.dequeueReusableCell(withReuseIdentifier: Identifiers.MarshmellowCVC, for: indexPath) as? MarshmellowCVC else { return UICollectionViewCell() }
         cell.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 6)
-        cell.makeRounded(cornerRadius: 6)
+        cell.makeRounded(cornerRadius: 6.adjusted)
         cell.setData(dataModel: MarshmellowDataModel.sampleData[indexPath.row])
         return cell
     }

@@ -29,7 +29,7 @@ extension MarshmellowCVC {
     private func configureUI() {
         labelLevelContainerView.makeRounded(cornerRadius: labelLevelContainerView.frame.width / 2)
         labelLevelContainerView.layer.borderWidth = 1
-        labelLevelContainerView.layer.borderColor = .init(red: 1.0, green: 144.0 / 255.0, blue: 138.0 / 255.0, alpha: 1.0)
+        labelLevelContainerView.layer.borderColor = UIColor.sub.cgColor
         levelBadgeContainerView.makeRounded(cornerRadius: 12)
     }
 }
