@@ -68,6 +68,19 @@ extension CalendarVC {
             headerLabel.text = self.getMonthDate(date: endDate)
         }
         
+        /// 캘린더 좌우 버튼 활성화 여부
+        if isStartCalendar {
+            
+            /// 시작 날짜 캘린더일때 가능한 달은 오늘 기준 현재달 or 다음달 -> 현재달이면 왼쪽 버튼 비활성화, 다음달이면 오른쪽 버튼 비활성화
+            toLeftBtn.isEnabled = !(Calendar.current.component(.month, from: Date()) == Calendar.current.component(.month, from: startDate))
+            toRightBtn.isEnabled = (Calendar.current.component(.month, from: Date()) == Calendar.current.component(.month, from: startDate))
+        } else {
+            
+            /// 종료 날짜 캘린더일때 가능한 달은 start달 기준 start달 or 다음달 -> start달이면 왼쪽버튼 비활성화, 다음달이면 오른쪽 버튼 비활성화
+            toLeftBtn.isEnabled = !(Calendar.current.component(.month, from: startDate) == Calendar.current.component(.month, from: endDate))
+            toRightBtn.isEnabled = (Calendar.current.component(.month, from: startDate) == Calendar.current.component(.month, from: endDate))
+        }
+        
         /// 스크롤 안되게
         calendar.scrollEnabled = false
         
@@ -111,6 +124,9 @@ extension CalendarVC {
         
         self.currentPage = isStartCalendar ? cal.date(byAdding: dateComponents, to: self.currentPage ?? self.startDate) : cal.date(byAdding: dateComponents, to: self.currentPage ?? self.endDate)
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
+
+        toLeftBtn.isEnabled.toggle()
+        toRightBtn.isEnabled.toggle()
     }
 }
 
