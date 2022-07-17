@@ -10,7 +10,7 @@ import UIKit
 class AddGoalDateVC: BaseVC {
     
     // MARK: Properties
-    var isFirstCalendar: Bool = true
+    var isStartCalendar: Bool = true
     
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
@@ -34,12 +34,12 @@ class AddGoalDateVC: BaseVC {
     
     // MARK: IBAction
     @IBAction func tapStartCalendar(_ sender: UIButton) {
-        isFirstCalendar = true
+        isStartCalendar = true
         showHalfModalVC()
     }
     
     @IBAction func tapEndCalendar(_ sender: UIButton) {
-        isFirstCalendar = false
+        isStartCalendar = false
         showHalfModalVC()
     }
     
@@ -91,7 +91,7 @@ extension AddGoalDateVC {
             halfModalVC.endDate = nextDay
         }
         
-        halfModalVC.isStartCalendar = isFirstCalendar
+        halfModalVC.isStartCalendar = self.isStartCalendar
         halfModalVC.modalPresentationStyle = .custom
         halfModalVC.transitioningDelegate = self
         self.present(halfModalVC, animated: true, completion: nil)
