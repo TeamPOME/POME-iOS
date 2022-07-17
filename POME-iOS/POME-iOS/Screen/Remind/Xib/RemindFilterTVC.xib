@@ -26,34 +26,32 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="씀씀이 돌아보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aee-aV-FUT">
-                        <rect key="frame" x="16" y="8" width="114" height="22"/>
+                        <rect key="frame" x="16" y="8" width="114" height="21"/>
                         <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="18"/>
                         <color key="textColor" name="pomeBlack"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eL5-fX-JlO">
-                        <rect key="frame" x="16" y="42" width="93" height="31"/>
+                        <rect key="frame" x="16" y="41" width="64" height="33"/>
                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
-                        <state key="normal" title="처음 감정" image="icArrowDown17">
+                        <inset key="contentEdgeInsets" minX="6" minY="8" maxX="6" maxY="8"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="처음 감정">
                             <color key="titleColor" name="grey_5"/>
                         </state>
-                        <buttonConfiguration key="configuration" style="tinted" image="icArrowDown17" imagePlacement="trailing" title="처음 감정">
-                            <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
-                            <color key="baseForegroundColor" name="grey_5"/>
-                            <color key="baseBackgroundColor" name="grey_2"/>
-                        </buttonConfiguration>
+                        <connections>
+                            <action selector="tapPreviousEmotionBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RzN-9Y-SWI"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncn-wb-Ij0">
-                        <rect key="frame" x="115" y="42" width="105" height="31"/>
+                        <rect key="frame" x="86" y="41" width="76" height="33"/>
                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
-                        <state key="normal" title="처음 감정" image="icArrowDown17">
-                            <color key="titleColor" name="grey_5"/>
-                        </state>
-                        <buttonConfiguration key="configuration" style="tinted" image="icArrowDown17" imagePlacement="trailing" title="돌아본 감정">
-                            <fontDescription key="titleFontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
-                            <color key="baseForegroundColor" name="grey_5"/>
-                            <color key="baseBackgroundColor" name="grey_2"/>
-                        </buttonConfiguration>
+                        <inset key="contentEdgeInsets" minX="6" minY="8" maxX="6" maxY="8"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="돌아본 감정"/>
+                        <connections>
+                            <action selector="tapLaterEmotionBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="3ic-Q3-qF1"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PMY-ok-2BT">
                         <rect key="frame" x="283" y="42" width="76" height="31"/>
@@ -68,6 +66,9 @@
                             <color key="baseForegroundColor" name="grey_5"/>
                             <color key="baseBackgroundColor" name="grey_0"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="tapResetBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ycI-Ur-J9l"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" name="grey_0"/>
@@ -93,13 +94,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icArrowDown17" width="17" height="17"/>
         <image name="iconRefreshMono" width="15" height="15"/>
         <namedColor name="grey_0">
             <color red="0.97254901960784312" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="grey_2">
-            <color red="0.92156862745098034" green="0.93333333333333335" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="grey_5">
             <color red="0.66666666666666663" green="0.68627450980392157" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
