@@ -19,6 +19,7 @@ class AddRecordVC: BaseVC {
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var selectGoalBtn: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var calendarBtn: UIButton!
     @IBOutlet weak var priceTextField: PomeTextField!
     @IBOutlet weak var recordTextField: PomeTextField!
     @IBOutlet weak var confirmBtn: PomeBtn!
@@ -36,6 +37,12 @@ class AddRecordVC: BaseVC {
     }
     
     // MARK: IBAction
+    @IBAction func tapSelectGoalBtn(_ sender: UIButton) {
+    }
+    
+    @IBAction func tapCalendarBtn(_ sender: UIButton) {
+    }
+    
     @IBAction func editRecordTextField(_ sender: UITextField) {
         sender.checkMaxLength(maxLength: 20)
     }
@@ -47,6 +54,7 @@ extension AddRecordVC {
     private func configureUI() {
         naviBar.setNaviStyle(state: .whiteBackDefault)
         dateLabel.text = self.getSelectedDate(date: Date())
+        calendarBtn.isEnabled = false
         priceTextField.setTextFieldStyle(state: .defaultStyle)
         priceTextField.configurePlaceholder(placeholder: "10,000")
         recordTextField.setTextFieldStyle(state: .defaultStyle)
