@@ -18,7 +18,7 @@ class CalendarVC: BaseVC {
     var startDate: Date = Date()
     var endDate: Date = Date()
     
-    /// delegate 및 클로저 선언
+    /// delegate 선언
     var deliveryDateDelegate: DeliveryDateDelegate?
     
     // MARK: IBOutlet

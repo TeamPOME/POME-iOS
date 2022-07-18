@@ -11,6 +11,7 @@ class SelectGoalVC: BaseVC {
     
     // MARK: Properties
     private let goalList = ["커피", "아이스크림", "외식", "아이스크림", "차", "담배", "술", "생일", "쇼핑", "OTT"]
+    var selectGoalDelegate: SelectGoalDelegate!
     
     // MARK: IBOutlet
     @IBOutlet weak var goalTV: UITableView!
@@ -44,23 +45,30 @@ extension SelectGoalVC {
 // MARK: - UITableViewDelegate
 extension SelectGoalVC: UITableViewDelegate {
     
+    /// 셀 높이 설정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    
+    /// 셀 선택 시 원래의 VC로 데이터 전달
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectGoalDelegate?.selectGoal(goalLabel: goalList[indexPath.row])
+        self.dismiss(animated: true)
     }
 }
 
 extension SelectGoalVC: UITableViewDataSource {
     
+    /// 셀 개수 지정
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return goalList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let goalTVC = goalTV.dequeueReusableCell(withIdentifier: goalTVC.className, for: indexPath) as? goalTVC else { return UITableViewCell() }
+        goalTVC.selectionStyle = .none
         goalTVC.goalLabel.text = goalList[indexPath.row]
         return goalTVC
     }
-    
-    
 }
 

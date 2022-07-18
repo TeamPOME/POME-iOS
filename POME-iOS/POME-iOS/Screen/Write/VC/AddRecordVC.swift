@@ -82,6 +82,16 @@ extension AddRecordVC {
             self?.navigationController?.popViewController(animated: true)
         }
     }
+    
+    private func checkFill() {
+        
+        /// 모두 작성했으면 하단 작성했어요 버튼 활성화
+        if !priceTextField.isEmpty && !recordTextField.isEmpty && goalLabel.textColor == .grey_9 {
+            confirmBtn.isDisabled = false
+        } else {
+            confirmBtn.isDisabled = true
+        }
+    }
 }
 
 // MARK: - @objc
@@ -90,7 +100,10 @@ extension AddRecordVC {
     /// 만들어 둔 HalfModalVC 보여주는 함수
     @objc func showHalfModalVC(isGoalBtn: Bool) {
         self.isGoalBtn = isGoalBtn
-        let halfModalVC = isGoalBtn ? SelectGoalVC() : CalendarVC()
+        
+        /// 버튼 별 나와야 하는 뷰
+        let halfModalVC = SelectGoalVC()
+        halfModalVC.selectGoalDelegate = self
         halfModalVC.modalPresentationStyle = .custom
         halfModalVC.transitioningDelegate = self
         self.present(halfModalVC, animated: true, completion: nil)
@@ -103,7 +116,7 @@ extension AddRecordVC: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         let halfModalVC = PomeHalfModalVC(presentedViewController: presented, presenting: presenting)
         
-        /// HalfModalView의 높이 지정
+        /// 바텀 시트로 띄울 뷰의 종류에 따라 HalfModalView의 높이 지정
         halfModalVC.modalHeight = isGoalBtn ? 348 : 448
         return halfModalVC
     }
@@ -118,13 +131,7 @@ extension AddRecordVC: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        /// 모두 작성했으면 하단 작성했어요 버튼 활성화
-        if !priceTextField.isEmpty && !recordTextField.isEmpty && goalLabel.textColor == .grey_9 && dateLabel.textColor == .grey_9 {
-            confirmBtn.isDisabled = false
-        } else {
-            confirmBtn.isDisabled = true
-        }
+        checkFill()
         
         /// 금액 세 자리마다 콤마 넣음
         if let currentNum = priceTextField.text, let price = Int(currentNum) {
@@ -140,5 +147,16 @@ extension AddRecordVC: UITextFieldDelegate {
         if textField == priceTextField {
             priceTextField.text = ""
         }
+    }
+}
+
+// MARK: - SelectGoalDelegate
+extension AddRecordVC: SelectGoalDelegate {
+    
+    func selectGoal(goalLabel: String) {
+        self.goalLabel.text = goalLabel
+        self.goalLabel.textColor = .grey_9
+        calendarBtn.isEnabled = true
+        checkFill()
     }
 }

@@ -38,7 +38,7 @@
             <connections>
                 <outlet property="goalLabel" destination="f85-D0-Ppv" id="MzI-hm-oGm"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="96.428571428571431"/>
+            <point key="canvasLocation" x="136.95652173913044" y="96.428571428571431"/>
         </tableViewCell>
     </objects>
     <resources>
