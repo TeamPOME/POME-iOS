@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Add Goal CompleteVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AddGoalCompleteVC" id="Y6W-OH-hqX" customClass="AddGoalCompleteVC" customModule="POME_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJR-dj-N1d">
+                                <rect key="frame" x="16.000000000000007" y="100" width="108.66666666666669" height="48"/>
+                                <string key="text">새로운 목표를
+추가했어요!</string>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                <color key="textColor" name="grey_9"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표를 달성할 수 있도록 포미가 응원할게요!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qb-VC-wUF">
+                                <rect key="frame" x="16" y="160" width="239" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="grey_5"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goalAddComplete3DComponent" translatesAutoresizingMaskIntoConstraints="NO" id="H1L-Vk-fQl">
+                                <rect key="frame" x="52.666666666666657" y="288" width="270" height="270"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="H1L-Vk-fQl" secondAttribute="height" multiplier="1:1" id="L71-xj-vR9"/>
+                                    <constraint firstAttribute="width" constant="270" id="m1g-QV-1rc"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMR-Fz-QpL" customClass="PomeBtn" customModule="POME_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="728" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="oU8-iE-3Yf"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapConfirmBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Zzk-ye-TD5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="KMR-Fz-QpL" secondAttribute="bottom" id="0ZB-C5-5J1"/>
+                            <constraint firstItem="2qb-VC-wUF" firstAttribute="top" secondItem="LJR-dj-N1d" secondAttribute="bottom" constant="12" id="7Ei-hK-FjH"/>
+                            <constraint firstItem="H1L-Vk-fQl" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="D1e-V4-uKF"/>
+                            <constraint firstItem="LJR-dj-N1d" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="ckQ-vS-beb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KMR-Fz-QpL" secondAttribute="trailing" constant="16" id="ey8-qT-L4c"/>
+                            <constraint firstItem="LJR-dj-N1d" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="56" id="iqb-1i-NVd"/>
+                            <constraint firstItem="2qb-VC-wUF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="pmR-vE-9Mv"/>
+                            <constraint firstItem="H1L-Vk-fQl" firstAttribute="top" secondItem="2qb-VC-wUF" secondAttribute="bottom" constant="111" id="vse-dL-QYL"/>
+                            <constraint firstItem="KMR-Fz-QpL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="xgc-2i-2Hu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confirmBtn" destination="KMR-Fz-QpL" id="viH-dL-hc2"/>
+                        <outlet property="titleLabel" destination="LJR-dj-N1d" id="Jit-yU-oOF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="90"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="goalAddComplete3DComponent" width="270" height="270"/>
+        <namedColor name="grey_5">
+            <color red="0.66666666666666663" green="0.68627450980392157" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_9">
+            <color red="0.16078431372549021" green="0.16470588235294117" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

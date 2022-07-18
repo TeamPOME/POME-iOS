@@ -15,7 +15,8 @@ class WriteVC: BaseVC {
     @IBOutlet weak var writeMainCV: UICollectionView!
     
     // MARK: Properties
-    private var category: [String] = ["category1", "category2", "category3", "category4", "category5", "category6", "category7", "category8"]
+    private var category: [String] = ["category1", "category2", "category3", "category4", "category5", "category6", "category7", "category8", "category9"]
+//    private var category = Array<String>()
     private var spend: [String] = ["spend1", "spend2", "spend3", "spend4"]
     
     // MARK: Life Cycle
@@ -115,16 +116,22 @@ extension WriteVC: UICollectionViewDelegate {
             
             /// 플러스 버튼 눌렀을 때
             if indexPath.row == 0 {
-                if category.count >= 5 {
+                if category.count >= 10 {
                     showHalfModalVC(content: "goal")
                 } else {
-                    
-                    // TODO: - 목표 추가 뷰로 이동
-                    print("목표 추가 뷰로 이동합니다.")
+                    guard let addGoalDateVC = UIStoryboard.init(name: Identifiers.AddGoalDateSB, bundle: nil).instantiateViewController(withIdentifier: AddGoalDateVC.className) as? AddGoalDateVC else { return }
+                    navigationController?.pushViewController(addGoalDateVC, animated: true)
                 }
             } else {
                 
                 // TODO: - 서버 통신 (setData 필요)
+            }
+        } else {
+            
+            /// 목표카드가 하나도 없을 때 목표카드부분 (section 0)을 누르면 목표 추가 뷰로 이동
+            if indexPath.section == 0 && category.count == 0 {
+                guard let addGoalDateVC = UIStoryboard.init(name: Identifiers.AddGoalDateSB, bundle: nil).instantiateViewController(withIdentifier: AddGoalDateVC.className) as? AddGoalDateVC else { return }
+                navigationController?.pushViewController(addGoalDateVC, animated: true)
             }
         }
     }
@@ -262,7 +269,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
     /// 섹션에 인셋 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if collectionView == goalCategoryCV {
-            return UIEdgeInsets(top: 7, left: 0, bottom: 6, right: 16)
+            return UIEdgeInsets(top: 7, left: 16, bottom: 6, right: 16)
         } else {
             switch section {
             case 0:

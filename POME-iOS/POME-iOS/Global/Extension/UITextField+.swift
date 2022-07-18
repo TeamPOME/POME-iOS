@@ -66,4 +66,11 @@ extension UITextField {
         self.text = ""
         sendActions(for: .editingChanged)
     }
+    
+    /// textField의 글자 제한을 두는 메서드
+    func checkMaxLength(maxLength: Int) {
+        if (self.text?.count ?? 0 > maxLength) {
+            self.deleteBackward()
+        }
+    }
 }
