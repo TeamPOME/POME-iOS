@@ -32,6 +32,7 @@ class LookbackCompleteVC: BaseVC {
         super.viewDidLoad()
         configureUI()
         setData()
+        setNaviBar()
     }
     
     // MARK: IBAction
@@ -54,6 +55,11 @@ extension LookbackCompleteVC {
 
 // MARK: - Custom Methods
 extension LookbackCompleteVC {
+    
+    /// 오른쪽으로 swipe시 뒤로가기 막음
+    private func setNaviBar() {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
     
     private func setData() {
         

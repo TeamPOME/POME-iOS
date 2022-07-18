@@ -108,4 +108,44 @@ extension UIViewController {
         let generator = UIImpactFeedbackGenerator(style: degree)
         generator.impactOccurred()
     }
+    
+    /**
+     - Description:
+     날짜를 포멧 형태에 따라 변경해주는 메서드입니다.
+     */
+    
+    /// 년, 월 형식으로 리턴하는 함수
+    func getMonthDate(date: Date) -> String {
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "yyyy년 M월"
+        return df.string(from: date)
+    }
+    
+    /// yyyy.MM.dd 형식으로 리턴하는 함수
+    func getSelectedDate(date: Date) -> String {
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "yyyy.MM.dd"
+        return df.string(from: date)
+    }
+    
+    /// yyyy.MM.dd 형식의 날짜를 Date형으로 바꿔주는 함수
+    func getStringToDate(string: String) -> Date {
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ko_KR")
+        df.dateFormat = "yyyy.MM.dd"
+        return df.date(from: string) ?? Date()
+    }
+    
+    /**
+     - Description:
+     숫자에 세 자리마다 콤마를 넣어주는 메서드 입니다.
+     */
+    func numberFormatter(number: Int) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        return numberFormatter.string(from: NSNumber(value: number))!
+    }
 }

@@ -20,6 +20,9 @@ struct Identifiers {
     static let LookbackCompleteSB = "LookbackCompleteSB"
     static let LookbackSelectSB = "LookbackSelectSB"
     static let SelectFeelingSB = "SelectFeelingSB"
+    static let AddGoalDateSB = "AddGoalDateSB"
+    static let AddGoalContentSB = "AddGoalContentSB"
+    static let AddGoalCompleteSB = "AddGoalCompleteSB"
     static let GoalCardCVC = "GoalCardCVC"
     static let HaveNoMateTVC = "HaveNoMateTVC"
     static let MateHeaderCVC = "MateHeaderCVC"
@@ -30,4 +33,5 @@ struct Identifiers {
     static let RemindHaveNoGoalTVC = "RemindHaveNoGoalTVC"
     static let RemindGoalCategoryCVC = "RemindGoalCategoryCVC"
     static let MarshmellowCVC = "MarshmellowCVC"
+    static let GoalStorageTitleCVC = "GoalStorageTitleCVC"
 }

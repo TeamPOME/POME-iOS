@@ -152,7 +152,7 @@ extension GoalCardCVC {
         ifSuccessLabel.snp.makeConstraints {
             $0.centerX.equalTo(ifSuccessLabelContainerView)
             $0.centerY.equalTo(ifSuccessLabelContainerView)
-            $0.leading.trailing.equalTo(ifSuccessLabelContainerView).inset(4)
+            $0.leading.trailing.equalTo(ifSuccessLabelContainerView).inset(6)
             $0.top.bottom.equalTo(ifSuccessLabelContainerView).inset(2)
         }
     }
@@ -191,17 +191,23 @@ extension GoalCardCVC {
             
             /// 100이 초과될때 라벨값과 progress trailing값을 맞추기 위해서 100으로 지정
             progress = 100
-            [progressView, percentageContainerView].forEach {
+            [progressView, percentageContainerView, ifSuccessLabelContainerView].forEach {
                 view in view.backgroundColor = .red
             }
             percentageContainerView.snp.remakeConstraints {
                 $0.trailing.equalTo(progressView.snp.trailing)
                 $0.centerY.equalTo(progressView)
             }
+            progressPercentageLabel.snp.remakeConstraints {
+                $0.centerX.centerY.equalTo(percentageContainerView)
+                $0.leading.trailing.equalTo(percentageContainerView).inset(7)
+                $0.top.bottom.equalTo(percentageContainerView).inset(3)
+            }
             progressPercentageLabel.text = "초과"
+            ifSuccessLabel.text = "실패"
         } else {
             progress = goal
-            [progressView, percentageContainerView].forEach {
+            [progressView, percentageContainerView, ifSuccessLabelContainerView].forEach {
                 view in view.backgroundColor = .main
             }
             
@@ -223,6 +229,7 @@ extension GoalCardCVC {
                     $0.centerY.equalTo(progressView)
                 }
             }
+            ifSuccessLabel.text = "성공"
             progressPercentageLabel.text = String(format: "%.f", progress) + "%"
         }
         updateProgressView()

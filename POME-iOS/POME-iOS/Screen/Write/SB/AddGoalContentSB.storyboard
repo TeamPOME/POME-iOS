@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Add Goal ContentVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AddGoalContentVC" id="Y6W-OH-hqX" customClass="AddGoalContentVC" customModule="POME_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCa-Nf-QCV" customClass="PomeNaviBar" customModule="POME_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="JlA-T3-tAZ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeO-y1-q8t">
+                                <rect key="frame" x="16" y="100" width="166.33333333333334" height="48"/>
+                                <string key="text">행복한 소비를 위한
+목표를 만들어보세요!</string>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                <color key="textColor" name="grey_9"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최대 한달까지 목표를 세울 수 있어요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6R-BN-yak">
+                                <rect key="frame" x="16" y="160" width="198.66666666666666" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="grey_5"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="HlO-BE-fOi">
+                                <rect key="frame" x="16" y="213" width="343" height="83"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표 카테고리" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idb-e3-8Mj">
+                                        <rect key="frame" x="0.0" y="0.0" width="76" height="17"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                        <color key="textColor" name="grey_7"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lHe-vy-Qdv" customClass="PomeTextField" customModule="POME_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="29" width="343" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="Y5P-eL-oIE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="editCategoryTextField:" destination="Y6W-OH-hqX" eventType="editingChanged" id="R1s-ss-IkS"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lHe-vy-Qdv" secondAttribute="trailing" id="Gk1-hR-Hrq"/>
+                                    <constraint firstItem="lHe-vy-Qdv" firstAttribute="leading" secondItem="HlO-BE-fOi" secondAttribute="leading" id="vjc-7B-szu"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="gif-th-PNX">
+                                <rect key="frame" x="16" y="320" width="343" height="83"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한 줄 다짐" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzj-7B-RAe">
+                                        <rect key="frame" x="0.0" y="0.0" width="55.333333333333336" height="17"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                        <color key="textColor" name="grey_7"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0bb-yi-fGJ" customClass="PomeTextField" customModule="POME_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="29" width="343" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="tX9-sU-AH7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="editPromiseTextField:" destination="Y6W-OH-hqX" eventType="editingChanged" id="K7i-Y0-2Nw"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0bb-yi-fGJ" firstAttribute="leading" secondItem="gif-th-PNX" secondAttribute="leading" id="JA0-fL-MTD"/>
+                                    <constraint firstAttribute="trailing" secondItem="0bb-yi-fGJ" secondAttribute="trailing" id="xIy-dS-ZEa"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="d0o-vk-Len">
+                                <rect key="frame" x="16" y="427" width="343" height="83"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표 금액" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipy-G5-ptp">
+                                        <rect key="frame" x="0.0" y="0.0" width="52" height="17"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                        <color key="textColor" name="grey_7"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-oU-m5y" customClass="PomeTextField" customModule="POME_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="29" width="343" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="e7o-Uf-wOE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="IMG-oU-m5y" secondAttribute="trailing" id="KL4-gi-8Mq"/>
+                                    <constraint firstItem="IMG-oU-m5y" firstAttribute="leading" secondItem="d0o-vk-Len" secondAttribute="leading" id="TQe-RS-XEI"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPc-mT-l9f">
+                                <rect key="frame" x="16" y="636" width="343" height="68"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQx-KM-YbL">
+                                        <rect key="frame" x="279" y="20" width="50" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="a8b-t7-pOg"/>
+                                            <constraint firstAttribute="width" constant="48" id="ofY-dW-KPF"/>
+                                        </constraints>
+                                        <color key="onTintColor" name="sub"/>
+                                        <connections>
+                                            <action selector="tapOpenSwitch:" destination="Y6W-OH-hqX" eventType="valueChanged" id="UNQ-HW-rTS"/>
+                                        </connections>
+                                    </switch>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="79r-nM-dcR">
+                                        <rect key="frame" x="16" y="16.000000000000004" width="160" height="36.333333333333343"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표 공개 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NS3-xa-wAq">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="17"/>
+                                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                                <color key="textColor" name="grey_8"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="친구들에게 이 목표을 공개할까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eP1-UT-MWQ">
+                                                <rect key="frame" x="0.0" y="22" width="160" height="14.333333333333336"/>
+                                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
+                                                <color key="textColor" name="grey_6"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="light_pink"/>
+                                <constraints>
+                                    <constraint firstItem="MQx-KM-YbL" firstAttribute="centerY" secondItem="oPc-mT-l9f" secondAttribute="centerY" id="VAe-gi-10H"/>
+                                    <constraint firstAttribute="height" constant="68" id="aw7-yx-dWE"/>
+                                    <constraint firstAttribute="trailing" secondItem="MQx-KM-YbL" secondAttribute="trailing" constant="16" id="beY-co-Q9x"/>
+                                    <constraint firstItem="79r-nM-dcR" firstAttribute="centerY" secondItem="oPc-mT-l9f" secondAttribute="centerY" id="mwF-eJ-nKn"/>
+                                    <constraint firstItem="79r-nM-dcR" firstAttribute="leading" secondItem="oPc-mT-l9f" secondAttribute="leading" constant="16" id="tBD-G2-9MO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okf-kz-Vcr" customClass="PomeBtn" customModule="POME_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="728" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SWt-P5-nJT"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapConfirmBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Yw5-lc-zbT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLW-ju-e9l">
+                                <rect key="frame" x="322" y="50" width="30" height="32"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="닫기">
+                                    <color key="titleColor" name="grey_7"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapCloseBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fiU-Rn-uRl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Z6R-BN-yak" firstAttribute="top" secondItem="eeO-y1-q8t" secondAttribute="bottom" constant="12" id="01N-qy-oeR"/>
+                            <constraint firstItem="HlO-BE-fOi" firstAttribute="top" secondItem="Z6R-BN-yak" secondAttribute="bottom" constant="36" id="3Ei-Yc-esg"/>
+                            <constraint firstItem="d0o-vk-Len" firstAttribute="top" secondItem="gif-th-PNX" secondAttribute="bottom" constant="24" id="3uT-6J-adY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="d0o-vk-Len" secondAttribute="trailing" constant="16" id="EjA-Ql-y8i"/>
+                            <constraint firstItem="oPc-mT-l9f" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Hk4-LA-iG4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="okf-kz-Vcr" secondAttribute="bottom" id="Jb5-ZS-0zi"/>
+                            <constraint firstItem="RCa-Nf-QCV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Lal-Qd-clL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YLW-ju-e9l" secondAttribute="trailing" constant="23" id="MZq-au-Wwl"/>
+                            <constraint firstItem="eeO-y1-q8t" firstAttribute="top" secondItem="RCa-Nf-QCV" secondAttribute="bottom" constant="12" id="TVV-Sg-pu0"/>
+                            <constraint firstItem="HlO-BE-fOi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="YC3-Et-bU9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gif-th-PNX" secondAttribute="trailing" constant="16" id="YgR-NW-F6M"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="RCa-Nf-QCV" secondAttribute="trailing" id="Yhf-Ve-kgs"/>
+                            <constraint firstItem="YLW-ju-e9l" firstAttribute="centerY" secondItem="RCa-Nf-QCV" secondAttribute="centerY" id="bKv-TL-DAk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="okf-kz-Vcr" secondAttribute="trailing" constant="16" id="dPt-YB-UPa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oPc-mT-l9f" secondAttribute="trailing" constant="16" id="fVz-te-1Tc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HlO-BE-fOi" secondAttribute="trailing" constant="16" id="gqY-ax-u3w"/>
+                            <constraint firstItem="okf-kz-Vcr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="h2N-mz-xhi"/>
+                            <constraint firstItem="Z6R-BN-yak" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="kyv-b1-6to"/>
+                            <constraint firstItem="okf-kz-Vcr" firstAttribute="top" secondItem="oPc-mT-l9f" secondAttribute="bottom" constant="24" id="llr-wN-s3b"/>
+                            <constraint firstItem="eeO-y1-q8t" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="r62-ZF-G7u"/>
+                            <constraint firstItem="RCa-Nf-QCV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="sng-7R-ak1"/>
+                            <constraint firstItem="gif-th-PNX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="svX-io-EC9"/>
+                            <constraint firstItem="gif-th-PNX" firstAttribute="top" secondItem="HlO-BE-fOi" secondAttribute="bottom" constant="24" id="u9r-h1-SrL"/>
+                            <constraint firstItem="d0o-vk-Len" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="xf1-qG-er7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryTextField" destination="lHe-vy-Qdv" id="dP6-Gb-V1S"/>
+                        <outlet property="confirmBtn" destination="okf-kz-Vcr" id="oHQ-VT-3Nn"/>
+                        <outlet property="naviBar" destination="RCa-Nf-QCV" id="JuG-eH-p0l"/>
+                        <outlet property="openSwitch" destination="MQx-KM-YbL" id="Vta-9E-8r7"/>
+                        <outlet property="priceTextField" destination="IMG-oU-m5y" id="Ix2-Wb-9qk"/>
+                        <outlet property="promiseTextField" destination="0bb-yi-fGJ" id="cLq-ac-tiu"/>
+                        <outlet property="switchBackView" destination="oPc-mT-l9f" id="m6B-Ma-zmG"/>
+                        <outlet property="titleLabel" destination="eeO-y1-q8t" id="Iqm-Ye-kQY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32" y="106"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="grey_5">
+            <color red="0.66666666666666663" green="0.68627450980392157" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_6">
+            <color red="0.53333333333333333" green="0.55294117647058827" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_7">
+            <color red="0.30588235294117649" green="0.32156862745098042" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_8">
+            <color red="0.21568627450980393" green="0.22745098039215686" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_9">
+            <color red="0.16078431372549021" green="0.16470588235294117" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light_pink">
+            <color red="1" green="0.9570000171661377" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="sub">
+            <color red="1" green="0.56470588235294117" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
