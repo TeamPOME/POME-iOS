@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -22,29 +22,29 @@
             <objects>
                 <viewController storyboardIdentifier="AddRecordVC" id="Y6W-OH-hqX" customClass="AddRecordVC" customModule="POME_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVS-P4-4ub" customClass="PomeNaviBar" customModule="POME_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="nf6-66-jw4"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소비에 대한 간단한 기록을 남겨보세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPW-FO-ZZK">
-                                <rect key="frame" x="16" y="136" width="207.5" height="17"/>
+                                <rect key="frame" x="16" y="136" width="207.33333333333334" height="17"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
                                 <color key="textColor" name="grey_5"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떤 소비를 하셨나요?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjA-OY-oLs">
-                                <rect key="frame" x="16" y="100" width="175.5" height="24"/>
+                                <rect key="frame" x="16" y="100" width="175.66666666666666" height="24"/>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
                                 <color key="textColor" name="grey_9"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7fC-6c-ybN">
-                                <rect key="frame" x="16" y="498" width="382" height="83"/>
+                                <rect key="frame" x="16" y="498" width="343" height="83"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소비 기록" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssr-PF-6Fd">
                                         <rect key="frame" x="0.0" y="0.0" width="52" height="17"/>
@@ -53,7 +53,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qnd-Tl-HL0" customClass="PomeTextField" customModule="POME_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="29" width="382" height="54"/>
+                                        <rect key="frame" x="0.0" y="29" width="343" height="54"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="54" id="eME-Yu-c1J"/>
                                         </constraints>
@@ -76,16 +76,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HP1-Zn-SZb">
-                                <rect key="frame" x="16" y="313" width="382" height="54"/>
+                                <rect key="frame" x="16" y="313" width="343" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022.07.11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0s-jG-5i0">
-                                        <rect key="frame" x="16" y="18.5" width="66.5" height="17"/>
+                                        <rect key="frame" x="16" y="18.666666666666686" width="66.666666666666671" height="17"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
                                         <color key="textColor" name="grey_9"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBe-md-8XM">
-                                        <rect key="frame" x="342" y="15" width="24" height="24"/>
+                                        <rect key="frame" x="303" y="15" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="AYc-Zo-PZB"/>
                                             <constraint firstAttribute="width" constant="24" id="nVo-Ws-fzg"/>
@@ -108,7 +108,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIX-BJ-x4V" customClass="PomeBtn" customModule="POME_iOS" customModuleProvider="target">
-                                <rect key="frame" x="16" y="812" width="382" height="50"/>
+                                <rect key="frame" x="16" y="728" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="nCj-3B-7Up"/>
                                 </constraints>
@@ -116,7 +116,7 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="EyS-2x-Xlv">
-                                <rect key="frame" x="16" y="391" width="382" height="83"/>
+                                <rect key="frame" x="16" y="391" width="343" height="83"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소비 금액" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ7-zJ-Yea">
                                         <rect key="frame" x="0.0" y="0.0" width="52" height="17"/>
@@ -125,7 +125,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lfZ-jb-9CS" customClass="PomeTextField" customModule="POME_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="29" width="382" height="54"/>
+                                        <rect key="frame" x="0.0" y="29" width="343" height="54"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="54" id="3cd-vC-WR0"/>
                                         </constraints>
@@ -139,22 +139,22 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBQ-hf-kOe">
-                                <rect key="frame" x="16" y="177" width="24.5" height="17"/>
+                                <rect key="frame" x="15.999999999999998" y="177" width="24.333333333333329" height="17"/>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
                                 <color key="textColor" name="grey_7"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNB-v7-6hi">
-                                <rect key="frame" x="16" y="206" width="382" height="54"/>
+                                <rect key="frame" x="16" y="206" width="343" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표를 선택해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh3-1U-6iR">
-                                        <rect key="frame" x="16" y="18.5" width="112.5" height="17"/>
+                                        <rect key="frame" x="15.999999999999993" y="18.666666666666657" width="112.33333333333331" height="17"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
                                         <color key="textColor" name="grey_5"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0z-wp-BnI">
-                                        <rect key="frame" x="342" y="15" width="24" height="24"/>
+                                        <rect key="frame" x="303" y="15" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="a1W-5d-YJG"/>
                                             <constraint firstAttribute="height" constant="24" id="uTK-aA-FTx"/>

@@ -14,6 +14,9 @@ class AddRecordVC: BaseVC {
     /// 서버 통신 시 콤마가 없는 상태의 금액 저장을 위함
     private var price: Int = 0
     
+    /// 버튼에 따라 다른 바텀시트를 띄우기 위함
+    private var isGoalBtn: Bool = false
+    
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
     @IBOutlet weak var goalLabel: UILabel!
@@ -38,9 +41,11 @@ class AddRecordVC: BaseVC {
     
     // MARK: IBAction
     @IBAction func tapSelectGoalBtn(_ sender: UIButton) {
+        showHalfModalVC(isGoalBtn: true)
     }
     
     @IBAction func tapCalendarBtn(_ sender: UIButton) {
+        showHalfModalVC(isGoalBtn: false)
     }
     
     @IBAction func editRecordTextField(_ sender: UITextField) {
@@ -76,6 +81,31 @@ extension AddRecordVC {
         naviBar.backBtn.press { [weak self] in
             self?.navigationController?.popViewController(animated: true)
         }
+    }
+}
+
+// MARK: - @objc
+extension AddRecordVC {
+    
+    /// 만들어 둔 HalfModalVC 보여주는 함수
+    @objc func showHalfModalVC(isGoalBtn: Bool) {
+        self.isGoalBtn = isGoalBtn
+        let halfModalVC = isGoalBtn ? SelectGoalVC() : CalendarVC()
+        halfModalVC.modalPresentationStyle = .custom
+        halfModalVC.transitioningDelegate = self
+        self.present(halfModalVC, animated: true, completion: nil)
+    }
+}
+
+// MARK: - UIViewControllerTransitioningDelegate
+extension AddRecordVC: UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        let halfModalVC = PomeHalfModalVC(presentedViewController: presented, presenting: presenting)
+        
+        /// HalfModalView의 높이 지정
+        halfModalVC.modalHeight = isGoalBtn ? 348 : 448
+        return halfModalVC
     }
 }
 
