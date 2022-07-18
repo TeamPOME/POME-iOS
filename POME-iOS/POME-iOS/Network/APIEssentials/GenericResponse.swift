@@ -10,7 +10,7 @@ import Foundation
 struct GenericResponse<T: Codable>: Codable {
     
     var status: Int
-    var success: Bool
+    var success: Bool?
     var message: String
     var data: T?
     
@@ -24,7 +24,7 @@ struct GenericResponse<T: Codable>: Codable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         status = (try? values.decode(Int.self, forKey: .status)) ?? -1
-        success = (try? values.decode(Bool.self, forKey: .success)) ?? false
+        success = (try? values.decode(Bool.self, forKey: .success)) ?? nil
         message = (try? values.decode(String.self, forKey: .message)) ?? ""
         data = (try? values.decode(T.self, forKey: .data)) ?? nil
     }
