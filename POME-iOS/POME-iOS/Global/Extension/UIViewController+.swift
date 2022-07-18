@@ -127,4 +127,15 @@ extension UIViewController {
         df.dateFormat = "yyyy.MM.dd"
         return df.date(from: string) ?? Date()
     }
+    
+    /**
+     - Description:
+     숫자에 세 자리마다 콤마를 넣어주는 메서드 입니다.
+     */
+    func numberFormatter(number: Int) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        return numberFormatter.string(from: NSNumber(value: number))!
+    }
 }

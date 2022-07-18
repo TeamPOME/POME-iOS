@@ -53,11 +53,11 @@ class AddGoalContentVC: BaseVC {
     }
     
     @IBAction func editCategoryTextField(_ sender: UITextField) {
-        checkMaxLength(textField: categoryTextField, maxLength: 5)
+        sender.checkMaxLength(maxLength: 5)
     }
     
     @IBAction func editPromiseTextField(_ sender: UITextField) {
-        checkMaxLength(textField: promiseTextField, maxLength: 12)
+        sender.checkMaxLength(maxLength: 12)
     }
     
     @IBAction func tapOpenSwitch(_ sender: UISwitch) {
@@ -103,21 +103,6 @@ extension AddGoalContentVC {
             self?.navigationController?.popViewController(animated: true)
         }
     }
-    
-    /// 글자수 제한 함수
-    private func checkMaxLength(textField: UITextField!, maxLength: Int) {
-        if (textField.text?.count ?? 0 > maxLength) {
-            textField.deleteBackward()
-        }
-    }
-    
-    /// 세 자리마다 콤마를 넣음
-    private func numberFormatter(number: Int) -> String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        
-        return numberFormatter.string(from: NSNumber(value: number))!
-    }
 }
 
 // MARK: - Types
@@ -152,7 +137,7 @@ extension AddGoalContentVC: UITextFieldDelegate {
             
             /// 서버 통신을 위한 콤마 없는 int값 저장
             self.price = price
-            priceTextField.text = numberFormatter(number: price)
+            priceTextField.text = self.numberFormatter(number: price)
         }
     }
     
