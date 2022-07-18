@@ -1,5 +1,5 @@
 //
-//  LookbackSelectVC.swift
+//  WriteSelectFeelingVC.swift
 //  POME-iOS
 //
 //  Created by Juhyeon Byun on 2022/07/11.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LookbackSelectVC: BaseVC {
+class WriteSelectFeelingVC: BaseVC {
     
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
@@ -53,7 +53,7 @@ class LookbackSelectVC: BaseVC {
 }
 
 // MARK: - UI
-extension LookbackSelectVC {
+extension WriteSelectFeelingVC {
     
     private func configureUI() {
         naviBar.setNaviStyle(state: .whiteBackDefault)
@@ -85,7 +85,7 @@ extension LookbackSelectVC {
 }
 
 // MARK: - Custom Methods
-extension LookbackSelectVC {
+extension WriteSelectFeelingVC {
     
     private func setTapBackBtn() {
         naviBar.backBtn.press { [weak self] in

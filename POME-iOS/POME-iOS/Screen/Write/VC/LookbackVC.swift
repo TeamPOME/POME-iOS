@@ -116,7 +116,7 @@ extension LookbackVC: UICollectionViewDataSource {
                 }
                 
                 spendCVC.tapPlusBtn = {
-                    guard let lookbackSelectVC = UIStoryboard.init(name: Identifiers.LookbackSelectSB, bundle: nil).instantiateViewController(withIdentifier: LookbackSelectVC.className) as? LookbackSelectVC else { return }
+                    guard let lookbackSelectVC = UIStoryboard.init(name: Identifiers.LookbackSelectSB, bundle: nil).instantiateViewController(withIdentifier: WriteSelectFeelingVC.className) as? WriteSelectFeelingVC else { return }
                     self.navigationController?.pushViewController(lookbackSelectVC, animated: true)
                 }
                 return spendCVC
