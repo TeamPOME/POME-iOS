@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Add Goal DateVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AddGoalDateVC" id="Y6W-OH-hqX" customClass="AddGoalDateVC" customModule="POME_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ofo-hR-h8D" customClass="PomeNaviBar" customModule="POME_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="cAA-Gh-iMV"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4d-PM-Ly7">
+                                <rect key="frame" x="16.000000000000014" y="100" width="227.33333333333337" height="48"/>
+                                <string key="text">시작이 반이에요!
+오늘부터 언제까지 해볼까요?</string>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                <color key="textColor" name="grey_9"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최대 한달까지 목표를 세울 수 있어요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckG-5i-Det">
+                                <rect key="frame" x="16" y="160" width="199" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="grey_5"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표 시작 날짜" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZu-60-USm">
+                                <rect key="frame" x="16" y="213" width="79.666666666666671" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="grey_7"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표 종료 날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e5-S1-oJb">
+                                <rect key="frame" x="16" y="320" width="79.666666666666671" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="grey_7"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCd-1V-a2W" customClass="PomeBtn" customModule="POME_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="728" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hpz-B1-lHa"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapConfirmBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qdI-nX-5Dc"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RM-ae-Ptt">
+                                <rect key="frame" x="16" y="242" width="343" height="54"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표 시작 날짜를 선택해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXJ-0x-Iga">
+                                        <rect key="frame" x="16" y="18.666666666666686" width="168" height="17"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                                        <color key="textColor" name="grey_5"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jam-IQ-Zdm">
+                                        <rect key="frame" x="303" y="15" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="IXp-A3-Fob"/>
+                                            <constraint firstAttribute="height" constant="24" id="WVL-nt-HzQ"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="" image="icCalendar24MonoSel"/>
+                                        <state key="disabled" image="icCalendar24Mono"/>
+                                        <connections>
+                                            <action selector="tapStartCalendar:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oHg-23-cG6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="grey_0"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="jam-IQ-Zdm" secondAttribute="trailing" constant="16" id="3qi-sj-KKa"/>
+                                    <constraint firstItem="iXJ-0x-Iga" firstAttribute="leading" secondItem="6RM-ae-Ptt" secondAttribute="leading" constant="16" id="Bz6-li-5Mb"/>
+                                    <constraint firstAttribute="height" constant="54" id="Nkh-Kn-B64"/>
+                                    <constraint firstItem="jam-IQ-Zdm" firstAttribute="centerY" secondItem="6RM-ae-Ptt" secondAttribute="centerY" id="VJP-Uw-MBt"/>
+                                    <constraint firstItem="iXJ-0x-Iga" firstAttribute="centerY" secondItem="6RM-ae-Ptt" secondAttribute="centerY" id="oZ8-ln-u4U"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOo-tZ-X1o">
+                                <rect key="frame" x="16" y="349" width="343" height="54"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표 종료 날짜를 선택해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tq-DI-Q70">
+                                        <rect key="frame" x="16" y="18.666666666666686" width="168" height="17"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                                        <color key="textColor" name="grey_5"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFe-V1-qhm">
+                                        <rect key="frame" x="303" y="15" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="1GT-yN-qUf"/>
+                                            <constraint firstAttribute="width" constant="24" id="dFm-9b-4Li"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="icCalendar24MonoSel"/>
+                                        <state key="disabled" image="icCalendar24Mono"/>
+                                        <connections>
+                                            <action selector="tapEndCalendar:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Nbo-Dj-lou"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="grey_0"/>
+                                <constraints>
+                                    <constraint firstItem="5tq-DI-Q70" firstAttribute="leading" secondItem="fOo-tZ-X1o" secondAttribute="leading" constant="16" id="5ey-AA-3Bm"/>
+                                    <constraint firstItem="5tq-DI-Q70" firstAttribute="centerY" secondItem="fOo-tZ-X1o" secondAttribute="centerY" id="C1A-cq-rmk"/>
+                                    <constraint firstAttribute="height" constant="54" id="Cc3-q7-6QK"/>
+                                    <constraint firstItem="RFe-V1-qhm" firstAttribute="centerY" secondItem="fOo-tZ-X1o" secondAttribute="centerY" id="IRs-gy-Jqa"/>
+                                    <constraint firstAttribute="trailing" secondItem="RFe-V1-qhm" secondAttribute="trailing" constant="16" id="Zo5-fv-SyO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="white"/>
+                        <constraints>
+                            <constraint firstItem="Ofo-hR-h8D" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1M7-Q1-UqH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="oCd-1V-a2W" secondAttribute="bottom" id="5VC-Yb-5G6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fOo-tZ-X1o" secondAttribute="trailing" constant="16" id="93A-lu-Ota"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oCd-1V-a2W" secondAttribute="trailing" constant="16" id="CcR-Cn-gJJ"/>
+                            <constraint firstItem="q4d-PM-Ly7" firstAttribute="top" secondItem="Ofo-hR-h8D" secondAttribute="bottom" constant="12" id="F6I-EO-j0Y"/>
+                            <constraint firstItem="Ofo-hR-h8D" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="H0y-UA-aVi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ofo-hR-h8D" secondAttribute="trailing" id="H1P-Yk-lMu"/>
+                            <constraint firstItem="fOo-tZ-X1o" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="HXj-fN-5RB"/>
+                            <constraint firstItem="PZu-60-USm" firstAttribute="top" secondItem="ckG-5i-Det" secondAttribute="bottom" constant="36" id="Nl7-4S-asK"/>
+                            <constraint firstItem="PZu-60-USm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="RAG-dG-zJS"/>
+                            <constraint firstItem="6RM-ae-Ptt" firstAttribute="top" secondItem="PZu-60-USm" secondAttribute="bottom" constant="12" id="ROz-qJ-Y7G"/>
+                            <constraint firstItem="4e5-S1-oJb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Rkv-cl-5dH"/>
+                            <constraint firstItem="4e5-S1-oJb" firstAttribute="top" secondItem="6RM-ae-Ptt" secondAttribute="bottom" constant="24" id="WGT-Q4-GI0"/>
+                            <constraint firstItem="ckG-5i-Det" firstAttribute="top" secondItem="q4d-PM-Ly7" secondAttribute="bottom" constant="12" id="dVZ-yU-pbG"/>
+                            <constraint firstItem="fOo-tZ-X1o" firstAttribute="top" secondItem="4e5-S1-oJb" secondAttribute="bottom" constant="12" id="lfo-gc-YDk"/>
+                            <constraint firstItem="6RM-ae-Ptt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="oUc-8K-MEv"/>
+                            <constraint firstItem="ckG-5i-Det" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="ob6-Zt-ljX"/>
+                            <constraint firstItem="oCd-1V-a2W" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="tx2-pC-AR6"/>
+                            <constraint firstItem="q4d-PM-Ly7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="x9H-Ya-Z8z"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6RM-ae-Ptt" secondAttribute="trailing" constant="16" id="yIc-bu-eyF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confirmBtn" destination="oCd-1V-a2W" id="ukF-8O-Kv5"/>
+                        <outlet property="endCalendarBtn" destination="RFe-V1-qhm" id="s4a-FT-YQD"/>
+                        <outlet property="endDateLabel" destination="5tq-DI-Q70" id="plS-jz-xEL"/>
+                        <outlet property="naviBar" destination="Ofo-hR-h8D" id="Z7v-hL-PmT"/>
+                        <outlet property="startCalendarBtn" destination="jam-IQ-Zdm" id="qvD-tW-zsA"/>
+                        <outlet property="startDateLabel" destination="iXJ-0x-Iga" id="9fg-Nd-rV8"/>
+                        <outlet property="titleLabel" destination="q4d-PM-Ly7" id="GHm-Ae-Eto"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56.521739130434788" y="105.80357142857143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icCalendar24Mono" width="24" height="24"/>
+        <image name="icCalendar24MonoSel" width="24" height="24"/>
+        <namedColor name="grey_0">
+            <color red="0.97254901960784312" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_5">
+            <color red="0.66666666666666663" green="0.68627450980392157" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_7">
+            <color red="0.30588235294117649" green="0.32156862745098042" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_9">
+            <color red="0.16078431372549021" green="0.16470588235294117" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
