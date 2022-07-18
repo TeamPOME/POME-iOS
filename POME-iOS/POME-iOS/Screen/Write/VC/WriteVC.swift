@@ -31,6 +31,12 @@ class WriteVC: BaseVC {
         showTabbar()
         setGoalCategoryCV()
     }
+    
+    // MARK: IBAction
+    @IBAction func tapWriteBtn(_ sender: UIButton) {
+        guard let addRecordVC = UIStoryboard.init(name: Identifiers.AddRecordSB, bundle: nil).instantiateViewController(withIdentifier: AddRecordVC.className) as? AddRecordVC else { return }
+        navigationController?.pushViewController(addRecordVC, animated: true)
+    }
 }
 
 // MARK: - UI

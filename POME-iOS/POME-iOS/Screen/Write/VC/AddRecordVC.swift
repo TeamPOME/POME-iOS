@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddRecordVC: UIViewController {
+class AddRecordVC: BaseVC {
     
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
@@ -22,6 +22,11 @@ class AddRecordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        setTapBackBtn()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        hideTabbar()
     }
 }
 
@@ -29,17 +34,23 @@ class AddRecordVC: UIViewController {
 extension AddRecordVC {
     
     private func configureUI() {
+        
         naviBar.setNaviStyle(state: .whiteBackDefault)
         priceTextField.setTextFieldStyle(state: .defaultStyle)
         priceTextField.configurePlaceholder(placeholder: "택시/건강 (5자)")
         recordTextField.setTextFieldStyle(state: .defaultStyle)
         recordTextField.configurePlaceholder(placeholder: "택시/건강 (5자)")
         confirmBtn.setTitle("작성했어요", for: .normal)
-        confirmBtn.isDisabled = false
+        confirmBtn.isDisabled = true
     }
 }
 
 // MARK: - Custom Methods
 extension AddRecordVC {
     
+    private func setTapBackBtn() {
+        naviBar.backBtn.press { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }
+    }
 }

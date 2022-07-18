@@ -56,6 +56,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="btn_writing"/>
+                                <connections>
+                                    <action selector="tapWriteBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CzA-VV-RtC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
