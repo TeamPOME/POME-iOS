@@ -103,8 +103,6 @@
 		77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3722876934500D2F6C0 /* APIConstants.swift */; };
 		77E8F3752876936B00D2F6C0 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3742876936B00D2F6C0 /* NetworkConstants.swift */; };
 		77E8F3772876938800D2F6C0 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3762876938800D2F6C0 /* GenericResponse.swift */; };
-		77E8F379287693AA00D2F6C0 /* WriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F378287693AA00D2F6C0 /* WriteService.swift */; };
-		77E8F37B2876943800D2F6C0 /* WriteResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F37A2876943800D2F6C0 /* WriteResModel.swift */; };
 		77E8F37D2876944B00D2F6C0 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F37C2876944B00D2F6C0 /* BaseAPI.swift */; };
 		77E8F3812876AB2300D2F6C0 /* PomeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3802876AB2300D2F6C0 /* PomeBtn.swift */; };
 		77E8F3832876F25400D2F6C0 /* xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3822876F25400D2F6C0 /* xib.swift */; };
@@ -232,8 +230,6 @@
 		77E8F3722876934500D2F6C0 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		77E8F3742876936B00D2F6C0 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		77E8F3762876938800D2F6C0 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
-		77E8F378287693AA00D2F6C0 /* WriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteService.swift; sourceTree = "<group>"; };
-		77E8F37A2876943800D2F6C0 /* WriteResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteResModel.swift; sourceTree = "<group>"; };
 		77E8F37C2876944B00D2F6C0 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		77E8F3802876AB2300D2F6C0 /* PomeBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeBtn.swift; sourceTree = "<group>"; };
 		77E8F3822876F25400D2F6C0 /* xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xib.swift; sourceTree = "<group>"; };
@@ -820,7 +816,7 @@
 		77E8F36D287692C500D2F6C0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				77E8F378287693AA00D2F6C0 /* WriteService.swift */,
+				77BD150C2885396400A1950D /* SignService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -828,7 +824,7 @@
 		77E8F36E287692D000D2F6C0 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
-				77E8F37A2876943800D2F6C0 /* WriteResModel.swift */,
+				77BD150A288535D700A1950D /* SignInResModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -1090,7 +1086,6 @@
 				77B571A1287FF58300C9CC27 /* AddFriendVC.swift in Sources */,
 				77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */,
 				1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */,
-				77E8F37B2876943800D2F6C0 /* WriteResModel.swift in Sources */,
 				1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */,
 				84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */,
 				77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */,
@@ -1103,7 +1098,6 @@
 				84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */,
 				84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */,
 				77E8F3662876606D00D2F6C0 /* ViewControllerFactory.swift in Sources */,
-				77E8F379287693AA00D2F6C0 /* WriteService.swift in Sources */,
 				1A1AEFD7287A4CB600DD5F7E /* HaveNoMateTVC.swift in Sources */,
 				77E8F3462875EE0A00D2F6C0 /* UITabBar+.swift in Sources */,
 			);
