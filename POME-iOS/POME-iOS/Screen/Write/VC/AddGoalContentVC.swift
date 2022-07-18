@@ -105,7 +105,7 @@ extension AddGoalContentVC {
     }
 }
 
-// MARK: - Types
+// MARK: - UITextFieldDelegate
 extension AddGoalContentVC: UITextFieldDelegate {
     
     /// 리턴을 누르면 다음 텍스트 필드로 이동, 다음 텍스트 필드가 차있으면 키보드 내림
