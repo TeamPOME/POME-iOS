@@ -6,18 +6,18 @@
       "scale" : "1x"
     },
     {
-      "filename" : "marshmallowLevel4Mint@2x.png",
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "marshmallowLevel4Mint@2x.png"
     },
     {
-      "filename" : "marshmallowLevel4Mint@3x.png",
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "marshmallowLevel4Mint@3x.png"
     }
   ],
   "info" : {
-    "author" : "xcode",
-    "version" : 1
+    "version" : 1,
+    "author" : "xcode"
   }
 }
