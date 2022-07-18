@@ -28,6 +28,8 @@ class GoalStorageVC: BaseVC {
         configureUI()
         setTV()
         setDelegate()
+        setTapBackAction()
+        setDelegate()
     }
 }
 
@@ -68,17 +70,16 @@ extension GoalStorageVC {
         goalStorageCV.dataSource = self
     }
     
-    private func tapGoBack() {
+    private func setTapBackAction() {
         naviBar.backBtn.addTarget(self, action: #selector(tapToBack), for: .touchUpInside)
     }
 }
 
-// MARK: - Custom Methods
+// MARK: - @objc
 extension GoalStorageVC {
     
     @objc func tapToBack() {
-        print("Button was tapped.")
-        self.dismiss(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -95,6 +96,26 @@ extension GoalStorageVC: UICollectionViewDelegate {
         } else {
             goalCardCell.setData(GoalDataModel.sampleData[indexPath.row])
             goalCardCell.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 6)
+            
+            /// 목표 카드의 more 버튼을 누를 경우 취소 버튼 띄우기
+            goalCardCell.tapMoreBtn = {
+                self.makeOneAlertWithCancel(okTitle: "삭제하기", okAction: { _ in
+                    let alert = PomeAlertVC()
+                    alert.showPomeAlertVC(vc: self, title: "목표를 삭제하시겠어요?", subTitle: "해당 목표에서 작성한 기록도 모두 삭제돼요", cancelBtnTitle: "아니요", confirmBtnTitle: "삭제할게요")
+                    
+                    /// 알럿창의 취소버튼(왼쪽 버튼) 누르는 경우 alert dismiss
+                    alert.cancelBtn.press { [weak self] in
+                        self?.dismiss(animated: true)
+                    }
+                    
+                    /// 알럿창의 확인버튼(오른쪽 버튼) 누르는 경우 삭제 서버 통신
+                    alert.confirmBtn.press { [weak self] in
+                        
+                        // TODO: - 삭제 서버 통신 필요
+                        self?.dismiss(animated: true)
+                    }
+                })
+            }
             return goalCardCell
         }
     }
