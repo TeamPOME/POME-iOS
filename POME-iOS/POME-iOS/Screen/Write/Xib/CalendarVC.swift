@@ -19,7 +19,7 @@ class CalendarVC: BaseVC {
     var endDate: Date = Date()
     
     /// delegate 및 클로저 선언
-    var delegate: DeliveryDateDelegate?
+    var deliveryDateDelegate: DeliveryDateDelegate?
     
     // MARK: IBOutlet
     @IBOutlet weak var calendar: FSCalendar!
@@ -46,9 +46,9 @@ class CalendarVC: BaseVC {
     
     @IBAction func tapSelectBtn(_ sender: UIButton) {
         if isStartCalendar {
-            delegate?.deliveryDate(selectedDate: startDate, isStartDate: isStartCalendar)
+            deliveryDateDelegate?.deliveryDate(selectedDate: startDate, isStartDate: isStartCalendar)
         } else {
-            delegate?.deliveryDate(selectedDate: endDate, isStartDate: isStartCalendar)
+            deliveryDateDelegate?.deliveryDate(selectedDate: endDate, isStartDate: isStartCalendar)
         }
         self.dismiss(animated: true)
     }

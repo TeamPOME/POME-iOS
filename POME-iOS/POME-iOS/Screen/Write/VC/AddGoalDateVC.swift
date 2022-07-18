@@ -78,7 +78,7 @@ extension AddGoalDateVC {
     /// 만들어 둔 HalfModalVC 보여주는 함수
     @objc func showHalfModalVC() {
         let halfModalVC = CalendarVC()
-        halfModalVC.delegate = self
+        halfModalVC.deliveryDateDelegate = self
         
         /// 선택된 값 유무에 따라 시작 날짜 전달 선택하지 않았으면 오늘 날짜 전달
         if startDateLabel.textColor == .grey_9 {
