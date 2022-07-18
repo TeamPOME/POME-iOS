@@ -22,8 +22,8 @@ struct MarshmellowDataModel {
 
 extension MarshmellowDataModel {
     static let sampleData: [MarshmellowDataModel] = [
-        MarshmellowDataModel(levelInt: 4, levelBadge: "기록말랑", marshmellowImageName: "userProfileFill32"),
-        MarshmellowDataModel(levelInt: 1, levelBadge: "공감말랑", marshmellowImageName: "userProfileFill32"),
-        MarshmellowDataModel(levelInt: 3, levelBadge: "발전말랑", marshmellowImageName: "userProfileFill32"),
-        MarshmellowDataModel(levelInt: 1, levelBadge: "솔직말랑", marshmellowImageName: "userProfileFill32") ]
+        MarshmellowDataModel(levelInt: 1, levelBadge: "기록말랑", marshmellowImageName: "marshmallowLevel2Blue"),
+        MarshmellowDataModel(levelInt: 2, levelBadge: "공감말랑", marshmellowImageName: "marshmallowLevel2Yellow"),
+        MarshmellowDataModel(levelInt: 3, levelBadge: "발전말랑", marshmellowImageName: "marshmallowLevel3Pink"),
+        MarshmellowDataModel(levelInt: 4, levelBadge: "솔직말랑", marshmellowImageName: "marshmallowLevel4Mint") ]
 }
