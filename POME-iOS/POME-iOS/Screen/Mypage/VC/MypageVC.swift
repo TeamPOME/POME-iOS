@@ -76,8 +76,9 @@ extension MypageVC {
     
     /// 클릭되었을때 Mypage로 이동
     @objc func presentGoalStorage() {
-      
-        // TODO: 목표보관함 CV로 변경하고 연결
+        let goalStorage = GoalStorageVC()
+        goalStorage.modalPresentationStyle = .fullScreen
+        self.present(goalStorage, animated: true, completion: nil)
     }
 }
 
