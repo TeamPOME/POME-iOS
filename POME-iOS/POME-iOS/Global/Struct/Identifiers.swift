@@ -30,4 +30,5 @@ struct Identifiers {
     static let RemindHaveNoGoalTVC = "RemindHaveNoGoalTVC"
     static let RemindGoalCategoryCVC = "RemindGoalCategoryCVC"
     static let MarshmellowCVC = "MarshmellowCVC"
+    static let GoalStorageTitleCVC = "GoalStorageTitleCVC"
 }
