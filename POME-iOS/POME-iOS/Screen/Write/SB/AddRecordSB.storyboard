@@ -59,6 +59,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="editRecordTextField:" destination="Y6W-OH-hqX" eventType="editingChanged" id="vRl-LW-ekO"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -124,7 +127,7 @@
                                             <constraint firstAttribute="height" constant="54" id="3cd-vC-WR0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
