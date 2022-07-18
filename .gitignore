@@ -97,6 +97,8 @@ iOSInjectionProject/
 # Xcode
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+## APP_KEY
+PomeInfo.plist
 
 ### DS_Store ###
 .DS_Store
