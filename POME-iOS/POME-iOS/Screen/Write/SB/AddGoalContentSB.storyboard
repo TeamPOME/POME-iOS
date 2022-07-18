@@ -251,7 +251,7 @@
             <color red="0.16078431372549021" green="0.16470588235294117" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="light_pink">
-            <color red="1" green="0.9570000171661377" blue="0.95300000905990601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.95686274509803926" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="sub">
             <color red="1" green="0.56470588235294117" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
