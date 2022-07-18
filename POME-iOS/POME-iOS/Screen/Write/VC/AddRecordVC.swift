@@ -101,13 +101,18 @@ extension AddRecordVC {
     @objc func showHalfModalVC(isGoalBtn: Bool) {
         self.isGoalBtn = isGoalBtn
         
-        /// 버튼 별 나와야 하는 뷰
-        let halfModalVC = SelectGoalVC()
-        halfModalVC.selectGoalDelegate = self
+        /// 버튼 별 나와야 하는 뷰 
+        let selectGoalVC = SelectGoalVC()
+        selectGoalVC.selectGoalDelegate = self
+        let calendarVC = CalendarVC()
+        calendarVC.deliveryDateDelegate = self
+        calendarVC.startDate = self.getStringToDate(string: dateLabel.text!)
+        
+        let halfModalVC = isGoalBtn ? selectGoalVC : calendarVC
         halfModalVC.modalPresentationStyle = .custom
         halfModalVC.transitioningDelegate = self
         self.present(halfModalVC, animated: true, completion: nil)
-    }
+        }
 }
 
 // MARK: - UIViewControllerTransitioningDelegate
@@ -158,5 +163,14 @@ extension AddRecordVC: SelectGoalDelegate {
         self.goalLabel.textColor = .grey_9
         calendarBtn.isEnabled = true
         checkFill()
+    }
+}
+
+// MARK: - DeliveryDateDelegate
+extension AddRecordVC: DeliveryDateDelegate{
+    
+    /// 받아온 데이터로 날짜 레이블 변경
+    func deliveryDate(selectedDate: Date, isStartDate: Bool) {
+        dateLabel.text = self.getSelectedDate(date: selectedDate)
     }
 }
