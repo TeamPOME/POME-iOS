@@ -29,7 +29,6 @@ class GoalStorageVC: BaseVC {
         setTV()
         setDelegate()
         setTapBackAction()
-        setDelegate()
     }
 }
 
@@ -71,15 +70,8 @@ extension GoalStorageVC {
     }
     
     private func setTapBackAction() {
-        naviBar.backBtn.addTarget(self, action: #selector(tapToBack), for: .touchUpInside)
-    }
-}
-
-// MARK: - @objc
-extension GoalStorageVC {
-    
-    @objc func tapToBack() {
-        self.dismiss(animated: true, completion: nil)
+        naviBar.backBtn.press { [weak self] in
+                    self?.navigationController?.popViewController(animated: true) }
     }
 }
 
@@ -88,7 +80,6 @@ extension GoalStorageVC: UICollectionViewDelegate {
     
     /// CV, 섹션 별 셀 지정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         guard let titleCell = goalStorageCV.dequeueReusableCell(withReuseIdentifier: Identifiers.GoalStorageTitleCVC, for: indexPath) as? GoalStorageTitleCVC,
               let goalCardCell = goalStorageCV.dequeueReusableCell(withReuseIdentifier: Identifiers.GoalCardCVC, for: indexPath) as? GoalCardCVC else { return UICollectionViewCell() }
         if indexPath.section == 0 {
@@ -131,11 +122,7 @@ extension GoalStorageVC: UICollectionViewDataSource {
     
     /// 섹션 별 셀 개수 지정 - 목표가 있을때와 없을 때 구분
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else {
-            return GoalDataModel.sampleData.count
-        }
+        return (section == 0) ? 1 : GoalDataModel.sampleData.count
     }
 }
 
