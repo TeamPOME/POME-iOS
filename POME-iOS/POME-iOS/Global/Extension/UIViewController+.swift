@@ -71,7 +71,7 @@ extension UIViewController {
             if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                 let keyboardRectangle = keyboardFrame.cgRectValue
                 let keyboardHeight = keyboardRectangle.height
-                self.view.frame.origin.y -= (keyboardHeight - 140.adjustedH)
+                self.view.frame.origin.y -= (keyboardHeight - 120.adjustedH)
             }
         }
     }
