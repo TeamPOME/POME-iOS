@@ -246,4 +246,12 @@ extension GoalCardCVC {
         realSpentMoneyLabel.text = numberFormatter(number: goalData.spentMoney).description + "원"
         setProgress(goal: goalData.successPercentage)
     }
+    
+    func setDetailData(data: GetGoalDetailResModel) {
+        goalTitleLabel.text = data.message
+        ifSuccessLabel.text = "D-\(data.dDay)"
+        moneyGoalLabel.text = "/ " + numberFormatter(number: data.amount).description + "원"
+        realSpentMoneyLabel.text = numberFormatter(number: data.payAmount).description + "원"
+        setProgress(goal: Double(data.rate))
+    }
 }
