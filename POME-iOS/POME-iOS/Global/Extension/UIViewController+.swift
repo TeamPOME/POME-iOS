@@ -45,6 +45,9 @@ extension UIViewController {
         
         /// 키보드가 사라질 때 앱에게 알리는 메서드 추가
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        /// 키보드 변경을 앱에게 알리는  메서드 추가
+        NotificationCenter.default.addObserver(self, selector: #selector(updateKeyboardFrame(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     /// 노티피케이션을 제거하는 메서드
@@ -55,23 +58,48 @@ extension UIViewController {
         
         /// 키보드가 사라질 때 앱에게 알리는 메서드 제거
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        /// 키보드 변경을 앱에게 알리는  메서드 제거
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     /// 키보드가 나타났다는 알림을 받으면 실행할 메서드
     @objc func keyboardWillShow(_ noti: NSNotification){
-        
-        /// naviBar 만큼 화면을 올려준다.
         if self.view.frame.origin.y == 0 {
-            self.view.frame.origin.y -= 44.adjustedH
+            
+            /// 화면을 올려준다.
+            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height
+                self.view.frame.origin.y -= (keyboardHeight - 140.adjustedH)
+            }
         }
     }
     
     /// 키보드가 사라졌다는 알림을 받으면 실행할 메서드
     @objc func keyboardWillHide(_ noti: NSNotification){
         
-        /// naviBar 만큼 화면을 내려준다.
+        /// 화면을 y = 0 위치로 옮김
+        self.view.frame.origin.y = 0
+    }
+    
+    /// 키보드 변경 알림을 받으면 실행할 메서드
+    @objc func updateKeyboardFrame(_ notification: Notification) {
+        
+        /// 바뀐 키보드의 frame.
+        guard let keyboardEndFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        
+        /// 바뀌기전 키보드의 frame.
+        guard let keyboardBeginFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue else { return }
+        
+        /// 이미 올라와있는 상태일 때만 키보드 변경에 따라 처리함
         if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y += 44.adjustedH
+            
+            /// 키보드 높이 차이 계산
+            let subHeight = keyboardEndFrame.cgRectValue.height - keyboardBeginFrame.cgRectValue.height
+            
+            /// 바뀐 키보드가 더 높다면 (기본 -> 이모지) 그 차이 만큼 화면을 올려준다. 아니라면 화면을 내려준다.
+            self.view.frame.origin.y -= subHeight
         }
     }
     
