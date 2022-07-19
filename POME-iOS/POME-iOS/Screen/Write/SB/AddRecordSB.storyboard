@@ -25,12 +25,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVS-P4-4ub" customClass="PomeNaviBar" customModule="POME_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="nf6-66-jw4"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소비에 대한 간단한 기록을 남겨보세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPW-FO-ZZK">
                                 <rect key="frame" x="16" y="136" width="207.33333333333334" height="17"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
@@ -179,11 +173,24 @@
                                     <constraint firstAttribute="height" constant="54" id="m3F-G7-zVo"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVS-P4-4ub" customClass="PomeNaviBar" customModule="POME_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nf6-66-jw4"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxB-VR-8ca">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="BVS-P4-4ub" firstAttribute="top" secondItem="kxB-VR-8ca" secondAttribute="bottom" id="02j-sH-utw"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EyS-2x-Xlv" secondAttribute="trailing" constant="16" id="1gT-25-7JI"/>
+                            <constraint firstItem="kxB-VR-8ca" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="26s-AT-lG7"/>
+                            <constraint firstItem="kxB-VR-8ca" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="2Bp-Jv-bgR"/>
                             <constraint firstItem="cjA-OY-oLs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="44D-ne-c4P"/>
                             <constraint firstItem="HP1-Zn-SZb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="52U-go-TDn"/>
                             <constraint firstItem="BNB-v7-6hi" firstAttribute="top" secondItem="fBQ-hf-kOe" secondAttribute="bottom" constant="12" id="57y-GP-PlE"/>
@@ -207,6 +214,7 @@
                             <constraint firstItem="EyS-2x-Xlv" firstAttribute="top" secondItem="HP1-Zn-SZb" secondAttribute="bottom" constant="24" id="fSY-iT-7ew"/>
                             <constraint firstItem="cjA-OY-oLs" firstAttribute="top" secondItem="BVS-P4-4ub" secondAttribute="bottom" constant="12" id="iAJ-Vq-vQi"/>
                             <constraint firstItem="BVS-P4-4ub" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kZN-Ul-ABl"/>
+                            <constraint firstAttribute="trailing" secondItem="kxB-VR-8ca" secondAttribute="trailing" id="mc1-ye-e0O"/>
                             <constraint firstItem="7fC-6c-ybN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="nSL-pI-vby"/>
                             <constraint firstItem="EyS-2x-Xlv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="w6h-F8-Cjt"/>
                         </constraints>
@@ -214,6 +222,7 @@
                     <connections>
                         <outlet property="calendarBtn" destination="gBe-md-8XM" id="V56-TE-1V0"/>
                         <outlet property="confirmBtn" destination="OIX-BJ-x4V" id="Owm-oi-dTg"/>
+                        <outlet property="contentTopConstraint" destination="iAJ-Vq-vQi" id="cUr-5r-OXB"/>
                         <outlet property="dateLabel" destination="A0s-jG-5i0" id="WPz-fa-vms"/>
                         <outlet property="goalLabel" destination="Sh3-1U-6iR" id="rCH-i9-3YP"/>
                         <outlet property="naviBar" destination="BVS-P4-4ub" id="l5H-Dd-BTS"/>

@@ -26,7 +26,8 @@ class AddRecordVC: BaseVC {
     @IBOutlet weak var priceTextField: PomeTextField!
     @IBOutlet weak var recordTextField: PomeTextField!
     @IBOutlet weak var confirmBtn: PomeBtn!
-
+    @IBOutlet weak var contentTopConstraint: NSLayoutConstraint!
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,16 +104,88 @@ extension AddRecordVC {
             confirmBtn.isDisabled = true
         }
     }
+    
+    /// 노티피케이션을 추가하는 메서드
+    private func addKeyboardNotifications(){
+        
+        /// 키보드가 나타날 때 앱에게 알리는 메서드 추가
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification , object: nil)
+        
+        /// 키보드가 사라질 때 앱에게 알리는 메서드 추가
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        /// 키보드 변경을 앱에게 알리는  메서드 추가
+        NotificationCenter.default.addObserver(self, selector: #selector(updateKeyboardFrame(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    /// 노티피케이션을 제거하는 메서드
+    private func removeKeyboardNotifications(){
+        
+        /// 키보드가 나타날 때 앱에게 알리는 메서드 제거
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification , object: nil)
+        
+        /// 키보드가 사라질 때 앱에게 알리는 메서드 제거
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        /// 키보드 변경을 앱에게 알리는  메서드 제거
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
 }
 
 // MARK: - @objc
 extension AddRecordVC {
     
+    /// 키보드가 나타났다는 알림을 받으면 실행할 메서드
+    @objc func keyboardWillShow(_ noti: NSNotification){
+        if contentTopConstraint.constant == 12 {
+            
+            /// 화면을 올려준다.
+            if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardRectangle = keyboardFrame.cgRectValue
+                let keyboardHeight = keyboardRectangle.height
+                contentTopConstraint.constant -= (keyboardHeight - 120.adjustedH)
+                UIView.animate(withDuration: 3) {
+                    self.view.layoutIfNeeded()
+                }
+            }
+        }
+    }
+    
+    /// 키보드가 사라졌다는 알림을 받으면 실행할 메서드
+    @objc func keyboardWillHide(_ noti: NSNotification){
+        
+        /// 초기 위치로 옮김
+        contentTopConstraint.constant = 12
+        UIView.animate(withDuration: 3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    /// 키보드 변경 알림을 받으면 실행할 메서드
+    @objc func updateKeyboardFrame(_ notification: Notification) {
+        
+        /// 바뀐 키보드의 frame.
+        guard let keyboardEndFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        
+        /// 바뀌기전 키보드의 frame.
+        guard let keyboardBeginFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue else { return }
+        
+        /// 이미 올라와있는 상태일 때만 키보드 변경에 따라 처리함
+        if contentTopConstraint.constant != 12 {
+            
+            /// 키보드 높이 차이 계산
+            let subHeight = keyboardEndFrame.cgRectValue.height - keyboardBeginFrame.cgRectValue.height
+            
+            /// 바뀐 키보드가 더 높다면 (기본 -> 이모지) 그 차이 만큼 화면을 올려준다. 아니라면 화면을 내려준다.
+            contentTopConstraint.constant -= subHeight
+        }
+    }
+    
     /// 만들어 둔 HalfModalVC 보여주는 함수
     @objc func showHalfModalVC(isGoalBtn: Bool) {
         self.isGoalBtn = isGoalBtn
         
-        /// 버튼 별 나와야 하는 뷰 
+        /// 버튼 별 나와야 하는 뷰
         let selectGoalVC = SelectGoalVC()
         selectGoalVC.selectGoalDelegate = self
         let calendarVC = CalendarVC()
@@ -123,7 +196,7 @@ extension AddRecordVC {
         halfModalVC.modalPresentationStyle = .custom
         halfModalVC.transitioningDelegate = self
         self.present(halfModalVC, animated: true, completion: nil)
-        }
+    }
 }
 
 // MARK: - UIViewControllerTransitioningDelegate
@@ -141,11 +214,13 @@ extension AddRecordVC: UIViewControllerTransitioningDelegate {
 // MARK: - UITextFieldDelegate
 extension AddRecordVC: UITextFieldDelegate {
     
+    /// return을 누르면 키보드 내림
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
+    /// 입력이 끝났을 때
     func textFieldDidEndEditing(_ textField: UITextField) {
         checkFill()
         
