@@ -28,12 +28,13 @@ class BaseAPI {
     func judgeStatus<T: Codable>(by statusCode: Int, _ data: Data, _ type: T.Type) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
         guard let decodedData = try? decoder.decode(GenericResponse<T>.self, from: data)
+                
         else { return .pathErr }
         print(decodedData)
         switch statusCode {
-        case 200...201:
+        case 200...202:
             return .success(decodedData.data ?? "None-Data")
-        case 202..<300:
+        case 203..<300:
             return .success(decodedData.status)
         case 400..<500:
             return .requestErr(decodedData.status)

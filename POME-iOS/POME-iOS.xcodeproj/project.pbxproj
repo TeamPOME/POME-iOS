@@ -55,6 +55,11 @@
 		77B571B32880BD8D00C9CC27 /* ProfileCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571B22880BD8D00C9CC27 /* ProfileCellDelegate.swift */; };
 		77B571B528811E5900C9CC27 /* SignInSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B571B428811E5900C9CC27 /* SignInSB.storyboard */; };
 		77B571B728811E7200C9CC27 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571B628811E7200C9CC27 /* SignInVC.swift */; };
+		77BD150B288535D700A1950D /* SignInResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD150A288535D700A1950D /* SignInResModel.swift */; };
+		77BD150D2885396400A1950D /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD150C2885396400A1950D /* SignService.swift */; };
+		77BD150F2885B33000A1950D /* SignAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD150E2885B33000A1950D /* SignAPI.swift */; };
+		77BD15152885F06700A1950D /* PomeInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77BD15142885F06700A1950D /* PomeInfo.plist */; };
+		77BD15172885F52F00A1950D /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD15162885F52F00A1950D /* Bundle+.swift */; };
 		77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */; };
 		77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */; };
 		77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2C12874A23800D2F6C0 /* Assets.xcassets */; };
@@ -112,8 +117,6 @@
 		77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3722876934500D2F6C0 /* APIConstants.swift */; };
 		77E8F3752876936B00D2F6C0 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3742876936B00D2F6C0 /* NetworkConstants.swift */; };
 		77E8F3772876938800D2F6C0 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3762876938800D2F6C0 /* GenericResponse.swift */; };
-		77E8F379287693AA00D2F6C0 /* WriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F378287693AA00D2F6C0 /* WriteService.swift */; };
-		77E8F37B2876943800D2F6C0 /* WriteResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F37A2876943800D2F6C0 /* WriteResModel.swift */; };
 		77E8F37D2876944B00D2F6C0 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F37C2876944B00D2F6C0 /* BaseAPI.swift */; };
 		77E8F3812876AB2300D2F6C0 /* PomeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3802876AB2300D2F6C0 /* PomeBtn.swift */; };
 		77E8F3832876F25400D2F6C0 /* xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3822876F25400D2F6C0 /* xib.swift */; };
@@ -200,6 +203,11 @@
 		77B571B22880BD8D00C9CC27 /* ProfileCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellDelegate.swift; sourceTree = "<group>"; };
 		77B571B428811E5900C9CC27 /* SignInSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSB.storyboard; sourceTree = "<group>"; };
 		77B571B628811E7200C9CC27 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		77BD150A288535D700A1950D /* SignInResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResModel.swift; sourceTree = "<group>"; };
+		77BD150C2885396400A1950D /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
+		77BD150E2885B33000A1950D /* SignAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignAPI.swift; sourceTree = "<group>"; };
+		77BD15142885F06700A1950D /* PomeInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PomeInfo.plist; sourceTree = "<group>"; };
+		77BD15162885F52F00A1950D /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		77E8F2B52874A23700D2F6C0 /* POME-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POME-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -259,8 +267,6 @@
 		77E8F3722876934500D2F6C0 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		77E8F3742876936B00D2F6C0 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		77E8F3762876938800D2F6C0 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
-		77E8F378287693AA00D2F6C0 /* WriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteService.swift; sourceTree = "<group>"; };
-		77E8F37A2876943800D2F6C0 /* WriteResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteResModel.swift; sourceTree = "<group>"; };
 		77E8F37C2876944B00D2F6C0 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		77E8F3802876AB2300D2F6C0 /* PomeBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeBtn.swift; sourceTree = "<group>"; };
 		77E8F3822876F25400D2F6C0 /* xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xib.swift; sourceTree = "<group>"; };
@@ -369,6 +375,7 @@
 		77E8F2AC2874A23700D2F6C0 = {
 			isa = PBXGroup;
 			children = (
+				77BD15142885F06700A1950D /* PomeInfo.plist */,
 				77E8F2B72874A23700D2F6C0 /* POME-iOS */,
 				77E8F2B62874A23700D2F6C0 /* Products */,
 				82DC5D6096D99590892489F7 /* Pods */,
@@ -523,6 +530,7 @@
 				77E8F33F2875EB3900D2F6C0 /* UserDefaults+.swift */,
 				77E8F3412875EBD500D2F6C0 /* CALayer+.swift */,
 				77E8F3452875EE0A00D2F6C0 /* UITabBar+.swift */,
+				77BD15162885F52F00A1950D /* Bundle+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -874,7 +882,7 @@
 		77E8F36D287692C500D2F6C0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				77E8F378287693AA00D2F6C0 /* WriteService.swift */,
+				77BD150C2885396400A1950D /* SignService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -882,7 +890,7 @@
 		77E8F36E287692D000D2F6C0 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
-				77E8F37A2876943800D2F6C0 /* WriteResModel.swift */,
+				77BD150A288535D700A1950D /* SignInResModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -891,6 +899,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F37C2876944B00D2F6C0 /* BaseAPI.swift */,
+				77BD150E2885B33000A1950D /* SignAPI.swift */,
 			);
 			path = APIManagers;
 			sourceTree = "<group>";
@@ -1024,6 +1033,7 @@
 				8400A406287C1782004F2D49 /* LookbackCompleteSB.storyboard in Resources */,
 				77E8F32C28756DAE00D2F6C0 /* Pretendard-Medium.otf in Resources */,
 				8432C9B328773A42001C643F /* SpendCVC.xib in Resources */,
+				77BD15152885F06700A1950D /* PomeInfo.plist in Resources */,
 				1AB882672881386600157820 /* RemindSelectFeelingVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1106,6 +1116,7 @@
 				77E8F2FA2874B17800D2F6C0 /* RemindVC.swift in Sources */,
 				77B571B32880BD8D00C9CC27 /* ProfileCellDelegate.swift in Sources */,
 				77E8F3242874B80A00D2F6C0 /* MypageXib.swift in Sources */,
+				77BD15172885F52F00A1950D /* Bundle+.swift in Sources */,
 				1A10C2582877367100489CA1 /* GoalStorageDataModel.swift in Sources */,
 				77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */,
 				84DC1ADA2880788C0057C55D /* PlusCVC.swift in Sources */,
@@ -1132,6 +1143,7 @@
 				8400A408287C17C5004F2D49 /* LookbackCompleteVC.swift in Sources */,
 				77E8F3422875EBD500D2F6C0 /* CALayer+.swift in Sources */,
 				77E8F3712876931D00D2F6C0 /* NetworkResult.swift in Sources */,
+				77BD150D2885396400A1950D /* SignService.swift in Sources */,
 				77B571A6287FF6C400C9CC27 /* FriendProfileTVC.swift in Sources */,
 				778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */,
 				77E8F3562875F5A400D2F6C0 /* BaseTVC.swift in Sources */,
@@ -1144,10 +1156,12 @@
 				77E8F3502875F50200D2F6C0 /* BaseNC.swift in Sources */,
 				77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */,
 				77E8F2FC2874B19400D2F6C0 /* RemindTVC.swift in Sources */,
+				77BD150B288535D700A1950D /* SignInResModel.swift in Sources */,
 				77E8F3522875F54000D2F6C0 /* CVRegisterable.swift in Sources */,
 				77E8F330287571C400D2F6C0 /* UIViewController+.swift in Sources */,
 				1A500DAA28869A02003638B1 /* MateEmojiHeaderCVC.swift in Sources */,
 				77E8F3402875EB3900D2F6C0 /* UserDefaults+.swift in Sources */,
+				77BD150F2885B33000A1950D /* SignAPI.swift in Sources */,
 				77E8F35E28765F7C00D2F6C0 /* WriteNC.swift in Sources */,
 				77E8F3832876F25400D2F6C0 /* xib.swift in Sources */,
 				1ABDED76287E716E00F85F9C /* RemindFilterTVC.swift in Sources */,
@@ -1174,7 +1188,6 @@
 				84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */,
 				84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */,
 				77E8F3662876606D00D2F6C0 /* ViewControllerFactory.swift in Sources */,
-				77E8F379287693AA00D2F6C0 /* WriteService.swift in Sources */,
 				84F7C2A22881C0B10095ECF4 /* CalendarVC.swift in Sources */,
 				1A1AEFD7287A4CB600DD5F7E /* HaveNoMateTVC.swift in Sources */,
 				77E8F3462875EE0A00D2F6C0 /* UITabBar+.swift in Sources */,
@@ -1318,9 +1331,10 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NWRXL84Y2X;
+				DEVELOPMENT_TEAM = 397WA8BG8W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "POME-iOS/Support/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = POME;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1350,9 +1364,10 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 397WA8BG8W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "POME-iOS/Support/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = POME;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

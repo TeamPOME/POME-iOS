@@ -10,5 +10,5 @@ import Foundation
 struct APIConstants {
     
     // MARK: Base URL
-    static let baseURL = ""
+    static let baseURL = "http://api.pomeserver.kro.kr:3000"
 }

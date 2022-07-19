@@ -36,6 +36,19 @@ extension UIViewController {
     /**
      - Description: Alert
      */
+    /// 확인 버튼 Alert 메서드
+    func makeAlert(title : String, message : String? = nil,
+                   okTitle: String = "확인", okAction : ((UIAlertAction) -> Void)? = nil,
+                   completion : (() -> Void)? = nil) {
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
+        let alertVC = UIAlertController(title: title, message: message,
+                                                    preferredStyle: .alert)
+        let okAction = UIAlertAction(title: okTitle, style: .default, handler: okAction)
+        alertVC.addAction(okAction)
+        self.present(alertVC, animated: true, completion: completion)
+    }
+    
     /// 확인 버튼 1개, 취소 버튼 1개 ActionSheet 메서드
     func makeOneAlertWithCancel(okTitle: String, okStyle: UIAlertAction.Style = .default,
                                 cancelTitle: String = "취소",
@@ -57,9 +70,6 @@ extension UIViewController {
         self.present(alertViewController, animated: true, completion: completion)
     }
     
-    /**
-     - Description: Alert
-     */
     /// 확인 버튼 2개, 취소 버튼 1개 ActionSheet 메서드
     func makeTwoAlertWithCancel(okTitle: String, okStyle: UIAlertAction.Style = .default,
                                 secondOkTitle: String, secondOkStyle: UIAlertAction.Style = .default,
