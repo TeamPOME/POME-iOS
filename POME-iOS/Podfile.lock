@@ -12,6 +12,7 @@ PODS:
     - KakaoSDKCommon/Common (= 2.11.0)
   - KakaoSDKUser (2.11.0):
     - KakaoSDKAuth (= 2.11.0)
+  - lottie-ios (3.3.0)
   - SnapKit (5.6.0)
   - Then (3.0.0)
 
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - KakaoSDKAuth
   - KakaoSDKCommon
   - KakaoSDKUser
+  - lottie-ios
   - SnapKit (~> 5.6.0)
   - Then
 
@@ -31,6 +33,7 @@ SPEC REPOS:
     - KakaoSDKAuth
     - KakaoSDKCommon
     - KakaoSDKUser
+    - lottie-ios
     - SnapKit
     - Then
 
@@ -40,9 +43,10 @@ SPEC CHECKSUMS:
   KakaoSDKAuth: b9470887e42b869725b391f4af34c4aaec42ea46
   KakaoSDKCommon: 0f59f2c1aead6012d92758e8ca46b63ea11c408b
   KakaoSDKUser: 5dbefe494c50dfdc87e4072710e503d39b41a609
+  lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 8cf4862706146e63513e306d8e358337547e4e2e
+PODFILE CHECKSUM: d25df895ca9c4f7e04f97a577b51a94beef2d74e
 
 COCOAPODS: 1.11.3

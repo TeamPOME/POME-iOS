@@ -10,6 +10,7 @@ target 'POME-iOS' do
   pod 'Then'
   pod 'Alamofire'
   pod 'FSCalendar'
+  pod 'lottie-ios'
 
   pod 'KakaoSDKCommon'  # 필수 요소를 담은 공통 모듈
   pod 'KakaoSDKAuth'  # 카카오 로그인
