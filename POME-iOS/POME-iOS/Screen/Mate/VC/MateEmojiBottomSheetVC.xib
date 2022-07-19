@@ -13,9 +13,9 @@
             <connections>
                 <outlet property="allMateBtn" destination="wEs-sV-Sbi" id="BSV-eh-Wlv"/>
                 <outlet property="flexEmojiBtn" destination="pRC-ad-jQc" id="hs7-A8-Noi"/>
+                <outlet property="funnyEmojiBtn" destination="kP8-pZ-QN4" id="7UA-cK-Mwz"/>
                 <outlet property="happyEmojiBtn" destination="Neo-dc-vZs" id="8RH-Ah-I6h"/>
                 <outlet property="heartEmojiBtn" destination="KFB-Br-tUK" id="w5L-f3-sG8"/>
-                <outlet property="merongEmojiBtn" destination="kP8-pZ-QN4" id="xly-uG-9md"/>
                 <outlet property="sadEmojiBtn" destination="nQe-fk-Hje" id="KZr-q4-xjS"/>
                 <outlet property="seeMateEmojiCV" destination="yEp-Gv-OAx" id="i1G-ri-Vfs"/>
                 <outlet property="surprisedEmojiBtn" destination="5y3-yo-Xng" id="iKG-3I-zc8"/>

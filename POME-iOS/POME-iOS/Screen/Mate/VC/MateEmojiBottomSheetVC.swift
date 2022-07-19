@@ -11,7 +11,7 @@ class MateEmojiBottomSheetVC: BaseVC {
     
     // MARK: IBOutlet
     @IBOutlet weak var allMateBtn: UIButton!
-    @IBOutlet weak var merongEmojiBtn: UIButton!
+    @IBOutlet weak var funnyEmojiBtn: UIButton!
     @IBOutlet weak var flexEmojiBtn: UIButton!
     @IBOutlet weak var sadEmojiBtn: UIButton!
     @IBOutlet weak var happyEmojiBtn: UIButton!
