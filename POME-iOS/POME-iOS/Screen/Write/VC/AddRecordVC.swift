@@ -17,6 +17,13 @@ class AddRecordVC: BaseVC {
     /// 버튼에 따라 다른 바텀시트를 띄우기 위함
     private var isGoalBtn: Bool = false
     
+    /// 상태바 처리를 위함
+    var hideStatusBar: Bool = false {
+        didSet {
+            setNeedsStatusBarAppearanceUpdate()
+        }
+    }
+    
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
     @IBOutlet weak var goalLabel: UILabel!
@@ -42,6 +49,10 @@ class AddRecordVC: BaseVC {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.removeKeyboardNotifications()
+    }
+
+    override var prefersStatusBarHidden: Bool {
+           return hideStatusBar
     }
     
     // MARK: IBAction
@@ -147,6 +158,9 @@ extension AddRecordVC: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        /// 상태바 보임
+        hideStatusBar = false
         checkFill()
         
         /// 금액 세 자리마다 콤마 넣음
@@ -160,6 +174,10 @@ extension AddRecordVC: UITextFieldDelegate {
     
     /// 금액은 textField를 누르면 초기화 (콤마 넣기 위함)
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        /// 상태바 가림
+        hideStatusBar = true
+        
         if textField == priceTextField {
             priceTextField.text = ""
         }
