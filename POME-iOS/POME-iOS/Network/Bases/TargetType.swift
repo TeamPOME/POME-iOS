@@ -50,14 +50,14 @@ extension TargetType {
             
         case .auth:
             request.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
-            request.setValue(UserDefaults.standard.string(forKey: UserDefaults.Keys.AccessToken), forHTTPHeaderField: HTTPHeaderField.accesstoken.rawValue)
+            request.setValue(UserDefaults.standard.string(forKey: UserDefaults.Keys.accessToken), forHTTPHeaderField: HTTPHeaderField.accesstoken.rawValue)
             
         case .multiPart:
             request.setValue(ContentType.multiPart.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
             
         case .multiPartWithAuth:
             request.setValue(ContentType.multiPart.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
-            request.setValue(UserDefaults.standard.string(forKey: UserDefaults.Keys.AccessToken), forHTTPHeaderField: HTTPHeaderField.accesstoken.rawValue)
+            request.setValue(UserDefaults.standard.string(forKey: UserDefaults.Keys.accessToken), forHTTPHeaderField: HTTPHeaderField.accesstoken.rawValue)
         }
         
         return request

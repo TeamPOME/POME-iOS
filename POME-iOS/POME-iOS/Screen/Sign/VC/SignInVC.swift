@@ -124,7 +124,7 @@ extension SignInVC {
                 print("login fail")
             } else {
                 if let accessToken = oauthToken?.accessToken {
-                    UserDefaults.standard.set(accessToken, forKey: UserDefaults.Keys.AccessToken)
+                    UserDefaults.standard.set(accessToken, forKey: UserDefaults.Keys.accessToken)
                     self.requestKakaoLogin()
                 }
             }
@@ -138,7 +138,7 @@ extension SignInVC {
                 print("login fail")
             } else {
                 if let accessToken = oauthToken?.accessToken {
-                    UserDefaults.standard.set(accessToken, forKey: UserDefaults.Keys.AccessToken)
+                    UserDefaults.standard.set(accessToken, forKey: UserDefaults.Keys.accessToken)
                     self.requestKakaoLogin()
                 }
             }
