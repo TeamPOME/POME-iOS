@@ -38,7 +38,7 @@ extension CodeBaseCVC: CVRegisterable {
 // MARK: - Custom Method
 extension CodeBaseCVC {
     
-    /// 숫자를 백단위로 콤마를 넣어주는 메서드
+    /// 숫자를 천단위로 콤마를 넣어주는 메서드
     func numberFormatter(number: Int) -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal

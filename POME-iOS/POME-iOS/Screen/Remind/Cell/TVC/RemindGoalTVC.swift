@@ -37,9 +37,11 @@ class RemindGoalTVC: BaseTVC {
     @IBAction func tapMateFirstEmojiBtn(_ sender: UIButton) {
         tapMateEmojiBtnAction?()
     }
+    
     @IBAction func tapMateSecondEmojiBtn(_ sender: UIButton) {
         tapMateEmojiBtnAction?()
     }
+    
     @IBAction func tapMateThirdEmojiBtn(_ sender: UIButton) {
         tapMateEmojiBtnAction?()
     }

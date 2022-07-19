@@ -171,6 +171,7 @@ extension RemindVC: UIViewControllerTransitioningDelegate {
         
         /// 필터기능의 BottomSheet
         if presented.className == RemindSelectFeelingVC().className {
+            
             /// HalfModalView의 높이 지정
             halfModalVC.modalHeight = 235
         }
@@ -244,6 +245,7 @@ extension RemindVC: UITableViewDelegate {
                 remindFilterTVC.previousFeelingBtn.setTitle(getPreviousEmoji, for: .normal)
                 remindFilterTVC.previousFeelingBtn.setImage(UIImage(named: "icArrowDown17Pink"), for: .normal)
             }
+            
             if (getLatestEmoji != "" || selectedLatestEmoji == true) && selectedResetBtn == false {
                 remindFilterTVC.laterFeelingBtn.setTitleColor(.sub, for: .normal)
                 remindFilterTVC.laterFeelingBtn.backgroundColor = .pomeMiddlePink

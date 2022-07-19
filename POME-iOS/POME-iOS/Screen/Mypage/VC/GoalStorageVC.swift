@@ -71,7 +71,7 @@ extension GoalStorageVC {
     
     private func setTapBackAction() {
         naviBar.backBtn.press { [weak self] in
-        self?.navigationController?.popViewController(animated: true) }
+            self?.navigationController?.popViewController(animated: true) }
     }
 }
 

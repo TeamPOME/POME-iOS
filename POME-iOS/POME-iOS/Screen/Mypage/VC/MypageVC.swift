@@ -71,13 +71,12 @@ extension MypageVC {
     }
 }
 
-// MARK: - objc
+// MARK: - @objc
 extension MypageVC {
     
     /// 클릭되었을때 Mypage로 이동
     @objc func presentGoalStorage() {
         let goalStorage = GoalStorageVC()
-        goalStorage.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(goalStorage, animated: true)
     }
 }
