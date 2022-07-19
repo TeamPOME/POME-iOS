@@ -67,7 +67,7 @@ class AddGoalContentVC: BaseVC {
     @IBAction func tapConfirmBtn(_ sender: UIButton) {
         
         // TODO: - 서버 통신 필요
-        guard let addGoalCompleteVC = UIStoryboard.init(name: Identifiers.AddGoalCompleteSB, bundle: nil).instantiateViewController(withIdentifier: AddGoalCompleteVC.className) as? AddGoalCompleteVC else { return }
+        guard let addGoalCompleteVC = UIStoryboard.init(name: Identifiers.AddCompleteSB, bundle: nil).instantiateViewController(withIdentifier: AddCompleteVC.className) as? AddCompleteVC else { return }
         navigationController?.pushViewController(addGoalCompleteVC, animated: true)
     }
 }

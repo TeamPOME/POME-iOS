@@ -9,8 +9,12 @@ import UIKit
 
 class WriteSelectFeelingVC: BaseVC {
     
+    // MARK: Properties
+    var isRecord: Bool = false
+    
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
+    @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subLabel: UILabel!
     @IBOutlet weak var saveEmojiBtn: PomeBtn!
@@ -29,6 +33,10 @@ class WriteSelectFeelingVC: BaseVC {
     }
     
     // MARK: IBAction
+    @IBAction func tapCloseBtn(_ sender: UIButton) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     @IBAction func tapEmojiBtn(_ sender: UIButton) {
         sender.isSelected.toggle()
         
@@ -47,8 +55,18 @@ class WriteSelectFeelingVC: BaseVC {
     }
     
     @IBAction func tapConfirmBtn(_ sender: UIButton) {
-        guard let lookbackCompleteVC = UIStoryboard.init(name: Identifiers.LookbackCompleteSB, bundle: nil).instantiateViewController(withIdentifier: LookbackCompleteVC.className) as? LookbackCompleteVC else { return }
-        navigationController?.pushViewController(lookbackCompleteVC, animated: true)
+        let nextVC: UIViewController
+        
+        if isRecord {
+            guard let addRecordCompleteVC = UIStoryboard.init(name: Identifiers.AddCompleteSB, bundle: nil).instantiateViewController(withIdentifier: AddCompleteVC.className) as? AddCompleteVC else { return }
+            addRecordCompleteVC.isRecord = self.isRecord
+            nextVC = addRecordCompleteVC
+        } else {
+            guard let lookbackCompleteVC = UIStoryboard.init(name: Identifiers.LookbackCompleteSB, bundle: nil).instantiateViewController(withIdentifier: LookbackCompleteVC.className) as? LookbackCompleteVC else { return }
+            nextVC = lookbackCompleteVC
+        }
+
+        navigationController?.pushViewController(nextVC, animated: true)
     }
 }
 
@@ -59,28 +77,51 @@ extension WriteSelectFeelingVC {
         naviBar.setNaviStyle(state: .whiteBackDefault)
         saveEmojiBtn.setTitle("남겼어요", for: .normal)
         saveEmojiBtn.isDisabled = true
-        titleLabel.setLineSpacing(lineSpacing: 4)
-        titleLabel.textAlignment = .left
-        subLabel.setLineSpacing(lineSpacing: 4)
-        subLabel.textAlignment = .left
+        if isRecord {
+            closeBtn.isHidden = false
+            titleLabel.text = "소비한 순간의\n솔직한 감정을 남겨주세요"
+            subLabel.text = "포미는 순간의 감정에 집중해\n한번 기록된 감정은 바꿀 수 없어요"
+            configureHappyUI()
+            configureDontKnowUI()
+            configureRegretUI()
+        }
+        [titleLabel, subLabel].forEach {
+            $0?.setLineSpacing(lineSpacing: 4)
+            $0?.textAlignment = .left
+        }
     }
     
     /// 행복해요 버튼 선택에 따른 이미지와 레이블 색 설정 메서드
     private func configureHappyUI() {
-        happyBtn.setImgByName(name: "btnEmojiHappyPink110Nor", selectedName: "btnEmojiHappyPink110Sel")
-        happyLabel.textColor = happyBtn.isSelected ? .sub : .grey_7
+        if isRecord {
+            happyBtn.setImgByName(name: "btnEmojiHappyMint110Nor", selectedName: "btnEmojiHappyMint110Sel")
+            happyLabel.textColor = happyBtn.isSelected ? .main : .grey_7
+        } else {
+            happyBtn.setImgByName(name: "btnEmojiHappyPink110Nor", selectedName: "btnEmojiHappyPink110Sel")
+            happyLabel.textColor = happyBtn.isSelected ? .sub : .grey_7
+        }
     }
     
     /// 모르겠어요 버튼 선택에 따른 이미지와 레이블 색 설정 메서드
     private func configureDontKnowUI() {
-        dontKnowBtn.setImgByName(name: "btnEmojiWhatPink110Nor", selectedName: "btnEmojiWhatPink110Sel")
-        dontKnowLabel.textColor = dontKnowBtn.isSelected ? .sub : .grey_7
+        if isRecord {
+            dontKnowBtn.setImgByName(name: "btnEmojiWhatMint110Nor", selectedName: "btnEmojiWhatMint110Sel")
+            dontKnowLabel.textColor = dontKnowBtn.isSelected ? .main : .grey_7
+        } else {
+            dontKnowBtn.setImgByName(name: "btnEmojiWhatPink110Nor", selectedName: "btnEmojiWhatPink110Sel")
+            dontKnowLabel.textColor = dontKnowBtn.isSelected ? .sub : .grey_7
+        }
     }
     
     /// 후회해요 버튼 선택에 따른 이미지와 레이블 색 설정 메서드
     private func configureRegretUI() {
-        regretBtn.setImgByName(name: "btnEmojiSadPink110Nor", selectedName: "btnEmojiSadPink110Sel")
-        regretLabel.textColor = regretBtn.isSelected ? .sub : .grey_7
+        if isRecord {
+            regretBtn.setImgByName(name: "btnEmojiSadMint110Nor", selectedName: "btnEmojiSadMint110Sel")
+            regretLabel.textColor = regretBtn.isSelected ? .main : .grey_7
+        } else {
+            regretBtn.setImgByName(name: "btnEmojiSadPink110Nor", selectedName: "btnEmojiSadPink110Sel")
+            regretLabel.textColor = regretBtn.isSelected ? .sub : .grey_7
+        }
     }
 }
 

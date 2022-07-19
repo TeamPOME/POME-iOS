@@ -17,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Add Goal CompleteVC-->
+        <!--Add CompleteVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="AddGoalCompleteVC" id="Y6W-OH-hqX" customClass="AddGoalCompleteVC" customModule="POME_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCompleteVC" id="Y6W-OH-hqX" customClass="AddCompleteVC" customModule="POME_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,6 +74,8 @@
                     </view>
                     <connections>
                         <outlet property="confirmBtn" destination="KMR-Fz-QpL" id="viH-dL-hc2"/>
+                        <outlet property="mainImageView" destination="H1L-Vk-fQl" id="eue-Os-CJU"/>
+                        <outlet property="subLabel" destination="2qb-VC-wUF" id="qb1-e2-2oJ"/>
                         <outlet property="titleLabel" destination="LJR-dj-N1d" id="Jit-yU-oOF"/>
                     </connections>
                 </viewController>

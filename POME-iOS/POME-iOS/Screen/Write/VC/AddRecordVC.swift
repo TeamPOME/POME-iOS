@@ -51,6 +51,12 @@ class AddRecordVC: BaseVC {
     @IBAction func editRecordTextField(_ sender: UITextField) {
         sender.checkMaxLength(maxLength: 20)
     }
+    
+    @IBAction func tapConfirmBtn(_ sender: UIButton) {
+        guard let writeSelectFeelingVC = UIStoryboard.init(name: Identifiers.WriteSelectFeelingSB, bundle: nil).instantiateViewController(withIdentifier: WriteSelectFeelingVC.className) as? WriteSelectFeelingVC else { return }
+        writeSelectFeelingVC.isRecord = true
+        navigationController?.pushViewController(writeSelectFeelingVC, animated: true)
+    }
 }
 
 // MARK: - UI

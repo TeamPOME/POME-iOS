@@ -21,7 +21,7 @@ struct Identifiers {
     static let WriteSelectFeelingSB = "WriteSelectFeelingSB"
     static let AddGoalDateSB = "AddGoalDateSB"
     static let AddGoalContentSB = "AddGoalContentSB"
-    static let AddGoalCompleteSB = "AddGoalCompleteSB"
+    static let AddCompleteSB = "AddCompleteSB"
     static let AddRecordSB = "AddRecordSB"
     static let GoalCardCVC = "GoalCardCVC"
     static let HaveNoMateTVC = "HaveNoMateTVC"
