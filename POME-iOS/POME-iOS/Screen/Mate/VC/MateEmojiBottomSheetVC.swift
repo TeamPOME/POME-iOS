@@ -28,7 +28,7 @@ class MateEmojiBottomSheetVC: BaseVC {
     }
 }
 
-// MARK: - Custom Method
+// MARK: - UI
 extension MateEmojiBottomSheetVC {
     
     private func configureUI() {
