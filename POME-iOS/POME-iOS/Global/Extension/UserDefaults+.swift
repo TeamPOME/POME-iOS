@@ -17,5 +17,8 @@ extension UserDefaults {
         
         /// String
         static var RefreshToken = "RefreshToken"
+        
+        /// String
+        static var uuid = "uuid"
     }
 }
