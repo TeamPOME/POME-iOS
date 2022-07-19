@@ -34,7 +34,20 @@ class WriteSelectFeelingVC: BaseVC {
     
     // MARK: IBAction
     @IBAction func tapCloseBtn(_ sender: UIButton) {
-        navigationController?.popToRootViewController(animated: true)
+        let alert = PomeAlertVC()
+        alert.showPomeAlertVC(vc: self, title: "작성을 그만 두시겠어요?", subTitle: "지금까지 작성한 내용은 모두 사라져요", cancelBtnTitle: "이어서 쓸래요", confirmBtnTitle: "그만둘래요", iconImage: UIImage(named: "3DPenMint100"))
+        
+        /// 알럿창의 이어서 쓸래요(왼쪽 버튼) 누르는 경우 alert dismiss
+        alert.cancelBtn.press { [weak self] in
+            self?.dismiss(animated: true)
+        }
+        
+        /// 알럿창의 그만둘래요(오른쪽 버튼) 누르는 경우 알럿창 없앤 후 기록탭 메인으로 돌아감
+        alert.confirmBtn.press { [weak self] in
+            self?.dismiss(animated: false) {
+                self?.navigationController?.popToRootViewController(animated: true)
+            }
+        }
     }
     
     @IBAction func tapEmojiBtn(_ sender: UIButton) {
