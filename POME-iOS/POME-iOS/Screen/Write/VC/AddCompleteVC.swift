@@ -7,10 +7,15 @@
 
 import UIKit
 
-class AddGoalCompleteVC: BaseVC {
+class AddCompleteVC: BaseVC {
+    
+    // MARK: Properties
+    var isRecord: Bool = false
     
     // MARK: IBOutlet
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subLabel: UILabel!
+    @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var confirmBtn: PomeBtn!
     
     // MARK: Life Cycle
@@ -27,9 +32,14 @@ class AddGoalCompleteVC: BaseVC {
 }
 
 // MARK: - UI
-extension AddGoalCompleteVC {
+extension AddCompleteVC {
     
     private func configureUI() {
+        if isRecord {
+            titleLabel.text = "새로운 씀씀이 기록이\n추가되었어요!"
+            subLabel.text = "잊지 않고 기록해주셨네요! 정말 대단해요"
+            mainImageView.image = UIImage(named: "writeComplete3DComponent")
+        }
         titleLabel.setLineSpacing(lineSpacing: 4)
         confirmBtn.setTitle("확인했어요", for: .normal)
         confirmBtn.isDisabled = false
@@ -37,7 +47,7 @@ extension AddGoalCompleteVC {
 }
 
 // MARK: - Custom Methods
-extension AddGoalCompleteVC {
+extension AddCompleteVC {
     
     /// 오른쪽으로 swipe시 뒤로가기 막음
     private func setNaviBar() {
