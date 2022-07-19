@@ -146,9 +146,7 @@ extension AddRecordVC {
                 
                 /// 현재 키보드에 얼마나 가려지는지 계산
                 let subHeight = keyboardHeight - (812.adjustedH - recordTextField.frame.maxY)
-                
-                print(subHeight)
-                
+
                 /// 가려지는 부분이 있다면 키보드 처리를 한다.
                 if subHeight > 0 {
                     contentTopConstraint.constant -= subHeight + 50
