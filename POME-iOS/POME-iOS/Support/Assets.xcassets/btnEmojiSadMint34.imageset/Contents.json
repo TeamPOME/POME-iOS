@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "emojiMint34.png",
+      "filename" : "btnEmojiSadMint34.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
       "scale" : "2x",
-      "filename" : "emojiMint34@2x.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "btnEmojiSadMint34@2x.png"
     },
     {
+      "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "emojiMint34@3x.png",
-      "scale" : "3x"
+      "filename" : "btnEmojiSadMint34@3x.png"
     }
   ],
   "info" : {
