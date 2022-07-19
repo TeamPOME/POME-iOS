@@ -13,6 +13,7 @@ class HaveMateTVC: BaseTVC {
     
     // MARK: Properties
     var tapPlusBtnAction: (() -> ())?
+    var tapMateEmojiBtnAction: (() -> ())?
     
     // MARK: IBOutlet
     @IBOutlet weak var containerView: UIView!
@@ -41,6 +42,12 @@ class HaveMateTVC: BaseTVC {
     
     @IBAction func tapPlusBtn(_ sender: UIButton) {
         tapPlusBtnAction?()
+    }
+    @IBAction func tapMateFirstEmojiBtn(_ sender: UIButton) {
+        tapMateEmojiBtnAction?()
+    }
+    @IBAction func tapMateThirdEmojiBtn(_ sender: UIButton) {
+        tapMateEmojiBtnAction?()
     }
 }
 

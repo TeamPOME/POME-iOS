@@ -166,6 +166,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="emojiMint28">
                                     <backgroundConfiguration key="background" image="btnEmojiNor28"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="tapMateThirdEmojiBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="W6F-9Q-XAh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1L-vf-bXg" userLabel="SecondBtn">
                                 <rect key="frame" x="276" y="113" width="28" height="28"/>
@@ -178,6 +181,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="emojiMint28" title="">
                                     <backgroundConfiguration key="background" image="btnEmojiNor28"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="tapMateFirstEmojiBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="p8e-hb-gIf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17D-Ri-dyM" userLabel="FirstBtn">
                                 <rect key="frame" x="254" y="113" width="28" height="28"/>
