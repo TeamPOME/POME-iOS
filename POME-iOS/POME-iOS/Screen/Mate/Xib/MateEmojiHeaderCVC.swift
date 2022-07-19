@@ -9,6 +9,7 @@ import UIKit
 
 class MateEmojiHeaderCVC: BaseCVC {
 
+    // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
     }

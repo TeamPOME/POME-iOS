@@ -22,22 +22,9 @@ class MateEmojiBottomSheetVC: BaseVC {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configureUI()
         setDelegate()
         registerCVC()
     }
-}
-
-// MARK: - UI
-extension MateEmojiBottomSheetVC {
-    
-//    private func configureUI() {
-//        myPageNaviBar.setNaviStyle(state: .greyWithRightBtn)
-//        myPageNaviBar.rightCustomBtn.setImage(UIImage(named: "icSetting24Mono"), for: .normal)
-//        marshmellowCV.isScrollEnabled = false
-//        checkView.makeRounded(cornerRadius: checkView.frame.width / 2)
-//        goalStorageBtnView.makeRounded(cornerRadius: 6.adjusted)
-//    }
 }
 
 // MARK: - Custom Method
@@ -103,19 +90,11 @@ extension MateEmojiBottomSheetVC: UICollectionViewDelegateFlowLayout {
     
     /// 셀별 위아래 간격 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        if section == 0 {
-            return 0
-        } else {
-            return 20.adjusted
-        }
+        return section == 0 ? 0 : 20.adjustedH
     }
     
     ///  셀별 사이 간격 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        if section == 0 {
-            return 0
-        } else {
-            return 14.adjusted
-        }
+        return section == 0 ? 0 : 14.adjusted
     }
 }
