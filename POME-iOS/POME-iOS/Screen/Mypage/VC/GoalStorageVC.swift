@@ -51,7 +51,7 @@ extension GoalStorageVC {
             $0.leading.equalTo(view.safeAreaLayoutGuide)
             $0.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.top.equalTo(naviBar.snp.bottom)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(14)
         }
     }
 }

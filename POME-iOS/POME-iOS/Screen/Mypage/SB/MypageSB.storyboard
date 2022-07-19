@@ -79,28 +79,26 @@
                                         <color key="textColor" name="grey_6"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPL-0U-aHe">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icGoalKeepRightArrow20" translatesAutoresizingMaskIntoConstraints="NO" id="ySg-n5-xdF">
                                         <rect key="frame" x="307" y="16" width="20" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="xPL-0U-aHe" secondAttribute="height" multiplier="1:1" id="cmR-fB-ri0"/>
+                                            <constraint firstAttribute="width" secondItem="ySg-n5-xdF" secondAttribute="height" multiplier="1:1" id="M1D-Gq-WaD"/>
                                         </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="icGoalKeepRightArrow20"/>
-                                    </button>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="light_pink"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="xPL-0U-aHe" secondAttribute="bottom" constant="40" id="0Bu-xt-s9V"/>
                                     <constraint firstItem="rm3-Mt-2at" firstAttribute="top" secondItem="6EL-1q-3n7" secondAttribute="top" constant="16" id="15I-eE-mEB"/>
-                                    <constraint firstItem="xPL-0U-aHe" firstAttribute="top" secondItem="6EL-1q-3n7" secondAttribute="top" constant="16" id="FS4-uM-VQT"/>
+                                    <constraint firstItem="ySg-n5-xdF" firstAttribute="top" secondItem="6EL-1q-3n7" secondAttribute="top" constant="16" id="1we-tS-nqA"/>
+                                    <constraint firstAttribute="bottom" secondItem="ySg-n5-xdF" secondAttribute="bottom" constant="40" id="Cuj-LY-vgI"/>
                                     <constraint firstItem="TD7-V7-YmS" firstAttribute="leading" secondItem="rm3-Mt-2at" secondAttribute="trailing" constant="10" id="JJA-kH-GTb"/>
+                                    <constraint firstAttribute="trailing" secondItem="ySg-n5-xdF" secondAttribute="trailing" constant="16" id="P87-sv-jbD"/>
                                     <constraint firstItem="TD7-V7-YmS" firstAttribute="top" secondItem="6EL-1q-3n7" secondAttribute="top" constant="18" id="T1m-pd-DpL"/>
                                     <constraint firstAttribute="bottom" secondItem="rm3-Mt-2at" secondAttribute="bottom" constant="16" id="TJc-xS-Ena"/>
                                     <constraint firstItem="rm3-Mt-2at" firstAttribute="leading" secondItem="6EL-1q-3n7" secondAttribute="leading" constant="16" id="bxZ-Hf-YQV"/>
                                     <constraint firstItem="wv0-RD-sDT" firstAttribute="leading" secondItem="rm3-Mt-2at" secondAttribute="trailing" constant="10" id="dyk-G1-l91"/>
                                     <constraint firstAttribute="width" secondItem="6EL-1q-3n7" secondAttribute="height" multiplier="343:76" id="elB-pj-iz7"/>
                                     <constraint firstItem="wv0-RD-sDT" firstAttribute="top" secondItem="TD7-V7-YmS" secondAttribute="bottom" constant="4" id="lza-xa-kf0"/>
-                                    <constraint firstAttribute="trailing" secondItem="xPL-0U-aHe" secondAttribute="trailing" constant="16" id="zr6-mv-GP0"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마시멜로 모으기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMl-pP-15D">
