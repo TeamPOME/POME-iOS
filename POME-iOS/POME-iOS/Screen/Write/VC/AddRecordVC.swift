@@ -37,6 +37,11 @@ class AddRecordVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         hideTabbar()
+        self.addKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.removeKeyboardNotifications()
     }
     
     // MARK: IBAction
