@@ -37,32 +37,6 @@
                                 <color key="textColor" name="grey_9"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7fC-6c-ybN">
-                                <rect key="frame" x="16" y="498" width="343" height="83"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소비 기록" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssr-PF-6Fd">
-                                        <rect key="frame" x="0.0" y="0.0" width="52" height="17"/>
-                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
-                                        <color key="textColor" name="grey_7"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qnd-Tl-HL0" customClass="PomeTextField" customModule="POME_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="29" width="343" height="54"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="54" id="eME-Yu-c1J"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="editRecordTextField:" destination="Y6W-OH-hqX" eventType="editingChanged" id="vRl-LW-ekO"/>
-                                        </connections>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="Qnd-Tl-HL0" firstAttribute="leading" secondItem="7fC-6c-ybN" secondAttribute="leading" id="Gl6-AC-oLa"/>
-                                    <constraint firstAttribute="trailing" secondItem="Qnd-Tl-HL0" secondAttribute="trailing" id="yhR-iK-Wm9"/>
-                                </constraints>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소비 날짜" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K33-Ei-8TT">
                                 <rect key="frame" x="16" y="284" width="52" height="17"/>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
@@ -183,6 +157,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소비 기록" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssr-PF-6Fd">
+                                <rect key="frame" x="16" y="498" width="52" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="grey_7"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qnd-Tl-HL0" customClass="PomeTextField" customModule="POME_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="527" width="343" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="eME-Yu-c1J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editRecordTextField:" destination="Y6W-OH-hqX" eventType="editingChanged" id="vRl-LW-ekO"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -202,27 +193,29 @@
                             <constraint firstItem="BVS-P4-4ub" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="E99-O2-jkF"/>
                             <constraint firstItem="IPW-FO-ZZK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Ec1-F6-7vs"/>
                             <constraint firstItem="fBQ-hf-kOe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Esw-dB-sRf"/>
+                            <constraint firstItem="Qnd-Tl-HL0" firstAttribute="top" secondItem="ssr-PF-6Fd" secondAttribute="bottom" constant="12" id="GvX-HQ-15Y"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Qnd-Tl-HL0" secondAttribute="trailing" constant="16" id="HhY-2m-uUA"/>
                             <constraint firstItem="BNB-v7-6hi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Kor-vV-mUt"/>
                             <constraint firstItem="OIX-BJ-x4V" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="LUb-wD-cUm"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BVS-P4-4ub" secondAttribute="trailing" id="Nmp-jB-BfK"/>
-                            <constraint firstItem="7fC-6c-ybN" firstAttribute="top" secondItem="EyS-2x-Xlv" secondAttribute="bottom" constant="24" id="P34-wL-fby"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HP1-Zn-SZb" secondAttribute="trailing" constant="16" id="QGU-81-auD"/>
+                            <constraint firstItem="ssr-PF-6Fd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="QU6-4s-312"/>
                             <constraint firstItem="IPW-FO-ZZK" firstAttribute="top" secondItem="cjA-OY-oLs" secondAttribute="bottom" constant="12" id="UBL-W2-3Mr"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7fC-6c-ybN" secondAttribute="trailing" constant="16" id="ZhT-mX-Gb0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="OIX-BJ-x4V" secondAttribute="bottom" id="bFF-iO-ITj"/>
+                            <constraint firstItem="ssr-PF-6Fd" firstAttribute="top" secondItem="EyS-2x-Xlv" secondAttribute="bottom" constant="24" id="bbW-Fd-OfC"/>
                             <constraint firstItem="K33-Ei-8TT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="eoP-Lu-gPU"/>
                             <constraint firstItem="EyS-2x-Xlv" firstAttribute="top" secondItem="HP1-Zn-SZb" secondAttribute="bottom" constant="24" id="fSY-iT-7ew"/>
                             <constraint firstItem="cjA-OY-oLs" firstAttribute="top" secondItem="BVS-P4-4ub" secondAttribute="bottom" constant="12" id="iAJ-Vq-vQi"/>
+                            <constraint firstItem="Qnd-Tl-HL0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="jkM-YD-f8r"/>
                             <constraint firstItem="BVS-P4-4ub" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kZN-Ul-ABl"/>
                             <constraint firstAttribute="trailing" secondItem="kxB-VR-8ca" secondAttribute="trailing" id="mc1-ye-e0O"/>
-                            <constraint firstItem="7fC-6c-ybN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="nSL-pI-vby"/>
                             <constraint firstItem="EyS-2x-Xlv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="w6h-F8-Cjt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="calendarBtn" destination="gBe-md-8XM" id="V56-TE-1V0"/>
                         <outlet property="confirmBtn" destination="OIX-BJ-x4V" id="Owm-oi-dTg"/>
-                        <outlet property="contentTopConstraint" destination="iAJ-Vq-vQi" id="cUr-5r-OXB"/>
+                        <outlet property="contentTopConstraint" destination="iAJ-Vq-vQi" id="0yc-1w-A7m"/>
                         <outlet property="dateLabel" destination="A0s-jG-5i0" id="WPz-fa-vms"/>
                         <outlet property="goalLabel" destination="Sh3-1U-6iR" id="rCH-i9-3YP"/>
                         <outlet property="naviBar" destination="BVS-P4-4ub" id="l5H-Dd-BTS"/>

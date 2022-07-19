@@ -143,9 +143,18 @@ extension AddRecordVC {
             if let keyboardFrame: NSValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                 let keyboardRectangle = keyboardFrame.cgRectValue
                 let keyboardHeight = keyboardRectangle.height
-                contentTopConstraint.constant -= (keyboardHeight - 120.adjustedH)
-                UIView.animate(withDuration: 3) {
-                    self.view.layoutIfNeeded()
+                
+                /// 현재 키보드에 얼마나 가려지는지 계산
+                let subHeight = keyboardHeight - (812.adjustedH - recordTextField.frame.maxY)
+                
+                print(subHeight)
+                
+                /// 가려지는 부분이 있다면 키보드 처리를 한다.
+                if subHeight > 0 {
+                    contentTopConstraint.constant -= subHeight + 50
+                    UIView.animate(withDuration: 0.1) {
+                        self.view.layoutIfNeeded()
+                    }
                 }
             }
         }
@@ -156,7 +165,7 @@ extension AddRecordVC {
         
         /// 초기 위치로 옮김
         contentTopConstraint.constant = 12
-        UIView.animate(withDuration: 3) {
+        UIView.animate(withDuration: 0.1) {
             self.view.layoutIfNeeded()
         }
     }
