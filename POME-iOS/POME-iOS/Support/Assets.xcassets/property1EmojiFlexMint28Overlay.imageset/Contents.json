@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "property1EmojiFlexMint28Overlay.png",
+      "scale" : "1x",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "property1EmojiFlexMint28Overlay@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "filename" : "property1EmojiFlexMint28Overlay@3x.png"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

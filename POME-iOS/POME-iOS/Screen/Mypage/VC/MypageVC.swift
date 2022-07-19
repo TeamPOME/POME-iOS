@@ -71,14 +71,13 @@ extension MypageVC {
     }
 }
 
-// MARK: - objc
+// MARK: - @objc
 extension MypageVC {
     
     /// 클릭되었을때 Mypage로 이동
     @objc func presentGoalStorage() {
         let goalStorage = GoalStorageVC()
-        goalStorage.modalPresentationStyle = .fullScreen
-        self.present(goalStorage, animated: true, completion: nil)
+        self.navigationController?.pushViewController(goalStorage, animated: true)
     }
 }
 
@@ -101,7 +100,7 @@ extension MypageVC: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension MypageVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 166.adjusted, height: 180.adjustedH)
+        return CGSize(width: 166, height: 180)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

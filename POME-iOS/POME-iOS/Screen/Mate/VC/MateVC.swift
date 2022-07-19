@@ -222,7 +222,7 @@ extension MateVC: UITableViewDelegate {
     
     /// 친구 유무에 따른 셀별 높이 지정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (mateNum == 0) ? 516.adjustedH : 175.adjustedH
+        return (mateNum == 0) ? 516 : 175
     }
     
     /// 친구 유무에 따른 셀 지정
@@ -294,7 +294,6 @@ extension MateVC: UICollectionViewDelegate {
         } else {
             cell.profileImageView.image = UIImage(named: "userProfileFill32")
         }
-
         return cell
     }
     

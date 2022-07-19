@@ -86,15 +86,19 @@ extension MateEmojiBottomSheetVC: UICollectionViewDelegateFlowLayout {
     /// 섹션에 따라 셀 크기 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
-            return CGSize(width: 370.adjusted, height: 38.adjustedH)
+            return CGSize(width: 370, height: 38)
         } else {
-            return CGSize(width: 105.adjusted, height: 74.adjustedH)
+            return CGSize(width: 105, height: 74)
         }
     }
     
     /// 섹션에 인셋 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 16, bottom: 12, right: 16)
+        if section == 0 {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        } else {
+            return UIEdgeInsets(top: 0, left: 16, bottom: 12, right: 16)
+        }
     }
     
     /// 셀별 위아래 간격 지정
