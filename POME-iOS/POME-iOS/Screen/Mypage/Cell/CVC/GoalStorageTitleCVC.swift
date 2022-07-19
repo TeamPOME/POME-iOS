@@ -12,5 +12,4 @@ class GoalStorageTitleCVC: BaseCVC {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
 }
