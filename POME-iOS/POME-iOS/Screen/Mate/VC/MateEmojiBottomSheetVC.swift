@@ -22,8 +22,17 @@ class MateEmojiBottomSheetVC: BaseVC {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         setDelegate()
         registerCVC()
+    }
+}
+
+// MARK: - Custom Method
+extension MateEmojiBottomSheetVC {
+    
+    private func configureUI() {
+        seeMateEmojiCV.showsVerticalScrollIndicator = false
     }
 }
 
@@ -42,7 +51,7 @@ extension MateEmojiBottomSheetVC {
         MateEmojiCVC.register(target: seeMateEmojiCV)
     }
     
-    /// TODO 서버통신
+    /// TODO:  서버통신
 }
 
 // MARK: - UICollectionViewDataSource
