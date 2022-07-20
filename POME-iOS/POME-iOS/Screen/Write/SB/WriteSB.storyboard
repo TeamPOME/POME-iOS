@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--WriteVC-->
         <scene sceneID="s0d-6b-0kx">
@@ -48,6 +53,24 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="GI5-Nb-w2x">
+                                <rect key="frame" x="123.66666666666666" y="549" width="127.66666666666666" height="53"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icNoting24" translatesAutoresizingMaskIntoConstraints="NO" id="3Ax-KG-0Ab">
+                                        <rect key="frame" x="51.999999999999986" y="0.0" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="3Ax-KG-0Ab" secondAttribute="height" multiplier="1:1" id="RF1-HP-8RL"/>
+                                            <constraint firstAttribute="width" constant="24" id="dL6-eb-njd"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기록한 씀씀이가 없어요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNt-6p-zUb">
+                                        <rect key="frame" x="0.0" y="36" width="127.66666666666667" height="17"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                        <color key="textColor" name="grey_5"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMY-oy-SiQ">
                                 <rect key="frame" x="307" y="710" width="52" height="52"/>
                                 <constraints>
@@ -71,15 +94,19 @@
                             <constraint firstItem="wNH-qz-TOz" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="ACX-fh-Pge"/>
                             <constraint firstItem="wNH-qz-TOz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="BE3-JR-NOq"/>
                             <constraint firstItem="wNH-qz-TOz" firstAttribute="top" secondItem="zsx-4j-blm" secondAttribute="bottom" id="HCq-7d-rke"/>
+                            <constraint firstItem="GI5-Nb-w2x" firstAttribute="top" secondItem="zsx-4j-blm" secondAttribute="bottom" constant="419" id="M8G-bx-Vj5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Btg-DO-8q4" secondAttribute="trailing" id="W6E-49-HVJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rMY-oy-SiQ" secondAttribute="trailing" constant="16" id="c82-GD-qma"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zsx-4j-blm" secondAttribute="trailing" id="hEj-eE-hg5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rMY-oy-SiQ" secondAttribute="bottom" constant="16" id="lEY-Rn-PlE"/>
                             <constraint firstItem="wNH-qz-TOz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="pRC-Rp-407"/>
+                            <constraint firstItem="GI5-Nb-w2x" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="trq-KW-6qD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tg4-Zy-Ih7"/>
                     <connections>
+                        <outlet property="emptyView" destination="GI5-Nb-w2x" id="4LR-a4-Uq7"/>
+                        <outlet property="emptyViewTopConstraint" destination="M8G-bx-Vj5" id="dsC-tO-2Jv"/>
                         <outlet property="goalCategoryCV" destination="zsx-4j-blm" id="FLm-gI-jAv"/>
                         <outlet property="writeHomeNaviBar" destination="Btg-DO-8q4" id="QB9-tY-rN4"/>
                         <outlet property="writeMainCV" destination="wNH-qz-TOz" id="eoR-Be-qaS"/>
@@ -109,8 +136,12 @@
     </scenes>
     <resources>
         <image name="btn_writing" width="84" height="84"/>
+        <image name="icNoting24" width="24" height="24"/>
         <namedColor name="grey_0">
             <color red="0.97254901960784312" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_5">
+            <color red="0.66666666666666663" green="0.68627450980392157" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

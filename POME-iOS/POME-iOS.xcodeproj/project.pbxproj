@@ -127,6 +127,8 @@
 		8400A408287C17C5004F2D49 /* LookbackCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400A407287C17C5004F2D49 /* LookbackCompleteVC.swift */; };
 		84051AEF28815A0A007CF7EF /* WriteBottomAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051AED28815A0A007CF7EF /* WriteBottomAlertVC.swift */; };
 		84051AF028815A0A007CF7EF /* WriteBottomAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84051AEE28815A0A007CF7EF /* WriteBottomAlertVC.xib */; };
+		8427F878288849690096B20E /* DeleteResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427F877288849690096B20E /* DeleteResModel.swift */; };
+		8427F88228885E6A0096B20E /* PostGoalResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427F88128885E6A0096B20E /* PostGoalResModel.swift */; };
 		84309C822878ACF50017F8BF /* GoalCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */; };
 		84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */; };
 		8432C9B228773A42001C643F /* SpendCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9B028773A42001C643F /* SpendCVC.swift */; };
@@ -291,6 +293,8 @@
 		8400A407287C17C5004F2D49 /* LookbackCompleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackCompleteVC.swift; sourceTree = "<group>"; };
 		84051AED28815A0A007CF7EF /* WriteBottomAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteBottomAlertVC.swift; sourceTree = "<group>"; };
 		84051AEE28815A0A007CF7EF /* WriteBottomAlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteBottomAlertVC.xib; sourceTree = "<group>"; };
+		8427F877288849690096B20E /* DeleteResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteResModel.swift; sourceTree = "<group>"; };
+		8427F88128885E6A0096B20E /* PostGoalResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGoalResModel.swift; sourceTree = "<group>"; };
 		84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCategoryCVC.swift; sourceTree = "<group>"; };
 		84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCategoryCVC.xib; sourceTree = "<group>"; };
 		8432C9B028773A42001C643F /* SpendCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendCVC.swift; sourceTree = "<group>"; };
@@ -935,6 +939,9 @@
 				77BD151B2886FAE100A1950D /* Sign */,
 				843D538E288737AA00BB4DCB /* GetGoalsResModel.swift */,
 				843D53922887436C00BB4DCB /* GetGoalDetailResModel.swift */,
+				8427F88328887B110096B20E /* Write */,
+				77BD150A288535D700A1950D /* SignInResModel.swift */,
+				8427F877288849690096B20E /* DeleteResModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -978,6 +985,16 @@
 				804C6365DDEE189DFF7ED4ED /* Pods-POME-iOS.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8427F88328887B110096B20E /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				8427F88128885E6A0096B20E /* PostGoalResModel.swift */,
+				843D538E288737AA00BB4DCB /* GetGoalsResModel.swift */,
+				843D53922887436C00BB4DCB /* GetGoalDetailResModel.swift */,
+			);
+			path = Write;
 			sourceTree = "<group>";
 		};
 		84D40A282885E60800A09D1D /* TVC */ = {
@@ -1200,6 +1217,7 @@
 				778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */,
 				77E8F3322875729000D2F6C0 /* UIView+.swift in Sources */,
 				84D40A262885DFB500A09D1D /* SelectGoalVC.swift in Sources */,
+				8427F88228885E6A0096B20E /* PostGoalResModel.swift in Sources */,
 				77E8F3042874B1D400D2F6C0 /* RemindXib.swift in Sources */,
 				77E8F35C2875F71700D2F6C0 /* CodeBaseTVC.swift in Sources */,
 				8432C9B228773A42001C643F /* SpendCVC.swift in Sources */,
@@ -1208,6 +1226,7 @@
 				77E8F3712876931D00D2F6C0 /* NetworkResult.swift in Sources */,
 				77BD150D2885396400A1950D /* SignService.swift in Sources */,
 				77B571A6287FF6C400C9CC27 /* FriendProfileTVC.swift in Sources */,
+				8427F878288849690096B20E /* DeleteResModel.swift in Sources */,
 				778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */,
 				77E8F3562875F5A400D2F6C0 /* BaseTVC.swift in Sources */,
 				1A10C2562877349E00489CA1 /* GoalCardCVC.swift in Sources */,
