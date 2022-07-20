@@ -921,10 +921,8 @@
 		77E8F36E287692D000D2F6C0 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				8427F88328887B110096B20E /* Write */,
 				77BD150A288535D700A1950D /* SignInResModel.swift */,
-				843D538E288737AA00BB4DCB /* GetGoalsResModel.swift */,
-				843D53922887436C00BB4DCB /* GetGoalDetailResModel.swift */,
-				8427F88128885E6A0096B20E /* PostGoalResModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -967,6 +965,16 @@
 				804C6365DDEE189DFF7ED4ED /* Pods-POME-iOS.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8427F88328887B110096B20E /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				843D538E288737AA00BB4DCB /* GetGoalsResModel.swift */,
+				843D53922887436C00BB4DCB /* GetGoalDetailResModel.swift */,
+				8427F88128885E6A0096B20E /* PostGoalResModel.swift */,
+			);
+			path = Write;
 			sourceTree = "<group>";
 		};
 		84D40A282885E60800A09D1D /* TVC */ = {
