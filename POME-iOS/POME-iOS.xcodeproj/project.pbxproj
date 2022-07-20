@@ -55,6 +55,7 @@
 		77BD15152885F06700A1950D /* PomeInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77BD15142885F06700A1950D /* PomeInfo.plist */; };
 		77BD15172885F52F00A1950D /* Bundle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD15162885F52F00A1950D /* Bundle+.swift */; };
 		77BD151D2886FAF200A1950D /* SignUpResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD151C2886FAF200A1950D /* SignUpResModel.swift */; };
+		77BD151F2887DFD100A1950D /* SignUpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD151E2887DFD100A1950D /* SignUpAPI.swift */; };
 		77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */; };
 		77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */; };
 		77E8F2C22874A23800D2F6C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2C12874A23800D2F6C0 /* Assets.xcassets */; };
@@ -198,6 +199,7 @@
 		77BD15142885F06700A1950D /* PomeInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PomeInfo.plist; sourceTree = "<group>"; };
 		77BD15162885F52F00A1950D /* Bundle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+.swift"; sourceTree = "<group>"; };
 		77BD151C2886FAF200A1950D /* SignUpResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResModel.swift; sourceTree = "<group>"; };
+		77BD151E2887DFD100A1950D /* SignUpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAPI.swift; sourceTree = "<group>"; };
 		77E8F2B52874A23700D2F6C0 /* POME-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POME-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E8F2B82874A23700D2F6C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E8F2BA2874A23700D2F6C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -893,6 +895,7 @@
 			children = (
 				77E8F37C2876944B00D2F6C0 /* BaseAPI.swift */,
 				77BD150E2885B33000A1950D /* SignAPI.swift */,
+				77BD151E2887DFD100A1950D /* SignUpAPI.swift */,
 			);
 			path = APIManagers;
 			sourceTree = "<group>";
@@ -1111,6 +1114,7 @@
 				1A10C2582877367100489CA1 /* GoalStorageDataModel.swift in Sources */,
 				77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */,
 				84DC1ADA2880788C0057C55D /* PlusCVC.swift in Sources */,
+				77BD151F2887DFD100A1950D /* SignUpAPI.swift in Sources */,
 				77E8F37D2876944B00D2F6C0 /* BaseAPI.swift in Sources */,
 				77E8F2FE2874B1A100D2F6C0 /* RemindCVC.swift in Sources */,
 				77E8F3362875754E00D2F6C0 /* UIButton+.swift in Sources */,
