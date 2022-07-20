@@ -349,7 +349,7 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
         if goalCount == 0 {
             return CGSize(width: " - ".size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
         } else {
-
+            
             /// 글씨 길이에 따라 너비 동적 조절
             return CGSize(width: category[indexPath.row].category.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
         }
