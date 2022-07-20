@@ -101,6 +101,7 @@ extension AddGoalContentVC {
         }
     }
     
+    /// 목표 생성 성공 시 목표 생성 완료 화면으로 넘어감
     private func presentNextVC() {
         guard let addGoalCompleteVC = UIStoryboard.init(name: Identifiers.AddCompleteSB, bundle: nil).instantiateViewController(withIdentifier: AddCompleteVC.className) as? AddCompleteVC else { return }
         navigationController?.pushViewController(addGoalCompleteVC, animated: true)
@@ -125,6 +126,7 @@ extension AddGoalContentVC: UITextFieldDelegate {
         return true
     }
     
+    /// 텍스트 필드 입력이 끝났을 때
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         /// 세 텍스트 필드 모두 작성했으면 하단 작성했어요 버튼 활성화
