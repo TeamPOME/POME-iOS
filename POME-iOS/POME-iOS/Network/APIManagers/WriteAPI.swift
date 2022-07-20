@@ -21,7 +21,7 @@ class WriteAPI: BaseAPI {
                 guard let statusCode = response.response?.statusCode else { return }
                 guard let data = response.data else { return }
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, GetGoalsResModel.self)
+                let networkResult = self.judgeStatus(by: statusCode, data, [GetGoalsResModel].self)
                 completion(networkResult)
                 
             case .failure(let err):

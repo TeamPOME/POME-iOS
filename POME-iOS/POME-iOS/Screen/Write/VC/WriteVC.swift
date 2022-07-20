@@ -25,12 +25,12 @@ class WriteVC: BaseVC {
         setDelegate()
         registerCV()
         configureNaviBar()
-        getGoalGategory()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         showTabbar()
-        setGoalCategoryCV()
+        setCVOffset()
+        getGoalGategory()
     }
     
     // MARK: IBAction
@@ -53,8 +53,13 @@ extension WriteVC {
             goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .right)
             
             /// 카테고리의 첫 번째 목표 id로 서버 통신
-            getGoalDetail(goalId: category[1].id)
+            getGoalDetail(goalId: category[0].id)
         }
+    }
+    
+    /// 컬렉션뷰 가장 위로 올림
+    private func setCVOffset() {
+        writeMainCV.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
     }
 }
 
@@ -131,7 +136,7 @@ extension WriteVC: UICollectionViewDelegate {
             } else {
                 
                 /// 해당 목표 id로 세부 정보 요청
-                getGoalDetail(goalId: category[indexPath.row].id)
+                getGoalDetail(goalId: category[indexPath.row - 1].id)
             }
         } else {
             
@@ -326,6 +331,7 @@ extension WriteVC {
                     DispatchQueue.main.async {
                         self.category = data
                         self.goalCategoryCV.reloadData()
+                        self.setGoalCategoryCV()
                     }
                 }
             case .requestErr:
