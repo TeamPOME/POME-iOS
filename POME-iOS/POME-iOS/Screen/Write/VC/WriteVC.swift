@@ -33,9 +33,6 @@ class WriteVC: BaseVC {
         showTabbar()
         setCVOffset()
         getGoalGategory()
-        
-        // TODO: - 씀씀이 서버 통신 후 해당 코드 통신 부분으로 옮기기
-        configureEmptyView()
     }
     
     // MARK: IBAction
@@ -344,6 +341,9 @@ extension WriteVC {
                         self.category = data
                         self.goalCategoryCV.reloadData()
                         self.setGoalCategoryCV()
+                        
+                        // TODO: - 씀씀이 서버 통신 후 해당 코드 통신 부분으로 옮기기
+                        self.configureEmptyView()
                     }
                 }
             case .requestErr:
@@ -380,9 +380,6 @@ extension WriteVC {
             case .success(_):
                 DispatchQueue.main.async {
                     self.getGoalGategory()
-                    
-                    // TODO: - 씀씀이 api 붙이면 해당 코드 삭제 예정
-                    self.configureEmptyView()
                 }
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
