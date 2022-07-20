@@ -12,7 +12,7 @@ import Then
 class AddFriendVC: BaseVC {
     
     // MARK: Properties
-    private let naviBar = PomeNaviBar().then {
+    var naviBar = PomeNaviBar().then {
         $0.setNaviStyle(state: .whiteWithTitle)
         $0.configureTitleLabel(title: "친구 추가")
     }
@@ -40,6 +40,7 @@ class AddFriendVC: BaseVC {
         setDelegate()
         initProfileList()
         setTapCompleteBtn()
+        setTapBackBtn()
     }
 }
 
@@ -128,6 +129,13 @@ extension AddFriendVC {
             let pomeTBC = PomeTBC()
             pomeTBC.modalPresentationStyle = .fullScreen
             self.present(pomeTBC, animated: true, completion: nil)
+        }
+    }
+    
+    /// 뒤로가기 버튼 tap Action 설정 메서드
+    private func setTapBackBtn() {
+        naviBar.backBtn.press {
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }
