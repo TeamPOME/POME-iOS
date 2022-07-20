@@ -25,6 +25,7 @@ class SpendCVC: BaseCVC {
     // MARK: Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureUI()
     }
     
     // MARK: IBAction
@@ -37,8 +38,18 @@ class SpendCVC: BaseCVC {
     }
 }
 
+// MARK: - UI
+extension SpendCVC {
+    
+    private func configureUI() {
+        contentLabel.setLineSpacing(lineSpacing: 4)
+        contentLabel.textAlignment = .left
+    }
+}
+
 // MARK: - Custom Methods
 extension SpendCVC {
+    
     func setData() {
         
         // TODO: - 네트워크 통신할 때 코드 추가 필요
