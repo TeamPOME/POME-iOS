@@ -13,6 +13,7 @@ enum WriteService {
     case getGoalDetail(goalId: Int)
     case postGoal(startDate: String, endDate: String, category: String, message: String, amount: Int, isPublic: Bool)
     case deleteGoal(goalId: Int)
+    case getWeekSpend(goalId: Int)
 }
 
 extension WriteService: TargetType {
@@ -23,12 +24,14 @@ extension WriteService: TargetType {
             return "/goals"
         case .getGoalDetail(let goalId), .deleteGoal(let goalId):
             return "/goals/\(goalId)"
+        case .getWeekSpend(let goalId):
+            return "/records/week/\(goalId)"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getGoalGategory, .getGoalDetail:
+        case .getGoalGategory, .getGoalDetail, .getWeekSpend:
             return .get
         case .deleteGoal:
             return .delete
@@ -41,7 +44,7 @@ extension WriteService: TargetType {
         switch self {
         case .getGoalGategory:
             return .requestPlain
-        case .getGoalDetail(let goalId), .deleteGoal(let goalId):
+        case .getGoalDetail(let goalId), .deleteGoal(let goalId), .getWeekSpend(let goalId):
             let requestQuery: [String: Any] = [
                 "goalId": goalId
             ]
@@ -61,7 +64,7 @@ extension WriteService: TargetType {
     
     var header: HeaderType {
         switch self {
-        case .getGoalGategory, .getGoalDetail, .deleteGoal, .postGoal:
+        case .getGoalGategory, .getGoalDetail, .deleteGoal, .postGoal, .getWeekSpend:
             return .auth
         }
     }
