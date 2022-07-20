@@ -401,8 +401,8 @@
 		77BD151B2886FAE100A1950D /* Sign */ = {
 			isa = PBXGroup;
 			children = (
-				77BD150A288535D700A1950D /* SignInResModel.swift */,
 				77BD151C2886FAF200A1950D /* SignUpResModel.swift */,
+				77BD150A288535D700A1950D /* SignInResModel.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -933,7 +933,6 @@
 			isa = PBXGroup;
 			children = (
 				77BD151B2886FAE100A1950D /* Sign */,
-				77BD150A288535D700A1950D /* SignInResModel.swift */,
 				843D538E288737AA00BB4DCB /* GetGoalsResModel.swift */,
 				843D53922887436C00BB4DCB /* GetGoalDetailResModel.swift */,
 			);
