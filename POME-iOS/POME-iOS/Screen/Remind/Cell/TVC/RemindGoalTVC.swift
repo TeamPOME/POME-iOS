@@ -9,6 +9,9 @@ import UIKit
 
 class RemindGoalTVC: BaseTVC {
     
+    // MARK: Properties
+    var tapMateEmojiBtnAction: (() -> ())?
+    
     // MARK: IBOutlet
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var spentMoneyLabel: UILabel!
@@ -29,6 +32,18 @@ class RemindGoalTVC: BaseTVC {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
+    }
+    
+    @IBAction func tapMateFirstEmojiBtn(_ sender: UIButton) {
+        tapMateEmojiBtnAction?()
+    }
+    
+    @IBAction func tapMateSecondEmojiBtn(_ sender: UIButton) {
+        tapMateEmojiBtnAction?()
+    }
+    
+    @IBAction func tapMateThirdEmojiBtn(_ sender: UIButton) {
+        tapMateEmojiBtnAction?()
     }
 }
 
@@ -55,16 +70,25 @@ extension RemindGoalTVC {
     
     func setData(_ remindGoalData: RemindGoalDataModel) {
         goalLabel.text = remindGoalData.goalTitle
-        spentMoneyLabel.text = remindGoalData.spentMoneyLabel
+        spentMoneyLabel.text = numberFormatter(number:remindGoalData.spentMoney).description + "원"
         contentLabel.text = remindGoalData.content
         if remindGoalData.countMate == 0 || remindGoalData.privateGoal {
-            [firstEmojiContainerBtn, secondEmojiContainerBtn, thirdEmojiContainerBtn].forEach {
+            [firstEmojiContainerBtn, secondEmojiContainerBtn, thirdEmojiContainerBtn, countMateLabel].forEach {
                 $0.isHidden = true
             }
+        } else if remindGoalData.countMate == 1 {
+            [firstEmojiContainerBtn, secondEmojiContainerBtn, countMateLabel].forEach {
+                $0.isHidden = true
+            }
+        } else if remindGoalData.countMate == 2 {
+            firstEmojiContainerBtn.isHidden = true
+        } else if remindGoalData.countMate == 3 {
+            countMateLabel.isHidden = true
         } else {
-            [firstEmojiContainerBtn, secondEmojiContainerBtn, thirdEmojiContainerBtn].forEach {
+            [firstEmojiContainerBtn, secondEmojiContainerBtn, thirdEmojiContainerBtn, countMateLabel].forEach {
                 $0.isHidden = false
             }
+            /// TODO: 버튼 alpha입힌 버튼 이미지 변경
             countMateLabel.text = "\(remindGoalData.countMate)+"
         }
     }

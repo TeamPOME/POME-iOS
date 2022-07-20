@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Medium.otf">
+            <string>Pretendard-Medium</string>
+        </array>
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Add RecordVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AddRecordVC" id="Y6W-OH-hqX" customClass="AddRecordVC" customModule="POME_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소비에 대한 간단한 기록을 남겨보세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPW-FO-ZZK">
+                                <rect key="frame" x="16" y="136" width="207.33333333333334" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="grey_5"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떤 소비를 하셨나요?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjA-OY-oLs">
+                                <rect key="frame" x="16" y="100" width="175.66666666666666" height="24"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="20"/>
+                                <color key="textColor" name="grey_9"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소비 날짜" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K33-Ei-8TT">
+                                <rect key="frame" x="16" y="284" width="52" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="grey_7"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HP1-Zn-SZb">
+                                <rect key="frame" x="16" y="313" width="343" height="54"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022.07.11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0s-jG-5i0">
+                                        <rect key="frame" x="16" y="18.666666666666686" width="66.666666666666671" height="17"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                                        <color key="textColor" name="grey_9"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBe-md-8XM">
+                                        <rect key="frame" x="303" y="15" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="AYc-Zo-PZB"/>
+                                            <constraint firstAttribute="width" constant="24" id="nVo-Ws-fzg"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="" image="icCalendar24MonoSel"/>
+                                        <state key="disabled" image="icCalendar24Mono"/>
+                                        <connections>
+                                            <action selector="tapCalendarBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="eQw-o0-6QW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="grey_0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="4Bx-bO-xPw"/>
+                                    <constraint firstItem="A0s-jG-5i0" firstAttribute="leading" secondItem="HP1-Zn-SZb" secondAttribute="leading" constant="16" id="7ms-Ui-SU2"/>
+                                    <constraint firstAttribute="trailing" secondItem="gBe-md-8XM" secondAttribute="trailing" constant="16" id="Kvu-ix-irE"/>
+                                    <constraint firstItem="A0s-jG-5i0" firstAttribute="centerY" secondItem="HP1-Zn-SZb" secondAttribute="centerY" id="X6d-8o-Dvv"/>
+                                    <constraint firstItem="gBe-md-8XM" firstAttribute="centerY" secondItem="HP1-Zn-SZb" secondAttribute="centerY" id="ygp-8E-lhU"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIX-BJ-x4V" customClass="PomeBtn" customModule="POME_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="728" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nCj-3B-7Up"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tapConfirmBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fVI-qO-eCN"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="EyS-2x-Xlv">
+                                <rect key="frame" x="16" y="391" width="343" height="83"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소비 금액" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ7-zJ-Yea">
+                                        <rect key="frame" x="0.0" y="0.0" width="52" height="17"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                        <color key="textColor" name="grey_7"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lfZ-jb-9CS" customClass="PomeTextField" customModule="POME_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="29" width="343" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="3cd-vC-WR0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="lfZ-jb-9CS" secondAttribute="trailing" id="GFc-eA-EIO"/>
+                                    <constraint firstItem="lfZ-jb-9CS" firstAttribute="leading" secondItem="EyS-2x-Xlv" secondAttribute="leading" id="SPp-aK-g4F"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBQ-hf-kOe">
+                                <rect key="frame" x="15.999999999999998" y="177" width="24.333333333333329" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="grey_7"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNB-v7-6hi">
+                                <rect key="frame" x="16" y="206" width="343" height="54"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표를 선택해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh3-1U-6iR">
+                                        <rect key="frame" x="15.999999999999993" y="18.666666666666657" width="112.33333333333331" height="17"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                                        <color key="textColor" name="grey_5"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0z-wp-BnI">
+                                        <rect key="frame" x="303" y="15" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="a1W-5d-YJG"/>
+                                            <constraint firstAttribute="height" constant="24" id="uTK-aA-FTx"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="" image="icArrowDown24Grey4"/>
+                                        <state key="disabled" image="icCalendar24Mono"/>
+                                        <connections>
+                                            <action selector="tapSelectGoalBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="DQH-Yv-Hju"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="grey_0"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="e0z-wp-BnI" secondAttribute="trailing" constant="16" id="6p7-U8-V6b"/>
+                                    <constraint firstItem="Sh3-1U-6iR" firstAttribute="leading" secondItem="BNB-v7-6hi" secondAttribute="leading" constant="16" id="Hb2-IM-m3d"/>
+                                    <constraint firstItem="e0z-wp-BnI" firstAttribute="centerY" secondItem="BNB-v7-6hi" secondAttribute="centerY" id="Y3Z-wa-DDO"/>
+                                    <constraint firstItem="Sh3-1U-6iR" firstAttribute="centerY" secondItem="BNB-v7-6hi" secondAttribute="centerY" id="eRY-j6-nO7"/>
+                                    <constraint firstAttribute="height" constant="54" id="m3F-G7-zVo"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BVS-P4-4ub" customClass="PomeNaviBar" customModule="POME_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nf6-66-jw4"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxB-VR-8ca">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소비 기록" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssr-PF-6Fd">
+                                <rect key="frame" x="16" y="498" width="52" height="17"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                <color key="textColor" name="grey_7"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qnd-Tl-HL0" customClass="PomeTextField" customModule="POME_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="527" width="343" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="eME-Yu-c1J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editRecordTextField:" destination="Y6W-OH-hqX" eventType="editingChanged" id="vRl-LW-ekO"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BVS-P4-4ub" firstAttribute="top" secondItem="kxB-VR-8ca" secondAttribute="bottom" id="02j-sH-utw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EyS-2x-Xlv" secondAttribute="trailing" constant="16" id="1gT-25-7JI"/>
+                            <constraint firstItem="kxB-VR-8ca" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="26s-AT-lG7"/>
+                            <constraint firstItem="kxB-VR-8ca" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="2Bp-Jv-bgR"/>
+                            <constraint firstItem="cjA-OY-oLs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="44D-ne-c4P"/>
+                            <constraint firstItem="HP1-Zn-SZb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="52U-go-TDn"/>
+                            <constraint firstItem="BNB-v7-6hi" firstAttribute="top" secondItem="fBQ-hf-kOe" secondAttribute="bottom" constant="12" id="57y-GP-PlE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BNB-v7-6hi" secondAttribute="trailing" constant="16" id="5UG-91-Y8f"/>
+                            <constraint firstItem="fBQ-hf-kOe" firstAttribute="top" secondItem="IPW-FO-ZZK" secondAttribute="bottom" constant="24" id="99W-Ca-j4K"/>
+                            <constraint firstItem="HP1-Zn-SZb" firstAttribute="top" secondItem="K33-Ei-8TT" secondAttribute="bottom" constant="12" id="CNI-93-hL0"/>
+                            <constraint firstItem="K33-Ei-8TT" firstAttribute="top" secondItem="BNB-v7-6hi" secondAttribute="bottom" constant="24" id="DFY-5I-D7T"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OIX-BJ-x4V" secondAttribute="trailing" constant="16" id="E4r-BT-rv3"/>
+                            <constraint firstItem="BVS-P4-4ub" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="E99-O2-jkF"/>
+                            <constraint firstItem="IPW-FO-ZZK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Ec1-F6-7vs"/>
+                            <constraint firstItem="fBQ-hf-kOe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Esw-dB-sRf"/>
+                            <constraint firstItem="Qnd-Tl-HL0" firstAttribute="top" secondItem="ssr-PF-6Fd" secondAttribute="bottom" constant="12" id="GvX-HQ-15Y"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Qnd-Tl-HL0" secondAttribute="trailing" constant="16" id="HhY-2m-uUA"/>
+                            <constraint firstItem="BNB-v7-6hi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Kor-vV-mUt"/>
+                            <constraint firstItem="OIX-BJ-x4V" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="LUb-wD-cUm"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BVS-P4-4ub" secondAttribute="trailing" id="Nmp-jB-BfK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HP1-Zn-SZb" secondAttribute="trailing" constant="16" id="QGU-81-auD"/>
+                            <constraint firstItem="ssr-PF-6Fd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="QU6-4s-312"/>
+                            <constraint firstItem="IPW-FO-ZZK" firstAttribute="top" secondItem="cjA-OY-oLs" secondAttribute="bottom" constant="12" id="UBL-W2-3Mr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="OIX-BJ-x4V" secondAttribute="bottom" id="bFF-iO-ITj"/>
+                            <constraint firstItem="ssr-PF-6Fd" firstAttribute="top" secondItem="EyS-2x-Xlv" secondAttribute="bottom" constant="24" id="bbW-Fd-OfC"/>
+                            <constraint firstItem="K33-Ei-8TT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="eoP-Lu-gPU"/>
+                            <constraint firstItem="EyS-2x-Xlv" firstAttribute="top" secondItem="HP1-Zn-SZb" secondAttribute="bottom" constant="24" id="fSY-iT-7ew"/>
+                            <constraint firstItem="cjA-OY-oLs" firstAttribute="top" secondItem="BVS-P4-4ub" secondAttribute="bottom" constant="12" id="iAJ-Vq-vQi"/>
+                            <constraint firstItem="Qnd-Tl-HL0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="jkM-YD-f8r"/>
+                            <constraint firstItem="BVS-P4-4ub" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kZN-Ul-ABl"/>
+                            <constraint firstAttribute="trailing" secondItem="kxB-VR-8ca" secondAttribute="trailing" id="mc1-ye-e0O"/>
+                            <constraint firstItem="EyS-2x-Xlv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="w6h-F8-Cjt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="calendarBtn" destination="gBe-md-8XM" id="V56-TE-1V0"/>
+                        <outlet property="confirmBtn" destination="OIX-BJ-x4V" id="Owm-oi-dTg"/>
+                        <outlet property="contentTopConstraint" destination="iAJ-Vq-vQi" id="0yc-1w-A7m"/>
+                        <outlet property="dateLabel" destination="A0s-jG-5i0" id="WPz-fa-vms"/>
+                        <outlet property="goalLabel" destination="Sh3-1U-6iR" id="rCH-i9-3YP"/>
+                        <outlet property="naviBar" destination="BVS-P4-4ub" id="l5H-Dd-BTS"/>
+                        <outlet property="priceTextField" destination="lfZ-jb-9CS" id="5cO-OW-fPP"/>
+                        <outlet property="recordTextField" destination="Qnd-Tl-HL0" id="RIA-IV-SBJ"/>
+                        <outlet property="selectGoalBtn" destination="e0z-wp-BnI" id="zUE-mq-t1R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.599999999999994" y="105.66502463054188"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icArrowDown24Grey4" width="24" height="24"/>
+        <image name="icCalendar24Mono" width="24" height="24"/>
+        <image name="icCalendar24MonoSel" width="24" height="24"/>
+        <namedColor name="grey_0">
+            <color red="0.97254901960784312" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_5">
+            <color red="0.66666666666666663" green="0.68627450980392157" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_7">
+            <color red="0.30588235294117649" green="0.32156862745098042" blue="0.33725490196078434" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_9">
+            <color red="0.16078431372549021" green="0.16470588235294117" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

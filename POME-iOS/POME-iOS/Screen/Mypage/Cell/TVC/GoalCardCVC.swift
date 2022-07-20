@@ -92,7 +92,7 @@ extension GoalCardCVC {
         privateImageView.snp.makeConstraints {
             $0.top.equalTo(contentView).inset(24)
             $0.leading.equalTo(contentView).inset(16)
-            $0.width.height.equalTo(24)
+            $0.width.equalTo(privateImageView.snp.height).multipliedBy(1.0/1.0)
         }
         
         goalTitleLabel.snp.makeConstraints {
@@ -108,7 +108,7 @@ extension GoalCardCVC {
         menuBtn.snp.makeConstraints {
             $0.centerY.equalTo(ifSuccessLabelContainerView)
             $0.trailing.equalTo(contentView).inset(16)
-            $0.height.width.equalTo(24)
+            $0.width.equalTo(menuBtn.snp.height).multipliedBy(1.0/1.0)
         }
         
         spentMoneyTitleLabel.snp.makeConstraints {
@@ -117,7 +117,7 @@ extension GoalCardCVC {
         }
         
         realSpentMoneyLabel.snp.makeConstraints {
-            $0.leading.equalTo(privateImageView.snp.leading)
+            $0.leading.equalTo(contentView).inset(16)
             $0.top.equalTo(spentMoneyTitleLabel.snp.bottom).offset(2)
         }
         
@@ -234,6 +234,24 @@ extension GoalCardCVC {
         }
         updateProgressView()
     }
+    
+    /// d-day 값에 따라 UI변경 해주는 함수
+    private func setdDay(dDay: Int) {
+        
+        /// 종료시
+        if dDay == -1 {
+            
+            // TODO: - 종료 UI 작업 후 수정 필요
+            ifSuccessLabel.text = "D-\(dDay)"
+        } else {
+            [progressView, percentageContainerView].forEach {
+                view in view.backgroundColor = .main
+            }
+            ifSuccessLabelContainerView.backgroundColor = .sub
+            ifSuccessLabel.text = "D-\(dDay)"
+        }
+        updateProgressView()
+    }
 }
 
 // MARK: - Network
@@ -242,8 +260,18 @@ extension GoalCardCVC {
     func setData(_ goalData: GoalDataModel) {
         goalTitleLabel.text = goalData.goalTitle
         ifSuccessLabel.text = goalData.ifSuccessOrNotLabelText
-        moneyGoalLabel.text = goalData.goalMoneyLabel
-        realSpentMoneyLabel.text = goalData.spentMoneyLabel
+        moneyGoalLabel.text = "/ " + numberFormatter(number: goalData.goalMoney).description + "원"
+        realSpentMoneyLabel.text = numberFormatter(number: goalData.spentMoney).description + "원"
         setProgress(goal: goalData.successPercentage)
+    }
+    
+    func setDetailData(data: GetGoalDetailResModel) {
+        goalTitleLabel.text = data.message
+        moneyGoalLabel.text = "/ " + numberFormatter(number: data.amount).description + "원"
+        realSpentMoneyLabel.text = numberFormatter(number: data.payAmount).description + "원"
+        setProgress(goal: Double(data.rate))
+        setdDay(dDay: data.dDay)
+        
+        // TODO: - 추후 isPublic 값에 따라 자물쇠 이미지 변경 필요
     }
 }

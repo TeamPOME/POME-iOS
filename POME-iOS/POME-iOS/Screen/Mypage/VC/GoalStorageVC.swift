@@ -51,7 +51,7 @@ extension GoalStorageVC {
             $0.leading.equalTo(view.safeAreaLayoutGuide)
             $0.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.top.equalTo(naviBar.snp.bottom)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(14)
         }
     }
 }
@@ -71,7 +71,7 @@ extension GoalStorageVC {
     
     private func setTapBackAction() {
         naviBar.backBtn.press { [weak self] in
-                    self?.navigationController?.popViewController(animated: true) }
+            self?.navigationController?.popViewController(animated: true) }
     }
 }
 
@@ -132,9 +132,9 @@ extension GoalStorageVC: UICollectionViewDelegateFlowLayout {
     /// 섹션에 따라 셀 크기 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
-            return CGSize(width: collectionView.bounds.width, height: 44.adjustedH)
+            return CGSize(width: collectionView.bounds.width, height: 44)
         } else {
-            return CGSize(width: collectionView.bounds.width - 32.adjusted, height: 157.adjustedH)
+            return CGSize(width: collectionView.bounds.width - 32, height: 157)
         }
     }
     

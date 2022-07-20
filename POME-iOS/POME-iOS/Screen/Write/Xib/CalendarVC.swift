@@ -13,12 +13,12 @@ class CalendarVC: BaseVC {
     // MARK: Properties
     private var currentPage: Date?
     var isStartCalendar: Bool = true
-    
-    /// 목표 추가 메인뷰에서 받아 올 시작 날짜와 종료 날짜
+
+    /// 이전 VC에서 받아 올 시작 날짜와 종료 날짜
     var startDate: Date = Date()
     var endDate: Date = Date()
     
-    /// delegate 및 클로저 선언
+    /// delegate 선언
     var deliveryDateDelegate: DeliveryDateDelegate?
     
     // MARK: IBOutlet

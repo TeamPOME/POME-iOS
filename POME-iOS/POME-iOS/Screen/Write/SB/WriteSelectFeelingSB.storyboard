@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Lookback SelectVC-->
+        <!--Write Select FeelingVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="LookbackSelectVC" id="Y6W-OH-hqX" customClass="LookbackSelectVC" customModule="POME_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WriteSelectFeelingVC" id="Y6W-OH-hqX" customClass="WriteSelectFeelingVC" customModule="POME_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,6 +30,17 @@
                                     <constraint firstAttribute="height" constant="44" id="JZF-u7-VJa"/>
                                 </constraints>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndh-5J-kCY">
+                                <rect key="frame" x="322" y="50" width="30" height="32"/>
+                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="닫기">
+                                    <color key="titleColor" name="grey_7"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapCloseBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dkC-iJ-o35"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ln-pl-r5g">
                                 <rect key="frame" x="16" y="100" width="199.66666666666666" height="48"/>
                                 <string key="text">일주일이 지난 오늘의
@@ -147,12 +158,15 @@
                             <constraint firstItem="ouj-Ic-fV0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="USe-Da-EA2"/>
                             <constraint firstItem="1Ln-pl-r5g" firstAttribute="top" secondItem="ouj-Ic-fV0" secondAttribute="bottom" constant="12" id="Ubj-4U-Mh5"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rdR-X8-yB8" secondAttribute="trailing" constant="16" id="VT4-9Y-3Za"/>
+                            <constraint firstAttribute="trailing" secondItem="Ndh-5J-kCY" secondAttribute="trailing" constant="23" id="WaN-Ja-yVX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="rdR-X8-yB8" secondAttribute="bottom" id="ew1-v9-O1f"/>
                             <constraint firstItem="H7t-k0-E6M" firstAttribute="top" secondItem="hL3-eJ-bMK" secondAttribute="bottom" constant="46" id="f1F-gV-zhY"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ouj-Ic-fV0" secondAttribute="trailing" id="qI2-WM-NAl"/>
+                            <constraint firstItem="Ndh-5J-kCY" firstAttribute="centerY" secondItem="ouj-Ic-fV0" secondAttribute="centerY" id="vmb-TH-b6e"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="closeBtn" destination="Ndh-5J-kCY" id="8ZD-Zb-yrS"/>
                         <outlet property="dontKnowBtn" destination="pcR-k1-Gvx" id="A9P-vd-0mc"/>
                         <outlet property="dontKnowLabel" destination="Fe8-tG-kGP" id="BQf-BH-V2Y"/>
                         <outlet property="happyBtn" destination="HoJ-Wz-F6J" id="Ckc-Ok-eu1"/>

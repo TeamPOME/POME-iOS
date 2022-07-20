@@ -19,9 +19,15 @@
 		1A4BB61D287DF5B7007C8FC1 /* RemindGoalTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4BB61B287DF5B7007C8FC1 /* RemindGoalTVC.xib */; };
 		1A4BB620287E0395007C8FC1 /* RemindGoalTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4BB61E287E0395007C8FC1 /* RemindGoalTitleTVC.swift */; };
 		1A4BB621287E0395007C8FC1 /* RemindGoalTitleTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A4BB61F287E0395007C8FC1 /* RemindGoalTitleTVC.xib */; };
+		1A500DA62886985C003638B1 /* MateEmojiCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A500DA42886985C003638B1 /* MateEmojiCVC.swift */; };
+		1A500DA72886985C003638B1 /* MateEmojiCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A500DA52886985C003638B1 /* MateEmojiCVC.xib */; };
+		1A500DAA28869A02003638B1 /* MateEmojiHeaderCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A500DA828869A02003638B1 /* MateEmojiHeaderCVC.swift */; };
+		1A500DAB28869A02003638B1 /* MateEmojiHeaderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A500DA928869A02003638B1 /* MateEmojiHeaderCVC.xib */; };
 		1A6D05202884817F006C9BBD /* GoalStorageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D051F2884817F006C9BBD /* GoalStorageVC.swift */; };
 		1A6D052328849908006C9BBD /* GoalStorageTitleCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D052128849908006C9BBD /* GoalStorageTitleCVC.swift */; };
 		1A6D052428849908006C9BBD /* GoalStorageTitleCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6D052228849908006C9BBD /* GoalStorageTitleCVC.xib */; };
+		1A6D05292885D1F3006C9BBD /* MateEmojiBottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D05272885D1F3006C9BBD /* MateEmojiBottomSheetVC.swift */; };
+		1A6D052A2885D1F3006C9BBD /* MateEmojiBottomSheetVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6D05282885D1F3006C9BBD /* MateEmojiBottomSheetVC.xib */; };
 		1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */; };
 		1A76CACF287B1B3300B29500 /* MateHeaderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */; };
 		1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89417C2883066D00606A68 /* MarshmellowCVC.swift */; };
@@ -128,6 +134,10 @@
 		8432C9BB28784533001C643F /* EmptyGoalCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BA28784533001C643F /* EmptyGoalCardCVC.xib */; };
 		8432C9BD28784751001C643F /* FeelingCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BC28784751001C643F /* FeelingCardCVC.xib */; };
 		8432C9BF28787F9A001C643F /* FeelingCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */; };
+		843D538D2887350A00BB4DCB /* WriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D538C2887350A00BB4DCB /* WriteService.swift */; };
+		843D538F288737AA00BB4DCB /* GetGoalsResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D538E288737AA00BB4DCB /* GetGoalsResModel.swift */; };
+		843D5391288738A400BB4DCB /* WriteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D5390288738A400BB4DCB /* WriteAPI.swift */; };
+		843D53932887436C00BB4DCB /* GetGoalDetailResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D53922887436C00BB4DCB /* GetGoalDetailResModel.swift */; };
 		845EFFC02881A9730029E3EF /* AddGoalDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EFFBF2881A9730029E3EF /* AddGoalDateVC.swift */; };
 		84A6E883287D518200CD5843 /* PomeHalfModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6E882287D518200CD5843 /* PomeHalfModalVC.swift */; };
 		84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACED842878989E00AA408D /* EmptyGoalCardCVC.swift */; };
@@ -135,10 +145,17 @@
 		84B77273287B369200E1EDFC /* LookbackCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B77271287B369200E1EDFC /* LookbackCVC.xib */; };
 		84B77275287B3E3A00E1EDFC /* LookbackSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B77274287B3E3A00E1EDFC /* LookbackSB.storyboard */; };
 		84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B77276287B3E4B00E1EDFC /* LookbackVC.swift */; };
-		84B7727B287BD82000E1EDFC /* LookbackSelectSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B7727A287BD82000E1EDFC /* LookbackSelectSB.storyboard */; };
-		84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7727C287BD83D00E1EDFC /* LookbackSelectVC.swift */; };
-		84D4096D2884796700A09D1D /* AddGoalCompleteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D4096C2884796700A09D1D /* AddGoalCompleteSB.storyboard */; };
-		84D4096F2884797500A09D1D /* AddGoalCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4096E2884797500A09D1D /* AddGoalCompleteVC.swift */; };
+		84B7727B287BD82000E1EDFC /* WriteSelectFeelingSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84B7727A287BD82000E1EDFC /* WriteSelectFeelingSB.storyboard */; };
+		84B7727D287BD83D00E1EDFC /* WriteSelectFeelingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7727C287BD83D00E1EDFC /* WriteSelectFeelingVC.swift */; };
+		84D4096D2884796700A09D1D /* AddCompleteSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D4096C2884796700A09D1D /* AddCompleteSB.storyboard */; };
+		84D4096F2884797500A09D1D /* AddCompleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4096E2884797500A09D1D /* AddCompleteVC.swift */; };
+		84D40A212885D39E00A09D1D /* AddRecordSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D40A202885D39E00A09D1D /* AddRecordSB.storyboard */; };
+		84D40A232885D4CC00A09D1D /* AddRecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D40A222885D4CC00A09D1D /* AddRecordVC.swift */; };
+		84D40A262885DFB500A09D1D /* SelectGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D40A242885DFB500A09D1D /* SelectGoalVC.swift */; };
+		84D40A272885DFB500A09D1D /* SelectGoalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D40A252885DFB500A09D1D /* SelectGoalVC.xib */; };
+		84D40A2B2885E62100A09D1D /* goalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D40A292885E62100A09D1D /* goalTVC.swift */; };
+		84D40A2C2885E62100A09D1D /* goalTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D40A2A2885E62100A09D1D /* goalTVC.xib */; };
+		84D40A2E2885ED3100A09D1D /* SelectGoalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D40A2D2885ED3100A09D1D /* SelectGoalDelegate.swift */; };
 		84DC1ADA2880788C0057C55D /* PlusCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC1AD82880788C0057C55D /* PlusCVC.swift */; };
 		84DC1ADB2880788C0057C55D /* PlusCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DC1AD92880788C0057C55D /* PlusCVC.xib */; };
 		84F0186E288425FB00CD6C59 /* AddGoalContentSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F0186D288425FB00CD6C59 /* AddGoalContentSB.storyboard */; };
@@ -162,9 +179,15 @@
 		1A4BB61B287DF5B7007C8FC1 /* RemindGoalTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindGoalTVC.xib; sourceTree = "<group>"; };
 		1A4BB61E287E0395007C8FC1 /* RemindGoalTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindGoalTitleTVC.swift; sourceTree = "<group>"; };
 		1A4BB61F287E0395007C8FC1 /* RemindGoalTitleTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindGoalTitleTVC.xib; sourceTree = "<group>"; };
+		1A500DA42886985C003638B1 /* MateEmojiCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateEmojiCVC.swift; sourceTree = "<group>"; };
+		1A500DA52886985C003638B1 /* MateEmojiCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateEmojiCVC.xib; sourceTree = "<group>"; };
+		1A500DA828869A02003638B1 /* MateEmojiHeaderCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateEmojiHeaderCVC.swift; sourceTree = "<group>"; };
+		1A500DA928869A02003638B1 /* MateEmojiHeaderCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateEmojiHeaderCVC.xib; sourceTree = "<group>"; };
 		1A6D051F2884817F006C9BBD /* GoalStorageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageVC.swift; sourceTree = "<group>"; };
 		1A6D052128849908006C9BBD /* GoalStorageTitleCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageTitleCVC.swift; sourceTree = "<group>"; };
 		1A6D052228849908006C9BBD /* GoalStorageTitleCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalStorageTitleCVC.xib; sourceTree = "<group>"; };
+		1A6D05272885D1F3006C9BBD /* MateEmojiBottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateEmojiBottomSheetVC.swift; sourceTree = "<group>"; };
+		1A6D05282885D1F3006C9BBD /* MateEmojiBottomSheetVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateEmojiBottomSheetVC.xib; sourceTree = "<group>"; };
 		1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateHeaderCVC.swift; sourceTree = "<group>"; };
 		1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateHeaderCVC.xib; sourceTree = "<group>"; };
 		1A89417C2883066D00606A68 /* MarshmellowCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshmellowCVC.swift; sourceTree = "<group>"; };
@@ -275,6 +298,10 @@
 		8432C9BA28784533001C643F /* EmptyGoalCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyGoalCardCVC.xib; sourceTree = "<group>"; };
 		8432C9BC28784751001C643F /* FeelingCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeelingCardCVC.xib; sourceTree = "<group>"; };
 		8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingCardCVC.swift; sourceTree = "<group>"; };
+		843D538C2887350A00BB4DCB /* WriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteService.swift; sourceTree = "<group>"; };
+		843D538E288737AA00BB4DCB /* GetGoalsResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGoalsResModel.swift; sourceTree = "<group>"; };
+		843D5390288738A400BB4DCB /* WriteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteAPI.swift; sourceTree = "<group>"; };
+		843D53922887436C00BB4DCB /* GetGoalDetailResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGoalDetailResModel.swift; sourceTree = "<group>"; };
 		845EFFBF2881A9730029E3EF /* AddGoalDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalDateVC.swift; sourceTree = "<group>"; };
 		845EFFC12881A97C0029E3EF /* AddGoalDateSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddGoalDateSB.storyboard; sourceTree = "<group>"; };
 		84A6E882287D518200CD5843 /* PomeHalfModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeHalfModalVC.swift; sourceTree = "<group>"; };
@@ -283,10 +310,17 @@
 		84B77271287B369200E1EDFC /* LookbackCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LookbackCVC.xib; sourceTree = "<group>"; };
 		84B77274287B3E3A00E1EDFC /* LookbackSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LookbackSB.storyboard; sourceTree = "<group>"; };
 		84B77276287B3E4B00E1EDFC /* LookbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackVC.swift; sourceTree = "<group>"; };
-		84B7727A287BD82000E1EDFC /* LookbackSelectSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LookbackSelectSB.storyboard; sourceTree = "<group>"; };
-		84B7727C287BD83D00E1EDFC /* LookbackSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookbackSelectVC.swift; sourceTree = "<group>"; };
-		84D4096C2884796700A09D1D /* AddGoalCompleteSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddGoalCompleteSB.storyboard; sourceTree = "<group>"; };
-		84D4096E2884797500A09D1D /* AddGoalCompleteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGoalCompleteVC.swift; sourceTree = "<group>"; };
+		84B7727A287BD82000E1EDFC /* WriteSelectFeelingSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteSelectFeelingSB.storyboard; sourceTree = "<group>"; };
+		84B7727C287BD83D00E1EDFC /* WriteSelectFeelingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteSelectFeelingVC.swift; sourceTree = "<group>"; };
+		84D4096C2884796700A09D1D /* AddCompleteSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddCompleteSB.storyboard; sourceTree = "<group>"; };
+		84D4096E2884797500A09D1D /* AddCompleteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCompleteVC.swift; sourceTree = "<group>"; };
+		84D40A202885D39E00A09D1D /* AddRecordSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddRecordSB.storyboard; sourceTree = "<group>"; };
+		84D40A222885D4CC00A09D1D /* AddRecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordVC.swift; sourceTree = "<group>"; };
+		84D40A242885DFB500A09D1D /* SelectGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGoalVC.swift; sourceTree = "<group>"; };
+		84D40A252885DFB500A09D1D /* SelectGoalVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectGoalVC.xib; sourceTree = "<group>"; };
+		84D40A292885E62100A09D1D /* goalTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goalTVC.swift; sourceTree = "<group>"; };
+		84D40A2A2885E62100A09D1D /* goalTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = goalTVC.xib; sourceTree = "<group>"; };
+		84D40A2D2885ED3100A09D1D /* SelectGoalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGoalDelegate.swift; sourceTree = "<group>"; };
 		84DC1AD82880788C0057C55D /* PlusCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusCVC.swift; sourceTree = "<group>"; };
 		84DC1AD92880788C0057C55D /* PlusCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlusCVC.xib; sourceTree = "<group>"; };
 		84F0186D288425FB00CD6C59 /* AddGoalContentSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddGoalContentSB.storyboard; sourceTree = "<group>"; };
@@ -503,6 +537,7 @@
 				77B571B22880BD8D00C9CC27 /* ProfileCellDelegate.swift */,
 				1A01FB812882CB1F00F4174F /* SelectFeelingDelegate.swift */,
 				84F7C2A42882B8490095ECF4 /* CalendarDelegate.swift */,
+				84D40A2D2885ED3100A09D1D /* SelectGoalDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -612,11 +647,12 @@
 			children = (
 				77E8F2E32874AEB900D2F6C0 /* WriteSB.storyboard */,
 				84B77274287B3E3A00E1EDFC /* LookbackSB.storyboard */,
-				84B7727A287BD82000E1EDFC /* LookbackSelectSB.storyboard */,
+				84B7727A287BD82000E1EDFC /* WriteSelectFeelingSB.storyboard */,
 				8400A405287C1782004F2D49 /* LookbackCompleteSB.storyboard */,
 				845EFFC12881A97C0029E3EF /* AddGoalDateSB.storyboard */,
 				84F0186D288425FB00CD6C59 /* AddGoalContentSB.storyboard */,
-				84D4096C2884796700A09D1D /* AddGoalCompleteSB.storyboard */,
+				84D4096C2884796700A09D1D /* AddCompleteSB.storyboard */,
+				84D40A202885D39E00A09D1D /* AddRecordSB.storyboard */,
 			);
 			path = SB;
 			sourceTree = "<group>";
@@ -626,12 +662,13 @@
 			children = (
 				77E8F2E52874AEDB00D2F6C0 /* WriteVC.swift */,
 				77E8F35D28765F7C00D2F6C0 /* WriteNC.swift */,
+				84B7727C287BD83D00E1EDFC /* WriteSelectFeelingVC.swift */,
 				84B77276287B3E4B00E1EDFC /* LookbackVC.swift */,
-				84B7727C287BD83D00E1EDFC /* LookbackSelectVC.swift */,
 				8400A407287C17C5004F2D49 /* LookbackCompleteVC.swift */,
 				845EFFBF2881A9730029E3EF /* AddGoalDateVC.swift */,
 				84F0186F2884260600CD6C59 /* AddGoalContentVC.swift */,
-				84D4096E2884797500A09D1D /* AddGoalCompleteVC.swift */,
+				84D4096E2884797500A09D1D /* AddCompleteVC.swift */,
+				84D40A222885D4CC00A09D1D /* AddRecordVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -639,6 +676,7 @@
 		77E8F2E22874AE4000D2F6C0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				84D40A282885E60800A09D1D /* TVC */,
 				77E8F2E82874AF0600D2F6C0 /* CVC */,
 			);
 			path = Cell;
@@ -731,6 +769,8 @@
 				84051AEE28815A0A007CF7EF /* WriteBottomAlertVC.xib */,
 				84F7C2A02881C0B10095ECF4 /* CalendarVC.swift */,
 				84F7C2A12881C0B10095ECF4 /* CalendarVC.xib */,
+				84D40A242885DFB500A09D1D /* SelectGoalVC.swift */,
+				84D40A252885DFB500A09D1D /* SelectGoalVC.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -751,7 +791,11 @@
 			isa = PBXGroup;
 			children = (
 				1A1AEFD9287A4D5B00DD5F7E /* HaveMateTVC.xib */,
+				1A500DA42886985C003638B1 /* MateEmojiCVC.swift */,
 				1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */,
+				1A500DA52886985C003638B1 /* MateEmojiCVC.xib */,
+				1A500DA828869A02003638B1 /* MateEmojiHeaderCVC.swift */,
+				1A500DA928869A02003638B1 /* MateEmojiHeaderCVC.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -770,6 +814,8 @@
 			children = (
 				77E8F30F2874B50500D2F6C0 /* MateVC.swift */,
 				77E8F36128765FD200D2F6C0 /* MateNC.swift */,
+				1A6D05272885D1F3006C9BBD /* MateEmojiBottomSheetVC.swift */,
+				1A6D05282885D1F3006C9BBD /* MateEmojiBottomSheetVC.xib */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -786,6 +832,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F3232874B80A00D2F6C0 /* MypageXib.swift */,
+				1A6D052228849908006C9BBD /* GoalStorageTitleCVC.xib */,
 				1A89417D2883066D00606A68 /* MarshmellowCVC.xib */,
 			);
 			path = Xib;
@@ -841,7 +888,6 @@
 				1A89417C2883066D00606A68 /* MarshmellowCVC.swift */,
 				77E8F3212874B7F000D2F6C0 /* MypageCVC.swift */,
 				1A6D052128849908006C9BBD /* GoalStorageTitleCVC.swift */,
-				1A6D052228849908006C9BBD /* GoalStorageTitleCVC.xib */,
 			);
 			path = CVC;
 			sourceTree = "<group>";
@@ -878,6 +924,7 @@
 			isa = PBXGroup;
 			children = (
 				77BD150C2885396400A1950D /* SignService.swift */,
+				843D538C2887350A00BB4DCB /* WriteService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -886,6 +933,9 @@
 			isa = PBXGroup;
 			children = (
 				77BD151B2886FAE100A1950D /* Sign */,
+				77BD150A288535D700A1950D /* SignInResModel.swift */,
+				843D538E288737AA00BB4DCB /* GetGoalsResModel.swift */,
+				843D53922887436C00BB4DCB /* GetGoalDetailResModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -896,6 +946,7 @@
 				77E8F37C2876944B00D2F6C0 /* BaseAPI.swift */,
 				77BD150E2885B33000A1950D /* SignAPI.swift */,
 				77BD151E2887DFD100A1950D /* SignUpAPI.swift */,
+				843D5390288738A400BB4DCB /* WriteAPI.swift */,
 			);
 			path = APIManagers;
 			sourceTree = "<group>";
@@ -928,6 +979,15 @@
 				804C6365DDEE189DFF7ED4ED /* Pods-POME-iOS.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		84D40A282885E60800A09D1D /* TVC */ = {
+			isa = PBXGroup;
+			children = (
+				84D40A292885E62100A09D1D /* goalTVC.swift */,
+				84D40A2A2885E62100A09D1D /* goalTVC.xib */,
+			);
+			path = TVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -991,19 +1051,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A6D052428849908006C9BBD /* GoalStorageTitleCVC.xib in Resources */,
-				84B7727B287BD82000E1EDFC /* LookbackSelectSB.storyboard in Resources */,
+				84B7727B287BD82000E1EDFC /* WriteSelectFeelingSB.storyboard in Resources */,
 				84F0186E288425FB00CD6C59 /* AddGoalContentSB.storyboard in Resources */,
 				84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */,
 				8432C9BB28784533001C643F /* EmptyGoalCardCVC.xib in Resources */,
+				1A500DA72886985C003638B1 /* MateEmojiCVC.xib in Resources */,
 				84B77273287B369200E1EDFC /* LookbackCVC.xib in Resources */,
 				1ABDED83287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib in Resources */,
 				84DC1ADB2880788C0057C55D /* PlusCVC.xib in Resources */,
 				77E8F2CD2874A38600D2F6C0 /* Colorsets.xcassets in Resources */,
 				84F7C29F2881BF300095ECF4 /* AddGoalDateSB.storyboard in Resources */,
-				84D4096D2884796700A09D1D /* AddGoalCompleteSB.storyboard in Resources */,
+				84D4096D2884796700A09D1D /* AddCompleteSB.storyboard in Resources */,
 				1A4BB61D287DF5B7007C8FC1 /* RemindGoalTVC.xib in Resources */,
 				77E8F2C52874A23800D2F6C0 /* LaunchScreen.storyboard in Resources */,
 				1ABDED77287E716E00F85F9C /* RemindFilterTVC.xib in Resources */,
+				1A500DAB28869A02003638B1 /* MateEmojiHeaderCVC.xib in Resources */,
 				1A89417F2883066D00606A68 /* MarshmellowCVC.xib in Resources */,
 				778E0F50287B273900BEEEA5 /* SignUpSB.storyboard in Resources */,
 				77E8F31C2874B7B700D2F6C0 /* MypageSB.storyboard in Resources */,
@@ -1018,13 +1080,17 @@
 				1A76CACF287B1B3300B29500 /* MateHeaderCVC.xib in Resources */,
 				1A4BB621287E0395007C8FC1 /* RemindGoalTitleTVC.xib in Resources */,
 				1A1AEFDB287A4D5B00DD5F7E /* HaveMateTVC.xib in Resources */,
+				84D40A2C2885E62100A09D1D /* goalTVC.xib in Resources */,
 				77E8F32A28756DA100D2F6C0 /* Pretendard-Regular.otf in Resources */,
 				77E8F32628756D8200D2F6C0 /* Pretendard-Bold.otf in Resources */,
 				84B77275287B3E3A00E1EDFC /* LookbackSB.storyboard in Resources */,
+				1A6D052A2885D1F3006C9BBD /* MateEmojiBottomSheetVC.xib in Resources */,
 				77B5719F287FF54900C9CC27 /* AddFriendSB.storyboard in Resources */,
+				84D40A212885D39E00A09D1D /* AddRecordSB.storyboard in Resources */,
 				84051AF028815A0A007CF7EF /* WriteBottomAlertVC.xib in Resources */,
 				8400A406287C1782004F2D49 /* LookbackCompleteSB.storyboard in Resources */,
 				77E8F32C28756DAE00D2F6C0 /* Pretendard-Medium.otf in Resources */,
+				84D40A272885DFB500A09D1D /* SelectGoalVC.xib in Resources */,
 				8432C9B328773A42001C643F /* SpendCVC.xib in Resources */,
 				77BD15152885F06700A1950D /* PomeInfo.plist in Resources */,
 				1AB882672881386600157820 /* RemindSelectFeelingVC.xib in Resources */,
@@ -1092,13 +1158,14 @@
 				1A9D1A68288331FB006D65C2 /* MarshmellowDataModel.swift in Sources */,
 				1A4BB620287E0395007C8FC1 /* RemindGoalTitleTVC.swift in Sources */,
 				77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */,
+				843D538F288737AA00BB4DCB /* GetGoalsResModel.swift in Sources */,
 				84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */,
 				84A6E883287D518200CD5843 /* PomeHalfModalVC.swift in Sources */,
 				77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */,
 				77E8F36028765FA600D2F6C0 /* RemindNC.swift in Sources */,
 				1A3051202883D27E00F56808 /* MypageDataModel.swift in Sources */,
 				1A6D052328849908006C9BBD /* GoalStorageTitleCVC.swift in Sources */,
-				84D4096F2884797500A09D1D /* AddGoalCompleteVC.swift in Sources */,
+				84D4096F2884797500A09D1D /* AddCompleteVC.swift in Sources */,
 				77E8F31E2874B7CE00D2F6C0 /* MypageVC.swift in Sources */,
 				77B5719B287D458500C9CC27 /* CompleteSignUpVC.swift in Sources */,
 				1A1AEFDA287A4D5B00DD5F7E /* HaveMateTVC.swift in Sources */,
@@ -1118,10 +1185,12 @@
 				77E8F37D2876944B00D2F6C0 /* BaseAPI.swift in Sources */,
 				77E8F2FE2874B1A100D2F6C0 /* RemindCVC.swift in Sources */,
 				77E8F3362875754E00D2F6C0 /* UIButton+.swift in Sources */,
+				1A6D05292885D1F3006C9BBD /* MateEmojiBottomSheetVC.swift in Sources */,
 				77E8F3812876AB2300D2F6C0 /* PomeBtn.swift in Sources */,
 				77E8F36228765FD200D2F6C0 /* MateNC.swift in Sources */,
 				77E8F3222874B7F000D2F6C0 /* MypageCVC.swift in Sources */,
 				77E8F34A2875F2C900D2F6C0 /* StoryboardRepresentation.swift in Sources */,
+				84D40A232885D4CC00A09D1D /* AddRecordVC.swift in Sources */,
 				778E0F52287B27AB00BEEEA5 /* MakeProfileVC.swift in Sources */,
 				77E8F3542875F56000D2F6C0 /* TVRegisterable.swift in Sources */,
 				84B77272287B369200E1EDFC /* LookbackCVC.swift in Sources */,
@@ -1131,6 +1200,7 @@
 				84F018702884260600CD6C59 /* AddGoalContentVC.swift in Sources */,
 				778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */,
 				77E8F3322875729000D2F6C0 /* UIView+.swift in Sources */,
+				84D40A262885DFB500A09D1D /* SelectGoalVC.swift in Sources */,
 				77E8F3042874B1D400D2F6C0 /* RemindXib.swift in Sources */,
 				77E8F35C2875F71700D2F6C0 /* CodeBaseTVC.swift in Sources */,
 				8432C9B228773A42001C643F /* SpendCVC.swift in Sources */,
@@ -1153,6 +1223,7 @@
 				77BD150B288535D700A1950D /* SignInResModel.swift in Sources */,
 				77E8F3522875F54000D2F6C0 /* CVRegisterable.swift in Sources */,
 				77E8F330287571C400D2F6C0 /* UIViewController+.swift in Sources */,
+				1A500DAA28869A02003638B1 /* MateEmojiHeaderCVC.swift in Sources */,
 				77E8F3402875EB3900D2F6C0 /* UserDefaults+.swift in Sources */,
 				77BD150F2885B33000A1950D /* SignAPI.swift in Sources */,
 				77E8F35E28765F7C00D2F6C0 /* WriteNC.swift in Sources */,
@@ -1165,21 +1236,27 @@
 				77B571A1287FF58300C9CC27 /* AddFriendVC.swift in Sources */,
 				77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */,
 				1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */,
+				843D5391288738A400BB4DCB /* WriteAPI.swift in Sources */,
+				1A500DA62886985C003638B1 /* MateEmojiCVC.swift in Sources */,
 				1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */,
+				843D53932887436C00BB4DCB /* GetGoalDetailResModel.swift in Sources */,
 				84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */,
 				77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */,
 				845EFFC02881A9730029E3EF /* AddGoalDateVC.swift in Sources */,
 				77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */,
 				1AB882662881386600157820 /* RemindSelectFeelingVC.swift in Sources */,
 				77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */,
+				84D40A2E2885ED3100A09D1D /* SelectGoalDelegate.swift in Sources */,
+				84D40A2B2885E62100A09D1D /* goalTVC.swift in Sources */,
 				77B571B728811E7200C9CC27 /* SignInVC.swift in Sources */,
 				1A6D05202884817F006C9BBD /* GoalStorageVC.swift in Sources */,
 				1A4BB61C287DF5B7007C8FC1 /* RemindGoalTVC.swift in Sources */,
 				77E8F334287574B000D2F6C0 /* UITextField+.swift in Sources */,
-				84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */,
-				84B7727D287BD83D00E1EDFC /* LookbackSelectVC.swift in Sources */,
+				84B7727D287BD83D00E1EDFC /* WriteSelectFeelingVC.swift in Sources */,
+				84B7727D287BD83D00E1EDFC /* WriteSelectFeelingVC.swift in Sources */,
 				77E8F3662876606D00D2F6C0 /* ViewControllerFactory.swift in Sources */,
 				84F7C2A22881C0B10095ECF4 /* CalendarVC.swift in Sources */,
+				843D538D2887350A00BB4DCB /* WriteService.swift in Sources */,
 				1A1AEFD7287A4CB600DD5F7E /* HaveNoMateTVC.swift in Sources */,
 				77E8F3462875EE0A00D2F6C0 /* UITabBar+.swift in Sources */,
 			);

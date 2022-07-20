@@ -35,6 +35,10 @@ class LookbackCompleteVC: BaseVC {
         setNaviBar()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        setNaviBar()
+    }
+    
     // MARK: IBAction
     @IBAction func tapCompleteBtn(_ sender: UIButton) {
         navigationController?.popToRootViewController(animated: true)
@@ -56,9 +60,9 @@ extension LookbackCompleteVC {
 // MARK: - Custom Methods
 extension LookbackCompleteVC {
     
-    /// 오른쪽으로 swipe시 뒤로가기 막음
+    /// 오른쪽으로 swipe시 뒤로가기 활성화 여부
     private func setNaviBar() {
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        navigationController?.interactivePopGestureRecognizer?.isEnabled.toggle()
     }
     
     private func setData() {

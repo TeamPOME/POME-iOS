@@ -193,12 +193,36 @@ extension MateVC {
     }
 }
 
+// MARK: - @objc
+extension MateVC {
+    
+    /// 만들어 둔 HalfModalVC 보여주는 함수
+    @objc func showHalfModalVC() {
+        let halfModalVC = MateEmojiBottomSheetVC()
+        halfModalVC.modalPresentationStyle = .custom
+        halfModalVC.transitioningDelegate = self
+        self.present(halfModalVC, animated: true, completion: nil)
+    }
+}
+
+// MARK: - UIViewControllerTransitioningDelegate
+extension MateVC: UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        let halfModalVC = PomeHalfModalVC(presentedViewController: presented, presenting: presenting)
+        
+        /// HalfModalView의 높이 지정
+        halfModalVC.modalHeight = 342.adjustedH
+        return halfModalVC
+    }
+}
+
 // MARK: - UITableViewDelegate
 extension MateVC: UITableViewDelegate {
     
     /// 친구 유무에 따른 셀별 높이 지정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (mateNum == 0) ? 516.adjustedH : 175.adjustedH
+        return (mateNum == 0) ? 516 : 175
     }
     
     /// 친구 유무에 따른 셀 지정
@@ -209,6 +233,9 @@ extension MateVC: UITableViewDelegate {
         if mateNum == 0 {
             return haveNoMateTVC
         } else {
+            haveMateTVC.tapMateEmojiBtnAction = {
+                self.showHalfModalVC()
+            }
             haveMateTVC.tapPlusBtnAction = {
                 let cell = tableView.cellForRow(at: indexPath)
                 let frame = cell?.layer.frame
@@ -267,7 +294,6 @@ extension MateVC: UICollectionViewDelegate {
         } else {
             cell.profileImageView.image = UIImage(named: "userProfileFill32")
         }
-
         return cell
     }
     

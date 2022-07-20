@@ -23,7 +23,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APf-Ou-pFe" userLabel="containerView">
-                        <rect key="frame" x="16" y="20" width="350" height="56"/>
+                        <rect key="frame" x="16" y="20" width="350" height="59"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="술은 한달에 적당히 먹자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJa-vN-U9M">
                                 <rect key="frame" x="44" y="17.5" width="168.5" height="21.5"/>
@@ -34,16 +34,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icLockAll" translatesAutoresizingMaskIntoConstraints="NO" id="Svf-rK-8u9">
                                 <rect key="frame" x="16" y="16" width="24" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="2oe-ix-Qo9"/>
-                                    <constraint firstAttribute="width" constant="24" id="n2o-FH-wHS"/>
+                                    <constraint firstAttribute="width" secondItem="Svf-rK-8u9" secondAttribute="height" multiplier="1:1" id="tyh-gN-oCq"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="white"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Svf-rK-8u9" secondAttribute="bottom" constant="16" id="Cfc-IC-42C"/>
-                            <constraint firstItem="VJa-vN-U9M" firstAttribute="centerY" secondItem="Svf-rK-8u9" secondAttribute="centerY" id="FWw-Op-3m1"/>
                             <constraint firstItem="VJa-vN-U9M" firstAttribute="leading" secondItem="Svf-rK-8u9" secondAttribute="trailing" constant="4" id="PW9-d5-yku"/>
+                            <constraint firstItem="VJa-vN-U9M" firstAttribute="centerY" secondItem="Svf-rK-8u9" secondAttribute="centerY" id="Wkg-9o-CBm"/>
                             <constraint firstItem="Svf-rK-8u9" firstAttribute="top" secondItem="APf-Ou-pFe" secondAttribute="top" constant="16" id="ktD-SK-zUF"/>
                             <constraint firstItem="Svf-rK-8u9" firstAttribute="leading" secondItem="APf-Ou-pFe" secondAttribute="leading" constant="16" id="ozN-1m-SPY"/>
                         </constraints>
@@ -51,8 +49,6 @@
                 </subviews>
                 <color key="backgroundColor" name="grey_0"/>
                 <constraints>
-                    <constraint firstItem="APf-Ou-pFe" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="AV6-b8-8Qz"/>
-                    <constraint firstItem="APf-Ou-pFe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="K0e-Lt-3ET"/>
                     <constraint firstItem="APf-Ou-pFe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Qf6-fq-x26"/>
                     <constraint firstAttribute="trailing" secondItem="APf-Ou-pFe" secondAttribute="trailing" constant="16" id="RQa-sM-eSd"/>
                     <constraint firstAttribute="bottom" secondItem="APf-Ou-pFe" secondAttribute="bottom" constant="20" id="aQT-eR-XQh"/>

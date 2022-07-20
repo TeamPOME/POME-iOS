@@ -31,8 +31,11 @@
                         <color key="textColor" name="pomeBlack"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eL5-fX-JlO">
+                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eL5-fX-JlO">
                         <rect key="frame" x="16" y="41" width="64" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="h6R-AS-0Yh"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
                         <inset key="contentEdgeInsets" minX="6" minY="8" maxX="6" maxY="8"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -45,6 +48,9 @@
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncn-wb-Ij0">
                         <rect key="frame" x="86" y="41" width="76" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="goA-ec-1zp"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
                         <inset key="contentEdgeInsets" minX="6" minY="8" maxX="6" maxY="8"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -81,6 +87,7 @@
                     <constraint firstItem="PMY-ok-2BT" firstAttribute="centerY" secondItem="Ncn-wb-Ij0" secondAttribute="centerY" id="NXU-kH-k9O"/>
                     <constraint firstItem="Aee-aV-FUT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ajw-RK-nMq"/>
                     <constraint firstItem="Aee-aV-FUT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="b5v-80-IeD"/>
+                    <constraint firstAttribute="bottom" secondItem="eL5-fX-JlO" secondAttribute="bottom" constant="10" id="scZ-4u-CBU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -90,7 +97,7 @@
                 <outlet property="previousFeelingBtn" destination="eL5-fX-JlO" id="asW-4z-dv0"/>
                 <outlet property="resetBtn" destination="PMY-ok-2BT" id="YQp-fl-Nwz"/>
             </connections>
-            <point key="canvasLocation" x="138.40579710144928" y="137.27678571428569"/>
+            <point key="canvasLocation" x="138.40579710144928" y="136.60714285714286"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -30,6 +30,8 @@ class RemindVC: BaseVC {
         $0.backgroundColor = .grey_0
         $0.separatorStyle = .none
         $0.showsVerticalScrollIndicator = false
+        $0.sectionHeaderHeight = 0
+        $0.sectionFooterHeight = 0
     }
     
     private let remindHomeNaviBar = PomeNaviBar().then {
@@ -67,13 +69,13 @@ extension RemindVC {
         
         remindHomeNaviBar.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            $0.height.equalTo(44.adjustedH)
+            $0.height.equalTo(44)
         }
         
         goalCategoryCV.snp.makeConstraints {
             $0.top.equalTo(remindHomeNaviBar.snp.bottom)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(10.adjusted)
-            $0.height.equalTo(41.adjustedH)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(41)
         }
         
         remindTV.snp.makeConstraints {
@@ -117,8 +119,8 @@ extension RemindVC {
 // MARK: - @objc
 extension RemindVC {
     
-    /// 만들어 둔 HalfModalVC 보여주는 함수
-    @objc func showHalfModalVC(index: Int) {
+    /// 필터 기능 Bottom Sheet
+    @objc func showFilterHalfModalVC(index: Int) {
         let halfModalVC = RemindSelectFeelingVC()
         halfModalVC.modalPresentationStyle = .custom
         halfModalVC.transitioningDelegate = self
@@ -126,6 +128,14 @@ extension RemindVC {
         /// 바텀시트 선택값이 넘어오는 델리게이트를 채택함
         halfModalVC.selectFeelingDelegate = self
         halfModalVC.isFirstEmotion = (index == 0)
+        self.present(halfModalVC, animated: true, completion: nil)
+    }
+    
+    /// 친구 반응 Bottom Sheet
+    @objc func showMateEmojiHalfModalVC() {
+        let halfModalVC = MateEmojiBottomSheetVC()
+        halfModalVC.modalPresentationStyle = .custom
+        halfModalVC.transitioningDelegate = self
         self.present(halfModalVC, animated: true, completion: nil)
     }
 }
@@ -159,8 +169,17 @@ extension RemindVC: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         let halfModalVC = PomeHalfModalVC(presentedViewController: presented, presenting: presenting)
         
-        /// HalfModalView의 높이 지정
-        halfModalVC.modalHeight = 235
+        /// 필터기능의 BottomSheet
+        if presented.className == RemindSelectFeelingVC().className {
+            
+            /// HalfModalView의 높이 지정
+            halfModalVC.modalHeight = 235
+        }
+        
+        /// 친구반응을 볼때 띄우는 Bottom Sheet
+        else {
+            halfModalVC.modalHeight = 342
+        }
         return halfModalVC
     }
 }
@@ -172,11 +191,11 @@ extension RemindVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 96.adjustedH
+            return 99
         case 1:
-            return 84.adjustedH
+            return 84
         default:
-            return (goalCount == 0) ? 430.adjustedH : 157.adjustedH
+            return (goalCount == 0) ? 430 : 157
         }
     }
     
@@ -200,10 +219,10 @@ extension RemindVC: UITableViewDelegate {
             /// 바텀시트를 선택하지 않고 띄우기만 한 경우는 selected를 false로 처리해주었다.
             remindFilterTVC.selectFilterAction = { num in
                 if num == 0 {
-                    self.showHalfModalVC(index: 0)
+                    self.showFilterHalfModalVC(index: 0)
                     self.selectedPreviousEmoji = false
                 } else {
-                    self.showHalfModalVC(index: 1)
+                    self.showFilterHalfModalVC(index: 1)
                     self.selectedLatestEmoji = false
                 }
             }
@@ -226,6 +245,7 @@ extension RemindVC: UITableViewDelegate {
                 remindFilterTVC.previousFeelingBtn.setTitle(getPreviousEmoji, for: .normal)
                 remindFilterTVC.previousFeelingBtn.setImage(UIImage(named: "icArrowDown17Pink"), for: .normal)
             }
+            
             if (getLatestEmoji != "" || selectedLatestEmoji == true) && selectedResetBtn == false {
                 remindFilterTVC.laterFeelingBtn.setTitleColor(.sub, for: .normal)
                 remindFilterTVC.laterFeelingBtn.backgroundColor = .pomeMiddlePink
@@ -247,12 +267,16 @@ extension RemindVC: UITableViewDelegate {
                 remindFilterTVC.previousFeelingBtn.setTitle("처음 감정", for: .normal)
                 remindFilterTVC.laterFeelingBtn.setTitle("돌아본 감정", for: .normal)
             }
+            remindFilterTVC.selectionStyle = .none
             return remindFilterTVC
         case 2:
             if goalCount == 0 {
                 return remindNoGoalTVC
             } else {
                 remindGoalTVC.setData(RemindGoalDataModel.sampleData[indexPath.row])
+                remindGoalTVC.tapMateEmojiBtnAction = {
+                    self.showMateEmojiHalfModalVC()
+                }
                 return remindGoalTVC
             }
         default:
@@ -323,7 +347,7 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
     
     /// 섹션에 인셋 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 6, left: 8, bottom: 6, right: 8)
+        return UIEdgeInsets(top: 0, left: 16, bottom: 6, right: 16)
     }
     
     /// 섹션 별 셀 위아래 간격 설정
@@ -333,7 +357,7 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
     
     /// CV, 섹션 별 셀 좌우 간격 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 8.adjusted
+        return 8
     }
 }
 

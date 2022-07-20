@@ -166,6 +166,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="emojiMint28">
                                     <backgroundConfiguration key="background" image="btnEmojiNor28"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="tapMateThirdEmojiBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="W6F-9Q-XAh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1L-vf-bXg" userLabel="SecondBtn">
                                 <rect key="frame" x="276" y="113" width="28" height="28"/>
@@ -178,6 +181,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="emojiMint28" title="">
                                     <backgroundConfiguration key="background" image="btnEmojiNor28"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="tapMateFirstEmojiBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="p8e-hb-gIf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17D-Ri-dyM" userLabel="FirstBtn">
                                 <rect key="frame" x="254" y="113" width="28" height="28"/>
@@ -210,7 +216,6 @@
                             <constraint firstItem="k1L-vf-bXg" firstAttribute="leading" secondItem="17D-Ri-dyM" secondAttribute="trailing" constant="-6" id="D9d-BB-hgO"/>
                             <constraint firstAttribute="trailing" secondItem="kX6-WA-zxk" secondAttribute="trailing" constant="23" id="HWX-ks-WQi"/>
                             <constraint firstAttribute="trailing" secondItem="MW8-IA-ptH" secondAttribute="trailing" constant="16" id="Ipa-Bu-kqA"/>
-                            <constraint firstItem="17D-Ri-dyM" firstAttribute="width" secondItem="17D-Ri-dyM" secondAttribute="height" multiplier="1:1" id="Mhp-hd-JfE"/>
                             <constraint firstItem="k1L-vf-bXg" firstAttribute="centerY" secondItem="ZBW-2i-9Ni" secondAttribute="centerY" id="O97-U9-eAC"/>
                             <constraint firstItem="foa-cq-S1S" firstAttribute="leading" secondItem="Pmv-8r-1MC" secondAttribute="leading" constant="16" id="PIw-8O-vvE"/>
                             <constraint firstItem="Mcg-tC-nx3" firstAttribute="trailing" secondItem="MW8-IA-ptH" secondAttribute="trailing" id="QEc-ob-IYB"/>

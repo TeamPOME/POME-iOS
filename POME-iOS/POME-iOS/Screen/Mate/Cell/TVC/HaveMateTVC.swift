@@ -13,6 +13,7 @@ class HaveMateTVC: BaseTVC {
     
     // MARK: Properties
     var tapPlusBtnAction: (() -> ())?
+    var tapMateEmojiBtnAction: (() -> ())?
     
     // MARK: IBOutlet
     @IBOutlet weak var containerView: UIView!
@@ -42,13 +43,19 @@ class HaveMateTVC: BaseTVC {
     @IBAction func tapPlusBtn(_ sender: UIButton) {
         tapPlusBtnAction?()
     }
+    @IBAction func tapMateFirstEmojiBtn(_ sender: UIButton) {
+        tapMateEmojiBtnAction?()
+    }
+    @IBAction func tapMateThirdEmojiBtn(_ sender: UIButton) {
+        tapMateEmojiBtnAction?()
+    }
 }
 
 // MARK: - UI
 extension HaveMateTVC {
     
     private func configureUI() {
-        contentLabelHeight.constant = 37.adjustedH
+        contentLabelHeight.constant = 37
         profileImageView.maskImage = UIImage(named: "userProfileFill32")
         sadEmojiContainerView.makeRounded(cornerRadius: sadEmojiContainerView.frame.width / 2)
         smileEmojiContainerView.makeRounded(cornerRadius: smileEmojiContainerView.frame.width / 2)
