@@ -112,6 +112,13 @@ extension SignInVC {
         pomeTBC.modalPresentationStyle = .fullScreen
         self.present(pomeTBC, animated: true, completion: nil)
     }
+    
+    /// UserDefaults값 설정하는 함수
+    private func setUserDefaultsValue(data: SignInResModel) {
+        UserDefaults.standard.set(data.accessToken, forKey: UserDefaults.Keys.accessToken)
+        UserDefaults.standard.set(data.refreshToken, forKey: UserDefaults.Keys.refreshToken)
+        UserDefaults.standard.set(data.id, forKey: UserDefaults.Keys.userID)
+    }
 }
 
 // MARK: - Network
@@ -154,10 +161,12 @@ extension SignInVC {
                     
                     /// 없는 유저 -> 회원가입
                     if data.type == "signup" {
+                        UserDefaults.standard.set(data.uuid, forKey: UserDefaults.Keys.uuid)
                         self.presentMakeProfileVC()
                         
                     /// 이미 가입한 유저 -> 바로 로그인
                     } else {
+                        self.setUserDefaultsValue(data: data)
                         self.presentMain()
                     }
                 }

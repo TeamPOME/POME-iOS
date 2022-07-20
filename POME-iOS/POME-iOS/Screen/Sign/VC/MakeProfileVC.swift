@@ -64,7 +64,7 @@ class MakeProfileVC: BaseVC {
     private let imagePicker = UIImagePickerController()
     
     private var isPicked = false
-
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,7 +116,7 @@ extension MakeProfileVC {
             $0.top.equalTo(nicknameTextField.snp.bottom).offset(10)
             $0.leading.equalTo(nicknameTextField.snp.leading)
         }
-
+        
         confirmBtn.snp.makeConstraints {
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
@@ -160,11 +160,12 @@ extension MakeProfileVC {
     }
     
     /// 만들었어요 버튼 tap Action 설정 메서드
-    private func setTapConfirmBtn() {
+    func setTapConfirmBtn() {
+        
         confirmBtn.press { [weak self] in
-            guard let nextVC = self?.storyboard?.instantiateViewController(withIdentifier: CompleteSignUpVC.className) as? CompleteSignUpVC else { return }
+            guard let self = self else { return }
             
-            self?.navigationController?.pushViewController(nextVC, animated: true)
+            self.requestKakaoSignUp(url: APIConstants.baseURL + "/auth", parameters: ["social" : "kakao", "uuid" : UserDefaults.standard.string(forKey: UserDefaults.Keys.uuid) ?? "", "nickname" : self.nicknameTextField.text ?? ""], data: self.profileImageView.image?.pngData() ?? Data(), filename: "file", mimeType: "image/png")
         }
     }
     
@@ -185,6 +186,20 @@ extension MakeProfileVC {
             print("Camera not available")
         }
     }
+    
+    /// UserDefaults에 값 저장하는 메서드
+    private func setUserDefaultsValue(data: SignUpResModel) {
+        UserDefaults.standard.set(data.accessToken, forKey: UserDefaults.Keys.accessToken)
+        UserDefaults.standard.set(data.refreshToken, forKey: UserDefaults.Keys.refreshToken)
+        UserDefaults.standard.set(data.id, forKey: UserDefaults.Keys.userID)
+    }
+    
+    /// 회원가입 완료 뷰로 화면 전환하는 메서드
+    private func presentCompleteSignUpVC() {
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: CompleteSignUpVC.className) as? CompleteSignUpVC else { return }
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
 // MARK: @objc
@@ -194,6 +209,8 @@ extension MakeProfileVC {
     func textFieldDidChange(_ sender: Any?) {
         confirmBtn.isDisabled = nicknameTextField.isEmpty
         nicknameCheckLabel.isHidden = nicknameTextField.isEmpty
+        nicknameCheckLabel.text = "멋진 닉네임이네요!"
+        nicknameCheckLabel.textColor = .main
     }
 }
 
@@ -241,3 +258,33 @@ extension MakeProfileVC: UIImagePickerControllerDelegate {
         dismiss(animated: true, completion: nil)
     }
 }
+
+// MARK: - Network
+extension MakeProfileVC {
+    
+    /// 카카오 회원가입 요청 메서드
+    private func requestKakaoSignUp(url: String, parameters: [String: String], data: Data, filename: String, mimeType: String) {
+        SignUpAPI.shared.requestPOSTWithMultipartform(url: url, parameters: parameters, data: data, filename: filename, mimeType: mimeType) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let data = data as? SignUpResModel {
+                    DispatchQueue.main.async {
+                        self.nicknameCheckLabel.textColor = .main
+                        self.nicknameCheckLabel.text = "멋진 닉네임이네요!"
+                        self.setUserDefaultsValue(data: data)
+                        self.presentCompleteSignUpVC()
+                    }
+                }
+            case .requestErr:
+                DispatchQueue.main.async {
+                    self.nicknameCheckLabel.textColor = .red
+                    self.nicknameCheckLabel.text = "사용할 수 없는 닉네임이에요"
+                    self.confirmBtn.isDisabled = true
+                }
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+}
+
