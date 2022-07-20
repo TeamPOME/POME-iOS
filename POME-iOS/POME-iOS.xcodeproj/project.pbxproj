@@ -33,6 +33,9 @@
 		1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89417C2883066D00606A68 /* MarshmellowCVC.swift */; };
 		1A89417F2883066D00606A68 /* MarshmellowCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A89417D2883066D00606A68 /* MarshmellowCVC.xib */; };
 		1A9D1A68288331FB006D65C2 /* MarshmellowDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */; };
+		1AAF202328885B2100A4C18F /* RemindService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF202228885B2100A4C18F /* RemindService.swift */; };
+		1AAF202628885BCE00A4C18F /* GetRemindGoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF202528885BCE00A4C18F /* GetRemindGoalModel.swift */; };
+		1AAF202928885C5700A4C18F /* GetRemindAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF202828885C5700A4C18F /* GetRemindAPI.swift */; };
 		1AB882662881386600157820 /* RemindSelectFeelingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB882642881386600157820 /* RemindSelectFeelingVC.swift */; };
 		1AB882672881386600157820 /* RemindSelectFeelingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AB882652881386600157820 /* RemindSelectFeelingVC.xib */; };
 		1ABDED76287E716E00F85F9C /* RemindFilterTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDED74287E716E00F85F9C /* RemindFilterTVC.swift */; };
@@ -41,6 +44,7 @@
 		1ABDED7B287F250600F85F9C /* RemindGoalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDED7A287F250600F85F9C /* RemindGoalDataModel.swift */; };
 		1ABDED82287F9B4E00F85F9C /* RemindGoalCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDED80287F9B4E00F85F9C /* RemindGoalCategoryCVC.swift */; };
 		1ABDED83287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDED81287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib */; };
+		1ACF85EA288880E70013554F /* GetRemindGoalListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACF85E9288880E70013554F /* GetRemindGoalListModel.swift */; };
 		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
 		778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */; };
 		778E0F50287B273900BEEEA5 /* SignUpSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778E0F4F287B273900BEEEA5 /* SignUpSB.storyboard */; };
@@ -187,6 +191,9 @@
 		1A89417C2883066D00606A68 /* MarshmellowCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshmellowCVC.swift; sourceTree = "<group>"; };
 		1A89417D2883066D00606A68 /* MarshmellowCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarshmellowCVC.xib; sourceTree = "<group>"; };
 		1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshmellowDataModel.swift; sourceTree = "<group>"; };
+		1AAF202228885B2100A4C18F /* RemindService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindService.swift; sourceTree = "<group>"; };
+		1AAF202528885BCE00A4C18F /* GetRemindGoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRemindGoalModel.swift; sourceTree = "<group>"; };
+		1AAF202828885C5700A4C18F /* GetRemindAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRemindAPI.swift; sourceTree = "<group>"; };
 		1AB882642881386600157820 /* RemindSelectFeelingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindSelectFeelingVC.swift; sourceTree = "<group>"; };
 		1AB882652881386600157820 /* RemindSelectFeelingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindSelectFeelingVC.xib; sourceTree = "<group>"; };
 		1ABDED74287E716E00F85F9C /* RemindFilterTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindFilterTVC.swift; sourceTree = "<group>"; };
@@ -195,6 +202,7 @@
 		1ABDED7A287F250600F85F9C /* RemindGoalDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindGoalDataModel.swift; sourceTree = "<group>"; };
 		1ABDED80287F9B4E00F85F9C /* RemindGoalCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindGoalCategoryCVC.swift; sourceTree = "<group>"; };
 		1ABDED81287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindGoalCategoryCVC.xib; sourceTree = "<group>"; };
+		1ACF85E9288880E70013554F /* GetRemindGoalListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRemindGoalListModel.swift; sourceTree = "<group>"; };
 		6F6FAF66B7C4C46AE47E904C /* Pods-POME-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.debug.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		778E0F422879624700BEEEA5 /* PomeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeTextField.swift; sourceTree = "<group>"; };
 		778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeMaskedImageView.swift; sourceTree = "<group>"; };
@@ -330,6 +338,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AAF202128885B0700A4C18F /* Remind */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF202228885B2100A4C18F /* RemindService.swift */,
+			);
+			path = Remind;
+			sourceTree = "<group>";
+		};
+		1AAF202428885BA600A4C18F /* Remind */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF202528885BCE00A4C18F /* GetRemindGoalModel.swift */,
+				1ACF85E9288880E70013554F /* GetRemindGoalListModel.swift */,
+			);
+			path = Remind;
+			sourceTree = "<group>";
+		};
+		1AAF202728885C4100A4C18F /* Remind */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF202828885C5700A4C18F /* GetRemindAPI.swift */,
+			);
+			path = Remind;
+			sourceTree = "<group>";
+		};
 		23F6B433406699E39B3C571D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -902,6 +935,7 @@
 		77E8F36D287692C500D2F6C0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1AAF202128885B0700A4C18F /* Remind */,
 				77BD150C2885396400A1950D /* SignService.swift */,
 			);
 			path = Services;
@@ -910,6 +944,7 @@
 		77E8F36E287692D000D2F6C0 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				1AAF202428885BA600A4C18F /* Remind */,
 				77BD150A288535D700A1950D /* SignInResModel.swift */,
 			);
 			path = APIModels;
@@ -918,6 +953,7 @@
 		77E8F36F287692DC00D2F6C0 /* APIManagers */ = {
 			isa = PBXGroup;
 			children = (
+				1AAF202728885C4100A4C18F /* Remind */,
 				77E8F37C2876944B00D2F6C0 /* BaseAPI.swift */,
 				77BD150E2885B33000A1950D /* SignAPI.swift */,
 			);
@@ -1124,6 +1160,7 @@
 				1ABDED82287F9B4E00F85F9C /* RemindGoalCategoryCVC.swift in Sources */,
 				84309C822878ACF50017F8BF /* GoalCategoryCVC.swift in Sources */,
 				77E8F33C2875A08200D2F6C0 /* UILabel+.swift in Sources */,
+				1AAF202928885C5700A4C18F /* GetRemindAPI.swift in Sources */,
 				1ABDED79287F23E000F85F9C /* RemindHaveNoGoalTVC.swift in Sources */,
 				84F7C2A52882B8490095ECF4 /* CalendarDelegate.swift in Sources */,
 				77E8F33A28759FCF00D2F6C0 /* UIFont+.swift in Sources */,
@@ -1134,6 +1171,7 @@
 				84A6E883287D518200CD5843 /* PomeHalfModalVC.swift in Sources */,
 				77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */,
 				77E8F36028765FA600D2F6C0 /* RemindNC.swift in Sources */,
+				1AAF202628885BCE00A4C18F /* GetRemindGoalModel.swift in Sources */,
 				1A3051202883D27E00F56808 /* MypageDataModel.swift in Sources */,
 				1A6D052328849908006C9BBD /* GoalStorageTitleCVC.swift in Sources */,
 				84D4096F2884797500A09D1D /* AddCompleteVC.swift in Sources */,
@@ -1158,6 +1196,7 @@
 				1A6D05292885D1F3006C9BBD /* MateEmojiBottomSheetVC.swift in Sources */,
 				77E8F3812876AB2300D2F6C0 /* PomeBtn.swift in Sources */,
 				77E8F36228765FD200D2F6C0 /* MateNC.swift in Sources */,
+				1ACF85EA288880E70013554F /* GetRemindGoalListModel.swift in Sources */,
 				77E8F3222874B7F000D2F6C0 /* MypageCVC.swift in Sources */,
 				77E8F34A2875F2C900D2F6C0 /* StoryboardRepresentation.swift in Sources */,
 				84D40A232885D4CC00A09D1D /* AddRecordVC.swift in Sources */,
@@ -1207,12 +1246,12 @@
 				77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */,
 				1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */,
 				1A500DA62886985C003638B1 /* MateEmojiCVC.swift in Sources */,
-				77E8F37B2876943800D2F6C0 /* WriteResModel.swift in Sources */,
 				1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */,
 				84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */,
 				77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */,
 				845EFFC02881A9730029E3EF /* AddGoalDateVC.swift in Sources */,
 				77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */,
+				1AAF202328885B2100A4C18F /* RemindService.swift in Sources */,
 				1AB882662881386600157820 /* RemindSelectFeelingVC.swift in Sources */,
 				77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */,
 				84D40A2E2885ED3100A09D1D /* SelectGoalDelegate.swift in Sources */,
