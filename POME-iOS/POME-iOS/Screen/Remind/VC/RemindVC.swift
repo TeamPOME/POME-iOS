@@ -10,13 +10,15 @@ import UIKit
 class RemindVC: BaseVC {
     
     // MARK: Properties
-    private var goalCount: Int = 10
+    private var goalCount: Int = 0
+    private var selectedCategoryIndex = 0
     private var selectedPreviousEmoji: Bool = false
     private var selectedLatestEmoji: Bool = false
     private var selectedResetBtn: Bool = false
     private var getPreviousEmoji: String = ""
     private var getLatestEmoji: String = ""
-    private var category: [String] = ["목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료", "목표를 정해요", "목표 선택", "목표 설정", "목표 진행", "목표 완료"]
+    private var category: [GetRemindGoalModel] = []
+    private var goalRecordList: [GetRemindGoalListModel] = []
     
     private lazy var goalCategoryCV = UICollectionView( frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout()).then {
         let layout = UICollectionViewFlowLayout()
@@ -46,11 +48,12 @@ class RemindVC: BaseVC {
         registerCell()
         setDelegate()
         setTVScroll()
+        requestGetRemind()
     }
     
     /// 탭바가 왔다갔다 할 경우 첫 셀이 default가 되게끔 처리하였다.
     override func viewWillAppear(_ animated: Bool) {
-        setDefaultSelectedCell()
+        setDefaultSelectedCell(index: selectedCategoryIndex)
     }
 }
 
@@ -111,8 +114,8 @@ extension RemindVC {
     }
     
     /// 목표 카테고리의 첫 아이템을 디폴트로 설정
-    private func setDefaultSelectedCell() {
-        self.goalCategoryCV.selectItem(at: IndexPath(item: 0, section: 0), animated: true, scrollPosition: .right)
+    private func setDefaultSelectedCell(index: Int) {
+        self.goalCategoryCV.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .right)
     }
 }
 
@@ -208,9 +211,16 @@ extension RemindVC: UITableViewDelegate {
         
         switch indexPath.section {
         case 0:
-            if goalCount == 0 {
+            if goalCount == 0 || goalRecordList.isEmpty {
                 remindGoalTitleTVC.isPrivateImageView.image = UIImage(named: "icEmptyGoal")
                 remindGoalTitleTVC.goalTitleLabel.setLabel(text: "아직 추가한 목표가 없어요", color: .grey_5, size: 18, weight: .bold)
+            } else {
+                remindGoalTitleTVC.goalTitleLabel.setLabel(text: goalRecordList[indexPath.row].goalMessage, color: .grey_8, size: 18, weight: .bold)
+                if goalRecordList[indexPath.row].isGoalPublic {
+                    remindGoalTitleTVC.isPrivateImageView.image = UIImage(named: "icNoLockAll")
+                } else {
+                    remindGoalTitleTVC.isPrivateImageView.image = UIImage(named: "icLockAll")
+                }
             }
             return remindGoalTitleTVC
         case 1:
@@ -270,10 +280,10 @@ extension RemindVC: UITableViewDelegate {
             remindFilterTVC.selectionStyle = .none
             return remindFilterTVC
         case 2:
-            if goalCount == 0 {
+            if goalCount == 0 || goalRecordList.count == 0 {
                 return remindNoGoalTVC
             } else {
-                remindGoalTVC.setData(RemindGoalDataModel.sampleData[indexPath.row])
+                remindGoalTVC.setData(remindGoalData: goalRecordList[indexPath.row])
                 remindGoalTVC.tapMateEmojiBtnAction = {
                     self.showMateEmojiHalfModalVC()
                 }
@@ -292,7 +302,7 @@ extension RemindVC: UITableViewDelegate {
         case 1:
             return 1
         default:
-            return goalCount == 0 ? 1 : RemindGoalDataModel.sampleData.count
+            return (goalCount == 0 || goalRecordList.count == 0) ? 1 : goalRecordList.count
         }
     }
 }
@@ -324,8 +334,8 @@ extension RemindVC: UICollectionViewDataSource {
         guard let remindGoalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: Identifiers.RemindGoalCategoryCVC, for: indexPath) as? RemindGoalCategoryCVC else { return UICollectionViewCell() }
         if goalCount == 0 {
             remindGoalCategoryCVC.goalLabel.text = " - "
-        } else{
-            remindGoalCategoryCVC.goalLabel.text = category[indexPath.row]
+        } else {
+            remindGoalCategoryCVC.goalLabel.text = category[indexPath.row].category
         }
         return remindGoalCategoryCVC
     }
@@ -339,9 +349,9 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
         if goalCount == 0 {
             return CGSize(width: " - ".size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
         } else {
-            
+
             /// 글씨 길이에 따라 너비 동적 조절
-            return CGSize(width: category[indexPath.row].size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
+            return CGSize(width: category[indexPath.row].category.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
         }
     }
     
@@ -359,5 +369,49 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 8
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCategoryIndex = indexPath.row
+        reqeustGetRemindGoal(goalId: category[indexPath.row].id)
+        remindTV.reloadData()
+    }
 }
 
+// MARK: - Network
+extension RemindVC {
+    
+    /// 상단의 카테고리 목록 요청
+    private func requestGetRemind() {
+        GetRemindAPI.shared.requestGetRemindGoalAPI() {
+            networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let data = data as? [GetRemindGoalModel] else { return }
+                self.category = data
+                self.goalCount = data.count
+                self.goalCategoryCV.reloadData()
+                self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    private func reqeustGetRemindGoal(goalId: Int) {
+        GetRemindAPI.shared.getRemindGoalListAPI(goalId: goalId) {
+            networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let data = data as? [GetRemindGoalListModel] else { return }
+                self.goalRecordList = data
+                self.remindTV.reloadData()
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+}
