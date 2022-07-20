@@ -46,4 +46,21 @@ class WriteAPI: BaseAPI {
             }
         }
     }
+    
+    /// [POST] 목표 추가
+    func postGoalAPI(startDate: String, endDate: String, category: String, message: String, amount: Int, isPublic: Bool, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        AFmanager.request(WriteService.postGoal(startDate: startDate, endDate: endDate, category: category, message: message, amount: amount, isPublic: isPublic)).responseData { response in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                guard let data = response.data else { return }
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, PostGoalResModel.self)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 }
