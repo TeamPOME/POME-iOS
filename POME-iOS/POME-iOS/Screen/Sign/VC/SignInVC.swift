@@ -115,7 +115,9 @@ extension SignInVC {
     
     /// UserDefaults값 설정하는 함수
     private func setUserDefaultsValue(data: SignInResModel) {
-        UserDefaults.standard.set("Bearer \(data.accessToken)", forKey: UserDefaults.Keys.accessToken)
+        if data.accessToken != nil {
+            UserDefaults.standard.set("Bearer \(data.accessToken ?? "")", forKey: UserDefaults.Keys.accessToken)
+        }
         UserDefaults.standard.set(data.refreshToken, forKey: UserDefaults.Keys.refreshToken)
         UserDefaults.standard.set(data.id, forKey: UserDefaults.Keys.userID)
     }
