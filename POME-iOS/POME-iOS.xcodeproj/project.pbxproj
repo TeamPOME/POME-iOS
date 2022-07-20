@@ -74,9 +74,6 @@
 		77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2ED2874AF6300D2F6C0 /* PomeTBC.swift */; };
 		77E8F2F82874B15A00D2F6C0 /* RemindSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F2F72874B15A00D2F6C0 /* RemindSB.storyboard */; };
 		77E8F2FA2874B17800D2F6C0 /* RemindVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2F92874B17800D2F6C0 /* RemindVC.swift */; };
-		77E8F2FC2874B19400D2F6C0 /* RemindTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2FB2874B19400D2F6C0 /* RemindTVC.swift */; };
-		77E8F2FE2874B1A100D2F6C0 /* RemindCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F2FD2874B1A100D2F6C0 /* RemindCVC.swift */; };
-		77E8F3042874B1D400D2F6C0 /* RemindXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F3032874B1D400D2F6C0 /* RemindXib.swift */; };
 		77E8F30E2874B4DD00D2F6C0 /* MateSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F30D2874B4DD00D2F6C0 /* MateSB.storyboard */; };
 		77E8F3102874B50500D2F6C0 /* MateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E8F30F2874B50500D2F6C0 /* MateVC.swift */; };
 		77E8F31C2874B7B700D2F6C0 /* MypageSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E8F31B2874B7B700D2F6C0 /* MypageSB.storyboard */; };
@@ -235,9 +232,6 @@
 		77E8F2ED2874AF6300D2F6C0 /* PomeTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeTBC.swift; sourceTree = "<group>"; };
 		77E8F2F72874B15A00D2F6C0 /* RemindSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RemindSB.storyboard; sourceTree = "<group>"; };
 		77E8F2F92874B17800D2F6C0 /* RemindVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindVC.swift; sourceTree = "<group>"; };
-		77E8F2FB2874B19400D2F6C0 /* RemindTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindTVC.swift; sourceTree = "<group>"; };
-		77E8F2FD2874B1A100D2F6C0 /* RemindCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindCVC.swift; sourceTree = "<group>"; };
-		77E8F3032874B1D400D2F6C0 /* RemindXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindXib.swift; sourceTree = "<group>"; };
 		77E8F30D2874B4DD00D2F6C0 /* MateSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MateSB.storyboard; sourceTree = "<group>"; };
 		77E8F30F2874B50500D2F6C0 /* MateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateVC.swift; sourceTree = "<group>"; };
 		77E8F31B2874B7B700D2F6C0 /* MypageSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MypageSB.storyboard; sourceTree = "<group>"; };
@@ -757,7 +751,6 @@
 			isa = PBXGroup;
 			children = (
 				1A4BB61A287DF5B7007C8FC1 /* RemindGoalTVC.swift */,
-				77E8F2FB2874B19400D2F6C0 /* RemindTVC.swift */,
 				1ABDED78287F23E000F85F9C /* RemindHaveNoGoalTVC.swift */,
 				1ABDED74287E716E00F85F9C /* RemindFilterTVC.swift */,
 				1A4BB61E287E0395007C8FC1 /* RemindGoalTitleTVC.swift */,
@@ -768,7 +761,6 @@
 		77E8F2F62874B14000D2F6C0 /* CVC */ = {
 			isa = PBXGroup;
 			children = (
-				77E8F2FD2874B1A100D2F6C0 /* RemindCVC.swift */,
 				1ABDED80287F9B4E00F85F9C /* RemindGoalCategoryCVC.swift */,
 			);
 			path = CVC;
@@ -790,7 +782,6 @@
 		77E8F3022874B1C300D2F6C0 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
-				77E8F3032874B1D400D2F6C0 /* RemindXib.swift */,
 				1A4BB61B287DF5B7007C8FC1 /* RemindGoalTVC.xib */,
 				1A4BB61F287E0395007C8FC1 /* RemindGoalTitleTVC.xib */,
 				1ABDED75287E716E00F85F9C /* RemindFilterTVC.xib */,
@@ -1191,7 +1182,6 @@
 				77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */,
 				84DC1ADA2880788C0057C55D /* PlusCVC.swift in Sources */,
 				77E8F37D2876944B00D2F6C0 /* BaseAPI.swift in Sources */,
-				77E8F2FE2874B1A100D2F6C0 /* RemindCVC.swift in Sources */,
 				77E8F3362875754E00D2F6C0 /* UIButton+.swift in Sources */,
 				1A6D05292885D1F3006C9BBD /* MateEmojiBottomSheetVC.swift in Sources */,
 				77E8F3812876AB2300D2F6C0 /* PomeBtn.swift in Sources */,
@@ -1210,7 +1200,6 @@
 				778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */,
 				77E8F3322875729000D2F6C0 /* UIView+.swift in Sources */,
 				84D40A262885DFB500A09D1D /* SelectGoalVC.swift in Sources */,
-				77E8F3042874B1D400D2F6C0 /* RemindXib.swift in Sources */,
 				77E8F35C2875F71700D2F6C0 /* CodeBaseTVC.swift in Sources */,
 				8432C9B228773A42001C643F /* SpendCVC.swift in Sources */,
 				8400A408287C17C5004F2D49 /* LookbackCompleteVC.swift in Sources */,
@@ -1228,7 +1217,6 @@
 				77E8F338287575E500D2F6C0 /* UIColor+.swift in Sources */,
 				77E8F3502875F50200D2F6C0 /* BaseNC.swift in Sources */,
 				77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */,
-				77E8F2FC2874B19400D2F6C0 /* RemindTVC.swift in Sources */,
 				77BD150B288535D700A1950D /* SignInResModel.swift in Sources */,
 				77E8F3522875F54000D2F6C0 /* CVRegisterable.swift in Sources */,
 				77E8F330287571C400D2F6C0 /* UIViewController+.swift in Sources */,
