@@ -6,7 +6,7 @@
 //
 
 import Alamofire
-import Foundation
+import UIKit
 
 /*
  AuthRouter : 여러 Endpoint들을 갖고 있는 enum
@@ -14,14 +14,14 @@ import Foundation
  */
 
 enum SignService {
-    case requestKaKaoLogin
+    case requestKakaoLogin
 }
 
 extension SignService: TargetType {
     
     var path: String {
         switch self {
-        case .requestKaKaoLogin:
+        case .requestKakaoLogin:
             return "/auth/kakao"
         }
     }
@@ -29,22 +29,22 @@ extension SignService: TargetType {
     var method: HTTPMethod {
         switch self {
             
-        case .requestKaKaoLogin:
+        case .requestKakaoLogin:
             return .get
         }
     }
     
     var parameters: RequestParams {
         switch self {
-        case .requestKaKaoLogin:
+        case .requestKakaoLogin:
             return .requestPlain
         }
     }
     
     var header: HeaderType {
         switch self {
-        case .requestKaKaoLogin:
-            return .auth
+        case .requestKakaoLogin:
+            return .kakaoAuth
         }
     }
 }

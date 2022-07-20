@@ -22,36 +22,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="52" height="29"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ugx-Bi-wBk">
-                        <rect key="frame" x="0.0" y="0.0" width="52" height="29"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ij-xJ-pNf">
-                                <rect key="frame" x="16" y="6" width="20" height="17"/>
-                                <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
-                                <color key="textColor" name="grey_5"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="9ij-xJ-pNf" secondAttribute="bottom" constant="6" id="Rii-VW-zM6"/>
-                            <constraint firstAttribute="trailing" secondItem="9ij-xJ-pNf" secondAttribute="trailing" constant="16" id="Uus-uR-nKq"/>
-                            <constraint firstItem="9ij-xJ-pNf" firstAttribute="leading" secondItem="Ugx-Bi-wBk" secondAttribute="leading" constant="16" id="mVz-Bu-yto"/>
-                            <constraint firstItem="9ij-xJ-pNf" firstAttribute="top" secondItem="Ugx-Bi-wBk" secondAttribute="top" constant="6" id="w0K-U3-dIF"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <real key="value" value="15.5"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ij-xJ-pNf">
+                        <rect key="frame" x="22.5" y="6" width="7" height="17"/>
+                        <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                        <color key="textColor" name="grey_5"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Ugx-Bi-wBk" secondAttribute="trailing" id="8uF-qQ-P6m"/>
-                <constraint firstItem="Ugx-Bi-wBk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wd2-C6-GIK"/>
-                <constraint firstAttribute="bottom" secondItem="Ugx-Bi-wBk" secondAttribute="bottom" id="cof-iI-RFD"/>
-                <constraint firstItem="Ugx-Bi-wBk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="f2n-OV-qa8"/>
+                <constraint firstItem="9ij-xJ-pNf" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="zCO-Hn-R3e"/>
+                <constraint firstItem="9ij-xJ-pNf" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="zPK-Bg-h0y"/>
             </constraints>
             <size key="customSize" width="260" height="151"/>
             <userDefinedRuntimeAttributes>
@@ -60,7 +42,6 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="backgroundView" destination="Ugx-Bi-wBk" id="VJh-I7-QOz"/>
                 <outlet property="goalLabel" destination="9ij-xJ-pNf" id="Ihx-ns-Zd7"/>
             </connections>
             <point key="canvasLocation" x="289.85507246376812" y="154.35267857142856"/>

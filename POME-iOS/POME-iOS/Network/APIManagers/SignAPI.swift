@@ -21,7 +21,7 @@ class SignAPI: BaseAPI {
     
     /// [GET] 소셜 로그인 요청
     func requestLoginAPI(completion: @escaping (NetworkResult<Any>) -> (Void)) {
-        AFmanager.request(SignService.requestKaKaoLogin).responseData { response in
+        AFmanager.request(SignService.requestKakaoLogin).responseData { response in
             switch response.result {
             case .success:
                 guard let statusCode = response.response?.statusCode else { return }

@@ -234,6 +234,24 @@ extension GoalCardCVC {
         }
         updateProgressView()
     }
+    
+    /// d-day 값에 따라 UI변경 해주는 함수
+    private func setdDay(dDay: Int) {
+        
+        /// 종료시
+        if dDay == -1 {
+            
+            // TODO: - 종료 UI 작업 후 수정 필요
+            ifSuccessLabel.text = "D-\(dDay)"
+        } else {
+            [progressView, percentageContainerView].forEach {
+                view in view.backgroundColor = .main
+            }
+            ifSuccessLabelContainerView.backgroundColor = .sub
+            ifSuccessLabel.text = "D-\(dDay)"
+        }
+        updateProgressView()
+    }
 }
 
 // MARK: - Network
@@ -245,5 +263,15 @@ extension GoalCardCVC {
         moneyGoalLabel.text = "/ " + numberFormatter(number: goalData.goalMoney).description + "원"
         realSpentMoneyLabel.text = numberFormatter(number: goalData.spentMoney).description + "원"
         setProgress(goal: goalData.successPercentage)
+    }
+    
+    func setDetailData(data: GetGoalDetailResModel) {
+        goalTitleLabel.text = data.message
+        moneyGoalLabel.text = "/ " + numberFormatter(number: data.amount).description + "원"
+        realSpentMoneyLabel.text = numberFormatter(number: data.payAmount).description + "원"
+        setProgress(goal: Double(data.rate))
+        setdDay(dDay: data.dDay)
+        
+        // TODO: - 추후 isPublic 값에 따라 자물쇠 이미지 변경 필요
     }
 }
