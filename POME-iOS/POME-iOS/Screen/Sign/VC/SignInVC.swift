@@ -112,6 +112,13 @@ extension SignInVC {
         pomeTBC.modalPresentationStyle = .fullScreen
         self.present(pomeTBC, animated: true, completion: nil)
     }
+    
+    /// UserDefaults값 설정하는 함수
+    private func setUserDefaultsValue(data: SignInResModel) {
+        UserDefaults.standard.set("Bearer \(data.accessToken ?? "")", forKey: UserDefaults.Keys.accessToken)
+        UserDefaults.standard.set(data.refreshToken ?? "", forKey: UserDefaults.Keys.refreshToken)
+        UserDefaults.standard.set(data.id ?? -1, forKey: UserDefaults.Keys.userID)
+    }
 }
 
 // MARK: - Network
@@ -124,7 +131,7 @@ extension SignInVC {
                 print("login fail")
             } else {
                 if let accessToken = oauthToken?.accessToken {
-                    UserDefaults.standard.set(accessToken, forKey: UserDefaults.Keys.AccessToken)
+                    UserDefaults.standard.set(accessToken, forKey: UserDefaults.Keys.kakaoToken)
                     self.requestKakaoLogin()
                 }
             }
@@ -138,7 +145,7 @@ extension SignInVC {
                 print("login fail")
             } else {
                 if let accessToken = oauthToken?.accessToken {
-                    UserDefaults.standard.set(accessToken, forKey: UserDefaults.Keys.AccessToken)
+                    UserDefaults.standard.set(accessToken, forKey: UserDefaults.Keys.kakaoToken)
                     self.requestKakaoLogin()
                 }
             }
@@ -154,16 +161,13 @@ extension SignInVC {
                     
                     /// 없는 유저 -> 회원가입
                     if data.type == "signup" {
+                        UserDefaults.standard.set(data.uuid ?? "", forKey: UserDefaults.Keys.uuid)
                         self.presentMakeProfileVC()
                         
                     /// 이미 가입한 유저 -> 바로 로그인
                     } else {
-                        
-                        /// Bearer 붙인 accessToken값 저장
-                        if let accessToken = data.accessToken {
-                            UserDefaults.standard.set("Bearer \(accessToken)", forKey: UserDefaults.Keys.AccessToken)
-                            self.presentMain()
-                        }
+                        self.setUserDefaultsValue(data: data)
+                        self.presentMain()
                     }
                 }
             case .requestErr:

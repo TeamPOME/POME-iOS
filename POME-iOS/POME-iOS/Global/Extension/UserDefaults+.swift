@@ -13,9 +13,18 @@ extension UserDefaults {
     enum Keys {
         
         /// String
-        static var AccessToken = "AccessToken"
+        static var kakaoToken = "kakaoToken"
         
         /// String
-        static var RefreshToken = "RefreshToken"
+        static var accessToken = "accessToken"
+        
+        /// String
+        static var refreshToken = "refreshToken"
+        
+        /// String
+        static var uuid = "uuid"
+        
+        /// Int
+        static var userID = "userID"
     }
 }
