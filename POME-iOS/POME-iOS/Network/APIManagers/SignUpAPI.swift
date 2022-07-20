@@ -53,14 +53,12 @@ class SignUpAPI {
         uploadData.append("\r\n".data(using: .utf8)!)
         uploadData.append("--\(boundary)--".data(using: .utf8)!)
         
-        
         let defaultSession = URLSession(configuration: .default)
         defaultSession.uploadTask(with: request, from: uploadData) { (data: Data?, response: URLResponse?, error: Error?) in
             guard error == nil else {
                 print("Error occur: error calling POST - \(String(describing: error))")
                 return
             }
-            
             
             guard let data = data, let response = response as? HTTPURLResponse else {
                 print("Error: HTTP request failed")
