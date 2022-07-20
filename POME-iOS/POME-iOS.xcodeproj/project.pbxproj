@@ -411,6 +411,14 @@
 			path = Sign;
 			sourceTree = "<group>";
 		};
+		77BD1520288887B200A1950D /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				8427F877288849690096B20E /* DeleteResModel.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
 		77E8F2AC2874A23700D2F6C0 = {
 			isa = PBXGroup;
 			children = (
@@ -936,9 +944,9 @@
 		77E8F36E287692D000D2F6C0 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				77BD1520288887B200A1950D /* Public */,
 				77BD151B2886FAE100A1950D /* Sign */,
 				8427F88328887B110096B20E /* Write */,
-				8427F877288849690096B20E /* DeleteResModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
