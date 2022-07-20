@@ -15,13 +15,15 @@ import Alamofire
 enum HeaderType {
     case basic
     case auth
+    case kakaoAuth
     case multiPart
     case multiPartWithAuth
 }
 
 enum HTTPHeaderField: String {
     case contentType = "Content-Type"
-    case accesstoken = "token"
+    case accesstoken = "Authorization"
+    case kakaoToken = "token"
 }
 
 enum ContentType: String {

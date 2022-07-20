@@ -25,6 +25,10 @@ class AddCompleteVC: BaseVC {
         setNaviBar()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        setNaviBar()
+    }
+    
     // MARK: IBAction
     @IBAction func tapConfirmBtn(_ sender: UIButton) {
         navigationController?.popToRootViewController(animated: true)
@@ -49,8 +53,8 @@ extension AddCompleteVC {
 // MARK: - Custom Methods
 extension AddCompleteVC {
     
-    /// 오른쪽으로 swipe시 뒤로가기 막음
+    /// 오른쪽으로 swipe시 뒤로가기 활성화 여부
     private func setNaviBar() {
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        navigationController?.interactivePopGestureRecognizer?.isEnabled.toggle()
     }
 }

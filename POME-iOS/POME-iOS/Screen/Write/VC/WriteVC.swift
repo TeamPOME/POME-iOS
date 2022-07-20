@@ -15,8 +15,8 @@ class WriteVC: BaseVC {
     @IBOutlet weak var writeMainCV: UICollectionView!
     
     // MARK: Properties
-    private var category: [String] = ["category1", "category2", "category3", "category4", "category5", "category6", "category7", "category8", "category9"]
-//    private var category = Array<String>()
+    private var category: [GetGoalsResModel] = []
+    private var goalDetail: GetGoalDetailResModel = GetGoalDetailResModel(id: 0, message: "", amount: 0, payAmount: 0, rate: 0, isPublic: true, dDay: 0)
     private var spend: [String] = ["spend1", "spend2", "spend3", "spend4"]
     
     // MARK: Life Cycle
@@ -29,7 +29,8 @@ class WriteVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         showTabbar()
-        setGoalCategoryCV()
+        setCVOffset()
+        getGoalGategory()
     }
     
     // MARK: IBAction
@@ -50,7 +51,15 @@ extension WriteVC {
     private func setGoalCategoryCV() {
         if category.count > 0 {
             goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .right)
+            
+            /// 카테고리의 첫 번째 목표 id로 서버 통신
+            getGoalDetail(goalId: category[0].id)
         }
+    }
+    
+    /// 컬렉션뷰 가장 위로 올림
+    private func setCVOffset() {
+        writeMainCV.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
     }
 }
 
@@ -86,9 +95,7 @@ extension WriteVC {
         
         /// dismiss 될 경우 다시 첫번 째 목표를 선택한다.
         halfModalVC.reselectFirstItem = {
-            DispatchQueue.main.async {
-                self.setGoalCategoryCV()
-            }
+            self.setGoalCategoryCV()
         }
         self.present(halfModalVC, animated: true, completion: nil)
     }
@@ -102,9 +109,7 @@ extension WriteVC: UIViewControllerTransitioningDelegate {
         
         /// dismiss 될 경우 다시 첫번 째 목표를 선택한다.
         halfModalVC.reselectFirstItem = {
-            DispatchQueue.main.async {
-                self.setGoalCategoryCV()
-            }
+            self.setGoalCategoryCV()
         }
         
         /// HalfModalView의 높이 지정
@@ -130,7 +135,8 @@ extension WriteVC: UICollectionViewDelegate {
                 }
             } else {
                 
-                // TODO: - 서버 통신 (setData 필요)
+                /// 해당 목표 id로 세부 정보 요청
+                getGoalDetail(goalId: category[indexPath.row - 1].id)
             }
         } else {
             
@@ -173,7 +179,7 @@ extension WriteVC: UICollectionViewDataSource {
             if indexPath.row == 0 {
                 return plusCVC
             } else {
-                goalCategoryCVC.goalLabel.text = category[indexPath.row - 1]
+                goalCategoryCVC.goalLabel.text = category[indexPath.row - 1].category
                 return goalCategoryCVC
             }
         } else {
@@ -183,7 +189,7 @@ extension WriteVC: UICollectionViewDataSource {
                     EmptyGoalCardCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
                     return EmptyGoalCardCVC
                 } else {
-                    GoalCardCVC.setData(GoalDataModel.sampleData[indexPath.row])
+                    GoalCardCVC.setDetailData(data: goalDetail)
                     GoalCardCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
                     
                     /// 목표 카드의 more 버튼을 누를 경우 action sheet를 띄운다.
@@ -258,7 +264,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
             } else {
                 
                 /// 글씨 길이에 따라 너비 동적 조절
-                return CGSize(width: category[indexPath.row - 1].size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
+                return CGSize(width: category[indexPath.row - 1].category.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
             }
         } else {
             switch indexPath.section {
@@ -308,6 +314,49 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
                 return 0
             default:
                 return 11
+            }
+        }
+    }
+}
+
+// MARK: - Network
+extension WriteVC {
+    
+    /// 목표 카테고리 조회 요청 메서드
+    private func getGoalGategory() {
+        WriteAPI.shared.getGoalsAPI { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let data = data as? [GetGoalsResModel] {
+                    DispatchQueue.main.async {
+                        self.category = data
+                        self.goalCategoryCV.reloadData()
+                        self.setGoalCategoryCV()
+                    }
+                }
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    /// 목표 상세 조회 요청 메서드
+    private func getGoalDetail(goalId: Int) {
+        WriteAPI.shared.getGoalDetailAPI(goalId: goalId) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let data = data as? GetGoalDetailResModel {
+                    DispatchQueue.main.async {
+                        self.goalDetail = data
+                        self.writeMainCV.reloadSections(IndexSet(0...1))
+                    }
+                }
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             }
         }
     }

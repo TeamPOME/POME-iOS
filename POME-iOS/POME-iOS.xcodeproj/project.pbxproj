@@ -132,6 +132,10 @@
 		8432C9BB28784533001C643F /* EmptyGoalCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BA28784533001C643F /* EmptyGoalCardCVC.xib */; };
 		8432C9BD28784751001C643F /* FeelingCardCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8432C9BC28784751001C643F /* FeelingCardCVC.xib */; };
 		8432C9BF28787F9A001C643F /* FeelingCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */; };
+		843D538D2887350A00BB4DCB /* WriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D538C2887350A00BB4DCB /* WriteService.swift */; };
+		843D538F288737AA00BB4DCB /* GetGoalsResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D538E288737AA00BB4DCB /* GetGoalsResModel.swift */; };
+		843D5391288738A400BB4DCB /* WriteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D5390288738A400BB4DCB /* WriteAPI.swift */; };
+		843D53932887436C00BB4DCB /* GetGoalDetailResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D53922887436C00BB4DCB /* GetGoalDetailResModel.swift */; };
 		845EFFC02881A9730029E3EF /* AddGoalDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845EFFBF2881A9730029E3EF /* AddGoalDateVC.swift */; };
 		84A6E883287D518200CD5843 /* PomeHalfModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6E882287D518200CD5843 /* PomeHalfModalVC.swift */; };
 		84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACED842878989E00AA408D /* EmptyGoalCardCVC.swift */; };
@@ -290,6 +294,10 @@
 		8432C9BA28784533001C643F /* EmptyGoalCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyGoalCardCVC.xib; sourceTree = "<group>"; };
 		8432C9BC28784751001C643F /* FeelingCardCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeelingCardCVC.xib; sourceTree = "<group>"; };
 		8432C9BE28787F9A001C643F /* FeelingCardCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingCardCVC.swift; sourceTree = "<group>"; };
+		843D538C2887350A00BB4DCB /* WriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteService.swift; sourceTree = "<group>"; };
+		843D538E288737AA00BB4DCB /* GetGoalsResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGoalsResModel.swift; sourceTree = "<group>"; };
+		843D5390288738A400BB4DCB /* WriteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteAPI.swift; sourceTree = "<group>"; };
+		843D53922887436C00BB4DCB /* GetGoalDetailResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGoalDetailResModel.swift; sourceTree = "<group>"; };
 		845EFFBF2881A9730029E3EF /* AddGoalDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalDateVC.swift; sourceTree = "<group>"; };
 		845EFFC12881A97C0029E3EF /* AddGoalDateSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddGoalDateSB.storyboard; sourceTree = "<group>"; };
 		84A6E882287D518200CD5843 /* PomeHalfModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeHalfModalVC.swift; sourceTree = "<group>"; };
@@ -903,6 +911,7 @@
 			isa = PBXGroup;
 			children = (
 				77BD150C2885396400A1950D /* SignService.swift */,
+				843D538C2887350A00BB4DCB /* WriteService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -911,6 +920,8 @@
 			isa = PBXGroup;
 			children = (
 				77BD150A288535D700A1950D /* SignInResModel.swift */,
+				843D538E288737AA00BB4DCB /* GetGoalsResModel.swift */,
+				843D53922887436C00BB4DCB /* GetGoalDetailResModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -920,6 +931,7 @@
 			children = (
 				77E8F37C2876944B00D2F6C0 /* BaseAPI.swift */,
 				77BD150E2885B33000A1950D /* SignAPI.swift */,
+				843D5390288738A400BB4DCB /* WriteAPI.swift */,
 			);
 			path = APIManagers;
 			sourceTree = "<group>";
@@ -1130,6 +1142,7 @@
 				1A9D1A68288331FB006D65C2 /* MarshmellowDataModel.swift in Sources */,
 				1A4BB620287E0395007C8FC1 /* RemindGoalTitleTVC.swift in Sources */,
 				77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */,
+				843D538F288737AA00BB4DCB /* GetGoalsResModel.swift in Sources */,
 				84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */,
 				84A6E883287D518200CD5843 /* PomeHalfModalVC.swift in Sources */,
 				77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */,
@@ -1206,9 +1219,10 @@
 				77B571A1287FF58300C9CC27 /* AddFriendVC.swift in Sources */,
 				77E8F3852877452400D2F6C0 /* PomeNaviBar.swift in Sources */,
 				1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */,
+				843D5391288738A400BB4DCB /* WriteAPI.swift in Sources */,
 				1A500DA62886985C003638B1 /* MateEmojiCVC.swift in Sources */,
-				77E8F37B2876943800D2F6C0 /* WriteResModel.swift in Sources */,
 				1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */,
+				843D53932887436C00BB4DCB /* GetGoalDetailResModel.swift in Sources */,
 				84B77277287B3E4B00E1EDFC /* LookbackVC.swift in Sources */,
 				77E8F2EE2874AF6300D2F6C0 /* PomeTBC.swift in Sources */,
 				845EFFC02881A9730029E3EF /* AddGoalDateVC.swift in Sources */,
@@ -1225,6 +1239,7 @@
 				84B7727D287BD83D00E1EDFC /* WriteSelectFeelingVC.swift in Sources */,
 				77E8F3662876606D00D2F6C0 /* ViewControllerFactory.swift in Sources */,
 				84F7C2A22881C0B10095ECF4 /* CalendarVC.swift in Sources */,
+				843D538D2887350A00BB4DCB /* WriteService.swift in Sources */,
 				1A1AEFD7287A4CB600DD5F7E /* HaveNoMateTVC.swift in Sources */,
 				77E8F3462875EE0A00D2F6C0 /* UITabBar+.swift in Sources */,
 			);
