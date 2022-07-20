@@ -20,5 +20,8 @@ extension UserDefaults {
         
         /// String
         static var uuid = "uuid"
+        
+        /// Int
+        static var userID = "userID"
     }
 }
