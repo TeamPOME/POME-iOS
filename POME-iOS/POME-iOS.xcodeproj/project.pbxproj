@@ -925,8 +925,6 @@
 			children = (
 				8427F88328887B110096B20E /* Write */,
 				77BD150A288535D700A1950D /* SignInResModel.swift */,
-				843D538E288737AA00BB4DCB /* GetGoalsResModel.swift */,
-				843D53922887436C00BB4DCB /* GetGoalDetailResModel.swift */,
 				8427F877288849690096B20E /* DeleteResModel.swift */,
 			);
 			path = APIModels;
@@ -975,9 +973,9 @@
 		8427F88328887B110096B20E /* Write */ = {
 			isa = PBXGroup;
 			children = (
+				8427F88128885E6A0096B20E /* PostGoalResModel.swift */,
 				843D538E288737AA00BB4DCB /* GetGoalsResModel.swift */,
 				843D53922887436C00BB4DCB /* GetGoalDetailResModel.swift */,
-				8427F88128885E6A0096B20E /* PostGoalResModel.swift */,
 			);
 			path = Write;
 			sourceTree = "<group>";

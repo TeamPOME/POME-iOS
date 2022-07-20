@@ -61,7 +61,7 @@ extension WriteService: TargetType {
     
     var header: HeaderType {
         switch self {
-        case .getGoalGategory, .getGoalDetail, .deleteGoal:
+        case .getGoalGategory, .getGoalDetail, .deleteGoal, .postGoal:
             return .auth
         }
     }
