@@ -118,8 +118,8 @@ extension SignInVC {
         if data.accessToken != nil {
             UserDefaults.standard.set("Bearer \(data.accessToken ?? "")", forKey: UserDefaults.Keys.accessToken)
         }
-        UserDefaults.standard.set(data.refreshToken, forKey: UserDefaults.Keys.refreshToken)
-        UserDefaults.standard.set(data.id, forKey: UserDefaults.Keys.userID)
+        UserDefaults.standard.set(data.refreshToken ?? "", forKey: UserDefaults.Keys.refreshToken)
+        UserDefaults.standard.set(data.id ?? -1, forKey: UserDefaults.Keys.userID)
     }
 }
 
@@ -133,7 +133,7 @@ extension SignInVC {
                 print("login fail")
             } else {
                 if let accessToken = oauthToken?.accessToken {
-                    UserDefaults.standard.set(accessToken, forKey: UserDefaults.Keys.accessToken)
+                    UserDefaults.standard.set(accessToken, forKey: UserDefaults.Keys.kakaoToken)
                     self.requestKakaoLogin()
                 }
             }
@@ -147,7 +147,7 @@ extension SignInVC {
                 print("login fail")
             } else {
                 if let accessToken = oauthToken?.accessToken {
-                    UserDefaults.standard.set(accessToken, forKey: UserDefaults.Keys.accessToken)
+                    UserDefaults.standard.set(accessToken, forKey: UserDefaults.Keys.kakaoToken)
                     self.requestKakaoLogin()
                 }
             }
@@ -163,7 +163,7 @@ extension SignInVC {
                     
                     /// 없는 유저 -> 회원가입
                     if data.type == "signup" {
-                        UserDefaults.standard.set(data.uuid, forKey: UserDefaults.Keys.uuid)
+                        UserDefaults.standard.set(data.uuid ?? "", forKey: UserDefaults.Keys.uuid)
                         self.presentMakeProfileVC()
                         
                     /// 이미 가입한 유저 -> 바로 로그인

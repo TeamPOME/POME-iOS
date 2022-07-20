@@ -54,7 +54,7 @@ extension TargetType {
             
         case .kakaoAuth:
             request.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
-            request.setValue(UserDefaults.standard.string(forKey: UserDefaults.Keys.accessToken), forHTTPHeaderField: HTTPHeaderField.kakaoToken.rawValue)
+            request.setValue(UserDefaults.standard.string(forKey: UserDefaults.Keys.kakaoToken), forHTTPHeaderField: HTTPHeaderField.kakaoToken.rawValue)
             
         case .multiPart:
             request.setValue(ContentType.multiPart.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
