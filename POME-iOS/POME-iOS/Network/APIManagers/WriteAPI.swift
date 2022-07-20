@@ -46,4 +46,21 @@ class WriteAPI: BaseAPI {
             }
         }
     }
+    
+    /// [DEETE] 목표 삭제
+    func deleteGoalAPI(goalId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        AFmanager.request(WriteService.deleteGoal(goalId: goalId)).responseData { response in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                guard let data = response.data else { return }
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, DeleteResModel.self)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 }

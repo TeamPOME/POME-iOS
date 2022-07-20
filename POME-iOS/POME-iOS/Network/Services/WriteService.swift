@@ -11,6 +11,7 @@ import Foundation
 enum WriteService {
     case getGoalGategory
     case getGoalDetail(goalId: Int)
+    case deleteGoal(goalId: Int)
 }
 
 extension WriteService: TargetType {
@@ -19,7 +20,7 @@ extension WriteService: TargetType {
         switch self {
         case .getGoalGategory:
             return "/goals"
-        case .getGoalDetail(let goalId):
+        case .getGoalDetail(let goalId), .deleteGoal(let goalId):
             return "/goals/\(goalId)"
         }
     }
@@ -28,6 +29,8 @@ extension WriteService: TargetType {
         switch self {
         case .getGoalGategory, .getGoalDetail:
             return .get
+        case .deleteGoal:
+            return .delete
         }
     }
     
@@ -35,7 +38,7 @@ extension WriteService: TargetType {
         switch self {
         case .getGoalGategory:
             return .requestPlain
-        case .getGoalDetail(let goalId):
+        case .getGoalDetail(let goalId), .deleteGoal(let goalId):
             let requestQuery: [String: Any] = [
                 "goalId": goalId
             ]
@@ -45,7 +48,7 @@ extension WriteService: TargetType {
     
     var header: HeaderType {
         switch self {
-        case .getGoalGategory, .getGoalDetail:
+        case .getGoalGategory, .getGoalDetail, .deleteGoal:
             return .auth
         }
     }

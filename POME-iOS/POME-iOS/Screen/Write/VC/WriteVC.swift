@@ -13,11 +13,13 @@ class WriteVC: BaseVC {
     @IBOutlet weak var writeHomeNaviBar: PomeNaviBar!
     @IBOutlet weak var goalCategoryCV: UICollectionView!
     @IBOutlet weak var writeMainCV: UICollectionView!
+    @IBOutlet weak var emptyView: UIStackView!
+    @IBOutlet weak var emptyViewTopConstraint: NSLayoutConstraint!
     
     // MARK: Properties
     private var category: [GetGoalsResModel] = []
     private var goalDetail: GetGoalDetailResModel = GetGoalDetailResModel(id: 0, message: "", amount: 0, payAmount: 0, rate: 0, isPublic: true, dDay: 0)
-    private var spend: [String] = ["spend1", "spend2", "spend3", "spend4"]
+    private var spend: [String] = ["", "", ""]
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -47,14 +49,20 @@ extension WriteVC {
         writeHomeNaviBar.setNaviStyle(state: .greyWithRightBtn)
     }
     
+    private func configureEmptyView() {
+        emptyViewTopConstraint.constant = 419.adjustedH
+        emptyView.isHidden = (spend.count != 0)
+    }
+    
     /// 목표 카테고리의 첫 아이템을 디폴트로 설정
     private func setGoalCategoryCV() {
         if category.count > 0 {
-            goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: false, scrollPosition: .right)
+            goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: true, scrollPosition: .right)
             
             /// 카테고리의 첫 번째 목표 id로 서버 통신
             getGoalDetail(goalId: category[0].id)
         }
+        writeMainCV.reloadData()
     }
     
     /// 컬렉션뷰 가장 위로 올림
@@ -205,9 +213,9 @@ extension WriteVC: UICollectionViewDataSource {
                             
                             /// 알럿창의 확인버튼(오른쪽 버튼) 누르는 경우 삭제 서버 통신
                             alert.confirmBtn.press { [weak self] in
-                                
-                                // TODO: - 삭제 서버 통신 필요
-                                print("목표카드 삭제합니다.")
+                                if let id = self?.goalDetail.id {
+                                    self?.deleteGoal(goalId: id)
+                                }
                                 self?.dismiss(animated: true)
                             }
                         })
@@ -221,6 +229,7 @@ extension WriteVC: UICollectionViewDataSource {
                 }
                 return feelingCardCVC
             default:
+                spendCVC.makeRounded(cornerRadius: 6.adjusted)
                 spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
                 
                 /// 씀씀이 셀의 more 버튼을 누를 경우 action sheet를 띄운다.
@@ -273,7 +282,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
             case 1:
                 return CGSize(width: 343.adjusted, height: 118)
             default:
-                return CGSize(width: 166.adjusted, height: 188)
+                return CGSize(width: 166.adjusted, height: 188.adjustedH)
             }
         }
     }
@@ -332,6 +341,9 @@ extension WriteVC {
                         self.category = data
                         self.goalCategoryCV.reloadData()
                         self.setGoalCategoryCV()
+                        
+                        // TODO: - 씀씀이 서버 통신 후 해당 코드 통신 부분으로 옮기기
+                        self.configureEmptyView()
                     }
                 }
             case .requestErr:
@@ -350,8 +362,24 @@ extension WriteVC {
                 if let data = data as? GetGoalDetailResModel {
                     DispatchQueue.main.async {
                         self.goalDetail = data
-                        self.writeMainCV.reloadSections(IndexSet(0...1))
+                        self.writeMainCV.reloadSections([0])
                     }
+                }
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    /// 목표 삭제 요청 메서드
+    private func deleteGoal(goalId: Int) {
+        WriteAPI.shared.deleteGoalAPI(goalId: goalId) { networkResult in
+            switch networkResult {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.getGoalGategory()
                 }
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
