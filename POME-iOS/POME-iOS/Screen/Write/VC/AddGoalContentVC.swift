@@ -66,9 +66,6 @@ class AddGoalContentVC: BaseVC {
     
     @IBAction func tapConfirmBtn(_ sender: UIButton) {
         postGoal(startDate: startDate, endDate: endDate, category: categoryTextField.text!, message: promiseTextField.text!, amount: price, isPublic: openSwitch.isOn)
-        
-        guard let addGoalCompleteVC = UIStoryboard.init(name: Identifiers.AddCompleteSB, bundle: nil).instantiateViewController(withIdentifier: AddCompleteVC.className) as? AddCompleteVC else { return }
-        navigationController?.pushViewController(addGoalCompleteVC, animated: true)
     }
 }
 
@@ -157,7 +154,8 @@ extension AddGoalContentVC {
         WriteAPI.shared.postGoalAPI(startDate: startDate, endDate: endDate, category: category, message: message, amount: amount, isPublic: isPublic) { networkResult in
             switch networkResult {
             case .success(_):
-                break
+                guard let addGoalCompleteVC = UIStoryboard.init(name: Identifiers.AddCompleteSB, bundle: nil).instantiateViewController(withIdentifier: AddCompleteVC.className) as? AddCompleteVC else { return }
+                self.navigationController?.pushViewController(addGoalCompleteVC, animated: true)
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
