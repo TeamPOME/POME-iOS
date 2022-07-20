@@ -362,7 +362,7 @@ extension WriteVC {
                 if let data = data as? GetGoalDetailResModel {
                     DispatchQueue.main.async {
                         self.goalDetail = data
-                        self.writeMainCV.reloadSections(IndexSet(integer: 0))
+                        self.writeMainCV.reloadSections([0])
                     }
                 }
             case .requestErr:
