@@ -158,7 +158,12 @@ extension SignInVC {
                         
                     /// 이미 가입한 유저 -> 바로 로그인
                     } else {
-                        self.presentMain()
+                        
+                        /// Bearer 붙인 accessToken값 저장
+                        if let accessToken = data.accessToken {
+                            UserDefaults.standard.set("Bearer \(accessToken)", forKey: UserDefaults.Keys.AccessToken)
+                            self.presentMain()
+                        }
                     }
                 }
             case .requestErr:

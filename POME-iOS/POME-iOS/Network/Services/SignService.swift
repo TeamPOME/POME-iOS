@@ -44,7 +44,7 @@ extension SignService: TargetType {
     var header: HeaderType {
         switch self {
         case .requestKaKaoLogin:
-            return .auth
+            return .kakaoAuth
         }
     }
 }
