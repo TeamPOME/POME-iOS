@@ -22,7 +22,7 @@ class GoalCardCVC: CodeBaseCVC {
     }
     
     private let ifSuccessLabel = UILabel().then {
-        $0.setLabel(text: "gggg", color: .white, size: 10, weight: .semiBold)
+        $0.setLabel(text: "성공", color: .white, size: 10, weight: .semiBold)
         $0.textAlignment = .center
     }
     
@@ -31,11 +31,11 @@ class GoalCardCVC: CodeBaseCVC {
     }
     
     private let goalTitleLabel = UILabel().then {
-        $0.setLabel(text: "건강을위해줄이자", color: .grey_9, size: 20, weight: .bold)
+        $0.setLabel(text: "한 줄 다짐", color: .grey_9, size: 20, weight: .bold)
     }
     
     private let spentMoneyTitleLabel = UILabel().then {
-        $0.setLabel(text: "남은 예산", color: .grey_6, size: 12, weight: .semiBold)
+        $0.setLabel(text: "사용 금액", color: .grey_6, size: 12, weight: .semiBold)
     }
     
     private var moneyGoalLabel = UILabel().then {
@@ -237,7 +237,7 @@ extension GoalCardCVC {
     }
     
     /// d-day 값에 따라 UI변경 해주는 함수
-    private func setdDay(dDay: Int) {
+    private func setdDay(dDay: Int, rate: Int) {
         
         /// 종료시
         if dDay == -1 {
@@ -245,13 +245,34 @@ extension GoalCardCVC {
             // TODO: - 종료 UI 작업 후 수정 필요
             ifSuccessLabel.text = "D-\(dDay)"
         } else {
-            [progressView, percentageContainerView].forEach {
-                view in view.backgroundColor = .main
+            
+            /// 초과 여부에 따른 UI 수정
+            if rate > 100 {
+                
+                /// 100이 초과될때 라벨값과 progress trailing값을 맞추기 위해서 100으로 지정
+                progress = 100
+                [progressView, percentageContainerView, ifSuccessLabelContainerView].forEach {
+                    view in view.backgroundColor = .red
+                }
+                percentageContainerView.snp.remakeConstraints {
+                    $0.trailing.equalTo(progressView.snp.trailing)
+                    $0.centerY.equalTo(progressView)
+                }
+                progressPercentageLabel.snp.remakeConstraints {
+                    $0.centerX.centerY.equalTo(percentageContainerView)
+                    $0.leading.trailing.equalTo(percentageContainerView).inset(7)
+                    $0.top.bottom.equalTo(percentageContainerView).inset(3)
+                }
+            } else {
+                [progressView, percentageContainerView].forEach {
+                    view in view.backgroundColor = .main
+                }
             }
             ifSuccessLabelContainerView.backgroundColor = .sub
             ifSuccessLabel.text = "D-\(dDay)"
+            
+            updateProgressView()
         }
-        updateProgressView()
     }
 }
 
@@ -271,7 +292,7 @@ extension GoalCardCVC {
         moneyGoalLabel.text = "/ " + numberFormatter(number: data.amount).description + "원"
         realSpentMoneyLabel.text = numberFormatter(number: data.payAmount).description + "원"
         setProgress(goal: Double(data.rate))
-        setdDay(dDay: data.dDay)
+        setdDay(dDay: data.dDay, rate: data.rate)
         privateImageView.image = data.isPublic ? UIImage(named: "icNoLockAll") : UIImage(named: "icLockAll")
     }
 }
