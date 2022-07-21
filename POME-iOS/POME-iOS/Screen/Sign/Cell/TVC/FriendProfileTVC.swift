@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Then
+import Kingfisher
 
 class FriendProfileTVC: CodeBaseTVC {
 
@@ -94,13 +95,15 @@ extension FriendProfileTVC {
 extension FriendProfileTVC {
     
     /// 데이터 세팅 함수
-    func setData(data: FriendListData, indexPath: IndexPath) {
-        profileImageView.image = data.makeProfileImage()
+    func setData(data: MateSearchResModel, indexPath: IndexPath) {
+        let url = URL(string: data.profileImage)
+        
+        profileImageView.kf.setImage(with: url)
         nicknameLabel.text = data.nickname
         
-        followingState = data.isFollowing
-        plusBtn.isHidden = data.isFollowing
-        completeLabel.isHidden = !data.isFollowing
+        followingState = data.isFriend
+        plusBtn.isHidden = data.isFriend
+        completeLabel.isHidden = !data.isFriend
         
         self.indexPath = indexPath
     }

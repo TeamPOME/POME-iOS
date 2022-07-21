@@ -81,7 +81,13 @@ class MateVC: BaseVC {
         registerCell()
         setDelegate()
         setTVScroll()
+        setTapRightNaviBtn()
         requestGetMateAPI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        showTabbar()
     }
 }
 
@@ -187,6 +193,17 @@ extension MateVC {
     /// 친구가 없을때는 cell이 한개이므로 스크롤을 하지 않도록 막아둔다.
     private func setTVScroll() {
         mateTV.isScrollEnabled = (mateDataList.count == 0) ? false : true
+    }
+    
+    /// 네비바 오른쪽 버튼 tap Action 설정 메서드
+    private func setTapRightNaviBtn() {
+        addMateNaviBar.rightCustomBtn.press { [weak self] in
+            guard let addFriendVC = UIStoryboard.init(name: Identifiers.AddFriendSB, bundle: nil).instantiateViewController(withIdentifier: Identifiers.AddFriendVC) as? AddFriendVC else { return }
+            
+            addFriendVC.naviBar.setNaviStyle(state: .whiteBackWithTitle)
+            addFriendVC.hasBackView = true
+            self?.navigationController?.pushViewController(addFriendVC, animated: true)
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

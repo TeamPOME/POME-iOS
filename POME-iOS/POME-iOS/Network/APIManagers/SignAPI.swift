@@ -35,4 +35,21 @@ class SignAPI: BaseAPI {
             }
         }
     }
+    
+    /// [GET] 친구 목록 검색
+    func searchMateAPI(nickname: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        AFmanager.request(SignService.searchMate(nickname: nickname)).responseData { response in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                guard let data = response.data else { return }
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, [MateSearchResModel].self)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 }

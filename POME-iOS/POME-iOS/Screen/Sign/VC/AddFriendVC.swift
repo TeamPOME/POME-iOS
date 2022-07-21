@@ -12,7 +12,7 @@ import Then
 class AddFriendVC: BaseVC {
     
     // MARK: Properties
-    private let naviBar = PomeNaviBar().then {
+    var naviBar = PomeNaviBar().then {
         $0.setNaviStyle(state: .whiteWithTitle)
         $0.configureTitleLabel(title: "친구 추가")
     }
@@ -29,7 +29,9 @@ class AddFriendVC: BaseVC {
         $0.setTitle("완료했어요", for: .normal)
     }
     
-    private var profileList: [FriendListData] = []
+    private var profileList: [MateSearchResModel] = []
+    
+    var hasBackView: Bool = false
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -38,8 +40,13 @@ class AddFriendVC: BaseVC {
         setTapSearchBtn()
         registerTVC()
         setDelegate()
-        initProfileList()
         setTapCompleteBtn()
+        setTapBackBtn()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideTabbar()
     }
 }
 
@@ -48,7 +55,6 @@ extension AddFriendVC {
     
     private func configureUI() {
         view.addSubviews([naviBar, searchBarTextField, profileTV, completeBtn])
-        profileTV.isHidden = true
         profileTV.separatorStyle = .none
         
         /// TableView 하단 space 설정
@@ -86,7 +92,7 @@ extension AddFriendVC {
     private func setTapSearchBtn() {
         searchBarTextField.rightBtn.press { [weak self] in
             self?.dismissKeyboard()
-            self?.profileTV.isHidden = false
+            self?.searchMateNickname(nickname: self?.searchBarTextField.text ?? "")
         }
     }
     
@@ -102,32 +108,25 @@ extension AddFriendVC {
         profileTV.dataSource = self
     }
     
-    /// 데이터 삽입 메서드
-    private func initProfileList() {
-        profileList.append(contentsOf: [
-            FriendListData(nickname: "은주", profileImageName: "sampleProfile", isFollowing: false),
-            FriendListData(nickname: "주현", profileImageName: "sampleProfile", isFollowing: false),
-            FriendListData(nickname: "유진", profileImageName: "sampleProfile", isFollowing: false),
-            FriendListData(nickname: "지영", profileImageName: "sampleProfile", isFollowing: false),
-            FriendListData(nickname: "희빈", profileImageName: "sampleProfile", isFollowing: false),
-            FriendListData(nickname: "세훈", profileImageName: "sampleProfile", isFollowing: false),
-            FriendListData(nickname: "효진", profileImageName: "sampleProfile", isFollowing: false),
-            FriendListData(nickname: "연진", profileImageName: "sampleProfile", isFollowing: false),
-            FriendListData(nickname: "포미포미", profileImageName: "sampleProfile", isFollowing: false),
-            FriendListData(nickname: "포미", profileImageName: "sampleProfile", isFollowing: false),
-            FriendListData(nickname: "POME", profileImageName: "sampleProfile", isFollowing: false),
-            FriendListData(nickname: "하이", profileImageName: "sampleProfile", isFollowing: false)
-        ])
-    }
-    
     /// 완료했어요 버튼 tap Action 설정 메서드
     private func setTapCompleteBtn() {
         completeBtn.press { [weak self] in
             guard let self = self else { return }
             
-            let pomeTBC = PomeTBC()
-            pomeTBC.modalPresentationStyle = .fullScreen
-            self.present(pomeTBC, animated: true, completion: nil)
+            if !self.hasBackView {
+                let pomeTBC = PomeTBC()
+                pomeTBC.modalPresentationStyle = .fullScreen
+                self.present(pomeTBC, animated: true, completion: nil)
+            } else {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+    
+    /// 뒤로가기 버튼 tap Action 설정 메서드
+    private func setTapBackBtn() {
+        naviBar.backBtn.press {
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }
@@ -146,7 +145,7 @@ extension AddFriendVC: UITextFieldDelegate {
 // MARK: - ProfileCellDelegate
 extension AddFriendVC: ProfileCellDelegate {
     func sendFollowingState(indexPath: IndexPath, followingState: Bool) {
-        profileList[indexPath.row].isFollowing = followingState
+        profileList[indexPath.row].isFriend = followingState
     }
 }
 
@@ -175,6 +174,27 @@ extension AddFriendVC: UITableViewDataSource {
         cell.sendBtnStatusDelegate = self
         
         return cell
+    }
+}
+
+// MARK: - Network
+extension AddFriendVC {
+    private func searchMateNickname(nickname: String) {
+        SignAPI.shared.searchMateAPI(nickname: nickname) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let data = data as? [MateSearchResModel] {
+                    DispatchQueue.main.async {
+                        self.profileList = data
+                        self.profileTV.reloadData()
+                    }
+                }
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
     }
 }
 
