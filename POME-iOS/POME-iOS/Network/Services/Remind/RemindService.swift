@@ -14,6 +14,7 @@ enum RemindService {
 }
 
 extension RemindService: TargetType {
+    
     var header: HeaderType {
         switch self {
         case .getGoals, .getRecords:
