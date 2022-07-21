@@ -8,6 +8,6 @@
 import Foundation
 
 // MARK: DeleteResModel
-struct DeleteResModel: Codable {
+struct EmptyResModel: Codable {
     let id: Int?
 }
