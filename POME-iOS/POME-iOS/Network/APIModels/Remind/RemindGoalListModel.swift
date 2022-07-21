@@ -8,6 +8,7 @@
 import Foundation
 
 /// 해당 카테고리에 대한 목표 리스트 조회
+// MARK: RemindGoalListModel
 struct RemindGoalListModel: Codable {
     let goalMessage: String
     let isGoalPublic: Bool

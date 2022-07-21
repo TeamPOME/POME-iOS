@@ -399,8 +399,9 @@ extension RemindVC {
         }
     }
     
+    /// 상단의 카테고리에 따른 목표 리스트 요청
     private func reqeustGetRemindGoal(goalId: Int) {
-        RemindAPI.shared.getRemindGoalListAPI(goalId: goalId) {
+        RemindAPI.shared.requestGetRemindGoalListAPI(goalId: goalId) {
             networkResult in
             switch networkResult {
             case .success(let data):

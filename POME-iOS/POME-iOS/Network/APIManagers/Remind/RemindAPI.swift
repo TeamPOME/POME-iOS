@@ -12,6 +12,7 @@ class RemindAPI: BaseAPI {
     
     private override init() { }
     
+    /// [GET] 목표 카테고리 조회 API
     func requestGetRemindGoalAPI(completion: @escaping (NetworkResult<Any>) -> (Void)) {
         AFmanager.request(RemindService.getGoals).responseData { response in
             switch response.result {
@@ -29,7 +30,8 @@ class RemindAPI: BaseAPI {
         }
     }
     
-    func getRemindGoalListAPI(goalId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+    /// [GET] 감정별 기록 조회 API 
+    func requestGetRemindGoalListAPI(goalId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
         AFmanager.request(RemindService.getRecords(goalId: goalId, startEmotion: 0, endEmotion: 0)).responseData { response in
             switch response.result {
             case .success:

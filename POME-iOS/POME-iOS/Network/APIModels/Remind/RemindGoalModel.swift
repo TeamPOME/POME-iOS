@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// 목표 카테고리 조회
+// MARK: RemindGoalModel
 struct RemindGoalModel: Codable {
     let id: Int
     let category: String
