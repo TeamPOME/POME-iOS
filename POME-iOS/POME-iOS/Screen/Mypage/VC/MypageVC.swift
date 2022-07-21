@@ -188,7 +188,7 @@ extension MypageVC: UICollectionViewDelegateFlowLayout {
 // MARK: - Network
 extension MypageVC {
     
-    /// 마이페이지 유저 정보 
+    /// 마이페이지 유저 정보
     private func requestUser() {
         MypageAPI.shared.requestUserAPI {
             networkResult in

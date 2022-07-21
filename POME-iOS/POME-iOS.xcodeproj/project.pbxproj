@@ -40,7 +40,6 @@
 		1AAF20182887E54900A4C18F /* MateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF20172887E54900A4C18F /* MateService.swift */; };
 		1AAF201B2887E5EF00A4C18F /* MateResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF201A2887E5EF00A4C18F /* MateResModel.swift */; };
 		1AAF201E2887E67300A4C18F /* MateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF201D2887E67300A4C18F /* MateAPI.swift */; };
-		1AAF20202887F1D500A4C18F /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF201F2887F1D500A4C18F /* UIImageView+.swift */; };
 		1AAF202328885B2100A4C18F /* RemindService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF202228885B2100A4C18F /* RemindService.swift */; };
 		1AAF202628885BCE00A4C18F /* RemindGoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF202528885BCE00A4C18F /* RemindGoalModel.swift */; };
 		1AAF202928885C5700A4C18F /* RemindAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF202828885C5700A4C18F /* RemindAPI.swift */; };
@@ -216,7 +215,6 @@
 		1AAF20172887E54900A4C18F /* MateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateService.swift; sourceTree = "<group>"; };
 		1AAF201A2887E5EF00A4C18F /* MateResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateResModel.swift; sourceTree = "<group>"; };
 		1AAF201D2887E67300A4C18F /* MateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateAPI.swift; sourceTree = "<group>"; };
-		1AAF201F2887F1D500A4C18F /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		1AAF202228885B2100A4C18F /* RemindService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindService.swift; sourceTree = "<group>"; };
 		1AAF202528885BCE00A4C18F /* RemindGoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindGoalModel.swift; sourceTree = "<group>"; };
 		1AAF202828885C5700A4C18F /* RemindAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindAPI.swift; sourceTree = "<group>"; };
@@ -683,7 +681,6 @@
 				77E8F3412875EBD500D2F6C0 /* CALayer+.swift */,
 				77E8F3452875EE0A00D2F6C0 /* UITabBar+.swift */,
 				77BD15162885F52F00A1950D /* Bundle+.swift */,
-				1AAF201F2887F1D500A4C18F /* UIImageView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1397,7 +1394,6 @@
 				1AB882662881386600157820 /* RemindSelectFeelingVC.swift in Sources */,
 				77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */,
 				84D40A2E2885ED3100A09D1D /* SelectGoalDelegate.swift in Sources */,
-				1AAF20202887F1D500A4C18F /* UIImageView+.swift in Sources */,
 				84D40A2B2885E62100A09D1D /* goalTVC.swift in Sources */,
 				77B571B728811E7200C9CC27 /* SignInVC.swift in Sources */,
 				1A6D05202884817F006C9BBD /* GoalStorageVC.swift in Sources */,
