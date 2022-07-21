@@ -10,7 +10,6 @@ import UIKit
 class RemindVC: BaseVC {
     
     // MARK: Properties
-    private var goalCount: Int = 0
     private var selectedCategoryIndex = 0
     private var selectedPreviousEmoji: Bool = false
     private var selectedLatestEmoji: Bool = false
@@ -110,7 +109,7 @@ extension RemindVC {
     
     /// 목표가 없을때는 스크롤이 안되도록 막아두었다.
     private func setTVScroll() {
-        remindTV.isScrollEnabled = (goalCount == 0) ? false : true
+        remindTV.isScrollEnabled = (category.count == 0) ? false : true
     }
     
     /// 목표 카테고리의 첫 아이템을 디폴트로 설정
@@ -198,7 +197,7 @@ extension RemindVC: UITableViewDelegate {
         case 1:
             return 84
         default:
-            return (goalCount == 0) ? 430 : 157
+            return (category.count == 0) ? 430 : 157
         }
     }
     
@@ -211,7 +210,7 @@ extension RemindVC: UITableViewDelegate {
         
         switch indexPath.section {
         case 0:
-            if goalCount == 0 || goalRecordList.isEmpty {
+            if category.count == 0 || goalRecordList.isEmpty {
                 remindGoalTitleTVC.isPrivateImageView.image = UIImage(named: "icEmptyGoal")
                 remindGoalTitleTVC.goalTitleLabel.setLabel(text: "아직 추가한 목표가 없어요", color: .grey_5, size: 18, weight: .bold)
             } else {
@@ -280,7 +279,7 @@ extension RemindVC: UITableViewDelegate {
             remindFilterTVC.selectionStyle = .none
             return remindFilterTVC
         case 2:
-            if goalCount == 0 || goalRecordList.count == 0 {
+            if category.count == 0 || goalRecordList.count == 0 {
                 return remindNoGoalTVC
             } else {
                 remindGoalTVC.setData(remindGoalData: goalRecordList[indexPath.row])
@@ -302,7 +301,7 @@ extension RemindVC: UITableViewDelegate {
         case 1:
             return 1
         default:
-            return (goalCount == 0 || goalRecordList.count == 0) ? 1 : goalRecordList.count
+            return (category.count == 0 || goalRecordList.count == 0) ? 1 : goalRecordList.count
         }
     }
 }
@@ -326,13 +325,13 @@ extension RemindVC: UICollectionViewDataSource {
     
     /// 섹션 별 셀 개수 지정 - 목표가 있을때와 없을 때 구분
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return goalCount == 0 ? 1 : category.count
+        return category.count == 0 ? 1 : category.count
     }
     
     /// CV, 섹션 별 셀 지정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let remindGoalCategoryCVC = goalCategoryCV.dequeueReusableCell(withReuseIdentifier: Identifiers.RemindGoalCategoryCVC, for: indexPath) as? RemindGoalCategoryCVC else { return UICollectionViewCell() }
-        if goalCount == 0 {
+        if category.count == 0 {
             remindGoalCategoryCVC.goalLabel.text = " - "
         } else {
             remindGoalCategoryCVC.goalLabel.text = category[indexPath.row].category
@@ -346,7 +345,7 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
     
     /// 섹션에 따라 셀 크기 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if goalCount == 0 {
+        if category.count == 0 {
             return CGSize(width: " - ".size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
         } else {
             
@@ -389,7 +388,6 @@ extension RemindVC {
                 if let data = data as? [RemindGoalModel] {
                     DispatchQueue.main.async {
                         self.category = data
-                        self.goalCount = data.count
                         self.goalCategoryCV.reloadData()
                         self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
                     }

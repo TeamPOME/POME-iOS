@@ -17,7 +17,6 @@ class MateVC: BaseVC {
     
     /// TODO : /friends/records 친구 기록조회 할때의 빈 배열
     private var mateRecordList: [MateDetailModel] = []
-    private var mateNum = 0
     private var selectedIndex: Int = 0
     private var cellFrame: CGFloat = 0
     private var scrollPosition: CGFloat = 0
@@ -187,7 +186,7 @@ extension MateVC {
     
     /// 친구가 없을때는 cell이 한개이므로 스크롤을 하지 않도록 막아둔다.
     private func setTVScroll() {
-        mateTV.isScrollEnabled = (mateNum == 0) ? false : true
+        mateTV.isScrollEnabled = (mateDataList.count == 0) ? false : true
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -225,7 +224,7 @@ extension MateVC: UITableViewDelegate {
     
     /// 친구 유무에 따른 셀별 높이 지정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (mateNum == 0) ? 516 : 175
+        return (mateDataList.count == 0) ? 516 : 175
     }
     
     /// 친구 유무에 따른 셀 지정
@@ -233,7 +232,7 @@ extension MateVC: UITableViewDelegate {
         guard let haveNoMateTVC = mateTV.dequeueReusableCell(withIdentifier: Identifiers.HaveNoMateTVC) as? HaveNoMateTVC,
               let haveMateTVC = mateTV.dequeueReusableCell(withIdentifier: Identifiers.HaveMateTVC) as? HaveMateTVC else { return UITableViewCell() }
         
-        if mateNum == 0 || mateRecordList.count == 0 {
+        if mateDataList.count == 0 || mateRecordList.count == 0 {
             return haveNoMateTVC
         } else {
             haveMateTVC.tapMateEmojiBtnAction = {
@@ -253,7 +252,7 @@ extension MateVC: UITableViewDelegate {
     
     /// CollectionView에서 전체보기 셀 1개 포함되어 있어서 + 1을 해주었습니다. 친구가 없을 경우 전체보기 셀 1개만 보이게 됩니다.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (mateNum == 0 || mateRecordList.count == 0) ? 1 : mateNum + 1
+        return (mateDataList.count == 0 || mateRecordList.count == 0) ? 1 : mateDataList.count + 1
     }
 }
 
@@ -271,7 +270,7 @@ extension MateVC: UICollectionViewDataSource {
     
     /// 전체보기 셀 포함 친구 셀 개수 지정
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (mateNum == 0) ? 1 : mateNum + 1
+        return (mateDataList.count == 0) ? 1 : mateDataList.count + 1
     }
 }
 
@@ -339,7 +338,6 @@ extension MateVC {
                 if let data = data as? [MateResModel] {
                     DispatchQueue.main.async {
                         self.mateDataList = data
-                        self.mateNum = data.count
                         self.mateProfileCV.reloadData()
                     }
                 }
