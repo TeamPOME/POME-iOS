@@ -8,7 +8,7 @@
 import Foundation
 
 class RemindAPI: BaseAPI {
-    static let shared = GetRemindAPI()
+    static let shared = RemindAPI()
     
     private override init() { }
     
@@ -19,7 +19,7 @@ class RemindAPI: BaseAPI {
                 guard let statusCode = response.response?.statusCode else { return }
                 guard let data = response.data else { return }
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, [GetRemindGoalModel].self)
+                let networkResult = self.judgeStatus(by: statusCode, data, [RemindGoalModel].self)
                 completion(networkResult)
                 print(networkResult)
                 
@@ -36,7 +36,7 @@ class RemindAPI: BaseAPI {
                 guard let statusCode = response.response?.statusCode else { return }
                 guard let data = response.data else { return }
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, [GetRemindGoalListModel].self)
+                let networkResult = self.judgeStatus(by: statusCode, data, [RemindGoalListModel].self)
                 completion(networkResult)
                 print(networkResult)
                 

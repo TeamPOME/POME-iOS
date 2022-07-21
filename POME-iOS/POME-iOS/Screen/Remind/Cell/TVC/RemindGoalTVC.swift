@@ -68,7 +68,7 @@ extension RemindGoalTVC {
 // MARK: - Custom Method
 extension RemindGoalTVC {
     
-    func setData(remindGoalData: GetRemindGoalListModel) {
+    func setData(remindGoalData: RemindGoalListModel) {
         goalLabel.text = remindGoalData.goalMessage
         timeLabel.text = remindGoalData.timestamp
         spentMoneyLabel.text = numberFormatter(number:remindGoalData.amount).description + "원"

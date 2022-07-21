@@ -17,8 +17,8 @@ class RemindVC: BaseVC {
     private var selectedResetBtn: Bool = false
     private var getPreviousEmoji: String = ""
     private var getLatestEmoji: String = ""
-    private var category: [GetRemindGoalModel] = []
-    private var goalRecordList: [GetRemindGoalListModel] = []
+    private var category: [RemindGoalModel] = []
+    private var goalRecordList: [RemindGoalListModel] = []
     
     private lazy var goalCategoryCV = UICollectionView( frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout()).then {
         let layout = UICollectionViewFlowLayout()
@@ -382,11 +382,11 @@ extension RemindVC {
     
     /// 상단의 카테고리 목록 요청
     private func requestGetRemind() {
-        GetRemindAPI.shared.requestGetRemindGoalAPI() {
+        RemindAPI.shared.requestGetRemindGoalAPI() {
             networkResult in
             switch networkResult {
             case .success(let data):
-                guard let data = data as? [GetRemindGoalModel] else { return }
+                guard let data = data as? [RemindGoalModel] else { return }
                 self.category = data
                 self.goalCount = data.count
                 self.goalCategoryCV.reloadData()
@@ -400,11 +400,11 @@ extension RemindVC {
     }
     
     private func reqeustGetRemindGoal(goalId: Int) {
-        GetRemindAPI.shared.getRemindGoalListAPI(goalId: goalId) {
+        RemindAPI.shared.getRemindGoalListAPI(goalId: goalId) {
             networkResult in
             switch networkResult {
             case .success(let data):
-                guard let data = data as? [GetRemindGoalListModel] else { return }
+                guard let data = data as? [RemindGoalListModel] else { return }
                 self.goalRecordList = data
                 self.remindTV.reloadData()
             case .requestErr:
