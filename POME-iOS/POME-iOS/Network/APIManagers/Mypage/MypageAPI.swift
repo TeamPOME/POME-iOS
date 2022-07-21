@@ -13,7 +13,7 @@ class MypageAPI: BaseAPI {
     private override init() { }
     
     /// [GET] 목표 저장 조회
-    func requestGoalStorage(completion: @escaping (NetworkResult<Any>) -> (Void)) {
+    func requestGoalStorageAPI(completion: @escaping (NetworkResult<Any>) -> (Void)) {
         AFmanager.request(MypageService.requestGoalStorage).responseData { response in
             switch response.result {
             case .success:
@@ -30,7 +30,7 @@ class MypageAPI: BaseAPI {
     }
     
     /// [DELETE] 목표 삭제
-    func requestDeleteGoal(goalId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+    func requestDeleteGoalAPI(goalId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
         AFmanager.request(MypageService.requestDeleteGoal(goalId: goalId)).responseData { response in
             switch response.result {
             case .success:
@@ -47,7 +47,7 @@ class MypageAPI: BaseAPI {
     }
     
     /// [GET] 유저 정보 가져오기
-    func requestUser(completion: @escaping (NetworkResult<Any>) -> (Void)) {
+    func requestUserAPI(completion: @escaping (NetworkResult<Any>) -> (Void)) {
         AFmanager.request(MypageService.requestUser).responseData { response in
             switch response.result {
             case .success:

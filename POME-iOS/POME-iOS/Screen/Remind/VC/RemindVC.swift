@@ -115,8 +115,8 @@ extension RemindVC {
     
     /// 목표 카테고리의 다른탭으로 눌리기 전의 탭으로 눌리게끔 default 설정
     private func setDefaultSelectedCell(index: Int) {
-        if !category.isEmpty{
-            self.goalCategoryCV.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .right)
+        self.goalCategoryCV.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .right)
+        if !category.isEmpty {
             self.selectedCategory = category[index]
         }
     }

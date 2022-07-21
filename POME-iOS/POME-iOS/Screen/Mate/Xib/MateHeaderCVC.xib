@@ -29,8 +29,8 @@
                             <constraint firstAttribute="width" constant="52" id="DWE-NW-OlF"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4i-PV-CCe">
-                        <rect key="frame" x="15.5" y="61" width="21" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4i-PV-CCe">
+                        <rect key="frame" x="0.0" y="62" width="52" height="14"/>
                         <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
                         <color key="textColor" name="grey_5"/>
                         <nil key="highlightedColor"/>
@@ -40,10 +40,11 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="H4i-PV-CCe" secondAttribute="bottom" id="2Oc-6g-tZV"/>
-                <constraint firstItem="H4i-PV-CCe" firstAttribute="centerX" secondItem="Kxe-lQ-aWS" secondAttribute="centerX" id="7OT-V0-0qL"/>
                 <constraint firstItem="Kxe-lQ-aWS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="NOf-Kg-zKI"/>
+                <constraint firstAttribute="trailing" secondItem="H4i-PV-CCe" secondAttribute="trailing" id="Ppm-ZH-oDz"/>
                 <constraint firstItem="Kxe-lQ-aWS" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="RXg-WO-WoJ"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="Kxe-lQ-aWS" secondAttribute="trailing" id="XEd-zO-Ezj"/>
+                <constraint firstItem="H4i-PV-CCe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yBh-mx-Anl"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="leading" secondItem="Kxe-lQ-aWS" secondAttribute="leading" id="yIP-Xa-60c"/>
             </constraints>
             <size key="customSize" width="204" height="116"/>

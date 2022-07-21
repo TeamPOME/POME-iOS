@@ -31,8 +31,9 @@ class MypageVC: BaseVC {
         setViewTapAction()
         registerCVC()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
-        requestUserAPI()
+        requestUser()
     }
 }
 
@@ -187,9 +188,9 @@ extension MypageVC: UICollectionViewDelegateFlowLayout {
 // MARK: - Network
 extension MypageVC {
     
-    /// 목표보관함 삭제
-    private func requestUserAPI() {
-        MypageAPI.shared.requestUser() {
+    /// 마이페이지 유저 정보 
+    private func requestUser() {
+        MypageAPI.shared.requestUserAPI {
             networkResult in
             switch networkResult {
             case .success(let data):
