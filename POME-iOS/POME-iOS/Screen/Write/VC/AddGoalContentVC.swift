@@ -16,6 +16,9 @@ class AddGoalContentVC: BaseVC {
     /// 서버 통신 시 콤마가 없는 상태의 금액 저장을 위함
     private var price: Int = 0
     
+    /// 싱글톤 객체 생성
+    let writeInfo = WriteInfo.shared
+    
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
     @IBOutlet weak var titleLabel: UILabel!

@@ -143,6 +143,7 @@
 		8427F885288889320096B20E /* GetWeekSpendResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427F884288889320096B20E /* GetWeekSpendResModel.swift */; };
 		8427F88928895C8C0096B20E /* EmojiList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427F88828895C8C0096B20E /* EmojiList.swift */; };
 		8427F88B2889A6B70096B20E /* PostRecordResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427F88A2889A6B70096B20E /* PostRecordResModel.swift */; };
+		8427F8972889F1110096B20E /* WriteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427F8962889F1110096B20E /* WriteInfo.swift */; };
 		84309C822878ACF50017F8BF /* GoalCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */; };
 		84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */; };
 		8432C9B228773A42001C643F /* SpendCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9B028773A42001C643F /* SpendCVC.swift */; };
@@ -323,6 +324,7 @@
 		8427F884288889320096B20E /* GetWeekSpendResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeekSpendResModel.swift; sourceTree = "<group>"; };
 		8427F88828895C8C0096B20E /* EmojiList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiList.swift; sourceTree = "<group>"; };
 		8427F88A2889A6B70096B20E /* PostRecordResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRecordResModel.swift; sourceTree = "<group>"; };
+		8427F8962889F1110096B20E /* WriteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteInfo.swift; sourceTree = "<group>"; };
 		84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCategoryCVC.swift; sourceTree = "<group>"; };
 		84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCategoryCVC.xib; sourceTree = "<group>"; };
 		8432C9B028773A42001C643F /* SpendCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendCVC.swift; sourceTree = "<group>"; };
@@ -608,6 +610,7 @@
 		77E8F2D22874AC0000D2F6C0 /* PublicData */ = {
 			isa = PBXGroup;
 			children = (
+				8427F8952889F1020096B20E /* Singleton */,
 				77E8F2EF2874B0DE00D2F6C0 /* AppModel */,
 			);
 			path = PublicData;
@@ -1148,6 +1151,14 @@
 			path = Sign;
 			sourceTree = "<group>";
 		};
+		8427F8952889F1020096B20E /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				8427F8962889F1110096B20E /* WriteInfo.swift */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
 		84D40A282885E60800A09D1D /* TVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1326,6 +1337,7 @@
 				84F7C2A52882B8490095ECF4 /* CalendarDelegate.swift in Sources */,
 				77E8F33A28759FCF00D2F6C0 /* UIFont+.swift in Sources */,
 				1A9D1A68288331FB006D65C2 /* MarshmellowDataModel.swift in Sources */,
+				8427F8972889F1110096B20E /* WriteInfo.swift in Sources */,
 				1A4BB620287E0395007C8FC1 /* RemindGoalTitleTVC.swift in Sources */,
 				1A94E704288733B00060B436 /* GoalStorageService.swift in Sources */,
 				77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */,

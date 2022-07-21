@@ -54,9 +54,8 @@ extension SpendCVC {
         dateLabel.text = data.date
         leftEmojiImageView.image = NumToEmoji.first(num: data.startEmotion)
         
-        /// WriteVC에서 쓰이는 씀씀이 셀일 경우 나중 감정 이모지는 ?, 터치는 안되게 막음
+        /// WriteVC에서 쓰이는 씀씀이 셀일 경우 나중 감정 이모지는 ?
         rightEmojiBtn.setImage(NumToEmoji.second(num: data.endEmotion, isWriteVC: isWriteVC), for: .normal)
-        rightEmojiBtn.isEnabled = !isWriteVC
         priceLabel.text = "\(self.numberFormatter(number: data.amount))원"
         contentLabel.text = data.content
     }
