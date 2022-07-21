@@ -34,8 +34,8 @@
 		1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89417C2883066D00606A68 /* MarshmellowCVC.swift */; };
 		1A89417F2883066D00606A68 /* MarshmellowCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A89417D2883066D00606A68 /* MarshmellowCVC.xib */; };
 		1A94E6FE288731060060B436 /* GoalStorageResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94E6FD288731060060B436 /* GoalStorageResModel.swift */; };
-		1A94E701288732320060B436 /* GoalStorageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94E700288732320060B436 /* GoalStorageAPI.swift */; };
-		1A94E704288733B00060B436 /* GoalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94E703288733B00060B436 /* GoalStorageService.swift */; };
+		1A94E701288732320060B436 /* MypageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94E700288732320060B436 /* MypageAPI.swift */; };
+		1A94E704288733B00060B436 /* MypageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94E703288733B00060B436 /* MypageService.swift */; };
 		1A9D1A68288331FB006D65C2 /* MarshmellowDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */; };
 		1AAF20182887E54900A4C18F /* MateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF20172887E54900A4C18F /* MateService.swift */; };
 		1AAF201B2887E5EF00A4C18F /* MateResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF201A2887E5EF00A4C18F /* MateResModel.swift */; };
@@ -54,6 +54,7 @@
 		1ABDED83287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDED81287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib */; };
 		1ACF85EA288880E70013554F /* RemindGoalListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACF85E9288880E70013554F /* RemindGoalListModel.swift */; };
 		1AD1042E288925FC00B11995 /* MateDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1042D288925FC00B11995 /* MateDetailModel.swift */; };
+		1ADC2D962889B79100901BD7 /* UserResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADC2D952889B79100901BD7 /* UserResModel.swift */; };
 		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
 		778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */; };
 		778E0F50287B273900BEEEA5 /* SignUpSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778E0F4F287B273900BEEEA5 /* SignUpSB.storyboard */; };
@@ -209,8 +210,8 @@
 		1A89417C2883066D00606A68 /* MarshmellowCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshmellowCVC.swift; sourceTree = "<group>"; };
 		1A89417D2883066D00606A68 /* MarshmellowCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarshmellowCVC.xib; sourceTree = "<group>"; };
 		1A94E6FD288731060060B436 /* GoalStorageResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageResModel.swift; sourceTree = "<group>"; };
-		1A94E700288732320060B436 /* GoalStorageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageAPI.swift; sourceTree = "<group>"; };
-		1A94E703288733B00060B436 /* GoalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageService.swift; sourceTree = "<group>"; };
+		1A94E700288732320060B436 /* MypageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageAPI.swift; sourceTree = "<group>"; };
+		1A94E703288733B00060B436 /* MypageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageService.swift; sourceTree = "<group>"; };
 		1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshmellowDataModel.swift; sourceTree = "<group>"; };
 		1AAF20172887E54900A4C18F /* MateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateService.swift; sourceTree = "<group>"; };
 		1AAF201A2887E5EF00A4C18F /* MateResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateResModel.swift; sourceTree = "<group>"; };
@@ -229,6 +230,7 @@
 		1ABDED81287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindGoalCategoryCVC.xib; sourceTree = "<group>"; };
 		1ACF85E9288880E70013554F /* RemindGoalListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindGoalListModel.swift; sourceTree = "<group>"; };
 		1AD1042D288925FC00B11995 /* MateDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateDetailModel.swift; sourceTree = "<group>"; };
+		1ADC2D952889B79100901BD7 /* UserResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResModel.swift; sourceTree = "<group>"; };
 		6F6FAF66B7C4C46AE47E904C /* Pods-POME-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.debug.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		778E0F422879624700BEEEA5 /* PomeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeTextField.swift; sourceTree = "<group>"; };
 		778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeMaskedImageView.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				1A94E6FD288731060060B436 /* GoalStorageResModel.swift */,
+				1ADC2D952889B79100901BD7 /* UserResModel.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -383,7 +386,7 @@
 		1A94E6FF2887321A0060B436 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				1A94E700288732320060B436 /* GoalStorageAPI.swift */,
+				1A94E700288732320060B436 /* MypageAPI.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -391,7 +394,7 @@
 		1A94E702288733970060B436 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				1A94E703288733B00060B436 /* GoalStorageService.swift */,
+				1A94E703288733B00060B436 /* MypageService.swift */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -1292,7 +1295,8 @@
 				77E8F33A28759FCF00D2F6C0 /* UIFont+.swift in Sources */,
 				1A9D1A68288331FB006D65C2 /* MarshmellowDataModel.swift in Sources */,
 				1A4BB620287E0395007C8FC1 /* RemindGoalTitleTVC.swift in Sources */,
-				1A94E704288733B00060B436 /* GoalStorageService.swift in Sources */,
+				1A94E704288733B00060B436 /* MypageService.swift in Sources */,
+				1ADC2D962889B79100901BD7 /* UserResModel.swift in Sources */,
 				77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */,
 				843D538F288737AA00BB4DCB /* GetGoalsResModel.swift in Sources */,
 				84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */,
@@ -1314,7 +1318,7 @@
 				77E8F3772876938800D2F6C0 /* GenericResponse.swift in Sources */,
 				77E8F2FA2874B17800D2F6C0 /* RemindVC.swift in Sources */,
 				77B571B32880BD8D00C9CC27 /* ProfileCellDelegate.swift in Sources */,
-				1A94E701288732320060B436 /* GoalStorageAPI.swift in Sources */,
+				1A94E701288732320060B436 /* MypageAPI.swift in Sources */,
 				77E8F3242874B80A00D2F6C0 /* MypageXib.swift in Sources */,
 				77BD15172885F52F00A1950D /* Bundle+.swift in Sources */,
 				1A10C2582877367100489CA1 /* GoalStorageDataModel.swift in Sources */,
