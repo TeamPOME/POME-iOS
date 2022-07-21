@@ -33,6 +33,10 @@
 		1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89417C2883066D00606A68 /* MarshmellowCVC.swift */; };
 		1A89417F2883066D00606A68 /* MarshmellowCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A89417D2883066D00606A68 /* MarshmellowCVC.xib */; };
 		1A9D1A68288331FB006D65C2 /* MarshmellowDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */; };
+		1AAF20182887E54900A4C18F /* MateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF20172887E54900A4C18F /* MateService.swift */; };
+		1AAF201B2887E5EF00A4C18F /* MateResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF201A2887E5EF00A4C18F /* MateResModel.swift */; };
+		1AAF201E2887E67300A4C18F /* MateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF201D2887E67300A4C18F /* MateAPI.swift */; };
+		1AAF20202887F1D500A4C18F /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF201F2887F1D500A4C18F /* UIImageView+.swift */; };
 		1AAF202328885B2100A4C18F /* RemindService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF202228885B2100A4C18F /* RemindService.swift */; };
 		1AAF202628885BCE00A4C18F /* RemindGoalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF202528885BCE00A4C18F /* RemindGoalModel.swift */; };
 		1AAF202928885C5700A4C18F /* RemindAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF202828885C5700A4C18F /* RemindAPI.swift */; };
@@ -46,6 +50,7 @@
 		1ABDED83287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDED81287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib */; };
 		1AC6B70928891E0500EEAC55 /* HaveNoGoalInStorageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6B70828891E0500EEAC55 /* HaveNoGoalInStorageCVC.swift */; };
 		1ACF85EA288880E70013554F /* RemindGoalListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACF85E9288880E70013554F /* RemindGoalListModel.swift */; };
+		1AD1042E288925FC00B11995 /* MateDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1042D288925FC00B11995 /* MateDetailModel.swift */; };
 		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
 		778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */; };
 		778E0F50287B273900BEEEA5 /* SignUpSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778E0F4F287B273900BEEEA5 /* SignUpSB.storyboard */; };
@@ -197,6 +202,10 @@
 		1A89417C2883066D00606A68 /* MarshmellowCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshmellowCVC.swift; sourceTree = "<group>"; };
 		1A89417D2883066D00606A68 /* MarshmellowCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarshmellowCVC.xib; sourceTree = "<group>"; };
 		1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshmellowDataModel.swift; sourceTree = "<group>"; };
+		1AAF20172887E54900A4C18F /* MateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateService.swift; sourceTree = "<group>"; };
+		1AAF201A2887E5EF00A4C18F /* MateResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateResModel.swift; sourceTree = "<group>"; };
+		1AAF201D2887E67300A4C18F /* MateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateAPI.swift; sourceTree = "<group>"; };
+		1AAF201F2887F1D500A4C18F /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		1AAF202228885B2100A4C18F /* RemindService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindService.swift; sourceTree = "<group>"; };
 		1AAF202528885BCE00A4C18F /* RemindGoalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindGoalModel.swift; sourceTree = "<group>"; };
 		1AAF202828885C5700A4C18F /* RemindAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindAPI.swift; sourceTree = "<group>"; };
@@ -210,6 +219,7 @@
 		1ABDED81287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindGoalCategoryCVC.xib; sourceTree = "<group>"; };
 		1AC6B70828891E0500EEAC55 /* HaveNoGoalInStorageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveNoGoalInStorageCVC.swift; sourceTree = "<group>"; };
 		1ACF85E9288880E70013554F /* RemindGoalListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindGoalListModel.swift; sourceTree = "<group>"; };
+		1AD1042D288925FC00B11995 /* MateDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateDetailModel.swift; sourceTree = "<group>"; };
 		6F6FAF66B7C4C46AE47E904C /* Pods-POME-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.debug.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		778E0F422879624700BEEEA5 /* PomeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeTextField.swift; sourceTree = "<group>"; };
 		778E0F442879FB5500BEEEA5 /* PomeMaskedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeMaskedImageView.swift; sourceTree = "<group>"; };
@@ -350,6 +360,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AAF20162887E52900A4C18F /* Mate */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF20172887E54900A4C18F /* MateService.swift */,
+			);
+			path = Mate;
+			sourceTree = "<group>";
+		};
+		1AAF20192887E5DE00A4C18F /* Mate */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF201A2887E5EF00A4C18F /* MateResModel.swift */,
+				1AD1042D288925FC00B11995 /* MateDetailModel.swift */,
+			);
+			path = Mate;
+			sourceTree = "<group>";
+		};
+		1AAF201C2887E65B00A4C18F /* Mate */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF201D2887E67300A4C18F /* MateAPI.swift */,
+			);
+			path = Mate;
+			sourceTree = "<group>";
+		};
 		1AAF202128885B0700A4C18F /* Remind */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,7 +469,6 @@
 		77BD151B2886FAE100A1950D /* Sign */ = {
 			isa = PBXGroup;
 			children = (
-				77BD150A288535D700A1950D /* SignInResModel.swift */,
 				77BD151C2886FAF200A1950D /* SignUpResModel.swift */,
 			);
 			path = Sign;
@@ -600,6 +634,7 @@
 				77E8F3412875EBD500D2F6C0 /* CALayer+.swift */,
 				77E8F3452875EE0A00D2F6C0 /* UITabBar+.swift */,
 				77BD15162885F52F00A1950D /* Bundle+.swift */,
+				1AAF201F2887F1D500A4C18F /* UIImageView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -954,6 +989,7 @@
 			isa = PBXGroup;
 			children = (
 				1AAF202128885B0700A4C18F /* Remind */,
+				1AAF20162887E52900A4C18F /* Mate */,
 				77BD150C2885396400A1950D /* SignService.swift */,
 				843D538C2887350A00BB4DCB /* WriteService.swift */,
 			);
@@ -967,6 +1003,7 @@
 				8427F88328887B110096B20E /* Write */,
 				8427F877288849690096B20E /* DeleteResModel.swift */,
 				1AAF202428885BA600A4C18F /* Remind */,
+				1AAF20192887E5DE00A4C18F /* Mate */,
 				77BD150A288535D700A1950D /* SignInResModel.swift */,
 			);
 			path = APIModels;
@@ -976,6 +1013,7 @@
 			isa = PBXGroup;
 			children = (
 				1AAF202728885C4100A4C18F /* Remind */,
+				1AAF201C2887E65B00A4C18F /* Mate */,
 				77E8F37C2876944B00D2F6C0 /* BaseAPI.swift */,
 				77BD150E2885B33000A1950D /* SignAPI.swift */,
 				77BD151E2887DFD100A1950D /* SignUpAPI.swift */,
@@ -1191,6 +1229,7 @@
 			files = (
 				1ABDED7B287F250600F85F9C /* RemindGoalDataModel.swift in Sources */,
 				77E8F3752876936B00D2F6C0 /* NetworkConstants.swift in Sources */,
+				1AAF201B2887E5EF00A4C18F /* MateResModel.swift in Sources */,
 				1ABDED82287F9B4E00F85F9C /* RemindGoalCategoryCVC.swift in Sources */,
 				77BD151D2886FAF200A1950D /* SignUpResModel.swift in Sources */,
 				84309C822878ACF50017F8BF /* GoalCategoryCVC.swift in Sources */,
@@ -1244,6 +1283,7 @@
 				778E0F54287C43D300BEEEA5 /* PomeAlertVC.swift in Sources */,
 				84F018702884260600CD6C59 /* AddGoalContentVC.swift in Sources */,
 				778E0F452879FB5500BEEEA5 /* PomeMaskedImageView.swift in Sources */,
+				1AD1042E288925FC00B11995 /* MateDetailModel.swift in Sources */,
 				77E8F3322875729000D2F6C0 /* UIView+.swift in Sources */,
 				84D40A262885DFB500A09D1D /* SelectGoalVC.swift in Sources */,
 				8427F88228885E6A0096B20E /* PostGoalResModel.swift in Sources */,
@@ -1266,12 +1306,14 @@
 				77E8F3502875F50200D2F6C0 /* BaseNC.swift in Sources */,
 				77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */,
 				77BD150B288535D700A1950D /* SignInResModel.swift in Sources */,
+				1AAF201E2887E67300A4C18F /* MateAPI.swift in Sources */,
 				77E8F3522875F54000D2F6C0 /* CVRegisterable.swift in Sources */,
 				77E8F330287571C400D2F6C0 /* UIViewController+.swift in Sources */,
 				1A500DAA28869A02003638B1 /* MateEmojiHeaderCVC.swift in Sources */,
 				77E8F3402875EB3900D2F6C0 /* UserDefaults+.swift in Sources */,
 				77BD150F2885B33000A1950D /* SignAPI.swift in Sources */,
 				77E8F35E28765F7C00D2F6C0 /* WriteNC.swift in Sources */,
+				1AAF20182887E54900A4C18F /* MateService.swift in Sources */,
 				77E8F3832876F25400D2F6C0 /* xib.swift in Sources */,
 				1ABDED76287E716E00F85F9C /* RemindFilterTVC.swift in Sources */,
 				77E8F33E2875EA6B00D2F6C0 /* Adjusted+.swift in Sources */,
@@ -1293,6 +1335,7 @@
 				1AB882662881386600157820 /* RemindSelectFeelingVC.swift in Sources */,
 				77E8F34E2875F45600D2F6C0 /* BaseVC.swift in Sources */,
 				84D40A2E2885ED3100A09D1D /* SelectGoalDelegate.swift in Sources */,
+				1AAF20202887F1D500A4C18F /* UIImageView+.swift in Sources */,
 				84D40A2B2885E62100A09D1D /* goalTVC.swift in Sources */,
 				77B571B728811E7200C9CC27 /* SignInVC.swift in Sources */,
 				1A6D05202884817F006C9BBD /* GoalStorageVC.swift in Sources */,
