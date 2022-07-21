@@ -272,7 +272,6 @@ extension GoalCardCVC {
         realSpentMoneyLabel.text = numberFormatter(number: data.payAmount).description + "원"
         setProgress(goal: Double(data.rate))
         setdDay(dDay: data.dDay)
-        
-        // TODO: - 추후 isPublic 값에 따라 자물쇠 이미지 변경 필요
+        privateImageView.image = data.isPublic ? UIImage(named: "icNoLockAll") : UIImage(named: "icLockAll")
     }
 }
