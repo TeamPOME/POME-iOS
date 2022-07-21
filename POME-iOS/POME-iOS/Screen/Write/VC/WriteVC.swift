@@ -236,7 +236,7 @@ extension WriteVC: UICollectionViewDataSource {
             default:
                 spendCVC.makeRounded(cornerRadius: 6.adjusted)
                 spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
-                spendCVC.setData(data: spend[indexPath.row])
+                spendCVC.setData(data: spend[indexPath.row], isWriteVC: true)
                 
                 /// 씀씀이 셀의 more 버튼을 누를 경우 action sheet를 띄운다.
                 spendCVC.tapMoreBtn = {

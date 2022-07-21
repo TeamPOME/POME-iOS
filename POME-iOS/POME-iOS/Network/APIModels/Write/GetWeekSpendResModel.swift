@@ -15,6 +15,7 @@ struct GetWeekSpendResModel: Codable {
 
 // MARK: - Record
 struct Record: Codable {
+    let id: Int
     let date: String
     let amount: Int
     let content: String
