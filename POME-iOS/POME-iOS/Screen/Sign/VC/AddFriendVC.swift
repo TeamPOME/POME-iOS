@@ -183,6 +183,7 @@ extension AddFriendVC {
     
     /// 친구 검색 메서드
     private func searchMateNickname(nickname: String) {
+        self.activityIndicator.startAnimating()
         SignAPI.shared.searchMateAPI(nickname: nickname) { networkResult in
             switch networkResult {
             case .success(let data):
@@ -191,10 +192,13 @@ extension AddFriendVC {
                         self.profileList = data
                         self.profileTV.reloadData()
                     }
+                    self.activityIndicator.stopAnimating()
                 }
             case .requestErr:
+                self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
+                self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             }
         }
@@ -202,15 +206,16 @@ extension AddFriendVC {
     
     /// 친구 추가 요청 메서드
     private func addMate(targetID: Int) {
+        self.activityIndicator.startAnimating()
         SignAPI.shared.addMateAPI(targetID: targetID) { networkResult in
             switch networkResult {
             case .success(_):
-                
-                // TODO: 로딩뷰 멈춤
-                break
+                self.activityIndicator.stopAnimating()
             case .requestErr:
+                self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
+                self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             }
         }
