@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: GetMateResModel
 struct MateResModel: Codable {
-    let id: Int?
-    let nickname: String?
-    let profileImage: String?
+    let id: Int
+    let nickname: String
+    let profileImage: String
 }

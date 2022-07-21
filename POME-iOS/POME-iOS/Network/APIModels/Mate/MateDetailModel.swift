@@ -9,16 +9,16 @@ import Foundation
 
 // MARK: MateDetailModel
 struct MateDetailModel: Codable {
-    let id: Int?
-    let userId: Int?
-    let nickname: String?
-    let profileImage: String?
-    let goalMessage: String?
-    let amount: Int?
-    let content: String?
-    let startEmotion: Int?
-    let endEmotion: Int?
-    let timeStamp: String?
-    let reactions: [String]?
-    let plusCount: Int?
+    let id: Int
+    let userId: Int
+    let nickname: String
+    let profileImage: String
+    let goalMessage: String
+    let amount: Int
+    let content: String
+    let startEmotion: Int
+    let endEmotion: Int
+    let timeStamp: String
+    let reactions: [String]
+    let plusCount: Int
 }

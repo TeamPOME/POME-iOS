@@ -386,11 +386,14 @@ extension RemindVC {
             networkResult in
             switch networkResult {
             case .success(let data):
-                guard let data = data as? [RemindGoalModel] else { return }
-                self.category = data
-                self.goalCount = data.count
-                self.goalCategoryCV.reloadData()
-                self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
+                if let data = data as? [RemindGoalModel] {
+                    DispatchQueue.main.async {
+                        self.category = data
+                        self.goalCount = data.count
+                        self.goalCategoryCV.reloadData()
+                        self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
+                    }
+                }
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
@@ -405,9 +408,12 @@ extension RemindVC {
             networkResult in
             switch networkResult {
             case .success(let data):
-                guard let data = data as? [RemindGoalListModel] else { return }
-                self.goalRecordList = data
-                self.remindTV.reloadData()
+                if let data = data as? [RemindGoalListModel] {
+                    DispatchQueue.main.async {
+                        self.goalRecordList = data
+                        self.remindTV.reloadData()
+                    }
+                }
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:

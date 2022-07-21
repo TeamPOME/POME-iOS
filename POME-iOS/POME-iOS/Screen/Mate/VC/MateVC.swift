@@ -15,7 +15,7 @@ class MateVC: BaseVC {
     private var emojiSelectViewTopConstraint: Constraint?
     private var mateDataList: [MateResModel] = []
     
-    /// TODO : /friends/records 친구 기록조회 할때의 빈 배열 
+    /// TODO : /friends/records 친구 기록조회 할때의 빈 배열
     private var mateRecordList: [MateDetailModel] = []
     private var mateNum = 0
     private var selectedIndex: Int = 0
@@ -290,7 +290,7 @@ extension MateVC: UICollectionViewDelegate {
             cell.profileImageView.image = UIImage(named: "btnAllViewProfileNotClicked")
             cell.nameLabel.text = "전체보기"
         } else {
-            cell.profileImageView.downloadImage(from: URL(string: mateDataList[indexPath.row - 1].profileImage!)!)
+            cell.profileImageView.downloadImage(from: URL(string: mateDataList[indexPath.row - 1].profileImage)!)
             cell.nameLabel.text = mateDataList[indexPath.row - 1].nickname
         }
         
@@ -336,17 +336,19 @@ extension MateVC {
             networkResult in
             switch networkResult {
             case .success(let data):
-                guard let data = data as? [MateResModel] else { return }
-                self.mateDataList = data
-                self.mateNum = data.count
-                self.mateProfileCV.reloadData()
+                if let data = data as? [MateResModel] {
+                    DispatchQueue.main.async {
+                        self.mateDataList = data
+                        self.mateNum = data.count
+                        self.mateProfileCV.reloadData()
+                    }
+                }
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             }
             self.mateProfileCV.reloadData()
-            self.mateTV.reloadData()
         }
     }
 }
