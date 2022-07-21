@@ -28,6 +28,7 @@
 		1A6D052428849908006C9BBD /* GoalStorageTitleCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6D052228849908006C9BBD /* GoalStorageTitleCVC.xib */; };
 		1A6D05292885D1F3006C9BBD /* MateEmojiBottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6D05272885D1F3006C9BBD /* MateEmojiBottomSheetVC.swift */; };
 		1A6D052A2885D1F3006C9BBD /* MateEmojiBottomSheetVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A6D05282885D1F3006C9BBD /* MateEmojiBottomSheetVC.xib */; };
+		1A732CD0288960A400F6A563 /* HaveNoGoalInStorageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A732CCF288960A400F6A563 /* HaveNoGoalInStorageCVC.swift */; };
 		1A76CACE287B1B3300B29500 /* MateHeaderCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */; };
 		1A76CACF287B1B3300B29500 /* MateHeaderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */; };
 		1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89417C2883066D00606A68 /* MarshmellowCVC.swift */; };
@@ -200,6 +201,7 @@
 		1A6D052228849908006C9BBD /* GoalStorageTitleCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalStorageTitleCVC.xib; sourceTree = "<group>"; };
 		1A6D05272885D1F3006C9BBD /* MateEmojiBottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateEmojiBottomSheetVC.swift; sourceTree = "<group>"; };
 		1A6D05282885D1F3006C9BBD /* MateEmojiBottomSheetVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateEmojiBottomSheetVC.xib; sourceTree = "<group>"; };
+		1A732CCF288960A400F6A563 /* HaveNoGoalInStorageCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HaveNoGoalInStorageCVC.swift; sourceTree = "<group>"; };
 		1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateHeaderCVC.swift; sourceTree = "<group>"; };
 		1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateHeaderCVC.xib; sourceTree = "<group>"; };
 		1A89417C2883066D00606A68 /* MarshmellowCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshmellowCVC.swift; sourceTree = "<group>"; };
@@ -989,10 +991,10 @@
 		77E8F3192874B73600D2F6C0 /* CVC */ = {
 			isa = PBXGroup;
 			children = (
+				1A732CCF288960A400F6A563 /* HaveNoGoalInStorageCVC.swift */,
 				1A89417C2883066D00606A68 /* MarshmellowCVC.swift */,
 				77E8F3212874B7F000D2F6C0 /* MypageCVC.swift */,
 				1A6D052128849908006C9BBD /* GoalStorageTitleCVC.swift */,
-				1AC6B70828891E0500EEAC55 /* HaveNoGoalInStorageCVC.swift */,
 			);
 			path = CVC;
 			sourceTree = "<group>";
@@ -1298,7 +1300,6 @@
 				77E8F31E2874B7CE00D2F6C0 /* MypageVC.swift in Sources */,
 				77B5719B287D458500C9CC27 /* CompleteSignUpVC.swift in Sources */,
 				1A1AEFDA287A4D5B00DD5F7E /* HaveMateTVC.swift in Sources */,
-				1AC6B70928891E0500EEAC55 /* HaveNoGoalInStorageCVC.swift in Sources */,
 				77E8F36428765FFF00D2F6C0 /* MypageNC.swift in Sources */,
 				77E8F2E62874AEDB00D2F6C0 /* WriteVC.swift in Sources */,
 				77B5719D287D68E300C9CC27 /* SignUpNC.swift in Sources */,
@@ -1340,6 +1341,7 @@
 				77E8F3422875EBD500D2F6C0 /* CALayer+.swift in Sources */,
 				77E8F3712876931D00D2F6C0 /* NetworkResult.swift in Sources */,
 				77BD150D2885396400A1950D /* SignService.swift in Sources */,
+				1A732CD0288960A400F6A563 /* HaveNoGoalInStorageCVC.swift in Sources */,
 				77B571A6287FF6C400C9CC27 /* FriendProfileTVC.swift in Sources */,
 				8427F878288849690096B20E /* DeleteResModel.swift in Sources */,
 				778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */,
