@@ -69,15 +69,9 @@ extension RemindGoalTVC {
 extension RemindGoalTVC {
     
     func setData(remindGoalData: RemindGoalListModel) {
-        goalLabel.text = remindGoalData.goalMessage
         timeLabel.text = remindGoalData.timestamp
         spentMoneyLabel.text = numberFormatter(number:remindGoalData.amount).description + "원"
         contentLabel.text = remindGoalData.content
-        if remindGoalData.isGoalPublic {
-            [firstEmojiContainerBtn, secondEmojiContainerBtn, thirdEmojiContainerBtn, countMateLabel].forEach {
-                $0.isHidden = false
-            }
-        }
     }
 }
 

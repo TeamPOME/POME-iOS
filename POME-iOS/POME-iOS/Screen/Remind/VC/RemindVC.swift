@@ -17,6 +17,7 @@ class RemindVC: BaseVC {
     private var getPreviousEmoji: String = ""
     private var getLatestEmoji: String = ""
     private var category: [RemindGoalModel] = []
+    private var selectedCategory: RemindGoalModel = RemindGoalModel(id: 0, category: "", message: "", isPublic: true)
     private var goalRecordList: [RemindGoalListModel] = []
     
     private lazy var goalCategoryCV = UICollectionView( frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout()).then {
@@ -115,6 +116,7 @@ extension RemindVC {
     /// 목표 카테고리의 다른탭으로 눌리기 전의 탭으로 눌리게끔 default 설정
     private func setDefaultSelectedCell(index: Int) {
         self.goalCategoryCV.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .right)
+        self.selectedCategory = category[index]
     }
 }
 
@@ -210,12 +212,12 @@ extension RemindVC: UITableViewDelegate {
         
         switch indexPath.section {
         case 0:
-            if category.count == 0 || goalRecordList.isEmpty {
+            if category.count == 0 {
                 remindGoalTitleTVC.isPrivateImageView.image = UIImage(named: "icEmptyGoal")
                 remindGoalTitleTVC.goalTitleLabel.setLabel(text: "아직 추가한 목표가 없어요", color: .grey_5, size: 18, weight: .bold)
             } else {
-                remindGoalTitleTVC.goalTitleLabel.setLabel(text: goalRecordList[indexPath.row].goalMessage, color: .grey_8, size: 18, weight: .bold)
-                if goalRecordList[indexPath.row].isGoalPublic {
+                remindGoalTitleTVC.goalTitleLabel.setLabel(text: selectedCategory.message, color: .grey_8, size: 18, weight: .bold)
+                if selectedCategory.isPublic {
                     remindGoalTitleTVC.isPrivateImageView.image = UIImage(named: "icNoLockAll")
                 } else {
                     remindGoalTitleTVC.isPrivateImageView.image = UIImage(named: "icLockAll")
@@ -279,7 +281,7 @@ extension RemindVC: UITableViewDelegate {
             remindFilterTVC.selectionStyle = .none
             return remindFilterTVC
         case 2:
-            if category.count == 0 || goalRecordList.count == 0 {
+            if category.count == 0 || goalRecordList.isEmpty{
                 return remindNoGoalTVC
             } else {
                 remindGoalTVC.setData(remindGoalData: goalRecordList[indexPath.row])
@@ -372,6 +374,7 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if !category.isEmpty {
             selectedCategoryIndex = indexPath.row
+            selectedCategory = category[selectedCategoryIndex]
             reqeustGetRemindGoal(goalId: category[indexPath.row].id)
             remindTV.reloadData()
         }
@@ -390,7 +393,6 @@ extension RemindVC {
                 if let data = data as? [RemindGoalModel] {
                     DispatchQueue.main.async {
                         self.category = data
-                        self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
                         self.remindTV.reloadData()
                         self.goalCategoryCV.reloadData()
                         self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
