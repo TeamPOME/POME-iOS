@@ -54,7 +54,7 @@ extension SignInVC {
         view.addSubviews([iconImageView, logoImageView, sloganImageView, kakaoBtn])
         
         iconImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(215)
+            $0.top.equalToSuperview().inset(215.adjustedH)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(230.adjusted)
             $0.height.equalTo(230.adjustedH)
@@ -77,7 +77,7 @@ extension SignInVC {
         kakaoBtn.snp.makeConstraints {
             $0.top.equalTo(sloganImageView.snp.bottom).offset(83)
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(45.adjustedH)
+            $0.height.equalTo(45)
         }
     }
 }
