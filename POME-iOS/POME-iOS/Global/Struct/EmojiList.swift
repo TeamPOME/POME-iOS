@@ -12,9 +12,9 @@ import UIKit
  받은 이모지 넘버를 가지고 에셋 이름을 매칭한다.
  
  사용방법
- - 처음 감정: NumToEmoji.first(서버에서 넘어온 처음 감정 이모지 넘버)
- - 나중 감정: NumToEmoji.second(서버에서 넘어온 나중 감정 이모지 넘버, self)
-
+ - 처음 감정: NumToEmoji.first(num: 서버에서 넘어온 처음 감정 이모지 넘버)
+ - 나중 감정: 기록탭 메인이 아닐 때 -> NumToEmoji.second(num: 서버에서 넘어온 나중 감정 이모지 넘버)
+          기록탭 메인일 때 -> NumToEmoji.second(num: 서버에서 넘어온 나중 감정 이모지 넘버,isWriteVC: true)
  */
 struct NumToEmoji {
     static func first(num: Int) -> UIImage? {
@@ -30,7 +30,7 @@ struct NumToEmoji {
         }
     }
     
-    static func second(num: Int, isWriteVC: Bool) -> UIImage? {
+    static func second(num: Int, isWriteVC: Bool = false) -> UIImage? {
         switch num {
         case 1:
             return UIImage(named: "property1EmojiHappyPink")

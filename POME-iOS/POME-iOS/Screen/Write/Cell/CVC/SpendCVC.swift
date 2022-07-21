@@ -50,7 +50,7 @@ extension SpendCVC {
 // MARK: - Custom Methods
 extension SpendCVC {
     
-    func setData(data: Record, isWriteVC: Bool) {
+    func setData(data: Record, isWriteVC: Bool = false) {
         dateLabel.text = data.date
         leftEmojiImageView.image = NumToEmoji.first(num: data.startEmotion)
         
