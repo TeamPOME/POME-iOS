@@ -13,6 +13,7 @@ class GoalCardCVC: CodeBaseCVC {
     
     // MARK: Properties
     private var progress = 1.0
+    private var isPublic: Bool = false
     
     private let ifSuccessLabelContainerView = UIView().then {
         $0.makeRounded(cornerRadius: 8.adjusted)
@@ -257,12 +258,17 @@ extension GoalCardCVC {
 // MARK: - Network
 extension GoalCardCVC {
     
-    func setData(_ goalData: GoalDataModel) {
-        goalTitleLabel.text = goalData.goalTitle
-        ifSuccessLabel.text = goalData.ifSuccessOrNotLabelText
-        moneyGoalLabel.text = "/ " + numberFormatter(number: goalData.goalMoney).description + "원"
-        realSpentMoneyLabel.text = numberFormatter(number: goalData.spentMoney).description + "원"
-        setProgress(goal: goalData.successPercentage)
+    func setData(_ goalData: GoalStorageResModel) {
+        goalTitleLabel.text = goalData.message
+        moneyGoalLabel.text = "/ " + numberFormatter(number: goalData.amount).description + "원"
+        realSpentMoneyLabel.text = numberFormatter(number: goalData.payAmount).description + "원"
+        setProgress(goal: Double(goalData.rate))
+        isPublic = goalData.isPublic
+        if isPublic{
+            privateImageView.image = UIImage(named: "icNoLockAll")
+        } else {
+            privateImageView.image = UIImage(named: "icLockAll")
+        }
     }
     
     func setDetailData(data: GetGoalDetailResModel) {

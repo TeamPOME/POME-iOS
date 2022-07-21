@@ -37,4 +37,5 @@ struct Identifiers {
     static let GoalStorageTitleCVC = "GoalStorageTitleCVC"
     static let MateEmojiHeaderCVC = "MateEmojiHeaderCVC"
     static let MateEmojiCVC = "MateEmojiCVC"
+    static let HaveNoGoalInStorageCVC = "HaveNoGoalInStorageCVC"
 }

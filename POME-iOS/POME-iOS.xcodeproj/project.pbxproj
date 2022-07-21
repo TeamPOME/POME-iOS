@@ -32,6 +32,9 @@
 		1A76CACF287B1B3300B29500 /* MateHeaderCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */; };
 		1A89417E2883066D00606A68 /* MarshmellowCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89417C2883066D00606A68 /* MarshmellowCVC.swift */; };
 		1A89417F2883066D00606A68 /* MarshmellowCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A89417D2883066D00606A68 /* MarshmellowCVC.xib */; };
+		1A94E6FE288731060060B436 /* GoalStorageResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94E6FD288731060060B436 /* GoalStorageResModel.swift */; };
+		1A94E701288732320060B436 /* GoalStorageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94E700288732320060B436 /* GoalStorageAPI.swift */; };
+		1A94E704288733B00060B436 /* GoalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A94E703288733B00060B436 /* GoalStorageService.swift */; };
 		1A9D1A68288331FB006D65C2 /* MarshmellowDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */; };
 		1AAF20182887E54900A4C18F /* MateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF20172887E54900A4C18F /* MateService.swift */; };
 		1AAF201B2887E5EF00A4C18F /* MateResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF201A2887E5EF00A4C18F /* MateResModel.swift */; };
@@ -202,6 +205,9 @@
 		1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MateHeaderCVC.xib; sourceTree = "<group>"; };
 		1A89417C2883066D00606A68 /* MarshmellowCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshmellowCVC.swift; sourceTree = "<group>"; };
 		1A89417D2883066D00606A68 /* MarshmellowCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarshmellowCVC.xib; sourceTree = "<group>"; };
+		1A94E6FD288731060060B436 /* GoalStorageResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageResModel.swift; sourceTree = "<group>"; };
+		1A94E700288732320060B436 /* GoalStorageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageAPI.swift; sourceTree = "<group>"; };
+		1A94E703288733B00060B436 /* GoalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageService.swift; sourceTree = "<group>"; };
 		1A9D1A67288331FB006D65C2 /* MarshmellowDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarshmellowDataModel.swift; sourceTree = "<group>"; };
 		1AAF20172887E54900A4C18F /* MateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateService.swift; sourceTree = "<group>"; };
 		1AAF201A2887E5EF00A4C18F /* MateResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateResModel.swift; sourceTree = "<group>"; };
@@ -362,6 +368,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A94E6FC288730DF0060B436 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				1A94E6FD288731060060B436 /* GoalStorageResModel.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		1A94E6FF2887321A0060B436 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				1A94E700288732320060B436 /* GoalStorageAPI.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		1A94E702288733970060B436 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				1A94E703288733B00060B436 /* GoalStorageService.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
 		1AAF20162887E52900A4C18F /* Mate */ = {
 			isa = PBXGroup;
 			children = (
@@ -965,6 +995,7 @@
 				1A89417C2883066D00606A68 /* MarshmellowCVC.swift */,
 				77E8F3212874B7F000D2F6C0 /* MypageCVC.swift */,
 				1A6D052128849908006C9BBD /* GoalStorageTitleCVC.swift */,
+				1AC6B70828891E0500EEAC55 /* HaveNoGoalInStorageCVC.swift */,
 			);
 			path = CVC;
 			sourceTree = "<group>";
@@ -1002,6 +1033,7 @@
 			children = (
 				1AAF202128885B0700A4C18F /* Remind */,
 				1AAF20162887E52900A4C18F /* Mate */,
+				1A94E702288733970060B436 /* Mypage */,
 				77BD150C2885396400A1950D /* SignService.swift */,
 				843D538C2887350A00BB4DCB /* WriteService.swift */,
 			);
@@ -1017,6 +1049,7 @@
 				8427F877288849690096B20E /* DeleteResModel.swift */,
 				1AAF202428885BA600A4C18F /* Remind */,
 				1AAF20192887E5DE00A4C18F /* Mate */,
+				1A94E6FC288730DF0060B436 /* Mypage */,
 				77BD150A288535D700A1950D /* SignInResModel.swift */,
 			);
 			path = APIModels;
@@ -1027,6 +1060,7 @@
 			children = (
 				1AAF202728885C4100A4C18F /* Remind */,
 				1AAF201C2887E65B00A4C18F /* Mate */,
+				1A94E6FF2887321A0060B436 /* Mypage */,
 				77E8F37C2876944B00D2F6C0 /* BaseAPI.swift */,
 				77BD150E2885B33000A1950D /* SignAPI.swift */,
 				77BD151E2887DFD100A1950D /* SignUpAPI.swift */,
@@ -1254,6 +1288,7 @@
 				77E8F33A28759FCF00D2F6C0 /* UIFont+.swift in Sources */,
 				1A9D1A68288331FB006D65C2 /* MarshmellowDataModel.swift in Sources */,
 				1A4BB620287E0395007C8FC1 /* RemindGoalTitleTVC.swift in Sources */,
+				1A94E704288733B00060B436 /* GoalStorageService.swift in Sources */,
 				77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */,
 				843D538F288737AA00BB4DCB /* GetGoalsResModel.swift in Sources */,
 				84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */,
@@ -1267,6 +1302,7 @@
 				77E8F31E2874B7CE00D2F6C0 /* MypageVC.swift in Sources */,
 				77B5719B287D458500C9CC27 /* CompleteSignUpVC.swift in Sources */,
 				1A1AEFDA287A4D5B00DD5F7E /* HaveMateTVC.swift in Sources */,
+				1AC6B70928891E0500EEAC55 /* HaveNoGoalInStorageCVC.swift in Sources */,
 				77E8F36428765FFF00D2F6C0 /* MypageNC.swift in Sources */,
 				77E8F2E62874AEDB00D2F6C0 /* WriteVC.swift in Sources */,
 				77B5719D287D68E300C9CC27 /* SignUpNC.swift in Sources */,
@@ -1274,6 +1310,7 @@
 				77E8F3772876938800D2F6C0 /* GenericResponse.swift in Sources */,
 				77E8F2FA2874B17800D2F6C0 /* RemindVC.swift in Sources */,
 				77B571B32880BD8D00C9CC27 /* ProfileCellDelegate.swift in Sources */,
+				1A94E701288732320060B436 /* GoalStorageAPI.swift in Sources */,
 				77E8F3242874B80A00D2F6C0 /* MypageXib.swift in Sources */,
 				77BD15172885F52F00A1950D /* Bundle+.swift in Sources */,
 				1A10C2582877367100489CA1 /* GoalStorageDataModel.swift in Sources */,
@@ -1319,6 +1356,7 @@
 				77E8F338287575E500D2F6C0 /* UIColor+.swift in Sources */,
 				77E8F3502875F50200D2F6C0 /* BaseNC.swift in Sources */,
 				77E8F2BB2874A23700D2F6C0 /* SceneDelegate.swift in Sources */,
+				1A94E6FE288731060060B436 /* GoalStorageResModel.swift in Sources */,
 				77BD150B288535D700A1950D /* SignInResModel.swift in Sources */,
 				1AAF201E2887E67300A4C18F /* MateAPI.swift in Sources */,
 				77E8F3522875F54000D2F6C0 /* CVRegisterable.swift in Sources */,

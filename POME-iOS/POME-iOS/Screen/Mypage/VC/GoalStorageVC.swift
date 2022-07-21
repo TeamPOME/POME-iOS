@@ -10,6 +10,8 @@ import UIKit
 class GoalStorageVC: BaseVC {
     
     // MARK: Properties
+    private var goalStorageDataList: [GoalStorageResModel] = []
+    
     private lazy var goalStorageCV = UICollectionView(frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout()).then {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -29,6 +31,7 @@ class GoalStorageVC: BaseVC {
         setTV()
         setDelegate()
         setTapBackAction()
+        requestGoalStorageAPI()
     }
 }
 
@@ -62,6 +65,7 @@ extension GoalStorageVC {
     private func setTV(){
         GoalCardCVC.register(target: goalStorageCV)
         GoalStorageTitleCVC.register(target: goalStorageCV)
+        HaveNoGoalInStorageCVC.register(target: goalStorageCV)
     }
     
     private func setDelegate() {
@@ -81,33 +85,39 @@ extension GoalStorageVC: UICollectionViewDelegate {
     /// CV, 섹션 별 셀 지정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let titleCell = goalStorageCV.dequeueReusableCell(withReuseIdentifier: Identifiers.GoalStorageTitleCVC, for: indexPath) as? GoalStorageTitleCVC,
-              let goalCardCell = goalStorageCV.dequeueReusableCell(withReuseIdentifier: Identifiers.GoalCardCVC, for: indexPath) as? GoalCardCVC else { return UICollectionViewCell() }
+              let goalCardCell = goalStorageCV.dequeueReusableCell(withReuseIdentifier: Identifiers.GoalCardCVC, for: indexPath) as? GoalCardCVC,
+              let noGoalCardCell = goalStorageCV.dequeueReusableCell(withReuseIdentifier: Identifiers.HaveNoGoalInStorageCVC, for: indexPath) as? HaveNoGoalInStorageCVC
+        else { return UICollectionViewCell() }
         if indexPath.section == 0 {
             return titleCell
         } else {
-            goalCardCell.setData(GoalDataModel.sampleData[indexPath.row])
-            goalCardCell.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 6)
             
-            /// 목표 카드의 more 버튼을 누를 경우 취소 버튼 띄우기
-            goalCardCell.tapMoreBtn = {
-                self.makeOneAlertWithCancel(okTitle: "삭제하기", okAction: { _ in
-                    let alert = PomeAlertVC()
-                    alert.showPomeAlertVC(vc: self, title: "목표를 삭제하시겠어요?", subTitle: "해당 목표에서 작성한 기록도 모두 삭제돼요", cancelBtnTitle: "아니요", confirmBtnTitle: "삭제할게요")
-                    
-                    /// 알럿창의 취소버튼(왼쪽 버튼) 누르는 경우 alert dismiss
-                    alert.cancelBtn.press { [weak self] in
-                        self?.dismiss(animated: true)
-                    }
-                    
-                    /// 알럿창의 확인버튼(오른쪽 버튼) 누르는 경우 삭제 서버 통신
-                    alert.confirmBtn.press { [weak self] in
+            if goalStorageDataList.isEmpty {
+                return noGoalCardCell
+            } else{
+                goalCardCell.setData(goalStorageDataList[indexPath.row])
+                goalCardCell.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 6)
+                
+                /// 목표 카드의 more 버튼을 누를 경우 취소 버튼 띄우기
+                goalCardCell.tapMoreBtn = {
+                    self.makeOneAlertWithCancel(okTitle: "삭제하기", okAction: { _ in
+                        let alert = PomeAlertVC()
+                        alert.showPomeAlertVC(vc: self, title: "목표를 삭제하시겠어요?", subTitle: "해당 목표에서 작성한 기록도 모두 삭제돼요", cancelBtnTitle: "아니요", confirmBtnTitle: "삭제할게요")
                         
-                        // TODO: - 삭제 서버 통신 필요
-                        self?.dismiss(animated: true)
-                    }
-                })
+                        /// 알럿창의 취소버튼(왼쪽 버튼) 누르는 경우 alert dismiss
+                        alert.cancelBtn.press { [weak self] in
+                            self?.dismiss(animated: true)
+                        }
+                        
+                        /// 알럿창의 확인버튼(오른쪽 버튼) 누르는 경우 삭제 서버 통신
+                        alert.confirmBtn.press { [weak self] in
+                            
+                            self?.dismiss(animated: true)
+                        }
+                    })
+                }
+                return goalCardCell
             }
-            return goalCardCell
         }
     }
 }
@@ -122,7 +132,13 @@ extension GoalStorageVC: UICollectionViewDataSource {
     
     /// 섹션 별 셀 개수 지정 - 목표가 있을때와 없을 때 구분
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (section == 0) ? 1 : GoalDataModel.sampleData.count
+        if section == 0 {
+            return 1
+        } else if goalStorageDataList.isEmpty {
+            return 1
+        } else {
+            return goalStorageDataList.count
+        }
     }
 }
 
@@ -133,6 +149,8 @@ extension GoalStorageVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0 {
             return CGSize(width: collectionView.bounds.width, height: 44)
+        } else if goalStorageDataList.isEmpty {
+            return CGSize(width: collectionView.bounds.width, height: 698.adjustedH)
         } else {
             return CGSize(width: collectionView.bounds.width - 32, height: 157)
         }
@@ -140,7 +158,7 @@ extension GoalStorageVC: UICollectionViewDelegateFlowLayout {
     
     /// 섹션에 인셋 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        if section == 0 {
+        if section == 0 || goalStorageDataList.isEmpty {
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         } else {
             return UIEdgeInsets(top: 2, left: 0, bottom: 2, right: 0)
@@ -157,3 +175,29 @@ extension GoalStorageVC: UICollectionViewDelegateFlowLayout {
         return 8.adjusted
     }
 }
+
+// MARK: - Network
+extension GoalStorageVC {
+    
+    /// 목표보관함 요청
+    private func requestGoalStorageAPI() {
+        GoalStorageAPI.shared.requestGoalStorageAPI() { networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let data = data as? [GoalStorageResModel] else { return }
+                self.goalStorageDataList = data
+                self.goalStorageCV.reloadData()
+                print(data)
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    private func requestDeleteGoalAPI() {
+        //        GoalStorageAPI.shared.
+    }
+}
+
