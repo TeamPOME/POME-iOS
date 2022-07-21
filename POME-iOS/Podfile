@@ -10,7 +10,6 @@ target 'POME-iOS' do
   pod 'Then'
   pod 'Alamofire'
   pod 'FSCalendar'
-  pod 'lottie-ios'
   pod 'Kingfisher', '~> 7.0'
 
   pod 'KakaoSDKCommon'  # 필수 요소를 담은 공통 모듈
