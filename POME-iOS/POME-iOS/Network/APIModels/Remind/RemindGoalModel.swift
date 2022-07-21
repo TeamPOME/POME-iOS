@@ -11,4 +11,6 @@ import Foundation
 struct RemindGoalModel: Codable {
     let id: Int
     let category: String
+    let message: String
+    let isPublic: Bool
 }
