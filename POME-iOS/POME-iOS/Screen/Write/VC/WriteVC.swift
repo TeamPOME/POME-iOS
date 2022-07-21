@@ -70,8 +70,10 @@ extension WriteVC {
                 self.goalCategoryCV.selectItem(at: IndexPath(item: self.writeInfo.index, section: 0), animated: true, scrollPosition: .right)
                 
                 /// 저장된 index의 목표 id로 서버 통신
-                self.getGoalDetail(goalId: self.category[self.writeInfo.index - 1].id)
-                self.getWeekSpend(goalId: self.category[self.writeInfo.index - 1].id)
+                if self.writeInfo.index > 0 {
+                    self.getGoalDetail(goalId: self.category[self.writeInfo.index - 1].id)
+                    self.getWeekSpend(goalId: self.category[self.writeInfo.index - 1].id)
+                }
             }
         } else {
             spend = []
