@@ -416,7 +416,6 @@ extension RemindVC {
                     DispatchQueue.main.async {
                         self.goalRecordList = data
                         self.remindTV.reloadData()
-                        print(self.goalRecordList)
                     }
                 }
             case .requestErr:

@@ -31,7 +31,6 @@ class GoalStorageVC: BaseVC {
         registerTV()
         setDelegate()
         setTapBackAction()
-        //        requestGoalStorageAPI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,7 +94,6 @@ extension GoalStorageVC: UICollectionViewDelegate {
         if indexPath.section == 0 {
             return titleCell
         } else {
-            
             if goalStorageDataList.isEmpty {
                 return noGoalCardCell
             } else{
@@ -201,6 +199,7 @@ extension GoalStorageVC {
         }
     }
     
+    /// 목표보관함 삭제
     private func requestDeleteGoalAPI(goalId: Int) {
         GoalStorageAPI.shared.requestDeleteGoalAPI(goalId: goalId) { networkResult in
             switch networkResult {
