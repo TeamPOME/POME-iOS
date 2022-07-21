@@ -6,15 +6,19 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MypageVC: BaseVC {
 
+    // MARK: Properties
+    private var UserData: UserResModel = UserResModel(nickname: "", profileImage: "", marshmallows: Marshmallows(recordLevel: 0, reactLevel: 0, growLevel: 0, frankLevel: 0) , goalStorageCount: 0)
+    private var marshmallow: Marshmallows = Marshmallows(recordLevel: 0, reactLevel: 0, growLevel: 0, frankLevel: 0)
+    
     // MARK: IBOutlet
     @IBOutlet weak var profileImage: PomeMaskedImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var myPageNaviBar: PomeNaviBar!
     @IBOutlet weak var checkView: UIView!
-    @IBOutlet weak var profileImageView: PomeMaskedImageView!
     @IBOutlet weak var goalStorageLabel: UILabel!
     @IBOutlet weak var goalStorageBtnView: UIView!
     @IBOutlet weak var marshmellowCV: UICollectionView!
@@ -26,7 +30,9 @@ class MypageVC: BaseVC {
         setDelegate()
         setViewTapAction()
         registerCVC()
-        setData(dataModel: MypageDataModel.sampleData[0])
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        requestUserAPI()
     }
 }
 
@@ -35,6 +41,7 @@ extension MypageVC {
     
     private func configureUI() {
         myPageNaviBar.setNaviStyle(state: .greyWithRightBtn)
+        profileImage.maskImage = UIImage(named: "userProfileEmpty160")
         myPageNaviBar.rightCustomBtn.setImage(UIImage(named: "icSetting24Mono"), for: .normal)
         marshmellowCV.isScrollEnabled = false
         checkView.makeRounded(cornerRadius: checkView.frame.width / 2)
@@ -64,10 +71,12 @@ extension MypageVC {
     }
     
     /// 사용자 개인정보 데이터 등록
-    func setData(dataModel: MypageDataModel) {
-        nameLabel.text = dataModel.mypageName
-        profileImageView.maskImage = dataModel.mypageImage
-        goalStorageLabel.text = dataModel.content
+    func setData(data: UserResModel) {
+        let url = URL(string: data.profileImage)
+
+        profileImage.kf.setImage(with: url)
+        nameLabel.text = data.nickname.description
+        goalStorageLabel.text = "다시 보고 싶은 지난 목표가 \(data.goalStorageCount.description)건 있어요"
     }
 }
 
@@ -88,12 +97,71 @@ extension MypageVC: UICollectionViewDataSource {
         guard let cell = marshmellowCV.dequeueReusableCell(withReuseIdentifier: Identifiers.MarshmellowCVC, for: indexPath) as? MarshmellowCVC else { return UICollectionViewCell() }
         cell.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 6)
         cell.makeRounded(cornerRadius: 6.adjusted)
-        cell.setData(dataModel: MarshmellowDataModel.sampleData[indexPath.row])
+        if UserData.goalStorageCount == 0 {
+            [cell.labelLevelContainerView, cell.levelBadgeContainerView, cell.levelLabel, cell.levelBadgeLabel].forEach {
+                $0?.isHidden = true
+            }
+            cell.marshmellowImageView.image = UIImage(named: "marshmallowUnlock")
+        } else {
+            if indexPath.row == 0 {
+                [cell.labelLevelContainerView, cell.levelBadgeContainerView, cell.levelLabel, cell.levelBadgeLabel].forEach {
+                    $0?.isHidden = false
+                }
+                cell.levelLabel.text = "Lv.\(marshmallow.recordLevel.description)"
+                cell.levelBadgeLabel.text = "기록말랑"
+                if marshmallow.recordLevel == 0 {
+                    cell.marshmellowImageView.image = UIImage(named: "marshmallowUnlock")
+                } else if marshmallow.recordLevel < 4 {
+                    cell.marshmellowImageView.image = UIImage(named: "marshmallowLevel\(marshmallow.recordLevel)Pink")
+                } else {
+                    cell.marshmellowImageView.image = UIImage(named: "marshmallowLevel4Pink")
+                }
+            } else if indexPath.row == 1 {
+                [cell.labelLevelContainerView, cell.levelBadgeContainerView, cell.levelLabel, cell.levelBadgeLabel].forEach {
+                    $0?.isHidden = false
+                }
+                cell.levelLabel.text = "Lv.\(marshmallow.reactLevel.description)"
+                cell.levelBadgeLabel.text = "공감말랑"
+                if marshmallow.reactLevel == 0 {
+                    cell.marshmellowImageView.image = UIImage(named: "marshmallowUnlock")
+                } else if marshmallow.reactLevel < 4 {
+                    cell.marshmellowImageView.image = UIImage(named: "marshmallowLevel\(marshmallow.reactLevel)Blue")
+                } else {
+                    cell.marshmellowImageView.image = UIImage(named: "marshmallowLevel4Blue")
+                }
+            } else if indexPath.row == 2 {
+                [cell.labelLevelContainerView, cell.levelBadgeContainerView, cell.levelLabel, cell.levelBadgeLabel].forEach {
+                    $0?.isHidden = false
+                }
+                cell.levelLabel.text = "Lv.\(marshmallow.growLevel.description)"
+                cell.levelBadgeLabel.text = "발전말랑"
+                if marshmallow.growLevel == 0 {
+                    cell.marshmellowImageView.image = UIImage(named: "marshmallowUnlock")
+                } else if marshmallow.growLevel < 4 {
+                    cell.marshmellowImageView.image = UIImage(named: "marshmallowLevel\(marshmallow.growLevel)Yellow")
+                } else {
+                    cell.marshmellowImageView.image = UIImage(named: "marshmallowLevel4Yellow")
+                }
+            } else {
+                [cell.labelLevelContainerView, cell.levelBadgeContainerView, cell.levelLabel, cell.levelBadgeLabel].forEach {
+                    $0?.isHidden = false
+                }
+                cell.levelLabel.text = "Lv.\(marshmallow.frankLevel.description)"
+                cell.levelBadgeLabel.text = "솔직말랑"
+                if marshmallow.frankLevel == 0 {
+                    cell.marshmellowImageView.image = UIImage(named: "marshmallowUnlock")
+                } else if marshmallow.frankLevel < 4 {
+                    cell.marshmellowImageView.image = UIImage(named: "marshmallowLevel\(marshmallow.frankLevel)Mint")
+                } else {
+                    cell.marshmellowImageView.image = UIImage(named: "marshmallowLevel4Mint")
+                }
+            }
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MarshmellowDataModel.sampleData.count
+        return 4
     }
 }
 
@@ -115,3 +183,29 @@ extension MypageVC: UICollectionViewDelegateFlowLayout {
         return 11
     }
 }
+
+// MARK: - Network
+extension MypageVC {
+    
+    /// 목표보관함 삭제
+    private func requestUserAPI() {
+        MypageAPI.shared.requestUser() {
+            networkResult in
+            switch networkResult {
+            case .success(let data):
+                guard let data = data as? UserResModel else { return }
+                DispatchQueue.main.async {
+                    self.UserData = data
+                    self.marshmallow = self.UserData.marshmallows
+                    self.setData(data: self.UserData)
+                    self.marshmellowCV.reloadData()
+                }
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+}
+

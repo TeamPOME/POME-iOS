@@ -8,12 +8,13 @@
 import Foundation
 import Alamofire
 
-enum GoalStorageService {
+enum MypageService {
     case requestGoalStorage
     case requestDeleteGoal(goalId: Int)
+    case requestUser
 }
 
-extension GoalStorageService: TargetType {
+extension MypageService: TargetType {
     
     var path: String {
         switch self {
@@ -21,12 +22,14 @@ extension GoalStorageService: TargetType {
             return "/goals/storage"
         case .requestDeleteGoal(let goalId):
             return "/goals/\(goalId)"
+        case .requestUser:
+            return "/users"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .requestGoalStorage:
+        case .requestGoalStorage, .requestUser:
             return .get
         case .requestDeleteGoal:
             return .delete
@@ -35,7 +38,7 @@ extension GoalStorageService: TargetType {
     
     var parameters: RequestParams {
         switch self {
-        case .requestGoalStorage:
+        case .requestGoalStorage, .requestUser:
             return .requestPlain
         case .requestDeleteGoal(let goalId):
             let requestQuery : [String : Any] = [
@@ -47,7 +50,7 @@ extension GoalStorageService: TargetType {
     
     var header: HeaderType {
         switch self {
-        case .requestGoalStorage, .requestDeleteGoal:
+        case .requestGoalStorage, .requestDeleteGoal, .requestUser:
             return .auth
         }
     }
