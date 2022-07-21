@@ -52,7 +52,7 @@ class RemindVC: BaseVC {
     
     /// 탭바가 왔다갔다 할 경우 첫 셀이 default가 되게끔 처리하였다.
     override func viewWillAppear(_ animated: Bool) {
-        setDefaultSelectedCell(index: selectedCategoryIndex)
+        requestGetRemind()
     }
 }
 
@@ -112,7 +112,7 @@ extension RemindVC {
         remindTV.isScrollEnabled = (category.count == 0) ? false : true
     }
     
-    /// 목표 카테고리의 첫 아이템을 디폴트로 설정
+    /// 목표 카테고리의 다른탭으로 눌리기 전의 탭으로 눌리게끔 default 설정
     private func setDefaultSelectedCell(index: Int) {
         self.goalCategoryCV.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .right)
     }
@@ -370,9 +370,11 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedCategoryIndex = indexPath.row
-        reqeustGetRemindGoal(goalId: category[indexPath.row].id)
-        remindTV.reloadData()
+        if !category.isEmpty {
+            selectedCategoryIndex = indexPath.row
+            reqeustGetRemindGoal(goalId: category[indexPath.row].id)
+            remindTV.reloadData()
+        }
     }
 }
 
@@ -388,6 +390,8 @@ extension RemindVC {
                 if let data = data as? [RemindGoalModel] {
                     DispatchQueue.main.async {
                         self.category = data
+                        self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
+                        self.remindTV.reloadData()
                         self.goalCategoryCV.reloadData()
                         self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
                     }
