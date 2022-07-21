@@ -28,9 +28,13 @@ class GoalStorageVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        setTV()
+        registerTV()
         setDelegate()
         setTapBackAction()
+        //        requestGoalStorageAPI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         requestGoalStorageAPI()
     }
 }
@@ -62,7 +66,7 @@ extension GoalStorageVC {
 // MARK: - Custom Methods
 extension GoalStorageVC {
     
-    private func setTV(){
+    private func registerTV(){
         GoalCardCVC.register(target: goalStorageCV)
         GoalStorageTitleCVC.register(target: goalStorageCV)
         HaveNoGoalInStorageCVC.register(target: goalStorageCV)
@@ -111,7 +115,9 @@ extension GoalStorageVC: UICollectionViewDelegate {
                         
                         /// 알럿창의 확인버튼(오른쪽 버튼) 누르는 경우 삭제 서버 통신
                         alert.confirmBtn.press { [weak self] in
-                            
+                            if let id = self?.goalStorageDataList[indexPath.row].id {
+                                self?.requestDeleteGoalAPI(goalId: id)
+                            }
                             self?.dismiss(animated: true)
                         }
                     })
@@ -187,7 +193,6 @@ extension GoalStorageVC {
                 guard let data = data as? [GoalStorageResModel] else { return }
                 self.goalStorageDataList = data
                 self.goalStorageCV.reloadData()
-                print(data)
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
@@ -196,8 +201,19 @@ extension GoalStorageVC {
         }
     }
     
-    private func requestDeleteGoalAPI() {
-        //        GoalStorageAPI.shared.
+    private func requestDeleteGoalAPI(goalId: Int) {
+        GoalStorageAPI.shared.requestDeleteGoalAPI(goalId: goalId) { networkResult in
+            switch networkResult {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.requestGoalStorageAPI()
+                }
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
     }
 }
 

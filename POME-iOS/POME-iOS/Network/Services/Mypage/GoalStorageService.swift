@@ -32,6 +32,7 @@ extension GoalStorageService: TargetType {
             return .delete
         }
     }
+    
     var parameters: RequestParams {
         switch self {
         case .requestGoalStorage:

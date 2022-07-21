@@ -22,7 +22,6 @@ class GoalStorageAPI: BaseAPI {
                 
                 let networkResult = self.judgeStatus(by: statusCode, data, [GoalStorageResModel].self)
                 completion(networkResult)
-                print(networkResult)
                 
             case .failure(let err):
                 print(err.localizedDescription)
@@ -36,9 +35,10 @@ class GoalStorageAPI: BaseAPI {
             switch response.result {
             case .success:
                 guard let statusCode = response.response?.statusCode else { return }
-                print("This is StatusCode", statusCode)
                 guard let data = response.data else { return }
-                print(data)
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, EmptyResModel.self)
+                completion(networkResult)
                 
             case .failure(let err):
                 print(err.localizedDescription)

@@ -263,12 +263,7 @@ extension GoalCardCVC {
         moneyGoalLabel.text = "/ " + numberFormatter(number: goalData.amount).description + "원"
         realSpentMoneyLabel.text = numberFormatter(number: goalData.payAmount).description + "원"
         setProgress(goal: Double(goalData.rate))
-        isPublic = goalData.isPublic
-        if isPublic{
-            privateImageView.image = UIImage(named: "icNoLockAll")
-        } else {
-            privateImageView.image = UIImage(named: "icLockAll")
-        }
+        privateImageView.image = goalData.isPublic ? UIImage(named: "icNoLockAll") : UIImage(named: "icLockAll")
     }
     
     func setDetailData(data: GetGoalDetailResModel) {

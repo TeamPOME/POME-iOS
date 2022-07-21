@@ -373,6 +373,7 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if !category.isEmpty {
             selectedCategoryIndex = indexPath.row
+            print(category[indexPath.row].id)
             reqeustGetRemindGoal(goalId: category[indexPath.row].id)
             remindTV.reloadData()
         }
@@ -395,6 +396,8 @@ extension RemindVC {
                         self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
                     }
                 }
+                self.remindTV.reloadData()
+                self.goalCategoryCV.reloadData()
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
@@ -413,6 +416,7 @@ extension RemindVC {
                     DispatchQueue.main.async {
                         self.goalRecordList = data
                         self.remindTV.reloadData()
+                        print(self.goalRecordList)
                     }
                 }
             case .requestErr:
