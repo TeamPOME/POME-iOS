@@ -9,8 +9,10 @@ import Foundation
 
 // MARK: RemindGoalListModel
 struct RemindGoalListModel: Codable {
-    let id, amount: Int
+    let id: Int
+    let amount: Int
     let content: String
-    let startEmotion, endEmotion: Int
+    let startEmotion: Int
+    let endEmotion: Int
     let timestamp: String
 }
