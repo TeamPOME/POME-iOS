@@ -19,7 +19,8 @@ class WriteVC: BaseVC {
     // MARK: Properties
     private var category: [GetGoalsResModel] = []
     private var goalDetail: GetGoalDetailResModel = GetGoalDetailResModel(id: 0, message: "", amount: 0, payAmount: 0, rate: 0, isPublic: true, dDay: 0)
-    private var spend: [String] = ["", "", ""]
+    private var spend: [Record] = []
+    private var incompleteTotal: Int = 0
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -61,6 +62,7 @@ extension WriteVC {
             
             /// 카테고리의 첫 번째 목표 id로 서버 통신
             getGoalDetail(goalId: category[0].id)
+            getWeekSpend(goalId: category[0].id)
         }
         writeMainCV.reloadData()
     }
@@ -145,6 +147,7 @@ extension WriteVC: UICollectionViewDelegate {
                 
                 /// 해당 목표 id로 세부 정보 요청
                 getGoalDetail(goalId: category[indexPath.row - 1].id)
+                getWeekSpend(goalId: category[indexPath.row - 1].id)
             }
         } else {
             
@@ -227,10 +230,13 @@ extension WriteVC: UICollectionViewDataSource {
                     guard let lookbackVC = UIStoryboard.init(name: Identifiers.LookbackSB, bundle: nil).instantiateViewController(withIdentifier: LookbackVC.className) as? LookbackVC else { return }
                     self.navigationController?.pushViewController(lookbackVC, animated: true)
                 }
+                feelingCardCVC.setData(num: incompleteTotal)
+                
                 return feelingCardCVC
             default:
                 spendCVC.makeRounded(cornerRadius: 6.adjusted)
                 spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
+                spendCVC.setData(data: spend[indexPath.row], isWriteVC: true)
                 
                 /// 씀씀이 셀의 more 버튼을 누를 경우 action sheet를 띄운다.
                 spendCVC.tapMoreBtn = {
@@ -341,9 +347,6 @@ extension WriteVC {
                         self.category = data
                         self.goalCategoryCV.reloadData()
                         self.setGoalCategoryCV()
-                        
-                        // TODO: - 씀씀이 서버 통신 후 해당 코드 통신 부분으로 옮기기
-                        self.configureEmptyView()
                     }
                 }
             case .requestErr:
@@ -380,6 +383,27 @@ extension WriteVC {
             case .success(_):
                 DispatchQueue.main.async {
                     self.getGoalGategory()
+                }
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    /// 일주일 씀씀이 조회 요청 메서드
+    private func getWeekSpend(goalId: Int) {
+        WriteAPI.shared.getWeekSpendAPI(goalId: goalId) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let data = data as? GetWeekSpendResModel {
+                    DispatchQueue.main.async {
+                        self.spend = data.records
+                        self.incompleteTotal = data.incompleteTotal
+                        self.writeMainCV.reloadSections([1, 2])
+                        self.configureEmptyView()
+                    }
                 }
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")

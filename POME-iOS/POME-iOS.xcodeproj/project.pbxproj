@@ -140,6 +140,8 @@
 		84051AF028815A0A007CF7EF /* WriteBottomAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84051AEE28815A0A007CF7EF /* WriteBottomAlertVC.xib */; };
 		8427F878288849690096B20E /* EmptyResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427F877288849690096B20E /* EmptyResModel.swift */; };
 		8427F88228885E6A0096B20E /* PostGoalResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427F88128885E6A0096B20E /* PostGoalResModel.swift */; };
+		8427F885288889320096B20E /* GetWeekSpendResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427F884288889320096B20E /* GetWeekSpendResModel.swift */; };
+		8427F88928895C8C0096B20E /* EmojiList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427F88828895C8C0096B20E /* EmojiList.swift */; };
 		84309C822878ACF50017F8BF /* GoalCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */; };
 		84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */; };
 		8432C9B228773A42001C643F /* SpendCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9B028773A42001C643F /* SpendCVC.swift */; };
@@ -317,6 +319,8 @@
 		84051AEE28815A0A007CF7EF /* WriteBottomAlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteBottomAlertVC.xib; sourceTree = "<group>"; };
 		8427F877288849690096B20E /* EmptyResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResModel.swift; sourceTree = "<group>"; };
 		8427F88128885E6A0096B20E /* PostGoalResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGoalResModel.swift; sourceTree = "<group>"; };
+		8427F884288889320096B20E /* GetWeekSpendResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeekSpendResModel.swift; sourceTree = "<group>"; };
+		8427F88828895C8C0096B20E /* EmojiList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiList.swift; sourceTree = "<group>"; };
 		84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCategoryCVC.swift; sourceTree = "<group>"; };
 		84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCategoryCVC.xib; sourceTree = "<group>"; };
 		8432C9B028773A42001C643F /* SpendCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendCVC.swift; sourceTree = "<group>"; };
@@ -633,6 +637,7 @@
 			isa = PBXGroup;
 			children = (
 				77E8F34B2875F37500D2F6C0 /* Identifiers.swift */,
+				8427F88828895C8C0096B20E /* EmojiList.swift */,
 			);
 			path = Struct;
 			sourceTree = "<group>";
@@ -1103,6 +1108,7 @@
 				843D538E288737AA00BB4DCB /* GetGoalsResModel.swift */,
 				843D53922887436C00BB4DCB /* GetGoalDetailResModel.swift */,
 				8427F88128885E6A0096B20E /* PostGoalResModel.swift */,
+				8427F884288889320096B20E /* GetWeekSpendResModel.swift */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -1290,6 +1296,7 @@
 				77E8F3732876934500D2F6C0 /* APIConstants.swift in Sources */,
 				843D538F288737AA00BB4DCB /* GetGoalsResModel.swift in Sources */,
 				84ACED852878989E00AA408D /* EmptyGoalCardCVC.swift in Sources */,
+				8427F885288889320096B20E /* GetWeekSpendResModel.swift in Sources */,
 				84A6E883287D518200CD5843 /* PomeHalfModalVC.swift in Sources */,
 				77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */,
 				77E8F36028765FA600D2F6C0 /* RemindNC.swift in Sources */,
@@ -1311,6 +1318,7 @@
 				77E8F3242874B80A00D2F6C0 /* MypageXib.swift in Sources */,
 				77BD15172885F52F00A1950D /* Bundle+.swift in Sources */,
 				1A10C2582877367100489CA1 /* GoalStorageDataModel.swift in Sources */,
+				8427F88928895C8C0096B20E /* EmojiList.swift in Sources */,
 				77E8F2B92874A23700D2F6C0 /* AppDelegate.swift in Sources */,
 				84DC1ADA2880788C0057C55D /* PlusCVC.swift in Sources */,
 				77BD151F2887DFD100A1950D /* SignUpAPI.swift in Sources */,
