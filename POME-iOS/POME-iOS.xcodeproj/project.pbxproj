@@ -51,7 +51,6 @@
 		1ABDED7B287F250600F85F9C /* RemindGoalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDED7A287F250600F85F9C /* RemindGoalDataModel.swift */; };
 		1ABDED82287F9B4E00F85F9C /* RemindGoalCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABDED80287F9B4E00F85F9C /* RemindGoalCategoryCVC.swift */; };
 		1ABDED83287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABDED81287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib */; };
-		1AC6B70928891E0500EEAC55 /* HaveNoGoalInStorageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6B70828891E0500EEAC55 /* HaveNoGoalInStorageCVC.swift */; };
 		1ACF85EA288880E70013554F /* RemindGoalListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACF85E9288880E70013554F /* RemindGoalListModel.swift */; };
 		1AD1042E288925FC00B11995 /* MateDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD1042D288925FC00B11995 /* MateDetailModel.swift */; };
 		778E0F432879624700BEEEA5 /* PomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778E0F422879624700BEEEA5 /* PomeTextField.swift */; };
@@ -224,7 +223,6 @@
 		1ABDED7A287F250600F85F9C /* RemindGoalDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindGoalDataModel.swift; sourceTree = "<group>"; };
 		1ABDED80287F9B4E00F85F9C /* RemindGoalCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindGoalCategoryCVC.swift; sourceTree = "<group>"; };
 		1ABDED81287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemindGoalCategoryCVC.xib; sourceTree = "<group>"; };
-		1AC6B70828891E0500EEAC55 /* HaveNoGoalInStorageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveNoGoalInStorageCVC.swift; sourceTree = "<group>"; };
 		1ACF85E9288880E70013554F /* RemindGoalListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindGoalListModel.swift; sourceTree = "<group>"; };
 		1AD1042D288925FC00B11995 /* MateDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateDetailModel.swift; sourceTree = "<group>"; };
 		6F6FAF66B7C4C46AE47E904C /* Pods-POME-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POME-iOS.debug.xcconfig"; path = "Target Support Files/Pods-POME-iOS/Pods-POME-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -502,7 +500,6 @@
 			isa = PBXGroup;
 			children = (
 				77BB63402888927A002C0DC4 /* MateSearchResModel.swift */,
-				77BD150A288535D700A1950D /* SignInResModel.swift */,
 				77BD151C2886FAF200A1950D /* SignUpResModel.swift */,
 			);
 			path = Sign;
@@ -1046,7 +1043,6 @@
 				77BD1520288887B200A1950D /* Public */,
 				77BD151B2886FAE100A1950D /* Sign */,
 				8427F88328887B110096B20E /* Write */,
-				8427F877288849690096B20E /* DeleteResModel.swift */,
 				1AAF202428885BA600A4C18F /* Remind */,
 				1AAF20192887E5DE00A4C18F /* Mate */,
 				1A94E6FC288730DF0060B436 /* Mypage */,
