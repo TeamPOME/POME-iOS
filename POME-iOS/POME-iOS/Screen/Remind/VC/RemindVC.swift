@@ -52,7 +52,6 @@ class RemindVC: BaseVC {
     
     /// 탭바가 왔다갔다 할 경우 첫 셀이 default가 되게끔 처리하였다.
     override func viewWillAppear(_ animated: Bool) {
-        setDefaultSelectedCell(index: selectedCategoryIndex)
         requestGetRemind()
     }
 }
@@ -373,7 +372,6 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if !category.isEmpty {
             selectedCategoryIndex = indexPath.row
-            print(category[indexPath.row].id)
             reqeustGetRemindGoal(goalId: category[indexPath.row].id)
             remindTV.reloadData()
         }
@@ -392,12 +390,12 @@ extension RemindVC {
                 if let data = data as? [RemindGoalModel] {
                     DispatchQueue.main.async {
                         self.category = data
+                        self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
+                        self.remindTV.reloadData()
                         self.goalCategoryCV.reloadData()
                         self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
                     }
                 }
-                self.remindTV.reloadData()
-                self.goalCategoryCV.reloadData()
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:

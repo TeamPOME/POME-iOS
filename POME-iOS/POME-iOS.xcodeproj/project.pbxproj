@@ -991,6 +991,7 @@
 		77E8F3192874B73600D2F6C0 /* CVC */ = {
 			isa = PBXGroup;
 			children = (
+				1A10C2552877349E00489CA1 /* GoalCardCVC.swift */,
 				1A732CCF288960A400F6A563 /* HaveNoGoalInStorageCVC.swift */,
 				1A89417C2883066D00606A68 /* MarshmellowCVC.swift */,
 				77E8F3212874B7F000D2F6C0 /* MypageCVC.swift */,
@@ -1003,7 +1004,6 @@
 			isa = PBXGroup;
 			children = (
 				77E8F31F2874B7E500D2F6C0 /* MypageTVC.swift */,
-				1A10C2552877349E00489CA1 /* GoalCardCVC.swift */,
 			);
 			path = TVC;
 			sourceTree = "<group>";

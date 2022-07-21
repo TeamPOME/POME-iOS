@@ -189,8 +189,10 @@ extension GoalStorageVC {
             switch networkResult {
             case .success(let data):
                 guard let data = data as? [GoalStorageResModel] else { return }
-                self.goalStorageDataList = data
-                self.goalStorageCV.reloadData()
+                DispatchQueue.main.async {
+                    self.goalStorageDataList = data
+                    self.goalStorageCV.reloadData()
+                }
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
@@ -204,9 +206,7 @@ extension GoalStorageVC {
         GoalStorageAPI.shared.requestDeleteGoalAPI(goalId: goalId) { networkResult in
             switch networkResult {
             case .success(_):
-                DispatchQueue.main.async {
-                    self.requestGoalStorageAPI()
-                }
+                self.requestGoalStorageAPI()
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
