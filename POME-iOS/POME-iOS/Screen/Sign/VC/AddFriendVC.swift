@@ -137,7 +137,7 @@ extension AddFriendVC: UITextFieldDelegate {
     /// done 키 터치 시 키보드 내려가도록
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchBarTextField.resignFirstResponder()
-        
+
         return true
     }
 }
@@ -146,6 +146,7 @@ extension AddFriendVC: UITextFieldDelegate {
 extension AddFriendVC: ProfileCellDelegate {
     func sendFollowingState(indexPath: IndexPath, followingState: Bool) {
         profileList[indexPath.row].isFriend = followingState
+        addMate(targetID: profileList[indexPath.row].id)
     }
 }
 
@@ -179,6 +180,8 @@ extension AddFriendVC: UITableViewDataSource {
 
 // MARK: - Network
 extension AddFriendVC {
+    
+    /// 친구 검색 메서드
     private func searchMateNickname(nickname: String) {
         SignAPI.shared.searchMateAPI(nickname: nickname) { networkResult in
             switch networkResult {
@@ -189,6 +192,22 @@ extension AddFriendVC {
                         self.profileTV.reloadData()
                     }
                 }
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    /// 친구 추가 요청 메서드
+    private func addMate(targetID: Int) {
+        SignAPI.shared.addMateAPI(targetID: targetID) { networkResult in
+            switch networkResult {
+            case .success(_):
+                
+                // TODO: 로딩뷰 멈춤
+                break
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
