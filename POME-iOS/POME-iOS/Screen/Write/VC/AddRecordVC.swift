@@ -14,6 +14,9 @@ class AddRecordVC: BaseVC {
     /// 서버 통신 시 콤마가 없는 상태의 금액 저장을 위함
     private var price: Int = 0
     
+    /// 서버 통신 시 선택한 목표의 id 값을 전달하기 위함
+    private var goalId: Int = 0
+    
     /// 버튼에 따라 다른 바텀시트를 띄우기 위함
     private var isGoalBtn: Bool = false
     
@@ -61,6 +64,10 @@ class AddRecordVC: BaseVC {
     @IBAction func tapConfirmBtn(_ sender: UIButton) {
         guard let writeSelectFeelingVC = UIStoryboard.init(name: Identifiers.WriteSelectFeelingSB, bundle: nil).instantiateViewController(withIdentifier: WriteSelectFeelingVC.className) as? WriteSelectFeelingVC else { return }
         writeSelectFeelingVC.isRecord = true
+        
+        /// selectEmotion값은 아직 지정되지 않았기 때문에 0으로 셋팅해서 보낸다.
+        writeSelectFeelingVC.newRecord = PostRecordResModel(id: goalId, date: dateLabel.text!, amount: price, content: recordTextField.text!, startEmotion: 0)
+        
         navigationController?.pushViewController(writeSelectFeelingVC, animated: true)
     }
 }
@@ -251,7 +258,8 @@ extension AddRecordVC: UITextFieldDelegate {
 // MARK: - SelectGoalDelegate
 extension AddRecordVC: SelectGoalDelegate {
     
-    func selectGoal(goalLabel: String) {
+    func selectGoal(goalId: Int, goalLabel: String) {
+        self.goalId = goalId
         self.goalLabel.text = goalLabel
         self.goalLabel.textColor = .grey_9
         calendarBtn.isEnabled = true
@@ -260,7 +268,7 @@ extension AddRecordVC: SelectGoalDelegate {
 }
 
 // MARK: - DeliveryDateDelegate
-extension AddRecordVC: DeliveryDateDelegate{
+extension AddRecordVC: DeliveryDateDelegate {
     
     /// 받아온 데이터로 날짜 레이블 변경
     func deliveryDate(selectedDate: Date, isStartDate: Bool) {
