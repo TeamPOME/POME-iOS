@@ -87,11 +87,6 @@ class MateVC: BaseVC {
         super.viewWillAppear(animated)
         showTabbar()
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        hideTabbar()
-    }
 }
 
 // MARK: - UI
@@ -204,6 +199,7 @@ extension MateVC {
             guard let addFriendVC = UIStoryboard.init(name: Identifiers.AddFriendSB, bundle: nil).instantiateViewController(withIdentifier: Identifiers.AddFriendVC) as? AddFriendVC else { return }
             
             addFriendVC.naviBar.setNaviStyle(state: .whiteBackWithTitle)
+            addFriendVC.hasBackView = true
             self?.navigationController?.pushViewController(addFriendVC, animated: true)
         }
     }

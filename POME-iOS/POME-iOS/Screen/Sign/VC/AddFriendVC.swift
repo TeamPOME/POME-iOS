@@ -31,6 +31,8 @@ class AddFriendVC: BaseVC {
     
     private var profileList: [FriendListData] = []
     
+    var hasBackView: Bool = false
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +40,13 @@ class AddFriendVC: BaseVC {
         setTapSearchBtn()
         registerTVC()
         setDelegate()
-        initProfileList()
         setTapCompleteBtn()
         setTapBackBtn()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideTabbar()
     }
 }
 
@@ -49,7 +55,6 @@ extension AddFriendVC {
     
     private func configureUI() {
         view.addSubviews([naviBar, searchBarTextField, profileTV, completeBtn])
-        profileTV.isHidden = true
         profileTV.separatorStyle = .none
         
         /// TableView 하단 space 설정
@@ -126,9 +131,13 @@ extension AddFriendVC {
         completeBtn.press { [weak self] in
             guard let self = self else { return }
             
-            let pomeTBC = PomeTBC()
-            pomeTBC.modalPresentationStyle = .fullScreen
-            self.present(pomeTBC, animated: true, completion: nil)
+            if !self.hasBackView {
+                let pomeTBC = PomeTBC()
+                pomeTBC.modalPresentationStyle = .fullScreen
+                self.present(pomeTBC, animated: true, completion: nil)
+            } else {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     
