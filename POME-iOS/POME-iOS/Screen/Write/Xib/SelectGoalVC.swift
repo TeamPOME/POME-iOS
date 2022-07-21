@@ -10,7 +10,7 @@ import UIKit
 class SelectGoalVC: BaseVC {
     
     // MARK: Properties
-    private var goalList: [GetGoalsResModel] = []
+    var goalList: [GetGoalsResModel] = []
     var selectGoalDelegate: SelectGoalDelegate!
     
     // MARK: IBOutlet
@@ -21,10 +21,6 @@ class SelectGoalVC: BaseVC {
         super.viewDidLoad()
         setDelegate()
         registerTVC()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        getGoalGategory()
     }
     
     // MARK: IBAction
@@ -74,28 +70,5 @@ extension SelectGoalVC: UITableViewDataSource {
         goalTVC.selectionStyle = .none
         goalTVC.goalLabel.text = goalList[indexPath.row].category
         return goalTVC
-    }
-}
-
-// MARK: - Network
-extension SelectGoalVC {
-    
-    /// 목표 카테고리 조회 요청 메서드
-    private func getGoalGategory() {
-        WriteAPI.shared.getGoalsAPI { networkResult in
-            switch networkResult {
-            case .success(let data):
-                if let data = data as? [GetGoalsResModel] {
-                    DispatchQueue.main.async {
-                        self.goalList = data
-                        self.goalTV.reloadData()
-                    }
-                }
-            case .requestErr:
-                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
-            default:
-                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
-            }
-        }
     }
 }
