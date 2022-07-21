@@ -11,8 +11,14 @@ class AddRecordVC: BaseVC {
     
     // MARK: Properties
     
+    /// 목표 리스트 바텀시트 띄울 때 해당 정보를 전달해서 띄움
+    private var goalList: [GetGoalsResModel] = []
+    
     /// 서버 통신 시 콤마가 없는 상태의 금액 저장을 위함
     private var price: Int = 0
+    
+    /// 서버 통신 시 선택한 목표의 id 값을 전달하기 위함
+    private var goalId: Int = 0
     
     /// 버튼에 따라 다른 바텀시트를 띄우기 위함
     private var isGoalBtn: Bool = false
@@ -37,6 +43,7 @@ class AddRecordVC: BaseVC {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        getGoalGategory()
         hideTabbar()
         self.addKeyboardNotifications()
     }
@@ -61,6 +68,10 @@ class AddRecordVC: BaseVC {
     @IBAction func tapConfirmBtn(_ sender: UIButton) {
         guard let writeSelectFeelingVC = UIStoryboard.init(name: Identifiers.WriteSelectFeelingSB, bundle: nil).instantiateViewController(withIdentifier: WriteSelectFeelingVC.className) as? WriteSelectFeelingVC else { return }
         writeSelectFeelingVC.isRecord = true
+        
+        /// selectEmotion값은 아직 지정되지 않았기 때문에 0으로 셋팅해서 보낸다.
+        writeSelectFeelingVC.newRecord = PostRecordResModel(id: goalId, date: dateLabel.text!, amount: price, content: recordTextField.text!, startEmotion: 0)
+        
         navigationController?.pushViewController(writeSelectFeelingVC, animated: true)
     }
 }
@@ -195,6 +206,7 @@ extension AddRecordVC {
         /// 버튼 별 나와야 하는 뷰
         let selectGoalVC = SelectGoalVC()
         selectGoalVC.selectGoalDelegate = self
+        selectGoalVC.goalList = self.goalList
         let calendarVC = CalendarVC()
         calendarVC.deliveryDateDelegate = self
         calendarVC.startDate = self.getStringToDate(string: dateLabel.text!)
@@ -251,7 +263,8 @@ extension AddRecordVC: UITextFieldDelegate {
 // MARK: - SelectGoalDelegate
 extension AddRecordVC: SelectGoalDelegate {
     
-    func selectGoal(goalLabel: String) {
+    func selectGoal(goalId: Int, goalLabel: String) {
+        self.goalId = goalId
         self.goalLabel.text = goalLabel
         self.goalLabel.textColor = .grey_9
         calendarBtn.isEnabled = true
@@ -260,10 +273,32 @@ extension AddRecordVC: SelectGoalDelegate {
 }
 
 // MARK: - DeliveryDateDelegate
-extension AddRecordVC: DeliveryDateDelegate{
+extension AddRecordVC: DeliveryDateDelegate {
     
     /// 받아온 데이터로 날짜 레이블 변경
     func deliveryDate(selectedDate: Date, isStartDate: Bool) {
         dateLabel.text = self.getSelectedDate(date: selectedDate)
+    }
+}
+
+// MARK: - Network
+extension AddRecordVC {
+    
+    /// 목표 카테고리 조회 요청 메서드
+    private func getGoalGategory() {
+        WriteAPI.shared.getGoalsAPI { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let data = data as? [GetGoalsResModel] {
+                    DispatchQueue.main.async {
+                        self.goalList = data
+                    }
+                }
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
     }
 }

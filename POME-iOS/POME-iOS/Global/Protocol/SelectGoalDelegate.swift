@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SelectGoalDelegate {
-    func selectGoal(goalLabel: String)
+    func selectGoal(goalId: Int, goalLabel: String)
 }

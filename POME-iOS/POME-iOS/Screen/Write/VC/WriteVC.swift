@@ -28,12 +28,12 @@ class WriteVC: BaseVC {
         setDelegate()
         registerCV()
         configureNaviBar()
+        getGoalGategory()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         showTabbar()
         setCVOffset()
-        getGoalGategory()
     }
     
     // MARK: IBAction

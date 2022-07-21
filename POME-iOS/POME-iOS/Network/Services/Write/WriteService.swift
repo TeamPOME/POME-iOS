@@ -14,6 +14,7 @@ enum WriteService {
     case postGoal(startDate: String, endDate: String, category: String, message: String, amount: Int, isPublic: Bool)
     case deleteGoal(goalId: Int)
     case getWeekSpend(goalId: Int)
+    case postRecord(goalId: Int, date: String, amount: Int, content: String, startEmotion: Int)
 }
 
 extension WriteService: TargetType {
@@ -26,6 +27,8 @@ extension WriteService: TargetType {
             return "/goals/\(goalId)"
         case .getWeekSpend(let goalId):
             return "/records/week/\(goalId)"
+        case .postRecord:
+            return "/records"
         }
     }
     
@@ -35,7 +38,7 @@ extension WriteService: TargetType {
             return .get
         case .deleteGoal:
             return .delete
-        case .postGoal:
+        case .postGoal, .postRecord:
             return .post
         }
     }
@@ -59,12 +62,21 @@ extension WriteService: TargetType {
                 "isPublic": isPublic
             ]
             return .requestBody(requestBody)
+        case .postRecord(let goalId, let date, let amount, let content, let startEmotion):
+            let requestBody: [String: Any] = [
+                "goalId": goalId,
+                "date": date,
+                "amount": amount,
+                "content": content,
+                "startEmotion": startEmotion
+            ]
+            return .requestBody(requestBody)
         }
     }
     
     var header: HeaderType {
         switch self {
-        case .getGoalGategory, .getGoalDetail, .deleteGoal, .postGoal, .getWeekSpend:
+        case .getGoalGategory, .getGoalDetail, .deleteGoal, .postGoal, .getWeekSpend, .postRecord:
             return .auth
         }
     }

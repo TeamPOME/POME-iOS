@@ -11,6 +11,10 @@ class WriteSelectFeelingVC: BaseVC {
     
     // MARK: Properties
     var isRecord: Bool = false
+    var selectedEmotion: Int = 0
+    
+    /// 씀씀이 기록 추가 서버 통신을 위해 이전 VC에서 받아 올 정보
+    var newRecord: PostRecordResModel = PostRecordResModel(id: 0, date: "", amount: 0, content: "", startEmotion: 0)
     
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
@@ -60,6 +64,14 @@ class WriteSelectFeelingVC: BaseVC {
             }
         }
         
+        if happyBtn.isSelected {
+            selectedEmotion = EmojiToNum.happy
+        } else if dontKnowBtn.isSelected {
+            selectedEmotion = EmojiToNum.dontKnow
+        } else {
+            selectedEmotion = EmojiToNum.regret
+        }
+        
         configureHappyUI()
         configureDontKnowUI()
         configureRegretUI()
@@ -68,18 +80,13 @@ class WriteSelectFeelingVC: BaseVC {
     }
     
     @IBAction func tapConfirmBtn(_ sender: UIButton) {
-        let nextVC: UIViewController
-        
         if isRecord {
-            guard let addRecordCompleteVC = UIStoryboard.init(name: Identifiers.AddCompleteSB, bundle: nil).instantiateViewController(withIdentifier: AddCompleteVC.className) as? AddCompleteVC else { return }
-            addRecordCompleteVC.isRecord = self.isRecord
-            nextVC = addRecordCompleteVC
+            postRecord(goalId: newRecord.id, date: newRecord.date, amount: newRecord.amount, content: newRecord.content, startEmotion: selectedEmotion)
         } else {
-            guard let lookbackCompleteVC = UIStoryboard.init(name: Identifiers.LookbackCompleteSB, bundle: nil).instantiateViewController(withIdentifier: LookbackCompleteVC.className) as? LookbackCompleteVC else { return }
-            nextVC = lookbackCompleteVC
-        }
 
-        navigationController?.pushViewController(nextVC, animated: true)
+            // TODO: - 나중 감정 추가 서버 통신 필요, 아래 코드는 통신 후 success로 이동
+            presentLookbackCompleteVC()
+        }
     }
 }
 
@@ -144,6 +151,37 @@ extension WriteSelectFeelingVC {
     private func setTapBackBtn() {
         naviBar.backBtn.press { [weak self] in
             self?.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    /// 기록 추가 후 띄울 뷰
+    private func presentAddRecordCompleteVC() {
+        guard let addRecordCompleteVC = UIStoryboard.init(name: Identifiers.AddCompleteSB, bundle: nil).instantiateViewController(withIdentifier: AddCompleteVC.className) as? AddCompleteVC else { return }
+        addRecordCompleteVC.isRecord = self.isRecord
+        navigationController?.pushViewController(addRecordCompleteVC, animated: true)
+    }
+    
+    /// 되돌아보기 - 나중감정 남긴 후 띄울 뷰
+    private func presentLookbackCompleteVC() {
+        guard let lookbackCompleteVC = UIStoryboard.init(name: Identifiers.LookbackCompleteSB, bundle: nil).instantiateViewController(withIdentifier: LookbackCompleteVC.className) as? LookbackCompleteVC else { return }
+        navigationController?.pushViewController(lookbackCompleteVC, animated: true)
+    }
+}
+
+// MARK: - Network
+extension WriteSelectFeelingVC {
+    
+    /// 기록 씀씀이 추가 요청 메서드
+    private func postRecord(goalId: Int, date: String, amount: Int, content: String, startEmotion: Int) {
+        WriteAPI.shared.postRecordAPI(goalId: goalId, date: date, amount: amount, content: content, startEmotion: startEmotion) { networkResult in
+            switch networkResult {
+            case .success(_):
+                self.presentAddRecordCompleteVC()
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
         }
     }
 }
