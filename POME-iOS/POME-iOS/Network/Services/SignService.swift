@@ -15,6 +15,7 @@ import UIKit
 
 enum SignService {
     case requestKakaoLogin
+    case searchMate(nickname: String)
 }
 
 extension SignService: TargetType {
@@ -23,13 +24,15 @@ extension SignService: TargetType {
         switch self {
         case .requestKakaoLogin:
             return "/auth/kakao"
+        case .searchMate(_):
+            return "/friends/search"
         }
     }
     
     var method: HTTPMethod {
         switch self {
             
-        case .requestKakaoLogin:
+        case .requestKakaoLogin, .searchMate:
             return .get
         }
     }
@@ -38,6 +41,11 @@ extension SignService: TargetType {
         switch self {
         case .requestKakaoLogin:
             return .requestPlain
+        case .searchMate(let nickname):
+            let requestQuery: [String: Any] = [
+                "nickname": nickname
+            ]
+            return .query(requestQuery)
         }
     }
     
@@ -45,6 +53,8 @@ extension SignService: TargetType {
         switch self {
         case .requestKakaoLogin:
             return .kakaoAuth
+        case .searchMate:
+            return .auth
         }
     }
 }
