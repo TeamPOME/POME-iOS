@@ -80,4 +80,21 @@ class WriteAPI: BaseAPI {
             }
         }
     }
+    
+    /// [GET] 일주일 씀씀이 조회
+    func getWeekSpendAPI(goalId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        AFmanager.request(WriteService.getWeekSpend(goalId: goalId)).responseData { response in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                guard let data = response.data else { return }
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, GetWeekSpendResModel.self)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 }
