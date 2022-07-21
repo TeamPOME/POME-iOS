@@ -350,13 +350,13 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
         } else {
             
             /// 글씨 길이에 따라 너비 동적 조절
-            return CGSize(width: category[indexPath.row].category.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 32, height: 29)
+            return CGSize(width: category[indexPath.row].category.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]).width + 33, height: 29)
         }
     }
     
     /// 섹션에 인셋 지정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 16, bottom: 6, right: 16)
+        return UIEdgeInsets(top: 7, left: 16, bottom: 6, right: 16)
     }
     
     /// 섹션 별 셀 위아래 간격 설정
