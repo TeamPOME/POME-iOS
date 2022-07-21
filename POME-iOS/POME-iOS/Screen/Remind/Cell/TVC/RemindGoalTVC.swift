@@ -54,7 +54,7 @@ extension RemindGoalTVC {
         sadEmojiContainerView.makeRounded(cornerRadius: sadEmojiContainerView.frame.width / 2)
         smileEmojiContainerView.makeRounded(cornerRadius: smileEmojiContainerView.frame.width / 2)
         goalLabelContainerView.makeRounded(cornerRadius: 4.adjusted)
-
+        
         /// 글자가 layout에서 벗어나면 두줄로 보일 수 있도록 함
         contentLabel.sizeToFit()
         contentLabel.numberOfLines = 2
@@ -68,28 +68,16 @@ extension RemindGoalTVC {
 // MARK: - Custom Method
 extension RemindGoalTVC {
     
-    func setData(_ remindGoalData: RemindGoalDataModel) {
-        goalLabel.text = remindGoalData.goalTitle
-        spentMoneyLabel.text = numberFormatter(number:remindGoalData.spentMoney).description + "원"
+    func setData(remindGoalData: RemindGoalListModel) {
+        goalLabel.text = remindGoalData.goalMessage
+        timeLabel.text = remindGoalData.timestamp
+        spentMoneyLabel.text = numberFormatter(number:remindGoalData.amount).description + "원"
         contentLabel.text = remindGoalData.content
-        if remindGoalData.countMate == 0 || remindGoalData.privateGoal {
-            [firstEmojiContainerBtn, secondEmojiContainerBtn, thirdEmojiContainerBtn, countMateLabel].forEach {
-                $0.isHidden = true
-            }
-        } else if remindGoalData.countMate == 1 {
-            [firstEmojiContainerBtn, secondEmojiContainerBtn, countMateLabel].forEach {
-                $0.isHidden = true
-            }
-        } else if remindGoalData.countMate == 2 {
-            firstEmojiContainerBtn.isHidden = true
-        } else if remindGoalData.countMate == 3 {
-            countMateLabel.isHidden = true
-        } else {
+        if remindGoalData.isGoalPublic {
             [firstEmojiContainerBtn, secondEmojiContainerBtn, thirdEmojiContainerBtn, countMateLabel].forEach {
                 $0.isHidden = false
             }
-            /// TODO: 버튼 alpha입힌 버튼 이미지 변경
-            countMateLabel.text = "\(remindGoalData.countMate)+"
         }
     }
 }
+
