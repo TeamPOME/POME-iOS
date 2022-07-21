@@ -82,12 +82,12 @@ class MateVC: BaseVC {
         setDelegate()
         setTVScroll()
         setTapRightNaviBtn()
-        requestGetMateAPI()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         showTabbar()
+        requestGetMateAPI()
     }
 }
 
