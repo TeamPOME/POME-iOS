@@ -10,13 +10,14 @@ import Alamofire
 
 enum MateService {
     case getMate
+    case getMateRecord(userId: Int)
 }
 
 extension MateService: TargetType {
     
     var header: HeaderType {
         switch self {
-        case .getMate:
+        case .getMate, .getMateRecord:
             return .auth
         }
     }
@@ -25,12 +26,14 @@ extension MateService: TargetType {
         switch self {
         case .getMate:
             return "/friends"
+        case .getMateRecord(_):
+            return "/friends/records"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getMate:
+        case .getMate, .getMateRecord:
             return .get
         }
     }
@@ -39,6 +42,11 @@ extension MateService: TargetType {
         switch self {
         case .getMate:
             return .requestPlain
+        case .getMateRecord(let mateId):
+            let requestQuery: [String: Any] = [
+                "userId": mateId
+            ]
+            return .query(requestQuery)
         }
     }
 }

@@ -41,6 +41,32 @@ struct NumToEmoji {
             return isWriteVC ? UIImage(named: "btnEmojiQuestion38") : UIImage(named: "btnEmojiPlus38")
         }
     }
+    
+    static func mateFirst(num: Int) -> UIImage? {
+        switch num {
+        case 1:
+            return UIImage(named: "property1EmojiHappyMint34")
+        case 2:
+            return UIImage(named: "property1EmojiWhatMint34")
+        case 3:
+            return UIImage(named: "property1EmojiSadMint34")
+        default:
+            return UIImage(named: "btnEmojiNor28")
+        }
+    }
+    
+    static func mateSecond(num: Int, isWriteVC: Bool = false) -> UIImage? {
+        switch num {
+        case 1:
+            return UIImage(named: "property1EmojiHappyPink34")
+        case 2:
+            return UIImage(named: "property1EmojiWhatPink34")
+        case 3:
+            return UIImage(named: "property1EmojiSadPink34")
+        default:
+            return UIImage(named: "btnEmojiNor28")
+        }
+    }
 }
 
 struct EmojiToNum {

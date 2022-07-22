@@ -29,4 +29,21 @@ class MateAPI: BaseAPI {
             }
         }
     }
+    
+    /// [GET] 친구 기록 조회 API
+    func getMateRecordAPI(userId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        AFmanager.request(MateService.getMateRecord(userId: userId)).responseData { response in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                guard let data = response.data else { return }
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, [GetMateRecordResModel].self)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 }

@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Then
+import Kingfisher
 
 class HaveMateTVC: BaseTVC {
     
@@ -68,5 +69,20 @@ extension HaveMateTVC {
         /// 전체 셀 안의 containerView에 그림자와 radius 값 지정
         containerView.makeRounded(cornerRadius: 8)
         containerView.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 4)
+    }
+}
+
+// MARK: - Custom Methods
+extension HaveMateTVC {
+    
+    func setData(data: GetMateRecordResModel) {
+        let url = URL(string: data.profileImage)
+        profileImageView.kf.setImage(with: url)
+        nameLabel.text = data.nickname
+        spentMoneyLabel.text = "\(self.numberFormatter(number: data.amount))원"
+        contentLabel.text = data.content
+        goalLabel.text = data.goalMessage
+        smileEmojiBtn.setImage(NumToEmoji.mateFirst(num: data.startEmotion), for: .normal)
+        sadEmojiBtn.setImage(NumToEmoji.mateSecond(num: data.endEmotion), for: .normal)
     }
 }
