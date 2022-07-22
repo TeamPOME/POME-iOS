@@ -185,6 +185,7 @@ extension GoalStorageVC {
     
     /// 목표보관함 요청
     private func requestGoalStorageAPI() {
+        self.activityIndicator.startAnimating()
         MypageAPI.shared.requestGoalStorageAPI() { networkResult in
             switch networkResult {
             case .success(let data):
@@ -193,24 +194,30 @@ extension GoalStorageVC {
                     self.goalStorageDataList = data
                     self.goalStorageCV.reloadData()
                 }
+                self.activityIndicator.stopAnimating()
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+                self.activityIndicator.stopAnimating()
             default:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+                self.activityIndicator.stopAnimating()
             }
         }
     }
     
     /// 목표보관함 삭제
     private func requestDeleteGoalAPI(goalId: Int) {
+        self.activityIndicator.startAnimating()
         MypageAPI.shared.requestDeleteGoalAPI(goalId: goalId) { networkResult in
             switch networkResult {
             case .success(_):
                 self.requestGoalStorageAPI()
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+                self.activityIndicator.stopAnimating()
             default:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+                self.activityIndicator.stopAnimating()
             }
         }
     }

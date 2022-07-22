@@ -115,6 +115,24 @@ class WriteAPI: BaseAPI {
         }
     }
     
+    /// [PATCH] 나중 감정 등록
+    func patchLateEmotionAPI(endEmotion: Int, targetId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        AFmanager.request(WriteService.patchLateRecord(endEmotion: endEmotion, targetId: targetId)).responseData { response in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                print(statusCode)
+                guard let data = response.data else { return }
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, EmptyResModel.self)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
     /// [GET] 다시 돌아 볼 씀씀이 조회 API
     func getIncompleteRecordAPI(goalId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
         AFmanager.request(WriteService.getIncompleteRecord(goalId: goalId)).responseData { response in
