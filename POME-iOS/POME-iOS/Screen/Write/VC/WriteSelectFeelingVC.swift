@@ -15,6 +15,7 @@ class WriteSelectFeelingVC: BaseVC {
     
     /// 씀씀이 기록 추가 서버 통신을 위해 이전 VC에서 받아 올 정보
     var newRecord: PostRecordResModel = PostRecordResModel(id: 0, date: "", amount: 0, content: "", startEmotion: 0)
+    var lateRecord: PatchRecordResModel = PatchRecordResModel(id: 0, amount: 0, startEmotion: 0, endEmotion: 0)
     
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
@@ -87,6 +88,7 @@ class WriteSelectFeelingVC: BaseVC {
             postRecord(goalId: newRecord.id, date: newRecord.date, amount: newRecord.amount, content: newRecord.content, startEmotion: selectedEmotion)
         } else {
 
+            patchLateRecord(endEmotion: lateRecord.endEmotion, targetId: lateRecord.)
             // TODO: - 나중 감정 추가 서버 통신 필요, 아래 코드는 통신 후 success로 이동
             presentLookbackCompleteVC()
         }
@@ -185,6 +187,20 @@ extension WriteSelectFeelingVC {
             switch networkResult {
             case .success(_):
                 self.presentAddRecordCompleteVC()
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    private func patchLateRecord(endEmotion: Int, targetId: Int) {
+        WriteAPI.shared.patchLateEmotionAPI(endEmotion: endEmotion, targetId: targetId) {
+            networkResult in
+            switch networkResult {
+            case .success(_):
+                self.presentLookbackCompleteVC()
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:

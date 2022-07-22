@@ -15,6 +15,7 @@ enum WriteService {
     case deleteGoal(goalId: Int)
     case getWeekRecord(goalId: Int)
     case postRecord(goalId: Int, date: String, amount: Int, content: String, startEmotion: Int)
+    case patchLateRecord(endEmotion: Int, targetId: Int)
     case getIncompleteRecord(goalId: Int)
 }
 
@@ -30,6 +31,8 @@ extension WriteService: TargetType {
             return "/records/week/\(goalId)"
         case .postRecord:
             return "/records"
+        case .patchLateRecord:
+            return "/records/emotion"
         case .getIncompleteRecord(let goalId):
             return "/records/incomplete/\(goalId)"
         }
@@ -43,6 +46,8 @@ extension WriteService: TargetType {
             return .delete
         case .postGoal, .postRecord:
             return .post
+        case .patchLateRecord:
+            return .patch
         }
     }
     
@@ -74,12 +79,18 @@ extension WriteService: TargetType {
                 "startEmotion": startEmotion
             ]
             return .requestBody(requestBody)
+        case .patchLateRecord(let endEmotion, let targetId):
+            let body: [String: Any] = [
+                "endEmotion": endEmotion,
+                "targetId": targetId
+            ]
+            return .requestBody(body)
         }
     }
     
     var header: HeaderType {
         switch self {
-        case .getGoalGategory, .getGoalDetail, .deleteGoal, .postGoal, .getWeekRecord, .postRecord, .getIncompleteRecord:
+        case .getGoalGategory, .getGoalDetail, .deleteGoal, .postGoal, .getWeekRecord, .postRecord, .getIncompleteRecord, .patchLateRecord:
             return .auth
         }
     }
