@@ -12,8 +12,11 @@ class LookbackVC: BaseVC {
     // MARK: IBOutlet
     @IBOutlet weak var naviBar: PomeNaviBar!
     @IBOutlet weak var lookbackMainCV: UICollectionView!
+    @IBOutlet weak var emptyViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var emptyView: UIStackView!
     
     // MARK: Properties
+    var goalTitle: String = ""
     var selectedGoalId: Int = 1
     private var record: [Record] = []
     
@@ -29,6 +32,7 @@ class LookbackVC: BaseVC {
     override func viewWillAppear(_ animated: Bool) {
         hideTabbar()
         getIncompleteRecord(goalId: selectedGoalId)
+        configureEmptyView()
     }
 }
 
@@ -37,6 +41,11 @@ extension LookbackVC {
     
     private func configureNaviBar() {
         naviBar.setNaviStyle(state: .greyBackDefault)
+    }
+    
+    private func configureEmptyView() {
+        emptyViewTopConstraint.constant = screenHeight == 667 ? 445.adjustedH : 482.adjustedH
+        emptyView.isHidden = !(record.count == 0)
     }
 }
 
@@ -76,12 +85,11 @@ extension LookbackVC: UICollectionViewDataSource {
     /// 섹션 별 셀 지정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        // TODO: - emptyCVC 추가 필요
         guard let lookbackCVC = lookbackMainCV.dequeueReusableCell(withReuseIdentifier: LookbackCVC.className, for: indexPath) as? LookbackCVC,
               let spendCVC = lookbackMainCV.dequeueReusableCell(withReuseIdentifier: SpendCVC.className, for: indexPath) as? SpendCVC else { return UICollectionViewCell() }
         
         if indexPath.section == 0 {
-            lookbackCVC.setData(goal: "술은 좀 줄여보자고", num: record.count)
+            lookbackCVC.setData(goal: goalTitle, num: record.count)
             lookbackCVC.goalBgView.makeRounded(cornerRadius: 6.adjusted)
             lookbackCVC.goalBgView.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
             return lookbackCVC
@@ -120,12 +128,8 @@ extension LookbackVC: UICollectionViewDataSource {
                     guard let lookbackSelectVC = UIStoryboard.init(name: Identifiers.WriteSelectFeelingSB, bundle: nil).instantiateViewController(withIdentifier: WriteSelectFeelingVC.className) as? WriteSelectFeelingVC else { return }
                     self.navigationController?.pushViewController(lookbackSelectVC, animated: true)
                 }
-                return spendCVC
-            } else {
-                
-                // TODO: - emptyCVC로 변경 필요
-                return spendCVC
             }
+            return spendCVC
         }
     }
 }
@@ -138,7 +142,7 @@ extension LookbackVC: UICollectionViewDelegateFlowLayout {
         if indexPath.section == 0 {
             return CGSize(width: 375.adjusted, height: 293)
         } else {
-            return CGSize(width: 166.adjusted, height: 188.adjustedH)
+            return CGSize(width: 166.adjusted, height: 195.adjustedH)
         }
     }
     
@@ -148,18 +152,18 @@ extension LookbackVC: UICollectionViewDelegateFlowLayout {
             return UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
         } else {
             return UIEdgeInsets(top: 14, left: 16, bottom: 0, right: 16)
-            }
         }
     }
-    
-    /// 섹션 별 셀 위아래 간격 설정
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 12
-    }
-    
-    /// CV, 섹션 별 셀 좌우 간격 설정
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return (section == 0) ? 0 : 11
+}
+
+/// 섹션 별 셀 위아래 간격 설정
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 12
+}
+
+/// CV, 섹션 별 셀 좌우 간격 설정
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    return (section == 0) ? 0 : 11
 }
 
 // MARK: - Network
@@ -175,6 +179,7 @@ extension LookbackVC {
                     DispatchQueue.main.async {
                         self.record = data.records
                         self.lookbackMainCV.reloadData()
+                        self.configureEmptyView()
                     }
                     self.activityIndicator.stopAnimating()
                 }

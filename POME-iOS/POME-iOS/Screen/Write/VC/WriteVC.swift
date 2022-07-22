@@ -251,6 +251,7 @@ extension WriteVC: UICollectionViewDataSource {
                 feelingCardCVC.tapLookbackView = {
                     guard let lookbackVC = UIStoryboard.init(name: Identifiers.LookbackSB, bundle: nil).instantiateViewController(withIdentifier: LookbackVC.className) as? LookbackVC else { return }
                     lookbackVC.selectedGoalId = self.goalDetail.id
+                    lookbackVC.goalTitle = self.goalDetail.message
                     
                     self.navigationController?.pushViewController(lookbackVC, animated: true)
                 }
@@ -317,7 +318,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
             case 1:
                 return CGSize(width: 343.adjusted, height: 118)
             default:
-                return CGSize(width: 166.adjusted, height: 188.adjustedH)
+                return CGSize(width: 166.adjusted, height: 195.adjustedH)
             }
         }
     }
