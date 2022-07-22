@@ -15,6 +15,7 @@ enum WriteService {
     case deleteGoal(goalId: Int)
     case getWeekRecord(goalId: Int)
     case postRecord(goalId: Int, date: String, amount: Int, content: String, startEmotion: Int)
+    case getIncompleteRecord(goalId: Int)
 }
 
 extension WriteService: TargetType {
@@ -29,12 +30,14 @@ extension WriteService: TargetType {
             return "/records/week/\(goalId)"
         case .postRecord:
             return "/records"
+        case .getIncompleteRecord(let goalId):
+            return "/records/incomplete/\(goalId)"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getGoalGategory, .getGoalDetail, .getWeekRecord:
+        case .getGoalGategory, .getGoalDetail, .getWeekRecord, .getIncompleteRecord:
             return .get
         case .deleteGoal:
             return .delete
@@ -47,7 +50,7 @@ extension WriteService: TargetType {
         switch self {
         case .getGoalGategory:
             return .requestPlain
-        case .getGoalDetail(let goalId), .deleteGoal(let goalId), .getWeekRecord(let goalId):
+        case .getGoalDetail(let goalId), .deleteGoal(let goalId), .getWeekRecord(let goalId), .getIncompleteRecord(let goalId):
             let requestQuery: [String: Any] = [
                 "goalId": goalId
             ]
@@ -76,7 +79,7 @@ extension WriteService: TargetType {
     
     var header: HeaderType {
         switch self {
-        case .getGoalGategory, .getGoalDetail, .deleteGoal, .postGoal, .getWeekRecord, .postRecord:
+        case .getGoalGategory, .getGoalDetail, .deleteGoal, .postGoal, .getWeekRecord, .postRecord, .getIncompleteRecord:
             return .auth
         }
     }

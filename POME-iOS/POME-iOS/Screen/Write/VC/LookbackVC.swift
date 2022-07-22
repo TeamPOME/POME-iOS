@@ -14,7 +14,8 @@ class LookbackVC: BaseVC {
     @IBOutlet weak var lookbackMainCV: UICollectionView!
     
     // MARK: Properties
-    private var spend: [String] = ["spend1", "spend2", "spend3", "spend4"]
+    var selectedGoalId: Int = 1
+    private var record: [Record] = []
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -27,6 +28,7 @@ class LookbackVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         hideTabbar()
+        getIncompleteRecord(goalId: selectedGoalId)
     }
 }
 
@@ -68,7 +70,7 @@ extension LookbackVC: UICollectionViewDataSource {
     
     /// 섹션 당 셀 개수 지정
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (section == 0) ? 1 : spend.count
+        return (section == 0) ? 1 : record.count
     }
     
     /// 섹션 별 셀 지정
@@ -79,16 +81,15 @@ extension LookbackVC: UICollectionViewDataSource {
               let spendCVC = lookbackMainCV.dequeueReusableCell(withReuseIdentifier: SpendCVC.className, for: indexPath) as? SpendCVC else { return UICollectionViewCell() }
         
         if indexPath.section == 0 {
-            lookbackCVC.setData(goal: "술은 좀 줄여보자고", num: 10)
+            lookbackCVC.setData(goal: "술은 좀 줄여보자고", num: record.count)
             lookbackCVC.goalBgView.makeRounded(cornerRadius: 6.adjusted)
             lookbackCVC.goalBgView.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.1, radius: 15)
             return lookbackCVC
         } else {
-            if spend.count > 0 {
-                
-                // TODO: - 서버에서 받은 이모지 정보가 있을 경우 해당 이모지로 변경, 이 뷰에서 오른쪽 이모지 default는 btnEmojiPlus38
-                spendCVC.rightEmojiBtn.imageView?.image = UIImage(named: "btnEmojiPlus38")
+            if record.count > 0 {
+                spendCVC.makeRounded(cornerRadius: 6.adjusted)
                 spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
+                spendCVC.setData(data: record[indexPath.row], isWriteVC: false)
                 
                 /// 씀씀이 셀의 more 버튼을 누를 경우 action sheet를 띄운다.
                 spendCVC.tapMoreBtn = {
@@ -137,7 +138,7 @@ extension LookbackVC: UICollectionViewDelegateFlowLayout {
         if indexPath.section == 0 {
             return CGSize(width: 375.adjusted, height: 293)
         } else {
-            return CGSize(width: 166.adjusted, height: 188)
+            return CGSize(width: 166.adjusted, height: 188.adjustedH)
         }
     }
     
@@ -159,4 +160,31 @@ extension LookbackVC: UICollectionViewDelegateFlowLayout {
     /// CV, 섹션 별 셀 좌우 간격 설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return (section == 0) ? 0 : 11
+}
+
+// MARK: - Network
+extension LookbackVC {
+    
+    /// 되돌아 볼  씀씀이 조회 요청 메서드
+    private func getIncompleteRecord(goalId: Int) {
+        self.activityIndicator.startAnimating()
+        WriteAPI.shared.getIncompleteRecordAPI(goalId: goalId) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let data = data as? GetIncompleteRecordResModel {
+                    DispatchQueue.main.async {
+                        self.record = data.records
+                        self.lookbackMainCV.reloadData()
+                    }
+                    self.activityIndicator.stopAnimating()
+                }
+            case .requestErr:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
 }

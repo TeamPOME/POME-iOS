@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - GetWeekSpendResModel
-struct GetWeekSpendResModel: Codable {
+// MARK: - GetWeekRecordResModel
+struct GetWeekRecordResModel: Codable {
     let incompleteTotal: Int
     let records: [Record]
 }
