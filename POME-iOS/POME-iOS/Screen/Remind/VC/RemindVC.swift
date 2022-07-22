@@ -10,10 +10,15 @@ import UIKit
 class RemindVC: BaseVC {
     
     // MARK: Properties
+    private var goalId: Int = 0
+    private var startEmotion: Int = 0
+    private var endEmotion: Int = 0
     private var selectedCategoryIndex = 0
     private var selectedPreviousEmoji: Bool = false
     private var selectedLatestEmoji: Bool = false
     private var selectedResetBtn: Bool = false
+    private var selectedfirstEmojiNum: Int = 0
+    private var selevtedSecondEmojiNum: Int = 0
     private var getPreviousEmoji: String = ""
     private var getLatestEmoji: String = ""
     private var category: [RemindGoalModel] = []
@@ -119,6 +124,17 @@ extension RemindVC {
             self.selectedCategory = category[index]
         }
     }
+    
+    /// 이모지 설명에 따라, 이모지 숫자로 변경해줌
+    private func getStringToNumEmoji(stringEmoji: String) -> Int {
+        if stringEmoji == "행복해요" {
+            return 1
+        } else if stringEmoji == "모르겠어요" {
+            return 2
+        } else {
+            return 3
+        }
+    }
 }
 
 // MARK: - @objc
@@ -152,6 +168,8 @@ extension RemindVC: SelectFeelingDelegate {
     func selectPreviousEmoji(previousEmoji: String) {
         if previousEmoji != "" {
             getPreviousEmoji = previousEmoji
+            startEmotion = getStringToNumEmoji(stringEmoji: getPreviousEmoji)
+            reqeustGetRemindGoal(goalId: goalId, startEmotion: self.startEmotion, endEmotion: self.endEmotion)
             selectedPreviousEmoji = true
             selectedResetBtn = false
             remindTV.reloadData()
@@ -161,6 +179,8 @@ extension RemindVC: SelectFeelingDelegate {
     func selectLatestEmoji(latestEmoji: String) {
         if latestEmoji != "" {
             getLatestEmoji = latestEmoji
+            endEmotion = getStringToNumEmoji(stringEmoji: latestEmoji)
+            reqeustGetRemindGoal(goalId: goalId, startEmotion: self.startEmotion, endEmotion: self.endEmotion)
             selectedLatestEmoji = true
             selectedResetBtn = false
             remindTV.reloadData()
@@ -247,6 +267,7 @@ extension RemindVC: UITableViewDelegate {
                     self.selectedResetBtn = check
                     self.selectedPreviousEmoji = false
                     self.selectedLatestEmoji = false
+                    self.reqeustGetRemindGoal(goalId: self.goalId, startEmotion: 0, endEmotion: 0)
                 }
             }
             
@@ -376,7 +397,13 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
         if !category.isEmpty {
             selectedCategoryIndex = indexPath.row
             selectedCategory = category[selectedCategoryIndex]
-            reqeustGetRemindGoal(goalId: category[indexPath.row].id)
+            getPreviousEmoji = ""
+            getLatestEmoji = ""
+            selectedPreviousEmoji = false
+            selectedLatestEmoji = false
+            startEmotion = 0
+            endEmotion = 0
+            reqeustGetRemindGoal(goalId: category[indexPath.row].id, startEmotion: self.startEmotion, endEmotion: self.endEmotion)
             remindTV.reloadData()
         }
     }
@@ -397,7 +424,9 @@ extension RemindVC {
                         self.category = data
                         self.remindTV.reloadData()
                         self.goalCategoryCV.reloadData()
+                        self.setTVScroll()
                         self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
+//                        self.reqeustGetRemindGoal(goalId: self.goalId, startEmotion: 0, endEmotion: 0)
                     }
                     self.activityIndicator.stopAnimating()
                 }
@@ -412,9 +441,10 @@ extension RemindVC {
     }
     
     /// 상단의 카테고리에 따른 목표 리스트 요청
-    private func reqeustGetRemindGoal(goalId: Int) {
+    private func reqeustGetRemindGoal(goalId: Int, startEmotion: Int, endEmotion: Int) {
         self.activityIndicator.startAnimating()
-        RemindAPI.shared.requestGetRemindGoalListAPI(goalId: goalId) {
+        self.goalId = goalId
+        RemindAPI.shared.requestGetRemindGoalListAPI(goalId: goalId, startEmotion: startEmotion, endEmotion: endEmotion) {
             networkResult in
             switch networkResult {
             case .success(let data):
