@@ -24,6 +24,10 @@ class BaseVC: UIViewController {
         return activityIndicator
     }()
     
+    let screenWidth = UIScreen.main.bounds.size.width
+    let screenHeight = UIScreen.main.bounds.size.height
+    
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(activityIndicator)
