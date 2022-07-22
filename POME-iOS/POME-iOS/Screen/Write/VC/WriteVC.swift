@@ -318,7 +318,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
             case 1:
                 return CGSize(width: 343.adjusted, height: 118)
             default:
-                return CGSize(width: 166.adjusted, height: 195.adjustedH)
+                return CGSize(width: 166.adjusted, height: 192.adjustedH)
             }
         }
     }
