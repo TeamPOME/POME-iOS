@@ -248,7 +248,7 @@ extension MateVC: UITableViewDelegate {
     
     /// 친구 유무에 따른 셀별 높이 지정
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (mateDataList.count == 0) ? 516 : 175
+        return (mateDataList.count == 0) ? 516.adjustedH : 175.adjustedH
     }
     
     /// 친구 유무에 따른 셀 지정
