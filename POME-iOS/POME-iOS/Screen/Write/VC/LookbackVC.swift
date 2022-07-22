@@ -142,7 +142,7 @@ extension LookbackVC: UICollectionViewDelegateFlowLayout {
         if indexPath.section == 0 {
             return CGSize(width: 375.adjusted, height: 293)
         } else {
-            return CGSize(width: 166.adjusted, height: 195.adjustedH)
+            return CGSize(width: 166.adjusted, height: 192.adjustedH)
         }
     }
     
