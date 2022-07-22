@@ -185,7 +185,7 @@ extension GoalStorageVC {
     
     /// 목표보관함 요청
     private func requestGoalStorageAPI() {
-        GoalStorageAPI.shared.requestGoalStorageAPI() { networkResult in
+        MypageAPI.shared.requestGoalStorageAPI() { networkResult in
             switch networkResult {
             case .success(let data):
                 guard let data = data as? [GoalStorageResModel] else { return }
@@ -203,7 +203,7 @@ extension GoalStorageVC {
     
     /// 목표보관함 삭제
     private func requestDeleteGoalAPI(goalId: Int) {
-        GoalStorageAPI.shared.requestDeleteGoalAPI(goalId: goalId) { networkResult in
+        MypageAPI.shared.requestDeleteGoalAPI(goalId: goalId) { networkResult in
             switch networkResult {
             case .success(_):
                 self.requestGoalStorageAPI()

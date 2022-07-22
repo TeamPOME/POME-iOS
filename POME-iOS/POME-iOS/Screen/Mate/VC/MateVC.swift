@@ -249,7 +249,12 @@ extension MateVC: UITableViewDelegate {
         guard let haveNoMateTVC = mateTV.dequeueReusableCell(withIdentifier: Identifiers.HaveNoMateTVC) as? HaveNoMateTVC,
               let haveMateTVC = mateTV.dequeueReusableCell(withIdentifier: Identifiers.HaveMateTVC) as? HaveMateTVC else { return UITableViewCell() }
         
-        if mateDataList.count == 0 || mateRecordList.count == 0 {
+        if mateDataList.count == 0{
+            haveNoMateTVC.descriptionLabel.text = "아직 추가한 친구가 없어요"
+            return haveNoMateTVC
+        }
+        else if mateRecordList.count == 0 {
+            haveNoMateTVC.descriptionLabel.text = "친구의 기록이 없어요"
             return haveNoMateTVC
         } else {
             haveMateTVC.tapMateEmojiBtnAction = {
@@ -306,7 +311,8 @@ extension MateVC: UICollectionViewDelegate {
             cell.profileImageView.image = UIImage(named: "btnAllViewProfileNotClicked")
             cell.nameLabel.text = "전체보기"
         } else {
-            cell.profileImageView.downloadImage(from: URL(string: mateDataList[indexPath.row - 1].profileImage)!)
+            let url = URL(string: mateDataList[indexPath.row - 1].profileImage)
+            cell.profileImageView.kf.setImage(with: url)
             cell.nameLabel.text = mateDataList[indexPath.row - 1].nickname
         }
         
