@@ -44,7 +44,14 @@ extension MypageVC {
         myPageNaviBar.setNaviStyle(state: .greyWithRightBtn)
         profileImage.maskImage = UIImage(named: "userProfileEmpty160")
         myPageNaviBar.rightCustomBtn.setImage(UIImage(named: "icSetting24Mono"), for: .normal)
-        marshmellowCV.isScrollEnabled = false
+        
+        /// SE일때는 스크롤이 가능하도록 하였다.
+        if UIScreen.main.bounds.height < 812 {
+            marshmellowCV.isScrollEnabled = true
+            marshmellowCV.showsVerticalScrollIndicator = false
+        } else {
+            marshmellowCV.isScrollEnabled = false
+        }
         checkView.makeRounded(cornerRadius: checkView.frame.width / 2)
         goalStorageBtnView.makeRounded(cornerRadius: 6.adjusted)
     }
