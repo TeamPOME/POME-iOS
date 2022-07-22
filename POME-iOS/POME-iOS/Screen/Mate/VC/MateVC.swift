@@ -366,6 +366,7 @@ extension MateVC {
     
     /// 상단의 친구 목록 요청
     private func requestGetMateAPI() {
+        self.activityIndicator.startAnimating()
         MateAPI.shared.requestGetMateAPI() {
             networkResult in
             switch networkResult {
@@ -375,11 +376,14 @@ extension MateVC {
                         self.mateDataList = data
                         self.mateProfileCV.reloadData()
                     }
+                    self.activityIndicator.stopAnimating()
                 }
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+                self.activityIndicator.stopAnimating()
             default:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+                self.activityIndicator.stopAnimating()
             }
             self.mateProfileCV.reloadData()
         }
@@ -389,6 +393,7 @@ extension MateVC {
     private func getMateRecord(mateId: Int) {
         self.activityIndicator.startAnimating()
         MateAPI.shared.getMateRecordAPI(userId: mateId) { networkResult in
+            self.activityIndicator.startAnimating()
             switch networkResult {
             case .success(let data):
                 if let data = data as? [GetMateRecordResModel] {
@@ -401,8 +406,10 @@ extension MateVC {
                 }
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+                self.activityIndicator.stopAnimating()
             default:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+                self.activityIndicator.stopAnimating()
             }
         }
     }

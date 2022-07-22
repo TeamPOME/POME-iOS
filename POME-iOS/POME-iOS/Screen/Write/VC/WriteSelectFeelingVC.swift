@@ -184,13 +184,17 @@ extension WriteSelectFeelingVC {
     
     /// 기록 씀씀이 추가 요청 메서드
     private func postRecord(goalId: Int, date: String, amount: Int, content: String, startEmotion: Int) {
+        self.activityIndicator.startAnimating()
         WriteAPI.shared.postRecordAPI(goalId: goalId, date: date, amount: amount, content: content, startEmotion: startEmotion) { networkResult in
             switch networkResult {
             case .success(_):
+                self.activityIndicator.stopAnimating()
                 self.presentAddRecordCompleteVC()
             case .requestErr:
+                self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
+                self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             }
         }
@@ -198,14 +202,18 @@ extension WriteSelectFeelingVC {
     
     /// 나중 기록 작성 요청 메서드
     private func patchLateRecord(endEmotion: Int, targetId: Int) {
+        self.activityIndicator.startAnimating()
         WriteAPI.shared.patchLateEmotionAPI(endEmotion: endEmotion, targetId: targetId) {
             networkResult in
             switch networkResult {
             case .success(_):
                 self.presentLookbackCompleteVC()
+                self.activityIndicator.stopAnimating()
             case .requestErr:
+                self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
+                self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             }
         }

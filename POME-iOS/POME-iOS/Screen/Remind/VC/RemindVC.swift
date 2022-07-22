@@ -387,6 +387,7 @@ extension RemindVC {
     
     /// 상단의 카테고리 목록 요청
     private func requestGetRemind() {
+        self.activityIndicator.startAnimating()
         RemindAPI.shared.requestGetRemindGoalAPI() {
             networkResult in
             switch networkResult {
@@ -398,17 +399,21 @@ extension RemindVC {
                         self.goalCategoryCV.reloadData()
                         self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
                     }
+                    self.activityIndicator.stopAnimating()
                 }
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+                self.activityIndicator.stopAnimating()
             default:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+                self.activityIndicator.stopAnimating()
             }
         }
     }
     
     /// 상단의 카테고리에 따른 목표 리스트 요청
     private func reqeustGetRemindGoal(goalId: Int) {
+        self.activityIndicator.startAnimating()
         RemindAPI.shared.requestGetRemindGoalListAPI(goalId: goalId) {
             networkResult in
             switch networkResult {
@@ -419,11 +424,14 @@ extension RemindVC {
                         self.remindTV.reloadData()
                         self.setTVScroll()
                     }
+                    self.activityIndicator.stopAnimating()
                 }
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+                self.activityIndicator.stopAnimating()
             default:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+                self.activityIndicator.stopAnimating()
             }
         }
     }
