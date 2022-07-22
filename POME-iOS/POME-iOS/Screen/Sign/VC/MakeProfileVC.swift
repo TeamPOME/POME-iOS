@@ -88,8 +88,9 @@ extension MakeProfileVC {
         }
         
         profileImageView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(49)
-            $0.width.height.equalTo(149)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(49.adjustedH)
+            $0.width.equalTo(149.adjusted)
+            $0.height.equalTo(149.adjustedH)
             $0.centerX.equalToSuperview()
         }
         
@@ -107,7 +108,7 @@ extension MakeProfileVC {
         }
         
         nicknameTextField.snp.makeConstraints {
-            $0.top.equalTo(profileImageView.snp.bottom).offset(40)
+            $0.top.equalTo(profileImageView.snp.bottom).offset(40.adjustedH)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
             $0.height.equalTo(50)
         }
@@ -118,9 +119,17 @@ extension MakeProfileVC {
         }
         
         confirmBtn.snp.makeConstraints {
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
-            $0.height.equalTo(50)
+            
+            /// SE 기기대응
+            if screenHeight == 667 {
+                $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(34)
+                $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
+                $0.height.equalTo(50)
+            } else {
+                $0.bottom.equalTo(view.safeAreaLayoutGuide)
+                $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
+                $0.height.equalTo(50)
+            }
         }
         
         explainLabel.snp.makeConstraints {
