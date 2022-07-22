@@ -42,13 +42,23 @@ class HaveMateTVC: BaseTVC {
     }
     
     @IBAction func tapPlusBtn(_ sender: UIButton) {
-        tapPlusBtnAction?()
+        if sender.imageView?.image == UIImage(named: "btnEmojiNor28") {
+            tapPlusBtnAction?()
+        }
     }
     @IBAction func tapMateFirstEmojiBtn(_ sender: UIButton) {
-        tapMateEmojiBtnAction?()
+        if sender.imageView?.image == UIImage(named: "btnEmojiNor28") {
+            tapPlusBtnAction?()
+        } else {
+            tapMateEmojiBtnAction?()
+        }
     }
     @IBAction func tapMateThirdEmojiBtn(_ sender: UIButton) {
-        tapMateEmojiBtnAction?()
+        if sender.imageView?.image == UIImage(named: "btnEmojiNor28") {
+            tapPlusBtnAction?()
+        } else {
+            tapMateEmojiBtnAction?()
+        }
     }
 }
 
@@ -84,5 +94,138 @@ extension HaveMateTVC {
         goalLabel.text = data.goalMessage
         smileEmojiBtn.setImage(NumToEmoji.mateFirst(num: data.startEmotion), for: .normal)
         sadEmojiBtn.setImage(NumToEmoji.mateSecond(num: data.endEmotion), for: .normal)
+        
+        /// 아무도 감정 안남김
+        if data.reactions[2] == 0 && data.reactions[1] == 0 && data.reactions[0] == 0 {
+            [firstEmojiContainerBtn, secondEmojiContainerBtn].forEach {
+                btn in btn?.isHidden = true
+            }
+            thirdEmojiContainerBtn.setImage(UIImage(named: "btnEmojiNor28"), for: .normal)
+        }
+        
+        /// 친구 한명이 감정 남겼을 때 (버튼이 두개)
+        if data.reactions[2] == 0 && data.reactions[1] != 0  {
+            firstEmojiContainerBtn.isHidden = true
+            if data.reactions[0] == 0 {
+                /// 두번째 버튼에 +이미지
+                secondEmojiContainerBtn.setImage(UIImage(named: "btnEmojiNor28"), for: .normal)
+                /// 세번째버튼에 친구 한명이 남긴 감정 표시
+                switch data.reactions[1] {
+                case 1:
+                    thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiHappyMint28"), for: .normal)
+                case 2:
+                    thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSmileMint28"), for: .normal)
+                case 3:
+                    thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFunnyMint28"), for: .normal)
+                case 4:
+                    thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFlexMint28"), for: .normal)
+                case 5:
+                    thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiWhayMint28"), for: .normal)
+                default:
+                    thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSadMint28"), for: .normal)
+                }
+            /// 내가 감정을 남긴경우
+            } else {
+                switch data.reactions[0] {
+                case 1:
+                    secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiHappyMint28"), for: .normal)
+                case 2:
+                    secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSmileMint28"), for: .normal)
+                case 3:
+                    secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFunnyMint28"), for: .normal)
+                case 4:
+                    secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFlexMint28"), for: .normal)
+                case 5:
+                    secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiWhayMint28"), for: .normal)
+                default:
+                    secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSadMint28"), for: .normal)
+                }
+            }
+        }
+        
+        /// 보이는 버튼이 세개인 경우
+        /// 나는 감정 안남김
+        if data.reactions[0] == 0 && data.reactions[1] != 0 && data.reactions[2] != 0 {
+            /// 첫번째 버튼에 +이미지
+            firstEmojiContainerBtn.setImage(UIImage(named: "btnEmojiNor28"), for: .normal)
+            switch data.reactions[1] {
+            case 1:
+                secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiHappyMint28"), for: .normal)
+            case 2:
+                secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSmileMint28"), for: .normal)
+            case 3:
+                secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFunnyMint28"), for: .normal)
+            case 4:
+                secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFlexMint28"), for: .normal)
+            case 5:
+                secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiWhayMint28"), for: .normal)
+            default:
+                secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSadMint28"), for: .normal)
+            }
+            
+            switch data.reactions[2] {
+            case 1:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiHappyMint28"), for: .normal)
+            case 2:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSmileMint28"), for: .normal)
+            case 3:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFunnyMint28"), for: .normal)
+            case 4:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFlexMint28"), for: .normal)
+            case 5:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiWhayMint28"), for: .normal)
+            default:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSadMint28"), for: .normal)
+            }
+        }
+        
+        /// 보이는 버튼 세개
+        /// 내가 감정달고 친구 두명이상 감정 달았을때
+        if data.reactions[0] != 0 && data.reactions[1] != 0 && data.reactions[2] != 0 {
+            switch data.reactions[0] {
+            case 1:
+                firstEmojiContainerBtn.setImage(UIImage(named: "property1EmojiHappyMint28"), for: .normal)
+            case 2:
+                firstEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSmileMint28"), for: .normal)
+            case 3:
+                firstEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFunnyMint28"), for: .normal)
+            case 4:
+                firstEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFlexMint28"), for: .normal)
+            case 5:
+                firstEmojiContainerBtn.setImage(UIImage(named: "property1EmojiWhayMint28"), for: .normal)
+            default:
+                firstEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSadMint28"), for: .normal)
+            }
+            
+            switch data.reactions[1] {
+            case 1:
+                secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiHappyMint28"), for: .normal)
+            case 2:
+                secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSmileMint28"), for: .normal)
+            case 3:
+                secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFunnyMint28"), for: .normal)
+            case 4:
+                secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFlexMint28"), for: .normal)
+            case 5:
+                secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiWhayMint28"), for: .normal)
+            default:
+                secondEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSadMint28"), for: .normal)
+            }
+            
+            switch data.reactions[2] {
+            case 1:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiHappyMint28"), for: .normal)
+            case 2:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSmileMint28"), for: .normal)
+            case 3:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFunnyMint28"), for: .normal)
+            case 4:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFlexMint28"), for: .normal)
+            case 5:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiWhayMint28"), for: .normal)
+            default:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSadMint28"), for: .normal)
+            }
+        }
     }
 }
