@@ -124,7 +124,7 @@ class WriteAPI: BaseAPI {
                 print(statusCode)
                 guard let data = response.data else { return }
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, PostRecordResModel.self)
+                let networkResult = self.judgeStatus(by: statusCode, data, EmptyResModel.self)
                 completion(networkResult)
                 
             case .failure(let err):

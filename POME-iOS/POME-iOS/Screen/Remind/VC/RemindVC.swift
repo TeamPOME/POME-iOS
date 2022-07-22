@@ -47,13 +47,12 @@ class RemindVC: BaseVC {
         configureUI()
         registerCell()
         setDelegate()
-        setTVScroll()
-        requestGetRemind()
     }
     
     /// 탭바가 왔다갔다 할 경우 첫 셀이 default가 되게끔 처리하였다.
     override func viewWillAppear(_ animated: Bool) {
         requestGetRemind()
+        setTVScroll()
     }
 }
 
@@ -110,7 +109,7 @@ extension RemindVC {
     
     /// 목표가 없을때는 스크롤이 안되도록 막아두었다.
     private func setTVScroll() {
-        remindTV.isScrollEnabled = (category.count == 0) ? false : true
+        remindTV.isScrollEnabled = (goalRecordList.count == 0) ? false : true
     }
     
     /// 목표 카테고리의 다른탭으로 눌리기 전의 탭으로 눌리게끔 default 설정
@@ -418,6 +417,7 @@ extension RemindVC {
                     DispatchQueue.main.async {
                         self.goalRecordList = data
                         self.remindTV.reloadData()
+                        self.setTVScroll()
                     }
                 }
             case .requestErr:

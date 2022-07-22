@@ -10,9 +10,9 @@ import UIKit
 class LookbackCompleteVC: BaseVC {
     
     // MARK: Properties
-    private let price: String = "35,200"
-    private let firstFeeling: Int = 1
-    private let secondFeeling: Int = 3
+    var amount: Int = 0
+    var startEmotion: Int = 0
+    var endEmotion: Int = 0
 
     // MARK: IBOutlet
     @IBOutlet weak var completeBtn: PomeBtn!
@@ -72,11 +72,9 @@ extension LookbackCompleteVC {
     }
     
     private func setData() {
+        priceLabel.text = "\(numberFormatter(number: amount))원을 사용했어요"
         
-        // TODO: - 서버 통신 할 때 데이터 형식 Int or String 인지 확인하기
-        priceLabel.text = price + "원을 사용했어요"
-        
-        switch firstFeeling {
+        switch startEmotion {
         case 1:
             firstEmojiImageView.image = UIImage(named: "icHeartCircle52")
             firstTitleLabel.text = "씀씀이 당시 행복했어요"
@@ -91,7 +89,7 @@ extension LookbackCompleteVC {
             firstSubLabel.text = "괜찮아요. 다음 번엔 조금 더 고민해봐요!"
         }
         
-        switch secondFeeling {
+        switch endEmotion {
         case 1:
             secondEmojiImageView.image = UIImage(named: "icHeartCirclePink52")
             secondTitleLabel.text = "일주일 뒤 행복했어요"
