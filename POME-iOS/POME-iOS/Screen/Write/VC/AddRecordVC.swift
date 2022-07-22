@@ -212,6 +212,7 @@ extension AddRecordVC {
         selectGoalVC.goalList = self.goalList
         let calendarVC = CalendarVC()
         calendarVC.deliveryDateDelegate = self
+        calendarVC.isRecordCalendar = true
         calendarVC.startDate = self.getStringToDate(string: dateLabel.text!)
         
         let halfModalVC = isGoalBtn ? selectGoalVC : calendarVC
