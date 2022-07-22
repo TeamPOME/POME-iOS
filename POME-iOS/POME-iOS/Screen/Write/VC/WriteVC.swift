@@ -9,6 +9,15 @@ import UIKit
 
 class WriteVC: BaseVC {
     
+    // MARK: Properties
+    private var category: [GetGoalsResModel] = []
+    private var goalDetail: GetGoalDetailResModel = GetGoalDetailResModel(id: 0, message: "", amount: 0, payAmount: 0, rate: 0, isPublic: true, dDay: 0)
+    private var spend: [Record] = []
+    private var incompleteTotal: Int = 0
+    
+    /// 싱글톤 객체 생성
+    let writeInfo = WriteInfo.shared
+    
     // MARK: IBOutlet
     @IBOutlet weak var writeHomeNaviBar: PomeNaviBar!
     @IBOutlet weak var goalCategoryCV: UICollectionView!
@@ -16,30 +25,29 @@ class WriteVC: BaseVC {
     @IBOutlet weak var emptyView: UIStackView!
     @IBOutlet weak var emptyViewTopConstraint: NSLayoutConstraint!
     
-    // MARK: Properties
-    private var category: [GetGoalsResModel] = []
-    private var goalDetail: GetGoalDetailResModel = GetGoalDetailResModel(id: 0, message: "", amount: 0, payAmount: 0, rate: 0, isPublic: true, dDay: 0)
-    private var spend: [Record] = []
-    private var incompleteTotal: Int = 0
-    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegate()
         registerCV()
         configureNaviBar()
-        getGoalGategory()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         showTabbar()
         setCVOffset()
+        getGoalCategory()
+        configureEmptyView()
     }
     
     // MARK: IBAction
     @IBAction func tapWriteBtn(_ sender: UIButton) {
-        guard let addRecordVC = UIStoryboard.init(name: Identifiers.AddRecordSB, bundle: nil).instantiateViewController(withIdentifier: AddRecordVC.className) as? AddRecordVC else { return }
-        navigationController?.pushViewController(addRecordVC, animated: true)
+        if category.count == 0 {
+            showHalfModalVC(content: "spend")
+        } else {
+            guard let addRecordVC = UIStoryboard.init(name: Identifiers.AddRecordSB, bundle: nil).instantiateViewController(withIdentifier: AddRecordVC.className) as? AddRecordVC else { return }
+            navigationController?.pushViewController(addRecordVC, animated: true)
+        }
     }
 }
 
@@ -52,19 +60,26 @@ extension WriteVC {
     
     private func configureEmptyView() {
         emptyViewTopConstraint.constant = 419.adjustedH
-        emptyView.isHidden = (spend.count != 0)
+        emptyView.isHidden = !(spend.count == 0)
     }
     
-    /// 목표 카테고리의 첫 아이템을 디폴트로 설정
+    /// 디폴트 설정
     private func setGoalCategoryCV() {
         if category.count > 0 {
-            goalCategoryCV.selectItem(at: IndexPath(item: 1, section: 0), animated: true, scrollPosition: .right)
-            
-            /// 카테고리의 첫 번째 목표 id로 서버 통신
-            getGoalDetail(goalId: category[0].id)
-            getWeekSpend(goalId: category[0].id)
+            DispatchQueue.main.async {
+                self.goalCategoryCV.selectItem(at: IndexPath(item: self.writeInfo.index, section: 0), animated: true, scrollPosition: .right)
+                
+                /// 저장된 index의 목표 id로 서버 통신
+                if self.writeInfo.index > 0 {
+                    self.getGoalDetail(goalId: self.category[self.writeInfo.index - 1].id)
+                    self.getWeekSpend(goalId: self.category[self.writeInfo.index - 1].id)
+                }
+            }
+        } else {
+            spend = []
         }
         writeMainCV.reloadData()
+        configureEmptyView()
     }
     
     /// 컬렉션뷰 가장 위로 올림
@@ -103,7 +118,7 @@ extension WriteVC {
         halfModalVC.transitioningDelegate = self
         halfModalVC.configureContent(type: content)
         
-        /// dismiss 될 경우 다시 첫번 째 목표를 선택한다.
+        /// dismiss 될 경우 다시 원래 선택했던 목표를 선택한다.
         halfModalVC.reselectFirstItem = {
             self.setGoalCategoryCV()
         }
@@ -117,7 +132,7 @@ extension WriteVC: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         let halfModalVC = PomeHalfModalVC(presentedViewController: presented, presenting: presenting)
         
-        /// dismiss 될 경우 다시 첫번 째 목표를 선택한다.
+        /// dismiss 될 경우 다시 선택했던 목표를 선택한다.
         halfModalVC.reselectFirstItem = {
             self.setGoalCategoryCV()
         }
@@ -144,6 +159,7 @@ extension WriteVC: UICollectionViewDelegate {
                     navigationController?.pushViewController(addGoalDateVC, animated: true)
                 }
             } else {
+                writeInfo.index = indexPath.row
                 
                 /// 해당 목표 id로 세부 정보 요청
                 getGoalDetail(goalId: category[indexPath.row - 1].id)
@@ -237,6 +253,11 @@ extension WriteVC: UICollectionViewDataSource {
                 spendCVC.makeRounded(cornerRadius: 6.adjusted)
                 spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
                 spendCVC.setData(data: spend[indexPath.row], isWriteVC: true)
+                
+                /// 씀씀이 셀의 ? 이모지를 누를 경우 알럿 띄움
+                spendCVC.tapPlusBtn = {
+                    self.showHalfModalVC(content: "feeling")
+                }
                 
                 /// 씀씀이 셀의 more 버튼을 누를 경우 action sheet를 띄운다.
                 spendCVC.tapMoreBtn = {
@@ -389,7 +410,12 @@ extension WriteVC {
             switch networkResult {
             case .success(_):
                 DispatchQueue.main.async {
-                    self.getGoalGategory()
+                    self.getGoalCategory()
+                    
+                    /// 가장 마지막 목표를 삭제한 경우 선택된 인덱스를 1 줄임. (이전 목표가 선택되게 함.)
+                    if self.writeInfo.index == self.category.count {
+                        self.writeInfo.index -= 1
+                    }
                 }
                 self.activityIndicator.stopAnimating()
             case .requestErr:

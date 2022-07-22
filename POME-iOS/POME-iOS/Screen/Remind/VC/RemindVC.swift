@@ -397,7 +397,7 @@ extension RemindVC {
                         self.category = data
                         self.remindTV.reloadData()
                         self.goalCategoryCV.reloadData()
-                        self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
+//                        self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
                     }
                 }
             case .requestErr:
