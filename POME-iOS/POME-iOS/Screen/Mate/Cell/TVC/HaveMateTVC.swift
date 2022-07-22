@@ -44,6 +44,8 @@ class HaveMateTVC: BaseTVC {
     @IBAction func tapPlusBtn(_ sender: UIButton) {
         if sender.imageView?.image == UIImage(named: "btnEmojiNor28") {
             tapPlusBtnAction?()
+        } else {
+            tapMateEmojiBtnAction?()
         }
     }
     @IBAction func tapMateFirstEmojiBtn(_ sender: UIButton) {
@@ -101,6 +103,28 @@ extension HaveMateTVC {
                 btn in btn?.isHidden = true
             }
             thirdEmojiContainerBtn.setImage(UIImage(named: "btnEmojiNor28"), for: .normal)
+        }
+        
+        /// 나만 감정 달았을 때
+        if data.reactions[2] == 0 && data.reactions[1] == 0 && data.reactions[0] != 0 {
+            [firstEmojiContainerBtn, secondEmojiContainerBtn].forEach {
+                btn in btn.isHidden = true
+            }
+            
+            switch data.reactions[0] {
+            case 1:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiHappyMint28"), for: .normal)
+            case 2:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSmileMint28"), for: .normal)
+            case 3:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFunnyMint28"), for: .normal)
+            case 4:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiFlexMint28"), for: .normal)
+            case 5:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiWhayMint28"), for: .normal)
+            default:
+                thirdEmojiContainerBtn.setImage(UIImage(named: "property1EmojiSadMint28"), for: .normal)
+            }
         }
         
         /// 친구 한명이 감정 남겼을 때 (버튼이 두개)
