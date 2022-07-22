@@ -12,7 +12,7 @@ class WriteVC: BaseVC {
     // MARK: Properties
     private var category: [GetGoalsResModel] = []
     private var goalDetail: GetGoalDetailResModel = GetGoalDetailResModel(id: 0, message: "", amount: 0, payAmount: 0, rate: 0, isPublic: true, dDay: 0)
-    private var spend: [Record] = []
+    private var record: [Record] = []
     private var incompleteTotal: Int = 0
     
     /// 싱글톤 객체 생성
@@ -61,7 +61,7 @@ extension WriteVC {
     
     private func configureEmptyView() {
         emptyViewTopConstraint.constant = screenHeight == 667 ? 390.adjustedH : 419.adjustedH
-        emptyView.isHidden = !(spend.count == 0)
+        emptyView.isHidden = !(record.count == 0)
     }
     
     /// 디폴트 설정
@@ -77,7 +77,7 @@ extension WriteVC {
                 }
             }
         } else {
-            spend = []
+            record = []
         }
         writeMainCV.reloadData()
         configureEmptyView()
@@ -195,7 +195,7 @@ extension WriteVC: UICollectionViewDataSource {
         if collectionView == goalCategoryCV {
             return category.count + 1
         } else {
-            return (section == 2) ? spend.count : 1
+            return (section == 2) ? record.count : 1
         }
     }
     
@@ -241,7 +241,6 @@ extension WriteVC: UICollectionViewDataSource {
                                 if let id = self?.goalDetail.id {
                                     self?.deleteGoal(goalId: id)
                                 }
-                                self?.dismiss(animated: true)
                             }
                         })
                     }
@@ -261,7 +260,7 @@ extension WriteVC: UICollectionViewDataSource {
             default:
                 spendCVC.makeRounded(cornerRadius: 6.adjusted)
                 spendCVC.addShadow(offset: CGSize(width: 0, height: 0), color: .cellShadow, opacity: 0.12, radius: 4)
-                spendCVC.setData(data: spend[indexPath.row], isWriteVC: true)
+                spendCVC.setData(data: record[indexPath.row], isWriteVC: true)
                 
                 /// 씀씀이 셀의 ? 이모지를 누를 경우 알럿 띄움
                 spendCVC.tapPlusBtn = {
@@ -285,10 +284,7 @@ extension WriteVC: UICollectionViewDataSource {
                         
                         /// 알럿창의 확인버튼(오른쪽 버튼) 누르는 경우 삭제 서버 통신
                         alert.confirmBtn.press { [weak self] in
-                            
-                            // TODO: - 삭제 서버 통신 필요
-                            print("씀씀이 삭제합니다.")
-                            self?.dismiss(animated: true)
+                            self?.deleteRecord(goalId: (self?.record[indexPath.row].id)!)
                         }
                     })
                 }
@@ -426,6 +422,7 @@ extension WriteVC {
                         self.writeInfo.index -= 1
                     }
                 }
+                self.dismiss(animated: true)
                 self.activityIndicator.stopAnimating()
             case .requestErr:
                 self.activityIndicator.stopAnimating()
@@ -445,13 +442,36 @@ extension WriteVC {
             case .success(let data):
                 if let data = data as? GetWeekRecordResModel {
                     DispatchQueue.main.async {
-                        self.spend = data.records
+                        self.record = data.records
                         self.incompleteTotal = data.incompleteTotal
                         self.writeMainCV.reloadSections([1, 2])
                         self.configureEmptyView()
                     }
                     self.activityIndicator.stopAnimating()
                 }
+            case .requestErr:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    /// 씀씀이 삭제 요청 메서드
+    private func deleteRecord(goalId: Int) {
+        self.activityIndicator.startAnimating()
+        WriteAPI.shared.deleteRecordAPI(goalId: goalId) { networkResult in
+            switch networkResult {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.getWeekSpend(goalId: self.goalDetail.id)
+                    self.writeMainCV.reloadSections([2])
+                    self.configureEmptyView()
+                }
+                self.dismiss(animated: true)
+                self.activityIndicator.stopAnimating()
             case .requestErr:
                 self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")

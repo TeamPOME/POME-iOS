@@ -131,4 +131,21 @@ class WriteAPI: BaseAPI {
             }
         }
     }
+    
+    /// [DEETE] 기록 삭제 API
+    func deleteRecordAPI(goalId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        AFmanager.request(WriteService.deleteRecord(goalId: goalId)).responseData { response in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                guard let data = response.data else { return }
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, EmptyResModel.self)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 }
