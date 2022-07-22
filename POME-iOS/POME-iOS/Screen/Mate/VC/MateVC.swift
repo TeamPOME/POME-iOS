@@ -375,6 +375,7 @@ extension MateVC: UICollectionViewDelegate {
             mateID = mateDataList[indexPath.row - 1].id
         } else {
             getMateRecord(mateId: 0)
+            mateID = 0
         }
     }
 }
