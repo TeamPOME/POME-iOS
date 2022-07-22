@@ -116,11 +116,9 @@ extension LookbackVC: UICollectionViewDataSource {
                         
                         /// 알럿창의 확인버튼(오른쪽 버튼) 누르는 경우 삭제 서버 통신
                         alert.confirmBtn.press { [weak self] in
-                            
-                            // TODO: - 삭제 서버 통신 필요
-                            print("씀씀이 삭제합니다.")
-                            self?.dismiss(animated: true)
+                            self?.deleteRecord(goalId: (self?.record[indexPath.row].id)!)
                         }
+
                     })
                 }
                 
@@ -183,6 +181,29 @@ extension LookbackVC {
                     }
                     self.activityIndicator.stopAnimating()
                 }
+            case .requestErr:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.activityIndicator.stopAnimating()
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
+        }
+    }
+    
+    /// 기록 삭제 요청 메서드
+    private func deleteRecord(goalId: Int) {
+        self.activityIndicator.startAnimating()
+        WriteAPI.shared.deleteRecordAPI(goalId: goalId) { networkResult in
+            switch networkResult {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.getIncompleteRecord(goalId: self.selectedGoalId)
+                    self.lookbackMainCV.reloadSections([1])
+                    self.configureEmptyView()
+                }
+                self.dismiss(animated: true)
+                self.activityIndicator.stopAnimating()
             case .requestErr:
                 self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")

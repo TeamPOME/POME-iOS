@@ -467,7 +467,8 @@ extension WriteVC {
             case .success(_):
                 DispatchQueue.main.async {
                     self.getWeekSpend(goalId: self.goalDetail.id)
-                    self.writeMainCV.reloadSections([2])
+                    self.getGoalDetail(goalId: self.goalDetail.id)
+                    self.writeMainCV.reloadSections([1, 2])
                     self.configureEmptyView()
                 }
                 self.dismiss(animated: true)
