@@ -73,6 +73,7 @@ class MakeProfileVC: BaseVC {
         setTapChooseImageBtn()
         setTapConfirmBtn()
         setImagePickerDelegate()
+        setNaviBar()
     }
 }
 
@@ -209,6 +210,11 @@ extension MakeProfileVC {
         
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
+    /// 오른쪽으로 swipe시 뒤로가기 활성화 여부
+      private func setNaviBar() {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+      }
 }
 
 // MARK: @objc

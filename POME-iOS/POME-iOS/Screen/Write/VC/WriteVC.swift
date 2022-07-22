@@ -31,6 +31,7 @@ class WriteVC: BaseVC {
         setDelegate()
         registerCV()
         configureNaviBar()
+        setNaviBar()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -106,6 +107,11 @@ extension WriteVC {
         GoalCategoryCVC.register(target: goalCategoryCV)
         PlusCVC.register(target: goalCategoryCV)
     }
+    
+    /// 오른쪽으로 swipe시 뒤로가기 활성화 여부
+      private func setNaviBar() {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+      }
 }
 
 // MARK: - @objc
