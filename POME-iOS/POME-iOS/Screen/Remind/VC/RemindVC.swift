@@ -393,6 +393,7 @@ extension RemindVC: UICollectionViewDelegateFlowLayout {
         return 8
     }
     
+    /// 목표카태고리가 선택될때, 목표카테고리에 대한 회고 셀들이 reload된다. 그 전의 필터링 기능이 사라지게 됨
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if !category.isEmpty {
             selectedCategoryIndex = indexPath.row
@@ -426,7 +427,6 @@ extension RemindVC {
                         self.goalCategoryCV.reloadData()
                         self.setTVScroll()
                         self.setDefaultSelectedCell(index: self.selectedCategoryIndex)
-//                        self.reqeustGetRemindGoal(goalId: self.goalId, startEmotion: 0, endEmotion: 0)
                     }
                     self.activityIndicator.stopAnimating()
                 }
