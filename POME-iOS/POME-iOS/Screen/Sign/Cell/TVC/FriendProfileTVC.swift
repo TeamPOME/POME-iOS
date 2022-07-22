@@ -16,6 +16,7 @@ class FriendProfileTVC: CodeBaseTVC {
     private let profileImageView = PomeMaskedImageView().then {
         $0.image = UIImage(named: "sampleProfile")
         $0.maskImage = UIImage(named: "userProfileEmpty160")
+        $0.contentMode = .scaleAspectFill
     }
     
     private let nicknameLabel = UILabel().then {
