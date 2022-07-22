@@ -18,6 +18,9 @@ class MateVC: BaseVC {
     private var selectedIndex: Int = 0
     private var cellFrame: CGFloat = 0
     private var scrollPosition: CGFloat = 0
+    private var recordID: Int = -1
+    private var mateID: Int = -1
+    
     
     private lazy var mateProfileCV = UICollectionView(frame: self.view.bounds, collectionViewLayout: UICollectionViewFlowLayout()).then {
         let layout = UICollectionViewFlowLayout()
@@ -82,6 +85,7 @@ class MateVC: BaseVC {
         
         /// 처음 띄울 때는 전체보기
         getMateRecord(mateId: 0)
+        setTapEmojiBtn()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -102,6 +106,9 @@ extension MateVC {
         mateTV.backgroundColor = .grey_0
         mateProfileCV.backgroundColor = .grey_0
         mateTV.separatorStyle = .none
+        
+        /// TableView 하단 space 지정
+        mateTV.contentInset.bottom = 55
         
         view.addSubviews([addMateNaviBar, mateTV, mateProfileCV, titleHeaderLabel, emojiSelectView])
         emojiSelectView.addSubviews([firstEmoji, secondEmoji, thirdEmoji, fourthEmoji, fifthEmoji, sixthEmoji])
@@ -217,6 +224,34 @@ extension MateVC {
     private func setTVOffset() {
         mateTV.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
     }
+    
+    /// 감정 이모지 버튼 tap Action 설정 메서드
+    private func setTapEmojiBtn() {
+        firstEmoji.press { [weak self] in
+            guard let self = self else { return }
+            self.postMateRecordEmoji(emotion: 1, targetId: self.recordID)
+        }
+        secondEmoji.press { [weak self] in
+            guard let self = self else { return }
+            self.postMateRecordEmoji(emotion: 2, targetId: self.recordID)
+        }
+        thirdEmoji.press { [weak self] in
+            guard let self = self else { return }
+            self.postMateRecordEmoji(emotion: 3, targetId: self.recordID)
+        }
+        fourthEmoji.press { [weak self] in
+            guard let self = self else { return }
+            self.postMateRecordEmoji(emotion: 4, targetId: self.recordID)
+        }
+        fifthEmoji.press { [weak self] in
+            guard let self = self else { return }
+            self.postMateRecordEmoji(emotion: 5, targetId: self.recordID)
+        }
+        sixthEmoji.press { [weak self] in
+            guard let self = self else { return }
+            self.postMateRecordEmoji(emotion: 6, targetId: self.recordID)
+        }
+    }
 }
 
 // MARK: - @objc
@@ -268,6 +303,7 @@ extension MateVC: UITableViewDelegate {
                 self.showHalfModalVC()
             }
             haveMateTVC.tapPlusBtnAction = {
+                self.recordID = self.mateRecordList[indexPath.row].id
                 let cell = tableView.cellForRow(at: indexPath)
                 let frame = cell?.layer.frame
                 self.cellFrame = (frame?.maxY ?? 0) + 205
@@ -336,6 +372,7 @@ extension MateVC: UICollectionViewDelegate {
         collectionView.reloadData()
         if indexPath.row > 0 {
             getMateRecord(mateId: mateDataList[indexPath.row - 1].id)
+            mateID = mateDataList[indexPath.row - 1].id
         } else {
             getMateRecord(mateId: 0)
         }
@@ -410,6 +447,26 @@ extension MateVC {
             default:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
                 self.activityIndicator.stopAnimating()
+            }
+        }
+    }
+    
+    /// 친구 기록 감정 등록 메서드
+    private func postMateRecordEmoji(emotion: Int, targetId: Int) {
+        self.activityIndicator.startAnimating()
+        MateAPI.shared.postMateRecordEmojiAPI(emotion: emotion, targetId: targetId) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let _ = data as? PostEmojiResModel {
+                    self.activityIndicator.stopAnimating()
+                    DispatchQueue.main.async {
+                        self.getMateRecord(mateId: self.mateID)
+                    }
+                }
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             }
         }
     }

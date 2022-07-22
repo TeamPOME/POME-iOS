@@ -46,4 +46,21 @@ class MateAPI: BaseAPI {
             }
         }
     }
+    
+    /// [POST] 친구 기록에 이모지 남기기 API
+    func postMateRecordEmojiAPI(emotion: Int, targetId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        AFmanager.request(MateService.postMateEmoji(emotion: emotion, targetId: targetId)).responseData { response in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                guard let data = response.data else { return }
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, PostEmojiResModel.self)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
 }

@@ -69,6 +69,7 @@
 		77B571B528811E5900C9CC27 /* SignInSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77B571B428811E5900C9CC27 /* SignInSB.storyboard */; };
 		77B571B728811E7200C9CC27 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B571B628811E7200C9CC27 /* SignInVC.swift */; };
 		77BB63412888927A002C0DC4 /* MateSearchResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BB63402888927A002C0DC4 /* MateSearchResModel.swift */; };
+		77BB6355288B36D9002C0DC4 /* PostEmojiResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BB6354288B36D8002C0DC4 /* PostEmojiResModel.swift */; };
 		77BD150B288535D700A1950D /* SignInResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD150A288535D700A1950D /* SignInResModel.swift */; };
 		77BD150D2885396400A1950D /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD150C2885396400A1950D /* SignService.swift */; };
 		77BD150F2885B33000A1950D /* SignAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BD150E2885B33000A1950D /* SignAPI.swift */; };
@@ -249,6 +250,7 @@
 		77B571B428811E5900C9CC27 /* SignInSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInSB.storyboard; sourceTree = "<group>"; };
 		77B571B628811E7200C9CC27 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		77BB63402888927A002C0DC4 /* MateSearchResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MateSearchResModel.swift; sourceTree = "<group>"; };
+		77BB6354288B36D8002C0DC4 /* PostEmojiResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEmojiResModel.swift; sourceTree = "<group>"; };
 		77BD150A288535D700A1950D /* SignInResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInResModel.swift; path = "POME-iOS/Network/APIModels/Sign/SignInResModel.swift"; sourceTree = SOURCE_ROOT; };
 		77BD150C2885396400A1950D /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
 		77BD150E2885B33000A1950D /* SignAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignAPI.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				1AAF201A2887E5EF00A4C18F /* MateResModel.swift */,
 				1AD1042D288925FC00B11995 /* MateDetailModel.swift */,
 				8427F898288A97410096B20E /* GetMateRecordResModel.swift */,
+				77BB6354288B36D8002C0DC4 /* PostEmojiResModel.swift */,
 			);
 			path = Mate;
 			sourceTree = "<group>";
@@ -1414,6 +1417,7 @@
 				77BD150B288535D700A1950D /* SignInResModel.swift in Sources */,
 				1AAF201E2887E67300A4C18F /* MateAPI.swift in Sources */,
 				77E8F3522875F54000D2F6C0 /* CVRegisterable.swift in Sources */,
+				77BB6355288B36D9002C0DC4 /* PostEmojiResModel.swift in Sources */,
 				77E8F330287571C400D2F6C0 /* UIViewController+.swift in Sources */,
 				1A500DAA28869A02003638B1 /* MateEmojiHeaderCVC.swift in Sources */,
 				77E8F3402875EB3900D2F6C0 /* UserDefaults+.swift in Sources */,

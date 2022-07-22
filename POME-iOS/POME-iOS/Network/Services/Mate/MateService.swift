@@ -11,16 +11,10 @@ import Alamofire
 enum MateService {
     case getMate
     case getMateRecord(userId: Int)
+    case postMateEmoji(emotion: Int, targetId: Int)
 }
 
 extension MateService: TargetType {
-    
-    var header: HeaderType {
-        switch self {
-        case .getMate, .getMateRecord:
-            return .auth
-        }
-    }
     
     var path: String {
         switch self {
@@ -28,6 +22,8 @@ extension MateService: TargetType {
             return "/friends"
         case .getMateRecord(_):
             return "/friends/records"
+        case .postMateEmoji:
+            return "records/reaction"
         }
     }
     
@@ -35,6 +31,8 @@ extension MateService: TargetType {
         switch self {
         case .getMate, .getMateRecord:
             return .get
+        case .postMateEmoji:
+            return .post
         }
     }
     
@@ -47,6 +45,19 @@ extension MateService: TargetType {
                 "userId": mateId
             ]
             return .query(requestQuery)
+        case .postMateEmoji(let emotion, let targetId):
+            let body: [String: Any] = [
+                "emotion": emotion,
+                "targetId": targetId
+            ]
+            return .requestBody(body)
+        }
+    }
+    
+    var header: HeaderType {
+        switch self {
+        case .getMate, .getMateRecord, .postMateEmoji:
+            return .auth
         }
     }
 }
