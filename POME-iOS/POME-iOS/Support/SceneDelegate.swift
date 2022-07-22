@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.rootViewController = UIStoryboard.init(name: Identifiers.SignInSB, bundle: nil).instantiateViewController(withIdentifier: SignInVC.className) as? SignInVC
             
             self.window = window
+            window.overrideUserInterfaceStyle = .light 
             window.makeKeyAndVisible()
         }
     }

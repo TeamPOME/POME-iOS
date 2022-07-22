@@ -158,7 +158,6 @@
                         <outlet property="myPageNaviBar" destination="GfA-8P-ute" id="ZMT-3D-MUV"/>
                         <outlet property="nameLabel" destination="dr5-rm-0iK" id="8vL-ZY-LPa"/>
                         <outlet property="profileImage" destination="3K3-M1-B6l" id="I0r-Ny-oPB"/>
-                        <outlet property="profileImageView" destination="3K3-M1-B6l" id="s62-ad-5L1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

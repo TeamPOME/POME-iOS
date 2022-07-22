@@ -359,7 +359,8 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
 extension WriteVC {
     
     /// 목표 카테고리 조회 요청 메서드
-    private func getGoalCategory() {
+    private func getGoalGategory() {
+        self.activityIndicator.startAnimating()
         WriteAPI.shared.getGoalsAPI { networkResult in
             switch networkResult {
             case .success(let data):
@@ -369,10 +370,13 @@ extension WriteVC {
                         self.goalCategoryCV.reloadData()
                         self.setGoalCategoryCV()
                     }
+                    self.activityIndicator.stopAnimating()
                 }
             case .requestErr:
+                self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
+                self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             }
         }
@@ -380,6 +384,7 @@ extension WriteVC {
     
     /// 목표 상세 조회 요청 메서드
     private func getGoalDetail(goalId: Int) {
+        self.activityIndicator.startAnimating()
         WriteAPI.shared.getGoalDetailAPI(goalId: goalId) { networkResult in
             switch networkResult {
             case .success(let data):
@@ -388,6 +393,7 @@ extension WriteVC {
                         self.goalDetail = data
                         self.writeMainCV.reloadSections([0])
                     }
+                    self.activityIndicator.stopAnimating()
                 }
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
@@ -399,6 +405,7 @@ extension WriteVC {
     
     /// 목표 삭제 요청 메서드
     private func deleteGoal(goalId: Int) {
+        self.activityIndicator.startAnimating()
         WriteAPI.shared.deleteGoalAPI(goalId: goalId) { networkResult in
             switch networkResult {
             case .success(_):
@@ -410,9 +417,12 @@ extension WriteVC {
                         self.writeInfo.index -= 1
                     }
                 }
+                self.activityIndicator.stopAnimating()
             case .requestErr:
+                self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
+                self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             }
         }
@@ -420,6 +430,7 @@ extension WriteVC {
     
     /// 일주일 씀씀이 조회 요청 메서드
     private func getWeekSpend(goalId: Int) {
+        self.activityIndicator.startAnimating()
         WriteAPI.shared.getWeekSpendAPI(goalId: goalId) { networkResult in
             switch networkResult {
             case .success(let data):
@@ -430,10 +441,13 @@ extension WriteVC {
                         self.writeMainCV.reloadSections([1, 2])
                         self.configureEmptyView()
                     }
+                    self.activityIndicator.stopAnimating()
                 }
             case .requestErr:
+                self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             default:
+                self.activityIndicator.stopAnimating()
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             }
         }

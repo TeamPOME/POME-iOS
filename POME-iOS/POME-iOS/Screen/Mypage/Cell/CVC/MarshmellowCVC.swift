@@ -9,6 +9,10 @@ import UIKit
 
 class MarshmellowCVC: BaseCVC {
 
+    // MARK: Properties
+    private var level: Int = 0
+    private var index: Int = 0
+    
     // MARK: IBOutlet
     @IBOutlet weak var labelLevelContainerView: UIView!
     @IBOutlet weak var levelLabel: UILabel!
@@ -31,15 +35,5 @@ extension MarshmellowCVC {
         labelLevelContainerView.layer.borderWidth = 1
         labelLevelContainerView.layer.borderColor = UIColor.sub.cgColor
         levelBadgeContainerView.makeRounded(cornerRadius: 12)
-    }
-}
-
-// MARK: - Custom Method
-extension MarshmellowCVC {
-    
-    func setData(dataModel: MarshmellowDataModel) {
-        levelLabel.text = dataModel.levelLabel
-        levelBadgeLabel.text = dataModel.levelBadge
-        marshmellowImageView.image = UIImage(named: dataModel.marshmellowImageName ?? "userProfileFill32")
     }
 }

@@ -18,7 +18,7 @@ class HaveNoMateTVC: CodeBaseTVC {
         $0.image = UIImage(named: "icNoting24")
     }
     
-    private let descriptionLabel = UILabel().then {
+    let descriptionLabel = UILabel().then {
         $0.setLabel(text: "아직 추가한 친구가 없어요", color: .grey_5, size: 14, weight: .semiBold)
     }
     

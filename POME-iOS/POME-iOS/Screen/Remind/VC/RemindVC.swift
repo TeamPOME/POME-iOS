@@ -113,11 +113,13 @@ extension RemindVC {
         remindTV.isScrollEnabled = (category.count == 0) ? false : true
     }
     
-//    /// 목표 카테고리의 다른탭으로 눌리기 전의 탭으로 눌리게끔 default 설정
-//    private func setDefaultSelectedCell(index: Int) {
-//        self.goalCategoryCV.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .right)
-//        self.selectedCategory = category[index]
-//    }
+    /// 목표 카테고리의 다른탭으로 눌리기 전의 탭으로 눌리게끔 default 설정
+    private func setDefaultSelectedCell(index: Int) {
+        self.goalCategoryCV.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .right)
+        if !category.isEmpty {
+            self.selectedCategory = category[index]
+        }
+    }
 }
 
 // MARK: - @objc

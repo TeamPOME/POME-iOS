@@ -26,8 +26,8 @@ extension PomeTBC {
         
         let tab = ViewControllerFactory.viewController(for: vcType)
         tab.tabBarItem = UITabBarItem(title: tabBarTitle,
-                                      image: UIImage(named: tabBarImg)?.withRenderingMode(.alwaysTemplate),
-                                      selectedImage: UIImage(named: tabBarSelectedImg)?.withRenderingMode(.alwaysTemplate))
+                                      image: UIImage(named: tabBarImg)?.withRenderingMode(.alwaysOriginal),
+                                      selectedImage: UIImage(named: tabBarSelectedImg)?.withRenderingMode(.alwaysOriginal))
         tab.tabBarItem.imageInsets = UIEdgeInsets(top: 2, left: 0, bottom: -2, right: 0)
         return tab
     }

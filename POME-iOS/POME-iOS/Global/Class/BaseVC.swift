@@ -9,8 +9,28 @@ import UIKit
 
 class BaseVC: UIViewController {
 
+    // MARK: Properties
+    lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        activityIndicator.center = view.center
+        
+        // 기타 옵션
+        activityIndicator.color = .main
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .large
+        activityIndicator.stopAnimating()
+        
+        return activityIndicator
+    }()
+    
+    let screenWidth = UIScreen.main.bounds.size.width
+    let screenHeight = UIScreen.main.bounds.size.height
+    
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(activityIndicator)
     }
 }
 
