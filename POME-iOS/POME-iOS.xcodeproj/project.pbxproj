@@ -741,7 +741,6 @@
 				77E8F3082874B23500D2F6C0 /* SB */,
 				77E8F3072874B23000D2F6C0 /* VC */,
 				77E8F3062874B22100D2F6C0 /* Cell */,
-				77E8F3052874B1E100D2F6C0 /* Xib */,
 			);
 			path = Mate;
 			sourceTree = "<group>";
@@ -903,13 +902,6 @@
 				1A4BB61F287E0395007C8FC1 /* RemindGoalTitleTVC.xib */,
 				1ABDED75287E716E00F85F9C /* RemindFilterTVC.xib */,
 				1ABDED81287F9B4E00F85F9C /* RemindGoalCategoryCVC.xib */,
-			);
-			path = Xib;
-			sourceTree = "<group>";
-		};
-		77E8F3052874B1E100D2F6C0 /* Xib */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Xib;
 			sourceTree = "<group>";
