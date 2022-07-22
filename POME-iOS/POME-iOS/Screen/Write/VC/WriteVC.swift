@@ -250,6 +250,9 @@ extension WriteVC: UICollectionViewDataSource {
             case 1:
                 feelingCardCVC.tapLookbackView = {
                     guard let lookbackVC = UIStoryboard.init(name: Identifiers.LookbackSB, bundle: nil).instantiateViewController(withIdentifier: LookbackVC.className) as? LookbackVC else { return }
+                    lookbackVC.selectedGoalId = self.goalDetail.id
+                    lookbackVC.goalTitle = self.goalDetail.message
+                    
                     self.navigationController?.pushViewController(lookbackVC, animated: true)
                 }
                 feelingCardCVC.setData(num: incompleteTotal)
@@ -315,7 +318,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
             case 1:
                 return CGSize(width: 343.adjusted, height: 118)
             default:
-                return CGSize(width: 166.adjusted, height: 188.adjustedH)
+                return CGSize(width: 166.adjusted, height: 192.adjustedH)
             }
         }
     }
@@ -437,10 +440,10 @@ extension WriteVC {
     /// 일주일 씀씀이 조회 요청 메서드
     private func getWeekSpend(goalId: Int) {
         self.activityIndicator.startAnimating()
-        WriteAPI.shared.getWeekSpendAPI(goalId: goalId) { networkResult in
+        WriteAPI.shared.getWeekRecordAPI(goalId: goalId) { networkResult in
             switch networkResult {
             case .success(let data):
-                if let data = data as? GetWeekSpendResModel {
+                if let data = data as? GetWeekRecordResModel {
                     DispatchQueue.main.async {
                         self.spend = data.records
                         self.incompleteTotal = data.incompleteTotal

@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-SemiBold.otf">
+            <string>Pretendard-SemiBold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--LookbackVC-->
         <scene sceneID="s0d-6b-0kx">
@@ -34,6 +39,24 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="pv6-SG-Z5M">
+                                <rect key="frame" x="123.66666666666666" y="527" width="127.66666666666666" height="53"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icNoting24" translatesAutoresizingMaskIntoConstraints="NO" id="3cg-zp-b9L">
+                                        <rect key="frame" x="51.999999999999986" y="0.0" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="23E-sE-jfa"/>
+                                            <constraint firstAttribute="width" secondItem="3cg-zp-b9L" secondAttribute="height" multiplier="1:1" id="b2Y-gF-lqA"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="돌아볼 씀씀이가 없어요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9x5-zW-5ES">
+                                        <rect key="frame" x="0.0" y="36" width="127.66666666666667" height="17"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="14"/>
+                                        <color key="textColor" name="grey_5"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="grey_0"/>
@@ -41,13 +64,17 @@
                             <constraint firstItem="sH1-TI-7HX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4NF-mi-7JA"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Nju-YO-X89" secondAttribute="trailing" id="6RQ-Kv-pYJ"/>
                             <constraint firstItem="Nju-YO-X89" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Ahl-q2-Qco"/>
+                            <constraint firstItem="pv6-SG-Z5M" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="GXB-6S-diL"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="sH1-TI-7HX" secondAttribute="bottom" id="GnM-M1-MVq"/>
                             <constraint firstItem="Nju-YO-X89" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fDy-9a-IpT"/>
                             <constraint firstItem="sH1-TI-7HX" firstAttribute="top" secondItem="Nju-YO-X89" secondAttribute="bottom" id="gFN-7J-U0w"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sH1-TI-7HX" secondAttribute="trailing" id="rKq-Xf-ft5"/>
+                            <constraint firstItem="pv6-SG-Z5M" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="483" id="re1-km-RA7"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emptyView" destination="pv6-SG-Z5M" id="dSh-lW-goQ"/>
+                        <outlet property="emptyViewTopConstraint" destination="re1-km-RA7" id="AMu-Zz-LCK"/>
                         <outlet property="lookbackMainCV" destination="sH1-TI-7HX" id="zHy-oo-r98"/>
                         <outlet property="naviBar" destination="Nju-YO-X89" id="ywn-g8-g5O"/>
                     </connections>
@@ -58,8 +85,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icNoting24" width="24" height="24"/>
         <namedColor name="grey_0">
             <color red="0.97254901960784312" green="0.98039215686274506" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey_5">
+            <color red="0.66666666666666663" green="0.68627450980392157" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

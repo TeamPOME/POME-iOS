@@ -82,14 +82,14 @@ class WriteAPI: BaseAPI {
     }
     
     /// [GET] 일주일 씀씀이 조회 API
-    func getWeekSpendAPI(goalId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
-        AFmanager.request(WriteService.getWeekSpend(goalId: goalId)).responseData { response in
+    func getWeekRecordAPI(goalId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        AFmanager.request(WriteService.getWeekRecord(goalId: goalId)).responseData { response in
             switch response.result {
             case .success:
                 guard let statusCode = response.response?.statusCode else { return }
                 guard let data = response.data else { return }
                 
-                let networkResult = self.judgeStatus(by: statusCode, data, GetWeekSpendResModel.self)
+                let networkResult = self.judgeStatus(by: statusCode, data, GetWeekRecordResModel.self)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -107,6 +107,23 @@ class WriteAPI: BaseAPI {
                 guard let data = response.data else { return }
                 
                 let networkResult = self.judgeStatus(by: statusCode, data, PostRecordResModel.self)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    /// [GET] 다시 돌아 볼 씀씀이 조회 API
+    func getIncompleteRecordAPI(goalId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        AFmanager.request(WriteService.getIncompleteRecord(goalId: goalId)).responseData { response in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                guard let data = response.data else { return }
+                
+                let networkResult = self.judgeStatus(by: statusCode, data, GetIncompleteRecordResModel.self)
                 completion(networkResult)
                 
             case .failure(let err):
