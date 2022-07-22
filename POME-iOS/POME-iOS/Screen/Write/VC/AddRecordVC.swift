@@ -33,6 +33,7 @@ class AddRecordVC: BaseVC {
     @IBOutlet weak var recordTextField: PomeTextField!
     @IBOutlet weak var confirmBtn: PomeBtn!
     @IBOutlet weak var contentTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -89,6 +90,8 @@ extension AddRecordVC {
         recordTextField.configurePlaceholder(placeholder: "소비에 대한 감상을 적어주세요 (20자)")
         confirmBtn.setTitle("작성했어요", for: .normal)
         confirmBtn.isDisabled = true
+        bottomConstraint.constant = (screenHeight == 667) ? 34 : 0
+
     }
 }
 
@@ -225,7 +228,11 @@ extension AddRecordVC: UIViewControllerTransitioningDelegate {
         let halfModalVC = PomeHalfModalVC(presentedViewController: presented, presenting: presenting)
         
         /// 바텀 시트로 띄울 뷰의 종류에 따라 HalfModalView의 높이 지정
-        halfModalVC.modalHeight = isGoalBtn ? 348 : 448
+        if screenHeight == 667 {
+            halfModalVC.modalHeight = isGoalBtn ? 388 : 488
+        } else {
+            halfModalVC.modalHeight = isGoalBtn ? 348 : 448
+        }
         return halfModalVC
     }
 }

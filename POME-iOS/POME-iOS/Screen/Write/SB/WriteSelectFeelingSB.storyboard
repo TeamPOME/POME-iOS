@@ -166,9 +166,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="ew1-v9-O1f" id="Why-dM-EAZ"/>
                         <outlet property="closeBtn" destination="Ndh-5J-kCY" id="8ZD-Zb-yrS"/>
                         <outlet property="dontKnowBtn" destination="pcR-k1-Gvx" id="A9P-vd-0mc"/>
                         <outlet property="dontKnowLabel" destination="Fe8-tG-kGP" id="BQf-BH-V2Y"/>
+                        <outlet property="feelingStackView" destination="H7t-k0-E6M" id="5nX-Ol-fhi"/>
+                        <outlet property="feelingTopConstraint" destination="f1F-gV-zhY" id="9yX-iq-G9a"/>
                         <outlet property="happyBtn" destination="HoJ-Wz-F6J" id="Ckc-Ok-eu1"/>
                         <outlet property="happyLabel" destination="eau-00-Yue" id="OO5-j6-Dm1"/>
                         <outlet property="naviBar" destination="ouj-Ic-fV0" id="hyC-VT-H4m"/>

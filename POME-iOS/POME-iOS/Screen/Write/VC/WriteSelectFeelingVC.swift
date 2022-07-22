@@ -28,6 +28,9 @@ class WriteSelectFeelingVC: BaseVC {
     @IBOutlet weak var dontKnowLabel: UILabel!
     @IBOutlet weak var regretBtn: UIButton!
     @IBOutlet weak var regretLabel: UILabel!
+    @IBOutlet weak var feelingTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var feelingStackView: UIStackView!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -108,6 +111,11 @@ extension WriteSelectFeelingVC {
         [titleLabel, subLabel].forEach {
             $0?.setLineSpacing(lineSpacing: 4)
             $0?.textAlignment = .left
+        }
+        if screenHeight == 667 {
+            feelingTopConstraint.constant = 23
+            bottomConstraint.constant = 34
+            feelingStackView.spacing = 13
         }
     }
     

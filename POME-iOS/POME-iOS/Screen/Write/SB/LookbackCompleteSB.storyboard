@@ -218,7 +218,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="gM3-Kh-agf" id="ZXO-BB-7jl"/>
                         <outlet property="completeBtn" destination="tzg-qe-b4f" id="jSJ-xz-fLK"/>
+                        <outlet property="contentTopConstraint" destination="L4Z-Bd-C7H" id="bGX-Vy-Myr"/>
                         <outlet property="explainLabel" destination="3NT-R3-cgb" id="Ldo-Tf-IP2"/>
                         <outlet property="firstEmojiImageView" destination="rZW-mM-sSY" id="p8x-rD-cqk"/>
                         <outlet property="firstSubLabel" destination="xh5-j9-zVt" id="TCc-ob-nzv"/>

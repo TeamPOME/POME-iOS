@@ -17,6 +17,8 @@ class AddCompleteVC: BaseVC {
     @IBOutlet weak var subLabel: UILabel!
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var confirmBtn: PomeBtn!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var contentTopConstraint: NSLayoutConstraint!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -47,6 +49,10 @@ extension AddCompleteVC {
         titleLabel.setLineSpacing(lineSpacing: 4)
         confirmBtn.setTitle("확인했어요", for: .normal)
         confirmBtn.isDisabled = false
+        if screenHeight == 667 {
+            bottomConstraint.constant = 34
+            contentTopConstraint.constant = 80
+        }
     }
 }
 

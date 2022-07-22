@@ -34,7 +34,7 @@ class WriteBottomAlertVC: BaseVC {
 extension WriteBottomAlertVC {
     
     private func configureUI() {
-        topConstraint.constant = 24.adjustedH
+        topConstraint.constant = screenHeight == 667 ? 12 : 24.adjustedH
         imageHeight.constant = 110.adjustedH
         subLabel.setLineSpacing(lineSpacing: 4)
         subLabel.textAlignment = .center

@@ -213,6 +213,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="bFF-iO-ITj" id="8J2-YF-Q3I"/>
                         <outlet property="calendarBtn" destination="gBe-md-8XM" id="V56-TE-1V0"/>
                         <outlet property="confirmBtn" destination="OIX-BJ-x4V" id="Owm-oi-dTg"/>
                         <outlet property="contentTopConstraint" destination="iAJ-Vq-vQi" id="0yc-1w-A7m"/>

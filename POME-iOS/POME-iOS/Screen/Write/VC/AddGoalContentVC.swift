@@ -28,6 +28,8 @@ class AddGoalContentVC: BaseVC {
     @IBOutlet weak var confirmBtn: PomeBtn!
     @IBOutlet weak var openSwitch: UISwitch!
     @IBOutlet weak var switchBackView: UIView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var btnTopConstraint: NSLayoutConstraint!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -86,6 +88,10 @@ extension AddGoalContentVC {
         priceTextField.configurePlaceholder(placeholder: "50,000")
         confirmBtn.setTitle("작성했어요", for: .normal)
         confirmBtn.isDisabled = true
+        if screenHeight == 667 {
+            bottomConstraint.constant = 34
+            btnTopConstraint.constant = 12
+        }
     }
 }
 

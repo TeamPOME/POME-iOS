@@ -59,7 +59,7 @@ extension WriteVC {
     }
     
     private func configureEmptyView() {
-        emptyViewTopConstraint.constant = 419.adjustedH
+        emptyViewTopConstraint.constant = screenHeight == 667 ? 390.adjustedH : 419.adjustedH
         emptyView.isHidden = !(spend.count == 0)
     }
     
