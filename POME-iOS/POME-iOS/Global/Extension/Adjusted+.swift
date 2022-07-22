@@ -22,8 +22,12 @@ extension CGFloat {
     }
     
     var adjustedH: CGFloat {
-        let ratio: CGFloat = UIScreen.main.bounds.height / 812
-        return self * ratio
+        if UIScreen.main.bounds.height < 812 {
+            return self
+        } else {
+            let ratio: CGFloat = UIScreen.main.bounds.height / 812
+            return self * ratio
+        }
     }
 }
 
@@ -34,8 +38,12 @@ extension Double {
     }
     
     var adjustedH: Double {
-        let ratio: Double = Double(UIScreen.main.bounds.height / 812)
-        return floor(self * ratio)
+        if UIScreen.main.bounds.height < 812 {
+            return self
+        } else {
+            let ratio: Double = Double(UIScreen.main.bounds.height / 812)
+            return floor(self * ratio)
+        }
     }
 }
 
