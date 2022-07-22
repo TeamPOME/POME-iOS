@@ -20,6 +20,7 @@ class AddGoalDateVC: BaseVC {
     @IBOutlet weak var startCalendarBtn: UIButton!
     @IBOutlet weak var endCalendarBtn: UIButton!
     @IBOutlet weak var confirmBtn: PomeBtn!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -63,6 +64,7 @@ extension AddGoalDateVC {
         endCalendarBtn.isEnabled = false
         confirmBtn.setTitle("선택했어요", for: .normal)
         confirmBtn.isDisabled = true
+        bottomConstraint.constant = (screenHeight == 667) ? 34 : 0
     }
     
     private func setTapBackBtn() {
@@ -134,7 +136,7 @@ extension AddGoalDateVC: UIViewControllerTransitioningDelegate {
         let halfModalVC = PomeHalfModalVC(presentedViewController: presented, presenting: presenting)
         
         /// HalfModalView의 높이 지정
-        halfModalVC.modalHeight = 448
+        halfModalVC.modalHeight = screenHeight == 667 ? 488 : 448
         return halfModalVC
     }
 }

@@ -54,7 +54,11 @@ extension SignInVC {
         view.addSubviews([iconImageView, logoImageView, sloganImageView, kakaoBtn])
         
         iconImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(215.adjustedH)
+            if screenHeight == 667 {
+                $0.top.equalToSuperview().inset(130)
+            } else {
+                $0.top.equalToSuperview().inset(215.adjustedH)
+            }
             $0.centerX.equalToSuperview()
             $0.width.equalTo(230.adjusted)
             $0.height.equalTo(230.adjustedH)

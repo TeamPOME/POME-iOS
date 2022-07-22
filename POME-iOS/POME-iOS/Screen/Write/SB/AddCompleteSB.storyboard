@@ -73,7 +73,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="0ZB-C5-5J1" id="Mm7-bn-sWH"/>
                         <outlet property="confirmBtn" destination="KMR-Fz-QpL" id="viH-dL-hc2"/>
+                        <outlet property="contentTopConstraint" destination="vse-dL-QYL" id="f4p-Vn-Pjg"/>
                         <outlet property="mainImageView" destination="H1L-Vk-fQl" id="eue-Os-CJU"/>
                         <outlet property="subLabel" destination="2qb-VC-wUF" id="qb1-e2-2oJ"/>
                         <outlet property="titleLabel" destination="LJR-dj-N1d" id="Jit-yU-oOF"/>

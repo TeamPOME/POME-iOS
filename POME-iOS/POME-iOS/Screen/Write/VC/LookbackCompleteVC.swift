@@ -26,6 +26,8 @@ class LookbackCompleteVC: BaseVC {
     @IBOutlet weak var secondEmojiImageView: UIImageView!
     @IBOutlet weak var secondTitleLabel: UILabel!
     @IBOutlet weak var secondSubLabel: UILabel!
+    @IBOutlet weak var contentTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -54,6 +56,10 @@ extension LookbackCompleteVC {
         explainLabel.textAlignment = .center
         subTitleLabel.setLineSpacing(lineSpacing: 4)
         subTitleLabel.textAlignment = .left
+        if screenHeight == 667 {
+            contentTopConstraint.constant = 40
+            bottomConstraint.constant = 34
+        }
     }
 }
 

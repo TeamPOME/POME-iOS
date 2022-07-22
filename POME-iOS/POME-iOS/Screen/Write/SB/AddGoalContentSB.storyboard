@@ -219,6 +219,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="Jb5-ZS-0zi" id="wBm-KN-SHq"/>
+                        <outlet property="btnTopConstraint" destination="llr-wN-s3b" id="5hS-53-MQk"/>
                         <outlet property="categoryTextField" destination="lHe-vy-Qdv" id="dP6-Gb-V1S"/>
                         <outlet property="confirmBtn" destination="okf-kz-Vcr" id="oHQ-VT-3Nn"/>
                         <outlet property="naviBar" destination="RCa-Nf-QCV" id="JuG-eH-p0l"/>

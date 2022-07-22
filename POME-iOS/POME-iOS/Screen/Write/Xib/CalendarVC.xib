@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarVC" customModule="POME_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="bottomConstraint" destination="HTw-eb-fYN" id="sGH-pL-d3C"/>
                 <outlet property="calendar" destination="0BR-3A-rnl" id="GEK-aR-5a6"/>
                 <outlet property="headerLabel" destination="gMU-Y4-msY" id="YGQ-ci-sHU"/>
                 <outlet property="selectBtn" destination="zTo-fa-ln5" id="VEc-WX-sAd"/>
@@ -30,7 +31,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0BR-3A-rnl" customClass="FSCalendar">
-                    <rect key="frame" x="20" y="70" width="335" height="308"/>
+                    <rect key="frame" x="20" y="70" width="335" height="313"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTo-fa-ln5" customClass="PomeBtn" customModule="POME_iOS" customModuleProvider="target">
@@ -102,7 +103,7 @@
                 <constraint firstItem="zTo-fa-ln5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Xte-C2-ED0"/>
                 <constraint firstItem="0BR-3A-rnl" firstAttribute="top" secondItem="LqW-Rh-CxU" secondAttribute="bottom" id="aAA-ti-XNB"/>
                 <constraint firstItem="LqW-Rh-CxU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e3B-iX-2pL"/>
-                <constraint firstItem="zTo-fa-ln5" firstAttribute="top" secondItem="0BR-3A-rnl" secondAttribute="bottom" constant="20" id="f7B-Wj-4Ck"/>
+                <constraint firstItem="zTo-fa-ln5" firstAttribute="top" secondItem="0BR-3A-rnl" secondAttribute="bottom" constant="15" id="f7B-Wj-4Ck"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LqW-Rh-CxU" secondAttribute="trailing" id="oD7-6h-qbe"/>
                 <constraint firstItem="LqW-Rh-CxU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rDS-sm-SjD"/>
             </constraints>

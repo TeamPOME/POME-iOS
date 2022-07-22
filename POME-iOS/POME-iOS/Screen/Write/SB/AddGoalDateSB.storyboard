@@ -158,6 +158,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="5VC-Yb-5G6" id="BKn-uO-tBg"/>
                         <outlet property="confirmBtn" destination="oCd-1V-a2W" id="ukF-8O-Kv5"/>
                         <outlet property="endCalendarBtn" destination="RFe-V1-qhm" id="s4a-FT-YQD"/>
                         <outlet property="endDateLabel" destination="5tq-DI-Q70" id="plS-jz-xEL"/>

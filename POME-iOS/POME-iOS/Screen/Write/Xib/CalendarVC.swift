@@ -27,6 +27,7 @@ class CalendarVC: BaseVC {
     @IBOutlet weak var toLeftBtn: UIButton!
     @IBOutlet weak var toRightBtn: UIButton!
     @IBOutlet weak var selectBtn: PomeBtn!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -60,6 +61,7 @@ extension CalendarVC {
     private func configureUI() {
         
         selectBtn.setTitle("선택했어요", for: .normal)
+        bottomConstraint.constant = (screenHeight == 667) ? 34 : 0
         
         /// 시작 달로 헤더 레이블 설정
         if isStartCalendar {
