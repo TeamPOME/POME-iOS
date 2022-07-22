@@ -359,7 +359,7 @@ extension WriteVC: UICollectionViewDelegateFlowLayout {
 extension WriteVC {
     
     /// 목표 카테고리 조회 요청 메서드
-    private func getGoalGategory() {
+    private func getGoalCategory() {
         self.activityIndicator.startAnimating()
         WriteAPI.shared.getGoalsAPI { networkResult in
             switch networkResult {
