@@ -45,9 +45,9 @@ extension RemindHaveNoGoalTVC {
         
         blankImageView.snp.makeConstraints {
             if UIScreen.main.bounds.height < 812 {
-                $0.top.equalToSuperview().inset(130)
+                $0.top.equalToSuperview().offset(130)
             } else {
-                $0.centerY.equalToSuperview().offset(158)
+                $0.centerY.equalToSuperview().offset(130)
             }
             $0.centerX.equalToSuperview()
         }

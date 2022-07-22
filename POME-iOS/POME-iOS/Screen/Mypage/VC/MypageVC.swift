@@ -197,6 +197,7 @@ extension MypageVC {
     
     /// 마이페이지 유저 정보
     private func requestUser() {
+        self.activityIndicator.startAnimating()
         MypageAPI.shared.requestUserAPI {
             networkResult in
             switch networkResult {
@@ -208,10 +209,13 @@ extension MypageVC {
                     self.setData(data: self.UserData)
                     self.marshmellowCV.reloadData()
                 }
+                self.activityIndicator.stopAnimating()
             case .requestErr:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+                self.activityIndicator.stopAnimating()
             default:
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+                self.activityIndicator.stopAnimating()
             }
         }
     }
