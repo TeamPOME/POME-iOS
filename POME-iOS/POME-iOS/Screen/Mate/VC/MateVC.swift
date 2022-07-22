@@ -450,7 +450,7 @@ extension MateVC {
         MateAPI.shared.postMateRecordEmojiAPI(emotion: emotion, targetId: targetId) { networkResult in
             switch networkResult {
             case .success(let data):
-                if let data = data as? PostEmojiResModel {
+                if let _ = data as? PostEmojiResModel {
                     self.activityIndicator.stopAnimating()
                     DispatchQueue.main.async {
                         self.getMateRecord(mateId: self.mateID)
