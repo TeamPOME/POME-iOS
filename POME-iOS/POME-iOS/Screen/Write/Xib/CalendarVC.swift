@@ -13,7 +13,8 @@ class CalendarVC: BaseVC {
     // MARK: Properties
     private var currentPage: Date?
     var isStartCalendar: Bool = true
-
+    var isRecordCalendar: Bool = false
+    
     /// 이전 VC에서 받아 올 시작 날짜와 종료 날짜
     var startDate: Date = Date()
     var endDate: Date = Date()
@@ -71,16 +72,20 @@ extension CalendarVC {
         }
         
         /// 캘린더 좌우 버튼 활성화 여부
-        if isStartCalendar {
-            
-            /// 시작 날짜 캘린더일때 가능한 달은 오늘 기준 현재달 or 다음달 -> 현재달이면 왼쪽 버튼 비활성화, 다음달이면 오른쪽 버튼 비활성화
-            toLeftBtn.isEnabled = !(Calendar.current.component(.month, from: Date()) == Calendar.current.component(.month, from: startDate))
-            toRightBtn.isEnabled = (Calendar.current.component(.month, from: Date()) == Calendar.current.component(.month, from: startDate))
+        if isRecordCalendar {
+            setBtnEnable()
         } else {
-            
-            /// 종료 날짜 캘린더일때 가능한 달은 start달 기준 start달 or 다음달 -> start달이면 왼쪽버튼 비활성화, 다음달이면 오른쪽 버튼 비활성화
-            toLeftBtn.isEnabled = !(Calendar.current.component(.month, from: startDate) == Calendar.current.component(.month, from: endDate))
-            toRightBtn.isEnabled = (Calendar.current.component(.month, from: startDate) == Calendar.current.component(.month, from: endDate))
+            if isStartCalendar {
+                
+                /// 시작 날짜 캘린더일때 가능한 달은 오늘 기준 현재달 or 다음달 -> 현재달이면 왼쪽 버튼 비활성화, 다음달이면 오른쪽 버튼 비활성화
+                toLeftBtn.isEnabled = !(Calendar.current.component(.month, from: Date()) == Calendar.current.component(.month, from: startDate))
+                toRightBtn.isEnabled = (Calendar.current.component(.month, from: Date()) == Calendar.current.component(.month, from: startDate))
+            } else {
+                
+                /// 종료 날짜 캘린더일때 가능한 달은 start달 기준 start달 or 다음달 -> start달이면 왼쪽버튼 비활성화, 다음달이면 오른쪽 버튼 비활성화
+                toLeftBtn.isEnabled = !(Calendar.current.component(.month, from: startDate) == Calendar.current.component(.month, from: endDate))
+                toRightBtn.isEnabled = (Calendar.current.component(.month, from: startDate) == Calendar.current.component(.month, from: endDate))
+            }
         }
         
         /// 스크롤 안되게
@@ -118,6 +123,26 @@ extension CalendarVC {
         calendar.dataSource = self
     }
     
+    private func setBtnEnable() {
+        guard let lastMonth = Calendar.current.date(byAdding: .month, value: -1, to: Date()) else { return }
+        guard let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: Date()) else { return }
+                    
+        if Calendar.current.component(.month, from: self.currentPage ?? startDate) == Calendar.current.component(.month, from: lastMonth) {
+            
+            /// 현재 캘린더에 보이는 달보다 한 달 전 캘린더인 경우 왼쪽 버튼 활성화 해제
+            toLeftBtn.isEnabled = false
+            toRightBtn.isEnabled = true
+        } else if Calendar.current.component(.month, from: self.currentPage ?? startDate) == Calendar.current.component(.month, from: nextMonth) {
+            
+            /// 현재 캘린더에 보이는 달보다 한 달 뒤 캘린더인 경우 오른쪽 버튼 활성화 해제
+            toLeftBtn.isEnabled = true
+            toRightBtn.isEnabled = false
+        } else {
+            toLeftBtn.isEnabled = true
+            toRightBtn.isEnabled = true
+        }
+    }
+    
     /// 스크롤한 페이지를 가져온다.
     private func scrollCurrentPage(isPrev: Bool) {
         let cal = Calendar.current
@@ -126,9 +151,14 @@ extension CalendarVC {
         
         self.currentPage = isStartCalendar ? cal.date(byAdding: dateComponents, to: self.currentPage ?? self.startDate) : cal.date(byAdding: dateComponents, to: self.currentPage ?? self.endDate)
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
-
-        toLeftBtn.isEnabled.toggle()
-        toRightBtn.isEnabled.toggle()
+        
+        /// 기록탭에서 넘어온 경우가 아닐 경우 좌우 버튼 활성화 토글
+        if isRecordCalendar && isStartCalendar {
+            setBtnEnable()
+        } else {
+            toLeftBtn.isEnabled.toggle()
+            toRightBtn.isEnabled.toggle()
+        }
     }
 }
 
@@ -155,24 +185,35 @@ extension CalendarVC: FSCalendarDataSource {
     
     /// 오늘 이전 or 시작 날짜 이전은 선택 불가능
     func minimumDate(for calendar: FSCalendar) -> Date {
-        if isStartCalendar {
+        if isRecordCalendar {
             calendar.select(startDate)
-            return Date()
+            guard let lastMonth = Calendar.current.date(byAdding: .month, value: -1, to: Date()) else { return Date() }
+            return lastMonth
         } else {
-            calendar.select(endDate)
-            guard let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: startDate) else { return Date() }
-            return tomorrow
+            if isStartCalendar {
+                calendar.select(startDate)
+                return Date()
+            } else {
+                calendar.select(endDate)
+                guard let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: startDate) else { return Date() }
+                return tomorrow
+            }
         }
     }
     
     /// 오늘 or 시작 날짜로부터 한 달 까지만 설정 가능
     func maximumDate(for calendar: FSCalendar) -> Date {
-        if isStartCalendar {
+        if isRecordCalendar {
             guard let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: Date()) else { return Date() }
             return nextMonth
         } else {
-            guard let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: startDate) else { return Date() }
-            return nextMonth
+            if isStartCalendar {
+                guard let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: Date()) else { return Date() }
+                return nextMonth
+            } else {
+                guard let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: startDate) else { return Date() }
+                return nextMonth
+            }
         }
     }
 }
