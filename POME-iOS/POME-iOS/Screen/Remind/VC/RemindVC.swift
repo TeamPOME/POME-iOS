@@ -201,7 +201,7 @@ extension RemindVC: UITableViewDelegate {
         case 1:
             return 84
         default:
-            return (category.count == 0) ? 430 : 157
+            return (category.count == 0) ? 430.adjustedH : 157
         }
     }
     
