@@ -31,7 +31,7 @@ class CompleteSignUpVC: BaseVC {
     }
     
     private let iconImageView = UIImageView().then {
-        $0.image = UIImage(named: "3DTrashCanMint100")
+        $0.image = UIImage(named: "friend3DComponent")
         $0.contentMode = .scaleAspectFit
     }
     
@@ -71,23 +71,47 @@ extension CompleteSignUpVC {
         }
         
         iconImageView.snp.makeConstraints {
-            $0.top.equalTo(subTitleLabel.snp.bottom).offset(80)
-            $0.leading.equalTo(view.safeAreaLayoutGuide).inset(53)
-            $0.trailing.equalTo(view.safeAreaLayoutGuide).inset(52)
-            $0.width.equalTo(iconImageView.snp.height).multipliedBy(1.0 / 1.0)
+            
+            /// SE 기기대응
+            if screenHeight == 667 {
+                $0.top.equalTo(subTitleLabel.snp.bottom).offset(30)
+                $0.leading.equalTo(view.safeAreaLayoutGuide).inset(53.adjusted)
+                $0.trailing.equalTo(view.safeAreaLayoutGuide).inset(52.adjusted)
+                $0.width.equalTo(iconImageView.snp.height).multipliedBy(1.0 / 1.0)
+            } else {
+                $0.top.equalTo(subTitleLabel.snp.bottom).offset(80)
+                $0.leading.equalTo(view.safeAreaLayoutGuide).inset(53)
+                $0.trailing.equalTo(view.safeAreaLayoutGuide).inset(52)
+                $0.width.equalTo(iconImageView.snp.height).multipliedBy(1.0 / 1.0)
+            }
         }
         
         confirmBtn.snp.makeConstraints {
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
-            $0.height.equalTo(50)
+            
+            /// SE 기기대응
+            if screenHeight == 667 {
+                $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(34)
+                $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
+                $0.height.equalTo(50)
+            } else {
+                $0.bottom.equalTo(view.safeAreaLayoutGuide)
+                $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
+                $0.height.equalTo(50)
+            }
         }
         
         cancelBtn.snp.makeConstraints {
-            $0.top.equalTo(iconImageView.snp.bottom).offset(103)
-            $0.bottom.equalTo(confirmBtn.snp.top).offset(-12)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
-            $0.height.equalTo(50)
+            
+            /// SE 기기대응
+            if screenHeight == 667 {
+                $0.bottom.equalTo(confirmBtn.snp.top).offset(-12.adjustedH)
+                $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
+                $0.height.equalTo(50.adjustedH)
+            } else {
+                $0.bottom.equalTo(confirmBtn.snp.top).offset(-12)
+                $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
+                $0.height.equalTo(50)
+            }
         }
     }
 }

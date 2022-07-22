@@ -77,10 +77,19 @@ extension AddFriendVC {
         }
         
         completeBtn.snp.makeConstraints {
-            $0.top.equalTo(profileTV.snp.bottom)
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(50)
+            
+            /// SE 기기 대응
+            if screenHeight == 667 {
+                $0.top.equalTo(profileTV.snp.bottom)
+                $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(34)
+                $0.leading.trailing.equalToSuperview().inset(16)
+                $0.height.equalTo(50)
+            } else {
+                $0.top.equalTo(profileTV.snp.bottom)
+                $0.bottom.equalTo(view.safeAreaLayoutGuide)
+                $0.leading.trailing.equalToSuperview().inset(16)
+                $0.height.equalTo(50)
+            }
         }
     }
 }
