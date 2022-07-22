@@ -83,7 +83,7 @@ class WriteAPI: BaseAPI {
     
     /// [GET] 일주일 씀씀이 조회 API
     func getWeekSpendAPI(goalId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
-        AFmanager.request(WriteService.getWeekSpend(goalId: goalId)).responseData { response in
+        AFmanager.request(WriteService.getWeekRecord(goalId: goalId)).responseData { response in
             switch response.result {
             case .success:
                 guard let statusCode = response.response?.statusCode else { return }
