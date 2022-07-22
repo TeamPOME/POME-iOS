@@ -31,8 +31,8 @@ class RemindAPI: BaseAPI {
     }
     
     /// [GET] 감정별 기록 조회 API 
-    func requestGetRemindGoalListAPI(goalId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
-        AFmanager.request(RemindService.getRecords(goalId: goalId, startEmotion: 0, endEmotion: 0)).responseData { response in
+    func requestGetRemindGoalListAPI(goalId: Int, startEmotion: Int, endEmotion: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        AFmanager.request(RemindService.getRecords(goalId: goalId, startEmotion: startEmotion, endEmotion: endEmotion)).responseData { response in
             switch response.result {
             case .success:
                 guard let statusCode = response.response?.statusCode else { return }
