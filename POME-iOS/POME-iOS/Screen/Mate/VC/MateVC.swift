@@ -14,9 +14,7 @@ class MateVC: BaseVC {
     // MARK: Properties
     private var emojiSelectViewTopConstraint: Constraint?
     private var mateDataList: [MateResModel] = []
-    
-    /// TODO : /friends/records 친구 기록조회 할때의 빈 배열
-    private var mateRecordList: [MateDetailModel] = []
+    private var mateRecordList: [GetMateRecordResModel] = []
     private var selectedIndex: Int = 0
     private var cellFrame: CGFloat = 0
     private var scrollPosition: CGFloat = 0
@@ -80,14 +78,18 @@ class MateVC: BaseVC {
         configureUI()
         registerCell()
         setDelegate()
-        setTVScroll()
         setTapRightNaviBtn()
+        
+        /// 처음 띄울 때는 전체보기
+        getMateRecord(mateId: 0)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         showTabbar()
         requestGetMateAPI()
+        setTVScroll()
+        setTVOffset()
     }
 }
 
@@ -190,9 +192,9 @@ extension MateVC {
         mateProfileCV.dataSource = self
     }
     
-    /// 친구가 없을때는 cell이 한개이므로 스크롤을 하지 않도록 막아둔다.
+    /// 친구의 기록이 없을 때는 엠티뷰 스크롤을 막는다.
     private func setTVScroll() {
-        mateTV.isScrollEnabled = (mateDataList.count == 0) ? false : true
+        mateTV.isScrollEnabled = (mateRecordList.count == 0) ? false : true
     }
     
     /// 네비바 오른쪽 버튼 tap Action 설정 메서드
@@ -209,6 +211,11 @@ extension MateVC {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.scrollPosition = scrollView.contentOffset.y
         emojiSelectView.isHidden = true
+    }
+    
+    /// 테이블뷰 가장 위로 올림
+    private func setTVOffset() {
+        mateTV.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
     }
 }
 
@@ -268,13 +275,14 @@ extension MateVC: UITableViewDelegate {
                 self.view.layoutIfNeeded()
                 self.emojiSelectView.isHidden = false
             }
+            haveMateTVC.setData(data: mateRecordList[indexPath.row])
             return haveMateTVC
         }
     }
     
-    /// CollectionView에서 전체보기 셀 1개 포함되어 있어서 + 1을 해주었습니다. 친구가 없을 경우 전체보기 셀 1개만 보이게 됩니다.
+    /// 레코드가 없으면 엠티뷰 1개
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (mateDataList.count == 0 || mateRecordList.count == 0) ? 1 : mateDataList.count + 1
+        return (mateRecordList.count == 0) ? 1 : mateRecordList.count
     }
 }
 
@@ -326,7 +334,11 @@ extension MateVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
         collectionView.reloadData()
-        mateTV.reloadData()
+        if indexPath.row > 0 {
+            getMateRecord(mateId: mateDataList[indexPath.row - 1].id)
+        } else {
+            getMateRecord(mateId: 0)
+        }
     }
 }
 
@@ -370,6 +382,28 @@ extension MateVC {
                 self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
             }
             self.mateProfileCV.reloadData()
+        }
+    }
+    
+    /// 친구 기록 조회 요청 메서드
+    private func getMateRecord(mateId: Int) {
+        self.activityIndicator.startAnimating()
+        MateAPI.shared.getMateRecordAPI(userId: mateId) { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let data = data as? [GetMateRecordResModel] {
+                    DispatchQueue.main.async {
+                        self.mateRecordList = data
+                        self.setTVScroll()
+                        self.mateTV.reloadData()
+                    }
+                    self.activityIndicator.stopAnimating()
+                }
+            case .requestErr:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            default:
+                self.makeAlert(title: "네트워크 오류로 인해\n데이터를 불러올 수 없습니다.\n다시 시도해 주세요.")
+            }
         }
     }
 }

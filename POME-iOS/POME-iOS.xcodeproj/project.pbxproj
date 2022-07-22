@@ -144,6 +144,7 @@
 		8427F88928895C8C0096B20E /* EmojiList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427F88828895C8C0096B20E /* EmojiList.swift */; };
 		8427F88B2889A6B70096B20E /* PostRecordResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427F88A2889A6B70096B20E /* PostRecordResModel.swift */; };
 		8427F8972889F1110096B20E /* WriteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427F8962889F1110096B20E /* WriteInfo.swift */; };
+		8427F899288A97410096B20E /* GetMateRecordResModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8427F898288A97410096B20E /* GetMateRecordResModel.swift */; };
 		84309C822878ACF50017F8BF /* GoalCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */; };
 		84309C832878ACF50017F8BF /* GoalCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */; };
 		8432C9B228773A42001C643F /* SpendCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432C9B028773A42001C643F /* SpendCVC.swift */; };
@@ -325,6 +326,7 @@
 		8427F88828895C8C0096B20E /* EmojiList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiList.swift; sourceTree = "<group>"; };
 		8427F88A2889A6B70096B20E /* PostRecordResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRecordResModel.swift; sourceTree = "<group>"; };
 		8427F8962889F1110096B20E /* WriteInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteInfo.swift; sourceTree = "<group>"; };
+		8427F898288A97410096B20E /* GetMateRecordResModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMateRecordResModel.swift; sourceTree = "<group>"; };
 		84309C802878ACF50017F8BF /* GoalCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCategoryCVC.swift; sourceTree = "<group>"; };
 		84309C812878ACF50017F8BF /* GoalCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalCategoryCVC.xib; sourceTree = "<group>"; };
 		8432C9B028773A42001C643F /* SpendCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendCVC.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 			children = (
 				1AAF201A2887E5EF00A4C18F /* MateResModel.swift */,
 				1AD1042D288925FC00B11995 /* MateDetailModel.swift */,
+				8427F898288A97410096B20E /* GetMateRecordResModel.swift */,
 			);
 			path = Mate;
 			sourceTree = "<group>";
@@ -907,12 +910,6 @@
 		77E8F3052874B1E100D2F6C0 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
-				1A1AEFD9287A4D5B00DD5F7E /* HaveMateTVC.xib */,
-				1A500DA42886985C003638B1 /* MateEmojiCVC.swift */,
-				1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */,
-				1A500DA52886985C003638B1 /* MateEmojiCVC.xib */,
-				1A500DA828869A02003638B1 /* MateEmojiHeaderCVC.swift */,
-				1A500DA928869A02003638B1 /* MateEmojiHeaderCVC.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -986,6 +983,11 @@
 			isa = PBXGroup;
 			children = (
 				1A76CACC287B1B3300B29500 /* MateHeaderCVC.swift */,
+				1A500DA42886985C003638B1 /* MateEmojiCVC.swift */,
+				1A76CACD287B1B3300B29500 /* MateHeaderCVC.xib */,
+				1A500DA52886985C003638B1 /* MateEmojiCVC.xib */,
+				1A500DA828869A02003638B1 /* MateEmojiHeaderCVC.swift */,
+				1A500DA928869A02003638B1 /* MateEmojiHeaderCVC.xib */,
 			);
 			path = CVC;
 			sourceTree = "<group>";
@@ -993,6 +995,7 @@
 		77E8F3122874B54C00D2F6C0 /* TVC */ = {
 			isa = PBXGroup;
 			children = (
+				1A1AEFD9287A4D5B00DD5F7E /* HaveMateTVC.xib */,
 				1A1AEFD8287A4D5B00DD5F7E /* HaveMateTVC.swift */,
 				1A1AEFD6287A4CB600DD5F7E /* HaveNoMateTVC.swift */,
 			);
@@ -1348,6 +1351,7 @@
 				84A6E883287D518200CD5843 /* PomeHalfModalVC.swift in Sources */,
 				77E8F3202874B7E500D2F6C0 /* MypageTVC.swift in Sources */,
 				77E8F36028765FA600D2F6C0 /* RemindNC.swift in Sources */,
+				8427F899288A97410096B20E /* GetMateRecordResModel.swift in Sources */,
 				1AAF202628885BCE00A4C18F /* RemindGoalModel.swift in Sources */,
 				1A3051202883D27E00F56808 /* MypageDataModel.swift in Sources */,
 				1A6D052328849908006C9BBD /* GoalStorageTitleCVC.swift in Sources */,
