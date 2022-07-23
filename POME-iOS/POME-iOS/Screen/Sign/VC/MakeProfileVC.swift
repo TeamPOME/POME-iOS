@@ -199,7 +199,7 @@ extension MakeProfileVC {
     
     /// UserDefaults에 값 저장하는 메서드
     private func setUserDefaultsValue(data: SignUpResModel) {
-        UserDefaults.standard.set(data.accessToken, forKey: UserDefaults.Keys.accessToken)
+        UserDefaults.standard.set("Bearer \(data.accessToken ?? "")", forKey: UserDefaults.Keys.accessToken)
         UserDefaults.standard.set(data.refreshToken, forKey: UserDefaults.Keys.refreshToken)
         UserDefaults.standard.set(data.id, forKey: UserDefaults.Keys.userID)
     }
