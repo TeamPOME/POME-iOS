@@ -47,7 +47,7 @@ extension RemindHaveNoGoalTVC {
             if UIScreen.main.bounds.height < 812 {
                 $0.top.equalToSuperview().offset(130)
             } else {
-                $0.centerY.equalToSuperview().offset(130)
+                $0.centerY.equalToSuperview()
             }
             $0.centerX.equalToSuperview()
         }

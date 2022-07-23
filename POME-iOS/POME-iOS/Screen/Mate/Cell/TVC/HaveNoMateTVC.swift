@@ -47,7 +47,7 @@ extension HaveNoMateTVC {
             if UIScreen.main.bounds.height < 812 {
                 $0.top.equalToSuperview().inset(158)
             } else {
-                $0.centerY.equalToSuperview().offset(158)
+                $0.centerY.equalToSuperview()
             }
             $0.centerX.equalToSuperview()
         }
